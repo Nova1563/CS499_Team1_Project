@@ -35,5 +35,6 @@ public class CS499_Ophthalmology_EMR {
          System.exit(0);
       }
       System.out.println("Opened database successfully");
+      System.out.println("I was here - Ryan");
    }
 }
