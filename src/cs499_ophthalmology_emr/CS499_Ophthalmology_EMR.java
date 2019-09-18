@@ -34,6 +34,7 @@ public class CS499_Ophthalmology_EMR {
          System.err.println( e.getClass().getName() + ": " + e.getMessage() );
          System.exit(0);
       }
+      System.out.println("ANGELA WAS HERE FIRST B4 THIS DECIDED TO BE FAKKKKEEE >:-(");
       System.out.println("Opened database successfully");
       System.out.println("I was here - Ryan");
       System.out.println("Andrew was here too, son!");
