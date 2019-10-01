@@ -1,0 +1,8 @@
+#ignore netbeans project files.
+nbproject/
+
+#ignore build folder
+build/
+
+#ignore distribution folder
+dist
