@@ -34,7 +34,7 @@ public class CS499_Ophthalmology_EMR {
 			conn = DriverManager.getConnection("jdbc:sqlite:test.db"); // Try to connect to test.db no path given means look in the same directory
 										// as the program. to specify another path, you'd do something like "jdbc:sqlite:C:/TestDir/test2.db"
 			createTable(conn);
-			//addTableEntry(conn, "Ryan", "Arab, AL");
+			addTableEntry(conn, "Andrew", "Huntsville, AL", "35649");
 			//deleteTableEntryWithID(conn, 1);
 			printAllEntries(conn);
 	 
@@ -64,7 +64,8 @@ public class CS499_Ophthalmology_EMR {
 		String createTableString = "CREATE TABLE IF NOT EXISTS patientInfo (\n"
 		+ "    id integer PRIMARY KEY,\n"
 		+ "    name text NOT NULL,\n"
-		+ "    address text NOT NULL\n"
+		+ "    address text NOT NULL,\n"
+                + "    zip     text NOT NULL\n"
 		+ ");";
     
 		try
@@ -78,10 +79,10 @@ public class CS499_Ophthalmology_EMR {
 		}
     }
 	
-	public static void addTableEntry(Connection conn, String name, String address)
+	public static void addTableEntry(Connection conn, String name, String address, String zip)
 	{
-		String addEntryString = "INSERT INTO patientInfo (name, address)\n"
-				+ "VALUES (?,?)";
+		String addEntryString = "INSERT INTO patientInfo (name, address, zip)\n"
+				+ "VALUES (?,?,?)";
 		
 		try
 		{
@@ -89,6 +90,7 @@ public class CS499_Ophthalmology_EMR {
 			
 			theSQLstatement.setString(1, name);
 			theSQLstatement.setString(2, address);
+                        theSQLstatement.setString(3, zip);
 			theSQLstatement.executeUpdate();
 			System.out.println("Table entry added.");
 		}
@@ -127,7 +129,10 @@ public class CS499_Ophthalmology_EMR {
 			
 			while (queryResults.next())
 			{
-				System.out.println("RowID: " + queryResults.getInt("id") + "\tName: " + queryResults.getString("name") + "\tAddress: " + queryResults.getString("address"));
+				System.out.println("RowID: " + queryResults.getInt("id") + "\tName: " 
+                                        + queryResults.getString("name") 
+                                        + "\tAddress: " + queryResults.getString("address")
+                                        + "\tZip: " + queryResults.getString("zip"));
 			}
 		}
 		catch(SQLException e)
