@@ -34,7 +34,7 @@ public class CS499_Ophthalmology_EMR {
 			conn = DriverManager.getConnection("jdbc:sqlite:test.db"); // Try to connect to test.db no path given means look in the same directory
 										// as the program. to specify another path, you'd do something like "jdbc:sqlite:C:/TestDir/test2.db"
 			createTable(conn);
-			//addTableEntry(conn, "Andrew", "Huntsville, AL");
+			//addTableEntry(conn, "Ryan", "Arab, AL");
 			//deleteTableEntryWithID(conn, 1);
 			printAllEntries(conn);
 	 
