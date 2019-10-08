@@ -1,5 +1,5 @@
 #ignore netbeans project files.
-nbproject/
+nbproject/private
 
 #ignore build folder
 build/
