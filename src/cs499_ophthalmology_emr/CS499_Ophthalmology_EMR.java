@@ -1,63 +1,45 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package cs499_ophthalmology_emr;
 
+package cs499_ophthalmology_emr;
 /**
  *
- * @author TheWitchDoctor
+ * @author BitSanity
  */
 
-//public class CS499_Ophthalmology_EMR {
-
-    /**
-     * @param args the command line arguments
-     */
- //   public static void main(String[] args) {
-        // TODO code application logic here
- //   }
-    
-//}
-
-import java.sql.*;
-// This is only to test JDBC. This should not be coded into.
 public class CS499_Ophthalmology_EMR {      
 	public static void main( String args[] )
 	{
-		Connection conn = null;
-      
-		try
-		{
-			//Class.forName("org.sqlite.JDBC");  // This is probably not necessary. Used for legacy implementations.
-			conn = DriverManager.getConnection("jdbc:sqlite:test.db"); // Try to connect to test.db no path given means look in the same directory
-										// as the program. to specify another path, you'd do something like "jdbc:sqlite:C:/TestDir/test2.db"
-			createTable(conn);
-			addTableEntry(conn, "Andrew", "Huntsville, AL", "35649");
-			//deleteTableEntryWithID(conn, 1);
-			printAllEntries(conn);
-	 
-		} catch ( Exception e )
-		{
-			//System.err.println( e.getClass().getName() + ": " + e.getMessage() );
-			e.printStackTrace();
-			System.exit(0);
-		}
-		System.out.println("ANGELA WAS HERE FIRST B4 THIS DECIDED TO BE FAKKKKEEE >:-(");
-		System.out.println("Opened database successfully");
-		System.out.println("I was here - Ryan");
-		System.out.println("Andrew was here too, son!");
-		System.out.println("Kendal");
-		System.out.println("Testing on my laptop luuuul");
+		DB_Interface dataBase = DB_Interface.getInstance();
+		
+		int newPatientID = -1;
+		
+		//newPatientID = dataBase.patientInfo.addPatient("Andrew McKelvy");
+		//System.out.println("New ID created: " + newPatientID);
+		
+		dataBase.patientInfo.printAllEntries();
+	}
 	
-		
-		
-		
-		
-      
-   }
-  
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		// This functionality moved to the DB_Interface class.
+		// This should be deleted eventually, but is left here for now for
+		// reference. -AM
+  /*
     public static void createTable(Connection conn)
     {
 		// SQL statement for creating a new table
@@ -140,4 +122,5 @@ public class CS499_Ophthalmology_EMR {
 		    System.out.println("printAllEntries() error: " + e.getMessage());
 		}
 	}
+	*/
 }
