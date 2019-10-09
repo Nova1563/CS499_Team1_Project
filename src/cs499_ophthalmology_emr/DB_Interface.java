@@ -89,8 +89,15 @@ public class DB_Interface {
 			+ "    dateOfBirth			text,\n"
 			+ "    emailAddr			text,\n"
 			+ "    ssn					text,\n"
+			+ "    emergContactPhone	text,\n"
 			+ "    emergContactName		text,\n"
-			+ "    emergContactPhone	text\n"
+			+ "    insProvider			text,\n"
+			+ "    insContractNo		text,\n"
+			+ "    insGroupNo			text,\n"
+			+ "    insEffectiveDate		text,\n"
+			+ "    insCoPayAmount		real,\n"		
+			+ "    insProviderAddr		text,\n"		
+			+ "    insProviderPhone		text\n"
 			+ ");";
 
 			try
@@ -133,7 +140,14 @@ public class DB_Interface {
 											+ "\temailAddr: " + queryResults.getString("emailAddr")
 											+ "\tssn: " + queryResults.getString("ssn")
 											+ "\temergContactName: " + queryResults.getString("emergContactName")
-											+ "\temergContactPhone: " + queryResults.getString("emergContactPhone"));
+											+ "\temergContactPhone: " + queryResults.getString("emergContactPhone")
+											+ "\tinsProvider: " + queryResults.getString("insProvider")
+											+ "\tinsContractNo: " + queryResults.getString("insContractNo")
+											+ "\tinsGroupNo: " + queryResults.getString("insGroupNo")
+											+ "\tinsEffectiveDate: " + queryResults.getString("insEffectiveDate")
+											+ "\tinsCoPayAmount: " + queryResults.getFloat("insCoPayAmount")
+											+ "\tinsProviderAddr: " + queryResults.getString("insProviderAddr")
+											+ "\tinsProviderPhone: " + queryResults.getString("ssn"));
 				}
 			}
 			catch(SQLException e)
