@@ -1,0 +1,6 @@
+apptID,Integer
+patientID,String
+appointmentTime,Integer
+arrivalStatus,Integer
+arrivalTime,Integer
+doctorToSee,Integer

@@ -22,7 +22,9 @@ public class DB_Interface {
 	*/
     private static DB_Interface DB_IF_instance = null;
 	
-	static PatientInfo patientInfo = null;
+	static PatientInfoTable patientInfo = null;
+	static AppointmentsTable appointments = null;
+	
 	
 	/**
 	 * SQLite JDBC connection object.
@@ -35,8 +37,10 @@ public class DB_Interface {
 		try
 		{
 			conn = DriverManager.getConnection("jdbc:sqlite:EMR.db"); // Try to connect to test.db no path given means look in the same directory.
-			patientInfo = new PatientInfo();
-			patientInfo.initPatientInfo();
+			patientInfo = new PatientInfoTable();
+			patientInfo.initPatientInfoTable();
+			appointments = new AppointmentsTable();
+			appointments.initAppointmentsTable();
 		}
 		catch ( SQLException e )
 		{
@@ -67,17 +71,17 @@ public class DB_Interface {
 	/**
 	* Methods to interact with the Patient Info Table in SQLite database.
 	*/
-	public class PatientInfo
+	public class PatientInfoTable
 	{
 		/**
 		* Attempts to build the Patient Info table in SQLite DB if it does not exist.
 		* Sets columns, does not add rows.
 		*/
-		private void initPatientInfo()
+		private void initPatientInfoTable()
 		{
 			// SQL statement for creating the table.
 			String createTableString = "CREATE TABLE IF NOT EXISTS patientInfo (\n"
-			+ "    patientId			integer PRIMARY KEY,\n"
+			+ "    patientID			integer PRIMARY KEY,\n"
 			+ "    name					text NOT NULL,\n"
 			+ "    address				text,\n"
 			+ "    homePhoneNum			text,\n"
@@ -127,8 +131,8 @@ public class DB_Interface {
 
 				while (queryResults.next())
 				{
-					System.out.println("patientId: " + queryResults.getInt("patientId") + "\tname: " 
-											+ queryResults.getString("name") 
+					System.out.println("patientID: " + queryResults.getInt("patientID")
+											+ "\tname: " 	+ queryResults.getString("name") 
 											+ "\taddress: " + queryResults.getString("address")
 											+ "\thomePhoneNum: " + queryResults.getString("homePhoneNum")
 											+ "\tworkPhoneNum: " + queryResults.getString("workPhoneNum")
@@ -152,7 +156,7 @@ public class DB_Interface {
 			}
 			catch(SQLException e)
 			{
-				System.out.println("printAllEntries() PatientInfo error: " + e.getMessage());
+				System.out.println("printAllEntries() PatientInfoTable error: " + e.getMessage());
 				e.printStackTrace();
 			}
 		}
@@ -207,4 +211,89 @@ public class DB_Interface {
 			}
 		}
 	}
+	
+	public class AppointmentsTable{
+		
+		private void initAppointmentsTable()
+		{
+			String createTableString = "CREATE TABLE IF NOT EXISTS appointments(\n"
+											+ "apptID				Integer PRIMARY KEY,\n"
+											+ "patientID			Integer NOT NULL,\n"
+											+ "appointmentTime		Integer,\n"
+											+ "arrivalStatus		Integer,\n"
+											+ "arrivalTime			Integer,\n"
+											+ "doctorToSee			Integer,\n"
+											+ "FOREIGN KEY(patientID) \n"
+											+ "	REFERENCES patientInfo(patientID)\n"
+											+ ");";
+			
+			try
+			{
+				Statement theSQLstatement = conn.createStatement();
+				theSQLstatement.execute(createTableString);
+			}
+			catch(SQLException e)
+			{
+				System.out.println("initAppointments() error: " + e.getMessage());
+			}
+		}
+		
+		public int addAppointment(int patientID)
+		{
+			String addAppointment_SQL = "INSERT INTO appointments (patientID)\n"
+				+ "VALUES (?)";
+	
+			int apptID = -1;
+			
+			try
+			{
+				// Add new entry to table. patientID is required.
+				PreparedStatement theSQLstatement = conn.prepareStatement(addAppointment_SQL,
+														Statement.RETURN_GENERATED_KEYS);
+				theSQLstatement.setInt(1, patientID);
+				theSQLstatement.executeUpdate();
+				
+				// Get the newly created patient entry's ID.
+				ResultSet newID = theSQLstatement.getGeneratedKeys();
+				patientID = newID.getInt(1); // Get the newly generated Patient ID.
+			}
+			catch(SQLException e)
+			{
+				System.out.println("addAppointment() error: " + e.getMessage());
+			}
+			
+			return apptID;
+		}
+		
+		
+		
+		public void printAllEntries()
+		{
+			String printAllEntriesString = "SELECT * from appointments";
+
+			try
+			{
+				
+				Statement theSQLstatement = conn.createStatement();
+				ResultSet queryResults = theSQLstatement.executeQuery(printAllEntriesString);
+
+				while (queryResults.next())
+				{
+					System.out.println("apptID: " + queryResults.getInt("apptID")
+											+ "\tpatientID: " 	+ queryResults.getInt("patientID") 
+											+ "\tappointmentTime: " + queryResults.getInt("appointmentTime")
+											+ "\tarrivalStatus: " + queryResults.getInt("arrivalStatus")
+											+ "\tarrivalTime: " + queryResults.getInt("arrivalTime")
+											+ "\tdoctorToSee: " + queryResults.getInt("doctorToSee"));
+				}
+			}
+			catch(SQLException e)
+			{
+				System.out.println("printAllEntries() AppointmentsTable error: " + e.getMessage());
+				e.printStackTrace();
+			}
+		}
+		
+	}
+	
 }

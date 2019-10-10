@@ -11,11 +11,16 @@ public class CS499_Ophthalmology_EMR {
 		DB_Interface dataBase = DB_Interface.getInstance();
 		
 		int newPatientID = -1;
+		int newAppointmentID = -1;
 		
-		//newPatientID = dataBase.patientInfo.addPatient("Andrew McKelvy");
-		//System.out.println("New ID created: " + newPatientID);
+		//newPatientID = dataBase.patientInfo.addPatient("Who is This");
+		//System.out.println("New patientID created: " + newPatientID);
+		
+		newAppointmentID = dataBase.appointments.addAppointment(3);
+		//System.out.println("New appointmentID created: " + newAppointmentID);
 		
 		dataBase.patientInfo.printAllEntries();
+		dataBase.appointments.printAllEntries();
 	}
 	
 	
