@@ -18,7 +18,9 @@ public class PatientInfo
     private int age;
     private int zip;
     private int patientID;
-    List myList = new ArrayList();
+    
+    List<PatientAppointment> appointmentList = new ArrayList<>();
+    
     
     //-------------------------------
     public String getAddress()
