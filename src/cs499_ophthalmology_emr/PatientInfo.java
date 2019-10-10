@@ -11,7 +11,7 @@ package cs499_ophthalmology_emr;
  */
 public class PatientInfo
 {
-    String name;
+    private String name;
     String address;
     int age;
     int zip;

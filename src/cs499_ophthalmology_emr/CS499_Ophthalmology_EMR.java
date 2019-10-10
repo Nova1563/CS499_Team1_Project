@@ -5,7 +5,7 @@ package cs499_ophthalmology_emr;
  * @author BitSanity
  */
 
-public class CS499_Ophthalmology_EMR {      
+public class CS499_Ophthalmology_EMR {
 	public static void main( String args[] )
 	{
 		DB_Interface dataBase = DB_Interface.getInstance();
@@ -13,10 +13,10 @@ public class CS499_Ophthalmology_EMR {
 		int newPatientID = -1;
 		int newAppointmentID = -1;
 		
-		//newPatientID = dataBase.patientInfo.addPatient("Who is This");
+		//newPatientID = dataBase.patientInfo.addPatient("Who is That");
 		//System.out.println("New patientID created: " + newPatientID);
 		
-		newAppointmentID = dataBase.appointments.addAppointment(3);
+		//newAppointmentID = dataBase.appointments.addAppointment(1);
 		//System.out.println("New appointmentID created: " + newAppointmentID);
 		
 		dataBase.patientInfo.printAllEntries();
