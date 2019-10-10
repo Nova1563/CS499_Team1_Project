@@ -5,51 +5,66 @@
  */
 package cs499_ophthalmology_emr;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author RDavi
  */
 public class PatientInfo
 {
-    String name;
-    String address;
-    int age;
-    int zip;
-    int patientID;
+    private String address;
+    private int age;
+    private int zip;
+    private int patientID;
+    List myList = new ArrayList();
     
-    
-    public PatientInfo(String name, int age, String address, 
-            int zip, int patientID)
-    {
-        this.name = name;
-        this.address = address;
-        this.age = age;
-        this.zip = zip;
-        this.patientID = patientID;
-    }
-    
-    public String getName()
-    {
-        return name;
-    }
-    
+    //-------------------------------
     public String getAddress()
     {
-        return address;
+        return this.address;
     }
     
+    public void setAddress(String address)
+    {
+        this.address = address;
+    }
+    //-------------------------------
+    
+    //-------------------------------
     public int getAge()
     {
-        return age;
+        return this.age;
     }
     
+    public void setAge(int age)
+    {
+        this.age = age;
+    }
+    //-------------------------------
+    
+    //-------------------------------
     public int getZip()
     {
-        return zip;
+        return this.zip;
     }
     
+    public void setZip(int zip)
+    {
+        this.zip = zip;
+    }
+    //-------------------------------
+    
+    //-------------------------------
     public int getPatientID()
     {
-        return patientID;
+        return this.patientID;
     }
+    
+    public void setPatientID(int patientID)
+    {
+        this.patientID = patientID;
+    }
+    //-------------------------------
 }
