@@ -35,264 +35,305 @@ public class PatientInfo
     private String insProviderAddr;
     private int insProviderPhone;
     
-    List<PatientAppointment> appointmentList = new ArrayList<>();
+    private List<PatientAppointment> appointmentList = new ArrayList<>();
     
     
-    //-------------------------------
-    public String getAddress()
-    {
-        return this.address;
+
+    /**
+     * @return the address
+     */
+    public String getAddress() {
+        return address;
     }
-    
-    public void setAddress(String address)
-    {
+
+    /**
+     * @param address the address to set
+     */
+    public void setAddress(String address) {
         this.address = address;
     }
-    //-------------------------------
-    
-    //-------------------------------
-    public int getAge()
-    {
-        return this.age;
+
+    /**
+     * @return the age
+     */
+    public int getAge() {
+        return age;
     }
-    
-    public void setAge(int age)
-    {
+
+    /**
+     * @param age the age to set
+     */
+    public void setAge(int age) {
         this.age = age;
     }
-    //-------------------------------
-    
-    //-------------------------------
-    public int getZip()
-    {
-        return this.zip;
+
+    /**
+     * @return the zip
+     */
+    public int getZip() {
+        return zip;
     }
-    
-    public void setZip(int zip)
-    {
+
+    /**
+     * @param zip the zip to set
+     */
+    public void setZip(int zip) {
         this.zip = zip;
     }
-    //-------------------------------
-    
-    //-------------------------------
-    public int getPatientID()
-    {
-        return this.patientID;
+
+    /**
+     * @return the patientID
+     */
+    public int getPatientID() {
+        return patientID;
     }
-    
-    public void setPatientID(int patientID)
-    {
+
+    /**
+     * @param patientID the patientID to set
+     */
+    public void setPatientID(int patientID) {
         this.patientID = patientID;
     }
-    //-------------------------------
 
-    
-    //-------------------------------
-    public int getHomePhone() 
-    {
+    /**
+     * @return the homePhone
+     */
+    public int getHomePhone() {
         return homePhone;
     }
 
-    public void setHomePhone(int homePhone) 
-    {
+    /**
+     * @param homePhone the homePhone to set
+     */
+    public void setHomePhone(int homePhone) {
         this.homePhone = homePhone;
     }
-    //-------------------------------
-    
-    
-    //-------------------------------
-    public int getWorkPhone() 
-    {
+
+    /**
+     * @return the workPhone
+     */
+    public int getWorkPhone() {
         return workPhone;
     }
-    
-    public void setWorkPhone(int workPhone) 
-    {
+
+    /**
+     * @param workPhone the workPhone to set
+     */
+    public void setWorkPhone(int workPhone) {
         this.workPhone = workPhone;
     }
-    //-------------------------------
-    
-    
-    //-------------------------------
-    public int getMobilePhone() 
-    {
+
+    /**
+     * @return the mobilePhone
+     */
+    public int getMobilePhone() {
         return mobilePhone;
     }
 
-    public void setMobilePhone(int mobilePhone) 
-    {
+    /**
+     * @param mobilePhone the mobilePhone to set
+     */
+    public void setMobilePhone(int mobilePhone) {
         this.mobilePhone = mobilePhone;
     }
-    //-------------------------------
-    
 
-    //-------------------------------
-    public String getGender() 
-    {
+    /**
+     * @return the gender
+     */
+    public String getGender() {
         return gender;
     }
-    
-    public void setGender(String gender) 
-    {
+
+    /**
+     * @param gender the gender to set
+     */
+    public void setGender(String gender) {
         this.gender = gender;
     }
-    //-------------------------------
 
-    
-    //-------------------------------
-    public int getDateOfBirth() 
-    {
+    /**
+     * @return the dateOfBirth
+     */
+    public int getDateOfBirth() {
         return dateOfBirth;
     }
-    
-    public void setDateOfBirth(int dateOfBirth) 
-    {
+
+    /**
+     * @param dateOfBirth the dateOfBirth to set
+     */
+    public void setDateOfBirth(int dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
-    //-------------------------------
-    
-    
-    //-------------------------------
-    public String getEmailAddress() 
-    {
+
+    /**
+     * @return the emailAddress
+     */
+    public String getEmailAddress() {
         return emailAddress;
     }
-    
-    public void setEmailAddress(String emailAddress) 
-    {
+
+    /**
+     * @param emailAddress the emailAddress to set
+     */
+    public void setEmailAddress(String emailAddress) {
         this.emailAddress = emailAddress;
     }
-    //-------------------------------
-    
-    
-    //-------------------------------
-    public int getSsn() 
-    {
+
+    /**
+     * @return the ssn
+     */
+    public int getSsn() {
         return ssn;
     }
-    
-    public void setSsn(int ssn) 
-    {
+
+    /**
+     * @param ssn the ssn to set
+     */
+    public void setSsn(int ssn) {
         this.ssn = ssn;
     }
-    //-------------------------------
-    
-    
-    //-------------------------------
-    public int getEmgergContactNum() 
-    {
+
+    /**
+     * @return the emgergContactNum
+     */
+    public int getEmgergContactNum() {
         return emgergContactNum;
     }
-    
-     public void setEmgergContactNum(int emgergContactNum) 
-    {
+
+    /**
+     * @param emgergContactNum the emgergContactNum to set
+     */
+    public void setEmgergContactNum(int emgergContactNum) {
         this.emgergContactNum = emgergContactNum;
     }
-    //-------------------------------
-     
-     
-    //-------------------------------
-    public String getEmergContactName() 
-    {
+
+    /**
+     * @return the emergContactName
+     */
+    public String getEmergContactName() {
         return emergContactName;
     }
 
-    public void setEmergContactName(String emergContactName) 
-    {
+    /**
+     * @param emergContactName the emergContactName to set
+     */
+    public void setEmergContactName(String emergContactName) {
         this.emergContactName = emergContactName;
     }
-    //-------------------------------
 
-    
-    //-------------------------------
-    public String getInsProvider() 
-    {
+    /**
+     * @return the insProvider
+     */
+    public String getInsProvider() {
         return insProvider;
     }
 
-    public void setInsProvider(String insProvider) 
-    {
+    /**
+     * @param insProvider the insProvider to set
+     */
+    public void setInsProvider(String insProvider) {
         this.insProvider = insProvider;
     }
-    //-------------------------------
 
-    
-    //-------------------------------
-    public int getInsContactNo() 
-    {
+    /**
+     * @return the insContactNo
+     */
+    public int getInsContactNo() {
         return insContactNo;
     }
 
-    public void setInsContactNo(int insContactNo) 
-    {
+    /**
+     * @param insContactNo the insContactNo to set
+     */
+    public void setInsContactNo(int insContactNo) {
         this.insContactNo = insContactNo;
     }
-    //-------------------------------
 
-    
-    //-------------------------------
-    public int getInsGroupNo() 
-    {
+    /**
+     * @return the insGroupNo
+     */
+    public int getInsGroupNo() {
         return insGroupNo;
     }
 
-    public void setInsGroupNo(int insGroupNo) 
-    {
+    /**
+     * @param insGroupNo the insGroupNo to set
+     */
+    public void setInsGroupNo(int insGroupNo) {
         this.insGroupNo = insGroupNo;
     }
-    //-------------------------------
 
-    
-    //-------------------------------
-    public int getInsEffectiveDate() 
-    {
+    /**
+     * @return the insEffectiveDate
+     */
+    public int getInsEffectiveDate() {
         return insEffectiveDate;
     }
 
-    public void setInsEffectiveDate(int insEffectiveDate) 
-    {
+    /**
+     * @param insEffectiveDate the insEffectiveDate to set
+     */
+    public void setInsEffectiveDate(int insEffectiveDate) {
         this.insEffectiveDate = insEffectiveDate;
     }
-    //-------------------------------
 
-    
-    //-------------------------------
-    public float getInsCoPayAmount() 
-    {
+    /**
+     * @return the insCoPayAmount
+     */
+    public float getInsCoPayAmount() {
         return insCoPayAmount;
     }
 
-    public void setInsCoPayAmount(float insCoPayAmount) 
-    {
+    /**
+     * @param insCoPayAmount the insCoPayAmount to set
+     */
+    public void setInsCoPayAmount(float insCoPayAmount) {
         this.insCoPayAmount = insCoPayAmount;
     }
-    //-------------------------------
 
-    
-    //-------------------------------
-    public String getInsProviderAddr() 
-    {
+    /**
+     * @return the insProviderAddr
+     */
+    public String getInsProviderAddr() {
         return insProviderAddr;
     }
 
-    public void setInsProviderAddr(String insProviderAddr) 
-    {
+    /**
+     * @param insProviderAddr the insProviderAddr to set
+     */
+    public void setInsProviderAddr(String insProviderAddr) {
         this.insProviderAddr = insProviderAddr;
     }
-    //-------------------------------
 
-    
-    //-------------------------------
-    public int getInsProviderPhone() 
-    {
+    /**
+     * @return the insProviderPhone
+     */
+    public int getInsProviderPhone() {
         return insProviderPhone;
     }
 
-    public void setInsProviderPhone(int insProviderPhone) 
-    {
+    /**
+     * @param insProviderPhone the insProviderPhone to set
+     */
+    public void setInsProviderPhone(int insProviderPhone) {
         this.insProviderPhone = insProviderPhone;
     }
-    //-------------------------------
+
+    /**
+     * @return the appointmentList
+     */
+    public List<PatientAppointment> getAppointmentList() {
+        return appointmentList;
+    }
+
+    /**
+     * @param appointmentList the appointmentList to set
+     */
+    public void setAppointmentList(List<PatientAppointment> appointmentList) {
+        this.appointmentList = appointmentList;
+    }
+    
+    
     
     
     
