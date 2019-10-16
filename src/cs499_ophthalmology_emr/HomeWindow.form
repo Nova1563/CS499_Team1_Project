@@ -41,24 +41,16 @@
                   <Group type="102" alignment="1" attributes="0">
                       <Component id="patientPortal" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="134" max="-2" attributes="0"/>
-                      <Component id="jButton3" min="-2" max="-2" attributes="0"/>
+                      <Component id="eyeTestResults" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="239" max="-2" attributes="0"/>
                   </Group>
               </Group>
           </Group>
           <Group type="102" attributes="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="240" max="-2" attributes="0"/>
-                      <Component id="jDesktopPane1" min="-2" pref="100" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="218" max="-2" attributes="0"/>
-                      <Component id="jButton4" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="160" max="-2" attributes="0"/>
-                      <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-                  </Group>
-              </Group>
+              <EmptySpace min="-2" pref="218" max="-2" attributes="0"/>
+              <Component id="ocularEyeExams" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="160" max="-2" attributes="0"/>
+              <Component id="practiceManagement" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="189" max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -66,23 +58,21 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
-              <Component id="jDesktopPane1" min="-2" pref="100" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="169" max="-2" attributes="0"/>
               <Component id="jTextField2" min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="-2" pref="217" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jButton4" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="ocularEyeExams" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="practiceManagement" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace pref="73" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jButton3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="eyeTestResults" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="patientPortal" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="309" max="-2" attributes="0"/>
@@ -93,8 +83,6 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Container class="javax.swing.JDesktopPane" name="jDesktopPane1">
-    </Container>
     <Component class="javax.swing.JTextField" name="jTextField2">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -106,7 +94,7 @@
         <Property name="text" type="java.lang.String" value="Welcome to EMR"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Component class="javax.swing.JButton" name="practiceManagement">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Courier" size="13" style="0"/>
@@ -117,6 +105,9 @@
         <Property name="text" type="java.lang.String" value="Practice Management"/>
         <Property name="toolTipText" type="java.lang.String" value=""/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="practiceManagementActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="patientPortal">
       <Properties>
@@ -133,7 +124,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="patientPortalActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton3">
+    <Component class="javax.swing.JButton" name="eyeTestResults">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Courier" size="13" style="0"/>
@@ -144,8 +135,11 @@
         <Property name="text" type="java.lang.String" value="Eye Test Results"/>
         <Property name="toolTipText" type="java.lang.String" value=""/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="eyeTestResultsActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton4">
+    <Component class="javax.swing.JButton" name="ocularEyeExams">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Courier" size="13" style="0"/>
@@ -155,6 +149,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Ocular Eye Examinations"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ocularEyeExamsActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

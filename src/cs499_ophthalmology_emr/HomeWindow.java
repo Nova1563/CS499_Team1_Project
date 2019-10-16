@@ -28,12 +28,11 @@ public class HomeWindow extends javax.swing.JFrame {
     private void initComponents() {
 
         jRadioButtonMenuItem1 = new javax.swing.JRadioButtonMenuItem();
-        jDesktopPane1 = new javax.swing.JDesktopPane();
         jTextField2 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        practiceManagement = new javax.swing.JButton();
         patientPortal = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        eyeTestResults = new javax.swing.JButton();
+        ocularEyeExams = new javax.swing.JButton();
 
         jRadioButtonMenuItem1.setSelected(true);
         jRadioButtonMenuItem1.setText("jRadioButtonMenuItem1");
@@ -44,10 +43,15 @@ public class HomeWindow extends javax.swing.JFrame {
         jTextField2.setForeground(new java.awt.Color(255, 204, 51));
         jTextField2.setText("Welcome to EMR");
 
-        jButton1.setFont(new java.awt.Font("Courier", 0, 13)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 204, 51));
-        jButton1.setText("Practice Management");
-        jButton1.setToolTipText("");
+        practiceManagement.setFont(new java.awt.Font("Courier", 0, 13)); // NOI18N
+        practiceManagement.setForeground(new java.awt.Color(255, 204, 51));
+        practiceManagement.setText("Practice Management");
+        practiceManagement.setToolTipText("");
+        practiceManagement.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                practiceManagementActionPerformed(evt);
+            }
+        });
 
         patientPortal.setFont(new java.awt.Font("Courier", 0, 13)); // NOI18N
         patientPortal.setForeground(new java.awt.Color(255, 204, 51));
@@ -59,14 +63,24 @@ public class HomeWindow extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setFont(new java.awt.Font("Courier", 0, 13)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 204, 51));
-        jButton3.setText("Eye Test Results");
-        jButton3.setToolTipText("");
+        eyeTestResults.setFont(new java.awt.Font("Courier", 0, 13)); // NOI18N
+        eyeTestResults.setForeground(new java.awt.Color(255, 204, 51));
+        eyeTestResults.setText("Eye Test Results");
+        eyeTestResults.setToolTipText("");
+        eyeTestResults.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eyeTestResultsActionPerformed(evt);
+            }
+        });
 
-        jButton4.setFont(new java.awt.Font("Courier", 0, 13)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 204, 51));
-        jButton4.setText("Ocular Eye Examinations");
+        ocularEyeExams.setFont(new java.awt.Font("Courier", 0, 13)); // NOI18N
+        ocularEyeExams.setForeground(new java.awt.Color(255, 204, 51));
+        ocularEyeExams.setText("Ocular Eye Examinations");
+        ocularEyeExams.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ocularEyeExamsActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -81,38 +95,31 @@ public class HomeWindow extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(patientPortal)
                         .addGap(134, 134, 134)
-                        .addComponent(jButton3)
+                        .addComponent(eyeTestResults)
                         .addGap(239, 239, 239))))
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(240, 240, 240)
-                        .addComponent(jDesktopPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(218, 218, 218)
-                        .addComponent(jButton4)
-                        .addGap(160, 160, 160)
-                        .addComponent(jButton1)))
+                .addGap(218, 218, 218)
+                .addComponent(ocularEyeExams)
+                .addGap(160, 160, 160)
+                .addComponent(practiceManagement)
                 .addContainerGap(189, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(66, 66, 66)
-                .addComponent(jDesktopPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(3, 3, 3)
+                .addGap(169, 169, 169)
                 .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(217, 217, 217)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton4)
-                            .addComponent(jButton1))
+                            .addComponent(ocularEyeExams)
+                            .addComponent(practiceManagement))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton3)
+                            .addComponent(eyeTestResults)
                             .addComponent(patientPortal))
                         .addGap(309, 309, 309))))
         );
@@ -127,6 +134,24 @@ public class HomeWindow extends javax.swing.JFrame {
             w.setVisible(true);
        
     }//GEN-LAST:event_patientPortalActionPerformed
+
+    private void eyeTestResultsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eyeTestResultsActionPerformed
+        // TODO add your handling code here:
+            
+            EyeTestResults eyeTestRWindow = new EyeTestResults();
+            eyeTestRWindow.setVisible(true);
+    }//GEN-LAST:event_eyeTestResultsActionPerformed
+
+    private void ocularEyeExamsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ocularEyeExamsActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ocularEyeExamsActionPerformed
+
+    private void practiceManagementActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_practiceManagementActionPerformed
+        // TODO add your handling code here:
+        
+        PracticeMangment practiceManagment = new PracticeMangment();
+        practiceManagment.setVisible(true);
+    }//GEN-LAST:event_practiceManagementActionPerformed
 
     /**
      * @param args the command line arguments
@@ -164,12 +189,11 @@ public class HomeWindow extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JDesktopPane jDesktopPane1;
+    private javax.swing.JButton eyeTestResults;
     private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1;
     private javax.swing.JTextField jTextField2;
+    private javax.swing.JButton ocularEyeExams;
     private javax.swing.JButton patientPortal;
+    private javax.swing.JButton practiceManagement;
     // End of variables declaration//GEN-END:variables
 }
