@@ -34,6 +34,9 @@ def generateInitSqlTableJavaFromList():
 			
 	sqlString += "+ \");\""
 	print(sqlString)
+	
+def generateSelectFieldsFromID():
+	sqlString = "Select from "
 		
 loadListFromFile()
-generateInitSqlTableJavaFromList()
+#generateInitSqlTableJavaFromList()
