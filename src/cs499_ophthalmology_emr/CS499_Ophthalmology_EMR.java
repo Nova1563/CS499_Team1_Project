@@ -21,7 +21,17 @@ public class CS499_Ophthalmology_EMR {
 		
 		dataBase.patientInfo.printAllEntries();
 		dataBase.appointments.printAllEntries();
-                //HomeWindow n
+                
+                
+                /*
+                * Windows - Home, Patient Management, Patient Portal,
+                * Eye Test Results, and Ocular Eye Examinations
+                */
+                HomeWindow homeWindow = new HomeWindow();
+                homeWindow.setVisible(true);
+                
+               // PatientPortalWindow patientPortalWindow = new PatientPortalWindow();
+                //patientPortalWindow.setVisible(true);
 	}
 	
 	
