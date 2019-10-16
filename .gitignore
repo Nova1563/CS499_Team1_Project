@@ -6,3 +6,5 @@ build/
 
 #ignore distribution folder
 dist
+
+.DS_Store
