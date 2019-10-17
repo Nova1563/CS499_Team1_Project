@@ -27,7 +27,7 @@ public class PatientInfoTable
 		// SQL statement for creating the table.
 		String createTableString = "CREATE TABLE IF NOT EXISTS patientInfo (\n"
 		+ "    patientID			integer PRIMARY KEY,\n"
-		+ "    name					text NOT NULL,\n"
+		+ "    name					text,\n"
 		+ "    address				text,\n"
 		+ "    homePhoneNum			text,\n"
 		+ "    workPhoneNum			text,\n"
@@ -111,10 +111,12 @@ public class PatientInfoTable
 	 * @param name	name of the patient to be added to database.
 	 * @return		ID of the newly added patient.
 	 */
-	public int addPatient(String name)
+	public PatientInfo getNewPatient()
 	{
-		String addPatient_SQL = "INSERT INTO patientInfo (name)\n"
-			+ "VALUES (?)";
+	//	String addPatient_SQL = "INSERT INTO patientInfo (name)\n"
+	//		+ "VALUES (?)";
+		PatientInfo theNewPatientEntry = new PatientInfo();
+		String addPatient_SQL = "INSERT INTO patientInfo DEFAULT VALUES";
 
 		int patientID = -1;
 
@@ -123,19 +125,20 @@ public class PatientInfoTable
 			// Add new entry to table. Name is required.
 			PreparedStatement theSQLstatement = conn.prepareStatement(addPatient_SQL,
 													Statement.RETURN_GENERATED_KEYS);
-			theSQLstatement.setString(1, name);
+			//theSQLstatement.setString(1, name);
 			theSQLstatement.executeUpdate();
 
 			// Get the newly created patient entry's ID.
 			ResultSet newID = theSQLstatement.getGeneratedKeys();
 			patientID = newID.getInt(1); // Get the newly generated Patient ID.
+			theNewPatientEntry.setPatientID(patientID);
 		}
 		catch(SQLException e)
 		{
-			System.out.println("addPatient() error: " + e.getMessage());
+			System.out.println("getNewPatient() error: " + e.getMessage());
 		}
 
-		return patientID;
+		return theNewPatientEntry;
 	}
 
 	/**
@@ -160,8 +163,10 @@ public class PatientInfoTable
 		}
 	}
 	
-	public void updatePatientInfo(Integer patientID, PatientInfo thePatientInfo)
+	public void updatePatientEntry(PatientInfo thePatientInfo)
 	{
+		
+		Integer patientID = thePatientInfo.getPatientID();
 		
 		String sqlString = "UPDATE patientInfo SET "
 						+ "name = ? ,"
@@ -247,19 +252,18 @@ public class PatientInfoTable
 	
 	public void doTest()
 	{
-		PatientInfo testSubject = getTestPatientObject("Who is this?");
+		PatientInfo testSubject = getTestPatientObject();
 		System.out.println(testSubject.getName());
-		Integer addedPatientID = addPatient(testSubject.getName());
 		printAllEntries();
-		updatePatientInfo(addedPatientID, testSubject);
+		updatePatientEntry(testSubject);
 		printAllEntries();
-		deletePatient(addedPatientID);
+		deletePatient(testSubject.getPatientID());
 		printAllEntries();
 	}
 	
-	private PatientInfo getTestPatientObject(String name)
+	private PatientInfo getTestPatientObject()
 	{
-		PatientInfo thePatient = new PatientInfo(name);
+		PatientInfo thePatient = getNewPatient();
 		
 		thePatient.setName("How is that?");
 		thePatient.setAddress("address goes here");

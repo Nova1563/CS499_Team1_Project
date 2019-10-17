@@ -40,15 +40,6 @@ public class PatientInfo
     private List<PatientAppointment> appointmentList = new ArrayList<>();
 
 	/**
-	 * Constructor.
-	 * @param patientName 
-	 */
-    PatientInfo(String patientName)
-	{
-		this.setName(patientName);
-	}
-
-	/**
      * @return the name
      */
     public String getName() {
