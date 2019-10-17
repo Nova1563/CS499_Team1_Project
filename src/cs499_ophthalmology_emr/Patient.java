@@ -12,7 +12,7 @@ import java.util.List;
  *
  * @author RDavi
  */
-public class PatientInfo
+public class Patient
 {
 	private String name;
     private String address;
@@ -37,7 +37,7 @@ public class PatientInfo
     private String insProviderAddr;
     private String insProviderPhone;
     
-    private List<PatientAppointment> appointmentList = new ArrayList<>();
+    private List<Appointment> appointmentList = new ArrayList<>();
 
 	/**
      * @return the name
@@ -350,14 +350,14 @@ public class PatientInfo
     /**
      * @return the appointmentList
      */
-    public List<PatientAppointment> getAppointmentList() {
+    public List<Appointment> getAppointmentList() {
         return appointmentList;
     }
 
     /**
      * @param appointmentList the appointmentList to set
      */
-    public void setAppointmentList(List<PatientAppointment> appointmentList) {
+    public void setAppointmentList(List<Appointment> appointmentList) {
         this.appointmentList = appointmentList;
     }
     

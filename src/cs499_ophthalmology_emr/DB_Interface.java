@@ -18,19 +18,16 @@ import org.sqlite.SQLiteConfig;
  * @since Oct 7, 2019
  */
 public class DB_Interface {
+	PatientTableManager patientTable = null;
+	AppointmentTableManager appointmentTable = null;
+	EyeTestResultsTableManager testResultsTable = null;
+	
 	/**
 	 * Static variable DB_IF_instance of type DB_Interface. (THE instance of this class.)
 	*/
-    private static DB_Interface DB_IF_instance = null;
+    private static DB_Interface thisInstance = null;
 	private static final String DB_URL = "jdbc:sqlite:EMR.db";  
 
-	static PatientInfoTable patientInfo = null;
-	static AppointmentsTable appointments = null;
-	
-	
-	/**
-	 * SQLite JDBC connection object.
-	 */
 	private static Connection conn = null;
 	
     // private constructor restricted to this class itself 
@@ -41,9 +38,9 @@ public class DB_Interface {
 			SQLiteConfig config = new SQLiteConfig();  
 			config.enforceForeignKeys(true);
 			conn = DriverManager.getConnection(DB_URL, config.toProperties()); // Try to connect to test.db no path given means look in the same directory.
-			
-			patientInfo = new PatientInfoTable(conn);
-			appointments = new AppointmentsTable(conn);
+			patientTable = new PatientTableManager(conn);
+			appointmentTable = new AppointmentTableManager(conn);
+			testResultsTable = new EyeTestResultsTableManager(conn);
 		}
 		catch ( SQLException e )
 		{
@@ -65,12 +62,16 @@ public class DB_Interface {
 	 */
     public static DB_Interface getInstance() 
     { 
-        if (DB_IF_instance == null) 
-            DB_IF_instance = new DB_Interface(); 
+        if (thisInstance == null)
+		{
+            thisInstance = new DB_Interface();
+			//patientTable = PatientTableManager.getInstance(conn);
+			//appointmentTable = AppointmentTableManager.getInstance(conn);
+		}
   
-        return DB_IF_instance; 
+        return thisInstance; 
     }
-	
+
 
 	
 	

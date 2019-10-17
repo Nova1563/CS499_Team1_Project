@@ -9,10 +9,11 @@ package cs499_ophthalmology_emr;
  *
  * @author RDavi
  */
-public class PatientAppointment 
+public class Appointment 
 {
     private int appID;
     private int patientID;
+	private String patientName;
     private int appointmentTime;
     private int arrivalStatus;
     private int arrivalTime;

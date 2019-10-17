@@ -6,11 +6,11 @@ import java.sql.*;
 /**
 * Methods to interact with the Appointments Table in SQLite database.
 */
-public class AppointmentsTable{
-
-	static Connection conn;
+public class AppointmentTableManager{
 	
-	public AppointmentsTable(Connection theConn)
+	private static Connection conn;
+	
+	public AppointmentTableManager(Connection theConn)
 	{
 		conn = theConn;
 		initAppointmentsTable();
@@ -22,7 +22,7 @@ public class AppointmentsTable{
 	*/
 	private void initAppointmentsTable()
 	{
-		String createTableString = "CREATE TABLE IF NOT EXISTS appointments(\n"
+		String createTableString = "CREATE TABLE IF NOT EXISTS appointmentsTable(\n"
 										+ "apptID				Integer PRIMARY KEY,\n"
 										+ "patientID			Integer NOT NULL,\n"
 										+ "appointmentTime		Integer,\n"
@@ -51,7 +51,7 @@ public class AppointmentsTable{
 	 */
 	public int addAppointment(int patientID)
 	{
-		String addAppointment_SQL = "INSERT INTO appointments (patientID)\n"
+		String addAppointment_SQL = "INSERT INTO appointmentsTable (patientID)\n"
 			+ "VALUES (?)";
 
 		int apptID = -1;
@@ -83,7 +83,7 @@ public class AppointmentsTable{
 	*/
 	public void printAllEntries()
 	{
-		String printAllEntriesString = "SELECT * from appointments";
+		String printAllEntriesString = "SELECT * from appointmentsTable";
 
 		try
 		{
