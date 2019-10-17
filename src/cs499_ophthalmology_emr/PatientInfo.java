@@ -14,31 +14,54 @@ import java.util.List;
  */
 public class PatientInfo
 {
+	private String name;
     private String address;
     private int age;
     private int zip;
     private int patientID;
-    private int homePhone;
-    private int workPhone;
-    private int mobilePhone;
+    private String homePhone;
+    private String workPhone;
+    private String mobilePhone;
     private String gender;
+	private String title;
     private int dateOfBirth;
     private String emailAddress;
-    private int ssn;
-    private int emgergContactNum;
+    private String ssn;
+    private String emgergContactNum;
     private String emergContactName;
     private String insProvider;
-    private int insContactNo;
-    private int insGroupNo;
+    private String insContractNo;
+    private String insGroupNo;
     private int insEffectiveDate;
-    private float insCoPayAmount;
+    private double insCoPayAmount;
     private String insProviderAddr;
-    private int insProviderPhone;
+    private String insProviderPhone;
     
     private List<PatientAppointment> appointmentList = new ArrayList<>();
-    
-    
 
+	/**
+	 * Constructor.
+	 * @param patientName 
+	 */
+    PatientInfo(String patientName)
+	{
+		this.setName(patientName);
+	}
+
+	/**
+     * @return the name
+     */
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * @param address the address to set
+     */
+    public void setName(String name) {
+        this.name = name;
+    }
+	
     /**
      * @return the address
      */
@@ -98,42 +121,42 @@ public class PatientInfo
     /**
      * @return the homePhone
      */
-    public int getHomePhone() {
+    public String getHomePhone() {
         return homePhone;
     }
 
     /**
      * @param homePhone the homePhone to set
      */
-    public void setHomePhone(int homePhone) {
+    public void setHomePhone(String homePhone) {
         this.homePhone = homePhone;
     }
 
     /**
      * @return the workPhone
      */
-    public int getWorkPhone() {
+    public String getWorkPhone() {
         return workPhone;
     }
 
     /**
      * @param workPhone the workPhone to set
      */
-    public void setWorkPhone(int workPhone) {
+    public void setWorkPhone(String workPhone) {
         this.workPhone = workPhone;
     }
 
     /**
      * @return the mobilePhone
      */
-    public int getMobilePhone() {
+    public String getMobilePhone() {
         return mobilePhone;
     }
 
     /**
      * @param mobilePhone the mobilePhone to set
      */
-    public void setMobilePhone(int mobilePhone) {
+    public void setMobilePhone(String mobilePhone) {
         this.mobilePhone = mobilePhone;
     }
 
@@ -149,6 +172,20 @@ public class PatientInfo
      */
     public void setGender(String gender) {
         this.gender = gender;
+    }
+	
+	/**
+     * @return the title
+     */
+    public String getTitle() {
+        return title;
+    }
+
+    /**
+     * @param title the gender to set
+     */
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     /**
@@ -182,28 +219,28 @@ public class PatientInfo
     /**
      * @return the ssn
      */
-    public int getSsn() {
+    public String getSsn() {
         return ssn;
     }
 
     /**
      * @param ssn the ssn to set
      */
-    public void setSsn(int ssn) {
+    public void setSsn(String ssn) {
         this.ssn = ssn;
     }
 
     /**
      * @return the emgergContactNum
      */
-    public int getEmgergContactNum() {
+    public String getEmergContactPhone() {
         return emgergContactNum;
     }
 
     /**
      * @param emgergContactNum the emgergContactNum to set
      */
-    public void setEmgergContactNum(int emgergContactNum) {
+    public void setEmergContactPhone(String emgergContactNum) {
         this.emgergContactNum = emgergContactNum;
     }
 
@@ -238,28 +275,28 @@ public class PatientInfo
     /**
      * @return the insContactNo
      */
-    public int getInsContactNo() {
-        return insContactNo;
+    public String getInsContractNo() {
+        return insContractNo;
     }
 
     /**
-     * @param insContactNo the insContactNo to set
+     * @param insContractNo the insContactNo to set
      */
-    public void setInsContactNo(int insContactNo) {
-        this.insContactNo = insContactNo;
+    public void setInsContractNo(String insContractNo) {
+        this.insContractNo = insContractNo;
     }
 
     /**
      * @return the insGroupNo
      */
-    public int getInsGroupNo() {
+    public String getInsGroupNo() {
         return insGroupNo;
     }
 
     /**
      * @param insGroupNo the insGroupNo to set
      */
-    public void setInsGroupNo(int insGroupNo) {
+    public void setInsGroupNo(String insGroupNo) {
         this.insGroupNo = insGroupNo;
     }
 
@@ -280,14 +317,14 @@ public class PatientInfo
     /**
      * @return the insCoPayAmount
      */
-    public float getInsCoPayAmount() {
+    public double getInsCoPayAmount() {
         return insCoPayAmount;
     }
 
     /**
      * @param insCoPayAmount the insCoPayAmount to set
      */
-    public void setInsCoPayAmount(float insCoPayAmount) {
+    public void setInsCoPayAmount(double insCoPayAmount) {
         this.insCoPayAmount = insCoPayAmount;
     }
 
@@ -308,14 +345,14 @@ public class PatientInfo
     /**
      * @return the insProviderPhone
      */
-    public int getInsProviderPhone() {
+    public String getInsProviderPhone() {
         return insProviderPhone;
     }
 
     /**
      * @param insProviderPhone the insProviderPhone to set
      */
-    public void setInsProviderPhone(int insProviderPhone) {
+    public void setInsProviderPhone(String insProviderPhone) {
         this.insProviderPhone = insProviderPhone;
     }
 

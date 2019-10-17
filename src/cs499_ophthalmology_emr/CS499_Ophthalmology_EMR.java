@@ -19,9 +19,10 @@ public class CS499_Ophthalmology_EMR {
 		//newAppointmentID = dataBase.appointments.addAppointment(1);
 		//System.out.println("New appointmentID created: " + newAppointmentID);
 		
-		dataBase.patientInfo.printAllEntries();
-		dataBase.appointments.printAllEntries();
-                
+		//dataBase.patientInfo.printAllEntries();
+		//dataBase.appointments.printAllEntries();
+        
+		dataBase.patientInfo.doTest();
                 
                 /*
                 * Windows - Home, Patient Management, Patient Portal,

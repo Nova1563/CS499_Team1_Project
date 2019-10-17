@@ -2,6 +2,7 @@
 package cs499_ophthalmology_emr;
 
 import java.sql.*;
+import java.util.HashSet;
 
 
 /**
@@ -31,10 +32,10 @@ public class PatientInfoTable
 		+ "    homePhoneNum			text,\n"
 		+ "    workPhoneNum			text,\n"
 		+ "    mobilePhoneNum		text,\n"
-		+ "    gender				integer,\n"
+		+ "    gender				text,\n"
 		+ "    title				text,\n"
 		+ "    age					integer,\n"
-		+ "    dateOfBirth			text,\n"
+		+ "    dateOfBirth			integer,\n"
 		+ "    emailAddr			text,\n"
 		+ "    ssn					text,\n"
 		+ "    emergContactPhone	text,\n"
@@ -42,7 +43,7 @@ public class PatientInfoTable
 		+ "    insProvider			text,\n"
 		+ "    insContractNo		text,\n"
 		+ "    insGroupNo			text,\n"
-		+ "    insEffectiveDate		text,\n"
+		+ "    insEffectiveDate		integer,\n"
 		+ "    insCoPayAmount		real,\n"		
 		+ "    insProviderAddr		text,\n"		
 		+ "    insProviderPhone		text\n"
@@ -66,13 +67,13 @@ public class PatientInfoTable
 	public void printAllEntries()
 	{
 		String printAllEntriesString = "SELECT * from patientInfo";
-
+		System.out.println("Begin PatientInfoTable.printAllEntries()...");
 		try
 		{
 
 			Statement theSQLstatement = conn.createStatement();
 			ResultSet queryResults = theSQLstatement.executeQuery(printAllEntriesString);
-
+			
 			while (queryResults.next())
 			{
 				System.out.println("patientID: " + queryResults.getInt("patientID")
@@ -81,10 +82,10 @@ public class PatientInfoTable
 										+ "\thomePhoneNum: " + queryResults.getString("homePhoneNum")
 										+ "\tworkPhoneNum: " + queryResults.getString("workPhoneNum")
 										+ "\tmobilePhoneNum: " + queryResults.getString("mobilePhoneNum")
-										+ "\tgender: " + queryResults.getInt("gender")
+										+ "\tgender: " + queryResults.getString("gender")
 										+ "\ttitle: " + queryResults.getString("title")
 										+ "\tage: " + queryResults.getInt("age")
-										+ "\tdateOfBirth: " + queryResults.getString("dateOfBirth")
+										+ "\tdateOfBirth: " + queryResults.getInt("dateOfBirth")
 										+ "\temailAddr: " + queryResults.getString("emailAddr")
 										+ "\tssn: " + queryResults.getString("ssn")
 										+ "\temergContactName: " + queryResults.getString("emergContactName")
@@ -92,10 +93,10 @@ public class PatientInfoTable
 										+ "\tinsProvider: " + queryResults.getString("insProvider")
 										+ "\tinsContractNo: " + queryResults.getString("insContractNo")
 										+ "\tinsGroupNo: " + queryResults.getString("insGroupNo")
-										+ "\tinsEffectiveDate: " + queryResults.getString("insEffectiveDate")
+										+ "\tinsEffectiveDate: " + queryResults.getInt("insEffectiveDate")
 										+ "\tinsCoPayAmount: " + queryResults.getFloat("insCoPayAmount")
 										+ "\tinsProviderAddr: " + queryResults.getString("insProviderAddr")
-										+ "\tinsProviderPhone: " + queryResults.getString("ssn"));
+										+ "\tinsProviderPhone: " + queryResults.getString("insProviderPhone"));
 			}
 		}
 		catch(SQLException e)
@@ -141,21 +142,148 @@ public class PatientInfoTable
 	 * 
 	 * @param id	ID of the patient to be deleted from the database.
 	 */
-	public void deletePatient(int id)
+	public void deletePatient(Integer patientID)
 	{
-		String delEntryString = "DELETE FROM patientInfo WHERE id = ?";
+		String delEntryString = "DELETE FROM patientInfo WHERE patientID = ?";
 
 		try
 		{
 			PreparedStatement theSQLstatement = conn.prepareStatement(delEntryString);
 
-			theSQLstatement.setInt(1, id);
+			theSQLstatement.setInt(1, patientID);
 			theSQLstatement.executeUpdate();
-			//System.out.println("Table entry deleted.");
+			System.out.println("Entry in patientInfo with ID " + patientID.toString() + " deleted.");
 		}
 		catch(SQLException e)
 		{
-			System.out.println("deletePatient() error: " + e.getMessage());
+			System.out.println("deletePatient(" + patientID.toString() + ") error: " + e.getMessage());
 		}
 	}
+	
+	public void updatePatientInfo(Integer patientID, PatientInfo thePatientInfo)
+	{
+		
+		String sqlString = "UPDATE patientInfo SET "
+						+ "name = ? ,"
+						+ "address = ? ,"
+						+ "homePhoneNum = ? ,"
+						+ "workPhoneNum = ? ,"
+						+ "mobilePhoneNum = ? ,"
+						+ "gender = ? ,"
+						+ "title = ? ,"
+						+ "age = ? ,"
+						+ "dateOfBirth = ? ,"
+						+ "emailAddr = ? ,"
+						+ "ssn = ? ,"
+						+ "emergContactName = ? ,"
+						+ "emergContactPhone = ? ,"
+						+ "insProvider = ? ,"
+						+ "insContractNo = ? ,"
+						+ "insGroupNo = ? ,"
+						+ "insEffectiveDate = ? ,"
+						+ "insCoPayAmount = ? ,"
+						+ "insProviderAddr = ? ,"
+						+ "insProviderPhone = ? "
+						+ "WHERE patientID = ? ";
+		
+		try
+		{
+			PreparedStatement theSQLstatement = conn.prepareStatement(sqlString);
+
+			theSQLstatement.setString(1, thePatientInfo.getName());
+			theSQLstatement.setString(2, thePatientInfo.getAddress());
+			theSQLstatement.setString(3, thePatientInfo.getHomePhone());
+			theSQLstatement.setString(4, thePatientInfo.getWorkPhone());
+			theSQLstatement.setString(5, thePatientInfo.getMobilePhone());
+			theSQLstatement.setString(6, thePatientInfo.getGender());
+			theSQLstatement.setString(7, thePatientInfo.getTitle());
+			theSQLstatement.setInt(8, thePatientInfo.getAge());
+			theSQLstatement.setInt(9, thePatientInfo.getDateOfBirth());
+			theSQLstatement.setString(10, thePatientInfo.getEmailAddress());
+			theSQLstatement.setString(11, thePatientInfo.getSsn());
+			theSQLstatement.setString(12, thePatientInfo.getEmergContactName());
+			theSQLstatement.setString(13, thePatientInfo.getEmergContactPhone());
+			theSQLstatement.setString(14, thePatientInfo.getInsProvider());
+			theSQLstatement.setString(15, thePatientInfo.getInsContractNo());
+			theSQLstatement.setString(16, thePatientInfo.getInsGroupNo());
+			theSQLstatement.setInt(17, thePatientInfo.getInsEffectiveDate());
+			theSQLstatement.setDouble(18, thePatientInfo.getInsCoPayAmount());
+			theSQLstatement.setString(19, thePatientInfo.getInsProviderAddr());
+			theSQLstatement.setString(20 ,thePatientInfo.getInsProviderPhone());
+			theSQLstatement.setInt(21 , patientID);
+			
+			theSQLstatement.executeUpdate();
+		}
+		catch(SQLException e)
+		{
+			System.out.println("updatePatientInfo(" + patientID.toString() + ", PatientInfo ...) error: " + e.getMessage());
+		}
+	
+	}
+	
+	private ResultSet getPatientEntryResultSet(Integer patientID)
+	{
+		ResultSet queryResults = null;
+		String sqlString = "SELECT * FROM patientInfo WHERE patientID = ?";
+		
+		try
+		{
+
+			PreparedStatement theSQLstatement = conn.prepareStatement(sqlString);
+			queryResults = theSQLstatement.executeQuery(sqlString);
+		
+		}
+		catch (SQLException e)
+		{
+			System.out.println("getPatientEntryResultSet(" + patientID.toString() + ") error: " + e.getMessage());
+		}
+				
+		return queryResults;
+	}
+	
+	/////////////////////////// Test Methods and Data ////////////////////////////////
+	
+	// TODO: generate random pools of data to pull from.
+	
+	public void doTest()
+	{
+		PatientInfo testSubject = getTestPatientObject("Who is this?");
+		System.out.println(testSubject.getName());
+		Integer addedPatientID = addPatient(testSubject.getName());
+		printAllEntries();
+		updatePatientInfo(addedPatientID, testSubject);
+		printAllEntries();
+		deletePatient(addedPatientID);
+		printAllEntries();
+	}
+	
+	private PatientInfo getTestPatientObject(String name)
+	{
+		PatientInfo thePatient = new PatientInfo(name);
+		
+		thePatient.setName("How is that?");
+		thePatient.setAddress("address goes here");
+		thePatient.setAge(44);
+		thePatient.setDateOfBirth(121575);
+		thePatient.setEmailAddress("Im@YoMommas.house");
+		thePatient.setHomePhone("123456789");
+		thePatient.setWorkPhone("8675309");
+		thePatient.setGender("Popcicle");
+		thePatient.setTitle("The Magnificent");
+		thePatient.setSsn("456-456-1234");
+		thePatient.setEmergContactName("Zombie Bob");
+		thePatient.setEmergContactPhone("1-800-WhatWhoHuh");
+		thePatient.setInsProvider("Red Sword Red Dagger");
+		thePatient.setInsContractNo("00000-1");
+		thePatient.setInsEffectiveDate(122987);
+		thePatient.setInsCoPayAmount(45.55);
+		thePatient.setInsProviderAddr("123 Insurance Drive");
+		thePatient.setInsProviderPhone("6547764578");
+		//TODO: set all fields randomly.
+		
+		return thePatient;
+	}
+	
+	
+	
 }
