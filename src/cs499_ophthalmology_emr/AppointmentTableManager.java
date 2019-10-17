@@ -25,12 +25,13 @@ public class AppointmentTableManager{
 		String createTableString = "CREATE TABLE IF NOT EXISTS appointmentsTable(\n"
 										+ "apptID				Integer PRIMARY KEY,\n"
 										+ "patientID			Integer NOT NULL,\n"
+										+ "patientName			Text,"
 										+ "appointmentTime		Integer,\n"
 										+ "arrivalStatus		Integer,\n"
 										+ "arrivalTime			Integer,\n"
 										+ "doctorToSee			Integer,\n"
 										+ "FOREIGN KEY(patientID) \n"
-										+ "	REFERENCES patientInfo(patientID)\n"
+										+ "	REFERENCES patientTable(patientID)\n"
 										+ ");";
 
 		try
@@ -47,14 +48,15 @@ public class AppointmentTableManager{
 	/**
 	 * 
 	 * @param patientID		patientID that the new appointment will be associated with.
-	 * @return		ID of the newly added appointment.
+	 * @return		Ref to the newly created appointment.
 	 */
-	public int addAppointment(int patientID)
+	public Appointment getNewAppointment(Integer patientID)
 	{
 		String addAppointment_SQL = "INSERT INTO appointmentsTable (patientID)\n"
 			+ "VALUES (?)";
-
-		int apptID = -1;
+		
+		Appointment theNewAppointment = null;
+		Integer apptID = -1;
 
 		try
 		{
@@ -67,13 +69,33 @@ public class AppointmentTableManager{
 			// Get the newly created patient entry's ID.
 			ResultSet newID = theSQLstatement.getGeneratedKeys();
 			apptID = newID.getInt(1); // Get the newly generated Patient ID.
+			theNewAppointment = new Appointment(apptID, patientID);
+			
 		}
 		catch(SQLException e)
 		{
-			System.out.println("addAppointment() error: " + e.getMessage());
+			System.out.println("addAppointment(" + patientID.toString() + ") error: " + e.getMessage());
 		}
 
-		return apptID;
+		return theNewAppointment;
+	}
+	
+	public void deleteAppointment(Integer apptID)
+	{
+		String delEntryString = "DELETE FROM appointmentsTable WHERE apptID = ?";
+
+		try
+		{
+			PreparedStatement theSQLstatement = conn.prepareStatement(delEntryString);
+
+			theSQLstatement.setInt(1, apptID);
+			theSQLstatement.executeUpdate();
+			System.out.println("Entry in appointmentsTable with ID " + apptID.toString() + " deleted.");
+		}
+		catch(SQLException e)
+		{
+			System.out.println("deletePatient(" + apptID.toString() + ") error: " + e.getMessage());
+		}
 	}
 
 
@@ -84,7 +106,7 @@ public class AppointmentTableManager{
 	public void printAllEntries()
 	{
 		String printAllEntriesString = "SELECT * from appointmentsTable";
-
+		System.out.println("Begin AppointmentTableManager.printAllEntries()...");
 		try
 		{
 
@@ -95,6 +117,7 @@ public class AppointmentTableManager{
 			{
 				System.out.println("apptID: " + queryResults.getInt("apptID")
 										+ "\tpatientID: " 	+ queryResults.getInt("patientID") 
+										+ "\tpatientName: " + queryResults.getString("patientName")
 										+ "\tappointmentTime: " + queryResults.getInt("appointmentTime")
 										+ "\tarrivalStatus: " + queryResults.getInt("arrivalStatus")
 										+ "\tarrivalTime: " + queryResults.getInt("arrivalTime")

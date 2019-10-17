@@ -72,8 +72,28 @@ public class DB_Interface {
         return thisInstance; 
     }
 
-
+	///////////////////////////////// Test Methods and Data ///////////////////////////////
 	
+	public void doTest()
+	{
+		System.out.println("\nBegin DB_Interface.doTest()...");
+		// Get a new patient object from SQL handler.
+		Patient testSubject1 = patientTable.getNewPatient(); // Get the actual Patient object.
+		Integer patient1ID = testSubject1.getPatientID();	// Get the Patient object's patientID.
+		
+		// Get a new Appointment object and attach it to the Patient object.
+		Appointment itsAppointment = appointmentTable.getNewAppointment(patient1ID);
+		testSubject1.attachAppointment(itsAppointment);
+		
+		patientTable.printAllEntries();
+		appointmentTable.printAllEntries();
+		
+		// Clean up.
+		appointmentTable.deleteAppointment(itsAppointment.getApptID());
+		patientTable.deletePatient(patient1ID);
+		
+		System.out.println("End DB_Interface.doTest().\n");
+	}
 	
 
 	

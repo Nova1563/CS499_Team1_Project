@@ -11,28 +11,26 @@ package cs499_ophthalmology_emr;
  */
 public class Appointment 
 {
-    private int appID;
-    private int patientID;
+    private final int apptID;	
+    private final int patientID;
 	private String patientName;
     private int appointmentTime;
     private int arrivalStatus;
     private int arrivalTime;
     private int doctorToSee;
     
+	public Appointment(Integer _apptID, Integer _patientID)
+	{
+		this.apptID = _apptID;
+		this.patientID = _patientID;
+	}
     
     
     /**
      * @return the appID
      */
-    public int getAppID() {
-        return appID;
-    }
-
-    /**
-     * @param appID the appID to set
-     */
-    public void setAppID(int appID) {
-        this.appID = appID;
+    public int getApptID() {
+        return apptID;
     }
 
     /**
@@ -41,13 +39,16 @@ public class Appointment
     public int getPatientID() {
         return patientID;
     }
-
-    /**
-     * @param patientID the patientID to set
-     */
-    public void setPatientID(int patientID) {
-        this.patientID = patientID;
-    }
+	
+	public String getPatientName()
+	{
+		return patientName;
+	}
+	
+	public void setPatientName(String name)
+	{
+		this.patientName = name;
+	}
 
     /**
      * @return the appointmentTime

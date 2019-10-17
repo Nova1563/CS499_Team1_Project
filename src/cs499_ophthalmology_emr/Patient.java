@@ -38,7 +38,35 @@ public class Patient
     private String insProviderPhone;
     
     private List<Appointment> appointmentList = new ArrayList<>();
-
+	
+	public void attachAppointment(Appointment theAppointment)
+	{
+		appointmentList.add(theAppointment);
+	}
+	
+	public void removeAppointment(Integer appointmentID)
+	{
+		for (Appointment listElement : appointmentList) // for each listElement in appointmentList...
+		{
+			if (listElement.getApptID() == appointmentID)
+			{
+				appointmentList.remove(listElement);
+			}
+		}
+	}
+	
+	public void removeAppointment(Appointment theAppointment)
+	{
+		for (Appointment listElement : appointmentList) // for each listElement in appointmentList...
+		{
+			if (listElement == theAppointment)
+			{
+				appointmentList.remove(listElement);
+			}
+		}
+	}
+	
+	
 	/**
      * @return the name
      */
@@ -352,18 +380,6 @@ public class Patient
      */
     public List<Appointment> getAppointmentList() {
         return appointmentList;
-    }
-
-    /**
-     * @param appointmentList the appointmentList to set
-     */
-    public void setAppointmentList(List<Appointment> appointmentList) {
-        this.appointmentList = appointmentList;
-    }
-    
-    
-    
-    
-    
-   
+    } 
+	
 }

@@ -67,7 +67,7 @@ public class PatientTableManager
 	public void printAllEntries()
 	{
 		String printAllEntriesString = "SELECT * from patientTable";
-		System.out.println("Begin PatientInfoTable.printAllEntries()...");
+		System.out.println("Begin PatientTableManager.printAllEntries()...");
 		try
 		{
 
@@ -101,7 +101,7 @@ public class PatientTableManager
 		}
 		catch(SQLException e)
 		{
-			System.out.println("printAllEntries() PatientInfoTable error: " + e.getMessage());
+			System.out.println("printAllEntries() PatientTable error: " + e.getMessage());
 			e.printStackTrace();
 		}
 	}

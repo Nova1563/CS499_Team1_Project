@@ -22,7 +22,9 @@ public class CS499_Ophthalmology_EMR {
 		//dataBase.patientInfo.printAllEntries();
 		//dataBase.appointments.printAllEntries();
         
+		dataBase.doTest();
 		dataBase.patientTable.doTest();
+		
                 
                 /*
                 * Windows - Home, Patient Management, Patient Portal,
