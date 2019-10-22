@@ -141,6 +141,8 @@ public class PatientTableManager
 	}
 	
 	/**
+	 * Gets a patient's info from SQL table, fills out the appropriate fields in
+	 * a Patient object, returns that Patient object.
 	 * @param patientID
 	 * @return Patient object from SQL with matching patientID.
 	 */
@@ -189,7 +191,7 @@ public class PatientTableManager
 	}
 
 	/**
-	 * 
+	 * Deletes a patient from the SQL database with the matching ID.
 	 * @param patientID	ID of the patient to be deleted from the database.
 	 */
 	public void deletePatient(Integer patientID)
@@ -208,6 +210,11 @@ public class PatientTableManager
 		{
 			System.out.println("deletePatient(" + patientID.toString() + ") error: " + e.getMessage());
 		}
+	}
+	
+	public void deletePatient(Patient thePatientObj)
+	{
+		deletePatient(thePatientObj.getPatientID());
 	}
 	
 	/**

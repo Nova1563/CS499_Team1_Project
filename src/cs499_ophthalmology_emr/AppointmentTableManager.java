@@ -118,7 +118,7 @@ public class AppointmentTableManager{
 	}
 	
 	/**
-	 * 
+	 * Returns an ArrayList of all Appointments that belong to a matching patientID.
 	 * @param patientID
 	 * @return ArrayList of Appointment objects containing all of a patient's appointments.
 	 */
@@ -153,6 +153,47 @@ public class AppointmentTableManager{
 		catch(SQLException e)
 		{
 			System.out.println("getAppointmentsListByPatientID(" + patientID.toString() + ") error: " + e.getMessage());
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		
+		
+		return theApptList;
+	}
+	
+	public ArrayList<Appointment> getAppointmentsListByDate(Integer date)
+	{
+		ArrayList<Appointment> theApptList = new ArrayList<Appointment>();
+		
+		Appointment theFoundAppt = null;
+		
+		String theSQLstatementStr = "SELECT * from appointmentsTable WHERE date = ?";
+
+		try
+		{
+			PreparedStatement theSQLstatement = conn.prepareStatement(theSQLstatementStr);
+			theSQLstatement.setInt(1, date);
+			ResultSet appointmentInfo = theSQLstatement.executeQuery(theSQLstatementStr);
+			
+			while (appointmentInfo.next())
+			{
+				theFoundAppt = new Appointment(appointmentInfo.getInt("apptID"), appointmentInfo.getInt("patientID"));
+
+				theFoundAppt.setPatientName(appointmentInfo.getString("patientName"));
+				theFoundAppt.setAppointmentTime(appointmentInfo.getInt("appointmentTime"));
+				theFoundAppt.setArrivalStatus(appointmentInfo.getInt("arrivalStatus"));
+				theFoundAppt.setArrivalTime(appointmentInfo.getInt("arrivalTime"));
+				theFoundAppt.setDoctorToSee(appointmentInfo.getInt("doctorToSee"));
+				theFoundAppt.setReasonForVisit(appointmentInfo.getString("reasonForVisit"));
+
+				theApptList.add(theFoundAppt);
+			}
+		}
+		catch(SQLException e)
+		{
+			System.out.println("getAppointmentsListByPatientID(" + date.toString() + ") error: " + e.getMessage());
 		}
 		catch(Exception e)
 		{

@@ -7,6 +7,7 @@ package cs499_ophthalmology_emr;
 import java.sql.*;
 import java.util.HashSet;
 import org.sqlite.SQLiteConfig;
+import java.util.ArrayList;
 
 /**
  * Class used to interact with the SQLite database tables.
@@ -72,7 +73,117 @@ public class DataBaseManager {
   
         return thisInstance; 
     }
-
+	
+	/**
+	 * Returns an empty Patient object with a unique
+	 * patientID assigned to it.
+	 * @return	a new Patient object with unique ID, ready to use.
+	 */
+	public Patient getNewPatient()
+	{
+		return patientTable.getNewPatient();
+	}
+	
+	/**
+	 * Returns an empty Appointment with a unique appointmentID
+	 * assigned to it.
+	 * @param patientID	The patientID that this Appointment will belong to.
+	 * @return	a new Appointment object with unique ID, ready to use.
+	 */
+	public Appointment getNewAppointment(Integer patientID)
+	{
+		return appointmentTable.getNewAppointment(patientID);
+	}
+	
+	/**
+	 * Returns an empty EyeTestResults object with a unique examID,
+	 * and associated with a specific appointmentID and patientID.
+	 * @return a new EyeTestResults object with unique IDs, ready to use.
+	 */
+	public EyeTestResults getNewEyeTestResults()
+	{
+		//TODO: Implement this and TableManager function.
+		System.out.println("DataBaseManager.getNewEyeTestResults() not yet implemented.");
+		return null;
+	}
+	
+	/**
+	 * Saves the info in the incoming Patient object back to SQL.
+	 * @param thePatientObj a Patient ready to be stored back in the database.
+	 */
+	public void save(Patient thePatientObj)
+	{
+		patientTable.savePatientToSQL(thePatientObj);
+	}
+	
+	/**
+	 * Saves the info in the incoming Appointment object back to SQL.
+	 * @param theApptObj an Appointment ready to be stored back in the database.
+	 */
+	public void save(Appointment theApptObj)
+	{
+		appointmentTable.saveAppointmentToSQL(theApptObj);
+	}
+	
+	/**
+	 * Saves the info in the incoming EyeTestResults object back to SQL.
+	 * @param theResultsObj an EyeTestResults ready to be stored back in the database.
+	 */
+	public void save(EyeTestResults theResultsObj)
+	{
+		//TODO: Impletment TableManager function.
+		System.out.println("DataBaseManager.save(EyeTestResults) not yet implemented.");
+		//testResultsTable.saveEyeTestResultsToSQL(theResultsObj);
+	}
+	
+	public Patient getPatientByID(Integer patientID)
+	{
+		return patientTable.getPatient(patientID);
+	}
+	
+	public ArrayList<Appointment> getPatientAppointmentList(Patient thePatientObj)
+	{
+		return appointmentTable.getAppointmentsListByPatientID(thePatientObj.getPatientID());
+	}
+	
+	public Appointment getAppointmentByID(Integer apptID)
+	{
+		return appointmentTable.getAppointmentByID(apptID);
+	}
+	
+	public Appointment getAppointmentByDate(Integer date)
+	{
+		//TODO: Insert table field, update Appointment, implement AppointmentsTableManager function.
+		System.out.println("DataBaseManager.getAppointmentByDate() not yet implemented.");
+		//return appointmentTable.getAppointmentByDate(date);
+		return null;
+	}
+	
+	public EyeTestResults getExamResultsByID(Integer examID)
+	{
+		//TODO: Implement TableManager function.
+		System.out.println("DataBaseManager.getExamResultsByID() not yet implemented.");
+		//return testResultsTable.getExamResultsByID(examID);
+		return null;
+	}
+	
+	// TODO: EyeTestResultsTable related functions.
+	
+	public void delete(Patient thePatientObj)
+	{
+		patientTable.deletePatient(thePatientObj);
+	}
+	
+	public void delete(Appointment theApptObj)
+	{
+		appointmentTable.deleteAppointment(theApptObj.getApptID());
+	}
+	
+	public void delete(EyeTestResults theResultsObj)
+	{
+		// TODO: implement TableManager function.
+	}
+	
 	///////////////////////////////// Test Methods and Data ///////////////////////////////
 	
 	public void doTest()

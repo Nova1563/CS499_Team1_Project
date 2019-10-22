@@ -14,7 +14,7 @@ import java.util.List;
  */
 public class Patient
 {
-	private String name;
+    private String name;
     private String address;
     private int age;
     private int zip;
@@ -23,7 +23,7 @@ public class Patient
     private String workPhone;
     private String mobilePhone;
     private String gender;
-	private String title;
+    private String title;
     private int dateOfBirth;
     private String emailAddress;
     private String ssn;
@@ -44,11 +44,19 @@ public class Patient
 		this.patientID = _patientID;
 	}
 	
+	/**
+	 * Appends an Appointment object to a Patient object's list of Appointments.
+	 * @param theAppointment 
+	 */
 	public void attachAppointment(Appointment theAppointment)
 	{
 		appointmentList.add(theAppointment);
 	}
 	
+	/**
+	 * Removes an Appointment with matching ID from a Patient's list of Appointments.
+	 * @param appointmentID 
+	 */
 	public void removeAppointment(Integer appointmentID)
 	{
 		for (Appointment listElement : appointmentList) // for each listElement in appointmentList...
