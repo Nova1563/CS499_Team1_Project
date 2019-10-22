@@ -18,7 +18,7 @@ public class Patient
     private String address;
     private int age;
     private int zip;
-    private int patientID;
+    private final Integer patientID;
     private String homePhone;
     private String workPhone;
     private String mobilePhone;
@@ -38,6 +38,11 @@ public class Patient
     private String insProviderPhone;
     
     private List<Appointment> appointmentList = new ArrayList<>();
+	
+	public Patient(Integer _patientID)
+	{
+		this.patientID = _patientID;
+	}
 	
 	public void attachAppointment(Appointment theAppointment)
 	{
@@ -75,7 +80,7 @@ public class Patient
     }
 
     /**
-     * @param address the address to set
+     * @param name the name to set
      */
     public void setName(String name) {
         this.name = name;
@@ -133,10 +138,11 @@ public class Patient
     /**
      * @param patientID the patientID to set
      */
+/*	
     public void setPatientID(int patientID) {
         this.patientID = patientID;
     }
-
+*/
     /**
      * @return the homePhone
      */

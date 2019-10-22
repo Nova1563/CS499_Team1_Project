@@ -108,14 +108,13 @@ public class PatientTableManager
 
 	/**
 	 * 
-	 * @param name	name of the patient to be added to database.
-	 * @return		ID of the newly added patient.
+	 * @return ID of the newly generated patient.
 	 */
 	public Patient getNewPatient()
 	{
 	//	String addPatient_SQL = "INSERT INTO patientTable (name)\n"
 	//		+ "VALUES (?)";
-		Patient theNewPatientEntry = new Patient();
+		Patient theNewPatientEntry = null;
 		String addPatient_SQL = "INSERT INTO patientTable DEFAULT VALUES";
 
 		int patientID = -1;
@@ -131,7 +130,7 @@ public class PatientTableManager
 			// Get the newly created patient entry's ID.
 			ResultSet newID = theSQLstatement.getGeneratedKeys();
 			patientID = newID.getInt(1); // Get the newly generated Patient ID.
-			theNewPatientEntry.setPatientID(patientID);
+			theNewPatientEntry = new Patient(patientID);
 		}
 		catch(SQLException e)
 		{
@@ -140,10 +139,58 @@ public class PatientTableManager
 
 		return theNewPatientEntry;
 	}
+	
+	/**
+	 * @param patientID
+	 * @return Patient object from SQL with matching patientID.
+	 */
+	public Patient getPatient(Integer patientID)
+	{
+		Patient thePatient = null;
+		
+		ResultSet patientSQLinfo = getPatientEntryResultSet(patientID);
+		
+		try
+		{
+			thePatient = new Patient(patientSQLinfo.getInt("patientID"));
+
+			thePatient.setName(patientSQLinfo.getString("name"));
+			thePatient.setAddress(patientSQLinfo.getString("address"));
+			thePatient.setHomePhone(patientSQLinfo.getString("homePhoneNum"));
+			thePatient.setWorkPhone(patientSQLinfo.getString("workPhoneNum"));
+			thePatient.setMobilePhone(patientSQLinfo.getString("mobilePhoneNum"));
+			thePatient.setGender(patientSQLinfo.getString("gender"));
+			thePatient.setTitle(patientSQLinfo.getString("title"));
+			thePatient.setAge(patientSQLinfo.getInt("age"));
+			thePatient.setDateOfBirth(patientSQLinfo.getInt("dateOfBirth"));
+			thePatient.setEmailAddress(patientSQLinfo.getString("emailAddr"));
+			thePatient.setSsn(patientSQLinfo.getString("ssn"));
+			thePatient.setEmergContactName(patientSQLinfo.getString("emergContactName"));
+			thePatient.setEmergContactPhone(patientSQLinfo.getString("emergContactPhone"));
+			thePatient.setInsProvider(patientSQLinfo.getString("insProvider"));
+			thePatient.setInsContractNo(patientSQLinfo.getString("insContractNo"));
+			thePatient.setInsGroupNo(patientSQLinfo.getString("insGroupNo"));
+			thePatient.setInsEffectiveDate(patientSQLinfo.getInt("insEffectiveDate"));
+			thePatient.setInsCoPayAmount(patientSQLinfo.getFloat("insCoPayAmount"));
+			thePatient.setInsProviderAddr(patientSQLinfo.getString("insProviderAddr"));
+			thePatient.setInsProviderPhone(patientSQLinfo.getString("insProviderPhone"));
+		}
+		catch(SQLException e)
+		{
+			System.out.println("getPatient(" + patientID.toString() + ") error: " + e.getMessage());
+		}
+		catch(Exception e)
+		{
+			System.out.println("getPatient(" + patientID.toString() + ") error: " + e.getMessage());
+			e.printStackTrace();
+		}
+		
+		return thePatient;		
+	}
 
 	/**
 	 * 
-	 * @param id	ID of the patient to be deleted from the database.
+	 * @param patientID	ID of the patient to be deleted from the database.
 	 */
 	public void deletePatient(Integer patientID)
 	{
@@ -163,7 +210,11 @@ public class PatientTableManager
 		}
 	}
 	
-	public void updatePatientEntry(Patient thePatient)
+	/**
+	 * Saves a Patient object back into the SQL database.
+	 * @param thePatient 
+	 */
+	public void savePatientToSQL(Patient thePatient)
 	{
 		
 		Integer patientID = thePatient.getPatientID();
@@ -256,7 +307,7 @@ public class PatientTableManager
 		System.out.println("Default Patient fields:" );
 		printAllEntries();
 		
-		updatePatientEntry(testSubject);
+		savePatientToSQL(testSubject);
 		System.out.println("Updated Patient fields:");
 		printAllEntries();
 		

@@ -14,6 +14,7 @@ public class Appointment
     private final int apptID;	
     private final int patientID;
 	private String patientName;
+	private String reasonForVisit;
     private int appointmentTime;
     private int arrivalStatus;
     private int arrivalTime;
@@ -48,6 +49,14 @@ public class Appointment
 	public void setPatientName(String name)
 	{
 		this.patientName = name;
+	}
+	
+	public String getReasonForVisit() {
+		return reasonForVisit;
+	}
+
+	public void setReasonForVisit(String reasonForVisit) {
+		this.reasonForVisit = reasonForVisit;
 	}
 
     /**

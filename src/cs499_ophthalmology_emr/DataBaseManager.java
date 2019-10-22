@@ -5,6 +5,7 @@
  */
 package cs499_ophthalmology_emr;
 import java.sql.*;
+import java.util.HashSet;
 import org.sqlite.SQLiteConfig;
 
 /**
@@ -17,7 +18,7 @@ import org.sqlite.SQLiteConfig;
  * @author Andrew McKelvy
  * @since Oct 7, 2019
  */
-public class DB_Interface {
+public class DataBaseManager {
 	PatientTableManager patientTable = null;
 	AppointmentTableManager appointmentTable = null;
 	EyeTestResultsTableManager testResultsTable = null;
@@ -25,13 +26,13 @@ public class DB_Interface {
 	/**
 	 * Static variable DB_IF_instance of type DB_Interface. (THE instance of this class.)
 	*/
-    private static DB_Interface thisInstance = null;
+    private static DataBaseManager thisInstance = null;
 	private static final String DB_URL = "jdbc:sqlite:EMR.db";  
 
 	private static Connection conn = null;
 	
     // private constructor restricted to this class itself 
-    private DB_Interface() 
+    private DataBaseManager() 
     {
 		try
 		{
@@ -58,13 +59,13 @@ public class DB_Interface {
 	/**
 	 * Creates new instance of the DB_Interface class if none exists. Returns
 	 * the singleton instance if it already exists.
-	 * @return DB_Interface
+	 * @return DataBaseManager
 	 */
-    public static DB_Interface getInstance() 
+    public static DataBaseManager getInstance() 
     { 
         if (thisInstance == null)
 		{
-            thisInstance = new DB_Interface();
+            thisInstance = new DataBaseManager();
 			//patientTable = PatientTableManager.getInstance(conn);
 			//appointmentTable = AppointmentTableManager.getInstance(conn);
 		}
@@ -81,16 +82,23 @@ public class DB_Interface {
 		Patient testSubject1 = patientTable.getNewPatient(); // Get the actual Patient object.
 		Integer patient1ID = testSubject1.getPatientID();	// Get the Patient object's patientID.
 		
+		
+		
 		// Get a new Appointment object and attach it to the Patient object.
 		Appointment itsAppointment = appointmentTable.getNewAppointment(patient1ID);
 		testSubject1.attachAppointment(itsAppointment);
+		itsAppointment.setPatientName(testSubject1.getName());
+		itsAppointment.setArrivalStatus(2);
+		appointmentTable.saveAppointmentToSQL(itsAppointment);
+		//itsAppointment = appointmentTable.getNewAppointment(patient1ID);
+		//testSubject1.attachAppointment(itsAppointment);
 		
 		patientTable.printAllEntries();
 		appointmentTable.printAllEntries();
 		
 		// Clean up.
-		appointmentTable.deleteAppointment(itsAppointment.getApptID());
-		patientTable.deletePatient(patient1ID);
+		//appointmentTable.deleteAppointment(itsAppointment.getApptID());
+		//patientTable.deletePatient(patient1ID);
 		
 		System.out.println("End DB_Interface.doTest().\n");
 	}
