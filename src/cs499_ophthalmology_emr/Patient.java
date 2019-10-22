@@ -14,7 +14,7 @@ import java.util.List;
  */
 public class Patient
 {
-	private String name;
+    private String name;
     private String address;
     private int age;
     private int zip;
@@ -23,7 +23,7 @@ public class Patient
     private String workPhone;
     private String mobilePhone;
     private String gender;
-	private String title;
+    private String title;
     private int dateOfBirth;
     private String emailAddress;
     private String ssn;
@@ -80,7 +80,11 @@ public class Patient
     }
 
     /**
+<<<<<<< HEAD
      * @param name the name to set
+=======
+     * @param name the address to set
+>>>>>>> 0e9bd194ef3038fd3bdcc57084236e31dceb9a1d
      */
     public void setName(String name) {
         this.name = name;
