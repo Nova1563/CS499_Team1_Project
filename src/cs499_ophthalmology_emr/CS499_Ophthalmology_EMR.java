@@ -28,24 +28,7 @@ public class CS499_Ophthalmology_EMR {
                 
         }
 	
-	
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 		// This functionality moved to the DB_Interface class.
 		// This should be deleted eventually, but is left here for now for
 		// reference. -AM
