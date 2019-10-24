@@ -151,12 +151,12 @@ public class DataBaseManager {
 		return appointmentTable.getAppointmentByID(apptID);
 	}
 	
-	public Appointment getAppointmentByDate(Integer date)
+	public ArrayList<Appointment> getAppointmentListByDate(Integer date)
 	{
 		//TODO: Insert table field, update Appointment, implement AppointmentsTableManager function.
 		System.out.println("DataBaseManager.getAppointmentByDate() not yet implemented.");
-		//return appointmentTable.getAppointmentByDate(date);
-		return null;
+		return appointmentTable.getAppointmentListByDate(date);
+		//return null;
 	}
 	
 	public EyeTestResults getExamResultsByID(Integer examID)

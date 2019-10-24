@@ -27,6 +27,7 @@ public class AppointmentTableManager{
 										+ "apptID				Integer PRIMARY KEY,\n"
 										+ "patientID			Integer NOT NULL,\n"
 										+ "patientName			Text,\n"
+										+ "apptDate				Integer, \n"
 										+ "reasonForVisit		Text,\n"
 										+ "appointmentTime		Integer,\n"
 										+ "arrivalStatus		Integer,\n"
@@ -102,6 +103,7 @@ public class AppointmentTableManager{
 			apptToReturn = new Appointment(appointmentInfo.getInt("apptID"), appointmentInfo.getInt("patientID"));
 			 
 			apptToReturn.setPatientName(appointmentInfo.getString("patientName"));
+			apptToReturn.setApptDate(appointmentInfo.getInt("apptDate"));
 			apptToReturn.setAppointmentTime(appointmentInfo.getInt("appointmentTime"));
 			apptToReturn.setArrivalStatus(appointmentInfo.getInt("arrivalStatus"));
 			apptToReturn.setArrivalTime(appointmentInfo.getInt("arrivalTime"));
@@ -141,6 +143,7 @@ public class AppointmentTableManager{
 				theFoundAppt = new Appointment(appointmentInfo.getInt("apptID"), appointmentInfo.getInt("patientID"));
 
 				theFoundAppt.setPatientName(appointmentInfo.getString("patientName"));
+				theFoundAppt.setApptDate(appointmentInfo.getInt("apptDate"));
 				theFoundAppt.setAppointmentTime(appointmentInfo.getInt("appointmentTime"));
 				theFoundAppt.setArrivalStatus(appointmentInfo.getInt("arrivalStatus"));
 				theFoundAppt.setArrivalTime(appointmentInfo.getInt("arrivalTime"));
@@ -163,7 +166,7 @@ public class AppointmentTableManager{
 		return theApptList;
 	}
 	
-	public ArrayList<Appointment> getAppointmentsListByDate(Integer date)
+	public ArrayList<Appointment> getAppointmentListByDate(Integer date)
 	{
 		ArrayList<Appointment> theApptList = new ArrayList<Appointment>();
 		
@@ -182,6 +185,7 @@ public class AppointmentTableManager{
 				theFoundAppt = new Appointment(appointmentInfo.getInt("apptID"), appointmentInfo.getInt("patientID"));
 
 				theFoundAppt.setPatientName(appointmentInfo.getString("patientName"));
+				theFoundAppt.setApptDate(appointmentInfo.getInt("apptDate"));
 				theFoundAppt.setAppointmentTime(appointmentInfo.getInt("appointmentTime"));
 				theFoundAppt.setArrivalStatus(appointmentInfo.getInt("arrivalStatus"));
 				theFoundAppt.setArrivalTime(appointmentInfo.getInt("arrivalTime"));
@@ -214,6 +218,7 @@ public class AppointmentTableManager{
 		
 		String sqlString = "UPDATE appointmentsTable SET "
 						+ "patientName = ? ,"
+						+ "apptDate = ? ,"
 						+ "appointmentTime = ? ,"
 						+ "reasonForVisit = ? ,"
 						+ "arrivalStatus = ? ,"
@@ -226,12 +231,13 @@ public class AppointmentTableManager{
 			PreparedStatement theSQLstatement = conn.prepareStatement(sqlString);
 
 			theSQLstatement.setString(1, theAppt.getPatientName());
-			theSQLstatement.setInt(2, theAppt.getAppointmentTime());
-			theSQLstatement.setString(3, theAppt.getReasonForVisit());
-			theSQLstatement.setInt(4, theAppt.getArrivalStatus());
-			theSQLstatement.setInt(5, theAppt.getArrivalTime());
-			theSQLstatement.setInt(6, theAppt.getDoctorToSee());
-			theSQLstatement.setInt(7, apptID);
+			theSQLstatement.setInt(2, theAppt.getApptDate());
+			theSQLstatement.setInt(3, theAppt.getAppointmentTime());
+			theSQLstatement.setString(4, theAppt.getReasonForVisit());
+			theSQLstatement.setInt(5, theAppt.getArrivalStatus());
+			theSQLstatement.setInt(6, theAppt.getArrivalTime());
+			theSQLstatement.setInt(7, theAppt.getDoctorToSee());
+			theSQLstatement.setInt(8, apptID);
 			
 			theSQLstatement.executeUpdate();
 		}
@@ -283,6 +289,7 @@ public class AppointmentTableManager{
 				System.out.println("apptID: " + queryResults.getInt("apptID")
 										+ "\tpatientID: " 	+ queryResults.getInt("patientID") 
 										+ "\tpatientName: " + queryResults.getString("patientName")
+										+ "\tapptDate: " + queryResults.getInt("apptDate")
 										+ "\tappointmentTime: " + queryResults.getInt("appointmentTime")
 										+ "\treasonForVisit: " + queryResults.getString("reasonForVisit")
 										+ "\tarrivalStatus: " + queryResults.getInt("arrivalStatus")
