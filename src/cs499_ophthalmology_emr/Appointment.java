@@ -6,8 +6,8 @@
 package cs499_ophthalmology_emr;
 
 /**
- *
- * @author RDavi
+ * A Java object representing one appointment entry in the SQL database.
+ * 
  */
 public class Appointment 
 {
@@ -15,6 +15,8 @@ public class Appointment
     private final int patientID;
 	private String patientName;
 	private String reasonForVisit;
+	private Integer apptDate;
+
     private int appointmentTime;
     private int arrivalStatus;
     private int arrivalTime;
@@ -49,6 +51,14 @@ public class Appointment
 	public void setPatientName(String name)
 	{
 		this.patientName = name;
+	}
+	
+	public Integer getApptDate() {
+		return apptDate;
+	}
+
+	public void setApptDate(Integer apptDate) {
+		this.apptDate = apptDate;
 	}
 	
 	public String getReasonForVisit() {

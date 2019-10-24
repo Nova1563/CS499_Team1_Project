@@ -5,6 +5,7 @@ import java.sql.*;
 import java.util.ArrayList;
 //import java.util.List;
 /**
+* For use only by the DataBaseManager class.
 * Methods to interact with the Appointments Table in SQLite database.
 */
 public class AppointmentTableManager{
@@ -27,6 +28,7 @@ public class AppointmentTableManager{
 										+ "apptID				Integer PRIMARY KEY,\n"
 										+ "patientID			Integer NOT NULL,\n"
 										+ "patientName			Text,\n"
+										+ "apptDate				Integer, \n"
 										+ "reasonForVisit		Text,\n"
 										+ "appointmentTime		Integer,\n"
 										+ "arrivalStatus		Integer,\n"
@@ -84,7 +86,7 @@ public class AppointmentTableManager{
 	
 	/**
 	 * 
-	 * @param apptID
+	 * @param apptID The appointment ID to match
 	 * @return the Appointment from database with matching ID
 	 */
 	public Appointment getAppointmentByID(Integer apptID)
@@ -102,6 +104,7 @@ public class AppointmentTableManager{
 			apptToReturn = new Appointment(appointmentInfo.getInt("apptID"), appointmentInfo.getInt("patientID"));
 			 
 			apptToReturn.setPatientName(appointmentInfo.getString("patientName"));
+			apptToReturn.setApptDate(appointmentInfo.getInt("apptDate"));
 			apptToReturn.setAppointmentTime(appointmentInfo.getInt("appointmentTime"));
 			apptToReturn.setArrivalStatus(appointmentInfo.getInt("arrivalStatus"));
 			apptToReturn.setArrivalTime(appointmentInfo.getInt("arrivalTime"));
@@ -118,8 +121,8 @@ public class AppointmentTableManager{
 	}
 	
 	/**
-	 * 
-	 * @param patientID
+	 * Returns an ArrayList of all Appointments that belong to a matching patientID.
+	 * @param patientID The ID of the patient to retrieve from.
 	 * @return ArrayList of Appointment objects containing all of a patient's appointments.
 	 */
 	public ArrayList<Appointment> getAppointmentsListByPatientID(Integer patientID)
@@ -141,6 +144,7 @@ public class AppointmentTableManager{
 				theFoundAppt = new Appointment(appointmentInfo.getInt("apptID"), appointmentInfo.getInt("patientID"));
 
 				theFoundAppt.setPatientName(appointmentInfo.getString("patientName"));
+				theFoundAppt.setApptDate(appointmentInfo.getInt("apptDate"));
 				theFoundAppt.setAppointmentTime(appointmentInfo.getInt("appointmentTime"));
 				theFoundAppt.setArrivalStatus(appointmentInfo.getInt("arrivalStatus"));
 				theFoundAppt.setArrivalTime(appointmentInfo.getInt("arrivalTime"));
@@ -163,9 +167,51 @@ public class AppointmentTableManager{
 		return theApptList;
 	}
 	
+	public ArrayList<Appointment> getAppointmentListByDate(Integer date)
+	{
+		ArrayList<Appointment> theApptList = new ArrayList<Appointment>();
+		
+		Appointment theFoundAppt = null;
+		
+		String theSQLstatementStr = "SELECT * from appointmentsTable WHERE date = ?";
+
+		try
+		{
+			PreparedStatement theSQLstatement = conn.prepareStatement(theSQLstatementStr);
+			theSQLstatement.setInt(1, date);
+			ResultSet appointmentInfo = theSQLstatement.executeQuery(theSQLstatementStr);
+			
+			while (appointmentInfo.next())
+			{
+				theFoundAppt = new Appointment(appointmentInfo.getInt("apptID"), appointmentInfo.getInt("patientID"));
+
+				theFoundAppt.setPatientName(appointmentInfo.getString("patientName"));
+				theFoundAppt.setApptDate(appointmentInfo.getInt("apptDate"));
+				theFoundAppt.setAppointmentTime(appointmentInfo.getInt("appointmentTime"));
+				theFoundAppt.setArrivalStatus(appointmentInfo.getInt("arrivalStatus"));
+				theFoundAppt.setArrivalTime(appointmentInfo.getInt("arrivalTime"));
+				theFoundAppt.setDoctorToSee(appointmentInfo.getInt("doctorToSee"));
+				theFoundAppt.setReasonForVisit(appointmentInfo.getString("reasonForVisit"));
+
+				theApptList.add(theFoundAppt);
+			}
+		}
+		catch(SQLException e)
+		{
+			System.out.println("getAppointmentsListByPatientID(" + date.toString() + ") error: " + e.getMessage());
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		
+		
+		return theApptList;
+	}
+	
 	/**
 	 * Saves an Appointment back into SQL database.
-	 * @param theAppt 
+	 * @param theAppt The modified Appointment object.
 	 */
 	public void saveAppointmentToSQL(Appointment theAppt)
 	{
@@ -173,6 +219,7 @@ public class AppointmentTableManager{
 		
 		String sqlString = "UPDATE appointmentsTable SET "
 						+ "patientName = ? ,"
+						+ "apptDate = ? ,"
 						+ "appointmentTime = ? ,"
 						+ "reasonForVisit = ? ,"
 						+ "arrivalStatus = ? ,"
@@ -185,12 +232,13 @@ public class AppointmentTableManager{
 			PreparedStatement theSQLstatement = conn.prepareStatement(sqlString);
 
 			theSQLstatement.setString(1, theAppt.getPatientName());
-			theSQLstatement.setInt(2, theAppt.getAppointmentTime());
-			theSQLstatement.setString(3, theAppt.getReasonForVisit());
-			theSQLstatement.setInt(4, theAppt.getArrivalStatus());
-			theSQLstatement.setInt(5, theAppt.getArrivalTime());
-			theSQLstatement.setInt(6, theAppt.getDoctorToSee());
-			theSQLstatement.setInt(7, apptID);
+			theSQLstatement.setInt(2, theAppt.getApptDate());
+			theSQLstatement.setInt(3, theAppt.getAppointmentTime());
+			theSQLstatement.setString(4, theAppt.getReasonForVisit());
+			theSQLstatement.setInt(5, theAppt.getArrivalStatus());
+			theSQLstatement.setInt(6, theAppt.getArrivalTime());
+			theSQLstatement.setInt(7, theAppt.getDoctorToSee());
+			theSQLstatement.setInt(8, apptID);
 			
 			theSQLstatement.executeUpdate();
 		}
@@ -202,7 +250,7 @@ public class AppointmentTableManager{
 	
 	/**
 	 * Deletes an appointment from the SQL database with the matching ID.
-	 * @param apptID 
+	 * @param apptID The ID of the appointment to delete.
 	 */
 	public void deleteAppointment(Integer apptID)
 	{
@@ -242,6 +290,7 @@ public class AppointmentTableManager{
 				System.out.println("apptID: " + queryResults.getInt("apptID")
 										+ "\tpatientID: " 	+ queryResults.getInt("patientID") 
 										+ "\tpatientName: " + queryResults.getString("patientName")
+										+ "\tapptDate: " + queryResults.getInt("apptDate")
 										+ "\tappointmentTime: " + queryResults.getInt("appointmentTime")
 										+ "\treasonForVisit: " + queryResults.getString("reasonForVisit")
 										+ "\tarrivalStatus: " + queryResults.getInt("arrivalStatus")

@@ -4,8 +4,7 @@ package cs499_ophthalmology_emr;
 import java.sql.*;
 
 /**
- *
- * @author Andrew McKelvy
+ * For use only by the DataBaseManager class.
  */
 public class EyeTestResultsTableManager {
 	
