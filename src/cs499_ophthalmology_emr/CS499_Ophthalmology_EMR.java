@@ -8,7 +8,7 @@ package cs499_ophthalmology_emr;
 public class CS499_Ophthalmology_EMR {
 	public static void main( String args[] )
 	{
-		DB_Interface dataBase = DB_Interface.getInstance();
+		DataBaseManager dataBase = DataBaseManager.getInstance();
 		
 		int newPatientID = -1;
 		int newAppointmentID = -1;
@@ -23,13 +23,19 @@ public class CS499_Ophthalmology_EMR {
 		//dataBase.appointments.printAllEntries();
         
 		dataBase.doTest();
+
 		dataBase.patientTable.doTest();
 		  
-                
         }
-	
+		//dataBase.patientTable.doTest();
+		
+                
+
 
 		// This functionality moved to the DB_Interface class.
+
+		// This functionality moved to the DataBaseManager class.
+
 		// This should be deleted eventually, but is left here for now for
 		// reference. -AM
   /*
