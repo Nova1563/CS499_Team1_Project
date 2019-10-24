@@ -24,10 +24,10 @@ public class CS499_Ophthalmology_EMR {
         
 		dataBase.doTest();
 
-		dataBase.patientTable.doTest();
+		//dataBase.patientTable.doTest();
 		  
         }
-		//dataBase.patientTable.doTest();
+		
 		
                 
 }
