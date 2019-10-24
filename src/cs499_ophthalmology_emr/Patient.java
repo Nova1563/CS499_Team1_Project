@@ -9,8 +9,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
- * @author RDavi
+ * A Java object representing one patient entry in the SQL database.
+ * 
  */
 public class Patient
 {
@@ -44,11 +44,19 @@ public class Patient
 		this.patientID = _patientID;
 	}
 	
+	/**
+	 * Appends an Appointment object to a Patient object's list of Appointments.
+	 * @param theAppointment The Appointment object to append to the Patient's list.
+	 */
 	public void attachAppointment(Appointment theAppointment)
 	{
 		appointmentList.add(theAppointment);
 	}
 	
+	/**
+	 * Removes an Appointment with matching ID from a Patient's list of Appointments.
+	 * @param appointmentID The ID of the appointment to match.
+	 */
 	public void removeAppointment(Integer appointmentID)
 	{
 		for (Appointment listElement : appointmentList) // for each listElement in appointmentList...
@@ -80,11 +88,7 @@ public class Patient
     }
 
     /**
-<<<<<<< HEAD
      * @param name the name to set
-=======
-     * @param name the address to set
->>>>>>> 0e9bd194ef3038fd3bdcc57084236e31dceb9a1d
      */
     public void setName(String name) {
         this.name = name;
