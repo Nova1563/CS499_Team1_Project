@@ -6,8 +6,8 @@
 package cs499_ophthalmology_emr;
 
 /**
- *
- * @author RDavi
+ * A Java object representing one appointment entry in the SQL database.
+ * 
  */
 public class Appointment 
 {

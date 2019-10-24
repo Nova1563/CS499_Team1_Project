@@ -6,8 +6,8 @@
 package cs499_ophthalmology_emr;
 
 /**
- *
- * @author TheWitchDoctor
+ * A Java object representing one set of eye test results in the SQL database.
+ * 
  */
 public class EyeTestResults {
 	

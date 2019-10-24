@@ -1,7 +1,7 @@
 
 package cs499_ophthalmology_emr;
 /**
- *
+ * The Main class and Main function.
  * @author BitSanity
  */
 

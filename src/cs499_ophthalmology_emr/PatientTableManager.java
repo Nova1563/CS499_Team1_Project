@@ -6,6 +6,7 @@ import java.util.HashSet;
 
 
 /**
+* For use only by the DataBaseManager class.
 * Methods to interact with the Patient Info Table in SQLite database.
 */
 public class PatientTableManager
@@ -143,7 +144,7 @@ public class PatientTableManager
 	/**
 	 * Gets a patient's info from SQL table, fills out the appropriate fields in
 	 * a Patient object, returns that Patient object.
-	 * @param patientID
+	 * @param patientID The ID of the patient to match.
 	 * @return Patient object from SQL with matching patientID.
 	 */
 	public Patient getPatient(Integer patientID)
@@ -219,7 +220,7 @@ public class PatientTableManager
 	
 	/**
 	 * Saves a Patient object back into the SQL database.
-	 * @param thePatient 
+	 * @param thePatient The modified Patient object to save.
 	 */
 	public void savePatientToSQL(Patient thePatient)
 	{

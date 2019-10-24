@@ -5,6 +5,7 @@ import java.sql.*;
 import java.util.ArrayList;
 //import java.util.List;
 /**
+* For use only by the DataBaseManager class.
 * Methods to interact with the Appointments Table in SQLite database.
 */
 public class AppointmentTableManager{
@@ -85,7 +86,7 @@ public class AppointmentTableManager{
 	
 	/**
 	 * 
-	 * @param apptID
+	 * @param apptID The appointment ID to match
 	 * @return the Appointment from database with matching ID
 	 */
 	public Appointment getAppointmentByID(Integer apptID)
@@ -121,7 +122,7 @@ public class AppointmentTableManager{
 	
 	/**
 	 * Returns an ArrayList of all Appointments that belong to a matching patientID.
-	 * @param patientID
+	 * @param patientID The ID of the patient to retrieve from.
 	 * @return ArrayList of Appointment objects containing all of a patient's appointments.
 	 */
 	public ArrayList<Appointment> getAppointmentsListByPatientID(Integer patientID)
@@ -210,7 +211,7 @@ public class AppointmentTableManager{
 	
 	/**
 	 * Saves an Appointment back into SQL database.
-	 * @param theAppt 
+	 * @param theAppt The modified Appointment object.
 	 */
 	public void saveAppointmentToSQL(Appointment theAppt)
 	{
@@ -249,7 +250,7 @@ public class AppointmentTableManager{
 	
 	/**
 	 * Deletes an appointment from the SQL database with the matching ID.
-	 * @param apptID 
+	 * @param apptID The ID of the appointment to delete.
 	 */
 	public void deleteAppointment(Integer apptID)
 	{

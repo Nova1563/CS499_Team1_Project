@@ -9,8 +9,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
- * @author RDavi
+ * A Java object representing one patient entry in the SQL database.
+ * 
  */
 public class Patient
 {
@@ -46,7 +46,7 @@ public class Patient
 	
 	/**
 	 * Appends an Appointment object to a Patient object's list of Appointments.
-	 * @param theAppointment 
+	 * @param theAppointment The Appointment object to append to the Patient's list.
 	 */
 	public void attachAppointment(Appointment theAppointment)
 	{
@@ -55,7 +55,7 @@ public class Patient
 	
 	/**
 	 * Removes an Appointment with matching ID from a Patient's list of Appointments.
-	 * @param appointmentID 
+	 * @param appointmentID The ID of the appointment to match.
 	 */
 	public void removeAppointment(Integer appointmentID)
 	{
