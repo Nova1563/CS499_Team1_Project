@@ -80,7 +80,7 @@ public class AppointmentTableManager{
 		{
 			System.out.println("addAppointment(" + patientID.toString() + ") error: " + e.getMessage());
 		}
-
+		System.out.println("getNewAppointment returning entry ID " + apptID.toString());
 		return theNewAppointment;
 	}
 	
