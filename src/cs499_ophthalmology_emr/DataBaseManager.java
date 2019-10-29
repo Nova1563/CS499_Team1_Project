@@ -230,13 +230,14 @@ public class DataBaseManager {
 		// Get a new patient object from SQL handler.
 		Patient testSubject1 = patientTable.getNewPatient(); // Get the actual Patient object.
 		Integer patient1ID = testSubject1.getPatientID();	// Get the Patient object's patientID.
-		
+		System.out.println(patient1ID.toString());
 		
 		
 		// Get a new Appointment object and attach it to the Patient object.
 		Appointment itsAppointment = appointmentTable.getNewAppointment(patient1ID);
 		testSubject1.attachAppointment(itsAppointment);
 		itsAppointment.setPatientName(testSubject1.getName());
+		System.out.println(itsAppointment.getPatientName());
 		itsAppointment.setArrivalStatus(2);
 		appointmentTable.saveAppointmentToSQL(itsAppointment);
 		//itsAppointment = appointmentTable.getNewAppointment(patient1ID);

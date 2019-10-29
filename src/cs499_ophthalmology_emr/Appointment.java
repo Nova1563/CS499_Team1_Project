@@ -26,6 +26,13 @@ public class Appointment
 	{
 		this.apptID = _apptID;
 		this.patientID = _patientID;
+		
+		this.patientName = "";
+		this.reasonForVisit = "";
+		this.apptDate = -1;
+		this.appointmentTime = -1;
+		this.arrivalStatus = -1;
+		this.doctorToSee = -1;		
 	}
     
     
