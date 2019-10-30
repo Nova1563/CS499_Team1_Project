@@ -2,6 +2,7 @@
 package cs499_ophthalmology_emr;
 
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.HashSet;
 
 
@@ -190,6 +191,49 @@ public class PatientTableManager
 		
 		return thePatient;		
 	}
+	
+	public ArrayList<Patient> getAllPatients()
+	{
+		ArrayList<Patient> theList = new ArrayList<Patient>();
+		Integer numOfPatients = -1;
+		
+		numOfPatients = getNumOfPatientEntries();
+		
+		for(int i = 1; i <= numOfPatients; i++)
+		{
+			Patient thisTableEntry = null;
+			thisTableEntry = getPatient(i);
+			theList.add(thisTableEntry);
+		}
+		
+		return theList;
+	}
+	
+	public Integer getNumOfPatientEntries()
+	{
+		ResultSet queryResults = null;
+		Integer numOfPatients = -1;
+		String sqlString = "SELECT COUNT(patientID) FROM patientTable";
+		
+		
+		try
+		{
+
+			PreparedStatement theSQLstatement = conn.prepareStatement(sqlString);
+			queryResults = theSQLstatement.executeQuery();
+			numOfPatients = queryResults.getInt(1);
+		}
+		catch (SQLException e)
+		{
+			System.out.println("getNumOfPatientEntries() error: " + e.getMessage());
+		}
+		
+		//SELECT COUNT(DISTINCT | ALL Expression) from tablename
+
+		//[WHERE condition] 
+		System.out.println("getNumOfPatientEntries: " + numOfPatients.toString());
+		return numOfPatients;
+	}
 
 	/**
 	 * Deletes a patient from the SQL database with the matching ID.
@@ -292,9 +336,9 @@ public class PatientTableManager
 		
 		try
 		{
-
 			PreparedStatement theSQLstatement = conn.prepareStatement(sqlString);
-			queryResults = theSQLstatement.executeQuery(sqlString);
+			theSQLstatement.setInt(1, patientID);
+			queryResults = theSQLstatement.executeQuery();
 		
 		}
 		catch (SQLException e)

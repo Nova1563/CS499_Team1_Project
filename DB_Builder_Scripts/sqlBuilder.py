@@ -74,10 +74,18 @@ def generateUpdateTableFieldsStatement():
 		
 	print("\nJava code:\n" + javaString + "\n")
 	
+def generatePrintAllFieldsStatement():
+	javaString = ""
+	
+	for tableRow in tableList:
+		javaString += "+ \"\\t" + tableRow[0] + ": \" + queryResults.get" + tableRow[2] + "(\"" + tableRow[0] + "\")\n";
+		
+	print(javaString)
 	
 #def generateSelectFieldsFromID():
 #	sqlString = "Select from "
 		
 load3colListFromFile()
 #generateUpdateTableFieldsStatement()
-generateInitSqlTableJavaFromList()
+#generateInitSqlTableJavaFromList()
+generatePrintAllFieldsStatement()

@@ -249,7 +249,7 @@ public class DataBaseManager {
 		// Clean up.
 		//appointmentTable.deleteAppointment(itsAppointment.getApptID());
 		//patientTable.deletePatient(patient1ID);
-		
+		patientTable.getAllPatients();
 		System.out.println("End DB_Interface.doTest().\n");
 	}
 	

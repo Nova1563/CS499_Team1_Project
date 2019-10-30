@@ -110,8 +110,8 @@ public class EyeTestResultsTableManager {
 										+ "horizOS		Float,\n"
 										+ "vertOD		Float,\n"
 										+ "vertOS		Float,\n"
-										+ "opticNerv		Integer,\n"
-										+ "nervFiberLayer		Integer,\n"
+										+ "opticNerve		Integer,\n"
+										+ "nerveFiberLayer		Integer,\n"
 										+ "deepLaminaOD		Boolean,\n"
 										+ "deepLaminaOS		Boolean,\n"
 										+ "shallowOD		Boolean,\n"
@@ -142,9 +142,178 @@ public class EyeTestResultsTableManager {
 		
 	}
 	
+	public EyeTestResults getNewEyeTestResults(Integer patientID, Integer apptID)
+	{
+		EyeTestResults theNewResultsObject = null;
+		///////////
+		
+		String addExam_SQL = "INSERT INTO eyeTestResults (patientID, apptID)\n"
+			+ "VALUES (?, ?)";
+		
+		Integer examID = -1;
+
+		try
+		{
+			// Add new entry to table. patientID and apptID are required.
+			PreparedStatement theSQLstatement = conn.prepareStatement(addExam_SQL,
+													Statement.RETURN_GENERATED_KEYS);
+			theSQLstatement.setInt(1, patientID);
+			theSQLstatement.setInt(2, apptID);
+			theSQLstatement.executeUpdate();
+
+			// Get the newly created patient entry's ID.
+			ResultSet newID = theSQLstatement.getGeneratedKeys();
+			examID = newID.getInt(1); // Get the newly generated Patient ID.
+			theNewResultsObject = new EyeTestResults(apptID, patientID);
+			
+		}
+		catch(SQLException e)
+		{
+			System.out.println("getNewEyeTestResults() error: " + e.getMessage());
+		}
+		//System.out.println("getNewEyeTestResults returning entry ID " + apptID.toString());
+		
+		//////////
+		return theNewResultsObject;
+	}
+	
 	public void printAllEntries()
 	{
-		// TODO: Make this.
+		String printAllEntriesString = "SELECT * from eyeTestResults";
+		System.out.println("Begin EyeTestResultsManager.printAllEntries()...");
+		try
+		{
+
+			Statement theSQLstatement = conn.createStatement();
+			ResultSet queryResults = theSQLstatement.executeQuery(printAllEntriesString);
+
+			while (queryResults.next())
+			{
+				System.out.println(
+						"resultsID: " + queryResults.getInt("resultsID")
+					+ "\tpatientID: " + queryResults.getInt("patientID")
+					+ "\tapptID: " + queryResults.getInt("apptID")
+					+ "\tfarChartDistance: " + queryResults.getInt("farChartDistance")
+					+ "\tdccOS: " + queryResults.getInt("dccOS")
+					+ "\tdccOSph: " + queryResults.getInt("dccOSph")
+					+ "\tdscOS: " + queryResults.getInt("dscOS")
+					+ "\tdscOSph: " + queryResults.getInt("dscOSph")
+					+ "\tdccOD: " + queryResults.getInt("dccOD")
+					+ "\tdccODph: " + queryResults.getInt("dccODph")
+					+ "\tdscOD: " + queryResults.getInt("dscOD")
+					+ "\tdccOU: " + queryResults.getInt("dccOU")
+					+ "\tdccOUph: " + queryResults.getInt("dccOUph")
+					+ "\tdscOU: " + queryResults.getInt("dscOU")
+					+ "\tdscOUph: " + queryResults.getInt("dscOUph")
+					+ "\tnearChartDistance: " + queryResults.getInt("nearChartDistance")
+					+ "\tnccOS: " + queryResults.getInt("nccOS")
+					+ "\tnccOSph: " + queryResults.getInt("nccOSph")
+					+ "\tnscOS: " + queryResults.getInt("nscOS")
+					+ "\tnscOSph: " + queryResults.getInt("nscOSph")
+					+ "\tnccOD: " + queryResults.getInt("nccOD")
+					+ "\tnccODph: " + queryResults.getInt("nccODph")
+					+ "\tnscOD: " + queryResults.getInt("nscOD")
+					+ "\tnccOU: " + queryResults.getInt("nccOU")
+					+ "\tnccOUph: " + queryResults.getInt("nccOUph")
+					+ "\tnscOU: " + queryResults.getInt("nscOU")
+					+ "\tnscOUph: " + queryResults.getInt("nscOUph")
+					+ "\tsphereOD: " + queryResults.getFloat("sphereOD")
+					+ "\tsphereOS: " + queryResults.getFloat("sphereOS")
+					+ "\tcylinderOD: " + queryResults.getFloat("cylinderOD")
+					+ "\tcylinderOS: " + queryResults.getFloat("cylinderOS")
+					+ "\taxisOD: " + queryResults.getFloat("axisOD")
+					+ "\taxisOS: " + queryResults.getFloat("axisOS")
+					+ "\tprismOD: " + queryResults.getFloat("prismOD")
+					+ "\tprismOS: " + queryResults.getFloat("prismOS")
+					+ "\tprismBaseOD: " + queryResults.getFloat("prismBaseOD")
+					+ "\tprismBaseOS: " + queryResults.getFloat("prismBaseOS")
+					+ "\tnn20: " + queryResults.getInt("nn20")
+					+ "\tdd20: " + queryResults.getInt("dd20")
+					+ "\tvitreousOD: " + queryResults.getInt("vitreousOD")
+					+ "\tmaculaOD: " + queryResults.getInt("maculaOD")
+					+ "\tvasculatureOD: " + queryResults.getInt("vasculatureOD")
+					+ "\tposteriorPoleOD: " + queryResults.getInt("posteriorPoleOD")
+					+ "\tperipheralRetinaOD: " + queryResults.getInt("peripheralRetinaOD")
+					+ "\tmiscRetinaOD: " + queryResults.getInt("miscRetinaOD")
+					+ "\tdiabeticEvalOD: " + queryResults.getInt("diabeticEvalOD")
+					+ "\thtnEvalOD: " + queryResults.getInt("htnEvalOD")
+					+ "\tarmdOD: " + queryResults.getInt("armdOD")
+					+ "\tcustom1OD: " + queryResults.getInt("custom1OD")
+					+ "\tcustom2OD: " + queryResults.getInt("custom2OD")
+					+ "\tcustom3OD: " + queryResults.getInt("custom3OD")
+					+ "\tvitreousOS: " + queryResults.getInt("vitreousOS")
+					+ "\tmaculaOS: " + queryResults.getInt("maculaOS")
+					+ "\tvasculatureOS: " + queryResults.getInt("vasculatureOS")
+					+ "\tposteriorPoleOS: " + queryResults.getInt("posteriorPoleOS")
+					+ "\tperipheralRetinaOS: " + queryResults.getInt("peripheralRetinaOS")
+					+ "\tmiscRetinaOS: " + queryResults.getInt("miscRetinaOS")
+					+ "\tdiabeticEvalOS: " + queryResults.getInt("diabeticEvalOS")
+					+ "\thtnEvalOS: " + queryResults.getInt("htnEvalOS")
+					+ "\tarmdOS: " + queryResults.getInt("armdOS")
+					+ "\tcustom1OS: " + queryResults.getInt("custom1OS")
+					+ "\tcustom2OS: " + queryResults.getInt("custom2OS")
+					+ "\tcustom3OS: " + queryResults.getInt("custom3OS")
+					+ "\tsponVeinPulsOD: " + queryResults.getInt("sponVeinPulsOD")
+					+ "\tfovealReflexOD: " + queryResults.getInt("fovealReflexOD")
+					+ "\tsponVeinPulsOS: " + queryResults.getInt("sponVeinPulsOS")
+					+ "\tfovealReflexOs: " + queryResults.getInt("fovealReflexOs")
+					+ "\tmethodUsed: " + queryResults.getInt("methodUsed")
+					+ "\tgttOD: " + queryResults.getInt("gttOD")
+					+ "\tgttOS: " + queryResults.getInt("gttOS")
+					+ "\tdilationAgent: " + queryResults.getInt("dilationAgent")
+					+ "\tlens78dUsed: " + queryResults.getInt("lens78dUsed")
+					+ "\tlens90Dused: " + queryResults.getInt("lens90Dused")
+					+ "\tlens20DbioUsed: " + queryResults.getInt("lens20DbioUsed")
+					+ "\tLensPR22bioUsed: " + queryResults.getInt("LensPR22bioUsed")
+					+ "\tScleralDepUsed: " + queryResults.getInt("ScleralDepUsed")
+					+ "\tdirectOpthScopeUsed: " + queryResults.getInt("directOpthScopeUsed")
+					+ "\totherNoteGiven: " + queryResults.getInt("otherNoteGiven")
+					+ "\totherNoteText: " + queryResults.getString("otherNoteText")
+					+ "\tpatientAdvisedDfe: " + queryResults.getInt("patientAdvisedDfe")
+					+ "\tdfeResched: " + queryResults.getInt("dfeResched")
+					+ "\tdfeDeclined: " + queryResults.getInt("dfeDeclined")
+					+ "\tfundusImgPerformed: " + queryResults.getInt("fundusImgPerformed")
+					+ "\tdfeRefusedAme: " + queryResults.getInt("dfeRefusedAme")
+					+ "\tdfeNotInd: " + queryResults.getInt("dfeNotInd")
+					+ "\tdfeContraind: " + queryResults.getInt("dfeContraind")
+					+ "\trecentDfe: " + queryResults.getInt("recentDfe")
+					+ "\thorizOD: " + queryResults.getFloat("horizOD")
+					+ "\thorizOS: " + queryResults.getFloat("horizOS")
+					+ "\tvertOD: " + queryResults.getFloat("vertOD")
+					+ "\tvertOS: " + queryResults.getFloat("vertOS")
+					+ "\topticNerv: " + queryResults.getInt("opticNerv")
+					+ "\tnervFiberLayer: " + queryResults.getInt("nervFiberLayer")
+					+ "\tdeepLaminaOD: " + queryResults.getInt("deepLaminaOD")
+					+ "\tdeepLaminaOS: " + queryResults.getInt("deepLaminaOS")
+					+ "\tshallowOD: " + queryResults.getInt("shallowOD")
+					+ "\tshallowOS: " + queryResults.getInt("shallowOS")
+					+ "\troundOD: " + queryResults.getInt("roundOD")
+					+ "\troundOS: " + queryResults.getInt("roundOS")
+					+ "\tovalOD: " + queryResults.getInt("ovalOD")
+					+ "\tovalOS: " + queryResults.getInt("ovalOS")
+					+ "\ttempSlopingOD: " + queryResults.getInt("tempSlopingOD")
+					+ "\ttempSlopingOS: " + queryResults.getInt("tempSlopingOS")
+					+ "\tunderminingOD: " + queryResults.getInt("underminingOD")
+					+ "\tunderminingOS: " + queryResults.getInt("underminingOS")
+					+ "\tperipapAtrophyOD: " + queryResults.getInt("peripapAtrophyOD")
+					+ "\tperipapAtrophyOS: " + queryResults.getInt("peripapAtrophyOS")
+					+ "\tscleralCrescentOD: " + queryResults.getInt("scleralCrescentOD")
+					+ "\tscleralCrescentOS: " + queryResults.getInt("scleralCrescentOS")
+					+ "\tpigmentCrescentOD: " + queryResults.getInt("pigmentCrescentOD")
+					+ "\tpigmentCrescentOS: " + queryResults.getInt("pigmentCrescentOS")
+					+ "\topticPitOD: " + queryResults.getInt("opticPitOD")
+					+ "\topticPitOS: " + queryResults.getInt("opticPitOS")
+					+ "\tmyelinationOD: " + queryResults.getInt("myelinationOD")
+					+ "\tmyelinationOS: " + queryResults.getInt("myelinationOS")
+					+ "\tglialRemOD: " + queryResults.getInt("glialRemOD")
+					+ "\tglialRemOS: " + queryResults.getInt("glialRemOS") );
+			}
+		}
+		catch(SQLException e)
+		{
+			System.out.println("printAllEntries() eyeTestResults error: " + e.getMessage());
+			e.printStackTrace();
+		}
 	}
 	
 }
