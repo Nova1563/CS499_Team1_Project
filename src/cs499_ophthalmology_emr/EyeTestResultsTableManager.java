@@ -23,6 +23,7 @@ public class EyeTestResultsTableManager {
 										+ "patientID			Integer NOT NULL,\n"
 										+ "apptID				Integer NOT NULL,\n"
 										// TODO: Generate and insert remaining table fields here.
+				
 										+ "FOREIGN KEY(patientID) REFERENCES patientInfo(patientID)\n,"
 										+ "FOREIGN KEY(apptID) REFERENCES appointments(apptID)\n,"
 										+ ");";
