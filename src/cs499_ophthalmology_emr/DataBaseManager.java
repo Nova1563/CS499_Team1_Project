@@ -98,11 +98,10 @@ public class DataBaseManager {
 	 * and associated with a specific appointmentID and patientID.
 	 * @return a new EyeTestResults object with unique IDs, ready to use.
 	 */
-	public EyeTestResults getNewEyeTestResults()
+	public EyeTestResults getNewEyeTestResults(Integer patientID, Integer apptID)
 	{
-		//TODO: Implement this and TableManager function.
-		System.out.println("DataBaseManager.getNewEyeTestResults() not yet implemented.");
-		return null;
+		return testResultsTable.getNewEyeTestResults(patientID, apptID);
+
 	}
 	
 	/**
@@ -235,21 +234,24 @@ public class DataBaseManager {
 		
 		// Get a new Appointment object and attach it to the Patient object.
 		Appointment itsAppointment = appointmentTable.getNewAppointment(patient1ID);
+		Integer apptID = itsAppointment.getApptID();
 		testSubject1.attachAppointment(itsAppointment);
 		itsAppointment.setPatientName(testSubject1.getName());
 		System.out.println(itsAppointment.getPatientName());
 		itsAppointment.setArrivalStatus(2);
 		appointmentTable.saveAppointmentToSQL(itsAppointment);
-		//itsAppointment = appointmentTable.getNewAppointment(patient1ID);
-		//testSubject1.attachAppointment(itsAppointment);
+		
+		EyeTestResults anExamReport = getNewEyeTestResults(patient1ID, apptID);
 		
 		patientTable.printAllEntries();
 		appointmentTable.printAllEntries();
+		testResultsTable.printAllEntries();
+		
 		
 		// Clean up.
 		//appointmentTable.deleteAppointment(itsAppointment.getApptID());
 		//patientTable.deletePatient(patient1ID);
-		patientTable.getAllPatients();
+		//patientTable.getAllPatients();
 		System.out.println("End DB_Interface.doTest().\n");
 	}
 	

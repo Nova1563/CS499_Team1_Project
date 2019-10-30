@@ -2,6 +2,7 @@
 package cs499_ophthalmology_emr;
 
 import java.sql.*;
+import java.util.ArrayList;
 
 /**
  * For use only by the DataBaseManager class.
@@ -136,9 +137,18 @@ public class EyeTestResultsTableManager {
 										+ "myelinationOS		Boolean,\n"
 										+ "glialRemOD		Boolean,\n"
 										+ "glialRemOS		Boolean,\n"
-										+ "FOREIGN KEY(patientID) REFERENCES patientInfo(patientID)\n,"
-										+ "FOREIGN KEY(apptID) REFERENCES appointments(apptID)\n,"
+										+ "FOREIGN KEY(patientID) REFERENCES patientTable(patientID)\n,"
+										+ "FOREIGN KEY(apptID) REFERENCES appointmentsTable(apptID)\n"
 										+ ");";
+		try
+		{
+			Statement theSQLstatement = conn.createStatement();
+			theSQLstatement.execute(createTableString);
+		}
+		catch(SQLException e)
+		{
+			System.out.println("initAppointments() error: " + e.getMessage());
+		}
 		
 	}
 	
@@ -281,8 +291,8 @@ public class EyeTestResultsTableManager {
 					+ "\thorizOS: " + queryResults.getFloat("horizOS")
 					+ "\tvertOD: " + queryResults.getFloat("vertOD")
 					+ "\tvertOS: " + queryResults.getFloat("vertOS")
-					+ "\topticNerv: " + queryResults.getInt("opticNerv")
-					+ "\tnervFiberLayer: " + queryResults.getInt("nervFiberLayer")
+					+ "\topticNerve: " + queryResults.getInt("opticNerve")
+					+ "\tnerveFiberLayer: " + queryResults.getInt("nerveFiberLayer")
 					+ "\tdeepLaminaOD: " + queryResults.getInt("deepLaminaOD")
 					+ "\tdeepLaminaOS: " + queryResults.getInt("deepLaminaOS")
 					+ "\tshallowOD: " + queryResults.getInt("shallowOD")
@@ -314,6 +324,23 @@ public class EyeTestResultsTableManager {
 			System.out.println("printAllEntries() eyeTestResults error: " + e.getMessage());
 			e.printStackTrace();
 		}
+	}
+	
+	public void saveEyeTestResultsToSQL(EyeTestResults theResults)
+	{
+		//TODO: Implement this.
+	}
+	
+	public EyeTestResults getEyeTestResultsByAppt(Integer apptID)
+	{
+		//TODO: Implement this.
+		return null;
+	}
+	
+	public ArrayList<EyeTestResults> getAllEyeTestResultsByPatient(Integer patientID)
+	{
+		//TODO: Implement this.
+		return null;
 	}
 	
 }
