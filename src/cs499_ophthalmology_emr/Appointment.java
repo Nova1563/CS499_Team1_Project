@@ -32,6 +32,7 @@ public class Appointment
 		this.apptDate = -1;
 		this.appointmentTime = -1;
 		this.arrivalStatus = -1;
+		this.arrivalTime = -1;
 		this.doctorToSee = -1;		
 	}
     

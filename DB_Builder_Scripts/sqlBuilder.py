@@ -12,7 +12,7 @@ def load2colListFromFile():
 	with open(INPUT_CSV, "r") as inFile:
 		tableRow = 0
 		for fileLine in inFile:
-			print("fileLine: " + fileLine + "\n")
+			#print("fileLine: " + fileLine + "\n")
 			rowElements = fileLine.split(",")
 			fieldName = rowElements[0]
 			fieldType = rowElements[1]
@@ -23,13 +23,13 @@ def load2colListFromFile():
 			#tableList[tableRow][1] = rowElements[1]
 			#print(tableList[tableRow][0] + ": " + tableList[tableRow][1] + "\n")
 			tableRow += 1
-	print(tableList)
+	#print(tableList)
 	
 def load3colListFromFile():
 	with open(INPUT_CSV, "r") as inFile:
 		tableRow = 0
 		for fileLine in inFile:
-			print("fileLine: " + fileLine + "\n")
+			#print("fileLine: " + fileLine + "\n")
 			rowElements = fileLine.split(",")
 			fieldName = rowElements[0]
 			fieldSQLType = rowElements[1]
@@ -40,7 +40,7 @@ def load3colListFromFile():
 			#tableList[tableRow][1] = rowElements[1]
 			#print(tableList[tableRow][0] + ": " + tableList[tableRow][1] + "\n")
 			tableRow += 1
-	print(tableList)
+	#print(tableList)
 
 def generateInitSqlTableJavaFromList():
 	sqlString = "createTableString = \"CREATE TABLE IF NOT EXISTS " + TABLE_NAME + "(\\n\"\n"
@@ -79,4 +79,5 @@ def generateUpdateTableFieldsStatement():
 #	sqlString = "Select from "
 		
 load3colListFromFile()
-generateUpdateTableFieldsStatement()
+#generateUpdateTableFieldsStatement()
+generateInitSqlTableJavaFromList()
