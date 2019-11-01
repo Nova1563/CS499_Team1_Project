@@ -367,7 +367,7 @@ public class PatientTableManager
 		printAllEntries();
 	}
 	
-	private Patient getTestPatientObject()
+	public Patient getTestPatientObject()
 	{
 		Patient thePatient = getNewPatient();
 		

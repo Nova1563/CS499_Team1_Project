@@ -18,7 +18,7 @@ enum AssessmentRangeEnum
 }
 */
 public class EyeTestResults 
-{
+{	private final Integer examID;
 	private final Integer patientID;
 	private final Integer apptID;
     private Integer farChartDistance;
@@ -98,7 +98,7 @@ public class EyeTestResults
     private Boolean ScleralDepUsed;
     private Boolean directOpthScopeUsed;
     private Boolean otherNoteGiven;
-    private Boolean otherNoteText;
+    private String otherNoteText;
     private Boolean patientAdvisedDfe;
     private Boolean dfeResched;
     private Boolean dfeDeclined;
@@ -138,8 +138,9 @@ public class EyeTestResults
     private Boolean glialRemOD;
     private Boolean glialRemOS;
 	
-	public EyeTestResults(Integer _patientID, Integer _apptID)
+	public EyeTestResults(Integer _examID, Integer _patientID, Integer _apptID)
 	{
+		this.examID = _examID;
 		this.patientID = _patientID;
 		this.apptID = _apptID;
 		this.farChartDistance = -1;
@@ -217,7 +218,7 @@ public class EyeTestResults
 		this.ScleralDepUsed = false;
 		this.directOpthScopeUsed = false;
 		this.otherNoteGiven = false;
-		this.otherNoteText = false;
+		this.otherNoteText = "";
 		this.patientAdvisedDfe = false;
 		this.dfeResched = false;
 		this.dfeDeclined = false;
@@ -258,6 +259,11 @@ public class EyeTestResults
 		this.glialRemOS = false;
 	}
 
+	public Integer getExamID()
+	{
+		return this.examID;
+	}
+	
 	public Integer getFarChartDistance() {
 		return farChartDistance;
 	}
@@ -858,11 +864,11 @@ public class EyeTestResults
 		this.otherNoteGiven = otherNoteGiven;
 	}
 
-	public Boolean getOtherNoteText() {
+	public String getOtherNoteText() {
 		return otherNoteText;
 	}
 
-	public void setOtherNoteText(Boolean otherNoteText) {
+	public void setOtherNoteText(String otherNoteText) {
 		this.otherNoteText = otherNoteText;
 	}
 

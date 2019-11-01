@@ -36,6 +36,7 @@ public class AppointmentTableManager{
 										+ "doctorToSee			Integer,\n"
 										+ "FOREIGN KEY(patientID) \n"
 										+ "	REFERENCES patientTable(patientID)\n"
+										+ "ON DELETE CASCADE \n"
 										+ ");";
 
 		try
@@ -80,7 +81,7 @@ public class AppointmentTableManager{
 		{
 			System.out.println("addAppointment(" + patientID.toString() + ") error: " + e.getMessage());
 		}
-		System.out.println("getNewAppointment returning entry ID " + apptID.toString());
+		//System.out.println("getNewAppointment returning entry ID " + apptID.toString());
 		return theNewAppointment;
 	}
 	
@@ -100,7 +101,7 @@ public class AppointmentTableManager{
 
 			PreparedStatement theSQLstatement = conn.prepareStatement(theSQLstatementStr);
 			theSQLstatement.setInt(1, apptID);
-			ResultSet appointmentInfo = theSQLstatement.executeQuery(theSQLstatementStr);
+			ResultSet appointmentInfo = theSQLstatement.executeQuery();
 			apptToReturn = new Appointment(appointmentInfo.getInt("apptID"), appointmentInfo.getInt("patientID"));
 			 
 			apptToReturn.setPatientName(appointmentInfo.getString("patientName"));
@@ -266,10 +267,32 @@ public class AppointmentTableManager{
 		}
 		catch(SQLException e)
 		{
-			System.out.println("deletePatient(" + apptID.toString() + ") error: " + e.getMessage());
+			System.out.println("deleteAppointment(" + apptID.toString() + ") error: " + e.getMessage());
 		}
 	}
+	
+	public Integer getNumOfAppointmentEntries()
+	{
+		ResultSet queryResults = null;
+		Integer numOfAppts = -1;
+		String sqlString = "SELECT COUNT(apptID) FROM appointmentsTable";
+		
+		
+		try
+		{
 
+			PreparedStatement theSQLstatement = conn.prepareStatement(sqlString);
+			queryResults = theSQLstatement.executeQuery();
+			numOfAppts = queryResults.getInt(1);
+		}
+		catch (SQLException e)
+		{
+			System.out.println("getNumOfAppointmentEntries() error: " + e.getMessage());
+		}
+
+		System.out.println("getNumOfAppointmentEntries: " + numOfAppts.toString());
+		return numOfAppts;
+	}
 
 	/**
 	* Prints all entries in Appointments Table to console.
