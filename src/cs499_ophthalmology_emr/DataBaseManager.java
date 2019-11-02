@@ -1,6 +1,8 @@
 
 package cs499_ophthalmology_emr;
 import java.sql.*;
+import java.time.Duration;
+import java.time.Instant;
 import java.util.HashSet;
 import org.sqlite.SQLiteConfig;
 import java.util.ArrayList;
@@ -98,11 +100,10 @@ public class DataBaseManager {
 	 * and associated with a specific appointmentID and patientID.
 	 * @return a new EyeTestResults object with unique IDs, ready to use.
 	 */
-	public EyeTestResults getNewEyeTestResults()
+	public EyeTestResults getNewEyeTestResults(Integer patientID, Integer apptID)
 	{
-		//TODO: Implement this and TableManager function.
-		System.out.println("DataBaseManager.getNewEyeTestResults() not yet implemented.");
-		return null;
+		return testResultsTable.getNewEyeTestResults(patientID, apptID);
+
 	}
 	
 	/**
@@ -129,9 +130,12 @@ public class DataBaseManager {
 	 */
 	public void save(EyeTestResults theResultsObj)
 	{
-		//TODO: Impletment TableManager function.
-		System.out.println("DataBaseManager.save(EyeTestResults) not yet implemented.");
-		//testResultsTable.saveEyeTestResultsToSQL(theResultsObj);
+		testResultsTable.saveEyeTestResultsToSQL(theResultsObj);
+	}
+	
+	public Integer getNumOfPatientEntries()
+	{
+		return patientTable.getNumOfPatientEntries();
 	}
 	
 	/**
@@ -143,6 +147,11 @@ public class DataBaseManager {
 	public Patient getPatientByID(Integer patientID)
 	{
 		return patientTable.getPatient(patientID);
+	}
+	
+	public ArrayList<Patient> getAllPatients()
+	{
+		return patientTable.getAllPatients();
 	}
 	
 	/**
@@ -182,15 +191,20 @@ public class DataBaseManager {
 	 * @param examID the ID to match
 	 * @return the matching EyeTestResults object.
 	 */
-	public EyeTestResults getExamResultsByID(Integer examID)
+	public EyeTestResults getExamResultsByExamID(Integer examID)
 	{
-		//TODO: Implement TableManager function.
-		System.out.println("DataBaseManager.getExamResultsByID() not yet implemented.");
-		//return testResultsTable.getExamResultsByID(examID);
-		return null;
+		return testResultsTable.getEyeTestResultsByExamID(examID);
 	}
 	
-	// TODO: EyeTestResultsTable related functions.
+	public EyeTestResults getExamResultsByApptID(Integer apptID)
+	{
+		return testResultsTable.getEyeTestResultsByApptID(apptID);
+	}
+	
+	public ArrayList<EyeTestResults> getAllExamResultsForPatient(Integer patientID)
+	{
+		return testResultsTable.getAllEyeTestResultsByPatient(patientID);
+	}
 	
 	/**
 	 * Deletes a patient from the SQL database.
@@ -198,7 +212,14 @@ public class DataBaseManager {
 	 */
 	public void delete(Patient thePatientObj)
 	{
-		patientTable.deletePatient(thePatientObj);
+		//Integer patientID = thePatientObj.getPatientID();
+		
+		//ArrayList<Appointment> itsAppts = getPatientAppointmentList(thePatientObj);
+		
+		//itsAppts.forEach(appt -> delete(getExamResultsByApptID(appt.getApptID()))); // Delete SQL entries for patient's Eye Test Results.
+		//itsAppts.forEach(appt -> delete(appt));										// Delete SQL entries for patient's Appointments.
+		
+		patientTable.deletePatient(thePatientObj);									// Delete SQL entry for this Patient.
 	}
 	
 	/**
@@ -207,7 +228,8 @@ public class DataBaseManager {
 	 */
 	public void delete(Appointment theApptObj)
 	{
-		appointmentTable.deleteAppointment(theApptObj.getApptID());
+		Integer apptID = theApptObj.getApptID();
+		appointmentTable.deleteAppointment(apptID);		// Delete SQL entry for this Appointment.
 	}
 	
 	/**
@@ -216,7 +238,7 @@ public class DataBaseManager {
 	 */
 	public void delete(EyeTestResults theResultsObj)
 	{
-		// TODO: implement TableManager function.
+		testResultsTable.deleteEyeTestResult(theResultsObj.getExamID());
 	}
 	
 	///////////////////////////////// Test Methods and Data ///////////////////////////////
@@ -227,32 +249,130 @@ public class DataBaseManager {
 	public void doTest()
 	{
 		System.out.println("\nBegin DB_Interface.doTest()...");
-		// Get a new patient object from SQL handler.
-		Patient testSubject1 = patientTable.getNewPatient(); // Get the actual Patient object.
-		Integer patient1ID = testSubject1.getPatientID();	// Get the Patient object's patientID.
-		System.out.println(patient1ID.toString());
-		
-		
-		// Get a new Appointment object and attach it to the Patient object.
-		Appointment itsAppointment = appointmentTable.getNewAppointment(patient1ID);
-		testSubject1.attachAppointment(itsAppointment);
-		itsAppointment.setPatientName(testSubject1.getName());
-		System.out.println(itsAppointment.getPatientName());
-		itsAppointment.setArrivalStatus(2);
-		appointmentTable.saveAppointmentToSQL(itsAppointment);
-		//itsAppointment = appointmentTable.getNewAppointment(patient1ID);
-		//testSubject1.attachAppointment(itsAppointment);
+		makeNewPatientsFillArrayTest();
+		getAllPatientsTest();
+		addAppointmentsAndExamsToAllPatientsTest();
+		Appointment appt5 = getAppointmentByID(3);
 		
 		patientTable.printAllEntries();
 		appointmentTable.printAllEntries();
-		
-		// Clean up.
-		//appointmentTable.deleteAppointment(itsAppointment.getApptID());
-		//patientTable.deletePatient(patient1ID);
-		
+		testResultsTable.printAllEntries();
+		try{
+		Thread.sleep(5000);
+		} catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+		delete(appt5);
+		appointmentTable.printAllEntries();
+		testResultsTable.printAllEntries();
 		System.out.println("End DB_Interface.doTest().\n");
 	}
 	
-
+	private void makeNewPatientsFillArrayTest()
+	{
+		ArrayList<Patient> patients = new ArrayList<Patient>();
+		Instant retrievePatientsStart;
+		Instant retrievePatientsEnd;
+		Instant savePatientsStart;
+		Instant savePatientsEnd;
+		
+		Integer numPatients = 4;
+		long nsGetNew = 0;
+		long nsSaveNew = 0;
+		
+		retrievePatientsStart = Instant.now();
+		
+		for(int i = 1; i <= numPatients; i++)
+		{
+			Patient aPatient = patientTable.getTestPatientObject();
+			patients.add(aPatient);
+		}
+		
+		retrievePatientsEnd = Instant.now();
+		
+		nsGetNew = Duration.between(retrievePatientsStart, retrievePatientsEnd).toNanos();
+		
+		/////
+		
+		savePatientsStart = Instant.now();
+		
+		patients.forEach((patient -> save(patient)));
+		
+		savePatientsEnd = Instant.now();
+		
+		nsSaveNew = Duration.between(savePatientsStart, savePatientsEnd).toNanos();
+		
+		System.out.println("makeNewPatientsFillArrayTest duration: " + nsGetNew + " nanoseconds for " + numPatients + " entries.\n");
+		System.out.println("savePatientsyTest duration: " + nsSaveNew + " nanoseconds for " + numPatients + " entries.\n");
+	}
 	
+	private ArrayList<Patient> getAllPatientsTest()
+	{
+		ArrayList<Patient> patients;
+		Instant retrievePatientsStart;
+		Instant retrievePatientsEnd;
+		Integer numPatients = getNumOfPatientEntries();
+		long ns = 0;
+		
+		retrievePatientsStart = Instant.now();
+		patients = getAllPatients();
+		retrievePatientsEnd = Instant.now();
+		
+		ns = Duration.between(retrievePatientsStart, retrievePatientsEnd).toNanos();
+		
+		System.out.println("\ngetAllPatientsFillArrayTest duration: " + ns + " nanoseconds for " + numPatients + " entries.\n");
+		
+		return patients;
+	}
+	
+	private void addAppointmentsAndExamsToAllPatientsTest()
+	{
+		
+		ArrayList<Patient> thePatients = patientTable.getAllPatients();
+		Integer numPatients = patientTable.getNumOfPatientEntries();
+		
+		for(int i = 1; i <= numPatients; i++)
+		{
+			System.out.println("addAppointmentsAndExamsToAllPatientsTest: " + i);
+			Patient currentPatient = thePatients.get(i-1);
+			Integer patientID = currentPatient.getPatientID();
+			
+			
+			Appointment anAppt = getNewAppointment(patientID);
+			Integer apptID = anAppt.getApptID();
+			anAppt.setAppointmentTime(1000);
+			save(anAppt);
+			
+			EyeTestResults examResults = getNewEyeTestResults(patientID, apptID);
+			examResults.setFarChartDistance(1);
+			save(examResults);
+			
+			
+			
+			anAppt = getNewAppointment(patientID);
+			apptID = anAppt.getApptID();
+			anAppt.setAppointmentTime(2000);
+			save(anAppt);
+			
+			examResults = getNewEyeTestResults(patientID, apptID);
+			examResults.setFarChartDistance(2);
+			save(examResults);
+			
+			
+			
+			anAppt = getNewAppointment(patientID);
+			apptID = anAppt.getApptID();
+			anAppt.setAppointmentTime(3000);
+			save(anAppt);
+			
+			examResults = getNewEyeTestResults(patientID, apptID);
+			examResults.setFarChartDistance(3);
+			save(examResults);
+			
+		}
+		
+	}
+	
+
 }

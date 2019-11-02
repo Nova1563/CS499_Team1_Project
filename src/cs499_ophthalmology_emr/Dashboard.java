@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package cs499_ophthalmology_emr;
 
+package cs499_ophthalmology_emr;
+import javax.swing.JToggleButton; 
 /**
  *
  * @author angelaallison
@@ -127,26 +128,20 @@ public class Dashboard extends javax.swing.JFrame {
         
         // This is to see how many clicks the user did
         System.out.println("Mouse pressed: # of clicks: " + evt.getClickCount());
-       
-       /*switch(evt.getClickCount())
-       {
-           case 1:            
-               menubar.setVisible(false);
-               break;
-           case 2
-       }*/
-        menubar.setVisible(true);
-        if(evt.getClickCount() == 1 )
-        {
-            //menubar.setSize(40,790);
-            menubar.setVisible(false);
-           
-            
-        }
-        else
-        {
-            menubar.setVisible(false);
-        }
+     
+//        JToggleButton toggleBttn = new JToggleButton("Click");
+//        ItemListener itemListener = new ItemListener()
+//        {
+//            public void itemStateChanged(evt itemEvent) {
+//                int state = itemEvent.getStateChange();
+//        if (state == evt.SELECTED) {
+//            System.out.println("Selected"); // show your message here
+//        } else {
+//            System.out.println("Deselected"); // remove your message
+//        }
+//    }
+//            
+//        };
         
         
         

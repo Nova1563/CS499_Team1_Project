@@ -12,7 +12,7 @@ def load2colListFromFile():
 	with open(INPUT_CSV, "r") as inFile:
 		tableRow = 0
 		for fileLine in inFile:
-			print("fileLine: " + fileLine + "\n")
+			#print("fileLine: " + fileLine + "\n")
 			rowElements = fileLine.split(",")
 			fieldName = rowElements[0]
 			fieldType = rowElements[1]
@@ -23,13 +23,13 @@ def load2colListFromFile():
 			#tableList[tableRow][1] = rowElements[1]
 			#print(tableList[tableRow][0] + ": " + tableList[tableRow][1] + "\n")
 			tableRow += 1
-	print(tableList)
+	#print(tableList)
 	
 def load3colListFromFile():
 	with open(INPUT_CSV, "r") as inFile:
 		tableRow = 0
 		for fileLine in inFile:
-			print("fileLine: " + fileLine + "\n")
+			#print("fileLine: " + fileLine + "\n")
 			rowElements = fileLine.split(",")
 			fieldName = rowElements[0]
 			fieldSQLType = rowElements[1]
@@ -40,7 +40,7 @@ def load3colListFromFile():
 			#tableList[tableRow][1] = rowElements[1]
 			#print(tableList[tableRow][0] + ": " + tableList[tableRow][1] + "\n")
 			tableRow += 1
-	print(tableList)
+	#print(tableList)
 
 def generateInitSqlTableJavaFromList():
 	sqlString = "createTableString = \"CREATE TABLE IF NOT EXISTS " + TABLE_NAME + "(\\n\"\n"
@@ -67,16 +67,54 @@ def generateUpdateTableFieldsStatement():
 	print("\n\nSQL Statement:\n" + sqlString + "\n")
 	
 	javaString = "PreparedStatement theSQLstatement = conn.preparedStatement(sqlString);\n\n"
-	rowNum = 0
+	rowNum = 1
 	for tableRow in tableList:
-		javaString += "theSQLstatement.set" + tableRow[2] + "(\"" + str(rowNum) + "\" , \t\t \\\\ " + tableRow[0] + "\n"
+		theSetType = ""
+		if tableRow[2] == "Integer":
+			theSetType = "Int"
+		elif tableRow[2] == "Text":
+			theSetType = "String"
+		elif tableRow[2] == "Real":
+			theSetType = "Double"
+		else:
+			theSetType = tableRow[2]
+		 
+		javaString += "theSQLstatement.set" + theSetType + "(" + str(rowNum) + " , theResults.get" + tableRow[0][0].upper() + tableRow[0][1:] + "());\t\t // " + tableRow[0] + "\n"
 		rowNum += 1
 		
 	print("\nJava code:\n" + javaString + "\n")
 	
+def generateLoadJavaObjectStatement():
+	javaString = ""
+	
+	for tableRow in tableList:
+		theGetType = ""
+		if tableRow[2] == "Integer":
+			theGetType = "Int"
+		elif tableRow[2] == "Text":
+			theGetType = "String"
+		elif tableRow[2] == "Real":
+			theGetType = "Double"
+		else:
+			theGetType = tableRow[2]
+			
+		javaString += "theFoundExam.set" + tableRow[0][0].upper() + tableRow[0][1:] + "(theResults.get" + theGetType + "(\"" + tableRow[0] + "\"));\n"
+	
+	print(javaString);
+	
+def generatePrintAllFieldsStatement():
+	javaString = ""
+	
+	for tableRow in tableList:
+		javaString += "+ \"\\t" + tableRow[0] + ": \" + queryResults.get" + tableRow[2] + "(\"" + tableRow[0] + "\")\n";
+		
+	print(javaString)
 	
 #def generateSelectFieldsFromID():
 #	sqlString = "Select from "
 		
 load3colListFromFile()
 generateUpdateTableFieldsStatement()
+#generateInitSqlTableJavaFromList()
+#generatePrintAllFieldsStatement()
+#generateLoadJavaObjectStatement()
