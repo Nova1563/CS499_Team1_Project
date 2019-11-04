@@ -8,7 +8,7 @@ package cs499_ophthalmology_emr;
 public class CS499_Ophthalmology_EMR {
 	public static void main( String args[] )
 	{
-		DataBaseManager dataBase = DataBaseManager.getInstance();
+		//DataBaseManager dataBase = DataBaseManager.getInstance();
 		
 		int newPatientID = -1;
 		int newAppointmentID = -1;
