@@ -11,16 +11,16 @@ package cs499_ophthalmology_emr;
  */
 public class Appointment 
 {
-    private final int apptID;	
-    private final int patientID;
+    private final Integer apptID;	
+    private final Integer patientID;
 	private String patientName;
 	private String reasonForVisit;
 	private Integer apptDate;
 
-    private int appointmentTime;
-    private int arrivalStatus;
-    private int arrivalTime;
-    private int doctorToSee;
+    private Integer appointmentTime;
+    private Integer arrivalStatus;
+    private Integer arrivalTime;
+    private Integer doctorToSee;
     
 	public Appointment(Integer _apptID, Integer _patientID)
 	{
@@ -32,6 +32,7 @@ public class Appointment
 		this.apptDate = -1;
 		this.appointmentTime = -1;
 		this.arrivalStatus = -1;
+		this.arrivalTime = -1;
 		this.doctorToSee = -1;		
 	}
     
@@ -39,14 +40,14 @@ public class Appointment
     /**
      * @return the appID
      */
-    public int getApptID() {
+    public Integer getApptID() {
         return apptID;
     }
 
     /**
      * @return the patientID
      */
-    public int getPatientID() {
+    public Integer getPatientID() {
         return patientID;
     }
 	
@@ -79,56 +80,56 @@ public class Appointment
     /**
      * @return the appointmentTime
      */
-    public int getAppointmentTime() {
+    public Integer getAppointmentTime() {
         return appointmentTime;
     }
 
     /**
      * @param appointmentTime the appointmentTime to set
      */
-    public void setAppointmentTime(int appointmentTime) {
+    public void setAppointmentTime(Integer appointmentTime) {
         this.appointmentTime = appointmentTime;
     }
 
     /**
      * @return the arrivalStatus
      */
-    public int getArrivalStatus() {
+    public Integer getArrivalStatus() {
         return arrivalStatus;
     }
 
     /**
      * @param arrivalStatus the arrivalStatus to set
      */
-    public void setArrivalStatus(int arrivalStatus) {
+    public void setArrivalStatus(Integer arrivalStatus) {
         this.arrivalStatus = arrivalStatus;
     }
 
     /**
      * @return the arrivalTime
      */
-    public int getArrivalTime() {
+    public Integer getArrivalTime() {
         return arrivalTime;
     }
 
     /**
      * @param arrivalTime the arrivalTime to set
      */
-    public void setArrivalTime(int arrivalTime) {
+    public void setArrivalTime(Integer arrivalTime) {
         this.arrivalTime = arrivalTime;
     }
 
     /**
      * @return the doctorToSee
      */
-    public int getDoctorToSee() {
+    public Integer getDoctorToSee() {
         return doctorToSee;
     }
 
     /**
      * @param doctorToSee the doctorToSee to set
      */
-    public void setDoctorToSee(int doctorToSee) {
+    public void setDoctorToSee(Integer doctorToSee) {
         this.doctorToSee = doctorToSee;
     }
     

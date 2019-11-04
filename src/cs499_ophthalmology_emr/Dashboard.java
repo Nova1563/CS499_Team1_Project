@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package cs499_ophthalmology_emr;
 
+package cs499_ophthalmology_emr;
+import javax.swing.JToggleButton; 
 /**
  *
  * @author angelaallison
@@ -17,7 +18,7 @@ public class Dashboard extends javax.swing.JFrame {
     public Dashboard() {
         initComponents();
         
-        menubar.setSize(240,792);
+     //   menubar.setSize(240,792);
     }
 
     /**
@@ -37,11 +38,12 @@ public class Dashboard extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        background.setBackground(new java.awt.Color(255, 255, 255));
+        background.setBackground(new java.awt.Color(204, 204, 204));
         background.setForeground(new java.awt.Color(255, 255, 255));
         background.setLayout(null);
 
         menubar.setBackground(new java.awt.Color(0, 0, 0));
+        menubar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         menubar.setForeground(new java.awt.Color(0, 0, 0));
         menubar.setToolTipText("");
         menubar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -54,15 +56,17 @@ public class Dashboard extends javax.swing.JFrame {
         menubar.setLayout(menubarLayout);
         menubarLayout.setHorizontalGroup(
             menubarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 240, Short.MAX_VALUE)
+            .addGap(0, 236, Short.MAX_VALUE)
         );
         menubarLayout.setVerticalGroup(
             menubarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 790, Short.MAX_VALUE)
+            .addGap(0, 786, Short.MAX_VALUE)
         );
 
         background.add(menubar);
         menubar.setBounds(0, 60, 240, 790);
+
+        jPanel1.setBackground(new java.awt.Color(102, 102, 102));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cs499_ophthalmology_emr/images/menu_1.png"))); // NOI18N
         jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -102,11 +106,11 @@ public class Dashboard extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, 1133, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, 758, Short.MAX_VALUE)
         );
 
         pack();
@@ -122,7 +126,23 @@ public class Dashboard extends javax.swing.JFrame {
     private void jLabel1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MousePressed
         // TODO add your handling code here:
         
-        menubar.setSize(0,0);
+        // This is to see how many clicks the user did
+        System.out.println("Mouse pressed: # of clicks: " + evt.getClickCount());
+     
+//        JToggleButton toggleBttn = new JToggleButton("Click");
+//        ItemListener itemListener = new ItemListener()
+//        {
+//            public void itemStateChanged(evt itemEvent) {
+//                int state = itemEvent.getStateChange();
+//        if (state == evt.SELECTED) {
+//            System.out.println("Selected"); // show your message here
+//        } else {
+//            System.out.println("Deselected"); // remove your message
+//        }
+//    }
+//            
+//        };
+        
         
         
     }//GEN-LAST:event_jLabel1MousePressed

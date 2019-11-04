@@ -16,15 +16,15 @@ public class Patient
 {
     private String name;
     private String address;
-    private int age;
-    private int zip;
+    private Integer age;
+    private Integer zip;
     private final Integer patientID;
     private String homePhone;
     private String workPhone;
     private String mobilePhone;
     private String gender;
     private String title;
-    private int dateOfBirth;
+    private Integer dateOfBirth;
     private String emailAddress;
     private String ssn;
     private String emgergContactNum;
@@ -32,8 +32,8 @@ public class Patient
     private String insProvider;
     private String insContractNo;
     private String insGroupNo;
-    private int insEffectiveDate;
-    private double insCoPayAmount;
+    private Integer insEffectiveDate;
+    private Double insCoPayAmount;
     private String insProviderAddr;
     private String insProviderPhone;
     
@@ -111,35 +111,35 @@ public class Patient
     /**
      * @return the age
      */
-    public int getAge() {
+    public Integer getAge() {
         return age;
     }
 
     /**
      * @param age the age to set
      */
-    public void setAge(int age) {
+    public void setAge(Integer age) {
         this.age = age;
     }
 
     /**
      * @return the zip
      */
-    public int getZip() {
+    public Integer getZip() {
         return zip;
     }
 
     /**
      * @param zip the zip to set
      */
-    public void setZip(int zip) {
+    public void setZip(Integer zip) {
         this.zip = zip;
     }
 
     /**
      * @return the patientID
      */
-    public int getPatientID() {
+    public Integer getPatientID() {
         return patientID;
     }
 
@@ -147,7 +147,7 @@ public class Patient
      * @param patientID the patientID to set
      */
 /*	
-    public void setPatientID(int patientID) {
+    public void setPatientID(Integer patientID) {
         this.patientID = patientID;
     }
 */
@@ -224,14 +224,14 @@ public class Patient
     /**
      * @return the dateOfBirth
      */
-    public int getDateOfBirth() {
+    public Integer getDateOfBirth() {
         return dateOfBirth;
     }
 
     /**
      * @param dateOfBirth the dateOfBirth to set
      */
-    public void setDateOfBirth(int dateOfBirth) {
+    public void setDateOfBirth(Integer dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 
@@ -336,14 +336,14 @@ public class Patient
     /**
      * @return the insEffectiveDate
      */
-    public int getInsEffectiveDate() {
+    public Integer getInsEffectiveDate() {
         return insEffectiveDate;
     }
 
     /**
      * @param insEffectiveDate the insEffectiveDate to set
      */
-    public void setInsEffectiveDate(int insEffectiveDate) {
+    public void setInsEffectiveDate(Integer insEffectiveDate) {
         this.insEffectiveDate = insEffectiveDate;
     }
 
