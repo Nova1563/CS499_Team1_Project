@@ -26,50 +26,136 @@ public class MainWindow extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
 
         background = new javax.swing.JPanel();
         sideMenu = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
         jToolBar1 = new javax.swing.JToolBar();
-        jLabel1 = new javax.swing.JLabel();
+        jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         background.setBackground(new java.awt.Color(255, 255, 255));
 
         sideMenu.setBackground(new java.awt.Color(0, 153, 204));
+        sideMenu.setLayout(new java.awt.GridBagLayout());
 
-        javax.swing.GroupLayout sideMenuLayout = new javax.swing.GroupLayout(sideMenu);
-        sideMenu.setLayout(sideMenuLayout);
-        sideMenuLayout.setHorizontalGroup(
-            sideMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 85, Short.MAX_VALUE)
-        );
-        sideMenuLayout.setVerticalGroup(
-            sideMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 597, Short.MAX_VALUE)
-        );
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cs499_ophthalmology_emr/images/patientIcon.jpg"))); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(32, 30, 0, 0);
+        sideMenu.add(jButton1, gridBagConstraints);
+
+        jLabel3.setFont(new java.awt.Font("Courier New", 0, 11)); // NOI18N
+        jLabel3.setLabelFor(jButton1);
+        jLabel3.setText("Patient Portal");
+        jLabel3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridwidth = 4;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(11, 10, 0, 10);
+        sideMenu.add(jLabel3, gridBagConstraints);
+
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cs499_ophthalmology_emr/images/dadIcon.jpg"))); // NOI18N
+        jButton2.setToolTipText("");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.ipadx = -25;
+        gridBagConstraints.ipady = -8;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(47, 26, 0, 0);
+        sideMenu.add(jButton2, gridBagConstraints);
+        jButton2.getAccessibleContext().setAccessibleName("dadButton");
+
+        jLabel2.setFont(new java.awt.Font("Courier New", 0, 11)); // NOI18N
+        jLabel2.setText(" Appointments");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.gridwidth = 4;
+        gridBagConstraints.ipadx = 6;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(6, 10, 0, 10);
+        sideMenu.add(jLabel2, gridBagConstraints);
+        jLabel2.getAccessibleContext().setAccessibleName("dadLabel");
+
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cs499_ophthalmology_emr/images/insurance.jpg"))); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.ipadx = -10;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(51, 18, 0, 0);
+        sideMenu.add(jButton3, gridBagConstraints);
+        jButton3.getAccessibleContext().setAccessibleName("insButton");
+
+        jLabel4.setFont(new java.awt.Font("Courier New", 0, 11)); // NOI18N
+        jLabel4.setText("Insurance");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 5;
+        gridBagConstraints.gridwidth = 4;
+        gridBagConstraints.ipadx = 24;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(6, 30, 264, 10);
+        sideMenu.add(jLabel4, gridBagConstraints);
+        jLabel4.getAccessibleContext().setAccessibleName("InsuranceLabel");
 
         jToolBar1.setRollover(true);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cs499_ophthalmology_emr/images/home_1.png"))); // NOI18N
-        jLabel1.setAutoscrolls(true);
-        jToolBar1.add(jLabel1);
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cs499_ophthalmology_emr/images/home.03.png"))); // NOI18N
+        jButton4.setFocusable(false);
+        jButton4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton4.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(jButton4);
+
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cs499_ophthalmology_emr/images/questionMark.png"))); // NOI18N
+        jButton5.setActionCommand("");
+        jButton5.setFocusable(false);
+        jButton5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton5.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(jButton5);
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cs499_ophthalmology_emr/images/eyelogo.png"))); // NOI18N
 
         javax.swing.GroupLayout backgroundLayout = new javax.swing.GroupLayout(background);
         background.setLayout(backgroundLayout);
         backgroundLayout.setHorizontalGroup(
             backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jToolBar1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(backgroundLayout.createSequentialGroup()
                 .addComponent(sideMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 792, Short.MAX_VALUE))
-            .addComponent(jToolBar1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(246, 246, 246)
+                .addComponent(jLabel5)
+                .addContainerGap(180, Short.MAX_VALUE))
         );
         backgroundLayout.setVerticalGroup(
             backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(backgroundLayout.createSequentialGroup()
                 .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(sideMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(backgroundLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(sideMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, backgroundLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel5)
+                        .addGap(72, 72, 72))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -123,7 +209,15 @@ public class MainWindow extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel background;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JPanel sideMenu;
     // End of variables declaration//GEN-END:variables
