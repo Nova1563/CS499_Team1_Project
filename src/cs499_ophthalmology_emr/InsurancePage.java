@@ -60,6 +60,7 @@ public class InsurancePage extends javax.swing.JPanel {
         jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel2.setFont(new java.awt.Font("Courier New", 0, 11)); // NOI18N
 
+        jLabel2.setFont(new java.awt.Font("Courier New", 0, 11)); // NOI18N
         jLabel2.setText("New Insurance Claim Form:");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -69,7 +70,7 @@ public class InsurancePage extends javax.swing.JPanel {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel2)
-                .addContainerGap(520, Short.MAX_VALUE))
+                .addContainerGap(490, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
