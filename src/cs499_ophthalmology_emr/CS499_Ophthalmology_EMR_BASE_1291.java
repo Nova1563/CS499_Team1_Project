@@ -21,16 +21,10 @@ public class CS499_Ophthalmology_EMR {
 		
 		//dataBase.patientInfo.printAllEntries();
 		//dataBase.appointments.printAllEntries();
-<<<<<<< HEAD
-                MainWindow mw = new MainWindow();
-                mw.setVisible(true);
-             
-=======
                 
-              MainDashboard dash = new MainDashboard();
+                Dashboard dash = new Dashboard();
                 
-              dash.setVisible(true);
->>>>>>> 5b9e21eb9069fefef611b2f434d42ce556cd5705
+                dash.setVisible(true);
                 
         
 
