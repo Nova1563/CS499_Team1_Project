@@ -14,14 +14,16 @@ import java.awt.*;
 public class MainDashboard extends javax.swing.JFrame {
     
     public PatientPortal pPanel;
-    public JPanel MainWindow; 
+    public JPanel mainWindow; 
     /**
      * Creates new form MainWindow
      */
     public MainDashboard() {
         initComponents();
+		mainWindow = new JPanel();
         pPanel = new PatientPortal();
-        MainWindow.add(pPanel);
+		
+        mainWindow.add(pPanel);
  
         
         
