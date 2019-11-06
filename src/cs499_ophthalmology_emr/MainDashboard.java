@@ -14,20 +14,34 @@ import java.awt.*;
 public class MainDashboard extends javax.swing.JFrame {
     
     public PatientPortal pPanel;
-    public JPanel mainWindow; 
+    public JPanel mainWindow;		// TODO: Remove this.
+	public AppointmentDisplay appointmentPanel;
+	public InsurancePage insurancePanel;
     /**
      * Creates new form MainWindow
      */
     public MainDashboard() {
         initComponents();
-		mainWindow = new JPanel();
+		//mainWindow = new JPanel();	// This JPanel doesn't exist anywhere. Use mainPanel to display cards and stuff
         pPanel = new PatientPortal();
+		appointmentPanel = new AppointmentDisplay();
+		insurancePanel = new InsurancePage();
 		
-        mainWindow.add(pPanel);
+        mainPanel.add(pPanel);
+		mainPanel.add(appointmentPanel);
+		mainPanel.add(insurancePanel);
  
         
         
     }
+	
+	public void hideAllPanelComponents(JPanel theComp)
+	{
+		for(Component itsComp : theComp.getComponents())
+		{
+			itsComp.setVisible(false);
+		}
+	}
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -41,17 +55,17 @@ public class MainDashboard extends javax.swing.JFrame {
 
         background = new javax.swing.JPanel();
         sideMenu = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        patientPortalDashButton = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        appointmentsDashButton = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
+        insuranceDashButton = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jToolBar1 = new javax.swing.JToolBar();
-        jButton4 = new javax.swing.JButton();
+        homeButton = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         mainPanel = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        emrLogoPanel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -60,10 +74,10 @@ public class MainDashboard extends javax.swing.JFrame {
         sideMenu.setBackground(new java.awt.Color(0, 153, 204));
         sideMenu.setLayout(new java.awt.GridBagLayout());
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cs499_ophthalmology_emr/images/patientIcon.jpg"))); // NOI18N
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        patientPortalDashButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cs499_ophthalmology_emr/images/patientIcon.jpg"))); // NOI18N
+        patientPortalDashButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                patientPortalDashButtonActionPerformed(evt);
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -72,11 +86,11 @@ public class MainDashboard extends javax.swing.JFrame {
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(32, 30, 0, 0);
-        sideMenu.add(jButton1, gridBagConstraints);
-        jButton1.getAccessibleContext().setAccessibleName("patientButton");
+        sideMenu.add(patientPortalDashButton, gridBagConstraints);
+        patientPortalDashButton.getAccessibleContext().setAccessibleName("patientButton");
 
         jLabel3.setFont(new java.awt.Font("Courier New", 0, 11)); // NOI18N
-        jLabel3.setLabelFor(jButton1);
+        jLabel3.setLabelFor(patientPortalDashButton);
         jLabel3.setText("Patient Portal");
         jLabel3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -87,8 +101,13 @@ public class MainDashboard extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(11, 10, 0, 10);
         sideMenu.add(jLabel3, gridBagConstraints);
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cs499_ophthalmology_emr/images/dadIcon.jpg"))); // NOI18N
-        jButton2.setToolTipText("");
+        appointmentsDashButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cs499_ophthalmology_emr/images/dadIcon.jpg"))); // NOI18N
+        appointmentsDashButton.setToolTipText("");
+        appointmentsDashButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                appointmentsDashButtonActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
@@ -96,8 +115,8 @@ public class MainDashboard extends javax.swing.JFrame {
         gridBagConstraints.ipady = -8;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(47, 26, 0, 0);
-        sideMenu.add(jButton2, gridBagConstraints);
-        jButton2.getAccessibleContext().setAccessibleName("dadButton");
+        sideMenu.add(appointmentsDashButton, gridBagConstraints);
+        appointmentsDashButton.getAccessibleContext().setAccessibleName("dadButton");
 
         jLabel2.setFont(new java.awt.Font("Courier New", 0, 11)); // NOI18N
         jLabel2.setText(" Appointments");
@@ -111,7 +130,12 @@ public class MainDashboard extends javax.swing.JFrame {
         sideMenu.add(jLabel2, gridBagConstraints);
         jLabel2.getAccessibleContext().setAccessibleName("dadLabel");
 
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cs499_ophthalmology_emr/images/insurance.jpg"))); // NOI18N
+        insuranceDashButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cs499_ophthalmology_emr/images/insurance.jpg"))); // NOI18N
+        insuranceDashButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                insuranceDashButtonActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 4;
@@ -119,8 +143,8 @@ public class MainDashboard extends javax.swing.JFrame {
         gridBagConstraints.ipadx = -10;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(51, 18, 0, 0);
-        sideMenu.add(jButton3, gridBagConstraints);
-        jButton3.getAccessibleContext().setAccessibleName("insButton");
+        sideMenu.add(insuranceDashButton, gridBagConstraints);
+        insuranceDashButton.getAccessibleContext().setAccessibleName("insButton");
 
         jLabel4.setFont(new java.awt.Font("Courier New", 0, 11)); // NOI18N
         jLabel4.setText("Insurance");
@@ -136,11 +160,16 @@ public class MainDashboard extends javax.swing.JFrame {
 
         jToolBar1.setRollover(true);
 
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cs499_ophthalmology_emr/images/home.03.png"))); // NOI18N
-        jButton4.setFocusable(false);
-        jButton4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton4.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar1.add(jButton4);
+        homeButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cs499_ophthalmology_emr/images/home.03.png"))); // NOI18N
+        homeButton.setFocusable(false);
+        homeButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        homeButton.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        homeButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                homeButtonActionPerformed(evt);
+            }
+        });
+        jToolBar1.add(homeButton);
 
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cs499_ophthalmology_emr/images/questionMark.png"))); // NOI18N
         jButton5.setFocusable(false);
@@ -157,11 +186,11 @@ public class MainDashboard extends javax.swing.JFrame {
         });
         mainPanel.setLayout(new java.awt.CardLayout());
 
-        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cs499_ophthalmology_emr/images/eyelogo.png"))); // NOI18N
-        jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        mainPanel.add(jLabel1, "card2");
+        emrLogoPanel.setBackground(new java.awt.Color(255, 255, 255));
+        emrLogoPanel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        emrLogoPanel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cs499_ophthalmology_emr/images/eyelogo.png"))); // NOI18N
+        emrLogoPanel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        mainPanel.add(emrLogoPanel, "card2");
 
         javax.swing.GroupLayout backgroundLayout = new javax.swing.GroupLayout(background);
         background.setLayout(backgroundLayout);
@@ -179,7 +208,7 @@ public class MainDashboard extends javax.swing.JFrame {
                 .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(sideMenu, javax.swing.GroupLayout.DEFAULT_SIZE, 626, Short.MAX_VALUE)
+                    .addComponent(sideMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
@@ -199,15 +228,35 @@ public class MainDashboard extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        pPanel.setVisible(true);
-        System.out.println("ugh");
+    private void patientPortalDashButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_patientPortalDashButtonActionPerformed
+        hideAllPanelComponents(mainPanel);
+		//emrLogoPanel.setVisible(false);
+		pPanel.setVisible(true);
+		
+        System.out.println("Yay panels!");
       
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_patientPortalDashButtonActionPerformed
 
     private void mainPanelComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_mainPanelComponentShown
         // TODO add your handling code here:
     }//GEN-LAST:event_mainPanelComponentShown
+
+    private void homeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeButtonActionPerformed
+        hideAllPanelComponents(mainPanel);
+		emrLogoPanel.setVisible(true);
+    }//GEN-LAST:event_homeButtonActionPerformed
+
+    private void insuranceDashButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insuranceDashButtonActionPerformed
+        // TODO add your handling code here:
+		hideAllPanelComponents(mainPanel);
+		insurancePanel.setVisible(true);
+    }//GEN-LAST:event_insuranceDashButtonActionPerformed
+
+    private void appointmentsDashButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_appointmentsDashButtonActionPerformed
+        // TODO add your handling code here:
+		hideAllPanelComponents(mainPanel);
+		appointmentPanel.setVisible(true);
+    }//GEN-LAST:event_appointmentsDashButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -250,18 +299,18 @@ public class MainDashboard extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton appointmentsDashButton;
     private javax.swing.JPanel background;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JLabel emrLogoPanel;
+    private javax.swing.JButton homeButton;
+    private javax.swing.JButton insuranceDashButton;
     private javax.swing.JButton jButton5;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JPanel mainPanel;
+    private javax.swing.JButton patientPortalDashButton;
     private javax.swing.JPanel sideMenu;
     // End of variables declaration//GEN-END:variables
 }
