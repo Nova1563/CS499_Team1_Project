@@ -42,7 +42,7 @@ public class PatientPageTemplate extends javax.swing.JPanel {
         setMaximumSize(new java.awt.Dimension(1000, 500));
         setPreferredSize(new java.awt.Dimension(900, 440));
 
-        jPanel1.setBackground(new java.awt.Color(0, 204, 153));
+        jPanel1.setBackground(new java.awt.Color(184, 134, 1));
 
         jFormattedTextField1.setText("John Doe");
 
