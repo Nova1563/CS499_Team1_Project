@@ -23,13 +23,15 @@ public class MainDashboard extends javax.swing.JFrame {
     public MainDashboard() {
         initComponents();
 		//mainWindow = new JPanel();	// This JPanel doesn't exist anywhere. Use mainPanel to display cards and stuff
-        pPanel = new PatientPortal();
+                pPanel = new PatientPortal();
 		appointmentPanel = new AppointmentDisplay();
 		insurancePanel = new InsurancePage();
 		
         mainPanel.add(pPanel);
 		mainPanel.add(appointmentPanel);
 		mainPanel.add(insurancePanel);
+                mainPanel.setVisible(true);
+                
       
     }
 	
@@ -61,18 +63,19 @@ public class MainDashboard extends javax.swing.JFrame {
         sideMenuDivider = new javax.swing.JPanel();
         sideMenuDivider1 = new javax.swing.JPanel();
         sideMenuDivider2 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        patientPortalTxt = new javax.swing.JLabel();
+        appointmentsTxt = new javax.swing.JLabel();
+        insuranceTxt = new javax.swing.JLabel();
+        copyRightsTxt = new javax.swing.JLabel();
         mainPanel = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        emrLogo = new javax.swing.JLabel();
+        weclcomeTxt = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1208, 730));
 
         background.setBackground(new java.awt.Color(255, 255, 255));
-        background.setLayout(null);
+        background.setPreferredSize(new java.awt.Dimension(1280, 730));
 
         toolBarJPanel.setBackground(new java.awt.Color(0, 0, 0));
         toolBarJPanel.setForeground(new java.awt.Color(0, 0, 0));
@@ -108,9 +111,6 @@ public class MainDashboard extends javax.swing.JFrame {
                     .addComponent(homeBttn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(16, 16, 16))
         );
-
-        background.add(toolBarJPanel);
-        toolBarJPanel.setBounds(0, 0, 940, 70);
 
         sideMenu.setBackground(new java.awt.Color(184, 134, 11));
         sideMenu.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 3, new java.awt.Color(0, 0, 0)));
@@ -193,39 +193,36 @@ public class MainDashboard extends javax.swing.JFrame {
         sideMenu.add(sideMenuDivider2);
         sideMenuDivider2.setBounds(0, 250, 120, 10);
 
-        jLabel3.setFont(new java.awt.Font("DecoType Naskh", 1, 15)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Patient Portal");
-        jLabel3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        sideMenu.add(jLabel3);
-        jLabel3.setBounds(-6, 204, 130, 20);
+        patientPortalTxt.setFont(new java.awt.Font("DecoType Naskh", 1, 15)); // NOI18N
+        patientPortalTxt.setForeground(new java.awt.Color(0, 0, 0));
+        patientPortalTxt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        patientPortalTxt.setText("Patient Portal");
+        patientPortalTxt.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        sideMenu.add(patientPortalTxt);
+        patientPortalTxt.setBounds(-6, 204, 130, 20);
 
-        jLabel2.setFont(new java.awt.Font("DecoType Naskh", 1, 15)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText(" Appointments");
-        sideMenu.add(jLabel2);
-        jLabel2.setBounds(0, 380, 120, 20);
-        jLabel2.getAccessibleContext().setAccessibleName("dadLabel");
+        appointmentsTxt.setFont(new java.awt.Font("DecoType Naskh", 1, 15)); // NOI18N
+        appointmentsTxt.setForeground(new java.awt.Color(0, 0, 0));
+        appointmentsTxt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        appointmentsTxt.setText(" Appointments");
+        sideMenu.add(appointmentsTxt);
+        appointmentsTxt.setBounds(0, 380, 120, 28);
+        appointmentsTxt.getAccessibleContext().setAccessibleName("dadLabel");
 
-        jLabel4.setFont(new java.awt.Font("DecoType Naskh", 1, 15)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("Insurance");
-        sideMenu.add(jLabel4);
-        jLabel4.setBounds(0, 570, 120, 20);
-        jLabel4.getAccessibleContext().setAccessibleName("InsuranceLabel");
+        insuranceTxt.setFont(new java.awt.Font("DecoType Naskh", 1, 15)); // NOI18N
+        insuranceTxt.setForeground(new java.awt.Color(0, 0, 0));
+        insuranceTxt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        insuranceTxt.setText("Insurance");
+        sideMenu.add(insuranceTxt);
+        insuranceTxt.setBounds(0, 570, 120, 28);
+        insuranceTxt.getAccessibleContext().setAccessibleName("InsuranceLabel");
 
-        jLabel1.setFont(new java.awt.Font("DecoType Naskh", 2, 13)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("CopyRights");
-        sideMenu.add(jLabel1);
-        jLabel1.setBounds(20, 670, 80, 16);
-
-        background.add(sideMenu);
-        sideMenu.setBounds(0, 0, 120, 730);
+        copyRightsTxt.setFont(new java.awt.Font("DecoType Naskh", 2, 13)); // NOI18N
+        copyRightsTxt.setForeground(new java.awt.Color(0, 0, 0));
+        copyRightsTxt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        copyRightsTxt.setText("CopyRights");
+        sideMenu.add(copyRightsTxt);
+        copyRightsTxt.setBounds(20, 670, 80, 16);
 
         mainPanel.setBackground(new java.awt.Color(255, 255, 255));
         mainPanel.setMaximumSize(new java.awt.Dimension(1000, 1000));
@@ -234,21 +231,36 @@ public class MainDashboard extends javax.swing.JFrame {
                 mainPanelComponentShown(evt);
             }
         });
-        mainPanel.setLayout(null);
+        mainPanel.setLayout(new java.awt.CardLayout());
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cs499_ophthalmology_emr/images/eyelogo.png"))); // NOI18N
-        mainPanel.add(jLabel5);
-        jLabel5.setBounds(170, 90, 400, 370);
+        emrLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cs499_ophthalmology_emr/images/eyelogo.png"))); // NOI18N
+        mainPanel.add(emrLogo, "card2");
 
-        jLabel6.setFont(new java.awt.Font("DecoType Naskh", 3, 48)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("Welcome");
-        mainPanel.add(jLabel6);
-        jLabel6.setBounds(130, 510, 480, 50);
+        weclcomeTxt.setFont(new java.awt.Font("DecoType Naskh", 3, 48)); // NOI18N
+        weclcomeTxt.setForeground(new java.awt.Color(0, 0, 0));
+        weclcomeTxt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        weclcomeTxt.setText("Welcome");
+        mainPanel.add(weclcomeTxt, "card3");
 
-        background.add(mainPanel);
-        mainPanel.setBounds(120, 70, 820, 660);
+        javax.swing.GroupLayout backgroundLayout = new javax.swing.GroupLayout(background);
+        background.setLayout(backgroundLayout);
+        backgroundLayout.setHorizontalGroup(
+            backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(toolBarJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(backgroundLayout.createSequentialGroup()
+                .addGap(120, 120, 120)
+                .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 820, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(sideMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        backgroundLayout.setVerticalGroup(
+            backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(backgroundLayout.createSequentialGroup()
+                .addComponent(toolBarJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 660, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(sideMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 730, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+
         mainPanel.getAccessibleContext().setAccessibleName("mainPanel");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -261,7 +273,7 @@ public class MainDashboard extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(background, javax.swing.GroupLayout.PREFERRED_SIZE, 730, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(background, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -275,8 +287,9 @@ public class MainDashboard extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         System.out.print("Patient Portal Bttn Clicked: " + evt.getClickCount());
-        pPanel.setVisible(true);	
-        System.out.println("Yay panels!");
+        
+        hideAllPanelComponents(mainPanel);
+        pPanel.setVisible(true);
     }//GEN-LAST:event_patientPortalBttnMouseClicked
 
     private void appointmentBttnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_appointmentBttnMouseClicked
@@ -340,22 +353,22 @@ public class MainDashboard extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel appointmentBttn;
+    private javax.swing.JLabel appointmentsTxt;
     private javax.swing.JPanel background;
+    private javax.swing.JLabel copyRightsTxt;
+    private javax.swing.JLabel emrLogo;
     private javax.swing.JLabel helpBttb;
     private javax.swing.JLabel homeBttn;
     private javax.swing.JLabel insuranceBttn;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel insuranceTxt;
     private javax.swing.JPanel mainPanel;
     private javax.swing.JLabel patientPortalBttn;
+    private javax.swing.JLabel patientPortalTxt;
     private javax.swing.JPanel sideMenu;
     private javax.swing.JPanel sideMenuDivider;
     private javax.swing.JPanel sideMenuDivider1;
     private javax.swing.JPanel sideMenuDivider2;
     private javax.swing.JPanel toolBarJPanel;
+    private javax.swing.JLabel weclcomeTxt;
     // End of variables declaration//GEN-END:variables
 }
