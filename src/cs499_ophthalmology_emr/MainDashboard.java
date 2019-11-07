@@ -75,7 +75,6 @@ public class MainDashboard extends javax.swing.JFrame {
         background.setLayout(null);
 
         toolBarJPanel.setBackground(new java.awt.Color(0, 0, 0));
-        toolBarJPanel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 0, 0), null));
         toolBarJPanel.setForeground(new java.awt.Color(0, 0, 0));
 
         homeBttn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cs499_ophthalmology_emr/images/homeIcon.png"))); // NOI18N
@@ -94,7 +93,7 @@ public class MainDashboard extends javax.swing.JFrame {
             .addGroup(toolBarJPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(homeBttn)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 843, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 847, Short.MAX_VALUE)
                 .addComponent(helpBttb)
                 .addGap(15, 15, 15))
         );
@@ -207,7 +206,7 @@ public class MainDashboard extends javax.swing.JFrame {
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText(" Appointments");
         sideMenu.add(jLabel2);
-        jLabel2.setBounds(0, 380, 120, 28);
+        jLabel2.setBounds(0, 380, 120, 20);
         jLabel2.getAccessibleContext().setAccessibleName("dadLabel");
 
         jLabel4.setFont(new java.awt.Font("DecoType Naskh", 1, 15)); // NOI18N
@@ -215,7 +214,7 @@ public class MainDashboard extends javax.swing.JFrame {
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Insurance");
         sideMenu.add(jLabel4);
-        jLabel4.setBounds(0, 570, 120, 28);
+        jLabel4.setBounds(0, 570, 120, 20);
         jLabel4.getAccessibleContext().setAccessibleName("InsuranceLabel");
 
         jLabel1.setFont(new java.awt.Font("DecoType Naskh", 2, 13)); // NOI18N
