@@ -12,7 +12,7 @@ package cs499_ophthalmology_emr;
 public class NewAppointmentForm extends javax.swing.JPanel {
 
     /**
-     * Creates new form NewAppointmentForm
+     * Creates new form NewPatientForm
      */
     public NewAppointmentForm() {
         initComponents();
