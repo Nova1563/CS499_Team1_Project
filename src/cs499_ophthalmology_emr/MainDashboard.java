@@ -72,7 +72,7 @@ public class MainDashboard extends javax.swing.JFrame {
         weclcomeTxt = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1208, 730));
+        setPreferredSize(new java.awt.Dimension(1280, 1024));
 
         background.setBackground(new java.awt.Color(255, 255, 255));
         background.setPreferredSize(new java.awt.Dimension(1280, 730));
@@ -96,7 +96,7 @@ public class MainDashboard extends javax.swing.JFrame {
             .addGroup(toolBarJPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(homeBttn)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 847, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 845, Short.MAX_VALUE)
                 .addComponent(helpBttb)
                 .addGap(15, 15, 15))
         );
@@ -206,7 +206,7 @@ public class MainDashboard extends javax.swing.JFrame {
         appointmentsTxt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         appointmentsTxt.setText(" Appointments");
         sideMenu.add(appointmentsTxt);
-        appointmentsTxt.setBounds(0, 380, 120, 28);
+        appointmentsTxt.setBounds(0, 380, 120, 20);
         appointmentsTxt.getAccessibleContext().setAccessibleName("dadLabel");
 
         insuranceTxt.setFont(new java.awt.Font("DecoType Naskh", 1, 15)); // NOI18N
@@ -214,7 +214,7 @@ public class MainDashboard extends javax.swing.JFrame {
         insuranceTxt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         insuranceTxt.setText("Insurance");
         sideMenu.add(insuranceTxt);
-        insuranceTxt.setBounds(0, 570, 120, 28);
+        insuranceTxt.setBounds(0, 570, 120, 20);
         insuranceTxt.getAccessibleContext().setAccessibleName("InsuranceLabel");
 
         copyRightsTxt.setFont(new java.awt.Font("DecoType Naskh", 2, 13)); // NOI18N
@@ -246,10 +246,10 @@ public class MainDashboard extends javax.swing.JFrame {
         background.setLayout(backgroundLayout);
         backgroundLayout.setHorizontalGroup(
             backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(toolBarJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(toolBarJPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(backgroundLayout.createSequentialGroup()
                 .addGap(120, 120, 120)
-                .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 820, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(sideMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         backgroundLayout.setVerticalGroup(
@@ -257,8 +257,8 @@ public class MainDashboard extends javax.swing.JFrame {
             .addGroup(backgroundLayout.createSequentialGroup()
                 .addComponent(toolBarJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 660, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addComponent(sideMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 730, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(sideMenu, javax.swing.GroupLayout.DEFAULT_SIZE, 730, Short.MAX_VALUE)
         );
 
         mainPanel.getAccessibleContext().setAccessibleName("mainPanel");
@@ -268,12 +268,12 @@ public class MainDashboard extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(background, javax.swing.GroupLayout.PREFERRED_SIZE, 938, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, 938, Short.MAX_VALUE)
+                .addGap(0, 0, 0))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(background, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
