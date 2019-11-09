@@ -6,7 +6,6 @@
 package cs499_ophthalmology_emr;
 
 import java.util.ArrayList;
-import javax.swing.table.AbstractTableModel;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -16,31 +15,25 @@ import javax.swing.table.DefaultTableModel;
 public class PatientPortal extends javax.swing.JPanel {
 	private ArrayList<Patient> patientList = null;
 	private DataBaseManager dataBase = DataBaseManager.getInstance();
+	private DefaultTableModel tableModel = null;
     /**
      * Creates new form PatientPortal
      */
     public PatientPortal() {
         initComponents();
+		tableModel = (DefaultTableModel) patientPortalTable.getModel();
 		loadTable();
-		
-		DefaultTableModel tableModel = (DefaultTableModel) patientPortalTable.getModel();
-		
-		System.out.println("Cols: " + tableModel.getColumnCount());
-		System.out.println("Rows: " + tableModel.getRowCount());
-		
     }
 	
 	private void loadTable()
 	{
-		DefaultTableModel tableModel = (DefaultTableModel) patientPortalTable.getModel();
-		
 		String patientName = null;
 		String patientAddr = null;
 		Integer patientDoB = null;
 		Integer patientID = null;
 		
 		patientList = dataBase.getAllPatients();
-		//tableModel.setRowCount(0);		// Clear all rows, in anticipation of update.
+		tableModel.setRowCount(0);		// Clear all rows, in anticipation of update.
 		
 		for (Patient currentPatient: patientList)
 		{
@@ -49,17 +42,9 @@ public class PatientPortal extends javax.swing.JPanel {
 			patientDoB = currentPatient.getDateOfBirth();
 			patientID = currentPatient.getPatientID();
 			
-			//Object[] rowInfo = new Object[]{ patientName, patientAddr, patientDoB, patientID };
-			
 			tableModel.addRow(new Object[] {patientName, patientAddr, patientDoB, patientID});
 		}
-		tableModel.fireTableDataChanged();
-		//patientPortalTable.invalidate();
 		
-		System.out.println(patientPortalTable.getValueAt(0, 0));
-		System.out.println(patientPortalTable.getValueAt(0, 1));
-		System.out.println(patientPortalTable.getValueAt(0, 2));
-		System.out.println(patientPortalTable.getValueAt(0, 3));
 	}
 
     /**
@@ -97,6 +82,16 @@ public class PatientPortal extends javax.swing.JPanel {
         });
 
         deletePatientButton.setText("Delete Patient");
+        deletePatientButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deletePatientButtonActionPerformed(evt);
+            }
+        });
+        deletePatientButton.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                deletePatientButtonKeyPressed(evt);
+            }
+        });
 
         editPatientButton.setText("Edit Patient");
         editPatientButton.addActionListener(new java.awt.event.ActionListener() {
@@ -107,26 +102,43 @@ public class PatientPortal extends javax.swing.JPanel {
 
         addPatientButton.setText("Add Patient");
 
+        patientPortalTable.setAutoCreateRowSorter(true);
         patientPortalTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
                 {null, null, null, null},
                 {null, null, null, null},
                 {null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Name", "Address", "DoB (MM/DD/YYYY)", "ID"
             }
         ) {
             Class[] types = new Class [] {
                 java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class
             };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        patientPortalTable.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                patientPortalTableKeyPressed(evt);
+            }
         });
         jScrollPane2.setViewportView(patientPortalTable);
+        if (patientPortalTable.getColumnModel().getColumnCount() > 0) {
+            patientPortalTable.getColumnModel().getColumn(3).setMinWidth(50);
+            patientPortalTable.getColumnModel().getColumn(3).setPreferredWidth(50);
+            patientPortalTable.getColumnModel().getColumn(3).setMaxWidth(100);
+        }
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -134,6 +146,9 @@ public class PatientPortal extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane2))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGap(375, 375, 375)
                         .addComponent(jLabel4)
@@ -150,10 +165,6 @@ public class PatientPortal extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 334, Short.MAX_VALUE)
                         .addComponent(deletePatientButton)))
                 .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(217, 217, 217)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -161,8 +172,8 @@ public class PatientPortal extends javax.swing.JPanel {
                 .addContainerGap()
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 118, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 531, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(patientSearchSubmitButton)
                     .addComponent(patientSearchBar, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -185,6 +196,39 @@ public class PatientPortal extends javax.swing.JPanel {
         System.out.println("Patient Portal: Edit button");
 		patientPortalTable.setVisible(true);
     }//GEN-LAST:event_editPatientButtonActionPerformed
+
+    private void deletePatientButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deletePatientButtonActionPerformed
+        
+		if (evt != null)
+			System.out.println("Patient Portal: Delete button");
+		else
+			System.out.println("Patient Portal: Delete key");
+		
+		Integer selectedCol = patientPortalTable.getSelectedColumn();
+		Integer selectedRow = patientPortalTable.getSelectedRow();
+		if ((selectedRow >= 0) && (selectedCol >=0))
+		{
+			Integer patientID = (Integer)patientPortalTable.getValueAt(selectedRow, 3);
+
+			tableModel.removeRow(selectedRow);
+
+			Patient theVictim = dataBase.getPatientByID(patientID);
+			dataBase.delete(theVictim);
+		}
+		
+    }//GEN-LAST:event_deletePatientButtonActionPerformed
+
+    private void deletePatientButtonKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_deletePatientButtonKeyPressed
+        
+    }//GEN-LAST:event_deletePatientButtonKeyPressed
+
+    private void patientPortalTableKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_patientPortalTableKeyPressed
+        //System.out.println("Patient Portal: Delete key");
+		if (evt.getKeyCode() == java.awt.event.KeyEvent.VK_DELETE)
+		{
+			deletePatientButtonActionPerformed(null);
+		}
+    }//GEN-LAST:event_patientPortalTableKeyPressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
