@@ -30,7 +30,7 @@ public class MainDashboard extends javax.swing.JFrame {
         mainPanel.add(pPanel);
 		mainPanel.add(appointmentPanel);
 		mainPanel.add(insurancePanel);
-                mainPanel.setVisible(true);
+        //        mainPanel.setVisible(true);
                 
       
     }
@@ -286,7 +286,7 @@ public class MainDashboard extends javax.swing.JFrame {
     private void patientPortalBttnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_patientPortalBttnMouseClicked
         // TODO add your handling code here:
         
-        System.out.print("Patient Portal Bttn Clicked: " + evt.getClickCount());
+        System.out.println("Patient Portal Bttn Clicked: " + evt.getClickCount());
         
         hideAllPanelComponents(mainPanel);
         pPanel.setVisible(true);
@@ -294,7 +294,7 @@ public class MainDashboard extends javax.swing.JFrame {
 
     private void appointmentBttnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_appointmentBttnMouseClicked
         // TODO add your handling code here:
-        System.out.print("Appointment Bttn Clicked: " + evt.getClickCount());
+        System.out.println("Appointment Bttn Clicked: " + evt.getClickCount());
         hideAllPanelComponents(mainPanel);
         appointmentPanel.setVisible(true);
     }//GEN-LAST:event_appointmentBttnMouseClicked

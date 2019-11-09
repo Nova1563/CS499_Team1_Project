@@ -5,18 +5,62 @@
  */
 package cs499_ophthalmology_emr;
 
+import java.util.ArrayList;
+import javax.swing.table.AbstractTableModel;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author kenda
  */
 public class PatientPortal extends javax.swing.JPanel {
-
+	private ArrayList<Patient> patientList = null;
+	private DataBaseManager dataBase = DataBaseManager.getInstance();
     /**
      * Creates new form PatientPortal
      */
     public PatientPortal() {
         initComponents();
+		loadTable();
+		
+		DefaultTableModel tableModel = (DefaultTableModel) patientPortalTable.getModel();
+		
+		System.out.println("Cols: " + tableModel.getColumnCount());
+		System.out.println("Rows: " + tableModel.getRowCount());
+		
     }
+	
+	private void loadTable()
+	{
+		DefaultTableModel tableModel = (DefaultTableModel) patientPortalTable.getModel();
+		
+		String patientName = null;
+		String patientAddr = null;
+		Integer patientDoB = null;
+		Integer patientID = null;
+		
+		patientList = dataBase.getAllPatients();
+		//tableModel.setRowCount(0);		// Clear all rows, in anticipation of update.
+		
+		for (Patient currentPatient: patientList)
+		{
+			patientName = currentPatient.getName();
+			patientAddr = currentPatient.getAddress();
+			patientDoB = currentPatient.getDateOfBirth();
+			patientID = currentPatient.getPatientID();
+			
+			//Object[] rowInfo = new Object[]{ patientName, patientAddr, patientDoB, patientID };
+			
+			tableModel.addRow(new Object[] {patientName, patientAddr, patientDoB, patientID});
+		}
+		tableModel.fireTableDataChanged();
+		//patientPortalTable.invalidate();
+		
+		System.out.println(patientPortalTable.getValueAt(0, 0));
+		System.out.println(patientPortalTable.getValueAt(0, 1));
+		System.out.println(patientPortalTable.getValueAt(0, 2));
+		System.out.println(patientPortalTable.getValueAt(0, 3));
+	}
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -28,13 +72,13 @@ public class PatientPortal extends javax.swing.JPanel {
     private void initComponents() {
 
         jLabel4 = new javax.swing.JLabel();
-        patientNameSearchBar = new javax.swing.JTextField();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        patientNameSearchSubmitButton = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        patientSearchBar = new javax.swing.JTextField();
+        patientSearchSubmitButton = new javax.swing.JButton();
+        deletePatientButton = new javax.swing.JButton();
+        editPatientButton = new javax.swing.JButton();
+        addPatientButton = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        patientPortalTable = new javax.swing.JTable();
 
         setBackground(new java.awt.Color(185, 134, 11));
 
@@ -42,93 +86,89 @@ public class PatientPortal extends javax.swing.JPanel {
         jLabel4.setText("Patient Portal");
         jLabel4.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
-        patientNameSearchBar.setText("Search for patient name");
-        patientNameSearchBar.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        patientSearchBar.setText("Search for patient name");
+        patientSearchBar.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
-        jTable1.setAutoCreateRowSorter(true);
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        patientSearchSubmitButton.setText("Search");
+        patientSearchSubmitButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                patientSearchSubmitButtonActionPerformed(evt);
+            }
+        });
+
+        deletePatientButton.setText("Delete Patient");
+
+        editPatientButton.setText("Edit Patient");
+        editPatientButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editPatientButtonActionPerformed(evt);
+            }
+        });
+
+        addPatientButton.setText("Add Patient");
+
+        patientPortalTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "Name", "Address", "DOB (DD/MM/YYYY)", "ID"
+                "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Object.class, java.lang.String.class, java.lang.Integer.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class
             };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
         });
-        jTable1.setColumnSelectionAllowed(true);
-        jScrollPane1.setViewportView(jTable1);
-        jTable1.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        if (jTable1.getColumnModel().getColumnCount() > 0) {
-            jTable1.getColumnModel().getColumn(2).setMinWidth(50);
-            jTable1.getColumnModel().getColumn(2).setPreferredWidth(150);
-            jTable1.getColumnModel().getColumn(2).setMaxWidth(150);
-            jTable1.getColumnModel().getColumn(3).setMinWidth(50);
-            jTable1.getColumnModel().getColumn(3).setPreferredWidth(50);
-            jTable1.getColumnModel().getColumn(3).setMaxWidth(50);
-        }
-
-        patientNameSearchSubmitButton.setText("Search");
-
-        jButton1.setText("Delete Patient");
-
-        jButton2.setText("Edit Patient");
-
-        jButton3.setText("Add Patient");
+        jScrollPane2.setViewportView(patientPortalTable);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1))
-                    .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGap(375, 375, 375)
                         .addComponent(jLabel4)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(patientNameSearchBar, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(patientSearchBar, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(patientNameSearchSubmitButton)
+                        .addComponent(patientSearchSubmitButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton2)
+                        .addComponent(editPatientButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton3)
+                        .addComponent(addPatientButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 334, Short.MAX_VALUE)
-                        .addComponent(jButton1)))
+                        .addComponent(deletePatientButton)))
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(217, 217, 217)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 531, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 118, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(patientNameSearchSubmitButton)
-                    .addComponent(patientNameSearchBar, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3)
-                    .addComponent(jButton1))
+                    .addComponent(patientSearchSubmitButton)
+                    .addComponent(patientSearchBar, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(editPatientButton)
+                    .addComponent(addPatientButton)
+                    .addComponent(deletePatientButton))
                 .addGap(12, 12, 12))
         );
 
@@ -136,15 +176,25 @@ public class PatientPortal extends javax.swing.JPanel {
         getAccessibleContext().setAccessibleParent(this);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void patientSearchSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_patientSearchSubmitButtonActionPerformed
+        System.out.println("Patient Portal: Search button");
+		patientPortalTable.setVisible(false);
+    }//GEN-LAST:event_patientSearchSubmitButtonActionPerformed
+
+    private void editPatientButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editPatientButtonActionPerformed
+        System.out.println("Patient Portal: Edit button");
+		patientPortalTable.setVisible(true);
+    }//GEN-LAST:event_editPatientButtonActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton addPatientButton;
+    private javax.swing.JButton deletePatientButton;
+    private javax.swing.JButton editPatientButton;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField patientNameSearchBar;
-    private javax.swing.JButton patientNameSearchSubmitButton;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable patientPortalTable;
+    private javax.swing.JTextField patientSearchBar;
+    private javax.swing.JButton patientSearchSubmitButton;
     // End of variables declaration//GEN-END:variables
 }

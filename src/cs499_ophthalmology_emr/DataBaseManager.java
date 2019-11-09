@@ -247,22 +247,25 @@ public class DataBaseManager {
 	 */
 	public void doTest()
 	{
+		
 		System.out.println("\nBegin DB_Interface.doTest()...");
+		
 		makeNewPatientsFillArrayTest();
 		getAllPatientsTest();
 		addAppointmentsAndExamsToAllPatientsTest();
 		Appointment appt5 = getAppointmentByID(3);
 		
 		patientTable.printAllEntries();
-		appointmentTable.printAllEntries();
-		testResultsTable.printAllEntries();
+		//appointmentTable.printAllEntries();
+		//testResultsTable.printAllEntries();
 		try{
-		Thread.sleep(5000);
+		//Thread.sleep(5000);
 		} catch (Exception e)
 		{
 			e.printStackTrace();
 		}
-		delete(appt5);
+		//delete(appt5);
+
 		appointmentTable.printAllEntries();
 		testResultsTable.printAllEntries();
 		System.out.println("End DB_Interface.doTest().\n");
