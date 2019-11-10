@@ -6,26 +6,32 @@
 package cs499_ophthalmology_emr;
 
 import java.util.ArrayList;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
+
 
 /**
  *
  * @author kenda
  */
 public class PatientPortal extends javax.swing.JPanel {
+	final Integer PATIENT_ID_COLUMN = 3;
+	private MainDashboard mainFrame = null;
 	private ArrayList<Patient> patientList = null;
 	private DataBaseManager dataBase = DataBaseManager.getInstance();
 	private DefaultTableModel tableModel = null;
     /**
      * Creates new form PatientPortal
      */
-    public PatientPortal() {
+    public PatientPortal(MainDashboard _mainFrame) {
+		mainFrame = _mainFrame;
         initComponents();
 		tableModel = (DefaultTableModel) patientPortalTable.getModel();
 		loadTable();
     }
 	
-	private void loadTable()
+	public void loadTable()
 	{
 		String patientName = null;
 		String patientAddr = null;
@@ -101,6 +107,11 @@ public class PatientPortal extends javax.swing.JPanel {
         });
 
         addPatientButton.setText("Add Patient");
+        addPatientButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addPatientButtonActionPerformed(evt);
+            }
+        });
 
         patientPortalTable.setAutoCreateRowSorter(true);
         patientPortalTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -194,7 +205,11 @@ public class PatientPortal extends javax.swing.JPanel {
 
     private void editPatientButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editPatientButtonActionPerformed
         System.out.println("Patient Portal: Edit button");
-		patientPortalTable.setVisible(true);
+		Integer selectedRow = patientPortalTable.getSelectedRow();
+		Integer patientID = (Integer)patientPortalTable.getValueAt(selectedRow, PATIENT_ID_COLUMN);
+		Patient thePatient = dataBase.getPatientByID(patientID);
+		mainFrame.newPatientForm.loadPatientInfo(thePatient);
+		mainFrame.showPatientForm();
     }//GEN-LAST:event_editPatientButtonActionPerformed
 
     private void deletePatientButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deletePatientButtonActionPerformed
@@ -208,7 +223,7 @@ public class PatientPortal extends javax.swing.JPanel {
 		Integer selectedRow = patientPortalTable.getSelectedRow();
 		if ((selectedRow >= 0) && (selectedCol >=0))
 		{
-			Integer patientID = (Integer)patientPortalTable.getValueAt(selectedRow, 3);
+			Integer patientID = (Integer)patientPortalTable.getValueAt(selectedRow, PATIENT_ID_COLUMN);
 
 			tableModel.removeRow(selectedRow);
 
@@ -229,6 +244,11 @@ public class PatientPortal extends javax.swing.JPanel {
 			deletePatientButtonActionPerformed(null);
 		}
     }//GEN-LAST:event_patientPortalTableKeyPressed
+
+    private void addPatientButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addPatientButtonActionPerformed
+        System.out.println("Patient Portal: Add button");
+		mainFrame.showPatientForm();
+    }//GEN-LAST:event_addPatientButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

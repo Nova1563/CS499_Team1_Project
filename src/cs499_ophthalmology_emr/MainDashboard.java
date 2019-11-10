@@ -14,6 +14,7 @@ import java.awt.*;
 public class MainDashboard extends javax.swing.JFrame {
     
     public PatientPortal pPanel;
+	public NewPatientsForm newPatientForm;
     public JPanel mainWindow;		// TODO: Remove this.
 	public AppointmentDisplay appointmentPanel;
 	public InsurancePage insurancePanel;
@@ -23,17 +24,44 @@ public class MainDashboard extends javax.swing.JFrame {
     public MainDashboard() {
         initComponents();
 		//mainWindow = new JPanel();	// This JPanel doesn't exist anywhere. Use mainPanel to display cards and stuff
-                pPanel = new PatientPortal();
+        newPatientForm = new NewPatientsForm(this);
+		pPanel = new PatientPortal(this);
 		appointmentPanel = new AppointmentDisplay();
 		insurancePanel = new InsurancePage();
 		
         mainPanel.add(pPanel);
+		mainPanel.add(newPatientForm);
 		mainPanel.add(appointmentPanel);
 		mainPanel.add(insurancePanel);
         //        mainPanel.setVisible(true);
                 
       
     }
+	
+	public void showPatientPortal()
+	{
+		hideAllPanelComponents(mainPanel);
+		pPanel.loadTable();
+        pPanel.setVisible(true);
+	}
+	
+	public void showPatientForm()
+	{
+		hideAllPanelComponents(mainPanel);
+		newPatientForm.setVisible(true);
+	}
+	
+	public void showAppointmentDisplay()
+	{
+		hideAllPanelComponents(mainPanel);
+        appointmentPanel.setVisible(true);
+	}
+	
+	public void showInsurancePage()
+	{
+		hideAllPanelComponents(mainPanel);
+		insurancePanel.setVisible(true);
+	}
 	
 	public void hideAllPanelComponents(JPanel theComp)
 	{
@@ -284,31 +312,26 @@ public class MainDashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_mainPanelComponentShown
 
     private void patientPortalBttnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_patientPortalBttnMouseClicked
-        // TODO add your handling code here:
-        
+
         System.out.println("Patient Portal Bttn Clicked: " + evt.getClickCount());
-        
-        hideAllPanelComponents(mainPanel);
-        pPanel.setVisible(true);
+        showPatientPortal();
     }//GEN-LAST:event_patientPortalBttnMouseClicked
 
     private void appointmentBttnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_appointmentBttnMouseClicked
-        // TODO add your handling code here:
+
         System.out.println("Appointment Bttn Clicked: " + evt.getClickCount());
-        hideAllPanelComponents(mainPanel);
-        appointmentPanel.setVisible(true);
+		showAppointmentDisplay();
     }//GEN-LAST:event_appointmentBttnMouseClicked
 
     private void insuranceBttnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_insuranceBttnMouseClicked
-        // TODO add your handling code here:
         
         System.out.print("Insurance Bttn Clicked: " + evt.getClickCount());
-        hideAllPanelComponents(mainPanel);
-	insurancePanel.setVisible(true);
+		showInsurancePage();       
     }//GEN-LAST:event_insuranceBttnMouseClicked
 
     private void homeBttnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeBttnMouseClicked
-        // TODO add your handling code here:
+        hideAllPanelComponents(mainPanel);
+		emrLogo.setVisible(true);
     }//GEN-LAST:event_homeBttnMouseClicked
 
     /**
