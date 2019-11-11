@@ -9,7 +9,7 @@ public class CS499_Ophthalmology_EMR {
 	public static void main( String args[] )
 	{
 		DataBaseManager dataBase = DataBaseManager.getInstance();
-		dataBase.doTest();
+		//dataBase.doTest();
 		
         MainDashboard dash = new MainDashboard();
         dash.setVisible(true);

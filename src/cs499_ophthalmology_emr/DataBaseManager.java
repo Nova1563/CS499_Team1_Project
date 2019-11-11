@@ -148,9 +148,19 @@ public class DataBaseManager {
 		return patientTable.getPatient(patientID);
 	}
 	
+	public ArrayList<Patient> searchForPatientName(String name)
+	{
+		return patientTable.getPatientsByName(name);
+	}
+	
 	public ArrayList<Patient> getAllPatients()
 	{
 		return patientTable.getAllPatients();
+	}
+	
+	public ArrayList<Appointment> getAllAppointments()
+	{
+		return appointmentTable.getAllAppointments();
 	}
 	
 	/**

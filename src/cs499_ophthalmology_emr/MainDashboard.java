@@ -48,7 +48,7 @@ public class MainDashboard extends javax.swing.JFrame {
 	public void showPatientPortal()
 	{
             hideAllPanelComponents(mainPanel);
-            pPanel.loadTable();
+            pPanel.loadTableAllEntries();
             pPanel.setVisible(true);
 	}
 	
