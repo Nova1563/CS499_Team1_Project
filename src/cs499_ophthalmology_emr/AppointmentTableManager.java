@@ -174,13 +174,13 @@ public class AppointmentTableManager{
 		
 		Appointment theFoundAppt = null;
 		
-		String theSQLstatementStr = "SELECT * from appointmentsTable WHERE date = ?";
+		String theSQLstatementStr = "SELECT * from appointmentsTable WHERE apptDate = ?";
 
 		try
 		{
 			PreparedStatement theSQLstatement = conn.prepareStatement(theSQLstatementStr);
 			theSQLstatement.setInt(1, date);
-			ResultSet appointmentInfo = theSQLstatement.executeQuery(theSQLstatementStr);
+			ResultSet appointmentInfo = theSQLstatement.executeQuery();
 			
 			while (appointmentInfo.next())
 			{
