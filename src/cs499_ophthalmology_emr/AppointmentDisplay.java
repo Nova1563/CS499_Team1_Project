@@ -5,17 +5,52 @@
  */
 package cs499_ophthalmology_emr;
 
+import java.awt.Color;
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author kenda
  */
 public class AppointmentDisplay extends javax.swing.JPanel {
+    
+    final Integer APPT_ID_COLUMN = 3;
+    private MainDashboard mainFrame = null;
+    private ArrayList<Appointment> appointmentList = null;
+    private DataBaseManager dataBase = DataBaseManager.getInstance();
+    private DefaultTableModel tableModel = null;
 
     /**
      * Creates new form AppointmentDisplay
      */
-    public AppointmentDisplay() {
+    public AppointmentDisplay(MainDashboard _mainFrame) {
         initComponents();
+        mainFrame = _mainFrame;
+        
+        tableModel = (DefaultTableModel) appointmentDisplayTable.getModel();
+        loadTable();
+    }
+    
+    public void loadTable()
+    {
+        String patientName = null;
+        Integer doctorToSee = null;
+        Integer appointmentTime = null;
+        String lool = null;
+        
+        appointmentList = dataBase.getAppointmentListByDate(1000);
+        tableModel.setRowCount(0);
+        
+        for (Appointment currentAppointment: appointmentList)
+        {
+            patientName = currentAppointment.getPatientName();
+            doctorToSee = currentAppointment.getDoctorToSee();
+            appointmentTime = currentAppointment.getAppointmentTime();
+            lool = currentAppointment.getReasonForVisit();
+            
+            tableModel.addRow(new Object[] {appointmentTime, patientName, lool, doctorToSee});
+        }
     }
 
     /**
@@ -29,20 +64,19 @@ public class AppointmentDisplay extends javax.swing.JPanel {
 
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        appointmentDisplayTable = new javax.swing.JTable();
+        newAppointmentButton = new javax.swing.JButton();
+        futureAppointmentButton = new javax.swing.JButton();
+        pastAppointmentButton = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(184, 134, 11));
 
-        jLabel2.setFont(new java.awt.Font("Courier New", 0, 11)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("DecoType Naskh", 1, 18)); // NOI18N
         jLabel2.setText("Daily Appointment Display:");
         jLabel2.setOpaque(true);
 
-        jTable1.setBackground(new java.awt.Color(255, 255, 255));
-        jTable1.setFont(new java.awt.Font("Courier New", 0, 11)); // NOI18N
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        appointmentDisplayTable.setFont(new java.awt.Font("Courier New", 0, 11)); // NOI18N
+        appointmentDisplayTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null},
@@ -60,28 +94,30 @@ public class AppointmentDisplay extends javax.swing.JPanel {
                 return types [columnIndex];
             }
         });
-        jTable1.getTableHeader().setReorderingAllowed(false);
-        jScrollPane1.setViewportView(jTable1);
+        appointmentDisplayTable.getTableHeader().setReorderingAllowed(false);
+        jScrollPane1.setViewportView(appointmentDisplayTable);
 
-        jButton1.setFont(new java.awt.Font("DecoType Naskh", 1, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
-        jButton1.setText("New Appointment");
-
-        jButton2.setFont(new java.awt.Font("DecoType Naskh", 1, 14)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(0, 0, 0));
-        jButton2.setText("Future Appointments");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        newAppointmentButton.setFont(new java.awt.Font("DecoType Naskh", 1, 14)); // NOI18N
+        newAppointmentButton.setText("New Appointment");
+        newAppointmentButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                newAppointmentButtonActionPerformed(evt);
             }
         });
 
-        jButton3.setFont(new java.awt.Font("DecoType Naskh", 1, 14)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(0, 0, 0));
-        jButton3.setText("Past Appointments");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        futureAppointmentButton.setFont(new java.awt.Font("DecoType Naskh", 1, 14)); // NOI18N
+        futureAppointmentButton.setText("Future Appointments");
+        futureAppointmentButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                futureAppointmentButtonActionPerformed(evt);
+            }
+        });
+
+        pastAppointmentButton.setFont(new java.awt.Font("DecoType Naskh", 1, 14)); // NOI18N
+        pastAppointmentButton.setText("Past Appointments");
+        pastAppointmentButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pastAppointmentButtonActionPerformed(evt);
             }
         });
 
@@ -91,14 +127,14 @@ public class AppointmentDisplay extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton3)
-                    .addComponent(jButton2)
+                    .addComponent(pastAppointmentButton)
+                    .addComponent(futureAppointmentButton)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addGroup(layout.createSequentialGroup()
                             .addGap(40, 40, 40)
                             .addComponent(jLabel2)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton1))
+                            .addComponent(newAppointmentButton))
                         .addGroup(layout.createSequentialGroup()
                             .addGap(30, 30, 30)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 843, javax.swing.GroupLayout.PREFERRED_SIZE))))
@@ -110,34 +146,39 @@ public class AppointmentDisplay extends javax.swing.JPanel {
                 .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel2)
-                    .addComponent(jButton1))
+                    .addComponent(newAppointmentButton))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 364, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton3)
+                .addComponent(pastAppointmentButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton2)
+                .addComponent(futureAppointmentButton)
                 .addContainerGap())
         );
 
-        jButton2.getAccessibleContext().setAccessibleName("");
+        futureAppointmentButton.getAccessibleContext().setAccessibleName("");
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void futureAppointmentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_futureAppointmentButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_futureAppointmentButtonActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void pastAppointmentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pastAppointmentButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_pastAppointmentButtonActionPerformed
+
+    private void newAppointmentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newAppointmentButtonActionPerformed
+        System.out.println("Appointment: Add new button");
+        
+    }//GEN-LAST:event_newAppointmentButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JTable appointmentDisplayTable;
+    private javax.swing.JButton futureAppointmentButton;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JButton newAppointmentButton;
+    private javax.swing.JButton pastAppointmentButton;
     // End of variables declaration//GEN-END:variables
 }

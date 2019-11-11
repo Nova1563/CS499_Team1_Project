@@ -85,6 +85,45 @@ public class AppointmentTableManager{
 		return theNewAppointment;
 	}
 	
+	public ArrayList<Appointment> getAllAppointments()
+	{
+		ArrayList<Appointment> theApptList = new ArrayList<Appointment>();
+		
+		Appointment theFoundAppt = null;
+		
+		String theSQLstatementStr = "SELECT * from appointmentsTable";
+
+		try
+		{
+			Statement theSQLstatement = conn.createStatement();
+			ResultSet appointmentInfo = theSQLstatement.executeQuery(theSQLstatementStr);
+			
+			while (appointmentInfo.next())
+			{
+				theFoundAppt = new Appointment(appointmentInfo.getInt("apptID"), appointmentInfo.getInt("patientID"));
+
+				theFoundAppt.setPatientName(appointmentInfo.getString("patientName"));
+				theFoundAppt.setApptDate(appointmentInfo.getInt("apptDate"));
+				theFoundAppt.setAppointmentTime(appointmentInfo.getInt("appointmentTime"));
+				theFoundAppt.setArrivalStatus(appointmentInfo.getInt("arrivalStatus"));
+				theFoundAppt.setArrivalTime(appointmentInfo.getInt("arrivalTime"));
+				theFoundAppt.setDoctorToSee(appointmentInfo.getInt("doctorToSee"));
+				theFoundAppt.setReasonForVisit(appointmentInfo.getString("reasonForVisit"));
+
+				theApptList.add(theFoundAppt);
+			}
+		}
+		catch(SQLException e)
+		{
+			System.out.println("AppointmentTableManager.getAllAppointments() error: " + e.getMessage());
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		return theApptList;
+	}
+	
 	/**
 	 * 
 	 * @param apptID The appointment ID to match
@@ -174,13 +213,13 @@ public class AppointmentTableManager{
 		
 		Appointment theFoundAppt = null;
 		
-		String theSQLstatementStr = "SELECT * from appointmentsTable WHERE date = ?";
+		String theSQLstatementStr = "SELECT * from appointmentsTable WHERE apptDate = ?";
 
 		try
 		{
 			PreparedStatement theSQLstatement = conn.prepareStatement(theSQLstatementStr);
 			theSQLstatement.setInt(1, date);
-			ResultSet appointmentInfo = theSQLstatement.executeQuery(theSQLstatementStr);
+			ResultSet appointmentInfo = theSQLstatement.executeQuery();
 			
 			while (appointmentInfo.next())
 			{

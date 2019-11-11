@@ -28,10 +28,10 @@ public class PatientPortal extends javax.swing.JPanel {
 		mainFrame = _mainFrame;
         initComponents();
 		tableModel = (DefaultTableModel) patientPortalTable.getModel();
-		loadTable();
+		loadTableAllEntries();
     }
 	
-	public void loadTable()
+	public void loadTableAllEntries()
 	{
 		String patientName = null;
 		String patientAddr = null;
@@ -39,6 +39,28 @@ public class PatientPortal extends javax.swing.JPanel {
 		Integer patientID = null;
 		
 		patientList = dataBase.getAllPatients();
+		tableModel.setRowCount(0);		// Clear all rows, in anticipation of update.
+		
+		for (Patient currentPatient: patientList)
+		{
+			patientName = currentPatient.getName();
+			patientAddr = currentPatient.getAddress();
+			patientDoB = currentPatient.getDateOfBirth();
+			patientID = currentPatient.getPatientID();
+			
+			tableModel.addRow(new Object[] {patientName, patientAddr, patientDoB, patientID});
+		}
+		
+	}
+	
+	public void loadTableFromList(ArrayList<Patient> theList)
+	{
+		String patientName = null;
+		String patientAddr = null;
+		Integer patientDoB = null;
+		Integer patientID = null;
+		
+		patientList = theList;
 		tableModel.setRowCount(0);		// Clear all rows, in anticipation of update.
 		
 		for (Patient currentPatient: patientList)
@@ -80,6 +102,11 @@ public class PatientPortal extends javax.swing.JPanel {
 
         patientSearchBar.setText("Search for patient name");
         patientSearchBar.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        patientSearchBar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                patientSearchBarKeyPressed(evt);
+            }
+        });
 
         patientSearchSubmitButton.setText("Search");
         patientSearchSubmitButton.addActionListener(new java.awt.event.ActionListener() {
@@ -202,7 +229,9 @@ public class PatientPortal extends javax.swing.JPanel {
 
     private void patientSearchSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_patientSearchSubmitButtonActionPerformed
         System.out.println("Patient Portal: Search button");
-		patientPortalTable.setVisible(false);
+		String patientName = patientSearchBar.getText();
+		ArrayList<Patient> patientList = dataBase.searchForPatientName(patientName);
+		loadTableFromList(patientList);
     }//GEN-LAST:event_patientSearchSubmitButtonActionPerformed
 
     private void editPatientButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editPatientButtonActionPerformed
@@ -251,6 +280,13 @@ public class PatientPortal extends javax.swing.JPanel {
         System.out.println("Patient Portal: Add button");
 		mainFrame.showPatientForm();
     }//GEN-LAST:event_addPatientButtonActionPerformed
+
+    private void patientSearchBarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_patientSearchBarKeyPressed
+        if (evt.getKeyCode() == java.awt.event.KeyEvent.VK_ENTER)
+		{
+			patientSearchSubmitButtonActionPerformed(null);
+		}
+    }//GEN-LAST:event_patientSearchBarKeyPressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

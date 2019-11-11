@@ -148,9 +148,19 @@ public class DataBaseManager {
 		return patientTable.getPatient(patientID);
 	}
 	
+	public ArrayList<Patient> searchForPatientName(String name)
+	{
+		return patientTable.getPatientsByName(name);
+	}
+	
 	public ArrayList<Patient> getAllPatients()
 	{
 		return patientTable.getAllPatients();
+	}
+	
+	public ArrayList<Appointment> getAllAppointments()
+	{
+		return appointmentTable.getAllAppointments();
 	}
 	
 	/**
@@ -247,12 +257,9 @@ public class DataBaseManager {
 	 */
 	public void doTest()
 	{
-		for (Integer i = 0; i < 5; i++)
-		{
-			Patient patient1 = getNewPatient();
-			patient1.setName("This dude's name is "+ i.toString() + ". Pulled him from the database!");
-			save(patient1);
-		}
+		makeNewPatientsFillArrayTest();
+                addAppointmentsAndExamsToAllPatientsTest();
+                
 	}
 	
 	private void makeNewPatientsFillArrayTest()
@@ -327,7 +334,9 @@ public class DataBaseManager {
 			
 			Appointment anAppt = getNewAppointment(patientID);
 			Integer apptID = anAppt.getApptID();
-			anAppt.setAppointmentTime(1000);
+			anAppt.setApptDate(1000);
+                        anAppt.setDoctorToSee(apptID);
+                        anAppt.setPatientName(DB_URL);
 			save(anAppt);
 			
 			EyeTestResults examResults = getNewEyeTestResults(patientID, apptID);
