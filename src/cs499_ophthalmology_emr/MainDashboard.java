@@ -14,6 +14,7 @@ import java.awt.*;
 public class MainDashboard extends javax.swing.JFrame {
     
     public PatientPortal pPanel;
+	public NewPatientsForm newPatientForm;
     public JPanel mainWindow;		// TODO: Remove this.
 	public AppointmentDisplay appointmentPanel;
 	public InsurancePage insurancePanel;
@@ -23,17 +24,44 @@ public class MainDashboard extends javax.swing.JFrame {
     public MainDashboard() {
         initComponents();
 		//mainWindow = new JPanel();	// This JPanel doesn't exist anywhere. Use mainPanel to display cards and stuff
-                pPanel = new PatientPortal();
+        newPatientForm = new NewPatientsForm(this);
+		pPanel = new PatientPortal(this);
 		appointmentPanel = new AppointmentDisplay();
 		insurancePanel = new InsurancePage();
 		
         mainPanel.add(pPanel);
+		mainPanel.add(newPatientForm);
 		mainPanel.add(appointmentPanel);
 		mainPanel.add(insurancePanel);
-                mainPanel.setVisible(true);
+        //        mainPanel.setVisible(true);
                 
       
     }
+	
+	public void showPatientPortal()
+	{
+		hideAllPanelComponents(mainPanel);
+		pPanel.loadTable();
+        pPanel.setVisible(true);
+	}
+	
+	public void showPatientForm()
+	{
+		hideAllPanelComponents(mainPanel);
+		newPatientForm.setVisible(true);
+	}
+	
+	public void showAppointmentDisplay()
+	{
+		hideAllPanelComponents(mainPanel);
+        appointmentPanel.setVisible(true);
+	}
+	
+	public void showInsurancePage()
+	{
+		hideAllPanelComponents(mainPanel);
+		insurancePanel.setVisible(true);
+	}
 	
 	public void hideAllPanelComponents(JPanel theComp)
 	{
@@ -72,7 +100,7 @@ public class MainDashboard extends javax.swing.JFrame {
         weclcomeTxt = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1208, 730));
+        setPreferredSize(new java.awt.Dimension(1280, 1024));
 
         background.setBackground(new java.awt.Color(255, 255, 255));
         background.setPreferredSize(new java.awt.Dimension(1280, 730));
@@ -96,7 +124,7 @@ public class MainDashboard extends javax.swing.JFrame {
             .addGroup(toolBarJPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(homeBttn)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 847, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 845, Short.MAX_VALUE)
                 .addComponent(helpBttb)
                 .addGap(15, 15, 15))
         );
@@ -206,7 +234,7 @@ public class MainDashboard extends javax.swing.JFrame {
         appointmentsTxt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         appointmentsTxt.setText(" Appointments");
         sideMenu.add(appointmentsTxt);
-        appointmentsTxt.setBounds(0, 380, 120, 28);
+        appointmentsTxt.setBounds(0, 380, 120, 20);
         appointmentsTxt.getAccessibleContext().setAccessibleName("dadLabel");
 
         insuranceTxt.setFont(new java.awt.Font("DecoType Naskh", 1, 15)); // NOI18N
@@ -214,7 +242,7 @@ public class MainDashboard extends javax.swing.JFrame {
         insuranceTxt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         insuranceTxt.setText("Insurance");
         sideMenu.add(insuranceTxt);
-        insuranceTxt.setBounds(0, 570, 120, 28);
+        insuranceTxt.setBounds(0, 570, 120, 20);
         insuranceTxt.getAccessibleContext().setAccessibleName("InsuranceLabel");
 
         copyRightsTxt.setFont(new java.awt.Font("DecoType Naskh", 2, 13)); // NOI18N
@@ -246,10 +274,10 @@ public class MainDashboard extends javax.swing.JFrame {
         background.setLayout(backgroundLayout);
         backgroundLayout.setHorizontalGroup(
             backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(toolBarJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(toolBarJPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(backgroundLayout.createSequentialGroup()
                 .addGap(120, 120, 120)
-                .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 820, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(sideMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         backgroundLayout.setVerticalGroup(
@@ -257,8 +285,8 @@ public class MainDashboard extends javax.swing.JFrame {
             .addGroup(backgroundLayout.createSequentialGroup()
                 .addComponent(toolBarJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 660, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addComponent(sideMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 730, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(sideMenu, javax.swing.GroupLayout.DEFAULT_SIZE, 730, Short.MAX_VALUE)
         );
 
         mainPanel.getAccessibleContext().setAccessibleName("mainPanel");
@@ -268,12 +296,12 @@ public class MainDashboard extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(background, javax.swing.GroupLayout.PREFERRED_SIZE, 938, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, 938, Short.MAX_VALUE)
+                .addGap(0, 0, 0))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(background, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -284,31 +312,26 @@ public class MainDashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_mainPanelComponentShown
 
     private void patientPortalBttnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_patientPortalBttnMouseClicked
-        // TODO add your handling code here:
-        
-        System.out.print("Patient Portal Bttn Clicked: " + evt.getClickCount());
-        
-        hideAllPanelComponents(mainPanel);
-        pPanel.setVisible(true);
+
+        System.out.println("Patient Portal Bttn Clicked: " + evt.getClickCount());
+        showPatientPortal();
     }//GEN-LAST:event_patientPortalBttnMouseClicked
 
     private void appointmentBttnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_appointmentBttnMouseClicked
-        // TODO add your handling code here:
-        System.out.print("Appointment Bttn Clicked: " + evt.getClickCount());
-        hideAllPanelComponents(mainPanel);
-        appointmentPanel.setVisible(true);
+
+        System.out.println("Appointment Bttn Clicked: " + evt.getClickCount());
+		showAppointmentDisplay();
     }//GEN-LAST:event_appointmentBttnMouseClicked
 
     private void insuranceBttnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_insuranceBttnMouseClicked
-        // TODO add your handling code here:
         
         System.out.print("Insurance Bttn Clicked: " + evt.getClickCount());
-        hideAllPanelComponents(mainPanel);
-	insurancePanel.setVisible(true);
+		showInsurancePage();       
     }//GEN-LAST:event_insuranceBttnMouseClicked
 
     private void homeBttnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeBttnMouseClicked
-        // TODO add your handling code here:
+        hideAllPanelComponents(mainPanel);
+		emrLogo.setVisible(true);
     }//GEN-LAST:event_homeBttnMouseClicked
 
     /**

@@ -61,6 +61,25 @@ public class PatientTableManager
 			System.out.println("initPatientInfo() error: " + e.getMessage());
 		}
 	}
+	
+	private ResultSet getAllEntries()
+	{
+		String printAllEntriesString = "SELECT * from patientTable";
+		ResultSet queryResults = null;
+		try
+		{
+
+			Statement theSQLstatement = conn.createStatement();
+			queryResults = theSQLstatement.executeQuery(printAllEntriesString);
+			
+		}
+		catch(SQLException e)
+		{
+			System.out.println("getAllEntries() PatientTable error: " + e.getMessage());
+			e.printStackTrace();
+		}
+		return queryResults;
+	}
 
 	/**
 	* Prints all entries in Patient Info Table to console.
@@ -194,6 +213,7 @@ public class PatientTableManager
 	
 	public ArrayList<Patient> getAllPatients()
 	{
+		/*
 		ArrayList<Patient> theList = new ArrayList<Patient>();
 		Integer numOfPatients = -1;
 		
@@ -207,6 +227,54 @@ public class PatientTableManager
 		}
 		
 		return theList;
+		*/
+		ArrayList<Patient> patientList = new ArrayList<Patient>();
+		
+		Patient thePatient = null;
+		
+		ResultSet patientSQLinfo = getAllEntries();
+		
+		try
+		{
+			while (patientSQLinfo.next())
+			{
+				thePatient = new Patient(patientSQLinfo.getInt("patientID"));
+
+				thePatient.setName(patientSQLinfo.getString("name"));
+				thePatient.setAddress(patientSQLinfo.getString("address"));
+				thePatient.setHomePhone(patientSQLinfo.getString("homePhoneNum"));
+				thePatient.setWorkPhone(patientSQLinfo.getString("workPhoneNum"));
+				thePatient.setMobilePhone(patientSQLinfo.getString("mobilePhoneNum"));
+				thePatient.setGender(patientSQLinfo.getString("gender"));
+				thePatient.setTitle(patientSQLinfo.getString("title"));
+				thePatient.setAge(patientSQLinfo.getInt("age"));
+				thePatient.setDateOfBirth(patientSQLinfo.getInt("dateOfBirth"));
+				thePatient.setEmailAddress(patientSQLinfo.getString("emailAddr"));
+				thePatient.setSsn(patientSQLinfo.getString("ssn"));
+				thePatient.setEmergContactName(patientSQLinfo.getString("emergContactName"));
+				thePatient.setEmergContactPhone(patientSQLinfo.getString("emergContactPhone"));
+				thePatient.setInsProvider(patientSQLinfo.getString("insProvider"));
+				thePatient.setInsContractNo(patientSQLinfo.getString("insContractNo"));
+				thePatient.setInsGroupNo(patientSQLinfo.getString("insGroupNo"));
+				thePatient.setInsEffectiveDate(patientSQLinfo.getInt("insEffectiveDate"));
+				thePatient.setInsCoPayAmount(patientSQLinfo.getFloat("insCoPayAmount"));
+				thePatient.setInsProviderAddr(patientSQLinfo.getString("insProviderAddr"));
+				thePatient.setInsProviderPhone(patientSQLinfo.getString("insProviderPhone"));
+
+				patientList.add(thePatient);
+			}
+		}
+		catch(SQLException e)
+		{
+			System.out.println("getAllPatients() error: " + e.getMessage());
+		}
+		catch(Exception e)
+		{
+			System.out.println("getAllPatients() error: " + e.getMessage());
+			e.printStackTrace();
+		}
+		System.out.println("PatientTableManager.getAllPatients returning " + patientList.size() + " entries.");
+		return patientList;	
 	}
 	
 	public Integer getNumOfPatientEntries()

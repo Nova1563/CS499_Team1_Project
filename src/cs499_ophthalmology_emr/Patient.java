@@ -42,6 +42,27 @@ public class Patient
 	public Patient(Integer _patientID)
 	{
 		this.patientID = _patientID;
+		this.name = "";
+		this.address = "";
+		this.age = -1;
+		this.zip = -1;
+		this.homePhone = "";
+		this.workPhone = "";
+		this.mobilePhone = "";
+		this.gender = "";
+		this.title = "";
+		this.dateOfBirth = -1;
+		this.emailAddress = "";
+		this.ssn = "";
+		this.emgergContactNum = "";
+		this.emergContactName = "";
+		this.insProvider = "";
+		this.insContractNo = "";
+		this.insGroupNo = "";
+		this.insEffectiveDate = -1;
+		this.insCoPayAmount = -1.0;
+		this.insProviderAddr = "";
+		this.insProviderPhone = "";
 	}
 	
 	/**
