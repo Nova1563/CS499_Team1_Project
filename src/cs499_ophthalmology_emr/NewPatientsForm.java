@@ -6,6 +6,8 @@
 package cs499_ophthalmology_emr;
 
 import java.awt.Component;
+import javax.swing.JDialog;
+import javax.swing.JOptionPane;
 import javax.swing.text.JTextComponent;
 
 /**
@@ -56,28 +58,38 @@ public class NewPatientsForm extends javax.swing.JPanel {
 		{
 			activePatient = dataBase.getNewPatient();
 		}
-		activePatient.setName(nameTextField.getText());
-		activePatient.setAddress(addressTextField.getText());
-		activePatient.setAge(Integer.parseInt(ageTextField.getText()));
-		activePatient.setDateOfBirth(Integer.parseInt(dobTextField.getText()));
-		activePatient.setEmailAddress(emailTextField.getText());
-		activePatient.setHomePhone(homePhoneTextField.getText());
-		activePatient.setWorkPhone(workPhoneTextField.getText());
-		activePatient.setMobilePhone(mobilePhoneTextField.getText());
-		activePatient.setGender(genderTextField.getText());
-		activePatient.setTitle(titleTextField.getText());
-		activePatient.setSsn(ssnTextField.getText());
-		activePatient.setEmergContactName(emergName.getText());
-		activePatient.setEmergContactPhone(emergPhone.getText());
-		activePatient.setInsProvider(providerTextField.getText());
-		activePatient.setInsGroupNo(groupTextField.getText());
-		activePatient.setInsContractNo(contractTextField.getText());
-		activePatient.setInsEffectiveDate(Integer.parseInt(effectiveTextField.getText()));
-		activePatient.setInsCoPayAmount(Double.valueOf(copayTextField.getText()));
-		activePatient.setInsProviderAddr(providerAddrTextField.getText());
-		activePatient.setInsProviderPhone(providerPhoneTextField.getText());
+		try
+		{
+			activePatient.setName(nameTextField.getText());
+			activePatient.setAddress(addressTextField.getText());
+			activePatient.setAge(Integer.parseInt(ageTextField.getText()));
+			activePatient.setDateOfBirth(Integer.parseInt(dobTextField.getText()));
+			activePatient.setEmailAddress(emailTextField.getText());
+			activePatient.setHomePhone(homePhoneTextField.getText());
+			activePatient.setWorkPhone(workPhoneTextField.getText());
+			activePatient.setMobilePhone(mobilePhoneTextField.getText());
+			activePatient.setGender(genderTextField.getText());
+			activePatient.setTitle(titleTextField.getText());
+			activePatient.setSsn(ssnTextField.getText());
+			activePatient.setEmergContactName(emergName.getText());
+			activePatient.setEmergContactPhone(emergPhone.getText());
+			activePatient.setInsProvider(providerTextField.getText());
+			activePatient.setInsGroupNo(groupTextField.getText());
+			activePatient.setInsContractNo(contractTextField.getText());
+			activePatient.setInsEffectiveDate(Integer.parseInt(effectiveTextField.getText()));
+			activePatient.setInsCoPayAmount(Double.valueOf(copayTextField.getText()));
+			activePatient.setInsProviderAddr(providerAddrTextField.getText());
+			activePatient.setInsProviderPhone(providerPhoneTextField.getText());
+
+			dataBase.save(activePatient);
+		}
+		catch(Exception e)
+		{
+			dataBase.delete(activePatient);
+			JOptionPane.showMessageDialog(null, "Error: One or more empty fields.");
+			System.out.println(e.getMessage());
+		}
 		
-		dataBase.save(activePatient);
 	}
 
     /**
