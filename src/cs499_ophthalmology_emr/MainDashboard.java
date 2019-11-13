@@ -17,11 +17,12 @@ import java.awt.event.MouseListener;
 public class MainDashboard extends javax.swing.JFrame {
     
     public PatientPortal pPanel;
-	public NewPatientsForm newPatientForm;
+	public PatientForm newPatientForm;
     public JPanel mainWindow;		// TODO: Remove this.
 	public AppointmentDisplay appointmentPanel;
 	public InsurancePage insurancePanel;
-        
+	
+    private Patient activePatient;
     
         
         
@@ -31,7 +32,7 @@ public class MainDashboard extends javax.swing.JFrame {
     public MainDashboard() {
         initComponents();
 		//mainWindow = new JPanel();	// This JPanel doesn't exist anywhere. Use mainPanel to display cards and stuff
-        newPatientForm = new NewPatientsForm(this);
+        newPatientForm = new PatientForm(this);
 		pPanel = new PatientPortal(this);
 		appointmentPanel = new AppointmentDisplay(this);
 		insurancePanel = new InsurancePage();
@@ -44,6 +45,16 @@ public class MainDashboard extends javax.swing.JFrame {
                 
       
     }
+	
+	public void setActivePatient(Patient thePatient)
+	{
+		
+	}
+	
+	public Patient getActivePatient()
+	{
+		return activePatient;
+	}
 	
 	public void showPatientPortal()
 	{

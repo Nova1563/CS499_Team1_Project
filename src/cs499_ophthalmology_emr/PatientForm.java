@@ -14,14 +14,14 @@ import javax.swing.text.JTextComponent;
  *
  * @author kenda
  */
-public class NewPatientsForm extends javax.swing.JPanel {
+public class PatientForm extends javax.swing.JPanel {
 	private DataBaseManager dataBase = null;
 	private MainDashboard dashBoard = null;
 	private Patient activePatient = null;
     /**
      * Creates new form NewAppointmentForm
      */
-    public NewPatientsForm(MainDashboard _dashBoard) {
+    public PatientForm(MainDashboard _dashBoard) {
 		dataBase = DataBaseManager.getInstance();
 		dashBoard = _dashBoard;
         initComponents();
