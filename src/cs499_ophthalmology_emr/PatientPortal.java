@@ -17,15 +17,15 @@ import javax.swing.table.DefaultTableModel;
  */
 public class PatientPortal extends javax.swing.JPanel {
 	final Integer PATIENT_ID_COLUMN = 3;
-	private MainDashboard mainFrame = null;
+	private MainDashboard mainDash = null;
 	private ArrayList<Patient> patientList = null;
 	private DataBaseManager dataBase = DataBaseManager.getInstance();
 	private DefaultTableModel tableModel = null;
     /**
      * Creates new form PatientPortal
      */
-    public PatientPortal(MainDashboard _mainFrame) {
-		mainFrame = _mainFrame;
+    public PatientPortal(MainDashboard _mainDash) {
+		mainDash = _mainDash;
         initComponents();
 		tableModel = (DefaultTableModel) patientPortalTable.getModel();
 		loadTableAllEntries();
@@ -91,8 +91,12 @@ public class PatientPortal extends javax.swing.JPanel {
         addPatientButton = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         patientPortalTable = new javax.swing.JTable();
+<<<<<<< HEAD
         jPanel1 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
+=======
+        jButton1 = new javax.swing.JButton();
+>>>>>>> a9447ce3e0dffd0a06e2b07a37a8058399ef517e
 
         setBackground(new java.awt.Color(57, 113, 177));
         setPreferredSize(new java.awt.Dimension(1620, 724));
@@ -186,6 +190,7 @@ public class PatientPortal extends javax.swing.JPanel {
             patientPortalTable.getColumnModel().getColumn(3).setMaxWidth(100);
         }
 
+<<<<<<< HEAD
         jPanel1.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.darcula.selection.color1"));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -195,6 +200,14 @@ public class PatientPortal extends javax.swing.JPanel {
         jLabel4.setText("Patient Portal");
         jLabel4.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 1640, -1));
+=======
+        jButton1.setText("DataBaseManager.doTest()");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+>>>>>>> a9447ce3e0dffd0a06e2b07a37a8058399ef517e
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -205,6 +218,19 @@ public class PatientPortal extends javax.swing.JPanel {
                 .addGap(78, 78, 78)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+<<<<<<< HEAD
+=======
+                        .addContainerGap()
+                        .addComponent(jScrollPane2))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGap(84, 84, 84)
+                        .addComponent(jButton1)
+                        .addGap(214, 214, 214)
+                        .addComponent(jLabel4)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addContainerGap()
+>>>>>>> a9447ce3e0dffd0a06e2b07a37a8058399ef517e
                         .addComponent(patientSearchBar, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(28, 28, 28)
                         .addComponent(patientSearchSubmitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -221,10 +247,19 @@ public class PatientPortal extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
+<<<<<<< HEAD
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 542, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
+=======
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel4)
+                    .addComponent(jButton1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 531, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+>>>>>>> a9447ce3e0dffd0a06e2b07a37a8058399ef517e
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(patientSearchBar, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(patientSearchSubmitButton)
@@ -250,8 +285,8 @@ public class PatientPortal extends javax.swing.JPanel {
 		Integer selectedRow = patientPortalTable.getSelectedRow();
 		Integer patientID = (Integer)patientPortalTable.getValueAt(selectedRow, PATIENT_ID_COLUMN);
 		Patient thePatient = dataBase.getPatientByID(patientID);
-		mainFrame.newPatientForm.loadPatientInfo(thePatient);
-		mainFrame.showPatientForm();
+		mainDash.newPatientForm.loadPatientInfo(thePatient);
+		mainDash.showPatientForm();
     }//GEN-LAST:event_editPatientButtonActionPerformed
 
     private void deletePatientButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deletePatientButtonActionPerformed
@@ -270,6 +305,7 @@ public class PatientPortal extends javax.swing.JPanel {
 			tableModel.removeRow(selectedRow);
 
 			Patient theVictim = dataBase.getPatientByID(patientID);
+			mainDash.setActivePatient(null);
 			dataBase.delete(theVictim);
 		}
 		
@@ -289,7 +325,7 @@ public class PatientPortal extends javax.swing.JPanel {
 
     private void addPatientButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addPatientButtonActionPerformed
         System.out.println("Patient Portal: Add button");
-		mainFrame.showPatientForm();
+		mainDash.showPatientForm();
     }//GEN-LAST:event_addPatientButtonActionPerformed
 
     private void patientSearchBarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_patientSearchBarKeyPressed
@@ -299,11 +335,16 @@ public class PatientPortal extends javax.swing.JPanel {
 		}
     }//GEN-LAST:event_patientSearchBarKeyPressed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        dataBase.doTest();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addPatientButton;
     private javax.swing.JButton deletePatientButton;
     private javax.swing.JButton editPatientButton;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;

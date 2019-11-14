@@ -17,11 +17,20 @@ import java.awt.event.MouseListener;
 public class MainDashboard extends javax.swing.JFrame {
     
     public PatientPortal pPanel;
-    public NewPatientsForm newPatientForm;
+
+  //  public NewPatientsForm newPatientForm;
     public AppointmentDisplay appointmentPanel;
     public InsurancePage insurancePanel;
     public HomePanel homePanel;
     //public ViewFutureAppointments viewFutureAppts;
+
+    public PatientForm newPatientForm;
+    public JPanel mainWindow;		// TODO: Remove this.
+    //public AppointmentDisplay appointmentPanel;
+   // public InsurancePage insurancePanel;
+	
+    private Patient activePatient;
+
     
         
         
@@ -30,12 +39,20 @@ public class MainDashboard extends javax.swing.JFrame {
      */
     public MainDashboard() {
         initComponents();
+
 		
-        newPatientForm      = new NewPatientsForm(this);
+       // newPatientForm      = new NewPatientsForm(this);
         pPanel              = new PatientPortal(this);
 	appointmentPanel    = new AppointmentDisplay(this);
 	insurancePanel      = new InsurancePage();
         homePanel           = new HomePanel();
+
+	//mainWindow = new JPanel();	// This JPanel doesn't exist anywhere. Use mainPanel to display cards and stuff
+        newPatientForm = new PatientForm(this);
+	pPanel = new PatientPortal(this);
+	appointmentPanel = new AppointmentDisplay(this);
+	insurancePanel = new InsurancePage();
+
 		
         mainPanel.add(pPanel);
 	mainPanel.add(newPatientForm);
@@ -46,6 +63,16 @@ public class MainDashboard extends javax.swing.JFrame {
                 
       
     }
+	
+	public void setActivePatient(Patient thePatient)
+	{
+		
+	}
+	
+	public Patient getActivePatient()
+	{
+		return activePatient;
+	}
 	
 	public void showPatientPortal()
 	{
@@ -113,6 +140,7 @@ public class MainDashboard extends javax.swing.JFrame {
         mainPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1060, 730));
 
         background.setBackground(new java.awt.Color(57, 113, 177));
         background.setPreferredSize(new java.awt.Dimension(1280, 730));

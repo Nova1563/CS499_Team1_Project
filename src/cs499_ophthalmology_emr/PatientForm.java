@@ -6,20 +6,22 @@
 package cs499_ophthalmology_emr;
 
 import java.awt.Component;
+import javax.swing.JDialog;
+import javax.swing.JOptionPane;
 import javax.swing.text.JTextComponent;
 
 /**
  *
  * @author kenda
  */
-public class NewPatientsForm extends javax.swing.JPanel {
+public class PatientForm extends javax.swing.JPanel {
 	private DataBaseManager dataBase = null;
 	private MainDashboard dashBoard = null;
 	private Patient activePatient = null;
     /**
      * Creates new form NewAppointmentForm
      */
-    public NewPatientsForm(MainDashboard _dashBoard) {
+    public PatientForm(MainDashboard _dashBoard) {
 		dataBase = DataBaseManager.getInstance();
 		dashBoard = _dashBoard;
         initComponents();
@@ -50,34 +52,120 @@ public class NewPatientsForm extends javax.swing.JPanel {
 		workPhoneTextField.setText(thePatient.getWorkPhone());
 	}
 	
-	public void savePatientInfo()
+	public Boolean savePatientInfo()
 	{
+		Boolean isSuccess = false;
 		if (activePatient == null)
 		{
 			activePatient = dataBase.getNewPatient();
 		}
-		activePatient.setName(nameTextField.getText());
-		activePatient.setAddress(addressTextField.getText());
-		activePatient.setAge(Integer.parseInt(ageTextField.getText()));
-		activePatient.setDateOfBirth(Integer.parseInt(dobTextField.getText()));
-		activePatient.setEmailAddress(emailTextField.getText());
-		activePatient.setHomePhone(homePhoneTextField.getText());
-		activePatient.setWorkPhone(workPhoneTextField.getText());
-		activePatient.setMobilePhone(mobilePhoneTextField.getText());
-		activePatient.setGender(genderTextField.getText());
-		activePatient.setTitle(titleTextField.getText());
-		activePatient.setSsn(ssnTextField.getText());
-		activePatient.setEmergContactName(emergName.getText());
-		activePatient.setEmergContactPhone(emergPhone.getText());
-		activePatient.setInsProvider(providerTextField.getText());
-		activePatient.setInsGroupNo(groupTextField.getText());
-		activePatient.setInsContractNo(contractTextField.getText());
-		activePatient.setInsEffectiveDate(Integer.parseInt(effectiveTextField.getText()));
-		activePatient.setInsCoPayAmount(Double.valueOf(copayTextField.getText()));
-		activePatient.setInsProviderAddr(providerAddrTextField.getText());
-		activePatient.setInsProviderPhone(providerPhoneTextField.getText());
+		try
+		{
+			activePatient.setName(nameTextField.getText());
+			activePatient.setAddress(addressTextField.getText());
+			activePatient.setAge(Integer.parseInt(ageTextField.getText()));
+			activePatient.setDateOfBirth(Integer.parseInt(dobTextField.getText()));
+			activePatient.setEmailAddress(emailTextField.getText());
+			activePatient.setHomePhone(homePhoneTextField.getText());
+			activePatient.setWorkPhone(workPhoneTextField.getText());
+			activePatient.setMobilePhone(mobilePhoneTextField.getText());
+			activePatient.setGender(genderTextField.getText());
+			activePatient.setTitle(titleTextField.getText());
+			activePatient.setSsn(ssnTextField.getText());
+			activePatient.setEmergContactName(emergName.getText());
+			activePatient.setEmergContactPhone(emergPhone.getText());
+			activePatient.setInsProvider(providerTextField.getText());
+			activePatient.setInsGroupNo(groupTextField.getText());
+			activePatient.setInsContractNo(contractTextField.getText());
+			activePatient.setInsEffectiveDate(Integer.parseInt(effectiveTextField.getText()));
+			activePatient.setInsCoPayAmount(Double.valueOf(copayTextField.getText()));
+			activePatient.setInsProviderAddr(providerAddrTextField.getText());
+			activePatient.setInsProviderPhone(providerPhoneTextField.getText());
+
+			dataBase.save(activePatient);
+			isSuccess = true;
+		}
+		catch(Exception e)
+		{
+			//dataBase.delete(activePatient);
+			JOptionPane.showMessageDialog(null, "Error: ");
+			System.out.println(e.getMessage());
+			isSuccess = false;
+		}
+		return isSuccess;
+	}
+	
+	private Boolean validateFloat(String theString)
+	{
+		Boolean isValid = true;
+		Boolean decimalFound = false;
+		Integer remainingDecimalPlaces = 2;
 		
-		dataBase.save(activePatient);
+		String trimmedFloat = "";
+		
+		for (Integer i=0; i < theString.length(); i++)
+		{
+			if (Character.isDigit(theString.charAt(i)))
+			{
+				if (decimalFound)
+				{
+					--remainingDecimalPlaces;
+					if (remainingDecimalPlaces < 0)
+					{
+						isValid = false;
+					}
+				}
+				trimmedFloat += theString.charAt(i);
+			}
+			
+			
+			
+			if (theString.charAt(i) == '.')
+			{
+				if (decimalFound == true)
+				{
+					isValid = false;
+				}
+				else
+				{
+					decimalFound = true;
+				}
+			}
+		}
+		if (remainingDecimalPlaces != 0)
+		{
+			isValid = false;
+		}
+		if (trimmedFloat.equals(""))
+		{
+			isValid = false;
+		}
+		return (isValid && decimalFound);
+	}
+	
+	private Boolean validateDate(String theDate)
+	{
+		Boolean isValid = true;
+		
+		String trimmedDate = "";
+		
+		for (Integer i=0; i < theDate.length(); i++)
+		{
+			if (Character.isDigit(theDate.charAt(i)))
+			{
+				trimmedDate += theDate.charAt(i);
+			}
+		}
+		if (trimmedDate.equals(""))
+		{
+			isValid = false;
+		}
+		if (trimmedDate.length() != 8)
+		{
+			isValid = false;
+		}
+		
+		return isValid;
 	}
 
     /**
@@ -143,6 +231,18 @@ public class NewPatientsForm extends javax.swing.JPanel {
             }
         });
 
+        ageTextField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                ageTextFieldFocusLost(evt);
+            }
+        });
+
+        dobTextField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                dobTextFieldFocusLost(evt);
+            }
+        });
+
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel1.setText("Name:");
 
@@ -199,6 +299,18 @@ public class NewPatientsForm extends javax.swing.JPanel {
             }
         });
 
+        effectiveTextField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                effectiveTextFieldFocusLost(evt);
+            }
+        });
+
+        copayTextField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                copayTextFieldFocusLost(evt);
+            }
+        });
+
         jLabel15.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel15.setText("Insurance Information");
 
@@ -238,6 +350,7 @@ public class NewPatientsForm extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(12, 12, 12)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -287,17 +400,18 @@ public class NewPatientsForm extends javax.swing.JPanel {
                                         .addComponent(copayTextField)
                                         .addComponent(providerPhoneTextField)
                                         .addComponent(providerAddrTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addComponent(emergName, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(saveButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(cancelButton)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(clearButton))
-                                .addComponent(emergPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(emergName, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(saveButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(cancelButton)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(clearButton))
+                                    .addComponent(emergPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addComponent(jLabel14))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -387,7 +501,7 @@ public class NewPatientsForm extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(emergPhone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel13))
-                .addGap(18, 18, 18)
+                .addGap(24, 24, 24)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(saveButton)
                     .addComponent(clearButton)
@@ -427,10 +541,74 @@ public class NewPatientsForm extends javax.swing.JPanel {
     }//GEN-LAST:event_cancelButtonActionPerformed
 
     private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
-        savePatientInfo();
-		activePatient = null;
-		dashBoard.showPatientPortal();
+        Boolean saveSuccess = savePatientInfo();
+		if (saveSuccess)
+		{
+			activePatient = null;
+			dashBoard.showPatientPortal();
+		}
     }//GEN-LAST:event_saveButtonActionPerformed
+
+    private void dobTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_dobTextFieldFocusLost
+        Boolean validDate = validateDate(dobTextField.getText());
+		
+		if (!validDate)
+		{
+			dobTextField.setText("MMDDYYYY");
+			JOptionPane.showMessageDialog(null, "Enter date in MMDDYYYY format.");
+			dobTextField.requestFocus(true);
+		}
+    }//GEN-LAST:event_dobTextFieldFocusLost
+
+    private void effectiveTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_effectiveTextFieldFocusLost
+        Boolean validDate = validateDate(effectiveTextField.getText());
+		
+		if (!validDate)
+		{
+			effectiveTextField.setText("MMDDYYYY");
+			JOptionPane.showMessageDialog(null, "Enter date in MMDDYYYY format.");
+			effectiveTextField.requestFocus(true);
+		}
+    }//GEN-LAST:event_effectiveTextFieldFocusLost
+
+    private void copayTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_copayTextFieldFocusLost
+        Boolean validFloat = validateFloat(copayTextField.getText());
+		
+		if (!validFloat)
+		{
+			copayTextField.setText("0.00");
+			JOptionPane.showMessageDialog(null, "Enter copay as decimal. Ex: 4.50");
+			copayTextField.requestFocus(true);
+		}
+    }//GEN-LAST:event_copayTextFieldFocusLost
+
+    private void ageTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_ageTextFieldFocusLost
+        Boolean isValid = true;
+		
+		String ageString = ageTextField.getText();
+		
+		for (Integer i=0; i < ageString.length(); i++)
+		{
+			if (!(Character.isDigit(ageString.charAt(i))))
+			{
+				isValid = false;
+			}
+		}
+		if (ageString.equals(""))
+		{
+			isValid = false;
+		}
+		//if (ageString.length() > 3)
+		//{
+		//	isValid = false;
+		//}
+		if (!isValid)
+		{
+			ageTextField.setText("0");
+			JOptionPane.showMessageDialog(null, "Enter valid age.");
+			ageTextField.requestFocus(true);
+		}
+    }//GEN-LAST:event_ageTextFieldFocusLost
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

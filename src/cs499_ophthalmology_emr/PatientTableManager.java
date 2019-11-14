@@ -516,7 +516,7 @@ public class PatientTableManager
 		thePatient.setName("How is that?");
 		thePatient.setAddress("address goes here");
 		thePatient.setAge(44);
-		thePatient.setDateOfBirth(121575);
+		thePatient.setDateOfBirth(10201955);
 		thePatient.setEmailAddress("Im@YoMommas.house");
 		thePatient.setHomePhone("123456789");
 		thePatient.setWorkPhone("8675309");
@@ -529,7 +529,7 @@ public class PatientTableManager
 		thePatient.setInsProvider("Red Sword Red Dagger");
 		thePatient.setInsGroupNo("Grp55567");
 		thePatient.setInsContractNo("00000-1");
-		thePatient.setInsEffectiveDate(122987);
+		thePatient.setInsEffectiveDate(12291887);
 		thePatient.setInsCoPayAmount(45.55);
 		thePatient.setInsProviderAddr("123 Insurance Drive");
 		thePatient.setInsProviderPhone("6547764578");
