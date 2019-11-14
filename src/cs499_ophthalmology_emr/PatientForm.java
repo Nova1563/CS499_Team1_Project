@@ -34,8 +34,8 @@ public class PatientForm extends javax.swing.JPanel {
 		ageTextField.setText(thePatient.getAge().toString());
 		contractTextField.setText(thePatient.getInsContractNo());
 		copayTextField.setText(String.valueOf(thePatient.getInsCoPayAmount()));
-		dobTextField.setText(thePatient.getDateOfBirth().toString());
-		effectiveTextField.setText(thePatient.getInsEffectiveDate().toString());
+		dobTextField.setText(formatDate(thePatient.getDateOfBirth().toString()));
+		effectiveTextField.setText(formatDate(thePatient.getInsEffectiveDate().toString()));
 		emailTextField.setText(thePatient.getEmailAddress());
 		emergName.setText(thePatient.getEmergContactName());
 		emergPhone.setText(thePatient.getEmergContactPhone());
@@ -63,8 +63,16 @@ public class PatientForm extends javax.swing.JPanel {
 		{
 			activePatient.setName(nameTextField.getText());
 			activePatient.setAddress(addressTextField.getText());
-			activePatient.setAge(Integer.parseInt(ageTextField.getText()));
-			activePatient.setDateOfBirth(Integer.parseInt(dobTextField.getText()));
+			if (ageTextField.getText().equals(""))
+				activePatient.setAge(0);
+			else
+				activePatient.setAge(Integer.parseInt(ageTextField.getText()));
+			
+			if (dobTextField.getText().equals(""))
+				activePatient.setDateOfBirth(0);
+			else
+				activePatient.setDateOfBirth(unformatDate(dobTextField.getText()));
+			
 			activePatient.setEmailAddress(emailTextField.getText());
 			activePatient.setHomePhone(homePhoneTextField.getText());
 			activePatient.setWorkPhone(workPhoneTextField.getText());
@@ -77,22 +85,59 @@ public class PatientForm extends javax.swing.JPanel {
 			activePatient.setInsProvider(providerTextField.getText());
 			activePatient.setInsGroupNo(groupTextField.getText());
 			activePatient.setInsContractNo(contractTextField.getText());
-			activePatient.setInsEffectiveDate(Integer.parseInt(effectiveTextField.getText()));
-			activePatient.setInsCoPayAmount(Double.valueOf(copayTextField.getText()));
+			if (effectiveTextField.getText().equals(""))
+				activePatient.setInsEffectiveDate(0);
+			else
+				activePatient.setInsEffectiveDate(unformatDate(effectiveTextField.getText()));
+			
+			if (copayTextField.getText().equals(""))
+				activePatient.setInsCoPayAmount(0.0);
+			else
+				activePatient.setInsCoPayAmount(Double.valueOf(copayTextField.getText()));
+			
 			activePatient.setInsProviderAddr(providerAddrTextField.getText());
 			activePatient.setInsProviderPhone(providerPhoneTextField.getText());
 
-			dataBase.save(activePatient);
 			isSuccess = true;
 		}
 		catch(Exception e)
 		{
 			//dataBase.delete(activePatient);
 			JOptionPane.showMessageDialog(null, "Error: ");
-			System.out.println(e.getMessage());
+			System.out.println("PatientForm.savePatientInfo() error: " + e.getMessage());
 			isSuccess = false;
 		}
+		if (isSuccess)
+			dataBase.save(activePatient);
+
 		return isSuccess;
+	}
+	
+	private String formatDate(String theDate)
+	{
+		String formattedStr = "";
+		
+		for (Integer i = 0; i < theDate.length(); i++)
+		{
+			if ((i == 2) || (i == 4))
+				formattedStr = formattedStr + "/" +theDate.charAt(i);
+			else
+				formattedStr = formattedStr +theDate.charAt(i);
+		}
+		return formattedStr;
+	}
+	
+	private Integer unformatDate(String theDate)
+	{
+		String formattedStr = "";
+		
+		for (Integer i = 0; i < theDate.length(); i++)
+		{
+			if (Character.isDigit(theDate.charAt(i)))
+				formattedStr += theDate.charAt(i);
+		}
+		
+		return Integer.parseInt(formattedStr);
 	}
 	
 	private Boolean validateFloat(String theString)
@@ -521,7 +566,7 @@ public class PatientForm extends javax.swing.JPanel {
 			System.out.println(itsComp.getClass().getName());
 			if (itsComp.getClass().getName().equals("javax.swing.JTextField"))
 			{
-				((JTextComponent)itsComp).setText("");
+				((JTextComponent)itsComp).setText(" ");
 			}
 		}
 		activePatient = null;
