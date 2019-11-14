@@ -84,7 +84,6 @@ public class PatientPortal extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel4 = new javax.swing.JLabel();
         patientSearchBar = new javax.swing.JTextField();
         patientSearchSubmitButton = new javax.swing.JButton();
         deletePatientButton = new javax.swing.JButton();
@@ -92,14 +91,14 @@ public class PatientPortal extends javax.swing.JPanel {
         addPatientButton = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         patientPortalTable = new javax.swing.JTable();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(57, 113, 177));
+        setPreferredSize(new java.awt.Dimension(1620, 724));
 
-        setBackground(new java.awt.Color(185, 134, 11));
-
-        jLabel4.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
-        jLabel4.setText("Patient Portal");
-        jLabel4.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-
+        patientSearchBar.setBackground(new java.awt.Color(0, 255, 255));
+        patientSearchBar.setForeground(new java.awt.Color(0, 0, 0));
         patientSearchBar.setText("Search for patient name");
         patientSearchBar.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         patientSearchBar.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -108,6 +107,8 @@ public class PatientPortal extends javax.swing.JPanel {
             }
         });
 
+        patientSearchSubmitButton.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.darcula.selection.color1"));
+        patientSearchSubmitButton.setForeground(new java.awt.Color(0, 0, 0));
         patientSearchSubmitButton.setText("Search");
         patientSearchSubmitButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -115,6 +116,8 @@ public class PatientPortal extends javax.swing.JPanel {
             }
         });
 
+        deletePatientButton.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.darcula.selection.color1"));
+        deletePatientButton.setForeground(new java.awt.Color(0, 0, 0));
         deletePatientButton.setText("Delete Patient");
         deletePatientButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -127,6 +130,8 @@ public class PatientPortal extends javax.swing.JPanel {
             }
         });
 
+        editPatientButton.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.darcula.selection.color1"));
+        editPatientButton.setForeground(new java.awt.Color(0, 0, 0));
         editPatientButton.setText("Edit Patient");
         editPatientButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -134,6 +139,8 @@ public class PatientPortal extends javax.swing.JPanel {
             }
         });
 
+        addPatientButton.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.darcula.selection.color1"));
+        addPatientButton.setForeground(new java.awt.Color(0, 0, 0));
         addPatientButton.setText("Add Patient");
         addPatientButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -159,7 +166,6 @@ public class PatientPortal extends javax.swing.JPanel {
                 false, false, false, false
             };
 
-
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
@@ -180,47 +186,52 @@ public class PatientPortal extends javax.swing.JPanel {
             patientPortalTable.getColumnModel().getColumn(3).setMaxWidth(100);
         }
 
+        jPanel1.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.darcula.selection.color1"));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("Patient Portal");
+        jLabel4.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 1640, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(78, 78, 78)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane2))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGap(375, 375, 375)
-                        .addComponent(jLabel4)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addContainerGap()
                         .addComponent(patientSearchBar, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(28, 28, 28)
+                        .addComponent(patientSearchSubmitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(patientSearchSubmitButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(editPatientButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(addPatientButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 334, Short.MAX_VALUE)
-                        .addComponent(deletePatientButton)))
-                .addContainerGap())
+                        .addGap(616, 616, 616)
+                        .addComponent(deletePatientButton))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1299, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 531, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 542, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(patientSearchSubmitButton)
                     .addComponent(patientSearchBar, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(patientSearchSubmitButton)
                     .addComponent(editPatientButton)
                     .addComponent(addPatientButton)
                     .addComponent(deletePatientButton))
-                .addGap(12, 12, 12))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         getAccessibleContext().setAccessibleName("patientPortalPanel");
@@ -294,6 +305,7 @@ public class PatientPortal extends javax.swing.JPanel {
     private javax.swing.JButton deletePatientButton;
     private javax.swing.JButton editPatientButton;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable patientPortalTable;
     private javax.swing.JTextField patientSearchBar;
