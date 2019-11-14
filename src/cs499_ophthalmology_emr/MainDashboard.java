@@ -20,6 +20,7 @@ public class MainDashboard extends javax.swing.JFrame {
 
   //  public NewPatientsForm newPatientForm;
     public AppointmentDisplay appointmentPanel;
+    public NewAppointmentForm newAppt;
     public InsurancePage insurancePanel;
     public HomePanel homePanel;
     //public ViewFutureAppointments viewFutureAppts;
@@ -55,6 +56,7 @@ public class MainDashboard extends javax.swing.JFrame {
 	pPanel = new PatientPortal(this);
 	appointmentPanel = new AppointmentDisplay(this);
 	insurancePanel = new InsurancePage();
+        newAppt = new NewAppointmentForm();
         
 
 	mainPanel.add(homePanel);	
@@ -64,6 +66,7 @@ public class MainDashboard extends javax.swing.JFrame {
 	mainPanel.add(appointmentPanel);
 	mainPanel.add(insurancePanel);
         mainPanel.add(viewPatientPage);
+        mainPanel.add(newAppt);
        // mainPanel.add(viewFutureAppts);
                 
       
@@ -92,6 +95,13 @@ public class MainDashboard extends javax.swing.JFrame {
             newPatientForm.setVisible(true);
 	}
         
+        public void showNewAppt()
+        {
+            
+            hideAllPanelComponents(mainPanel);
+            newAppt.setVisible(true);
+        }       
+         
         /*
         public void showAppointmentForm()
         {
