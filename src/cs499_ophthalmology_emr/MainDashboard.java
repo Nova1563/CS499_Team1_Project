@@ -25,6 +25,7 @@ public class MainDashboard extends javax.swing.JFrame {
     //public ViewFutureAppointments viewFutureAppts;
 
     public PatientForm newPatientForm;
+    //public AppointmentForm newAppointmentForm;
     public JPanel mainWindow;		// TODO: Remove this.
     //public AppointmentDisplay appointmentPanel;
    // public InsurancePage insurancePanel;
@@ -49,6 +50,7 @@ public class MainDashboard extends javax.swing.JFrame {
 
 	//mainWindow = new JPanel();	// This JPanel doesn't exist anywhere. Use mainPanel to display cards and stuff
         newPatientForm = new PatientForm(this);
+        //newAppointmentForm = new AppointmentForm(this);
 	pPanel = new PatientPortal(this);
 	appointmentPanel = new AppointmentDisplay(this);
 	insurancePanel = new InsurancePage();
@@ -56,6 +58,7 @@ public class MainDashboard extends javax.swing.JFrame {
 		
         mainPanel.add(pPanel);
 	mainPanel.add(newPatientForm);
+        //mainPanel.add(newAppointmentForm);
 	mainPanel.add(appointmentPanel);
 	mainPanel.add(insurancePanel);
         mainPanel.add(homePanel);
@@ -86,6 +89,15 @@ public class MainDashboard extends javax.swing.JFrame {
             hideAllPanelComponents(mainPanel);
             newPatientForm.setVisible(true);
 	}
+        
+        /*
+        public void showAppointmentForm()
+        {
+            hideAllPanelComponents(mainPanel);
+            newAppointmentForm.setVisable(true);
+            
+        }
+        */
 	
 	public void showAppointmentDisplay()
 	{
