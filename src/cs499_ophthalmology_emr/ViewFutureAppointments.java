@@ -39,9 +39,9 @@ public class ViewFutureAppointments extends javax.swing.JPanel {
 
         jButton1.setText("jButton1");
 
-        setBackground(new java.awt.Color(184, 134, 11));
+        setBackground(new java.awt.Color(53, 60, 81));
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(57, 113, 177));
 
         jTextField1.setToolTipText("Enter a date by MM/DD/YYYY");
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
@@ -50,13 +50,14 @@ public class ViewFutureAppointments extends javax.swing.JPanel {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Courier New", 0, 11)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Search:");
 
-        jLabel2.setFont(new java.awt.Font("Courier New", 0, 11)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Future Appointments");
 
-        jButton2.setFont(new java.awt.Font("Courier New", 0, 11)); // NOI18N
+        jButton2.setBackground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Delete Appointment");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -75,7 +76,7 @@ public class ViewFutureAppointments extends javax.swing.JPanel {
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 323, Short.MAX_VALUE)
+            .addGap(0, 322, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -95,7 +96,7 @@ public class ViewFutureAppointments extends javax.swing.JPanel {
                             .addComponent(jLabel2)
                             .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButton2))))
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addContainerGap(45, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -115,7 +116,6 @@ public class ViewFutureAppointments extends javax.swing.JPanel {
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel3.setFont(new java.awt.Font("Courier New", 0, 11)); // NOI18N
         jLabel3.setText("Appointment Details:");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);

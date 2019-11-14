@@ -23,12 +23,13 @@ public class MainDashboard extends javax.swing.JFrame {
     public InsurancePage insurancePanel;
     public HomePanel homePanel;
     //public ViewFutureAppointments viewFutureAppts;
-
+    public PatientPageTemplate viewPatientPage;
     public PatientForm newPatientForm;
     //public AppointmentForm newAppointmentForm;
     public JPanel mainWindow;		// TODO: Remove this.
     //public AppointmentDisplay appointmentPanel;
    // public InsurancePage insurancePanel;
+    
 	
     private Patient activePatient;
 
@@ -47,7 +48,7 @@ public class MainDashboard extends javax.swing.JFrame {
 	appointmentPanel    = new AppointmentDisplay(this);
 	insurancePanel      = new InsurancePage();
         homePanel           = new HomePanel();
-
+        viewPatientPage     = new PatientPageTemplate();
 	//mainWindow = new JPanel();	// This JPanel doesn't exist anywhere. Use mainPanel to display cards and stuff
         newPatientForm = new PatientForm(this);
         //newAppointmentForm = new AppointmentForm(this);
@@ -56,13 +57,13 @@ public class MainDashboard extends javax.swing.JFrame {
 	insurancePanel = new InsurancePage();
         
 
-		
+	mainPanel.add(homePanel);	
         mainPanel.add(pPanel);
 	mainPanel.add(newPatientForm);
         //mainPanel.add(newAppointmentForm);
 	mainPanel.add(appointmentPanel);
 	mainPanel.add(insurancePanel);
-        mainPanel.add(homePanel);
+        mainPanel.add(viewPatientPage);
        // mainPanel.add(viewFutureAppts);
                 
       
@@ -99,6 +100,13 @@ public class MainDashboard extends javax.swing.JFrame {
             
         }
         */
+        
+        public void showPatientPage()
+        {
+            hideAllPanelComponents(mainPanel);
+            viewPatientPage.setVisible(true);
+            
+        }
 	
 	public void showAppointmentDisplay()
 	{
@@ -156,11 +164,13 @@ public class MainDashboard extends javax.swing.JFrame {
         mainPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setSize(getPreferredSize());
 
         background.setBackground(new java.awt.Color(57, 113, 177));
         background.setPreferredSize(new java.awt.Dimension(1280, 730));
 
         toolBarJPanel.setBackground(new java.awt.Color(53, 60, 81));
+        toolBarJPanel.setAutoscrolls(true);
         toolBarJPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         homeBttn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cs499_ophthalmology_emr/images/homeIcon.png"))); // NOI18N

@@ -77,6 +77,7 @@ public class PatientPageTemplate extends javax.swing.JPanel {
 
         jTabbedPane1.setBackground(new java.awt.Color(53, 60, 81));
         jTabbedPane1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jTabbedPane1.setForeground(new java.awt.Color(255, 255, 255));
         jTabbedPane1.setFont(new java.awt.Font("Courier New", 0, 11)); // NOI18N
         jTabbedPane1.setName("P.I"); // NOI18N
         jTabbedPane1.setOpaque(true);
