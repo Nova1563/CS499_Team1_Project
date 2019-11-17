@@ -270,6 +270,12 @@ public class PatientForm extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(53, 60, 81));
 
+        nameTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nameTextFieldActionPerformed(evt);
+            }
+        });
+
         titleTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 titleTextFieldActionPerformed(evt);
@@ -676,6 +682,10 @@ public class PatientForm extends javax.swing.JPanel {
 			ageTextField.requestFocus(true);
 		}
     }//GEN-LAST:event_ageTextFieldFocusLost
+
+    private void nameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nameTextFieldActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
