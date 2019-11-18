@@ -17,7 +17,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class PatientPortal extends javax.swing.JPanel {
 	final Integer PATIENT_ID_COLUMN = 3;
-	private MainDashboard mainFrame = null;
+	private MainDashboard mainDash = null;
 	private ArrayList<Patient> patientList = null;
 	private DataBaseManager dataBase = DataBaseManager.getInstance();
 	private DefaultTableModel tableModel = null;
@@ -25,7 +25,7 @@ public class PatientPortal extends javax.swing.JPanel {
      * Creates new form PatientPortal
      */
     public PatientPortal(MainDashboard _mainFrame) {
-		mainFrame = _mainFrame;
+		mainDash = _mainFrame;
         initComponents();
 		tableModel = (DefaultTableModel) patientPortalTable.getModel();
 		loadTableAllEntries();
@@ -96,9 +96,9 @@ public class PatientPortal extends javax.swing.JPanel {
         patientPortalTable = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
+        selectPatientButton = new javax.swing.JButton();
 
         jPopupMenu1.setName("patientOptions"); // NOI18N
-        jPopupMenu1.setPopupSize(new java.awt.Dimension(200, 50));
 
         jMenuItem1.setText("Make Current Patient");
         jPopupMenu1.add(jMenuItem1);
@@ -209,7 +209,20 @@ public class PatientPortal extends javax.swing.JPanel {
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Patient Portal");
         jLabel4.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-90, 20, 1240, -1));
+        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel4MouseClicked(evt);
+            }
+        });
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 20, 400, -1));
+
+        selectPatientButton.setText("Make Active Patient");
+        selectPatientButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                selectPatientButtonMouseClicked(evt);
+            }
+        });
+        jPanel1.add(selectPatientButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -248,7 +261,7 @@ public class PatientPortal extends javax.swing.JPanel {
                     .addComponent(editPatientButton)
                     .addComponent(addPatientButton)
                     .addComponent(deletePatientButton))
-                .addContainerGap(35, Short.MAX_VALUE))
+                .addContainerGap(58, Short.MAX_VALUE))
         );
 
         getAccessibleContext().setAccessibleName("patientPortalPanel");
@@ -267,8 +280,8 @@ public class PatientPortal extends javax.swing.JPanel {
 		Integer selectedRow = patientPortalTable.getSelectedRow();
 		Integer patientID = (Integer)patientPortalTable.getValueAt(selectedRow, PATIENT_ID_COLUMN);
 		Patient thePatient = dataBase.getPatientByID(patientID);
-		mainFrame.newPatientForm.loadPatientInfo(thePatient);
-		mainFrame.showPatientForm();
+		mainDash.newPatientForm.loadPatientInfo(thePatient);
+		mainDash.showPatientForm();
     }//GEN-LAST:event_editPatientButtonActionPerformed
 
     private void deletePatientButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deletePatientButtonActionPerformed
@@ -306,7 +319,7 @@ public class PatientPortal extends javax.swing.JPanel {
 
     private void addPatientButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addPatientButtonActionPerformed
         System.out.println("Patient Portal: Add button");
-		mainFrame.showPatientForm();
+		mainDash.showPatientForm();
     }//GEN-LAST:event_addPatientButtonActionPerformed
 
     private void patientSearchBarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_patientSearchBarKeyPressed
@@ -318,8 +331,21 @@ public class PatientPortal extends javax.swing.JPanel {
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         System.out.println("Patient Portal: pop-up menu view patient page");
-            mainFrame.showPatientPage();
+            mainDash.showPatientPage();
     }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel4MouseClicked
+
+    private void selectPatientButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_selectPatientButtonMouseClicked
+        System.out.println("Patient Portal: Make active patient button");
+		Integer selectedRow = patientPortalTable.getSelectedRow();
+		Integer patientID = (Integer)patientPortalTable.getValueAt(selectedRow, PATIENT_ID_COLUMN);
+		Patient activePatient = dataBase.getPatientByID(patientID);
+		mainDash.setActivePatient(activePatient);
+		mainDash.currentPatientTextBar.setText(activePatient.getName());
+    }//GEN-LAST:event_selectPatientButtonMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -335,5 +361,6 @@ public class PatientPortal extends javax.swing.JPanel {
     private javax.swing.JTable patientPortalTable;
     private javax.swing.JTextField patientSearchBar;
     private javax.swing.JButton patientSearchSubmitButton;
+    private javax.swing.JButton selectPatientButton;
     // End of variables declaration//GEN-END:variables
 }
