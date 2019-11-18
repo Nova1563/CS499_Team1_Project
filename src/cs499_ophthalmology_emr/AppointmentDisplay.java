@@ -54,6 +54,27 @@ public class AppointmentDisplay extends javax.swing.JPanel {
             tableModel.addRow(new Object[] {appointmentTime, patientName, lool, doctorToSee});
         }
     }
+    
+    public void loadTableFromList(ArrayList<Appointment> theList)
+    {
+        String patientName = null;
+        Integer doctorToSee = null;
+        Integer appointmentTime = null;
+        String lool = null;
+        
+        appointmentList = theList;
+        tableModel.setRowCount(0);
+        
+        for (Appointment currentAppointment: appointmentList)
+        {
+            patientName = currentAppointment.getPatientName();
+            doctorToSee = currentAppointment.getDoctorToSee();
+            appointmentTime = currentAppointment.getAppointmentTime();
+            lool = currentAppointment.getReasonForVisit();
+            
+            tableModel.addRow(new Object[] {appointmentTime, patientName, lool, doctorToSee});
+        }
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.

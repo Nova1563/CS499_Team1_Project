@@ -287,6 +287,11 @@ public class PatientForm extends javax.swing.JPanel {
                 dobTextFieldFocusLost(evt);
             }
         });
+        dobTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dobTextFieldActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -676,6 +681,10 @@ public class PatientForm extends javax.swing.JPanel {
 			ageTextField.requestFocus(true);
 		}
     }//GEN-LAST:event_ageTextFieldFocusLost
+
+    private void dobTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dobTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_dobTextFieldActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

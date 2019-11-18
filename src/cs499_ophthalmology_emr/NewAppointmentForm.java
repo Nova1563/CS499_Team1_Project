@@ -5,17 +5,188 @@
  */
 package cs499_ophthalmology_emr;
 
+import java.awt.Component;
+import javax.swing.JDialog;
+import javax.swing.JOptionPane;
+import javax.swing.text.JTextComponent;
+
 /**
  *
  * @author kenda
  */
 public class NewAppointmentForm extends javax.swing.JPanel {
+    
+        private DataBaseManager dataBase = null;
+	private MainDashboard dashBoard = null;
+	private Patient activePatient = null;
 
     /**
      * Creates new form NewPatientForm
      */
-    public NewAppointmentForm() {
+    public NewAppointmentForm(MainDashboard _dashBoard) {
         initComponents();
+        dataBase = DataBaseManager.getInstance();
+	dashBoard = _dashBoard;
+    }
+    
+    public void loadPatient(Patient thePatient)
+    {
+        dobTextField.setText(formatDate(thePatient.getDateOfBirth().toString()));
+        firstNameTextField.setText(thePatient.getName());
+        lastNameTextField.setText(thePatient.getName());
+        phoneNumberTextField.setText(thePatient.getMobilePhone());
+    }
+    
+    public Boolean savePatientInfo()
+    {
+        Boolean isSuccess = false;
+        
+        if (activePatient == null)
+	{
+            activePatient = dataBase.getNewPatient();
+	}
+        
+        try
+        {
+            activePatient.setName(firstNameTextField.getText());
+            activePatient.setName(lastNameTextField.getText());
+            
+            if(dobTextField.getText().equals(""))
+            {
+                activePatient.setDateOfBirth(0);
+            }
+            
+            else
+            {
+                activePatient.setDateOfBirth(unformatDate(dobTextField.getText()));
+            }
+            
+            isSuccess = true;
+        }
+        
+        catch(Exception e)
+        {
+            JOptionPane.showMessageDialog(null, "Error: ");
+            System.out.println("NewAppointmentForm.savePatientInfo() error: " + e.getMessage());
+            isSuccess = false;
+        }
+        
+        if (isSuccess)
+        {
+            dataBase.save(activePatient);
+        }
+        
+        return isSuccess;
+    }
+    
+    private String formatDate(String theDate)
+    {
+        String formattedStr = "";
+        
+        for (Integer i = 0; i < theDate.length(); i++)
+        {
+            if ((i == 2) || (i == 4))
+            {
+                formattedStr = formattedStr + "/" + theDate.charAt(i);
+            }
+            
+            else
+            {
+                formattedStr = formattedStr +theDate.charAt(i);
+            }
+        }
+        
+        return formattedStr;
+    }
+    
+    private Integer unformatDate(String theDate)
+    {
+        String formattedStr = "";
+        
+        for (Integer i = 0; i < theDate.length(); i++)
+	{
+            if (Character.isDigit(theDate.charAt(i)))
+            {
+                formattedStr += theDate.charAt(i);
+            }
+	}
+        
+        return Integer.parseInt(formattedStr);
+    }
+    
+    
+    private Boolean validateFloat(String theString)
+    {
+		Boolean isValid = true;
+		Boolean decimalFound = false;
+		Integer remainingDecimalPlaces = 2;
+		
+		String trimmedFloat = "";
+		
+		for (Integer i=0; i < theString.length(); i++)
+		{
+			if (Character.isDigit(theString.charAt(i)))
+			{
+				if (decimalFound)
+				{
+					--remainingDecimalPlaces;
+					if (remainingDecimalPlaces < 0)
+					{
+						isValid = false;
+					}
+				}
+				trimmedFloat += theString.charAt(i);
+			}
+			
+			
+			
+			if (theString.charAt(i) == '.')
+			{
+				if (decimalFound == true)
+				{
+					isValid = false;
+				}
+				else
+				{
+					decimalFound = true;
+				}
+			}
+		}
+		if (remainingDecimalPlaces != 0)
+		{
+			isValid = false;
+		}
+		if (trimmedFloat.equals(""))
+		{
+			isValid = false;
+		}
+		return (isValid && decimalFound);
+    }
+    
+    
+    private Boolean validateDate(String theDate)
+    {
+		Boolean isValid = true;
+		
+		String trimmedDate = "";
+		
+		for (Integer i=0; i < theDate.length(); i++)
+		{
+			if (Character.isDigit(theDate.charAt(i)))
+			{
+				trimmedDate += theDate.charAt(i);
+			}
+		}
+		if (trimmedDate.equals(""))
+		{
+			isValid = false;
+		}
+		if (trimmedDate.length() != 8)
+		{
+			isValid = false;
+		}
+		
+		return isValid;
     }
 
     /**
@@ -31,12 +202,15 @@ public class NewAppointmentForm extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
+        firstNameTextField = new javax.swing.JTextField();
+        lastNameTextField = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        dobTextField = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
+        phoneNumberTextField = new javax.swing.JTextField();
+        Submit = new javax.swing.JButton();
+        Cancel = new javax.swing.JButton();
+        ClearAll = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jTextField2 = new javax.swing.JTextField();
 
@@ -52,31 +226,52 @@ public class NewAppointmentForm extends javax.swing.JPanel {
 
         jLabel3.setText("Last Name:");
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        firstNameTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                firstNameTextFieldActionPerformed(evt);
             }
         });
 
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        lastNameTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                lastNameTextFieldActionPerformed(evt);
             }
         });
 
         jLabel4.setText("DoB:");
 
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        dobTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                dobTextFieldActionPerformed(evt);
             }
         });
 
         jLabel5.setText("Phone Number:");
 
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+        phoneNumberTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
+                phoneNumberTextFieldActionPerformed(evt);
+            }
+        });
+
+        Submit.setText("Submit");
+        Submit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SubmitActionPerformed(evt);
+            }
+        });
+
+        Cancel.setText("Cancel");
+        Cancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CancelActionPerformed(evt);
+            }
+        });
+
+        ClearAll.setText("Clear All");
+        ClearAll.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ClearAllActionPerformed(evt);
             }
         });
 
@@ -85,25 +280,34 @@ public class NewAppointmentForm extends javax.swing.JPanel {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel1)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel2))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addContainerGap()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField1)))
+                            .addComponent(jLabel1)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel2))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(lastNameTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE)
+                                    .addComponent(dobTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(firstNameTextField)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(phoneNumberTextField))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField5)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(35, 35, 35)
+                        .addComponent(Submit)
+                        .addGap(28, 28, 28)
+                        .addComponent(Cancel)
+                        .addGap(29, 29, 29)
+                        .addComponent(ClearAll)))
+                .addContainerGap(501, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -113,20 +317,25 @@ public class NewAppointmentForm extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(firstNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lastNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(14, 14, 14)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(dobTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(265, Short.MAX_VALUE))
+                    .addComponent(phoneNumberTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 231, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Submit)
+                    .addComponent(Cancel)
+                    .addComponent(ClearAll))
+                .addContainerGap())
         );
 
         jPanel2.setBackground(new java.awt.Color(57, 113, 177));
@@ -176,28 +385,71 @@ public class NewAppointmentForm extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void firstNameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_firstNameTextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_firstNameTextFieldActionPerformed
 
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField2ActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void lastNameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lastNameTextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_lastNameTextFieldActionPerformed
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void dobTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dobTextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    }//GEN-LAST:event_dobTextFieldActionPerformed
 
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+    private void phoneNumberTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_phoneNumberTextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
+    }//GEN-LAST:event_phoneNumberTextFieldActionPerformed
+
+    private void SubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubmitActionPerformed
+        // TODO add your handling code here:
+        Boolean saveSuccess = savePatientInfo();
+		if (saveSuccess)
+		{
+			activePatient = null;
+			dashBoard.showAppointmentDisplay();
+		}
+    }//GEN-LAST:event_SubmitActionPerformed
+
+    private void ClearAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClearAllActionPerformed
+        // TODO add your handling code here:
+        System.out.println("New Appointment Form: Clear Button");
+		for(Component itsComp : this.getComponents())
+		{
+			System.out.println(itsComp.getClass().getName());
+			if (itsComp.getClass().getName().equals("javax.swing.JTextField"))
+			{
+				((JTextComponent)itsComp).setText(" ");
+			}
+		}
+		activePatient = null;
+    }//GEN-LAST:event_ClearAllActionPerformed
+
+    private void CancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelActionPerformed
+        // TODO add your handling code here:
+        for(Component itsComp : this.getComponents())
+		{
+			System.out.println(itsComp.getClass().getName());
+			if (itsComp.getClass().getName().equals("javax.swing.JTextField"))
+			{
+				((JTextComponent)itsComp).setText("");
+			}
+		}
+		activePatient = null;
+		dashBoard.showAppointmentDisplay();
+    }//GEN-LAST:event_CancelActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Cancel;
+    private javax.swing.JButton ClearAll;
+    private javax.swing.JButton Submit;
+    private javax.swing.JTextField dobTextField;
+    private javax.swing.JTextField firstNameTextField;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -205,10 +457,8 @@ public class NewAppointmentForm extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField lastNameTextField;
+    private javax.swing.JTextField phoneNumberTextField;
     // End of variables declaration//GEN-END:variables
 }

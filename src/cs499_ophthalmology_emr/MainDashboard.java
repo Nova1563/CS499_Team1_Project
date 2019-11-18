@@ -56,7 +56,7 @@ public class MainDashboard extends javax.swing.JFrame {
 	pPanel = new PatientPortal(this);
 	appointmentPanel = new AppointmentDisplay(this);
 	insurancePanel = new InsurancePage();
-        newAppt = new NewAppointmentForm();
+        newAppt = new NewAppointmentForm(this);
         
 
 	mainPanel.add(homePanel);	
