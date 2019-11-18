@@ -44,37 +44,34 @@ public class MainDashboard extends javax.swing.JFrame {
         initComponents();
 
 		
-       // newPatientForm      = new NewPatientsForm(this);
+       
         pPanel              = new PatientPortal(this);
 	appointmentPanel    = new AppointmentDisplay(this);
 	insurancePanel      = new InsurancePage();
         homePanel           = new HomePanel();
         viewPatientPage     = new PatientPageTemplate();
-	//mainWindow = new JPanel();	// This JPanel doesn't exist anywhere. Use mainPanel to display cards and stuff
+	
         newPatientForm = new PatientForm(this);
-        //newAppointmentForm = new AppointmentForm(this);
+        
 	pPanel = new PatientPortal(this);
 	appointmentPanel = new AppointmentDisplay(this);
 	insurancePanel = new InsurancePage();
-        newAppt = new NewAppointmentForm();
-        
-
+        newAppt = new NewAppointmentForm(this);      
 	mainPanel.add(homePanel);	
         mainPanel.add(pPanel);
-	mainPanel.add(newPatientForm);
-        //mainPanel.add(newAppointmentForm);
+	mainPanel.add(newPatientForm);   
 	mainPanel.add(appointmentPanel);
 	mainPanel.add(insurancePanel);
         mainPanel.add(viewPatientPage);
         mainPanel.add(newAppt);
-       // mainPanel.add(viewFutureAppts);
+
                 
       
     }
 	
 	public void setActivePatient(Patient thePatient)
 	{
-		
+                thePatient = activePatient;
 	}
 	
 	public Patient getActivePatient()
@@ -178,7 +175,6 @@ public class MainDashboard extends javax.swing.JFrame {
 
         background.setBackground(new java.awt.Color(57, 113, 177));
         background.setPreferredSize(new java.awt.Dimension(1280, 730));
-        background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         toolBarJPanel.setBackground(new java.awt.Color(53, 60, 81));
         toolBarJPanel.setAutoscrolls(true);
@@ -261,8 +257,6 @@ public class MainDashboard extends javax.swing.JFrame {
         currentPatient.setOpaque(true);
         toolBarJPanel.add(currentPatient, new org.netbeans.lib.awtextra.AbsoluteConstraints(765, 40, 240, 20));
 
-        background.add(toolBarJPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1247, 97));
-
         mainPanel.setBackground(new java.awt.Color(57, 113, 177));
         mainPanel.setMaximumSize(new java.awt.Dimension(1000, 1000));
         mainPanel.addComponentListener(new java.awt.event.ComponentAdapter() {
@@ -271,7 +265,22 @@ public class MainDashboard extends javax.swing.JFrame {
             }
         });
         mainPanel.setLayout(new java.awt.CardLayout());
-        background.add(mainPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 103, 1247, 623));
+
+        javax.swing.GroupLayout backgroundLayout = new javax.swing.GroupLayout(background);
+        background.setLayout(backgroundLayout);
+        backgroundLayout.setHorizontalGroup(
+            backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(toolBarJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 1247, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 1247, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        backgroundLayout.setVerticalGroup(
+            backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(backgroundLayout.createSequentialGroup()
+                .addComponent(toolBarJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(6, 6, 6)
+                .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 623, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
         mainPanel.getAccessibleContext().setAccessibleName("mainPanel");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
