@@ -303,6 +303,11 @@ public class PatientForm extends javax.swing.JPanel {
         add(ssnTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(239, 368, 260, -1));
         add(emergName, new org.netbeans.lib.awtextra.AbsoluteConstraints(239, 398, 260, -1));
         add(emergPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(239, 428, 260, -1));
+        dobTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                //dobTextFieldActionPerformed(evt);
+            }
+        });
 
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N

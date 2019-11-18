@@ -15,7 +15,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class AppointmentDisplay extends javax.swing.JPanel {
     
-    final Integer APPT_ID_COLUMN = 3;
+    final Integer APPT_ID_COLUMN = 8;
     private MainDashboard mainDash = null;
     private ArrayList<Appointment> appointmentList = null;
     private DataBaseManager dataBase = DataBaseManager.getInstance();
@@ -38,20 +38,23 @@ public class AppointmentDisplay extends javax.swing.JPanel {
     {
         String patientName = null;
         Integer doctorToSee = null;
-        Integer appointmentTime = null;
+        Integer apptDate = null;
         String lool = null;
+        Integer apptID = null;
         
-        appointmentList = dataBase.getAppointmentListByDate(1000);
+        appointmentList = dataBase.getAllAppointments();
         tableModel.setRowCount(0);
         
         for (Appointment currentAppointment: appointmentList)
         {
             patientName = currentAppointment.getPatientName();
             doctorToSee = currentAppointment.getDoctorToSee();
-            appointmentTime = currentAppointment.getAppointmentTime();
+            apptDate = currentAppointment.getAppointmentTime();
             lool = currentAppointment.getReasonForVisit();
+            apptID = currentAppointment.getApptID();
             
-            tableModel.addRow(new Object[] {appointmentTime, patientName, lool, doctorToSee});
+            
+            tableModel.addRow(new Object[] {apptDate, patientName, lool, doctorToSee,null,null,null,null, apptID});
         }
     }
     
@@ -59,7 +62,7 @@ public class AppointmentDisplay extends javax.swing.JPanel {
     {
         String patientName = null;
         Integer doctorToSee = null;
-        Integer appointmentTime = null;
+        Integer apptDate = null;
         String lool = null;
         
         appointmentList = theList;
@@ -69,10 +72,10 @@ public class AppointmentDisplay extends javax.swing.JPanel {
         {
             patientName = currentAppointment.getPatientName();
             doctorToSee = currentAppointment.getDoctorToSee();
-            appointmentTime = currentAppointment.getAppointmentTime();
+            apptDate = currentAppointment.getAppointmentTime();
             lool = currentAppointment.getReasonForVisit();
             
-            tableModel.addRow(new Object[] {appointmentTime, patientName, lool, doctorToSee});
+            tableModel.addRow(new Object[] {apptDate, patientName, lool, doctorToSee});
         }
     }
 
@@ -92,22 +95,22 @@ public class AppointmentDisplay extends javax.swing.JPanel {
         pastAppointmentButton = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
+        deleteButton = new javax.swing.JButton();
+        editButton = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(57, 113, 177));
 
         appointmentDisplayTable.setFont(new java.awt.Font("Courier New", 0, 11)); // NOI18N
         appointmentDisplayTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null}
+
             },
             new String [] {
-                "Appointment Time", "Name", "Arrival Time", "Doctor", "Not Arrived", "Waiting", "Being Seen", "Checked Out"
+                "Appointment Time", "Name", "Arrival Time", "Doctor", "Not Arrived", "Waiting", "Being Seen", "Checked Out", "AppointmentID"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -141,6 +144,10 @@ public class AppointmentDisplay extends javax.swing.JPanel {
             }
         });
 
+        add(futureAppointmentButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 490, -1, -1));
+        futureAppointmentButton.getAccessibleContext().setAccessibleName("");
+
+
         pastAppointmentButton.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.darcula.selection.color1"));
         pastAppointmentButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         pastAppointmentButton.setText("Past Appointments");
@@ -149,6 +156,9 @@ public class AppointmentDisplay extends javax.swing.JPanel {
                 pastAppointmentButtonActionPerformed(evt);
             }
         });
+
+        add(pastAppointmentButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 450, -1, -1));
+
 
         jPanel1.setBackground(new java.awt.Color(32, 33, 35));
         jPanel1.setForeground(new java.awt.Color(126, 87, 194));
@@ -162,6 +172,7 @@ public class AppointmentDisplay extends javax.swing.JPanel {
         jLabel2.setText("Daily Appointment Display");
         jLabel2.setOpaque(true);
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-250, 20, 1620, 46));
+
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -193,6 +204,25 @@ public class AppointmentDisplay extends javax.swing.JPanel {
         );
 
         futureAppointmentButton.getAccessibleContext().setAccessibleName("");
+
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 33, 1620, 84));
+
+        deleteButton.setText("Delete");
+        deleteButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteButtonActionPerformed(evt);
+            }
+        });
+        add(deleteButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 410, -1, -1));
+
+        editButton.setText("Edit");
+        editButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editButtonActionPerformed(evt);
+            }
+        });
+        add(editButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 410, 60, -1));
+
     }// </editor-fold>//GEN-END:initComponents
 
     private void futureAppointmentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_futureAppointmentButtonActionPerformed
@@ -212,18 +242,42 @@ public class AppointmentDisplay extends javax.swing.JPanel {
         System.out.println("Appointment: Add new button");
 
         mainDash.showNewAppt();
-
-        
-        
     }//GEN-LAST:event_newAppointmentButtonActionPerformed
 
     private void newAppointmentButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_newAppointmentButtonMouseClicked
         //
     }//GEN-LAST:event_newAppointmentButtonMouseClicked
 
+    private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
+        // TODO add your handling code here:
+        Integer selectedCol = appointmentDisplayTable.getSelectedColumn();
+	Integer selectedRow = appointmentDisplayTable.getSelectedRow();
+	if ((selectedRow >= 0) && (selectedCol >=0))
+	{
+            Integer apptID = (Integer)appointmentDisplayTable.getValueAt(selectedRow, APPT_ID_COLUMN);
+
+            tableModel.removeRow(selectedRow);
+
+            Appointment theVictim = dataBase.getAppointmentByID(apptID);
+            dataBase.delete(theVictim);
+	}
+    }//GEN-LAST:event_deleteButtonActionPerformed
+
+    private void editButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editButtonActionPerformed
+        // TODO add your handling code here:
+        System.out.println("Patient Portal: Edit button");
+		Integer selectedRow = appointmentDisplayTable.getSelectedRow();
+		Integer patientID = (Integer)appointmentDisplayTable.getValueAt(selectedRow, APPT_ID_COLUMN);
+		Appointment theAppointment = dataBase.getAppointmentByID(patientID);
+		mainDash.newAppt.loadAppointment(theAppointment);
+		mainDash.showNewAppt();
+    }//GEN-LAST:event_editButtonActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable appointmentDisplayTable;
+    private javax.swing.JButton deleteButton;
+    private javax.swing.JButton editButton;
     private javax.swing.JButton futureAppointmentButton;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
