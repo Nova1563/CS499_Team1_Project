@@ -71,7 +71,7 @@ public class MainDashboard extends javax.swing.JFrame {
 	
 	public void setActivePatient(Patient thePatient)
 	{
-                thePatient = activePatient;
+		activePatient = thePatient;
 	}
 	
 	public Patient getActivePatient()
@@ -99,14 +99,6 @@ public class MainDashboard extends javax.swing.JFrame {
             newAppt.setVisible(true);
         }       
          
-        /*
-        public void showAppointmentForm()
-        {
-            hideAllPanelComponents(mainPanel);
-            newAppointmentForm.setVisable(true);
-            
-        }
-        */
         
         public void showPatientPage()
         {
@@ -167,7 +159,7 @@ public class MainDashboard extends javax.swing.JFrame {
         homeTxt = new javax.swing.JLabel();
         emrToolsTxt1 = new javax.swing.JLabel();
         CurrentPatientLabel = new javax.swing.JLabel();
-        currentPatient = new javax.swing.JLabel();
+        currentPatientTextBar = new javax.swing.JLabel();
         mainPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -252,10 +244,11 @@ public class MainDashboard extends javax.swing.JFrame {
         CurrentPatientLabel.setText("Current Patient");
         toolBarJPanel.add(CurrentPatientLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 70, -1, -1));
 
-        currentPatient.setBackground(new java.awt.Color(255, 255, 255));
-        currentPatient.setFont(helpToolsTxt.getFont());
-        currentPatient.setOpaque(true);
-        toolBarJPanel.add(currentPatient, new org.netbeans.lib.awtextra.AbsoluteConstraints(765, 40, 240, 20));
+        currentPatientTextBar.setBackground(new java.awt.Color(255, 255, 255));
+        currentPatientTextBar.setFont(helpToolsTxt.getFont());
+        currentPatientTextBar.setOpaque(true);
+        toolBarJPanel.add(currentPatientTextBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(765, 40, 240, 20));
+
 
         mainPanel.setBackground(new java.awt.Color(57, 113, 177));
         mainPanel.setMaximumSize(new java.awt.Dimension(1000, 1000));
@@ -270,15 +263,20 @@ public class MainDashboard extends javax.swing.JFrame {
         background.setLayout(backgroundLayout);
         backgroundLayout.setHorizontalGroup(
             backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(toolBarJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 1247, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 1247, javax.swing.GroupLayout.PREFERRED_SIZE)
+
+            .addComponent(toolBarJPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1247, Short.MAX_VALUE)
+            .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+
         );
         backgroundLayout.setVerticalGroup(
             backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(backgroundLayout.createSequentialGroup()
-                .addComponent(toolBarJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+
+                .addComponent(toolBarJPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
                 .addGap(6, 6, 6)
-                .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 623, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 623, Short.MAX_VALUE)
+                .addGap(6, 6, 6))
+
         );
 
         mainPanel.getAccessibleContext().setAccessibleName("mainPanel");
@@ -371,7 +369,7 @@ public class MainDashboard extends javax.swing.JFrame {
     private javax.swing.JLabel CurrentPatientLabel;
     private javax.swing.JLabel appointmentBttn;
     private javax.swing.JPanel background;
-    private javax.swing.JLabel currentPatient;
+    public javax.swing.JLabel currentPatientTextBar;
     private javax.swing.JLabel emrToolsTxt;
     private javax.swing.JLabel emrToolsTxt1;
     private javax.swing.JLabel eyeTestBttn;

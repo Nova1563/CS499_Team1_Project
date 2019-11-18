@@ -293,11 +293,17 @@ public class PatientForm extends javax.swing.JPanel {
                 dobTextFieldFocusLost(evt);
             }
         });
-       // dobTextField.addActionListener(new java.awt.event.ActionListener() {
-         //   public void actionPerformed(java.awt.event.ActionEvent evt) {
-           //     dobTextFieldActionPerformed(evt);
-           // }
-        //});
+
+        add(dobTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(239, 188, 260, -1));
+        add(addressTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(239, 218, 260, -1));
+        add(homePhoneTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(239, 248, 260, -1));
+        add(workPhoneTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(239, 278, 260, -1));
+        add(mobilePhoneTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(239, 308, 260, -1));
+        add(emailTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(239, 338, 260, -1));
+        add(ssnTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(239, 368, 260, -1));
+        add(emergName, new org.netbeans.lib.awtextra.AbsoluteConstraints(239, 398, 260, -1));
+        add(emergPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(239, 428, 260, -1));
+
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));

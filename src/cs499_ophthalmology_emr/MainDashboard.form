@@ -49,16 +49,21 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="toolBarJPanel" min="-2" pref="1247" max="-2" attributes="0"/>
-              <Component id="mainPanel" min="-2" pref="1247" max="-2" attributes="0"/>
+
+              <Component id="toolBarJPanel" pref="1247" max="32767" attributes="0"/>
+              <Component id="mainPanel" max="32767" attributes="0"/>
+
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <Component id="toolBarJPanel" min="-2" pref="97" max="-2" attributes="0"/>
-                  <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                  <Component id="mainPanel" min="-2" pref="623" max="-2" attributes="0"/>
+
+                  <Component id="toolBarJPanel" pref="97" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                  <Component id="mainPanel" pref="623" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+
               </Group>
           </Group>
         </DimensionLayout>
@@ -264,7 +269,7 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="javax.swing.JLabel" name="currentPatient">
+            <Component class="javax.swing.JLabel" name="currentPatientTextBar">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -274,6 +279,9 @@
                 </Property>
                 <Property name="opaque" type="boolean" value="true"/>
               </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="765" y="40" width="240" height="20"/>
