@@ -41,10 +41,8 @@ public class NewAppointmentForm extends javax.swing.JPanel {
     {
         Boolean isSuccess = false;
         
-        if (activeAppointment == null)
-	{
-            //activeAppointment = dataBase.getNewAppointment(patientID);
-	}
+        activeAppointment = dataBase.getNewAppointment(dashBoard.getActivePatient().getPatientID());
+	
         
         try
         {
