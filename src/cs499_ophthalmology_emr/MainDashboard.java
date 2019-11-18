@@ -6,9 +6,6 @@
 package cs499_ophthalmology_emr;
 import javax.swing.*;
 import java.awt.*;
-import javax.swing.border.Border;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 
 /**
  *
@@ -16,60 +13,40 @@ import java.awt.event.MouseListener;
  */
 public class MainDashboard extends javax.swing.JFrame {
     
-    public PatientPortal pPanel;
+    public PatientPortal patientPortal;
 
-  //  public NewPatientsForm newPatientForm;
     public AppointmentDisplay appointmentPanel;
-    public NewAppointmentForm newAppt;
+    public AppointmentForm appointmentForm;
     public InsurancePage insurancePanel;
     public HomePanel homePanel;
-    //public ViewFutureAppointments viewFutureAppts;
     public PatientPageTemplate viewPatientPage;
-    public PatientForm newPatientForm;
-    //public AppointmentForm newAppointmentForm;
-    public JPanel mainWindow;		// TODO: Remove this.
-    //public AppointmentDisplay appointmentPanel;
-   // public InsurancePage insurancePanel;
+    public PatientForm patientForm;
     
-	
     private Patient activePatient;
 
-    
-        
-        
     /**
      * Creates new form MainWindow
      */
     public MainDashboard() {
-        initComponents();
+    initComponents();
 
-		
-       // newPatientForm      = new NewPatientsForm(this);
-        pPanel              = new PatientPortal(this);
+    patientPortal       = new PatientPortal(this);
 	appointmentPanel    = new AppointmentDisplay(this);
 	insurancePanel      = new InsurancePage();
-        homePanel           = new HomePanel();
-        viewPatientPage     = new PatientPageTemplate();
-	//mainWindow = new JPanel();	// This JPanel doesn't exist anywhere. Use mainPanel to display cards and stuff
-        newPatientForm = new PatientForm(this);
-        //newAppointmentForm = new AppointmentForm(this);
-	pPanel = new PatientPortal(this);
-	appointmentPanel = new AppointmentDisplay(this);
-	insurancePanel = new InsurancePage();
-        newAppt = new NewAppointmentForm(this);
+    homePanel           = new HomePanel();
+    viewPatientPage     = new PatientPageTemplate();
+    patientForm		= new PatientForm(this);
+	insurancePanel		= new InsurancePage();
+    appointmentForm		= new AppointmentForm(this);
         
-
 	mainPanel.add(homePanel);	
-        mainPanel.add(pPanel);
-	mainPanel.add(newPatientForm);
-        //mainPanel.add(newAppointmentForm);
+    mainPanel.add(patientPortal);
+	mainPanel.add(patientForm);
 	mainPanel.add(appointmentPanel);
 	mainPanel.add(insurancePanel);
-        mainPanel.add(viewPatientPage);
-        mainPanel.add(newAppt);
-       // mainPanel.add(viewFutureAppts);
+    mainPanel.add(viewPatientPage);
+    mainPanel.add(appointmentForm);
                 
-      
     }
 	
 	public void setActivePatient(Patient thePatient)
@@ -85,42 +62,44 @@ public class MainDashboard extends javax.swing.JFrame {
 	public void showPatientPortal()
 	{
             hideAllPanelComponents(mainPanel);
-            pPanel.loadTableAllEntries();
-            pPanel.setVisible(true);
+            patientPortal.loadTableAllEntries();
+            patientPortal.setVisible(true);
 	}
 	
 	public void showPatientForm()
 	{
-            hideAllPanelComponents(mainPanel);
-            newPatientForm.setVisible(true);
+        hideAllPanelComponents(mainPanel);
+        patientForm.setVisible(true);
 	}
         
-        public void showNewAppt()
-        {
-            
-            hideAllPanelComponents(mainPanel);
-            newAppt.setVisible(true);
-        }       
-         
-        /*
-        public void showAppointmentForm()
-        {
-            hideAllPanelComponents(mainPanel);
-            newAppointmentForm.setVisable(true);
-            
-        }
-        */
-        
-        public void showPatientPage()
-        {
-            hideAllPanelComponents(mainPanel);
-            viewPatientPage.setVisible(true);
-            
-        }
+	public void showAppointmentForm()
+	{
+
+		hideAllPanelComponents(mainPanel);
+		appointmentForm.setVisible(true);
+	}       
+
+	/*
+	public void showAppointmentForm()
+	{
+		hideAllPanelComponents(mainPanel);
+		newAppointmentForm.setVisable(true);
+
+	}
+	*/
+
+	public void showPatientPage()
+	{
+		hideAllPanelComponents(mainPanel);
+		viewPatientPage.setVisible(true);
+
+	}
 	
 	public void showAppointmentDisplay()
 	{
             hideAllPanelComponents(mainPanel);
+			//appointmentPanel.loadTableFromList(null);
+			appointmentPanel.loadTableAllEntries();
             appointmentPanel.setVisible(true);
 	}
 	

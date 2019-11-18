@@ -97,6 +97,7 @@ public class PatientPortal extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         selectPatientButton = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         jPopupMenu1.setName("patientOptions"); // NOI18N
 
@@ -224,6 +225,14 @@ public class PatientPortal extends javax.swing.JPanel {
         });
         jPanel1.add(selectPatientButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, -1));
 
+        jButton1.setText("DEBUG: Create DB Entries");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 40, -1, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -261,7 +270,7 @@ public class PatientPortal extends javax.swing.JPanel {
                     .addComponent(editPatientButton)
                     .addComponent(addPatientButton)
                     .addComponent(deletePatientButton))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
 
         getAccessibleContext().setAccessibleName("patientPortalPanel");
@@ -280,7 +289,7 @@ public class PatientPortal extends javax.swing.JPanel {
 		Integer selectedRow = patientPortalTable.getSelectedRow();
 		Integer patientID = (Integer)patientPortalTable.getValueAt(selectedRow, PATIENT_ID_COLUMN);
 		Patient thePatient = dataBase.getPatientByID(patientID);
-		mainDash.newPatientForm.loadPatientInfo(thePatient);
+		mainDash.patientForm.loadPatientInfo(thePatient);
 		mainDash.showPatientForm();
     }//GEN-LAST:event_editPatientButtonActionPerformed
 
@@ -347,11 +356,16 @@ public class PatientPortal extends javax.swing.JPanel {
 		mainDash.currentPatientTextBar.setText(activePatient.getName());
     }//GEN-LAST:event_selectPatientButtonMouseClicked
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        dataBase.doTest();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addPatientButton;
     private javax.swing.JButton deletePatientButton;
     private javax.swing.JButton editPatientButton;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;

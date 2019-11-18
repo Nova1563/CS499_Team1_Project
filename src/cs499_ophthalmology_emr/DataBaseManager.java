@@ -258,7 +258,7 @@ public class DataBaseManager {
 	public void doTest()
 	{
 		makeNewPatientsFillArrayTest();
-                addAppointmentsAndExamsToAllPatientsTest();
+        addAppointmentsAndExamsToAllPatientsTest();
                 
 	}
 	
@@ -335,8 +335,9 @@ public class DataBaseManager {
 			Appointment anAppt = getNewAppointment(patientID);
 			Integer apptID = anAppt.getApptID();
 			anAppt.setApptDate(1000);
-                        anAppt.setDoctorToSee(apptID);
-                        anAppt.setPatientName(DB_URL);
+                        anAppt.setDoctorToSee(0);
+                        anAppt.setPatientName(currentPatient.getName());
+						anAppt.setArrivalStatus(0);
 			save(anAppt);
 			
 			EyeTestResults examResults = getNewEyeTestResults(patientID, apptID);
@@ -347,7 +348,9 @@ public class DataBaseManager {
 			
 			anAppt = getNewAppointment(patientID);
 			apptID = anAppt.getApptID();
+			anAppt.setPatientName(currentPatient.getName());
 			anAppt.setAppointmentTime(2000);
+			anAppt.setArrivalStatus(0);
 			save(anAppt);
 			
 			examResults = getNewEyeTestResults(patientID, apptID);
@@ -359,6 +362,8 @@ public class DataBaseManager {
 			anAppt = getNewAppointment(patientID);
 			apptID = anAppt.getApptID();
 			anAppt.setAppointmentTime(3000);
+			anAppt.setArrivalStatus(0);
+			anAppt.setPatientName(currentPatient.getName());
 			save(anAppt);
 			
 			examResults = getNewEyeTestResults(patientID, apptID);
