@@ -309,7 +309,7 @@ public class PatientForm extends javax.swing.JPanel {
         add(emergPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(239, 428, 260, -1));
         dobTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                dobTextFieldActionPerformed(evt);
+                //dobTextFieldActionPerformed(evt);
             }
         });
 
