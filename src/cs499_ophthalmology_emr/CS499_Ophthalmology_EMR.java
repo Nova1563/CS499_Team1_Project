@@ -12,6 +12,9 @@ public class CS499_Ophthalmology_EMR {
 		//dataBase.doTest();
 		
         MainDashboard dash = new MainDashboard();
+        dash.setExtendedState(MainDashboard.MAXIMIZED_BOTH); 
+        //dash.setUndecorated(true);
+
         dash.setVisible(true);
 		
 		

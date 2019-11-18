@@ -99,8 +99,9 @@ public class AppointmentDisplay extends javax.swing.JPanel {
         editButton = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(57, 113, 177));
+        setPreferredSize(new java.awt.Dimension(1620, 634));
 
-        appointmentDisplayTable.setFont(new java.awt.Font("Courier New", 0, 11)); // NOI18N
+        appointmentDisplayTable.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
         appointmentDisplayTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -144,10 +145,6 @@ public class AppointmentDisplay extends javax.swing.JPanel {
             }
         });
 
-        add(futureAppointmentButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 490, -1, -1));
-        futureAppointmentButton.getAccessibleContext().setAccessibleName("");
-
-
         pastAppointmentButton.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.darcula.selection.color1"));
         pastAppointmentButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         pastAppointmentButton.setText("Past Appointments");
@@ -156,9 +153,6 @@ public class AppointmentDisplay extends javax.swing.JPanel {
                 pastAppointmentButtonActionPerformed(evt);
             }
         });
-
-        add(pastAppointmentButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 450, -1, -1));
-
 
         jPanel1.setBackground(new java.awt.Color(32, 33, 35));
         jPanel1.setForeground(new java.awt.Color(126, 87, 194));
@@ -171,41 +165,7 @@ public class AppointmentDisplay extends javax.swing.JPanel {
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Daily Appointment Display");
         jLabel2.setOpaque(true);
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-250, 20, 1620, 46));
-
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1620, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(53, 53, 53)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1096, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(newAppointmentButton)
-                        .addGap(542, 542, 542)
-                        .addComponent(pastAppointmentButton)
-                        .addGap(18, 18, 18)
-                        .addComponent(futureAppointmentButton))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(newAppointmentButton)
-                    .addComponent(pastAppointmentButton)
-                    .addComponent(futureAppointmentButton)))
-        );
-
-        futureAppointmentButton.getAccessibleContext().setAccessibleName("");
-
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 33, 1620, 84));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-250, 20, 1870, 46));
 
         deleteButton.setText("Delete");
         deleteButton.addActionListener(new java.awt.event.ActionListener() {
@@ -213,7 +173,6 @@ public class AppointmentDisplay extends javax.swing.JPanel {
                 deleteButtonActionPerformed(evt);
             }
         });
-        add(deleteButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 410, -1, -1));
 
         editButton.setText("Edit");
         editButton.addActionListener(new java.awt.event.ActionListener() {
@@ -221,8 +180,40 @@ public class AppointmentDisplay extends javax.swing.JPanel {
                 editButtonActionPerformed(evt);
             }
         });
-        add(editButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 410, 60, -1));
 
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 1620, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(81, 81, 81)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(newAppointmentButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(pastAppointmentButton)
+                        .addGap(46, 46, 46)
+                        .addComponent(futureAppointmentButton))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1434, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(futureAppointmentButton)
+                        .addComponent(pastAppointmentButton))
+                    .addComponent(newAppointmentButton))
+                .addGap(21, 21, 21))
+        );
+
+        futureAppointmentButton.getAccessibleContext().setAccessibleName("");
     }// </editor-fold>//GEN-END:initComponents
 
     private void futureAppointmentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_futureAppointmentButtonActionPerformed
