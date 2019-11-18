@@ -178,6 +178,7 @@ public class MainDashboard extends javax.swing.JFrame {
 
         background.setBackground(new java.awt.Color(57, 113, 177));
         background.setPreferredSize(new java.awt.Dimension(1280, 730));
+        background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         toolBarJPanel.setBackground(new java.awt.Color(53, 60, 81));
         toolBarJPanel.setAutoscrolls(true);
@@ -260,6 +261,8 @@ public class MainDashboard extends javax.swing.JFrame {
         currentPatient.setOpaque(true);
         toolBarJPanel.add(currentPatient, new org.netbeans.lib.awtextra.AbsoluteConstraints(765, 40, 240, 20));
 
+        background.add(toolBarJPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1247, 97));
+
         mainPanel.setBackground(new java.awt.Color(57, 113, 177));
         mainPanel.setMaximumSize(new java.awt.Dimension(1000, 1000));
         mainPanel.addComponentListener(new java.awt.event.ComponentAdapter() {
@@ -268,23 +271,7 @@ public class MainDashboard extends javax.swing.JFrame {
             }
         });
         mainPanel.setLayout(new java.awt.CardLayout());
-
-        javax.swing.GroupLayout backgroundLayout = new javax.swing.GroupLayout(background);
-        background.setLayout(backgroundLayout);
-        backgroundLayout.setHorizontalGroup(
-            backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(toolBarJPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1247, Short.MAX_VALUE)
-            .addComponent(mainPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        backgroundLayout.setVerticalGroup(
-            backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(backgroundLayout.createSequentialGroup()
-                .addComponent(toolBarJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 623, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
+        background.add(mainPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 103, 1247, 623));
         mainPanel.getAccessibleContext().setAccessibleName("mainPanel");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
