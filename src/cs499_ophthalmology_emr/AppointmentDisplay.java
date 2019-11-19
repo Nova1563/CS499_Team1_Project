@@ -69,6 +69,7 @@ public class AppointmentDisplay extends javax.swing.JPanel {
             
             tableModel.addRow(new Object[] {apptDate, patientName, doctorToSee, reasonForVisit, checkInString, apptID});
         }
+		System.out.println("AppointmentDisplay.loadTableAllEntries() finished.");
     }
 	
 	public String translateArrivalStatus(Integer arrivalCode)

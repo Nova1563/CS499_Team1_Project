@@ -259,7 +259,7 @@ public class DataBaseManager {
 	{
 		makeNewPatientsFillArrayTest();
         addAppointmentsAndExamsToAllPatientsTest();
-                
+        testResultsTable.printAllEntries();
 	}
 	
 	private void makeNewPatientsFillArrayTest()
@@ -342,8 +342,13 @@ public class DataBaseManager {
 			
 			EyeTestResults examResults = getNewEyeTestResults(patientID, apptID);
 			examResults.setFarChartDistance(1);
+			examResults.setAddOD(1.2);
+			examResults.setAddOS(2.1);
+			examResults.setNn20OS(5);
+			examResults.setNn20OD(7);
+			examResults.setDd20OS(10);
+			examResults.setDd20OD(15);
 			save(examResults);
-			
 			
 			
 			anAppt = getNewAppointment(patientID);

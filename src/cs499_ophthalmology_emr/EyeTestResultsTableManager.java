@@ -53,12 +53,16 @@ public class EyeTestResultsTableManager {
 										+ "cylinderOS		Float,\n"
 										+ "axisOD		Float,\n"
 										+ "axisOS		Float,\n"
+										+ "addOD		Float,\n"
+										+ "addOS		Float,\n"
 										+ "prismOD		Float,\n"
 										+ "prismOS		Float,\n"
 										+ "prismBaseOD		Float,\n"
 										+ "prismBaseOS		Float,\n"
-										+ "nn20		Integer,\n"
-										+ "dd20		Integer,\n"
+										+ "nn20OD		Integer,\n"
+										+ "dd20OD		Integer,\n"
+										+ "nn20OS		Integer,\n"
+										+ "dd20OS		Integer,\n"
 										+ "vitreousOD		Integer,\n"
 										+ "maculaOD		Integer,\n"
 										+ "vasculatureOD		Integer,\n"
@@ -233,12 +237,16 @@ public class EyeTestResultsTableManager {
 					+ "\tcylinderOS: " + queryResults.getFloat("cylinderOS")
 					+ "\taxisOD: " + queryResults.getFloat("axisOD")
 					+ "\taxisOS: " + queryResults.getFloat("axisOS")
+					+ "\taddOD: " + queryResults.getFloat("addOD")
+					+ "\taddOS: " + queryResults.getFloat("addOS")			
 					+ "\tprismOD: " + queryResults.getFloat("prismOD")
 					+ "\tprismOS: " + queryResults.getFloat("prismOS")
 					+ "\tprismBaseOD: " + queryResults.getFloat("prismBaseOD")
 					+ "\tprismBaseOS: " + queryResults.getFloat("prismBaseOS")
-					+ "\tnn20: " + queryResults.getInt("nn20")
-					+ "\tdd20: " + queryResults.getInt("dd20")
+					+ "\tnn20OD: " + queryResults.getInt("nn20OD")
+					+ "\tdd20OD: " + queryResults.getInt("dd20OD")
+					+ "\tnn20OS: " + queryResults.getInt("nn20OS")
+					+ "\tdd20OS: " + queryResults.getInt("dd20OS")
 					+ "\tvitreousOD: " + queryResults.getInt("vitreousOD")
 					+ "\tmaculaOD: " + queryResults.getInt("maculaOD")
 					+ "\tvasculatureOD: " + queryResults.getInt("vasculatureOD")
@@ -365,8 +373,8 @@ public class EyeTestResultsTableManager {
 						+ "prismOS = ? ,"
 						+ "prismBaseOD = ? ,"
 						+ "prismBaseOS = ? ,"
-						+ "nn20 = ? ,"
-						+ "dd20 = ? ,"
+						+ "nn20OD = ? ,"
+						+ "dd20OD = ? ,"
 						+ "vitreousOD = ? ,"
 						+ "maculaOD = ? ,"
 						+ "vasculatureOD = ? ,"
@@ -444,7 +452,11 @@ public class EyeTestResultsTableManager {
 						+ "myelinationOD = ? ,"
 						+ "myelinationOS = ? ,"
 						+ "glialRemOD = ? ,"
-						+ "glialRemOS = ? "
+						+ "glialRemOS = ? ,"
+						+ "nn20OS = ? ,"	//
+						+ "dd20OS = ? ,"	//
+						+ "addOS = ? ,"		//
+						+ "addOD = ? "		//
 						+ "WHERE resultsID = ? ";
 		
 		try
@@ -485,8 +497,8 @@ public class EyeTestResultsTableManager {
 			theSQLstatement.setDouble(32 , theResults.getPrismOS());		 // prismOS
 			theSQLstatement.setDouble(33 , theResults.getPrismBaseOD());		 // prismBaseOD
 			theSQLstatement.setDouble(34 , theResults.getPrismBaseOS());		 // prismBaseOS
-			theSQLstatement.setInt(35 , theResults.getNn20());		 // nn20
-			theSQLstatement.setInt(36 , theResults.getDd20());		 // dd20
+			theSQLstatement.setInt(35 , theResults.getNn20OD());		 // nn20
+			theSQLstatement.setInt(36 , theResults.getDd20OD());		 // dd20
 			theSQLstatement.setInt(37 , theResults.getVitreousOD());		 // vitreousOD
 			theSQLstatement.setInt(38 , theResults.getMaculaOD());		 // maculaOD
 			theSQLstatement.setInt(39 , theResults.getVasculatureOD());		 // vasculatureOD
@@ -565,7 +577,12 @@ public class EyeTestResultsTableManager {
 			theSQLstatement.setBoolean(112 , theResults.getMyelinationOS());		 // myelinationOS
 			theSQLstatement.setBoolean(113 , theResults.getGlialRemOD());		 // glialRemOD
 			theSQLstatement.setBoolean(114 , theResults.getGlialRemOS());		 // glialRemOS
-			theSQLstatement.setInt(115, examID);
+			theSQLstatement.setDouble(115, theResults.getNn20OS());	// nn20OS
+			theSQLstatement.setDouble(116, theResults.getDd20OS());
+			theSQLstatement.setDouble(117, theResults.getAddOS());
+			theSQLstatement.setDouble(118, theResults.getAddOD());
+			
+			theSQLstatement.setInt(119, examID);
 			
 			theSQLstatement.executeUpdate();
 		}
@@ -625,12 +642,16 @@ public class EyeTestResultsTableManager {
 			theFoundExam.setCylinderOS(theResults.getDouble("cylinderOS"));
 			theFoundExam.setAxisOD(theResults.getDouble("axisOD"));
 			theFoundExam.setAxisOS(theResults.getDouble("axisOS"));
+			theFoundExam.setAddOD(theResults.getDouble("addOD"));
+			theFoundExam.setAddOS(theResults.getDouble("addOS"));
 			theFoundExam.setPrismOD(theResults.getDouble("prismOD"));
 			theFoundExam.setPrismOS(theResults.getDouble("prismOS"));
 			theFoundExam.setPrismBaseOD(theResults.getDouble("prismBaseOD"));
 			theFoundExam.setPrismBaseOS(theResults.getDouble("prismBaseOS"));
-			theFoundExam.setNn20(theResults.getInt("nn20"));
-			theFoundExam.setDd20(theResults.getInt("dd20"));
+			theFoundExam.setNn20OD(theResults.getInt("nn20OD"));
+			theFoundExam.setDd20OD(theResults.getInt("dd20OD"));
+			theFoundExam.setNn20OS(theResults.getInt("nn20OS"));
+			theFoundExam.setDd20OS(theResults.getInt("dd20OS"));
 			theFoundExam.setVitreousOD(theResults.getInt("vitreousOD"));
 			theFoundExam.setMaculaOD(theResults.getInt("maculaOD"));
 			theFoundExam.setVasculatureOD(theResults.getInt("vasculatureOD"));
@@ -773,12 +794,16 @@ public class EyeTestResultsTableManager {
 			theFoundExam.setCylinderOS(theResults.getDouble("cylinderOS"));
 			theFoundExam.setAxisOD(theResults.getDouble("axisOD"));
 			theFoundExam.setAxisOS(theResults.getDouble("axisOS"));
+			theFoundExam.setAddOD(theResults.getDouble("addOD"));
+			theFoundExam.setAddOS(theResults.getDouble("addOS"));
 			theFoundExam.setPrismOD(theResults.getDouble("prismOD"));
 			theFoundExam.setPrismOS(theResults.getDouble("prismOS"));
 			theFoundExam.setPrismBaseOD(theResults.getDouble("prismBaseOD"));
 			theFoundExam.setPrismBaseOS(theResults.getDouble("prismBaseOS"));
-			theFoundExam.setNn20(theResults.getInt("nn20"));
-			theFoundExam.setDd20(theResults.getInt("dd20"));
+			theFoundExam.setNn20OD(theResults.getInt("nn20OD"));
+			theFoundExam.setDd20OD(theResults.getInt("dd20OD"));
+			theFoundExam.setNn20OS(theResults.getInt("nn20OS"));
+			theFoundExam.setDd20OS(theResults.getInt("dd20OS"));
 			theFoundExam.setVitreousOD(theResults.getInt("vitreousOD"));
 			theFoundExam.setMaculaOD(theResults.getInt("maculaOD"));
 			theFoundExam.setVasculatureOD(theResults.getInt("vasculatureOD"));

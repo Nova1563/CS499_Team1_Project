@@ -40,12 +40,16 @@ public class EyeTestResults
     private Double cylinderOS;
     private Double axisOD;
     private Double axisOS;
+	private Double addOD;
+	private Double addOS;
     private Double prismOD;
     private Double prismOS;
     private Double prismBaseOD;
     private Double prismBaseOS;
-    private Integer nn20;
-    private Integer dd20;
+    private Integer nn20OD;
+    private Integer dd20OD;
+	private Integer nn20OS;
+    private Integer dd20OS;
     
     private Integer vitreousOD;
     private Integer maculaOD;
@@ -162,12 +166,16 @@ public class EyeTestResults
 		this.cylinderOS = -1.0;
 		this.axisOD = -1.0;
 		this.axisOS = -1.0;
+		this.addOD = -1.0;
+		this.addOS = -1.0;
 		this.prismOD = -1.0;
 		this.prismOS = -1.0;
 		this.prismBaseOD = -1.0;
 		this.prismBaseOS = -1.0;
-		this.nn20 = -1;
-		this.dd20 = -1;
+		this.nn20OD = -1;
+		this.dd20OD = -1;
+		this.nn20OS = -1;
+		this.dd20OS = -1;
 		this.vitreousOD = -1;
 		this.maculaOD = -1;
 		this.vasculatureOD = -1;
@@ -493,6 +501,22 @@ public class EyeTestResults
 		this.axisOS = axisOS;
 	}
 
+	public Double getAddOD() {
+		return addOD;
+	}
+
+	public void setAddOD(Double addOD) {
+		this.addOD = addOD;
+	}
+
+	public Double getAddOS() {
+		return addOS;
+	}
+
+	public void setAddOS(Double addOS) {
+		this.addOS = addOS;
+	}
+
 	public Double getPrismOD() {
 		return prismOD;
 	}
@@ -525,21 +549,39 @@ public class EyeTestResults
 		this.prismBaseOS = prismBaseOS;
 	}
 
-	public Integer getNn20() {
-		return nn20;
+	public Integer getNn20OD() {
+		return nn20OD;
 	}
 
-	public void setNn20(Integer nn20) {
-		this.nn20 = nn20;
+	public void setNn20OD(Integer nn20OD) {
+		this.nn20OD = nn20OD;
 	}
 
-	public Integer getDd20() {
-		return dd20;
+	public Integer getDd20OD() {
+		return dd20OD;
 	}
 
-	public void setDd20(Integer dd20) {
-		this.dd20 = dd20;
+	public void setDd20OD(Integer dd20OD) {
+		this.dd20OD = dd20OD;
 	}
+
+	public Integer getNn20OS() {
+		return nn20OS;
+	}
+
+	public void setNn20OS(Integer nn20OS) {
+		this.nn20OS = nn20OS;
+	}
+
+	public Integer getDd20OS() {
+		return dd20OS;
+	}
+
+	public void setDd20OS(Integer dd20OS) {
+		this.dd20OS = dd20OS;
+	}
+
+
 
 	public Integer getVitreousOD() {
 		return vitreousOD;
