@@ -164,6 +164,7 @@ public class AppointmentDisplay extends javax.swing.JPanel {
         editButton = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         appointmentDisplayTable = new javax.swing.JTable();
+        beginExamButton = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(57, 113, 177));
 
@@ -224,6 +225,13 @@ public class AppointmentDisplay extends javax.swing.JPanel {
         });
         jScrollPane2.setViewportView(appointmentDisplayTable);
 
+        beginExamButton.setText("Begin Exam for Selected");
+        beginExamButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                beginExamButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -237,6 +245,8 @@ public class AppointmentDisplay extends javax.swing.JPanel {
                         .addComponent(newAppointmentButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(editButton, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(227, 227, 227)
+                        .addComponent(beginExamButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(deleteButton))))
         );
@@ -251,9 +261,10 @@ public class AppointmentDisplay extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(editButton)
-                        .addComponent(deleteButton))
+                        .addComponent(deleteButton)
+                        .addComponent(beginExamButton))
                     .addComponent(newAppointmentButton))
-                .addContainerGap(43, Short.MAX_VALUE))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -292,9 +303,20 @@ public class AppointmentDisplay extends javax.swing.JPanel {
 		mainDash.showAppointmentForm();
     }//GEN-LAST:event_editButtonActionPerformed
 
+    private void beginExamButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_beginExamButtonActionPerformed
+        Integer selectedRow = appointmentDisplayTable.getSelectedRow();
+		Integer apptID = (Integer)appointmentDisplayTable.getValueAt(selectedRow, APPT_ID_COLUMN);
+		Appointment theAppointment = dataBase.getAppointmentByID(apptID);
+		Patient thePatient = dataBase.getPatientByID(theAppointment.getPatientID());
+		mainDash.setActivePatient(thePatient);
+		mainDash.setActiveAppointment(theAppointment);
+		mainDash.showVisualAcuity();
+    }//GEN-LAST:event_beginExamButtonActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable appointmentDisplayTable;
+    private javax.swing.JButton beginExamButton;
     private javax.swing.JButton deleteButton;
     private javax.swing.JButton editButton;
     private javax.swing.JLabel jLabel2;
