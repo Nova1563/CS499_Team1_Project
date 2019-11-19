@@ -177,7 +177,7 @@ public class AppointmentTableManager{
 		{
 			PreparedStatement theSQLstatement = conn.prepareStatement(theSQLstatementStr);
 			theSQLstatement.setInt(1, patientID);
-			ResultSet appointmentInfo = theSQLstatement.executeQuery(theSQLstatementStr);
+			ResultSet appointmentInfo = theSQLstatement.executeQuery();
 			
 			while (appointmentInfo.next())
 			{
@@ -196,7 +196,7 @@ public class AppointmentTableManager{
 		}
 		catch(SQLException e)
 		{
-			System.out.println("getAppointmentsListByPatientID(" + patientID.toString() + ") error: " + e.getMessage());
+			System.out.println("AppointmentTableManager.getAppointmentsListByPatientID(" + patientID.toString() + ") error: " + e.getMessage());
 		}
 		catch(Exception e)
 		{

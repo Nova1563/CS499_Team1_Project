@@ -250,6 +250,18 @@ public class DataBaseManager {
 		testResultsTable.deleteEyeTestResult(theResultsObj.getExamID());
 	}
 	
+	public void updateApptsWithPatientNameChange(Patient thePatient)
+	{
+		ArrayList<Appointment> theAppts = getPatientAppointmentList(thePatient);
+		
+		for (Appointment anAppt : theAppts)
+		{
+			anAppt.setPatientName(thePatient.getName());
+			save(anAppt);
+		}
+		
+	}
+	
 	///////////////////////////////// Test Methods and Data ///////////////////////////////
 	
 	/**
@@ -258,8 +270,9 @@ public class DataBaseManager {
 	public void doTest()
 	{
 		makeNewPatientsFillArrayTest();
-                addAppointmentsAndExamsToAllPatientsTest();
-                
+        addAppointmentsAndExamsToAllPatientsTest();
+		appointmentTable.printAllEntries();
+        testResultsTable.printAllEntries();
 	}
 	
 	private void makeNewPatientsFillArrayTest()
@@ -335,19 +348,27 @@ public class DataBaseManager {
 			Appointment anAppt = getNewAppointment(patientID);
 			Integer apptID = anAppt.getApptID();
 			anAppt.setApptDate(1000);
-                        anAppt.setDoctorToSee(apptID);
-                        anAppt.setPatientName(DB_URL);
+                        anAppt.setDoctorToSee(0);
+                        anAppt.setPatientName(currentPatient.getName());
+						anAppt.setArrivalStatus(0);
 			save(anAppt);
 			
 			EyeTestResults examResults = getNewEyeTestResults(patientID, apptID);
 			examResults.setFarChartDistance(1);
+			examResults.setAddOD(1.2);
+			examResults.setAddOS(2.1);
+			examResults.setNn20OS(5);
+			examResults.setNn20OD(7);
+			examResults.setDd20OS(10);
+			examResults.setDd20OD(15);
 			save(examResults);
-			
 			
 			
 			anAppt = getNewAppointment(patientID);
 			apptID = anAppt.getApptID();
+			anAppt.setPatientName(currentPatient.getName());
 			anAppt.setAppointmentTime(2000);
+			anAppt.setArrivalStatus(0);
 			save(anAppt);
 			
 			examResults = getNewEyeTestResults(patientID, apptID);
@@ -359,6 +380,8 @@ public class DataBaseManager {
 			anAppt = getNewAppointment(patientID);
 			apptID = anAppt.getApptID();
 			anAppt.setAppointmentTime(3000);
+			anAppt.setArrivalStatus(0);
+			anAppt.setPatientName(currentPatient.getName());
 			save(anAppt);
 			
 			examResults = getNewEyeTestResults(patientID, apptID);

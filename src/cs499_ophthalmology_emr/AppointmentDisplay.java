@@ -7,7 +7,13 @@ package cs499_ophthalmology_emr;
 
 import java.awt.Color;
 import java.util.ArrayList;
+import javax.swing.DefaultCellEditor;
+import javax.swing.JComboBox;
+import javax.swing.JTable;
+import javax.swing.table.AbstractTableModel;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableColumn;
 
 /**
  *
@@ -15,12 +21,11 @@ import javax.swing.table.DefaultTableModel;
  */
 public class AppointmentDisplay extends javax.swing.JPanel {
     
-    final Integer APPT_ID_COLUMN = 8;
+    final Integer APPT_ID_COLUMN = 5;
     private MainDashboard mainDash = null;
     private ArrayList<Appointment> appointmentList = null;
     private DataBaseManager dataBase = DataBaseManager.getInstance();
     private DefaultTableModel tableModel = null;
-    
  
 
     /**
@@ -29,18 +34,25 @@ public class AppointmentDisplay extends javax.swing.JPanel {
     public AppointmentDisplay(MainDashboard _mainFrame) {
         initComponents();
         mainDash = _mainFrame;
-        
         tableModel = (DefaultTableModel) appointmentDisplayTable.getModel();
-        loadTable();
+		//JComboBox statusComboBox = new JComboBox();
+		//statusComboBox.addItem("Not arrived");
+		//statusComboBox.addItem("Checked in, waiting");
+		//statusComboBox.addItem("In Exam");
+		//statusComboBox.addItem("Checked out");
+		//appointmentDisplayTable.getColumnModel().getColumn(4).setCellEditor(new DefaultCellEditor(statusComboBox));
+        loadTableAllEntries();
     }
     
-    public void loadTable()
+    public void loadTableAllEntries()
     {
         String patientName = null;
-        Integer doctorToSee = null;
-        Integer apptDate = null;
-        String lool = null;
-        Integer apptID = null;
+        Integer doctorToSee = -1;
+        Integer apptDate = -1;
+		String reasonForVisit = null;
+        Integer apptID = -1;
+		Integer checkInCode = -1;
+		String checkInString = null;
         
         appointmentList = dataBase.getAllAppointments();
         tableModel.setRowCount(0);
@@ -49,23 +61,59 @@ public class AppointmentDisplay extends javax.swing.JPanel {
         {
             patientName = currentAppointment.getPatientName();
             doctorToSee = currentAppointment.getDoctorToSee();
-            apptDate = currentAppointment.getAppointmentTime();
-            lool = currentAppointment.getReasonForVisit();
+            apptDate = currentAppointment.getApptDate();
+            reasonForVisit = currentAppointment.getReasonForVisit();
             apptID = currentAppointment.getApptID();
+            checkInCode = currentAppointment.getArrivalStatus();
+			checkInString = translateArrivalStatus(checkInCode);
             
-            
-            tableModel.addRow(new Object[] {apptDate, patientName, lool, doctorToSee,null,null,null,null, apptID});
+            tableModel.addRow(new Object[] {apptDate, patientName, doctorToSee, reasonForVisit, checkInString, apptID});
         }
+		tableModel.fireTableDataChanged();
+		System.out.println("AppointmentDisplay.loadTableAllEntries() finished.");
+		
     }
+	
+	public String translateArrivalStatus(Integer arrivalCode)
+	{
+		String theReturnString = "";
+		switch (arrivalCode)
+		{
+			case 0:
+				theReturnString = "Not arrived";
+				break;
+			case 1:
+				theReturnString = "Checked in, waiting";
+				break;
+			case 2:
+				theReturnString = "In Exam";
+				break;
+			case 3:
+				theReturnString = "Checked out";
+				break;
+			default:
+				theReturnString = "Invalid check in status.";
+				System.out.println("AppointmentDisplay.translateArrivalStatus(" + arrivalCode + ") error.");
+		}
+		
+		return theReturnString;
+	}
     
     public void loadTableFromList(ArrayList<Appointment> theList)
     {
         String patientName = null;
-        Integer doctorToSee = null;
-        Integer apptDate = null;
-        String lool = null;
+        Integer doctorToSee = -1;
+        Integer apptDate = -1;
+		String reasonForVisit = null;
+        Integer apptID = -1;
+		Integer checkInCode = -1;
+		String checkInString = null;
         
-        appointmentList = theList;
+		if (theList != null)
+		{
+			appointmentList = theList;
+		}
+		
         tableModel.setRowCount(0);
         
         for (Appointment currentAppointment: appointmentList)
@@ -73,11 +121,32 @@ public class AppointmentDisplay extends javax.swing.JPanel {
             patientName = currentAppointment.getPatientName();
             doctorToSee = currentAppointment.getDoctorToSee();
             apptDate = currentAppointment.getAppointmentTime();
-            lool = currentAppointment.getReasonForVisit();
+            reasonForVisit = currentAppointment.getReasonForVisit();
+            apptID = currentAppointment.getApptID();
+            checkInCode = currentAppointment.getArrivalStatus();
+			checkInString = translateArrivalStatus(checkInCode);
             
-            tableModel.addRow(new Object[] {apptDate, patientName, lool, doctorToSee});
+            tableModel.addRow(new Object[] {apptDate, patientName, doctorToSee, reasonForVisit, checkInString, apptID});
         }
+		tableModel.fireTableDataChanged();
     }
+	/*
+	public void setupCheckInColumn(JTable theTable, TableColumn theCol)
+	{
+		//Set up the editor for the sport cells.
+        JComboBox comboBox = new JComboBox();
+        comboBox.addItem("Not arrived");
+        comboBox.addItem("Checked in, waiting");
+        comboBox.addItem("In examination");
+        comboBox.addItem("Checked out");
+        theCol.setCellEditor(new DefaultCellEditor(comboBox));
+
+        //Set up tool tips for the sport cells.
+        DefaultTableCellRenderer renderer =
+                new DefaultTableCellRenderer();
+        renderer.setToolTipText("Click for combo box");
+        theCol.setCellRenderer(renderer);
+	}*/
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -88,8 +157,6 @@ public class AppointmentDisplay extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        appointmentDisplayTable = new javax.swing.JTable();
         newAppointmentButton = new javax.swing.JButton();
         futureAppointmentButton = new javax.swing.JButton();
         pastAppointmentButton = new javax.swing.JButton();
@@ -97,30 +164,10 @@ public class AppointmentDisplay extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         deleteButton = new javax.swing.JButton();
         editButton = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        appointmentDisplayTable = new javax.swing.JTable();
 
         setBackground(new java.awt.Color(57, 113, 177));
-        setPreferredSize(new java.awt.Dimension(1620, 634));
-
-        appointmentDisplayTable.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
-        appointmentDisplayTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Appointment Time", "Name", "Arrival Time", "Doctor", "Not Arrived", "Waiting", "Being Seen", "Checked Out", "AppointmentID"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
-        appointmentDisplayTable.setPreferredSize(new java.awt.Dimension(1347, 48));
-        appointmentDisplayTable.getTableHeader().setReorderingAllowed(false);
-        jScrollPane1.setViewportView(appointmentDisplayTable);
 
         newAppointmentButton.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.darcula.selection.color1"));
         newAppointmentButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -165,7 +212,7 @@ public class AppointmentDisplay extends javax.swing.JPanel {
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Daily Appointment Display");
         jLabel2.setOpaque(true);
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-250, 20, 1870, 46));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-250, 20, 1620, 46));
 
         deleteButton.setText("Delete");
         deleteButton.addActionListener(new java.awt.event.ActionListener() {
@@ -181,36 +228,63 @@ public class AppointmentDisplay extends javax.swing.JPanel {
             }
         });
 
+        appointmentDisplayTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Date", "Name", "Doctor", "Reason For Visit", "Status", "ID"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(appointmentDisplayTable);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 1620, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1620, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGroup(layout.createSequentialGroup()
-                .addGap(81, 81, 81)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGap(50, 50, 50)
+                .addComponent(futureAppointmentButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(pastAppointmentButton))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(53, 53, 53)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1000, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(newAppointmentButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(pastAppointmentButton)
-                        .addGap(46, 46, 46)
-                        .addComponent(futureAppointmentButton))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1434, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(editButton, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(deleteButton))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(42, 42, 42)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(33, 33, 33)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(futureAppointmentButton)
-                        .addComponent(pastAppointmentButton))
+                        .addComponent(deleteButton)
+                        .addComponent(editButton))
                     .addComponent(newAppointmentButton))
-                .addGap(21, 21, 21))
+                .addGap(52, 52, 52)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(futureAppointmentButton)
+                    .addComponent(pastAppointmentButton))
+                .addContainerGap())
         );
 
         futureAppointmentButton.getAccessibleContext().setAccessibleName("");
@@ -231,8 +305,8 @@ public class AppointmentDisplay extends javax.swing.JPanel {
 
     private void newAppointmentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newAppointmentButtonActionPerformed
         System.out.println("Appointment: Add new button");
-		mainDash.newAppt.loadActivePatientInfo();
-        mainDash.showNewAppt();
+		mainDash.appointmentForm.loadActivePatientInfo();
+        mainDash.showAppointmentForm();
     }//GEN-LAST:event_newAppointmentButtonActionPerformed
 
     private void newAppointmentButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_newAppointmentButtonMouseClicked
@@ -258,10 +332,10 @@ public class AppointmentDisplay extends javax.swing.JPanel {
         // TODO add your handling code here:
         System.out.println("Patient Portal: Edit button");
 		Integer selectedRow = appointmentDisplayTable.getSelectedRow();
-		Integer patientID = (Integer)appointmentDisplayTable.getValueAt(selectedRow, APPT_ID_COLUMN);
-		Appointment theAppointment = dataBase.getAppointmentByID(patientID);
-		mainDash.newAppt.loadAppointment(theAppointment);
-		mainDash.showNewAppt();
+		Integer apptID = (Integer)appointmentDisplayTable.getValueAt(selectedRow, APPT_ID_COLUMN);
+		Appointment theAppointment = dataBase.getAppointmentByID(apptID);
+		mainDash.appointmentForm.loadAppointment(theAppointment);
+		mainDash.showAppointmentForm();
     }//GEN-LAST:event_editButtonActionPerformed
 
 
@@ -272,8 +346,9 @@ public class AppointmentDisplay extends javax.swing.JPanel {
     private javax.swing.JButton futureAppointmentButton;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JButton newAppointmentButton;
     private javax.swing.JButton pastAppointmentButton;
     // End of variables declaration//GEN-END:variables
+
 }

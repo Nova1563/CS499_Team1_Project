@@ -23,7 +23,7 @@ public class VisualAcuity extends javax.swing.JPanel {
         String range = null;
         String visualAcuity = null;
         String correctiveLesneResult = null;
-        VisualAcuity textField = new VisualAcuity(20);
+        //VisualAcuity textField = new VisualAcuity(20);
          
     public VisualAcuity() {
         initComponents();
@@ -689,7 +689,7 @@ public class VisualAcuity extends javax.swing.JPanel {
         // TODO add your handling code here:
         System.out.println("Distance TextField has been selected");
         
-        distance = textField.getText();
+       // distance = textField.getText();
         
         
     }//GEN-LAST:event_distanceTextFieldActionPerformed
