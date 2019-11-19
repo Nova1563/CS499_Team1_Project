@@ -270,9 +270,9 @@ public class DataBaseManager {
 	public void doTest()
 	{
 		makeNewPatientsFillArrayTest();
-        addAppointmentsAndExamsToAllPatientsTest();
-		appointmentTable.printAllEntries();
-        testResultsTable.printAllEntries();
+        //addAppointmentsAndExamsToAllPatientsTest();
+		//appointmentTable.printAllEntries();
+        //testResultsTable.printAllEntries();
 	}
 	
 	private void makeNewPatientsFillArrayTest()
