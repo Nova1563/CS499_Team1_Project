@@ -250,6 +250,18 @@ public class DataBaseManager {
 		testResultsTable.deleteEyeTestResult(theResultsObj.getExamID());
 	}
 	
+	public void updateApptsWithPatientNameChange(Patient thePatient)
+	{
+		ArrayList<Appointment> theAppts = getPatientAppointmentList(thePatient);
+		
+		for (Appointment anAppt : theAppts)
+		{
+			anAppt.setPatientName(thePatient.getName());
+			save(anAppt);
+		}
+		
+	}
+	
 	///////////////////////////////// Test Methods and Data ///////////////////////////////
 	
 	/**

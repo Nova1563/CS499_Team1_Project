@@ -502,6 +502,7 @@ public class PatientForm extends javax.swing.JPanel {
         Boolean saveSuccess = savePatientInfo();
 		if (saveSuccess)
 		{
+			dataBase.updateApptsWithPatientNameChange(activePatient);
 			activePatient = null;
 			dashBoard.showPatientPortal();
 		}
