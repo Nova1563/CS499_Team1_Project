@@ -23,30 +23,30 @@ public class EyeTestResultsTableManager {
 										+ "resultsID			Integer PRIMARY KEY,\n"
 										+ "patientID			Integer NOT NULL,\n"
 										+ "apptID				Integer NOT NULL,\n"				
-										+ "farChartDistance		Integer,\n"
-										+ "dccOS		Integer,\n"
-										+ "dccOSph		Integer,\n"
-										+ "dscOS		Integer,\n"
-										+ "dscOSph		Integer,\n"
-										+ "dccOD		Integer,\n"
-										+ "dccODph		Integer,\n"
-										+ "dscOD		Integer,\n"
-										+ "dccOU		Integer,\n"
-										+ "dccOUph		Integer,\n"
-										+ "dscOU		Integer,\n"
-										+ "dscOUph		Integer,\n"
-										+ "nearChartDistance		Integer,\n"
-										+ "nccOS		Integer,\n"
-										+ "nccOSph		Integer,\n"
-										+ "nscOS		Integer,\n"
-										+ "nscOSph		Integer,\n"
-										+ "nccOD		Integer,\n"
-										+ "nccODph		Integer,\n"
-										+ "nscOD		Integer,\n"
-										+ "nccOU		Integer,\n"
-										+ "nccOUph		Integer,\n"
-										+ "nscOU		Integer,\n"
-										+ "nscOUph		Integer,\n"
+										+ "farChartDistance		Text,\n"
+										+ "dccOS		Text,\n"
+										+ "dccOSph		Text,\n"
+										+ "dscOS		Text,\n"
+										+ "dscOSph		Text,\n"
+										+ "dccOD		Text,\n"
+										+ "dccODph		Text,\n"
+										+ "dscOD		Text,\n"
+										+ "dccOU		Text,\n"
+										+ "dccOUph		Text,\n"
+										+ "dscOU		Text,\n"
+										+ "dscOUph		Text,\n"
+										+ "nearChartDistance		Text,\n"
+										+ "nccOS		Text,\n"
+										+ "nccOSph		Text,\n"
+										+ "nscOS		Text,\n"
+										+ "nscOSph		Text,\n"
+										+ "nccOD		Text,\n"
+										+ "nccODph		Text,\n"
+										+ "nscOD		Text,\n"
+										+ "nccOU		Text,\n"
+										+ "nccOUph		Text,\n"
+										+ "nscOU		Text,\n"
+										+ "nscOUph		Text,\n"
 										+ "sphereOD		Float,\n"
 										+ "sphereOS		Float,\n"
 										+ "cylinderOD		Float,\n"
@@ -59,42 +59,42 @@ public class EyeTestResultsTableManager {
 										+ "prismOS		Float,\n"
 										+ "prismBaseOD		Float,\n"
 										+ "prismBaseOS		Float,\n"
-										+ "nn20OD		Integer,\n"
-										+ "dd20OD		Integer,\n"
-										+ "nn20OS		Integer,\n"
-										+ "dd20OS		Integer,\n"
-										+ "vitreousOD		Integer,\n"
-										+ "maculaOD		Integer,\n"
-										+ "vasculatureOD		Integer,\n"
-										+ "posteriorPoleOD		Integer,\n"
-										+ "peripheralRetinaOD		Integer,\n"
-										+ "miscRetinaOD		Integer,\n"
-										+ "diabeticEvalOD		Integer,\n"
-										+ "htnEvalOD		Integer,\n"
-										+ "armdOD		Integer,\n"
-										+ "custom1OD		Integer,\n"
-										+ "custom2OD		Integer,\n"
-										+ "custom3OD		Integer,\n"
-										+ "vitreousOS		Integer,\n"
-										+ "maculaOS		Integer,\n"
-										+ "vasculatureOS		Integer,\n"
-										+ "posteriorPoleOS		Integer,\n"
-										+ "peripheralRetinaOS		Integer,\n"
-										+ "miscRetinaOS		Integer,\n"
-										+ "diabeticEvalOS		Integer,\n"
-										+ "htnEvalOS		Integer,\n"
-										+ "armdOS		Integer,\n"
-										+ "custom1OS		Integer,\n"
-										+ "custom2OS		Integer,\n"
-										+ "custom3OS		Integer,\n"
-										+ "sponVeinPulsOD		Integer,\n"
-										+ "fovealReflexOD		Integer,\n"
-										+ "sponVeinPulsOS		Integer,\n"
-										+ "fovealReflexOs		Integer,\n"
-										+ "methodUsed		Integer,\n"
-										+ "gttOD		Integer,\n"
-										+ "gttOS		Integer,\n"
-										+ "dilationAgent		Integer,\n"
+										+ "nn20OD		Text,\n"
+										+ "dd20OD		Text,\n"
+										+ "nn20OS		Text,\n"
+										+ "dd20OS		Text,\n"
+										+ "vitreousOD		Text,\n"
+										+ "maculaOD		Text,\n"
+										+ "vasculatureOD		Text,\n"
+										+ "posteriorPoleOD		Text,\n"
+										+ "peripheralRetinaOD		Text,\n"
+										+ "miscRetinaOD		Text,\n"
+										+ "diabeticEvalOD		Text,\n"
+										+ "htnEvalOD		Text,\n"
+										+ "armdOD		Text,\n"
+										+ "custom1OD		Text,\n"
+										+ "custom2OD		Text,\n"
+										+ "custom3OD		Text,\n"
+										+ "vitreousOS		Text,\n"
+										+ "maculaOS		Text,\n"
+										+ "vasculatureOS		Text,\n"
+										+ "posteriorPoleOS		Text,\n"
+										+ "peripheralRetinaOS		Text,\n"
+										+ "miscRetinaOS		Text,\n"
+										+ "diabeticEvalOS		Text,\n"
+										+ "htnEvalOS		Text,\n"
+										+ "armdOS		Text,\n"
+										+ "custom1OS		Text,\n"
+										+ "custom2OS		Text,\n"
+										+ "custom3OS		Text,\n"
+										+ "sponVeinPulsOD		Text,\n"
+										+ "fovealReflexOD		Text,\n"
+										+ "sponVeinPulsOS		Text,\n"
+										+ "fovealReflexOs		Text,\n"
+										+ "methodUsed		Text,\n"
+										+ "gttOD		Text,\n"
+										+ "gttOS		Text,\n"
+										+ "dilationAgent		Text,\n"
 										+ "lens78dUsed		Boolean,\n"
 										+ "lens90Dused		Boolean,\n"
 										+ "lens20DbioUsed		Boolean,\n"
@@ -115,8 +115,8 @@ public class EyeTestResultsTableManager {
 										+ "horizOS		Float,\n"
 										+ "vertOD		Float,\n"
 										+ "vertOS		Float,\n"
-										+ "opticNerve		Integer,\n"
-										+ "nerveFiberLayer		Integer,\n"
+										+ "opticNerve		Text,\n"
+										+ "nerveFiberLayer		Text,\n"
 										+ "deepLaminaOD		Boolean,\n"
 										+ "deepLaminaOS		Boolean,\n"
 										+ "shallowOD		Boolean,\n"
@@ -207,30 +207,30 @@ public class EyeTestResultsTableManager {
 						"resultsID: " + queryResults.getInt("resultsID")
 					+ "\tpatientID: " + queryResults.getInt("patientID")
 					+ "\tapptID: " + queryResults.getInt("apptID")
-					+ "\tfarChartDistance: " + queryResults.getInt("farChartDistance")
-					+ "\tdccOS: " + queryResults.getInt("dccOS")
-					+ "\tdccOSph: " + queryResults.getInt("dccOSph")
-					+ "\tdscOS: " + queryResults.getInt("dscOS")
-					+ "\tdscOSph: " + queryResults.getInt("dscOSph")
-					+ "\tdccOD: " + queryResults.getInt("dccOD")
-					+ "\tdccODph: " + queryResults.getInt("dccODph")
-					+ "\tdscOD: " + queryResults.getInt("dscOD")
-					+ "\tdccOU: " + queryResults.getInt("dccOU")
-					+ "\tdccOUph: " + queryResults.getInt("dccOUph")
-					+ "\tdscOU: " + queryResults.getInt("dscOU")
-					+ "\tdscOUph: " + queryResults.getInt("dscOUph")
-					+ "\tnearChartDistance: " + queryResults.getInt("nearChartDistance")
-					+ "\tnccOS: " + queryResults.getInt("nccOS")
-					+ "\tnccOSph: " + queryResults.getInt("nccOSph")
-					+ "\tnscOS: " + queryResults.getInt("nscOS")
-					+ "\tnscOSph: " + queryResults.getInt("nscOSph")
-					+ "\tnccOD: " + queryResults.getInt("nccOD")
-					+ "\tnccODph: " + queryResults.getInt("nccODph")
-					+ "\tnscOD: " + queryResults.getInt("nscOD")
-					+ "\tnccOU: " + queryResults.getInt("nccOU")
-					+ "\tnccOUph: " + queryResults.getInt("nccOUph")
-					+ "\tnscOU: " + queryResults.getInt("nscOU")
-					+ "\tnscOUph: " + queryResults.getInt("nscOUph")
+					+ "\tfarChartDistance: " + queryResults.getString("farChartDistance")
+					+ "\tdccOS: " + queryResults.getString("dccOS")
+					+ "\tdccOSph: " + queryResults.getString("dccOSph")
+					+ "\tdscOS: " + queryResults.getString("dscOS")
+					+ "\tdscOSph: " + queryResults.getString("dscOSph")
+					+ "\tdccOD: " + queryResults.getString("dccOD")
+					+ "\tdccODph: " + queryResults.getString("dccODph")
+					+ "\tdscOD: " + queryResults.getString("dscOD")
+					+ "\tdccOU: " + queryResults.getString("dccOU")
+					+ "\tdccOUph: " + queryResults.getString("dccOUph")
+					+ "\tdscOU: " + queryResults.getString("dscOU")
+					+ "\tdscOUph: " + queryResults.getString("dscOUph")
+					+ "\tnearChartDistance: " + queryResults.getString("nearChartDistance")
+					+ "\tnccOS: " + queryResults.getString("nccOS")
+					+ "\tnccOSph: " + queryResults.getString("nccOSph")
+					+ "\tnscOS: " + queryResults.getString("nscOS")
+					+ "\tnscOSph: " + queryResults.getString("nscOSph")
+					+ "\tnccOD: " + queryResults.getString("nccOD")
+					+ "\tnccODph: " + queryResults.getString("nccODph")
+					+ "\tnscOD: " + queryResults.getString("nscOD")
+					+ "\tnccOU: " + queryResults.getString("nccOU")
+					+ "\tnccOUph: " + queryResults.getString("nccOUph")
+					+ "\tnscOU: " + queryResults.getString("nscOU")
+					+ "\tnscOUph: " + queryResults.getString("nscOUph")
 					+ "\tsphereOD: " + queryResults.getFloat("sphereOD")
 					+ "\tsphereOS: " + queryResults.getFloat("sphereOS")
 					+ "\tcylinderOD: " + queryResults.getFloat("cylinderOD")
@@ -243,42 +243,42 @@ public class EyeTestResultsTableManager {
 					+ "\tprismOS: " + queryResults.getFloat("prismOS")
 					+ "\tprismBaseOD: " + queryResults.getFloat("prismBaseOD")
 					+ "\tprismBaseOS: " + queryResults.getFloat("prismBaseOS")
-					+ "\tnn20OD: " + queryResults.getInt("nn20OD")
-					+ "\tdd20OD: " + queryResults.getInt("dd20OD")
-					+ "\tnn20OS: " + queryResults.getInt("nn20OS")
-					+ "\tdd20OS: " + queryResults.getInt("dd20OS")
-					+ "\tvitreousOD: " + queryResults.getInt("vitreousOD")
-					+ "\tmaculaOD: " + queryResults.getInt("maculaOD")
-					+ "\tvasculatureOD: " + queryResults.getInt("vasculatureOD")
-					+ "\tposteriorPoleOD: " + queryResults.getInt("posteriorPoleOD")
-					+ "\tperipheralRetinaOD: " + queryResults.getInt("peripheralRetinaOD")
-					+ "\tmiscRetinaOD: " + queryResults.getInt("miscRetinaOD")
-					+ "\tdiabeticEvalOD: " + queryResults.getInt("diabeticEvalOD")
-					+ "\thtnEvalOD: " + queryResults.getInt("htnEvalOD")
-					+ "\tarmdOD: " + queryResults.getInt("armdOD")
-					+ "\tcustom1OD: " + queryResults.getInt("custom1OD")
-					+ "\tcustom2OD: " + queryResults.getInt("custom2OD")
-					+ "\tcustom3OD: " + queryResults.getInt("custom3OD")
-					+ "\tvitreousOS: " + queryResults.getInt("vitreousOS")
-					+ "\tmaculaOS: " + queryResults.getInt("maculaOS")
-					+ "\tvasculatureOS: " + queryResults.getInt("vasculatureOS")
-					+ "\tposteriorPoleOS: " + queryResults.getInt("posteriorPoleOS")
-					+ "\tperipheralRetinaOS: " + queryResults.getInt("peripheralRetinaOS")
-					+ "\tmiscRetinaOS: " + queryResults.getInt("miscRetinaOS")
-					+ "\tdiabeticEvalOS: " + queryResults.getInt("diabeticEvalOS")
-					+ "\thtnEvalOS: " + queryResults.getInt("htnEvalOS")
-					+ "\tarmdOS: " + queryResults.getInt("armdOS")
-					+ "\tcustom1OS: " + queryResults.getInt("custom1OS")
-					+ "\tcustom2OS: " + queryResults.getInt("custom2OS")
-					+ "\tcustom3OS: " + queryResults.getInt("custom3OS")
-					+ "\tsponVeinPulsOD: " + queryResults.getInt("sponVeinPulsOD")
-					+ "\tfovealReflexOD: " + queryResults.getInt("fovealReflexOD")
-					+ "\tsponVeinPulsOS: " + queryResults.getInt("sponVeinPulsOS")
-					+ "\tfovealReflexOs: " + queryResults.getInt("fovealReflexOs")
-					+ "\tmethodUsed: " + queryResults.getInt("methodUsed")
-					+ "\tgttOD: " + queryResults.getInt("gttOD")
-					+ "\tgttOS: " + queryResults.getInt("gttOS")
-					+ "\tdilationAgent: " + queryResults.getInt("dilationAgent")
+					+ "\tnn20OD: " + queryResults.getString("nn20OD")
+					+ "\tdd20OD: " + queryResults.getString("dd20OD")
+					+ "\tnn20OS: " + queryResults.getString("nn20OS")
+					+ "\tdd20OS: " + queryResults.getString("dd20OS")
+					+ "\tvitreousOD: " + queryResults.getString("vitreousOD")
+					+ "\tmaculaOD: " + queryResults.getString("maculaOD")
+					+ "\tvasculatureOD: " + queryResults.getString("vasculatureOD")
+					+ "\tposteriorPoleOD: " + queryResults.getString("posteriorPoleOD")
+					+ "\tperipheralRetinaOD: " + queryResults.getString("peripheralRetinaOD")
+					+ "\tmiscRetinaOD: " + queryResults.getString("miscRetinaOD")
+					+ "\tdiabeticEvalOD: " + queryResults.getString("diabeticEvalOD")
+					+ "\thtnEvalOD: " + queryResults.getString("htnEvalOD")
+					+ "\tarmdOD: " + queryResults.getString("armdOD")
+					+ "\tcustom1OD: " + queryResults.getString("custom1OD")
+					+ "\tcustom2OD: " + queryResults.getString("custom2OD")
+					+ "\tcustom3OD: " + queryResults.getString("custom3OD")
+					+ "\tvitreousOS: " + queryResults.getString("vitreousOS")
+					+ "\tmaculaOS: " + queryResults.getString("maculaOS")
+					+ "\tvasculatureOS: " + queryResults.getString("vasculatureOS")
+					+ "\tposteriorPoleOS: " + queryResults.getString("posteriorPoleOS")
+					+ "\tperipheralRetinaOS: " + queryResults.getString("peripheralRetinaOS")
+					+ "\tmiscRetinaOS: " + queryResults.getString("miscRetinaOS")
+					+ "\tdiabeticEvalOS: " + queryResults.getString("diabeticEvalOS")
+					+ "\thtnEvalOS: " + queryResults.getString("htnEvalOS")
+					+ "\tarmdOS: " + queryResults.getString("armdOS")
+					+ "\tcustom1OS: " + queryResults.getString("custom1OS")
+					+ "\tcustom2OS: " + queryResults.getString("custom2OS")
+					+ "\tcustom3OS: " + queryResults.getString("custom3OS")
+					+ "\tsponVeinPulsOD: " + queryResults.getString("sponVeinPulsOD")
+					+ "\tfovealReflexOD: " + queryResults.getString("fovealReflexOD")
+					+ "\tsponVeinPulsOS: " + queryResults.getString("sponVeinPulsOS")
+					+ "\tfovealReflexOs: " + queryResults.getString("fovealReflexOs")
+					+ "\tmethodUsed: " + queryResults.getString("methodUsed")
+					+ "\tgttOD: " + queryResults.getString("gttOD")
+					+ "\tgttOS: " + queryResults.getString("gttOS")
+					+ "\tdilationAgent: " + queryResults.getString("dilationAgent")
 					+ "\tlens78dUsed: " + queryResults.getBoolean("lens78dUsed")
 					+ "\tlens90Dused: " + queryResults.getBoolean("lens90Dused")
 					+ "\tlens20DbioUsed: " + queryResults.getBoolean("lens20DbioUsed")
@@ -299,8 +299,8 @@ public class EyeTestResultsTableManager {
 					+ "\thorizOS: " + queryResults.getFloat("horizOS")
 					+ "\tvertOD: " + queryResults.getFloat("vertOD")
 					+ "\tvertOS: " + queryResults.getFloat("vertOS")
-					+ "\topticNerve: " + queryResults.getInt("opticNerve")
-					+ "\tnerveFiberLayer: " + queryResults.getInt("nerveFiberLayer")
+					+ "\topticNerve: " + queryResults.getString("opticNerve")
+					+ "\tnerveFiberLayer: " + queryResults.getString("nerveFiberLayer")
 					+ "\tdeepLaminaOD: " + queryResults.getBoolean("deepLaminaOD")
 					+ "\tdeepLaminaOS: " + queryResults.getBoolean("deepLaminaOS")
 					+ "\tshallowOD: " + queryResults.getBoolean("shallowOD")
@@ -463,30 +463,30 @@ public class EyeTestResultsTableManager {
 		{
 			PreparedStatement theSQLstatement = conn.prepareStatement(sqlString);
 
-			theSQLstatement.setInt(1 , theResults.getFarChartDistance());		 // farChartDistance
-			theSQLstatement.setInt(2 , theResults.getDccOS());		 // dccOS
-			theSQLstatement.setInt(3 , theResults.getDccOSph());		 // dccOSph
-			theSQLstatement.setInt(4 , theResults.getDscOS());		 // dscOS
-			theSQLstatement.setInt(5 , theResults.getDscOSph());		 // dscOSph
-			theSQLstatement.setInt(6 , theResults.getDccOD());		 // dccOD
-			theSQLstatement.setInt(7 , theResults.getDccODph());		 // dccODph
-			theSQLstatement.setInt(8 , theResults.getDscOD());		 // dscOD
-			theSQLstatement.setInt(9 , theResults.getDccOU());		 // dccOU
-			theSQLstatement.setInt(10 , theResults.getDccOUph());		 // dccOUph
-			theSQLstatement.setInt(11 , theResults.getDscOU());		 // dscOU
-			theSQLstatement.setInt(12 , theResults.getDscOUph());		 // dscOUph
-			theSQLstatement.setInt(13 , theResults.getNearChartDistance());		 // nearChartDistance
-			theSQLstatement.setInt(14 , theResults.getNccOS());		 // nccOS
-			theSQLstatement.setInt(15 , theResults.getNccOSph());		 // nccOSph
-			theSQLstatement.setInt(16 , theResults.getNscOS());		 // nscOS
-			theSQLstatement.setInt(17 , theResults.getNscOSph());		 // nscOSph
-			theSQLstatement.setInt(18 , theResults.getNccOD());		 // nccOD
-			theSQLstatement.setInt(19 , theResults.getNccODph());		 // nccODph
-			theSQLstatement.setInt(20 , theResults.getNscOD());		 // nscOD
-			theSQLstatement.setInt(21 , theResults.getNccOU());		 // nccOU
-			theSQLstatement.setInt(22 , theResults.getNccOUph());		 // nccOUph
-			theSQLstatement.setInt(23 , theResults.getNscOU());		 // nscOU
-			theSQLstatement.setInt(24 , theResults.getNscOUph());		 // nscOUph
+			theSQLstatement.setString(1 , theResults.getFarChartDistance());		 // farChartDistance
+			theSQLstatement.setString(2 , theResults.getDccOS());		 // dccOS
+			theSQLstatement.setString(3 , theResults.getDccOSph());		 // dccOSph
+			theSQLstatement.setString(4 , theResults.getDscOS());		 // dscOS
+			theSQLstatement.setString(5 , theResults.getDscOSph());		 // dscOSph
+			theSQLstatement.setString(6 , theResults.getDccOD());		 // dccOD
+			theSQLstatement.setString(7 , theResults.getDccODph());		 // dccODph
+			theSQLstatement.setString(8 , theResults.getDscOD());		 // dscOD
+			theSQLstatement.setString(9 , theResults.getDccOU());		 // dccOU
+			theSQLstatement.setString(10 , theResults.getDccOUph());		 // dccOUph
+			theSQLstatement.setString(11 , theResults.getDscOU());		 // dscOU
+			theSQLstatement.setString(12 , theResults.getDscOUph());		 // dscOUph
+			theSQLstatement.setString(13 , theResults.getNearChartDistance());		 // nearChartDistance
+			theSQLstatement.setString(14 , theResults.getNccOS());		 // nccOS
+			theSQLstatement.setString(15 , theResults.getNccOSph());		 // nccOSph
+			theSQLstatement.setString(16 , theResults.getNscOS());		 // nscOS
+			theSQLstatement.setString(17 , theResults.getNscOSph());		 // nscOSph
+			theSQLstatement.setString(18 , theResults.getNccOD());		 // nccOD
+			theSQLstatement.setString(19 , theResults.getNccODph());		 // nccODph
+			theSQLstatement.setString(20 , theResults.getNscOD());		 // nscOD
+			theSQLstatement.setString(21 , theResults.getNccOU());		 // nccOU
+			theSQLstatement.setString(22 , theResults.getNccOUph());		 // nccOUph
+			theSQLstatement.setString(23 , theResults.getNscOU());		 // nscOU
+			theSQLstatement.setString(24 , theResults.getNscOUph());		 // nscOUph
 			theSQLstatement.setDouble(25 , theResults.getSphereOD());		 // sphereOD
 			theSQLstatement.setDouble(26 , theResults.getSphereOS());		 // sphereOS
 			theSQLstatement.setDouble(27 , theResults.getCylinderOD());		 // cylinderOD
@@ -497,40 +497,40 @@ public class EyeTestResultsTableManager {
 			theSQLstatement.setDouble(32 , theResults.getPrismOS());		 // prismOS
 			theSQLstatement.setDouble(33 , theResults.getPrismBaseOD());		 // prismBaseOD
 			theSQLstatement.setDouble(34 , theResults.getPrismBaseOS());		 // prismBaseOS
-			theSQLstatement.setInt(35 , theResults.getNn20OD());		 // nn20
-			theSQLstatement.setInt(36 , theResults.getDd20OD());		 // dd20
-			theSQLstatement.setInt(37 , theResults.getVitreousOD());		 // vitreousOD
-			theSQLstatement.setInt(38 , theResults.getMaculaOD());		 // maculaOD
-			theSQLstatement.setInt(39 , theResults.getVasculatureOD());		 // vasculatureOD
-			theSQLstatement.setInt(40 , theResults.getPosteriorPoleOD());		 // posteriorPoleOD
-			theSQLstatement.setInt(41 , theResults.getPeripheralRetinaOD());		 // peripheralRetinaOD
-			theSQLstatement.setInt(42 , theResults.getMiscRetinaOD());		 // miscRetinaOD
-			theSQLstatement.setInt(43 , theResults.getDiabeticEvalOD());		 // diabeticEvalOD
-			theSQLstatement.setInt(44 , theResults.getHtnEvalOD());		 // htnEvalOD
-			theSQLstatement.setInt(45 , theResults.getArmdOD());		 // armdOD
-			theSQLstatement.setInt(46 , theResults.getCustom1OD());		 // custom1OD
-			theSQLstatement.setInt(47 , theResults.getCustom2OD());		 // custom2OD
-			theSQLstatement.setInt(48 , theResults.getCustom3OD());		 // custom3OD
-			theSQLstatement.setInt(49 , theResults.getVitreousOS());		 // vitreousOS
-			theSQLstatement.setInt(50 , theResults.getMaculaOS());		 // maculaOS
-			theSQLstatement.setInt(51 , theResults.getVasculatureOS());		 // vasculatureOS
-			theSQLstatement.setInt(52 , theResults.getPosteriorPoleOS());		 // posteriorPoleOS
-			theSQLstatement.setInt(53 , theResults.getPeripheralRetinaOS());		 // peripheralRetinaOS
-			theSQLstatement.setInt(54 , theResults.getMiscRetinaOS());		 // miscRetinaOS
-			theSQLstatement.setInt(55 , theResults.getDiabeticEvalOS());		 // diabeticEvalOS
-			theSQLstatement.setInt(56 , theResults.getHtnEvalOS());		 // htnEvalOS
-			theSQLstatement.setInt(57 , theResults.getArmdOS());		 // armdOS
-			theSQLstatement.setInt(58 , theResults.getCustom1OS());		 // custom1OS
-			theSQLstatement.setInt(59 , theResults.getCustom2OS());		 // custom2OS
-			theSQLstatement.setInt(60 , theResults.getCustom3OS());		 // custom3OS
-			theSQLstatement.setInt(61 , theResults.getSponVeinPulsOD());		 // sponVeinPulsOD
-			theSQLstatement.setInt(62 , theResults.getFovealReflexOD());		 // fovealReflexOD
-			theSQLstatement.setInt(63 , theResults.getSponVeinPulsOS());		 // sponVeinPulsOS
-			theSQLstatement.setInt(64 , theResults.getFovealReflexOs());		 // fovealReflexOs
-			theSQLstatement.setInt(65 , theResults.getMethodUsed());		 // methodUsed
-			theSQLstatement.setInt(66 , theResults.getGttOD());		 // gttOD
-			theSQLstatement.setInt(67 , theResults.getGttOS());		 // gttOS
-			theSQLstatement.setInt(68 , theResults.getDilationAgent());		 // dilationAgent
+			theSQLstatement.setString(35 , theResults.getNn20OD());		 // nn20
+			theSQLstatement.setString(36 , theResults.getDd20OD());		 // dd20
+			theSQLstatement.setString(37 , theResults.getVitreousOD());		 // vitreousOD
+			theSQLstatement.setString(38 , theResults.getMaculaOD());		 // maculaOD
+			theSQLstatement.setString(39 , theResults.getVasculatureOD());		 // vasculatureOD
+			theSQLstatement.setString(40 , theResults.getPosteriorPoleOD());		 // posteriorPoleOD
+			theSQLstatement.setString(41 , theResults.getPeripheralRetinaOD());		 // peripheralRetinaOD
+			theSQLstatement.setString(42 , theResults.getMiscRetinaOD());		 // miscRetinaOD
+			theSQLstatement.setString(43 , theResults.getDiabeticEvalOD());		 // diabeticEvalOD
+			theSQLstatement.setString(44 , theResults.getHtnEvalOD());		 // htnEvalOD
+			theSQLstatement.setString(45 , theResults.getArmdOD());		 // armdOD
+			theSQLstatement.setString(46 , theResults.getCustom1OD());		 // custom1OD
+			theSQLstatement.setString(47 , theResults.getCustom2OD());		 // custom2OD
+			theSQLstatement.setString(48 , theResults.getCustom3OD());		 // custom3OD
+			theSQLstatement.setString(49 , theResults.getVitreousOS());		 // vitreousOS
+			theSQLstatement.setString(50 , theResults.getMaculaOS());		 // maculaOS
+			theSQLstatement.setString(51 , theResults.getVasculatureOS());		 // vasculatureOS
+			theSQLstatement.setString(52 , theResults.getPosteriorPoleOS());		 // posteriorPoleOS
+			theSQLstatement.setString(53 , theResults.getPeripheralRetinaOS());		 // peripheralRetinaOS
+			theSQLstatement.setString(54 , theResults.getMiscRetinaOS());		 // miscRetinaOS
+			theSQLstatement.setString(55 , theResults.getDiabeticEvalOS());		 // diabeticEvalOS
+			theSQLstatement.setString(56 , theResults.getHtnEvalOS());		 // htnEvalOS
+			theSQLstatement.setString(57 , theResults.getArmdOS());		 // armdOS
+			theSQLstatement.setString(58 , theResults.getCustom1OS());		 // custom1OS
+			theSQLstatement.setString(59 , theResults.getCustom2OS());		 // custom2OS
+			theSQLstatement.setString(60 , theResults.getCustom3OS());		 // custom3OS
+			theSQLstatement.setString(61 , theResults.getSponVeinPulsOD());		 // sponVeinPulsOD
+			theSQLstatement.setString(62 , theResults.getFovealReflexOD());		 // fovealReflexOD
+			theSQLstatement.setString(63 , theResults.getSponVeinPulsOS());		 // sponVeinPulsOS
+			theSQLstatement.setString(64 , theResults.getFovealReflexOs());		 // fovealReflexOs
+			theSQLstatement.setString(65 , theResults.getMethodUsed());		 // methodUsed
+			theSQLstatement.setString(66 , theResults.getGttOD());		 // gttOD
+			theSQLstatement.setString(67 , theResults.getGttOS());		 // gttOS
+			theSQLstatement.setString(68 , theResults.getDilationAgent());		 // dilationAgent
 			theSQLstatement.setBoolean(69 , theResults.getLens78dUsed());		 // lens78dUsed
 			theSQLstatement.setBoolean(70 , theResults.getLens90Dused());		 // lens90Dused
 			theSQLstatement.setBoolean(71 , theResults.getLens20DbioUsed());		 // lens20DbioUsed
@@ -551,8 +551,8 @@ public class EyeTestResultsTableManager {
 			theSQLstatement.setDouble(86 , theResults.getHorizOS());		 // horizOS
 			theSQLstatement.setDouble(87 , theResults.getVertOD());		 // vertOD
 			theSQLstatement.setDouble(88 , theResults.getVertOS());		 // vertOS
-			theSQLstatement.setInt(89 , theResults.getOpticNerve());		 // opticNerve
-			theSQLstatement.setInt(90 , theResults.getNerveFiberLayer());		 // nerveFiberLayer
+			theSQLstatement.setString(89 , theResults.getOpticNerve());		 // opticNerve
+			theSQLstatement.setString(90 , theResults.getNerveFiberLayer());		 // nerveFiberLayer
 			theSQLstatement.setBoolean(91 , theResults.getDeepLaminaOD());		 // deepLaminaOD
 			theSQLstatement.setBoolean(92 , theResults.getDeepLaminaOS());		 // deepLaminaOS
 			theSQLstatement.setBoolean(93 , theResults.getShallowOD());		 // shallowOD
@@ -577,8 +577,8 @@ public class EyeTestResultsTableManager {
 			theSQLstatement.setBoolean(112 , theResults.getMyelinationOS());		 // myelinationOS
 			theSQLstatement.setBoolean(113 , theResults.getGlialRemOD());		 // glialRemOD
 			theSQLstatement.setBoolean(114 , theResults.getGlialRemOS());		 // glialRemOS
-			theSQLstatement.setDouble(115, theResults.getNn20OS());	// nn20OS
-			theSQLstatement.setDouble(116, theResults.getDd20OS());
+			theSQLstatement.setString(115, theResults.getNn20OS());	// nn20OS
+			theSQLstatement.setString(116, theResults.getDd20OS());
 			theSQLstatement.setDouble(117, theResults.getAddOS());
 			theSQLstatement.setDouble(118, theResults.getAddOD());
 			
@@ -612,30 +612,30 @@ public class EyeTestResultsTableManager {
 			
 			theFoundExam = new EyeTestResults(examID, patientID, apptID);
 			
-			theFoundExam.setFarChartDistance(theResults.getInt("farChartDistance"));
-			theFoundExam.setDccOS(theResults.getInt("dccOS"));
-			theFoundExam.setDccOSph(theResults.getInt("dccOSph"));
-			theFoundExam.setDscOS(theResults.getInt("dscOS"));
-			theFoundExam.setDscOSph(theResults.getInt("dscOSph"));
-			theFoundExam.setDccOD(theResults.getInt("dccOD"));
-			theFoundExam.setDccODph(theResults.getInt("dccODph"));
-			theFoundExam.setDscOD(theResults.getInt("dscOD"));
-			theFoundExam.setDccOU(theResults.getInt("dccOU"));
-			theFoundExam.setDccOUph(theResults.getInt("dccOUph"));
-			theFoundExam.setDscOU(theResults.getInt("dscOU"));
-			theFoundExam.setDscOUph(theResults.getInt("dscOUph"));
-			theFoundExam.setNearChartDistance(theResults.getInt("nearChartDistance"));
-			theFoundExam.setNccOS(theResults.getInt("nccOS"));
-			theFoundExam.setNccOSph(theResults.getInt("nccOSph"));
-			theFoundExam.setNscOS(theResults.getInt("nscOS"));
-			theFoundExam.setNscOSph(theResults.getInt("nscOSph"));
-			theFoundExam.setNccOD(theResults.getInt("nccOD"));
-			theFoundExam.setNccODph(theResults.getInt("nccODph"));
-			theFoundExam.setNscOD(theResults.getInt("nscOD"));
-			theFoundExam.setNccOU(theResults.getInt("nccOU"));
-			theFoundExam.setNccOUph(theResults.getInt("nccOUph"));
-			theFoundExam.setNscOU(theResults.getInt("nscOU"));
-			theFoundExam.setNscOUph(theResults.getInt("nscOUph"));
+			theFoundExam.setFarChartDistance(theResults.getString("farChartDistance"));
+			theFoundExam.setDccOS(theResults.getString("dccOS"));
+			theFoundExam.setDccOSph(theResults.getString("dccOSph"));
+			theFoundExam.setDscOS(theResults.getString("dscOS"));
+			theFoundExam.setDscOSph(theResults.getString("dscOSph"));
+			theFoundExam.setDccOD(theResults.getString("dccOD"));
+			theFoundExam.setDccODph(theResults.getString("dccODph"));
+			theFoundExam.setDscOD(theResults.getString("dscOD"));
+			theFoundExam.setDccOU(theResults.getString("dccOU"));
+			theFoundExam.setDccOUph(theResults.getString("dccOUph"));
+			theFoundExam.setDscOU(theResults.getString("dscOU"));
+			theFoundExam.setDscOUph(theResults.getString("dscOUph"));
+			theFoundExam.setNearChartDistance(theResults.getString("nearChartDistance"));
+			theFoundExam.setNccOS(theResults.getString("nccOS"));
+			theFoundExam.setNccOSph(theResults.getString("nccOSph"));
+			theFoundExam.setNscOS(theResults.getString("nscOS"));
+			theFoundExam.setNscOSph(theResults.getString("nscOSph"));
+			theFoundExam.setNccOD(theResults.getString("nccOD"));
+			theFoundExam.setNccODph(theResults.getString("nccODph"));
+			theFoundExam.setNscOD(theResults.getString("nscOD"));
+			theFoundExam.setNccOU(theResults.getString("nccOU"));
+			theFoundExam.setNccOUph(theResults.getString("nccOUph"));
+			theFoundExam.setNscOU(theResults.getString("nscOU"));
+			theFoundExam.setNscOUph(theResults.getString("nscOUph"));
 			theFoundExam.setSphereOD(theResults.getDouble("sphereOD"));
 			theFoundExam.setSphereOS(theResults.getDouble("sphereOS"));
 			theFoundExam.setCylinderOD(theResults.getDouble("cylinderOD"));
@@ -648,42 +648,42 @@ public class EyeTestResultsTableManager {
 			theFoundExam.setPrismOS(theResults.getDouble("prismOS"));
 			theFoundExam.setPrismBaseOD(theResults.getDouble("prismBaseOD"));
 			theFoundExam.setPrismBaseOS(theResults.getDouble("prismBaseOS"));
-			theFoundExam.setNn20OD(theResults.getInt("nn20OD"));
-			theFoundExam.setDd20OD(theResults.getInt("dd20OD"));
-			theFoundExam.setNn20OS(theResults.getInt("nn20OS"));
-			theFoundExam.setDd20OS(theResults.getInt("dd20OS"));
-			theFoundExam.setVitreousOD(theResults.getInt("vitreousOD"));
-			theFoundExam.setMaculaOD(theResults.getInt("maculaOD"));
-			theFoundExam.setVasculatureOD(theResults.getInt("vasculatureOD"));
-			theFoundExam.setPosteriorPoleOD(theResults.getInt("posteriorPoleOD"));
-			theFoundExam.setPeripheralRetinaOD(theResults.getInt("peripheralRetinaOD"));
-			theFoundExam.setMiscRetinaOD(theResults.getInt("miscRetinaOD"));
-			theFoundExam.setDiabeticEvalOD(theResults.getInt("diabeticEvalOD"));
-			theFoundExam.setHtnEvalOD(theResults.getInt("htnEvalOD"));
-			theFoundExam.setArmdOD(theResults.getInt("armdOD"));
-			theFoundExam.setCustom1OD(theResults.getInt("custom1OD"));
-			theFoundExam.setCustom2OD(theResults.getInt("custom2OD"));
-			theFoundExam.setCustom3OD(theResults.getInt("custom3OD"));
-			theFoundExam.setVitreousOS(theResults.getInt("vitreousOS"));
-			theFoundExam.setMaculaOS(theResults.getInt("maculaOS"));
-			theFoundExam.setVasculatureOS(theResults.getInt("vasculatureOS"));
-			theFoundExam.setPosteriorPoleOS(theResults.getInt("posteriorPoleOS"));
-			theFoundExam.setPeripheralRetinaOS(theResults.getInt("peripheralRetinaOS"));
-			theFoundExam.setMiscRetinaOS(theResults.getInt("miscRetinaOS"));
-			theFoundExam.setDiabeticEvalOS(theResults.getInt("diabeticEvalOS"));
-			theFoundExam.setHtnEvalOS(theResults.getInt("htnEvalOS"));
-			theFoundExam.setArmdOS(theResults.getInt("armdOS"));
-			theFoundExam.setCustom1OS(theResults.getInt("custom1OS"));
-			theFoundExam.setCustom2OS(theResults.getInt("custom2OS"));
-			theFoundExam.setCustom3OS(theResults.getInt("custom3OS"));
-			theFoundExam.setSponVeinPulsOD(theResults.getInt("sponVeinPulsOD"));
-			theFoundExam.setFovealReflexOD(theResults.getInt("fovealReflexOD"));
-			theFoundExam.setSponVeinPulsOS(theResults.getInt("sponVeinPulsOS"));
-			theFoundExam.setFovealReflexOs(theResults.getInt("fovealReflexOs"));
-			theFoundExam.setMethodUsed(theResults.getInt("methodUsed"));
-			theFoundExam.setGttOD(theResults.getInt("gttOD"));
-			theFoundExam.setGttOS(theResults.getInt("gttOS"));
-			theFoundExam.setDilationAgent(theResults.getInt("dilationAgent"));
+			theFoundExam.setNn20OD(theResults.getString("nn20OD"));
+			theFoundExam.setDd20OD(theResults.getString("dd20OD"));
+			theFoundExam.setNn20OS(theResults.getString("nn20OS"));
+			theFoundExam.setDd20OS(theResults.getString("dd20OS"));
+			theFoundExam.setVitreousOD(theResults.getString("vitreousOD"));
+			theFoundExam.setMaculaOD(theResults.getString("maculaOD"));
+			theFoundExam.setVasculatureOD(theResults.getString("vasculatureOD"));
+			theFoundExam.setPosteriorPoleOD(theResults.getString("posteriorPoleOD"));
+			theFoundExam.setPeripheralRetinaOD(theResults.getString("peripheralRetinaOD"));
+			theFoundExam.setMiscRetinaOD(theResults.getString("miscRetinaOD"));
+			theFoundExam.setDiabeticEvalOD(theResults.getString("diabeticEvalOD"));
+			theFoundExam.setHtnEvalOD(theResults.getString("htnEvalOD"));
+			theFoundExam.setArmdOD(theResults.getString("armdOD"));
+			theFoundExam.setCustom1OD(theResults.getString("custom1OD"));
+			theFoundExam.setCustom2OD(theResults.getString("custom2OD"));
+			theFoundExam.setCustom3OD(theResults.getString("custom3OD"));
+			theFoundExam.setVitreousOS(theResults.getString("vitreousOS"));
+			theFoundExam.setMaculaOS(theResults.getString("maculaOS"));
+			theFoundExam.setVasculatureOS(theResults.getString("vasculatureOS"));
+			theFoundExam.setPosteriorPoleOS(theResults.getString("posteriorPoleOS"));
+			theFoundExam.setPeripheralRetinaOS(theResults.getString("peripheralRetinaOS"));
+			theFoundExam.setMiscRetinaOS(theResults.getString("miscRetinaOS"));
+			theFoundExam.setDiabeticEvalOS(theResults.getString("diabeticEvalOS"));
+			theFoundExam.setHtnEvalOS(theResults.getString("htnEvalOS"));
+			theFoundExam.setArmdOS(theResults.getString("armdOS"));
+			theFoundExam.setCustom1OS(theResults.getString("custom1OS"));
+			theFoundExam.setCustom2OS(theResults.getString("custom2OS"));
+			theFoundExam.setCustom3OS(theResults.getString("custom3OS"));
+			theFoundExam.setSponVeinPulsOD(theResults.getString("sponVeinPulsOD"));
+			theFoundExam.setFovealReflexOD(theResults.getString("fovealReflexOD"));
+			theFoundExam.setSponVeinPulsOS(theResults.getString("sponVeinPulsOS"));
+			theFoundExam.setFovealReflexOs(theResults.getString("fovealReflexOs"));
+			theFoundExam.setMethodUsed(theResults.getString("methodUsed"));
+			theFoundExam.setGttOD(theResults.getString("gttOD"));
+			theFoundExam.setGttOS(theResults.getString("gttOS"));
+			theFoundExam.setDilationAgent(theResults.getString("dilationAgent"));
 			theFoundExam.setLens78dUsed(theResults.getBoolean("lens78dUsed"));
 			theFoundExam.setLens90Dused(theResults.getBoolean("lens90Dused"));
 			theFoundExam.setLens20DbioUsed(theResults.getBoolean("lens20DbioUsed"));
@@ -704,8 +704,8 @@ public class EyeTestResultsTableManager {
 			theFoundExam.setHorizOS(theResults.getDouble("horizOS"));
 			theFoundExam.setVertOD(theResults.getDouble("vertOD"));
 			theFoundExam.setVertOS(theResults.getDouble("vertOS"));
-			theFoundExam.setOpticNerve(theResults.getInt("opticNerve"));
-			theFoundExam.setNerveFiberLayer(theResults.getInt("nerveFiberLayer"));
+			theFoundExam.setOpticNerve(theResults.getString("opticNerve"));
+			theFoundExam.setNerveFiberLayer(theResults.getString("nerveFiberLayer"));
 			theFoundExam.setDeepLaminaOD(theResults.getBoolean("deepLaminaOD"));
 			theFoundExam.setDeepLaminaOS(theResults.getBoolean("deepLaminaOS"));
 			theFoundExam.setShallowOD(theResults.getBoolean("shallowOD"));
@@ -764,30 +764,30 @@ public class EyeTestResultsTableManager {
 			
 			theFoundExam = new EyeTestResults(examID, patientID, apptID);
 			
-			theFoundExam.setFarChartDistance(theResults.getInt("farChartDistance"));
-			theFoundExam.setDccOS(theResults.getInt("dccOS"));
-			theFoundExam.setDccOSph(theResults.getInt("dccOSph"));
-			theFoundExam.setDscOS(theResults.getInt("dscOS"));
-			theFoundExam.setDscOSph(theResults.getInt("dscOSph"));
-			theFoundExam.setDccOD(theResults.getInt("dccOD"));
-			theFoundExam.setDccODph(theResults.getInt("dccODph"));
-			theFoundExam.setDscOD(theResults.getInt("dscOD"));
-			theFoundExam.setDccOU(theResults.getInt("dccOU"));
-			theFoundExam.setDccOUph(theResults.getInt("dccOUph"));
-			theFoundExam.setDscOU(theResults.getInt("dscOU"));
-			theFoundExam.setDscOUph(theResults.getInt("dscOUph"));
-			theFoundExam.setNearChartDistance(theResults.getInt("nearChartDistance"));
-			theFoundExam.setNccOS(theResults.getInt("nccOS"));
-			theFoundExam.setNccOSph(theResults.getInt("nccOSph"));
-			theFoundExam.setNscOS(theResults.getInt("nscOS"));
-			theFoundExam.setNscOSph(theResults.getInt("nscOSph"));
-			theFoundExam.setNccOD(theResults.getInt("nccOD"));
-			theFoundExam.setNccODph(theResults.getInt("nccODph"));
-			theFoundExam.setNscOD(theResults.getInt("nscOD"));
-			theFoundExam.setNccOU(theResults.getInt("nccOU"));
-			theFoundExam.setNccOUph(theResults.getInt("nccOUph"));
-			theFoundExam.setNscOU(theResults.getInt("nscOU"));
-			theFoundExam.setNscOUph(theResults.getInt("nscOUph"));
+			theFoundExam.setFarChartDistance(theResults.getString("farChartDistance"));
+			theFoundExam.setDccOS(theResults.getString("dccOS"));
+			theFoundExam.setDccOSph(theResults.getString("dccOSph"));
+			theFoundExam.setDscOS(theResults.getString("dscOS"));
+			theFoundExam.setDscOSph(theResults.getString("dscOSph"));
+			theFoundExam.setDccOD(theResults.getString("dccOD"));
+			theFoundExam.setDccODph(theResults.getString("dccODph"));
+			theFoundExam.setDscOD(theResults.getString("dscOD"));
+			theFoundExam.setDccOU(theResults.getString("dccOU"));
+			theFoundExam.setDccOUph(theResults.getString("dccOUph"));
+			theFoundExam.setDscOU(theResults.getString("dscOU"));
+			theFoundExam.setDscOUph(theResults.getString("dscOUph"));
+			theFoundExam.setNearChartDistance(theResults.getString("nearChartDistance"));
+			theFoundExam.setNccOS(theResults.getString("nccOS"));
+			theFoundExam.setNccOSph(theResults.getString("nccOSph"));
+			theFoundExam.setNscOS(theResults.getString("nscOS"));
+			theFoundExam.setNscOSph(theResults.getString("nscOSph"));
+			theFoundExam.setNccOD(theResults.getString("nccOD"));
+			theFoundExam.setNccODph(theResults.getString("nccODph"));
+			theFoundExam.setNscOD(theResults.getString("nscOD"));
+			theFoundExam.setNccOU(theResults.getString("nccOU"));
+			theFoundExam.setNccOUph(theResults.getString("nccOUph"));
+			theFoundExam.setNscOU(theResults.getString("nscOU"));
+			theFoundExam.setNscOUph(theResults.getString("nscOUph"));
 			theFoundExam.setSphereOD(theResults.getDouble("sphereOD"));
 			theFoundExam.setSphereOS(theResults.getDouble("sphereOS"));
 			theFoundExam.setCylinderOD(theResults.getDouble("cylinderOD"));
@@ -800,42 +800,42 @@ public class EyeTestResultsTableManager {
 			theFoundExam.setPrismOS(theResults.getDouble("prismOS"));
 			theFoundExam.setPrismBaseOD(theResults.getDouble("prismBaseOD"));
 			theFoundExam.setPrismBaseOS(theResults.getDouble("prismBaseOS"));
-			theFoundExam.setNn20OD(theResults.getInt("nn20OD"));
-			theFoundExam.setDd20OD(theResults.getInt("dd20OD"));
-			theFoundExam.setNn20OS(theResults.getInt("nn20OS"));
-			theFoundExam.setDd20OS(theResults.getInt("dd20OS"));
-			theFoundExam.setVitreousOD(theResults.getInt("vitreousOD"));
-			theFoundExam.setMaculaOD(theResults.getInt("maculaOD"));
-			theFoundExam.setVasculatureOD(theResults.getInt("vasculatureOD"));
-			theFoundExam.setPosteriorPoleOD(theResults.getInt("posteriorPoleOD"));
-			theFoundExam.setPeripheralRetinaOD(theResults.getInt("peripheralRetinaOD"));
-			theFoundExam.setMiscRetinaOD(theResults.getInt("miscRetinaOD"));
-			theFoundExam.setDiabeticEvalOD(theResults.getInt("diabeticEvalOD"));
-			theFoundExam.setHtnEvalOD(theResults.getInt("htnEvalOD"));
-			theFoundExam.setArmdOD(theResults.getInt("armdOD"));
-			theFoundExam.setCustom1OD(theResults.getInt("custom1OD"));
-			theFoundExam.setCustom2OD(theResults.getInt("custom2OD"));
-			theFoundExam.setCustom3OD(theResults.getInt("custom3OD"));
-			theFoundExam.setVitreousOS(theResults.getInt("vitreousOS"));
-			theFoundExam.setMaculaOS(theResults.getInt("maculaOS"));
-			theFoundExam.setVasculatureOS(theResults.getInt("vasculatureOS"));
-			theFoundExam.setPosteriorPoleOS(theResults.getInt("posteriorPoleOS"));
-			theFoundExam.setPeripheralRetinaOS(theResults.getInt("peripheralRetinaOS"));
-			theFoundExam.setMiscRetinaOS(theResults.getInt("miscRetinaOS"));
-			theFoundExam.setDiabeticEvalOS(theResults.getInt("diabeticEvalOS"));
-			theFoundExam.setHtnEvalOS(theResults.getInt("htnEvalOS"));
-			theFoundExam.setArmdOS(theResults.getInt("armdOS"));
-			theFoundExam.setCustom1OS(theResults.getInt("custom1OS"));
-			theFoundExam.setCustom2OS(theResults.getInt("custom2OS"));
-			theFoundExam.setCustom3OS(theResults.getInt("custom3OS"));
-			theFoundExam.setSponVeinPulsOD(theResults.getInt("sponVeinPulsOD"));
-			theFoundExam.setFovealReflexOD(theResults.getInt("fovealReflexOD"));
-			theFoundExam.setSponVeinPulsOS(theResults.getInt("sponVeinPulsOS"));
-			theFoundExam.setFovealReflexOs(theResults.getInt("fovealReflexOs"));
-			theFoundExam.setMethodUsed(theResults.getInt("methodUsed"));
-			theFoundExam.setGttOD(theResults.getInt("gttOD"));
-			theFoundExam.setGttOS(theResults.getInt("gttOS"));
-			theFoundExam.setDilationAgent(theResults.getInt("dilationAgent"));
+			theFoundExam.setNn20OD(theResults.getString("nn20OD"));
+			theFoundExam.setDd20OD(theResults.getString("dd20OD"));
+			theFoundExam.setNn20OS(theResults.getString("nn20OS"));
+			theFoundExam.setDd20OS(theResults.getString("dd20OS"));
+			theFoundExam.setVitreousOD(theResults.getString("vitreousOD"));
+			theFoundExam.setMaculaOD(theResults.getString("maculaOD"));
+			theFoundExam.setVasculatureOD(theResults.getString("vasculatureOD"));
+			theFoundExam.setPosteriorPoleOD(theResults.getString("posteriorPoleOD"));
+			theFoundExam.setPeripheralRetinaOD(theResults.getString("peripheralRetinaOD"));
+			theFoundExam.setMiscRetinaOD(theResults.getString("miscRetinaOD"));
+			theFoundExam.setDiabeticEvalOD(theResults.getString("diabeticEvalOD"));
+			theFoundExam.setHtnEvalOD(theResults.getString("htnEvalOD"));
+			theFoundExam.setArmdOD(theResults.getString("armdOD"));
+			theFoundExam.setCustom1OD(theResults.getString("custom1OD"));
+			theFoundExam.setCustom2OD(theResults.getString("custom2OD"));
+			theFoundExam.setCustom3OD(theResults.getString("custom3OD"));
+			theFoundExam.setVitreousOS(theResults.getString("vitreousOS"));
+			theFoundExam.setMaculaOS(theResults.getString("maculaOS"));
+			theFoundExam.setVasculatureOS(theResults.getString("vasculatureOS"));
+			theFoundExam.setPosteriorPoleOS(theResults.getString("posteriorPoleOS"));
+			theFoundExam.setPeripheralRetinaOS(theResults.getString("peripheralRetinaOS"));
+			theFoundExam.setMiscRetinaOS(theResults.getString("miscRetinaOS"));
+			theFoundExam.setDiabeticEvalOS(theResults.getString("diabeticEvalOS"));
+			theFoundExam.setHtnEvalOS(theResults.getString("htnEvalOS"));
+			theFoundExam.setArmdOS(theResults.getString("armdOS"));
+			theFoundExam.setCustom1OS(theResults.getString("custom1OS"));
+			theFoundExam.setCustom2OS(theResults.getString("custom2OS"));
+			theFoundExam.setCustom3OS(theResults.getString("custom3OS"));
+			theFoundExam.setSponVeinPulsOD(theResults.getString("sponVeinPulsOD"));
+			theFoundExam.setFovealReflexOD(theResults.getString("fovealReflexOD"));
+			theFoundExam.setSponVeinPulsOS(theResults.getString("sponVeinPulsOS"));
+			theFoundExam.setFovealReflexOs(theResults.getString("fovealReflexOs"));
+			theFoundExam.setMethodUsed(theResults.getString("methodUsed"));
+			theFoundExam.setGttOD(theResults.getString("gttOD"));
+			theFoundExam.setGttOS(theResults.getString("gttOS"));
+			theFoundExam.setDilationAgent(theResults.getString("dilationAgent"));
 			theFoundExam.setLens78dUsed(theResults.getBoolean("lens78dUsed"));
 			theFoundExam.setLens90Dused(theResults.getBoolean("lens90Dused"));
 			theFoundExam.setLens20DbioUsed(theResults.getBoolean("lens20DbioUsed"));
@@ -856,8 +856,8 @@ public class EyeTestResultsTableManager {
 			theFoundExam.setHorizOS(theResults.getDouble("horizOS"));
 			theFoundExam.setVertOD(theResults.getDouble("vertOD"));
 			theFoundExam.setVertOS(theResults.getDouble("vertOS"));
-			theFoundExam.setOpticNerve(theResults.getInt("opticNerve"));
-			theFoundExam.setNerveFiberLayer(theResults.getInt("nerveFiberLayer"));
+			theFoundExam.setOpticNerve(theResults.getString("opticNerve"));
+			theFoundExam.setNerveFiberLayer(theResults.getString("nerveFiberLayer"));
 			theFoundExam.setDeepLaminaOD(theResults.getBoolean("deepLaminaOD"));
 			theFoundExam.setDeepLaminaOS(theResults.getBoolean("deepLaminaOS"));
 			theFoundExam.setShallowOD(theResults.getBoolean("shallowOD"));
