@@ -61,7 +61,7 @@ public class AppointmentDisplay extends javax.swing.JPanel {
         {
             patientName = currentAppointment.getPatientName();
             doctorToSee = currentAppointment.getDoctorToSee();
-            apptDate = currentAppointment.getAppointmentTime();
+            apptDate = currentAppointment.getApptDate();
             reasonForVisit = currentAppointment.getReasonForVisit();
             apptID = currentAppointment.getApptID();
             checkInCode = currentAppointment.getArrivalStatus();
@@ -69,7 +69,9 @@ public class AppointmentDisplay extends javax.swing.JPanel {
             
             tableModel.addRow(new Object[] {apptDate, patientName, doctorToSee, reasonForVisit, checkInString, apptID});
         }
+		tableModel.fireTableDataChanged();
 		System.out.println("AppointmentDisplay.loadTableAllEntries() finished.");
+		
     }
 	
 	public String translateArrivalStatus(Integer arrivalCode)
@@ -126,6 +128,7 @@ public class AppointmentDisplay extends javax.swing.JPanel {
             
             tableModel.addRow(new Object[] {apptDate, patientName, doctorToSee, reasonForVisit, checkInString, apptID});
         }
+		tableModel.fireTableDataChanged();
     }
 	/*
 	public void setupCheckInColumn(JTable theTable, TableColumn theCol)

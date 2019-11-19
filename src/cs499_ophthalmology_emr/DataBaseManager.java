@@ -271,6 +271,7 @@ public class DataBaseManager {
 	{
 		makeNewPatientsFillArrayTest();
         addAppointmentsAndExamsToAllPatientsTest();
+		appointmentTable.printAllEntries();
         testResultsTable.printAllEntries();
 	}
 	

@@ -226,6 +226,23 @@ public class AppointmentForm extends javax.swing.JPanel {
 		
 		return isValid;
     }
+	
+	private void updateApptTimeTextBox(String rawTimeText)
+	{
+		String hour = rawTimeText.substring(0,2);
+		//String minute = rawTimeText.substring(3,5);
+		String formattedString = "";
+		if ((Integer.parseInt(hour) <= 7) && (Integer.parseInt(hour) <= 11)) // AM hour
+		{
+			formattedString = rawTimeText + " AM";
+		}
+		else
+		{
+			formattedString = rawTimeText + " PM";
+		}
+		 
+		apptTimeTextField.setText(formattedString);
+	}
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -247,6 +264,14 @@ public class AppointmentForm extends javax.swing.JPanel {
         submitButton = new javax.swing.JButton();
         cancelButton = new javax.swing.JButton();
         clearAllButton = new javax.swing.JButton();
+        apptHourComboBox = new javax.swing.JComboBox<>();
+        apptMinuteComboBox = new javax.swing.JComboBox<>();
+        apptTimeTextField = new javax.swing.JTextField();
+        doctorComboBox = new javax.swing.JComboBox<>();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        arrivalStatusComboBox = new javax.swing.JComboBox<>();
 
         setBackground(new java.awt.Color(53, 60, 81));
 
@@ -258,7 +283,7 @@ public class AppointmentForm extends javax.swing.JPanel {
 
         jLabel2.setText("Name:");
 
-        nameTextField.setEnabled(false);
+        nameTextField.setEditable(false);
         nameTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nameTextFieldActionPerformed(evt);
@@ -302,6 +327,33 @@ public class AppointmentForm extends javax.swing.JPanel {
             }
         });
 
+        apptHourComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "07", "08", "09", "10", "11", "12", "01", "02", "03", "04", "05", "06" }));
+        apptHourComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                apptHourComboBoxActionPerformed(evt);
+            }
+        });
+
+        apptMinuteComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ":00", ":15", ":30", ":45" }));
+        apptMinuteComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                apptMinuteComboBoxActionPerformed(evt);
+            }
+        });
+
+        apptTimeTextField.setEditable(false);
+        apptTimeTextField.setText("07:00 AM");
+
+        doctorComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Dr. Coleman", "Dr. Lukins", "Dr. Woods", "Dr. Haley" }));
+
+        jLabel3.setText("Appointment Time:");
+
+        jLabel6.setText("Doctor to See:");
+
+        jLabel7.setText("Arrival Status:");
+
+        arrivalStatusComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Not arrived", "Checked in, waiting", "In Examination", "Checked out" }));
+
         javax.swing.GroupLayout appointmentFormMainPanelLayout = new javax.swing.GroupLayout(appointmentFormMainPanel);
         appointmentFormMainPanel.setLayout(appointmentFormMainPanelLayout);
         appointmentFormMainPanelLayout.setHorizontalGroup(
@@ -317,12 +369,26 @@ public class AppointmentForm extends javax.swing.JPanel {
                                 .addGroup(appointmentFormMainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jLabel5)
                                     .addComponent(jLabel4)
-                                    .addComponent(jLabel2))
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel6))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(appointmentFormMainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(appointmentDateTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(nameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(reasonForVisit, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                    .addComponent(reasonForVisit, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(appointmentFormMainPanelLayout.createSequentialGroup()
+                                        .addComponent(apptTimeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(apptHourComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(apptMinuteComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(appointmentFormMainPanelLayout.createSequentialGroup()
+                                        .addComponent(nameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(42, 42, 42)
+                                        .addComponent(jLabel7)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(arrivalStatusComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(doctorComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(appointmentFormMainPanelLayout.createSequentialGroup()
                         .addGap(35, 35, 35)
                         .addComponent(submitButton)
@@ -330,7 +396,7 @@ public class AppointmentForm extends javax.swing.JPanel {
                         .addComponent(cancelButton)
                         .addGap(29, 29, 29)
                         .addComponent(clearAllButton)))
-                .addContainerGap(441, Short.MAX_VALUE))
+                .addContainerGap(205, Short.MAX_VALUE))
         );
         appointmentFormMainPanelLayout.setVerticalGroup(
             appointmentFormMainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -340,16 +406,28 @@ public class AppointmentForm extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(appointmentFormMainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(nameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel7)
+                    .addComponent(arrivalStatusComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(appointmentFormMainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(appointmentDateTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(appointmentFormMainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(apptHourComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(apptMinuteComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(apptTimeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3))
+                .addGap(7, 7, 7)
+                .addGroup(appointmentFormMainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(doctorComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(appointmentFormMainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(reasonForVisit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 287, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 224, Short.MAX_VALUE)
                 .addGroup(appointmentFormMainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(submitButton)
                     .addComponent(cancelButton)
@@ -425,16 +503,36 @@ public class AppointmentForm extends javax.swing.JPanel {
 		dashBoard.showAppointmentDisplay();
     }//GEN-LAST:event_cancelButtonActionPerformed
 
+    private void apptHourComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_apptHourComboBoxActionPerformed
+		String apptHourString = (String) apptHourComboBox.getSelectedItem();
+		String apptMinString = (String) apptMinuteComboBox.getSelectedItem();
+		updateApptTimeTextBox(apptHourString + apptMinString);
+    }//GEN-LAST:event_apptHourComboBoxActionPerformed
+
+    private void apptMinuteComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_apptMinuteComboBoxActionPerformed
+        String apptHourString = (String) apptHourComboBox.getSelectedItem();
+		String apptMinString = (String) apptMinuteComboBox.getSelectedItem();
+		updateApptTimeTextBox(apptHourString + apptMinString);
+    }//GEN-LAST:event_apptMinuteComboBoxActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField appointmentDateTextField;
     private javax.swing.JPanel appointmentFormMainPanel;
+    private javax.swing.JComboBox<String> apptHourComboBox;
+    private javax.swing.JComboBox<String> apptMinuteComboBox;
+    private javax.swing.JTextField apptTimeTextField;
+    private javax.swing.JComboBox<String> arrivalStatusComboBox;
     private javax.swing.JButton cancelButton;
     private javax.swing.JButton clearAllButton;
+    private javax.swing.JComboBox<String> doctorComboBox;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JTextField nameTextField;
     private javax.swing.JTextField reasonForVisit;
     private javax.swing.JButton submitButton;
