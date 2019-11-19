@@ -6,6 +6,7 @@
 package cs499_ophthalmology_emr;
 
 import java.awt.Component;
+import javax.swing.JComboBox;
 import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 import javax.swing.text.JTextComponent;
@@ -95,7 +96,11 @@ public class AppointmentForm extends javax.swing.JPanel {
 				//	System.out.println(itsComp.getClass().getName());
 				if (itsComp.getClass().getName().equals("javax.swing.JTextField"))
 				{
-					((JTextComponent)itsComp).setEnabled(false);
+					((JTextComponent)itsComp).setEditable(false);
+				}
+				if (itsComp.getClass().getName().equals("javax.swing.JComboBox"))
+				{
+					((JComboBox)itsComp).setEnabled(false);
 				}
 			}
 			nameTextField.setText("No active patient selected.");
@@ -110,11 +115,15 @@ public class AppointmentForm extends javax.swing.JPanel {
 				//	System.out.println(itsComp.getClass().getName());
 				if (itsComp.getClass().getName().equals("javax.swing.JTextField"))
 				{
-					((JTextComponent)itsComp).setEnabled(true);
+					((JTextComponent)itsComp).setEditable(true);
+				}
+				if (itsComp.getClass().getName().equals("javax.swing.JComboBox"))
+				{
+					((JComboBox)itsComp).setEnabled(true);
 				}
 			}
 		}
-		nameTextField.setEnabled(false);
+		nameTextField.setEditable(false);
 	}
     
     private String formatDate(String theDate)

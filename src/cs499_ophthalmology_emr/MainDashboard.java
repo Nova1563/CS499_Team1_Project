@@ -28,9 +28,9 @@ public class MainDashboard extends javax.swing.JFrame {
 
     public PatientForm patientForm;
     
-
+	
     private Patient activePatient;
-
+	private Appointment activeAppointment;
     /**
      * Creates new form MainWindow
      */
@@ -63,11 +63,22 @@ public class MainDashboard extends javax.swing.JFrame {
 	public void setActivePatient(Patient thePatient)
 	{
 		activePatient = thePatient;
+		currentPatientTextBar.setText(activePatient.getName());
 	}
 	
 	public Patient getActivePatient()
 	{
 		return activePatient;
+	}
+	
+	public void setActiveAppointment(Appointment incomingAppt)
+	{
+		activeAppointment = incomingAppt;
+	}
+	
+	public Appointment getActiveAppointment()
+	{
+		return activeAppointment;
 	}
 	
 	public void showPatientPortal()
@@ -287,7 +298,7 @@ public class MainDashboard extends javax.swing.JFrame {
             backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(backgroundLayout.createSequentialGroup()
                 .addComponent(toolBarJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 634, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
