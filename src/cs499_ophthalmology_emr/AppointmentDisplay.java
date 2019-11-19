@@ -304,12 +304,14 @@ public class AppointmentDisplay extends javax.swing.JPanel {
     }//GEN-LAST:event_editButtonActionPerformed
 
     private void beginExamButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_beginExamButtonActionPerformed
-        Integer selectedRow = appointmentDisplayTable.getSelectedRow();
+                Integer selectedRow = appointmentDisplayTable.getSelectedRow();
 		Integer apptID = (Integer)appointmentDisplayTable.getValueAt(selectedRow, APPT_ID_COLUMN);
 		Appointment theAppointment = dataBase.getAppointmentByID(apptID);
 		Patient thePatient = dataBase.getPatientByID(theAppointment.getPatientID());
+               
 		mainDash.setActivePatient(thePatient);
 		mainDash.setActiveAppointment(theAppointment);
+                mainDash.visualAcuity.loadEyeTestResults();
 		mainDash.showVisualAcuity();
     }//GEN-LAST:event_beginExamButtonActionPerformed
 

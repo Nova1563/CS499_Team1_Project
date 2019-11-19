@@ -15,30 +15,23 @@ public class VisualAcuity extends javax.swing.JPanel {
     private DataBaseManager dataBase;
     private EyeTestResults eyeTestResults;
     private Patient activePatient;
-
-   /* String distance = null;
-    String measurement = null;
-    String measurementIndc = null;
-    String pinholeOcc= null;
-    String measurementResults = null;
-        String lense = null;
-        String range = null;
-        String visualAcuity = null;
-        String correctiveLesneResult = null;*/
-        //VisualAcuity textField = new VisualAcuity(20);
+    private Appointment activeAppointment;
          
     public VisualAcuity(MainDashboard mD ) {
      
      activePatient = null;
      mainDash = mD;
      dataBase = DataBaseManager.getInstance();
-     
-     //eyeTestResults = dataBase.getNewEyeTestResults()
+    
      initComponents();
      
     }
     public void loadEyeTestResults(){
         
+        activePatient = mainDash.getActivePatient();
+        activeAppointment = mainDash.getActiveAppointment();
+        eyeTestResults = dataBase.getNewEyeTestResults(activePatient.getPatientID(), activeAppointment.getApptID());
+ 
     } 
 
     /**
@@ -52,56 +45,50 @@ public class VisualAcuity extends javax.swing.JPanel {
 
         titleBar = new javax.swing.JPanel();
         titleLabel = new javax.swing.JLabel();
-        visualAcuityJPanel = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        visualAcuityScrollPane = new javax.swing.JScrollPane();
-        visualAcuityScrollPanel = new javax.swing.JPanel();
-        firstBttn = new javax.swing.JRadioButton();
-        seventhBttn = new javax.swing.JRadioButton();
-        secondBttn = new javax.swing.JRadioButton();
-        eigthBttn = new javax.swing.JRadioButton();
-        thirdBttn = new javax.swing.JRadioButton();
-        ninethBttn = new javax.swing.JRadioButton();
-        fourthBttn = new javax.swing.JRadioButton();
-        tenthBttn = new javax.swing.JRadioButton();
-        fifthBttn = new javax.swing.JRadioButton();
-        thriteenthBttn = new javax.swing.JRadioButton();
-        sixBttn = new javax.swing.JRadioButton();
-        elevenBttn = new javax.swing.JRadioButton();
-        twelfthBttn = new javax.swing.JRadioButton();
-        fourteenthBttn = new javax.swing.JRadioButton();
-        nectBttn1 = new javax.swing.JButton();
-        measurementJPanel = new javax.swing.JPanel();
-        measurementInner = new javax.swing.JPanel();
-        measurementTextField = new javax.swing.JTextField();
-        distanceTextField = new javax.swing.JTextField();
+        jPanel2 = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
+        measurementTXTField = new javax.swing.JTextField();
+        visualTXTField = new javax.swing.JTextField();
+        pinholeTXTField = new javax.swing.JTextField();
+        indcatorLabel = new javax.swing.JLabel();
         measurementLabel = new javax.swing.JLabel();
-        measurementIndcLabel = new javax.swing.JLabel();
-        distanceLabel = new javax.swing.JLabel();
-        measurementResultsTextField = new javax.swing.JTextField();
-        measurementIndcTextField2 = new javax.swing.JTextField();
         pinholeLabel = new javax.swing.JLabel();
-        pinholeTextField1 = new javax.swing.JTextField();
-        measurementResultsLabel = new javax.swing.JLabel();
-        nextBttn2 = new javax.swing.JButton();
-        jLabel7 = new javax.swing.JLabel();
-        correctiveLenseJPanel = new javax.swing.JPanel();
-        correctiveLenseInner = new javax.swing.JPanel();
-        rangeTextField = new javax.swing.JTextField();
-        rangeLabel = new javax.swing.JLabel();
-        lenseComboBox = new javax.swing.JComboBox<>();
-        lenseTextField = new javax.swing.JTextField();
-        lenseLabel = new javax.swing.JLabel();
-        correctiveLenseResultsTextField = new javax.swing.JTextField();
-        correctiveLenseResultLabel = new javax.swing.JLabel();
-        visualAcuityTextField1 = new javax.swing.JTextField();
-        visualAcuityLabel1 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        submitBttn = new javax.swing.JButton();
+        visualAcuityLabel = new javax.swing.JLabel();
+        ccRadioBttn = new javax.swing.JRadioButton();
+        scRadioBttn = new javax.swing.JRadioButton();
+        jPanel6 = new javax.swing.JPanel();
+        nearCheckBox1 = new javax.swing.JCheckBox();
+        correctiveLPanel = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        vAcuityLabel = new javax.swing.JLabel();
+        lenseTXTField = new javax.swing.JTextField();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        lenseLabel1 = new javax.swing.JLabel();
+        vAcuityTXTFeild = new javax.swing.JTextField();
+        vTangeLabel = new javax.swing.JLabel();
+        mRangeLabel1 = new javax.swing.JLabel();
+        mRangeTXTFeild1 = new javax.swing.JTextField();
+        selectionLabel = new javax.swing.JLabel();
+        nearDistanceBttn = new javax.swing.JButton();
+        farDistanceBttn = new javax.swing.JButton();
+        jPanel4 = new javax.swing.JPanel();
+        indcatorLabel1 = new javax.swing.JLabel();
+        ccRadioBttn1 = new javax.swing.JRadioButton();
+        scRadioBttn1 = new javax.swing.JRadioButton();
+        measurementLabel2 = new javax.swing.JLabel();
+        measurementTXTField2 = new javax.swing.JTextField();
+        visualAcuityLabel2 = new javax.swing.JLabel();
+        visualTXTField2 = new javax.swing.JTextField();
+        pinholeLabel2 = new javax.swing.JLabel();
+        pinholeTXTField2 = new javax.swing.JTextField();
+        jPanel5 = new javax.swing.JPanel();
+        nearCheckBox = new javax.swing.JCheckBox();
+        submitButton = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(57, 113, 177));
+        setMaximumSize(new java.awt.Dimension(2147483647, 2147483647));
         setPreferredSize(new java.awt.Dimension(1630, 896));
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         titleBar.setBackground(new java.awt.Color(32, 33, 35));
 
@@ -114,7 +101,7 @@ public class VisualAcuity extends javax.swing.JPanel {
         titleBar.setLayout(titleBarLayout);
         titleBarLayout.setHorizontalGroup(
             titleBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(titleLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 1630, Short.MAX_VALUE)
+            .addComponent(titleLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         titleBarLayout.setVerticalGroup(
             titleBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -124,679 +111,601 @@ public class VisualAcuity extends javax.swing.JPanel {
                 .addContainerGap(22, Short.MAX_VALUE))
         );
 
-        add(titleBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jPanel2.setBackground(new java.awt.Color(32, 33, 35));
 
-        visualAcuityJPanel.setBackground(new java.awt.Color(32, 33, 35));
-        visualAcuityJPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel1.setBackground(new java.awt.Color(32, 33, 35));
+        jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(4, 5, 4, 5, new java.awt.Color(253, 252, 233)));
+        jPanel1.setPreferredSize(new java.awt.Dimension(405, 47));
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Visual Acuity");
-        visualAcuityJPanel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 430, -1));
-
-        visualAcuityScrollPanel.setBackground(new java.awt.Color(135, 206, 250));
-
-        firstBttn.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        firstBttn.setForeground(new java.awt.Color(0, 0, 0));
-        firstBttn.setSelected(true);
-        firstBttn.setText("20/10");
-        firstBttn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                firstBttnActionPerformed(evt);
+        measurementTXTField.setBackground(new java.awt.Color(253, 252, 233));
+        measurementTXTField.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        measurementTXTField.setForeground(new java.awt.Color(0, 0, 0));
+        measurementTXTField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                measurementTXTFieldFocusLost(evt);
             }
         });
 
-        seventhBttn.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        seventhBttn.setForeground(new java.awt.Color(0, 0, 0));
-        seventhBttn.setText("20/40");
-        seventhBttn.addActionListener(new java.awt.event.ActionListener() {
+        visualTXTField.setBackground(new java.awt.Color(253, 252, 233));
+        visualTXTField.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        visualTXTField.setForeground(new java.awt.Color(0, 0, 0));
+        visualTXTField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                visualTXTFieldFocusLost(evt);
+            }
+        });
+        visualTXTField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                seventhBttnActionPerformed(evt);
+                visualTXTFieldActionPerformed(evt);
             }
         });
 
-        secondBttn.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        secondBttn.setForeground(new java.awt.Color(0, 0, 0));
-        secondBttn.setText("20/12.5");
-        secondBttn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                secondBttnActionPerformed(evt);
+        pinholeTXTField.setBackground(new java.awt.Color(253, 252, 233));
+        pinholeTXTField.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        pinholeTXTField.setForeground(new java.awt.Color(0, 0, 0));
+        pinholeTXTField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                pinholeTXTFieldFocusLost(evt);
             }
         });
 
-        eigthBttn.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        eigthBttn.setForeground(new java.awt.Color(0, 0, 0));
-        eigthBttn.setText("20/50");
-        eigthBttn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                eigthBttnActionPerformed(evt);
-            }
-        });
+        indcatorLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        indcatorLabel.setForeground(new java.awt.Color(255, 255, 255));
+        indcatorLabel.setText("Indicator:");
 
-        thirdBttn.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        thirdBttn.setForeground(new java.awt.Color(0, 0, 0));
-        thirdBttn.setText("20/16");
-        thirdBttn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                thirdBttnActionPerformed(evt);
-            }
-        });
-
-        ninethBttn.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        ninethBttn.setForeground(new java.awt.Color(0, 0, 0));
-        ninethBttn.setText("20/63");
-        ninethBttn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ninethBttnActionPerformed(evt);
-            }
-        });
-
-        fourthBttn.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        fourthBttn.setForeground(new java.awt.Color(0, 0, 0));
-        fourthBttn.setText("20/20");
-        fourthBttn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fourthBttnActionPerformed(evt);
-            }
-        });
-
-        tenthBttn.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        tenthBttn.setForeground(new java.awt.Color(0, 0, 0));
-        tenthBttn.setSelected(true);
-        tenthBttn.setText("20/80");
-        tenthBttn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tenthBttnActionPerformed(evt);
-            }
-        });
-
-        fifthBttn.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        fifthBttn.setForeground(new java.awt.Color(0, 0, 0));
-        fifthBttn.setText("20/25");
-        fifthBttn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fifthBttnActionPerformed(evt);
-            }
-        });
-
-        thriteenthBttn.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
-        thriteenthBttn.setForeground(new java.awt.Color(0, 0, 0));
-        thriteenthBttn.setText("20/100");
-        thriteenthBttn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                thriteenthBttnActionPerformed(evt);
-            }
-        });
-
-        sixBttn.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        sixBttn.setForeground(new java.awt.Color(0, 0, 0));
-        sixBttn.setText("20/32");
-        sixBttn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                sixBttnActionPerformed(evt);
-            }
-        });
-
-        elevenBttn.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        elevenBttn.setForeground(new java.awt.Color(0, 0, 0));
-        elevenBttn.setSelected(true);
-        elevenBttn.setText("20/125");
-        elevenBttn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                elevenBttnActionPerformed(evt);
-            }
-        });
-
-        twelfthBttn.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        twelfthBttn.setForeground(new java.awt.Color(0, 0, 0));
-        twelfthBttn.setText("20/160");
-        twelfthBttn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                twelfthBttnActionPerformed(evt);
-            }
-        });
-
-        fourteenthBttn.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        fourteenthBttn.setForeground(new java.awt.Color(0, 0, 0));
-        fourteenthBttn.setText("20/200");
-        fourteenthBttn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fourteenthBttnActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout visualAcuityScrollPanelLayout = new javax.swing.GroupLayout(visualAcuityScrollPanel);
-        visualAcuityScrollPanel.setLayout(visualAcuityScrollPanelLayout);
-        visualAcuityScrollPanelLayout.setHorizontalGroup(
-            visualAcuityScrollPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(visualAcuityScrollPanelLayout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addGroup(visualAcuityScrollPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(firstBttn, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(visualAcuityScrollPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(seventhBttn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(elevenBttn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 234, Short.MAX_VALUE)
-                        .addComponent(twelfthBttn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 234, Short.MAX_VALUE)
-                        .addComponent(thriteenthBttn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 234, Short.MAX_VALUE)
-                        .addComponent(secondBttn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(thirdBttn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(fourthBttn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(fifthBttn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(sixBttn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(fourteenthBttn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 234, Short.MAX_VALUE)
-                        .addComponent(eigthBttn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(ninethBttn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(tenthBttn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap(317, Short.MAX_VALUE))
-        );
-        visualAcuityScrollPanelLayout.setVerticalGroup(
-            visualAcuityScrollPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(visualAcuityScrollPanelLayout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(firstBttn)
-                .addGap(18, 18, 18)
-                .addComponent(secondBttn)
-                .addGap(18, 18, 18)
-                .addComponent(thirdBttn)
-                .addGap(18, 18, 18)
-                .addComponent(fourthBttn)
-                .addGap(18, 18, 18)
-                .addComponent(fifthBttn)
-                .addGap(18, 18, 18)
-                .addComponent(sixBttn)
-                .addGap(18, 18, 18)
-                .addComponent(seventhBttn)
-                .addGap(18, 18, 18)
-                .addComponent(eigthBttn)
-                .addGap(18, 18, 18)
-                .addComponent(ninethBttn)
-                .addGap(18, 18, 18)
-                .addComponent(tenthBttn)
-                .addGap(18, 18, 18)
-                .addComponent(thriteenthBttn)
-                .addGap(18, 18, 18)
-                .addComponent(elevenBttn)
-                .addGap(18, 18, 18)
-                .addComponent(twelfthBttn)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(fourteenthBttn)
-                .addContainerGap(97, Short.MAX_VALUE))
-        );
-
-        visualAcuityScrollPane.setViewportView(visualAcuityScrollPanel);
-
-        visualAcuityJPanel.add(visualAcuityScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 350, 610));
-
-        nectBttn1.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
-        nectBttn1.setText("NEXT");
-        nectBttn1.setToolTipText("");
-        visualAcuityJPanel.add(nectBttn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 690, 120, -1));
-
-        add(visualAcuityJPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 112, 431, -1));
-
-        measurementJPanel.setBackground(new java.awt.Color(32, 33, 35));
-
-        measurementInner.setBackground(new java.awt.Color(135, 206, 250));
-
-        measurementTextField.setBackground(new java.awt.Color(204, 255, 255));
-        measurementTextField.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        measurementTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                measurementTextFieldActionPerformed(evt);
-            }
-        });
-
-        distanceTextField.setBackground(new java.awt.Color(204, 255, 255));
-        distanceTextField.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        distanceTextField.setForeground(new java.awt.Color(0, 0, 0));
-        distanceTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                distanceTextFieldActionPerformed(evt);
-            }
-        });
-
-        measurementLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        measurementLabel.setForeground(new java.awt.Color(51, 51, 51));
+        measurementLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        measurementLabel.setForeground(new java.awt.Color(255, 255, 255));
         measurementLabel.setText("Measurement:");
 
-        measurementIndcLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        measurementIndcLabel.setForeground(new java.awt.Color(51, 51, 51));
-        measurementIndcLabel.setText("Measurement Indicators:");
+        pinholeLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        pinholeLabel.setForeground(new java.awt.Color(255, 255, 255));
+        pinholeLabel.setText("Pinhole:");
 
-        distanceLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        distanceLabel.setForeground(new java.awt.Color(51, 51, 51));
-        distanceLabel.setText("Distance:");
+        visualAcuityLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        visualAcuityLabel.setForeground(new java.awt.Color(255, 255, 255));
+        visualAcuityLabel.setText("Visual Acuity:");
 
-        measurementResultsTextField.setBackground(new java.awt.Color(204, 255, 255));
-        measurementResultsTextField.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        measurementResultsTextField.addActionListener(new java.awt.event.ActionListener() {
+        ccRadioBttn.setBackground(new java.awt.Color(32, 33, 35));
+        ccRadioBttn.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        ccRadioBttn.setForeground(new java.awt.Color(255, 255, 255));
+        ccRadioBttn.setText("cc");
+        ccRadioBttn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                measurementResultsTextFieldActionPerformed(evt);
+                ccRadioBttnActionPerformed(evt);
             }
         });
 
-        measurementIndcTextField2.setBackground(new java.awt.Color(204, 255, 255));
-        measurementIndcTextField2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        measurementIndcTextField2.addActionListener(new java.awt.event.ActionListener() {
+        scRadioBttn.setBackground(new java.awt.Color(32, 33, 35));
+        scRadioBttn.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        scRadioBttn.setForeground(new java.awt.Color(255, 255, 255));
+        scRadioBttn.setText("sc");
+
+        jPanel6.setBackground(new java.awt.Color(135, 206, 250));
+
+        nearCheckBox1.setBackground(new java.awt.Color(135, 206, 250));
+        nearCheckBox1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        nearCheckBox1.setForeground(new java.awt.Color(32, 33, 35));
+        nearCheckBox1.setText("Far Distance");
+        nearCheckBox1.setToolTipText("");
+        nearCheckBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                measurementIndcTextField2ActionPerformed(evt);
+                nearCheckBox1ActionPerformed(evt);
             }
         });
 
-        pinholeLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        pinholeLabel.setForeground(new java.awt.Color(51, 51, 51));
-        pinholeLabel.setText("Pinhole Occluder:");
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(nearCheckBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(182, Short.MAX_VALUE))
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(nearCheckBox1)
+                .addContainerGap(23, Short.MAX_VALUE))
+        );
 
-        pinholeTextField1.setBackground(new java.awt.Color(204, 255, 255));
-        pinholeTextField1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        pinholeTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pinholeTextField1ActionPerformed(evt);
-            }
-        });
-
-        measurementResultsLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        measurementResultsLabel.setForeground(new java.awt.Color(51, 51, 51));
-        measurementResultsLabel.setText("Measurement Result:");
-
-        javax.swing.GroupLayout measurementInnerLayout = new javax.swing.GroupLayout(measurementInner);
-        measurementInner.setLayout(measurementInnerLayout);
-        measurementInnerLayout.setHorizontalGroup(
-            measurementInnerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(measurementInnerLayout.createSequentialGroup()
-                .addGap(46, 46, 46)
-                .addGroup(measurementInnerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(pinholeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(measurementIndcLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(distanceLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 392, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(measurementLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 416, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(measurementIndcTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(measurementTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(distanceTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(measurementInnerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(measurementResultsLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 343, Short.MAX_VALUE)
-                        .addComponent(pinholeTextField1, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(measurementResultsTextField, javax.swing.GroupLayout.Alignment.LEADING)))
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(ccRadioBttn)
+                        .addGap(41, 41, 41)
+                        .addComponent(scRadioBttn))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(measurementTXTField)
+                        .addComponent(visualTXTField)
+                        .addComponent(pinholeTXTField)
+                        .addComponent(indcatorLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(measurementLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 337, Short.MAX_VALUE)
+                        .addComponent(pinholeLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(visualAcuityLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(25, 25, 25)
+                .addComponent(indcatorLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ccRadioBttn)
+                    .addComponent(scRadioBttn))
+                .addGap(36, 36, 36)
+                .addComponent(measurementLabel)
+                .addGap(18, 18, 18)
+                .addComponent(measurementTXTField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(36, 36, 36)
+                .addComponent(visualAcuityLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(visualTXTField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(36, 36, 36)
+                .addComponent(pinholeLabel)
+                .addGap(18, 18, 18)
+                .addComponent(pinholeTXTField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        measurementInnerLayout.setVerticalGroup(
-            measurementInnerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(measurementInnerLayout.createSequentialGroup()
-                .addGap(42, 42, 42)
-                .addComponent(distanceLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(distanceTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38)
-                .addComponent(measurementLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(measurementTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38)
-                .addComponent(measurementIndcLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(measurementIndcTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38)
-                .addComponent(pinholeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(pinholeTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
-                .addComponent(measurementResultsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(measurementResultsTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(49, 49, 49))
+
+        correctiveLPanel.setBackground(new java.awt.Color(32, 33, 35));
+        correctiveLPanel.setBorder(javax.swing.BorderFactory.createMatteBorder(4, 5, 4, 5, new java.awt.Color(253, 252, 233)));
+
+        jPanel3.setBackground(new java.awt.Color(135, 206, 250));
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(32, 33, 35));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Corrective Lenses");
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addComponent(jLabel1)
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
-        nextBttn2.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
-        nextBttn2.setText("NEXT");
+        vAcuityLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        vAcuityLabel.setForeground(new java.awt.Color(255, 255, 255));
+        vAcuityLabel.setText("Visual Acuity:");
+        vAcuityLabel.setToolTipText("");
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setText("Measurement");
+        lenseTXTField.setBackground(new java.awt.Color(253, 252, 233));
+        lenseTXTField.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        lenseTXTField.setForeground(new java.awt.Color(0, 0, 0));
+        lenseTXTField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                lenseTXTFieldFocusLost(evt);
+            }
+        });
 
-        javax.swing.GroupLayout measurementJPanelLayout = new javax.swing.GroupLayout(measurementJPanel);
-        measurementJPanel.setLayout(measurementJPanelLayout);
-        measurementJPanelLayout.setHorizontalGroup(
-            measurementJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, measurementJPanelLayout.createSequentialGroup()
-                .addContainerGap(44, Short.MAX_VALUE)
-                .addGroup(measurementJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(nextBttn2, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(measurementInner, javax.swing.GroupLayout.PREFERRED_SIZE, 431, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(45, 45, 45))
-        );
-        measurementJPanelLayout.setVerticalGroup(
-            measurementJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(measurementJPanelLayout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
-                .addComponent(measurementInner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        jComboBox1.setBackground(new java.awt.Color(132, 206, 250));
+        jComboBox1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jComboBox1.setForeground(new java.awt.Color(32, 33, 35));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sphere", "Cylinder", "Axis", "Add", "Prisim", "Prisim Base" }));
+
+        lenseLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        lenseLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        lenseLabel1.setText("Lenses:");
+
+        vAcuityTXTFeild.setBackground(new java.awt.Color(253, 252, 233));
+        vAcuityTXTFeild.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        vAcuityTXTFeild.setForeground(new java.awt.Color(0, 0, 0));
+
+        vTangeLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        vTangeLabel.setForeground(new java.awt.Color(255, 255, 255));
+        vTangeLabel.setText("(0.00 - 1.00)");
+
+        mRangeLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        mRangeLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        mRangeLabel1.setText("Measurement Range:");
+
+        mRangeTXTFeild1.setBackground(new java.awt.Color(253, 252, 233));
+        mRangeTXTFeild1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        mRangeTXTFeild1.setForeground(new java.awt.Color(0, 0, 0));
+
+        javax.swing.GroupLayout correctiveLPanelLayout = new javax.swing.GroupLayout(correctiveLPanel);
+        correctiveLPanel.setLayout(correctiveLPanelLayout);
+        correctiveLPanelLayout.setHorizontalGroup(
+            correctiveLPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(correctiveLPanelLayout.createSequentialGroup()
                 .addGap(21, 21, 21)
-                .addComponent(nextBttn2))
+                .addGroup(correctiveLPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(mRangeLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 498, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(vAcuityLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 498, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lenseLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(correctiveLPanelLayout.createSequentialGroup()
+                        .addComponent(lenseTXTField, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(correctiveLPanelLayout.createSequentialGroup()
+                        .addComponent(mRangeTXTFeild1, javax.swing.GroupLayout.PREFERRED_SIZE, 381, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(47, 47, 47)
+                        .addComponent(vTangeLabel))
+                    .addComponent(vAcuityTXTFeild, javax.swing.GroupLayout.PREFERRED_SIZE, 381, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
-
-        add(measurementJPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 112, -1, 722));
-
-        correctiveLenseJPanel.setBackground(new java.awt.Color(32, 33, 35));
-
-        correctiveLenseInner.setBackground(new java.awt.Color(135, 206, 250));
-
-        rangeTextField.setBackground(new java.awt.Color(204, 255, 255));
-        rangeTextField.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        rangeTextField.setForeground(new java.awt.Color(0, 0, 0));
-        rangeTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rangeTextFieldActionPerformed(evt);
-            }
-        });
-
-        rangeLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        rangeLabel.setForeground(new java.awt.Color(51, 51, 51));
-        rangeLabel.setText("Range:");
-
-        lenseComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sphere", "Cylinder", "Axis", "Add", "Prism", "Prism Base" }));
-
-        lenseTextField.setBackground(new java.awt.Color(204, 255, 255));
-        lenseTextField.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        lenseTextField.setForeground(new java.awt.Color(0, 0, 0));
-        lenseTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                lenseTextFieldActionPerformed(evt);
-            }
-        });
-
-        lenseLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        lenseLabel.setForeground(new java.awt.Color(51, 51, 51));
-        lenseLabel.setText("Lense:");
-
-        correctiveLenseResultsTextField.setBackground(new java.awt.Color(204, 255, 255));
-        correctiveLenseResultsTextField.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        correctiveLenseResultsTextField.setForeground(new java.awt.Color(0, 0, 0));
-        correctiveLenseResultsTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                correctiveLenseResultsTextFieldActionPerformed(evt);
-            }
-        });
-
-        correctiveLenseResultLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        correctiveLenseResultLabel.setForeground(new java.awt.Color(51, 51, 51));
-        correctiveLenseResultLabel.setText("Corrective Lense Result:");
-
-        visualAcuityTextField1.setBackground(new java.awt.Color(204, 255, 255));
-        visualAcuityTextField1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        visualAcuityTextField1.setForeground(new java.awt.Color(0, 0, 0));
-        visualAcuityTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                visualAcuityTextField1ActionPerformed(evt);
-            }
-        });
-
-        visualAcuityLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        visualAcuityLabel1.setForeground(new java.awt.Color(51, 51, 51));
-        visualAcuityLabel1.setText("Visual Acuity:");
-
-        javax.swing.GroupLayout correctiveLenseInnerLayout = new javax.swing.GroupLayout(correctiveLenseInner);
-        correctiveLenseInner.setLayout(correctiveLenseInnerLayout);
-        correctiveLenseInnerLayout.setHorizontalGroup(
-            correctiveLenseInnerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(correctiveLenseInnerLayout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addGroup(correctiveLenseInnerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(correctiveLenseResultsTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(correctiveLenseResultLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(visualAcuityTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(visualAcuityLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(rangeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(rangeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lenseLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 327, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(correctiveLenseInnerLayout.createSequentialGroup()
-                        .addComponent(lenseTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
+        correctiveLPanelLayout.setVerticalGroup(
+            correctiveLPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(correctiveLPanelLayout.createSequentialGroup()
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(68, 68, 68)
+                .addComponent(lenseLabel1)
+                .addGap(18, 18, 18)
+                .addGroup(correctiveLPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(lenseTXTField)
+                    .addComponent(jComboBox1))
+                .addGap(63, 63, 63)
+                .addComponent(mRangeLabel1)
+                .addGroup(correctiveLPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(correctiveLPanelLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lenseComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(7, Short.MAX_VALUE))
+                        .addComponent(vTangeLabel))
+                    .addGroup(correctiveLPanelLayout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addComponent(mRangeTXTFeild1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(35, 35, 35)
+                .addComponent(vAcuityLabel)
+                .addGap(18, 18, 18)
+                .addComponent(vAcuityTXTFeild, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        correctiveLenseInnerLayout.setVerticalGroup(
-            correctiveLenseInnerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(correctiveLenseInnerLayout.createSequentialGroup()
-                .addGap(41, 41, 41)
-                .addComponent(lenseLabel)
+
+        selectionLabel.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        selectionLabel.setForeground(new java.awt.Color(255, 255, 255));
+        selectionLabel.setText("Select Distance:");
+
+        nearDistanceBttn.setBackground(new java.awt.Color(135, 206, 250));
+        nearDistanceBttn.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        nearDistanceBttn.setForeground(new java.awt.Color(0, 0, 0));
+        nearDistanceBttn.setText("NEAR");
+
+        farDistanceBttn.setBackground(new java.awt.Color(135, 206, 250));
+        farDistanceBttn.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        farDistanceBttn.setForeground(new java.awt.Color(0, 0, 0));
+        farDistanceBttn.setText("FAR");
+        farDistanceBttn.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                farDistanceBttnFocusLost(evt);
+            }
+        });
+
+        jPanel4.setBackground(new java.awt.Color(32, 33, 35));
+        jPanel4.setBorder(javax.swing.BorderFactory.createMatteBorder(4, 5, 4, 5, new java.awt.Color(253, 252, 233)));
+
+        indcatorLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        indcatorLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        indcatorLabel1.setText("Indicator:");
+
+        ccRadioBttn1.setBackground(new java.awt.Color(32, 33, 35));
+        ccRadioBttn1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        ccRadioBttn1.setForeground(new java.awt.Color(255, 255, 255));
+        ccRadioBttn1.setText("cc");
+        ccRadioBttn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ccRadioBttn1ActionPerformed(evt);
+            }
+        });
+
+        scRadioBttn1.setBackground(new java.awt.Color(32, 33, 35));
+        scRadioBttn1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        scRadioBttn1.setForeground(new java.awt.Color(255, 255, 255));
+        scRadioBttn1.setText("sc");
+
+        measurementLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        measurementLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        measurementLabel2.setText("Measurement:");
+
+        measurementTXTField2.setBackground(new java.awt.Color(253, 252, 233));
+        measurementTXTField2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        measurementTXTField2.setForeground(new java.awt.Color(0, 0, 0));
+        measurementTXTField2.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                measurementTXTField2FocusLost(evt);
+            }
+        });
+
+        visualAcuityLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        visualAcuityLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        visualAcuityLabel2.setText("Visual Acuity:");
+
+        visualTXTField2.setBackground(new java.awt.Color(253, 252, 233));
+        visualTXTField2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        visualTXTField2.setForeground(new java.awt.Color(0, 0, 0));
+        visualTXTField2.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                visualTXTField2FocusLost(evt);
+            }
+        });
+        visualTXTField2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                visualTXTField2ActionPerformed(evt);
+            }
+        });
+
+        pinholeLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        pinholeLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        pinholeLabel2.setText("Pinhole:");
+
+        pinholeTXTField2.setBackground(new java.awt.Color(253, 252, 233));
+        pinholeTXTField2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        pinholeTXTField2.setForeground(new java.awt.Color(0, 0, 0));
+        pinholeTXTField2.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                pinholeTXTField2FocusLost(evt);
+            }
+        });
+        pinholeTXTField2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pinholeTXTField2ActionPerformed(evt);
+            }
+        });
+
+        jPanel5.setBackground(new java.awt.Color(135, 206, 250));
+
+        nearCheckBox.setBackground(new java.awt.Color(135, 206, 250));
+        nearCheckBox.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        nearCheckBox.setForeground(new java.awt.Color(32, 33, 35));
+        nearCheckBox.setText("Near Distance");
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(nearCheckBox)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(nearCheckBox)
+                .addContainerGap(24, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(indcatorLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(measurementLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(pinholeLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(pinholeTXTField2, javax.swing.GroupLayout.PREFERRED_SIZE, 348, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(jPanel4Layout.createSequentialGroup()
+                                    .addComponent(ccRadioBttn1)
+                                    .addGap(41, 41, 41)
+                                    .addComponent(scRadioBttn1))
+                                .addComponent(measurementTXTField2)
+                                .addComponent(visualAcuityLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 348, Short.MAX_VALUE)
+                                .addComponent(visualTXTField2)))
+                        .addGap(0, 28, Short.MAX_VALUE)))
+                .addContainerGap())
+            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
+                .addComponent(indcatorLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(correctiveLenseInnerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(correctiveLenseInnerLayout.createSequentialGroup()
-                        .addComponent(lenseTextField)
-                        .addGap(50, 50, 50))
-                    .addGroup(correctiveLenseInnerLayout.createSequentialGroup()
-                        .addComponent(lenseComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addComponent(rangeLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(rangeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(50, 50, 50)
-                .addComponent(visualAcuityLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(visualAcuityTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
-                .addComponent(correctiveLenseResultLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(correctiveLenseResultsTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(98, 98, 98))
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ccRadioBttn1)
+                    .addComponent(scRadioBttn1))
+                .addGap(36, 36, 36)
+                .addComponent(measurementLabel2)
+                .addGap(18, 18, 18)
+                .addComponent(measurementTXTField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(36, 36, 36)
+                .addComponent(visualAcuityLabel2)
+                .addGap(18, 18, 18)
+                .addComponent(visualTXTField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addComponent(pinholeLabel2)
+                .addGap(18, 18, 18)
+                .addComponent(pinholeTXTField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(129, Short.MAX_VALUE))
         );
 
-        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setText("Corrective Lenses");
+        submitButton.setBackground(new java.awt.Color(153, 255, 153));
+        submitButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        submitButton.setForeground(new java.awt.Color(0, 0, 0));
+        submitButton.setText("SUMBIT");
+        submitButton.setActionCommand("SUBMIT");
 
-        javax.swing.GroupLayout correctiveLenseJPanelLayout = new javax.swing.GroupLayout(correctiveLenseJPanel);
-        correctiveLenseJPanel.setLayout(correctiveLenseJPanelLayout);
-        correctiveLenseJPanelLayout.setHorizontalGroup(
-            correctiveLenseJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(correctiveLenseJPanelLayout.createSequentialGroup()
-                .addGap(47, 47, 47)
-                .addComponent(correctiveLenseInner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(47, Short.MAX_VALUE))
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(selectionLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(41, 41, 41)
+                        .addComponent(farDistanceBttn, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(36, 36, 36)
+                        .addComponent(nearDistanceBttn, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(34, 34, 34)
+                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(correctiveLPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(submitButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(35, 35, 35))
         );
-        correctiveLenseJPanelLayout.setVerticalGroup(
-            correctiveLenseJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(correctiveLenseJPanelLayout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(jLabel8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(correctiveLenseInner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(73, Short.MAX_VALUE))
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(77, 77, 77)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(selectionLabel)
+                    .addComponent(farDistanceBttn)
+                    .addComponent(nearDistanceBttn, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(44, 44, 44)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 610, Short.MAX_VALUE)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(18, Short.MAX_VALUE))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(39, 39, 39)
+                .addComponent(correctiveLPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(submitButton)
+                .addGap(26, 26, 26))
         );
 
-        add(correctiveLenseJPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(1135, 112, -1, 722));
-
-        submitBttn.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
-        submitBttn.setText("SUBMIT");
-        add(submitBttn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1391, 852, 211, -1));
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(titleBar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(40, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(41, 41, 41))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(titleBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26))
+        );
     }// </editor-fold>//GEN-END:initComponents
 
-    
-    /*
-    *   THIS IS THE RADIO BUTTONS FOR VISUAL ACUITY
-    */
-    private void tenthBttnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tenthBttnActionPerformed
+    private void farDistanceBttnFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_farDistanceBttnFocusLost
         // TODO add your handling code here:
-        System.out.println("20/80 Button has been selected");
-    }//GEN-LAST:event_tenthBttnActionPerformed
+    }//GEN-LAST:event_farDistanceBttnFocusLost
 
-    private void firstBttnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_firstBttnActionPerformed
+    private void nearCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nearCheckBox1ActionPerformed
         // TODO add your handling code here:
-        System.out.println("20/10 Button has been selected");
-    }//GEN-LAST:event_firstBttnActionPerformed
+    }//GEN-LAST:event_nearCheckBox1ActionPerformed
 
-    private void secondBttnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_secondBttnActionPerformed
+    private void measurementTXTFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_measurementTXTFieldFocusLost
         // TODO add your handling code here:
-        System.out.println("20/12.5 Button has been selected");
-    }//GEN-LAST:event_secondBttnActionPerformed
+    }//GEN-LAST:event_measurementTXTFieldFocusLost
 
-    private void thirdBttnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_thirdBttnActionPerformed
+    private void visualTXTFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_visualTXTFieldFocusLost
         // TODO add your handling code here:
-        System.out.println("20/16 Button has been selected");
-    }//GEN-LAST:event_thirdBttnActionPerformed
+    }//GEN-LAST:event_visualTXTFieldFocusLost
 
-    private void fourthBttnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fourthBttnActionPerformed
+    private void pinholeTXTFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_pinholeTXTFieldFocusLost
         // TODO add your handling code here:
-        System.out.println("20/20 Button has been selected");
-    }//GEN-LAST:event_fourthBttnActionPerformed
+    }//GEN-LAST:event_pinholeTXTFieldFocusLost
 
-    private void fifthBttnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fifthBttnActionPerformed
+    private void ccRadioBttnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ccRadioBttnActionPerformed
         // TODO add your handling code here:
-        System.out.println("20/25 Button has been selected");
-    }//GEN-LAST:event_fifthBttnActionPerformed
+    }//GEN-LAST:event_ccRadioBttnActionPerformed
 
-    private void sixBttnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sixBttnActionPerformed
+    private void visualTXTFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_visualTXTFieldActionPerformed
         // TODO add your handling code here:
-        System.out.println("20/32 Button has been selected");
-    }//GEN-LAST:event_sixBttnActionPerformed
+    }//GEN-LAST:event_visualTXTFieldActionPerformed
 
-    private void seventhBttnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seventhBttnActionPerformed
+    private void ccRadioBttn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ccRadioBttn1ActionPerformed
         // TODO add your handling code here:
-        System.out.println("20/40 Button has been selected");
-    }//GEN-LAST:event_seventhBttnActionPerformed
+    }//GEN-LAST:event_ccRadioBttn1ActionPerformed
 
-    private void eigthBttnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eigthBttnActionPerformed
+    private void measurementTXTField2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_measurementTXTField2FocusLost
         // TODO add your handling code here:
-        System.out.println("20/50 Button has been selected");
-    }//GEN-LAST:event_eigthBttnActionPerformed
+    }//GEN-LAST:event_measurementTXTField2FocusLost
 
-    private void ninethBttnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ninethBttnActionPerformed
+    private void visualTXTField2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_visualTXTField2FocusLost
         // TODO add your handling code here:
-        System.out.println("20/63 Button has been selected");
-    }//GEN-LAST:event_ninethBttnActionPerformed
+    }//GEN-LAST:event_visualTXTField2FocusLost
 
-    private void thriteenthBttnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_thriteenthBttnActionPerformed
+    private void visualTXTField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_visualTXTField2ActionPerformed
         // TODO add your handling code here:
-        System.out.println("20/100 Button has been selected");
-    }//GEN-LAST:event_thriteenthBttnActionPerformed
+    }//GEN-LAST:event_visualTXTField2ActionPerformed
 
-    private void elevenBttnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_elevenBttnActionPerformed
+    private void pinholeTXTField2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_pinholeTXTField2FocusLost
         // TODO add your handling code here:
-        System.out.println("20/125 Button has been selected");
-    }//GEN-LAST:event_elevenBttnActionPerformed
+    }//GEN-LAST:event_pinholeTXTField2FocusLost
 
-    private void twelfthBttnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_twelfthBttnActionPerformed
+    private void pinholeTXTField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pinholeTXTField2ActionPerformed
         // TODO add your handling code here:
-        System.out.println("20/160 Button has been selected");
-    }//GEN-LAST:event_twelfthBttnActionPerformed
+    }//GEN-LAST:event_pinholeTXTField2ActionPerformed
 
-    private void fourteenthBttnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fourteenthBttnActionPerformed
+    private void lenseTXTFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_lenseTXTFieldFocusLost
         // TODO add your handling code here:
-        System.out.println("20/200 Button has been selected");
-    }//GEN-LAST:event_fourteenthBttnActionPerformed
+    }//GEN-LAST:event_lenseTXTFieldFocusLost
 
     
-    /*
-    *   TEXT FIELDS FOR MEASUREMENT
-    */
-    private void distanceTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_distanceTextFieldActionPerformed
-        // TODO add your handling code here:
-        System.out.println("Distance TextField has been selected");
-        
-       // distance = textField.getText();
-      // distance.
-        
-        
-    }//GEN-LAST:event_distanceTextFieldActionPerformed
-
-    private void measurementTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_measurementTextFieldActionPerformed
-        // TODO add your handling code here:
-         System.out.println("Measurement TxtField has been selected");
-    }//GEN-LAST:event_measurementTextFieldActionPerformed
-
-    private void measurementResultsTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_measurementResultsTextFieldActionPerformed
-        // TODO add your handling code here:
-        System.out.println("Measurement Results TxtField has been selected");
-    }//GEN-LAST:event_measurementResultsTextFieldActionPerformed
-
-    private void measurementIndcTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_measurementIndcTextField2ActionPerformed
-        // TODO add your handling code here:
-        System.out.println("Measurement Indicators TxtField has been selected");
-    }//GEN-LAST:event_measurementIndcTextField2ActionPerformed
-
-    private void pinholeTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pinholeTextField1ActionPerformed
-        // TODO add your handling code here:
-        System.out.println("Pinhole TxtField has been selected");
-    }//GEN-LAST:event_pinholeTextField1ActionPerformed
-
     
-    /*
-    *   TEXT FIELDS FOR CORRECTIVE LENSES
-    */
-    private void lenseTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lenseTextFieldActionPerformed
-        // TODO add your handling code here:
-        System.out.println("Lense TxtField has been selected");
-    }//GEN-LAST:event_lenseTextFieldActionPerformed
-
-    private void rangeTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rangeTextFieldActionPerformed
-        // TODO add your handling code here:
-        System.out.println("Range TxtField has been selected");
-    }//GEN-LAST:event_rangeTextFieldActionPerformed
-
-    private void visualAcuityTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_visualAcuityTextField1ActionPerformed
-        // TODO add your handling code here:
-        System.out.println("Visual Acuity TxtField has been selected");
-    }//GEN-LAST:event_visualAcuityTextField1ActionPerformed
-
-    private void correctiveLenseResultsTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_correctiveLenseResultsTextFieldActionPerformed
-        // TODO add your handling code here:
-        System.out.println("Corrective Lesne Result TxtField has been selected");
-    }//GEN-LAST:event_correctiveLenseResultsTextFieldActionPerformed
-
+    
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel correctiveLenseInner;
-    private javax.swing.JPanel correctiveLenseJPanel;
-    private javax.swing.JLabel correctiveLenseResultLabel;
-    private javax.swing.JTextField correctiveLenseResultsTextField;
-    private javax.swing.JLabel distanceLabel;
-    private javax.swing.JTextField distanceTextField;
-    private javax.swing.JRadioButton eigthBttn;
-    private javax.swing.JRadioButton elevenBttn;
-    private javax.swing.JRadioButton fifthBttn;
-    private javax.swing.JRadioButton firstBttn;
-    private javax.swing.JRadioButton fourteenthBttn;
-    private javax.swing.JRadioButton fourthBttn;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JComboBox<String> lenseComboBox;
-    private javax.swing.JLabel lenseLabel;
-    private javax.swing.JTextField lenseTextField;
-    private javax.swing.JLabel measurementIndcLabel;
-    private javax.swing.JTextField measurementIndcTextField2;
-    private javax.swing.JPanel measurementInner;
-    private javax.swing.JPanel measurementJPanel;
+    private javax.swing.JRadioButton ccRadioBttn;
+    private javax.swing.JRadioButton ccRadioBttn1;
+    private javax.swing.JPanel correctiveLPanel;
+    private javax.swing.JButton farDistanceBttn;
+    private javax.swing.JLabel indcatorLabel;
+    private javax.swing.JLabel indcatorLabel1;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JLabel lenseLabel1;
+    private javax.swing.JTextField lenseTXTField;
+    private javax.swing.JLabel mRangeLabel1;
+    private javax.swing.JTextField mRangeTXTFeild1;
     private javax.swing.JLabel measurementLabel;
-    private javax.swing.JLabel measurementResultsLabel;
-    private javax.swing.JTextField measurementResultsTextField;
-    private javax.swing.JTextField measurementTextField;
-    private javax.swing.JButton nectBttn1;
-    private javax.swing.JButton nextBttn2;
-    private javax.swing.JRadioButton ninethBttn;
+    private javax.swing.JLabel measurementLabel2;
+    private javax.swing.JTextField measurementTXTField;
+    private javax.swing.JTextField measurementTXTField2;
+    private javax.swing.JCheckBox nearCheckBox;
+    private javax.swing.JCheckBox nearCheckBox1;
+    private javax.swing.JButton nearDistanceBttn;
     private javax.swing.JLabel pinholeLabel;
-    private javax.swing.JTextField pinholeTextField1;
-    private javax.swing.JLabel rangeLabel;
-    private javax.swing.JTextField rangeTextField;
-    private javax.swing.JRadioButton secondBttn;
-    private javax.swing.JRadioButton seventhBttn;
-    private javax.swing.JRadioButton sixBttn;
-    private javax.swing.JButton submitBttn;
-    private javax.swing.JRadioButton tenthBttn;
-    private javax.swing.JRadioButton thirdBttn;
-    private javax.swing.JRadioButton thriteenthBttn;
+    private javax.swing.JLabel pinholeLabel2;
+    private javax.swing.JTextField pinholeTXTField;
+    private javax.swing.JTextField pinholeTXTField2;
+    private javax.swing.JRadioButton scRadioBttn;
+    private javax.swing.JRadioButton scRadioBttn1;
+    private javax.swing.JLabel selectionLabel;
+    private javax.swing.JButton submitButton;
     private javax.swing.JPanel titleBar;
     private javax.swing.JLabel titleLabel;
-    private javax.swing.JRadioButton twelfthBttn;
-    private javax.swing.JPanel visualAcuityJPanel;
-    private javax.swing.JLabel visualAcuityLabel1;
-    private javax.swing.JScrollPane visualAcuityScrollPane;
-    private javax.swing.JPanel visualAcuityScrollPanel;
-    private javax.swing.JTextField visualAcuityTextField1;
+    private javax.swing.JLabel vAcuityLabel;
+    private javax.swing.JTextField vAcuityTXTFeild;
+    private javax.swing.JLabel vTangeLabel;
+    private javax.swing.JLabel visualAcuityLabel;
+    private javax.swing.JLabel visualAcuityLabel2;
+    private javax.swing.JTextField visualTXTField;
+    private javax.swing.JTextField visualTXTField2;
     // End of variables declaration//GEN-END:variables
 }
