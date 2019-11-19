@@ -39,20 +39,20 @@ public class MainDashboard extends javax.swing.JFrame {
 
 
     patientPortal       = new PatientPortal(this);
-	appointmentPanel    = new AppointmentDisplay(this);
-	insurancePanel      = new InsurancePage();
+    appointmentPanel    = new AppointmentDisplay(this);
+    insurancePanel      = new InsurancePage();
     homePanel           = new HomePanel();
     viewPatientPage     = new PatientPageTemplate();
     patientForm		    = new PatientForm(this);
-	insurancePanel		= new InsurancePage();
+    insurancePanel		= new InsurancePage();
     appointmentForm		= new AppointmentForm(this);
-    visualAcuity        = new VisualAcuity();//***
+    visualAcuity        = new VisualAcuity(this);//***
         
-	mainPanel.add(homePanel);	
+    mainPanel.add(homePanel);	
     mainPanel.add(patientPortal);
-	mainPanel.add(patientForm);
-	mainPanel.add(appointmentPanel);
-	mainPanel.add(insurancePanel);
+    mainPanel.add(patientForm);
+    mainPanel.add(appointmentPanel);
+    mainPanel.add(insurancePanel);
     mainPanel.add(viewPatientPage);
     mainPanel.add(appointmentForm);
     mainPanel.add(visualAcuity);
@@ -268,7 +268,7 @@ public class MainDashboard extends javax.swing.JFrame {
 
         mainPanel.setBackground(new java.awt.Color(57, 113, 177));
         mainPanel.setMaximumSize(new java.awt.Dimension(1000, 1000));
-        mainPanel.setPreferredSize(new java.awt.Dimension(1620, 634));
+        mainPanel.setPreferredSize(new java.awt.Dimension(1700, 900));
         mainPanel.addComponentListener(new java.awt.event.ComponentAdapter() {
             public void componentShown(java.awt.event.ComponentEvent evt) {
                 mainPanelComponentShown(evt);

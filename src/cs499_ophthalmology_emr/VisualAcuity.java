@@ -11,26 +11,35 @@ package cs499_ophthalmology_emr;
  */
 public class VisualAcuity extends javax.swing.JPanel {
     
-    private MainDashboard mainDash = null;
-    private DataBaseManager dataBase = DataBaseManager.getInstance();
+    private MainDashboard mainDash;
+    private DataBaseManager dataBase;
+    private EyeTestResults eyeTestResults;
+    private Patient activePatient;
 
-        String distance = null;
-        String measurement = null;
-        String measurementIndc = null;
-        String pinholeOcc= null;
-        String measurementResults = null;
+   /* String distance = null;
+    String measurement = null;
+    String measurementIndc = null;
+    String pinholeOcc= null;
+    String measurementResults = null;
         String lense = null;
         String range = null;
         String visualAcuity = null;
-        String correctiveLesneResult = null;
+        String correctiveLesneResult = null;*/
         //VisualAcuity textField = new VisualAcuity(20);
          
-    public VisualAcuity() {
-        initComponents();
-       
-        
-        
+    public VisualAcuity(MainDashboard mD ) {
+     
+     activePatient = null;
+     mainDash = mD;
+     dataBase = DataBaseManager.getInstance();
+     
+     //eyeTestResults = dataBase.getNewEyeTestResults()
+     initComponents();
+     
     }
+    public void loadEyeTestResults(){
+        
+    } 
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -690,6 +699,7 @@ public class VisualAcuity extends javax.swing.JPanel {
         System.out.println("Distance TextField has been selected");
         
        // distance = textField.getText();
+      // distance.
         
         
     }//GEN-LAST:event_distanceTextFieldActionPerformed
