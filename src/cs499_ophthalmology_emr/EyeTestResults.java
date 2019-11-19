@@ -7,9 +7,9 @@ package cs499_ophthalmology_emr;
  */
 
 public class EyeTestResults 
-{	private final Integer examID;
-	private final Integer patientID;
-	private final Integer apptID;
+{   private final Integer examID;
+    private final Integer patientID;
+    private final Integer apptID;
     private Integer farChartDistance;
     private Integer dccOS;
     private Integer dccOSph;

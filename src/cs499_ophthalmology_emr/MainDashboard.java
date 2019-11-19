@@ -13,15 +13,22 @@ import java.awt.*;
  */
 public class MainDashboard extends javax.swing.JFrame {
     
+
     public PatientPortal patientPortal;
+
 
     public AppointmentDisplay appointmentPanel;
     public AppointmentForm appointmentForm;
     public InsurancePage insurancePanel;
     public HomePanel homePanel;
     public PatientPageTemplate viewPatientPage;
+    public VisualAcuity visualAcuity;
+
+	
+
     public PatientForm patientForm;
     
+
     private Patient activePatient;
 
     /**
@@ -30,14 +37,16 @@ public class MainDashboard extends javax.swing.JFrame {
     public MainDashboard() {
     initComponents();
 
+
     patientPortal       = new PatientPortal(this);
 	appointmentPanel    = new AppointmentDisplay(this);
 	insurancePanel      = new InsurancePage();
     homePanel           = new HomePanel();
     viewPatientPage     = new PatientPageTemplate();
-    patientForm		= new PatientForm(this);
+    patientForm		    = new PatientForm(this);
 	insurancePanel		= new InsurancePage();
     appointmentForm		= new AppointmentForm(this);
+    visualAcuity        = new VisualAcuity();//***
         
 	mainPanel.add(homePanel);	
     mainPanel.add(patientPortal);
@@ -46,6 +55,8 @@ public class MainDashboard extends javax.swing.JFrame {
 	mainPanel.add(insurancePanel);
     mainPanel.add(viewPatientPage);
     mainPanel.add(appointmentForm);
+    mainPanel.add(visualAcuity);
+
                 
     }
 	
@@ -61,13 +72,16 @@ public class MainDashboard extends javax.swing.JFrame {
 	
 	public void showPatientPortal()
 	{
+
             hideAllPanelComponents(mainPanel);
             patientPortal.loadTableAllEntries();
             patientPortal.setVisible(true);
+
 	}
 	
 	public void showPatientForm()
 	{
+
         hideAllPanelComponents(mainPanel);
         patientForm.setVisible(true);
 	}
@@ -101,22 +115,28 @@ public class MainDashboard extends javax.swing.JFrame {
 			//appointmentPanel.loadTableFromList(null);
 			appointmentPanel.loadTableAllEntries();
             appointmentPanel.setVisible(true);
+
 	}
 	
 	public void showInsurancePage()
 	{
-            hideAllPanelComponents(mainPanel);
-            insurancePanel.setVisible(true);
+                hideAllPanelComponents(mainPanel);
+                insurancePanel.setVisible(true);
+	}
+        public void showVisualAcuity()
+	{
+                hideAllPanelComponents(mainPanel);
+                visualAcuity.setVisible(true);
 	}
         public void showHomePanel()
 	{
-            hideAllPanelComponents(mainPanel);
-            homePanel.setVisible(true);
+                hideAllPanelComponents(mainPanel);
+                homePanel.setVisible(true);
 	}
         public void showViewFutureAppointments()
 	{ 
-            hideAllPanelComponents(mainPanel);
-            //viewFutureAppts.setVisible(true);
+                hideAllPanelComponents(mainPanel);
+            
 	}
 	public void hideAllPanelComponents(JPanel theComp)
 	{
@@ -153,6 +173,7 @@ public class MainDashboard extends javax.swing.JFrame {
         mainPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1620, 745));
         setSize(getPreferredSize());
 
         background.setBackground(new java.awt.Color(57, 113, 177));
@@ -160,6 +181,7 @@ public class MainDashboard extends javax.swing.JFrame {
 
         toolBarJPanel.setBackground(new java.awt.Color(53, 60, 81));
         toolBarJPanel.setAutoscrolls(true);
+        toolBarJPanel.setPreferredSize(new java.awt.Dimension(1620, 90));
         toolBarJPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         homeBttn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cs499_ophthalmology_emr/images/homeIcon.png"))); // NOI18N
@@ -200,6 +222,11 @@ public class MainDashboard extends javax.swing.JFrame {
         toolBarJPanel.add(insuranceBttn, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 0, -1, 70));
 
         eyeTestBttn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cs499_ophthalmology_emr/images/eyeTestIcon.png"))); // NOI18N
+        eyeTestBttn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                eyeTestBttnMouseClicked(evt);
+            }
+        });
         toolBarJPanel.add(eyeTestBttn, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 0, -1, 70));
 
         helpBttn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cs499_ophthalmology_emr/images/infoIcon.png"))); // NOI18N
@@ -241,6 +268,7 @@ public class MainDashboard extends javax.swing.JFrame {
 
         mainPanel.setBackground(new java.awt.Color(57, 113, 177));
         mainPanel.setMaximumSize(new java.awt.Dimension(1000, 1000));
+        mainPanel.setPreferredSize(new java.awt.Dimension(1620, 634));
         mainPanel.addComponentListener(new java.awt.event.ComponentAdapter() {
             public void componentShown(java.awt.event.ComponentEvent evt) {
                 mainPanelComponentShown(evt);
@@ -252,16 +280,16 @@ public class MainDashboard extends javax.swing.JFrame {
         background.setLayout(backgroundLayout);
         backgroundLayout.setHorizontalGroup(
             backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(toolBarJPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1247, Short.MAX_VALUE)
-            .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(toolBarJPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1563, Short.MAX_VALUE)
+            .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
         );
         backgroundLayout.setVerticalGroup(
             backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(backgroundLayout.createSequentialGroup()
-                .addComponent(toolBarJPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
-                .addGap(6, 6, 6)
-                .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 623, Short.MAX_VALUE)
-                .addGap(6, 6, 6))
+                .addComponent(toolBarJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 634, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         mainPanel.getAccessibleContext().setAccessibleName("mainPanel");
@@ -270,11 +298,11 @@ public class MainDashboard extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(background, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1247, Short.MAX_VALUE)
+            .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, 1563, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, 732, Short.MAX_VALUE)
+            .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, 745, Short.MAX_VALUE)
         );
 
         pack();
@@ -294,21 +322,26 @@ public class MainDashboard extends javax.swing.JFrame {
     private void appointmentBttnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_appointmentBttnMouseClicked
 
         System.out.println("Appointment Bttn Clicked: " + evt.getClickCount());
-		showAppointmentDisplay();
+	showAppointmentDisplay();
     }//GEN-LAST:event_appointmentBttnMouseClicked
 
     private void insuranceBttnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_insuranceBttnMouseClicked
         
         System.out.print("Insurance Bttn Clicked: " + evt.getClickCount());
-		showInsurancePage();       
+	showInsurancePage();       
     }//GEN-LAST:event_insuranceBttnMouseClicked
 
     private void homeBttnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeBttnMouseClicked
-        hideAllPanelComponents(mainPanel);
-		//emrLogo.setVisible(true);
-                showHomePanel();
+        hideAllPanelComponents(mainPanel);	
+        showHomePanel();
         
     }//GEN-LAST:event_homeBttnMouseClicked
+
+    private void eyeTestBttnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_eyeTestBttnMouseClicked
+        // TODO add your handling code here:
+        System.out.print("EyeTest Bttn Bttn Clicked: " + evt.getClickCount());
+        showVisualAcuity();
+    }//GEN-LAST:event_eyeTestBttnMouseClicked
 
     /**
      * @param args the command line arguments
