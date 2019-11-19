@@ -92,7 +92,6 @@ public class VisualAcuity extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(57, 113, 177));
         setPreferredSize(new java.awt.Dimension(1630, 896));
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         titleBar.setBackground(new java.awt.Color(32, 33, 35));
 
@@ -115,8 +114,6 @@ public class VisualAcuity extends javax.swing.JPanel {
                 .addContainerGap(22, Short.MAX_VALUE))
         );
 
-        add(titleBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-
         visualAcuityJPanel.setBackground(new java.awt.Color(32, 33, 35));
         visualAcuityJPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -129,7 +126,6 @@ public class VisualAcuity extends javax.swing.JPanel {
         visualAcuityScrollPanel.setBackground(new java.awt.Color(135, 206, 250));
 
         firstBttn.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        firstBttn.setForeground(new java.awt.Color(0, 0, 0));
         firstBttn.setSelected(true);
         firstBttn.setText("20/10");
         firstBttn.addActionListener(new java.awt.event.ActionListener() {
@@ -139,7 +135,6 @@ public class VisualAcuity extends javax.swing.JPanel {
         });
 
         seventhBttn.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        seventhBttn.setForeground(new java.awt.Color(0, 0, 0));
         seventhBttn.setText("20/40");
         seventhBttn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -148,7 +143,6 @@ public class VisualAcuity extends javax.swing.JPanel {
         });
 
         secondBttn.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        secondBttn.setForeground(new java.awt.Color(0, 0, 0));
         secondBttn.setText("20/12.5");
         secondBttn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -157,7 +151,6 @@ public class VisualAcuity extends javax.swing.JPanel {
         });
 
         eigthBttn.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        eigthBttn.setForeground(new java.awt.Color(0, 0, 0));
         eigthBttn.setText("20/50");
         eigthBttn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -166,7 +159,6 @@ public class VisualAcuity extends javax.swing.JPanel {
         });
 
         thirdBttn.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        thirdBttn.setForeground(new java.awt.Color(0, 0, 0));
         thirdBttn.setText("20/16");
         thirdBttn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -175,7 +167,6 @@ public class VisualAcuity extends javax.swing.JPanel {
         });
 
         ninethBttn.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        ninethBttn.setForeground(new java.awt.Color(0, 0, 0));
         ninethBttn.setText("20/63");
         ninethBttn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -184,7 +175,6 @@ public class VisualAcuity extends javax.swing.JPanel {
         });
 
         fourthBttn.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        fourthBttn.setForeground(new java.awt.Color(0, 0, 0));
         fourthBttn.setText("20/20");
         fourthBttn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -193,7 +183,6 @@ public class VisualAcuity extends javax.swing.JPanel {
         });
 
         tenthBttn.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        tenthBttn.setForeground(new java.awt.Color(0, 0, 0));
         tenthBttn.setSelected(true);
         tenthBttn.setText("20/80");
         tenthBttn.addActionListener(new java.awt.event.ActionListener() {
@@ -203,7 +192,6 @@ public class VisualAcuity extends javax.swing.JPanel {
         });
 
         fifthBttn.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        fifthBttn.setForeground(new java.awt.Color(0, 0, 0));
         fifthBttn.setText("20/25");
         fifthBttn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -212,7 +200,6 @@ public class VisualAcuity extends javax.swing.JPanel {
         });
 
         thriteenthBttn.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
-        thriteenthBttn.setForeground(new java.awt.Color(0, 0, 0));
         thriteenthBttn.setText("20/100");
         thriteenthBttn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -221,7 +208,6 @@ public class VisualAcuity extends javax.swing.JPanel {
         });
 
         sixBttn.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        sixBttn.setForeground(new java.awt.Color(0, 0, 0));
         sixBttn.setText("20/32");
         sixBttn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -230,7 +216,6 @@ public class VisualAcuity extends javax.swing.JPanel {
         });
 
         elevenBttn.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        elevenBttn.setForeground(new java.awt.Color(0, 0, 0));
         elevenBttn.setSelected(true);
         elevenBttn.setText("20/125");
         elevenBttn.addActionListener(new java.awt.event.ActionListener() {
@@ -240,7 +225,6 @@ public class VisualAcuity extends javax.swing.JPanel {
         });
 
         twelfthBttn.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        twelfthBttn.setForeground(new java.awt.Color(0, 0, 0));
         twelfthBttn.setText("20/160");
         twelfthBttn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -249,7 +233,6 @@ public class VisualAcuity extends javax.swing.JPanel {
         });
 
         fourteenthBttn.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        fourteenthBttn.setForeground(new java.awt.Color(0, 0, 0));
         fourteenthBttn.setText("20/200");
         fourteenthBttn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -324,8 +307,6 @@ public class VisualAcuity extends javax.swing.JPanel {
         nectBttn1.setToolTipText("");
         visualAcuityJPanel.add(nectBttn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 690, 120, -1));
 
-        add(visualAcuityJPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 112, 431, -1));
-
         measurementJPanel.setBackground(new java.awt.Color(32, 33, 35));
 
         measurementInner.setBackground(new java.awt.Color(135, 206, 250));
@@ -340,7 +321,6 @@ public class VisualAcuity extends javax.swing.JPanel {
 
         distanceTextField.setBackground(new java.awt.Color(204, 255, 255));
         distanceTextField.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        distanceTextField.setForeground(new java.awt.Color(0, 0, 0));
         distanceTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 distanceTextFieldActionPerformed(evt);
@@ -462,13 +442,11 @@ public class VisualAcuity extends javax.swing.JPanel {
             .addGroup(measurementJPanelLayout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                 .addComponent(measurementInner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(21, 21, 21)
                 .addComponent(nextBttn2))
         );
-
-        add(measurementJPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 112, -1, 722));
 
         correctiveLenseJPanel.setBackground(new java.awt.Color(32, 33, 35));
 
@@ -476,7 +454,6 @@ public class VisualAcuity extends javax.swing.JPanel {
 
         rangeTextField.setBackground(new java.awt.Color(204, 255, 255));
         rangeTextField.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        rangeTextField.setForeground(new java.awt.Color(0, 0, 0));
         rangeTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rangeTextFieldActionPerformed(evt);
@@ -491,7 +468,6 @@ public class VisualAcuity extends javax.swing.JPanel {
 
         lenseTextField.setBackground(new java.awt.Color(204, 255, 255));
         lenseTextField.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        lenseTextField.setForeground(new java.awt.Color(0, 0, 0));
         lenseTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 lenseTextFieldActionPerformed(evt);
@@ -504,7 +480,6 @@ public class VisualAcuity extends javax.swing.JPanel {
 
         correctiveLenseResultsTextField.setBackground(new java.awt.Color(204, 255, 255));
         correctiveLenseResultsTextField.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        correctiveLenseResultsTextField.setForeground(new java.awt.Color(0, 0, 0));
         correctiveLenseResultsTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 correctiveLenseResultsTextFieldActionPerformed(evt);
@@ -517,7 +492,6 @@ public class VisualAcuity extends javax.swing.JPanel {
 
         visualAcuityTextField1.setBackground(new java.awt.Color(204, 255, 255));
         visualAcuityTextField1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        visualAcuityTextField1.setForeground(new java.awt.Color(0, 0, 0));
         visualAcuityTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 visualAcuityTextField1ActionPerformed(evt);
@@ -546,7 +520,7 @@ public class VisualAcuity extends javax.swing.JPanel {
                         .addComponent(lenseTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lenseComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(7, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         correctiveLenseInnerLayout.setVerticalGroup(
             correctiveLenseInnerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -597,14 +571,40 @@ public class VisualAcuity extends javax.swing.JPanel {
                 .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(correctiveLenseInner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(73, Short.MAX_VALUE))
+                .addContainerGap(83, Short.MAX_VALUE))
         );
-
-        add(correctiveLenseJPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(1135, 112, -1, 722));
 
         submitBttn.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
         submitBttn.setText("SUBMIT");
-        add(submitBttn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1391, 852, 211, -1));
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(titleBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addComponent(visualAcuityJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 431, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(75, 75, 75)
+                .addComponent(measurementJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(75, 75, 75)
+                .addComponent(correctiveLenseJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(1391, 1391, 1391)
+                .addComponent(submitBttn, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(titleBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(36, 36, 36)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(visualAcuityJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(measurementJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(correctiveLenseJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(submitBttn))
+        );
     }// </editor-fold>//GEN-END:initComponents
 
     

@@ -7,6 +7,7 @@ package cs499_ophthalmology_emr;
 import javax.swing.*;
 import java.awt.*;
 
+
 /**
  *
  * @author angelaallison
@@ -23,6 +24,9 @@ public class MainDashboard extends javax.swing.JFrame {
     public HomePanel homePanel;
     public PatientPageTemplate viewPatientPage;
     public VisualAcuity visualAcuity;
+    //private ImageIcon image;
+    
+    
 
 	
 
@@ -56,6 +60,8 @@ public class MainDashboard extends javax.swing.JFrame {
     mainPanel.add(viewPatientPage);
     mainPanel.add(appointmentForm);
     mainPanel.add(visualAcuity);
+    
+    
 
                 
     }
@@ -83,11 +89,10 @@ public class MainDashboard extends javax.swing.JFrame {
 	
 	public void showPatientPortal()
 	{
-
+            
             hideAllPanelComponents(mainPanel);
             patientPortal.loadTableAllEntries();
             patientPortal.setVisible(true);
-
 	}
 	
 	public void showPatientForm()
@@ -291,15 +296,17 @@ public class MainDashboard extends javax.swing.JFrame {
         background.setLayout(backgroundLayout);
         backgroundLayout.setHorizontalGroup(
             backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(toolBarJPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1563, Short.MAX_VALUE)
-            .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
+            .addComponent(toolBarJPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, backgroundLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 1732, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         backgroundLayout.setVerticalGroup(
             backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(backgroundLayout.createSequentialGroup()
                 .addComponent(toolBarJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 634, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 1000, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -309,11 +316,11 @@ public class MainDashboard extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, 1563, Short.MAX_VALUE)
+            .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, 1732, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, 745, Short.MAX_VALUE)
+            .addComponent(background, javax.swing.GroupLayout.PREFERRED_SIZE, 745, Short.MAX_VALUE)
         );
 
         pack();
@@ -346,6 +353,9 @@ public class MainDashboard extends javax.swing.JFrame {
         hideAllPanelComponents(mainPanel);	
         showHomePanel();
         
+        Icon i = new ImageIcon("homeIconInverted.png");
+        //homeBttn.setIcon(i);
+        //homeBttn.setVisible(true);
     }//GEN-LAST:event_homeBttnMouseClicked
 
     private void eyeTestBttnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_eyeTestBttnMouseClicked
