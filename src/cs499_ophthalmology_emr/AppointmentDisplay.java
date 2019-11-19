@@ -158,8 +158,6 @@ public class AppointmentDisplay extends javax.swing.JPanel {
     private void initComponents() {
 
         newAppointmentButton = new javax.swing.JButton();
-        futureAppointmentButton = new javax.swing.JButton();
-        pastAppointmentButton = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         deleteButton = new javax.swing.JButton();
@@ -169,8 +167,6 @@ public class AppointmentDisplay extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(57, 113, 177));
 
-        newAppointmentButton.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.darcula.selection.color1"));
-        newAppointmentButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         newAppointmentButton.setText("New Appointment");
         newAppointmentButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -180,24 +176,6 @@ public class AppointmentDisplay extends javax.swing.JPanel {
         newAppointmentButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 newAppointmentButtonActionPerformed(evt);
-            }
-        });
-
-        futureAppointmentButton.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.darcula.selection.color1"));
-        futureAppointmentButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        futureAppointmentButton.setText("Future Appointments");
-        futureAppointmentButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                futureAppointmentButtonActionPerformed(evt);
-            }
-        });
-
-        pastAppointmentButton.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.darcula.selection.color1"));
-        pastAppointmentButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        pastAppointmentButton.setText("Past Appointments");
-        pastAppointmentButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pastAppointmentButtonActionPerformed(evt);
             }
         });
 
@@ -252,19 +230,14 @@ public class AppointmentDisplay extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1620, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGroup(layout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addComponent(futureAppointmentButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(pastAppointmentButton))
-            .addGroup(layout.createSequentialGroup()
                 .addGap(53, 53, 53)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1000, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(newAppointmentButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(editButton, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(deleteButton))))
         );
         layout.setVerticalGroup(
@@ -274,34 +247,15 @@ public class AppointmentDisplay extends javax.swing.JPanel {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(deleteButton)
-                        .addComponent(editButton))
+                        .addComponent(editButton)
+                        .addComponent(deleteButton))
                     .addComponent(newAppointmentButton))
-                .addGap(52, 52, 52)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(futureAppointmentButton)
-                    .addComponent(pastAppointmentButton))
-                .addContainerGap())
+                .addContainerGap(43, Short.MAX_VALUE))
         );
-
-        futureAppointmentButton.getAccessibleContext().setAccessibleName("");
     }// </editor-fold>//GEN-END:initComponents
-
-    private void futureAppointmentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_futureAppointmentButtonActionPerformed
-        // TODO add your handling code here:
-        // ANGELA DID THIS 
-        System.out.println("Future Appoinment Bttn Clicked");
-       // mainDash.MainDashboard();
-       // mainDash.showViewFutureAppointments();
-        
-    }//GEN-LAST:event_futureAppointmentButtonActionPerformed
-
-    private void pastAppointmentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pastAppointmentButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_pastAppointmentButtonActionPerformed
 
     private void newAppointmentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newAppointmentButtonActionPerformed
         System.out.println("Appointment: Add new button");
@@ -343,12 +297,10 @@ public class AppointmentDisplay extends javax.swing.JPanel {
     private javax.swing.JTable appointmentDisplayTable;
     private javax.swing.JButton deleteButton;
     private javax.swing.JButton editButton;
-    private javax.swing.JButton futureAppointmentButton;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JButton newAppointmentButton;
-    private javax.swing.JButton pastAppointmentButton;
     // End of variables declaration//GEN-END:variables
 
 }

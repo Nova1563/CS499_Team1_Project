@@ -126,9 +126,6 @@
     </Component>
     <Component class="javax.swing.JButton" name="patientSearchSubmitButton">
       <Properties>
-        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="6b" green="4f" id="Button.darcula.selection.color1" palette="3" red="38" type="palette"/>
-        </Property>
         <Property name="text" type="java.lang.String" value="Search"/>
       </Properties>
       <Events>
@@ -137,9 +134,6 @@
     </Component>
     <Component class="javax.swing.JButton" name="deletePatientButton">
       <Properties>
-        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="6b" green="4f" id="Button.darcula.selection.color1" palette="3" red="38" type="palette"/>
-        </Property>
         <Property name="text" type="java.lang.String" value="Delete Patient"/>
       </Properties>
       <Events>
@@ -149,9 +143,6 @@
     </Component>
     <Component class="javax.swing.JButton" name="editPatientButton">
       <Properties>
-        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="6b" green="4f" id="Button.darcula.selection.color1" palette="3" red="38" type="palette"/>
-        </Property>
         <Property name="text" type="java.lang.String" value="Edit Patient"/>
       </Properties>
       <Events>
@@ -160,9 +151,6 @@
     </Component>
     <Component class="javax.swing.JButton" name="addPatientButton">
       <Properties>
-        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="6b" green="4f" id="Button.darcula.selection.color1" palette="3" red="38" type="palette"/>
-        </Property>
         <Property name="text" type="java.lang.String" value="Add Patient"/>
       </Properties>
       <Events>
@@ -183,7 +171,7 @@
               <Table columnCount="4" rowCount="3">
                 <Column editable="false" title="Name" type="java.lang.String"/>
                 <Column editable="false" title="Address" type="java.lang.String"/>
-                <Column editable="false" title="DoB (MM/DD/YYYY)" type="java.lang.Integer"/>
+                <Column editable="false" title="DoB (MM/DD/YYYY)" type="java.lang.String"/>
                 <Column editable="false" title="ID" type="java.lang.Integer"/>
               </Table>
             </Property>

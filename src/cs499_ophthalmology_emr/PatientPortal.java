@@ -35,7 +35,7 @@ public class PatientPortal extends javax.swing.JPanel {
 	{
 		String patientName = null;
 		String patientAddr = null;
-		Integer patientDoB = null;
+		String patientDoB = null;
 		Integer patientID = null;
 		
 		patientList = dataBase.getAllPatients();
@@ -45,7 +45,7 @@ public class PatientPortal extends javax.swing.JPanel {
 		{
 			patientName = currentPatient.getName();
 			patientAddr = currentPatient.getAddress();
-			patientDoB = currentPatient.getDateOfBirth();
+			patientDoB = formatDate(currentPatient.getDateOfBirth().toString());
 			patientID = currentPatient.getPatientID();
 			
 			tableModel.addRow(new Object[] {patientName, patientAddr, patientDoB, patientID});
@@ -57,7 +57,7 @@ public class PatientPortal extends javax.swing.JPanel {
 	{
 		String patientName = null;
 		String patientAddr = null;
-		Integer patientDoB = null;
+		String patientDoB = null;
 		Integer patientID = null;
 		
 		patientList = theList;
@@ -67,12 +67,39 @@ public class PatientPortal extends javax.swing.JPanel {
 		{
 			patientName = currentPatient.getName();
 			patientAddr = currentPatient.getAddress();
-			patientDoB = currentPatient.getDateOfBirth();
+			patientDoB = formatDate(currentPatient.getDateOfBirth().toString());
 			patientID = currentPatient.getPatientID();
 			
 			tableModel.addRow(new Object[] {patientName, patientAddr, patientDoB, patientID});
 		}
 		
+	}
+	
+	private String formatDate(String theDate)
+	{
+		String formattedStr = "";
+		
+		for (Integer i = 0; i < theDate.length(); i++)
+		{
+			if ((i == 2) || (i == 4))
+				formattedStr = formattedStr + "/" +theDate.charAt(i);
+			else
+				formattedStr = formattedStr +theDate.charAt(i);
+		}
+		return formattedStr;
+	}
+	
+	private Integer unformatDate(String theDate)
+	{
+		String formattedStr = "";
+		
+		for (Integer i = 0; i < theDate.length(); i++)
+		{
+			if (Character.isDigit(theDate.charAt(i)))
+				formattedStr += theDate.charAt(i);
+		}
+		
+		return Integer.parseInt(formattedStr);
 	}
 
     /**
@@ -126,7 +153,6 @@ public class PatientPortal extends javax.swing.JPanel {
             }
         });
 
-        patientSearchSubmitButton.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.darcula.selection.color1"));
         patientSearchSubmitButton.setText("Search");
         patientSearchSubmitButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -134,7 +160,6 @@ public class PatientPortal extends javax.swing.JPanel {
             }
         });
 
-        deletePatientButton.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.darcula.selection.color1"));
         deletePatientButton.setText("Delete Patient");
         deletePatientButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -147,7 +172,6 @@ public class PatientPortal extends javax.swing.JPanel {
             }
         });
 
-        editPatientButton.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.darcula.selection.color1"));
         editPatientButton.setText("Edit Patient");
         editPatientButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -155,7 +179,6 @@ public class PatientPortal extends javax.swing.JPanel {
             }
         });
 
-        addPatientButton.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.darcula.selection.color1"));
         addPatientButton.setText("Add Patient");
         addPatientButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -175,7 +198,7 @@ public class PatientPortal extends javax.swing.JPanel {
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class
             };
             boolean[] canEdit = new boolean [] {
                 false, false, false, false
