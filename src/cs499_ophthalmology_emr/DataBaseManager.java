@@ -347,45 +347,45 @@ public class DataBaseManager {
 			
 			Appointment anAppt = getNewAppointment(patientID);
 			Integer apptID = anAppt.getApptID();
-			anAppt.setApptDate(1000);
+			anAppt.setApptDate(11302019);
                         anAppt.setDoctorToSee(0);
                         anAppt.setPatientName(currentPatient.getName());
 						anAppt.setArrivalStatus(0);
 			save(anAppt);
 			
 			EyeTestResults examResults = getNewEyeTestResults(patientID, apptID);
-			examResults.setFarChartDistance(1);
+			examResults.setFarChartDistance("1");
 			examResults.setAddOD(1.2);
 			examResults.setAddOS(2.1);
-			examResults.setNn20OS(5);
-			examResults.setNn20OD(7);
-			examResults.setDd20OS(10);
-			examResults.setDd20OD(15);
+			examResults.setNn20OS("5");
+			examResults.setNn20OD("7");
+			examResults.setDd20OS("10");
+			examResults.setDd20OD("15");
 			save(examResults);
 			
 			
 			anAppt = getNewAppointment(patientID);
 			apptID = anAppt.getApptID();
 			anAppt.setPatientName(currentPatient.getName());
-			anAppt.setAppointmentTime(2000);
+			anAppt.setAppointmentTime(715);
 			anAppt.setArrivalStatus(0);
 			save(anAppt);
 			
 			examResults = getNewEyeTestResults(patientID, apptID);
-			examResults.setFarChartDistance(2);
+			examResults.setFarChartDistance("2");
 			save(examResults);
 			
 			
 			
 			anAppt = getNewAppointment(patientID);
 			apptID = anAppt.getApptID();
-			anAppt.setAppointmentTime(3000);
+			anAppt.setAppointmentTime(945);
 			anAppt.setArrivalStatus(0);
 			anAppt.setPatientName(currentPatient.getName());
 			save(anAppt);
 			
 			examResults = getNewEyeTestResults(patientID, apptID);
-			examResults.setFarChartDistance(3);
+			examResults.setFarChartDistance("3");
 			save(examResults);
 			
 		}

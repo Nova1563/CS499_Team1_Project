@@ -10,30 +10,30 @@ public class EyeTestResults
 {   private final Integer examID;
     private final Integer patientID;
     private final Integer apptID;
-    private Integer farChartDistance;
-    private Integer dccOS;
-    private Integer dccOSph;
-    private Integer dscOS;
-    private Integer dscOSph;
-    private Integer dccOD;
-    private Integer dccODph;
-    private Integer dscOD;
-    private Integer dccOU;
-    private Integer dccOUph;
-    private Integer dscOU;
-    private Integer dscOUph;
-    private Integer nearChartDistance;
-    private Integer nccOS;
-    private Integer nccOSph;
-    private Integer nscOS;
-    private Integer nscOSph;
-    private Integer nccOD;
-    private Integer nccODph;
-    private Integer nscOD;
-    private Integer nccOU;
-    private Integer nccOUph;
-    private Integer nscOU;
-    private Integer nscOUph;
+    private String farChartDistance;
+    private String dccOS;
+    private String dccOSph;
+    private String dscOS;
+    private String dscOSph;
+    private String dccOD;
+    private String dccODph;
+    private String dscOD;
+    private String dccOU;
+    private String dccOUph;
+    private String dscOU;
+    private String dscOUph;
+    private String nearChartDistance;
+    private String nccOS;
+    private String nccOSph;
+    private String nscOS;
+    private String nscOSph;
+    private String nccOD;
+    private String nccODph;
+    private String nscOD;
+    private String nccOU;
+    private String nccOUph;
+    private String nscOU;
+    private String nscOUph;
     private Double sphereOD;
     private Double sphereOS;
     private Double cylinderOD;
@@ -46,44 +46,44 @@ public class EyeTestResults
     private Double prismOS;
     private Double prismBaseOD;
     private Double prismBaseOS;
-    private Integer nn20OD;
-    private Integer dd20OD;
-	private Integer nn20OS;
-    private Integer dd20OS;
+    private String nn20OD;
+    private String dd20OD;
+	private String nn20OS;
+    private String dd20OS;
     
-    private Integer vitreousOD;
-    private Integer maculaOD;
-    private Integer vasculatureOD;
-    private Integer posteriorPoleOD;
-    private Integer peripheralRetinaOD;
-    private Integer miscRetinaOD;
-    private Integer diabeticEvalOD;
-    private Integer htnEvalOD;
-    private Integer armdOD;
-    private Integer custom1OD;
-    private Integer custom2OD;
-    private Integer custom3OD;
-    private Integer vitreousOS;
-    private Integer maculaOS;
-    private Integer vasculatureOS;
-    private Integer posteriorPoleOS;
-    private Integer peripheralRetinaOS;
-    private Integer miscRetinaOS;
-    private Integer diabeticEvalOS;
-    private Integer htnEvalOS;
-    private Integer armdOS;
-    private Integer custom1OS;
-    private Integer custom2OS;
-    private Integer custom3OS;
+    private String vitreousOD;
+    private String maculaOD;
+    private String vasculatureOD;
+    private String posteriorPoleOD;
+    private String peripheralRetinaOD;
+    private String miscRetinaOD;
+    private String diabeticEvalOD;
+    private String htnEvalOD;
+    private String armdOD;
+    private String custom1OD;
+    private String custom2OD;
+    private String custom3OD;
+    private String vitreousOS;
+    private String maculaOS;
+    private String vasculatureOS;
+    private String posteriorPoleOS;
+    private String peripheralRetinaOS;
+    private String miscRetinaOS;
+    private String diabeticEvalOS;
+    private String htnEvalOS;
+    private String armdOS;
+    private String custom1OS;
+    private String custom2OS;
+    private String custom3OS;
 
-    private Integer sponVeinPulsOD;
-    private Integer fovealReflexOD;
-    private Integer sponVeinPulsOS;
-    private Integer fovealReflexOs;
-    private Integer methodUsed;
-    private Integer gttOD;
-    private Integer gttOS;
-    private Integer dilationAgent;
+    private String sponVeinPulsOD;
+    private String fovealReflexOD;
+    private String sponVeinPulsOS;
+    private String fovealReflexOs;
+    private String methodUsed;
+    private String gttOD;
+    private String gttOS;
+    private String dilationAgent;
     private Boolean lens78dUsed;
     private Boolean lens90Dused;
     private Boolean lens20DbioUsed;
@@ -104,8 +104,8 @@ public class EyeTestResults
     private Double horizOS;
     private Double vertOD;
     private Double vertOS;
-    private Integer opticNerve;
-    private Integer nerveFiberLayer;
+    private String opticNerve;
+    private String nerveFiberLayer;
     private Boolean deepLaminaOD;
     private Boolean deepLaminaOS;
     private Boolean shallowOD;
@@ -136,30 +136,30 @@ public class EyeTestResults
 		this.examID = _examID;
 		this.patientID = _patientID;
 		this.apptID = _apptID;
-		this.farChartDistance = -1;
-		this.dccOS = -1;
-		this.dccOSph = -1;
-		this.dscOS = -1;
-		this.dscOSph = -1;
-		this.dccOD = -1;
-		this.dccODph = -1;
-		this.dscOD = -1;
-		this.dccOU = -1;
-		this.dccOUph = -1;
-		this.dscOU = -1;
-		this.dscOUph = -1;
-		this.nearChartDistance = -1;
-		this.nccOS = -1;
-		this.nccOSph = -1;
-		this.nscOS = -1;
-		this.nscOSph = -1;
-		this.nccOD = -1;
-		this.nccODph = -1;
-		this.nscOD = -1;
-		this.nccOU = -1;
-		this.nccOUph = -1;
-		this.nscOU = -1;
-		this.nscOUph = -1;
+		this.farChartDistance = "";
+		this.dccOS = "";
+		this.dccOSph = "";
+		this.dscOS = "";
+		this.dscOSph = "";
+		this.dccOD = "";
+		this.dccODph = "";
+		this.dscOD = "";
+		this.dccOU = "";
+		this.dccOUph = "";
+		this.dscOU = "";
+		this.dscOUph = "";
+		this.nearChartDistance = "";
+		this.nccOS = "";
+		this.nccOSph = "";
+		this.nscOS = "";
+		this.nscOSph = "";
+		this.nccOD = "";
+		this.nccODph = "";
+		this.nscOD = "";
+		this.nccOU = "";
+		this.nccOUph = "";
+		this.nscOU = "";
+		this.nscOUph = "";
 		this.sphereOD = -1.0;
 		this.sphereOS = -1.0;
 		this.cylinderOD = -1.0;
@@ -172,42 +172,42 @@ public class EyeTestResults
 		this.prismOS = -1.0;
 		this.prismBaseOD = -1.0;
 		this.prismBaseOS = -1.0;
-		this.nn20OD = -1;
-		this.dd20OD = -1;
-		this.nn20OS = -1;
-		this.dd20OS = -1;
-		this.vitreousOD = -1;
-		this.maculaOD = -1;
-		this.vasculatureOD = -1;
-		this.posteriorPoleOD = -1;
-		this.peripheralRetinaOD = -1;
-		this.miscRetinaOD = -1;
-		this.diabeticEvalOD = -1;
-		this.htnEvalOD = -1;
-		this.armdOD = -1;
-		this.custom1OD = -1;
-		this.custom2OD = -1;
-		this.custom3OD = -1;
-		this.vitreousOS = -1;
-		this.maculaOS = -1;
-		this.vasculatureOS = -1;
-		this.posteriorPoleOS = -1;
-		this.peripheralRetinaOS = -1;
-		this.miscRetinaOS = -1;
-		this.diabeticEvalOS = -1;
-		this.htnEvalOS = -1;
-		this.armdOS = -1;
-		this.custom1OS = -1;
-		this.custom2OS = -1;
-		this.custom3OS = -1;
-		this.sponVeinPulsOD = -1;
-		this.fovealReflexOD = -1;
-		this.sponVeinPulsOS = -1;
-		this.fovealReflexOs = -1;
-		this.methodUsed = -1;
-		this.gttOD = -1;
-		this.gttOS = -1;
-		this.dilationAgent = -1;
+		this.nn20OD = "";
+		this.dd20OD = "";
+		this.nn20OS = "";
+		this.dd20OS = "";
+		this.vitreousOD = "";
+		this.maculaOD = "";
+		this.vasculatureOD = "";
+		this.posteriorPoleOD = "";
+		this.peripheralRetinaOD = "";
+		this.miscRetinaOD = "";
+		this.diabeticEvalOD = "";
+		this.htnEvalOD = "";
+		this.armdOD = "";
+		this.custom1OD = "";
+		this.custom2OD = "";
+		this.custom3OD = "";
+		this.vitreousOS = "";
+		this.maculaOS = "";
+		this.vasculatureOS = "";
+		this.posteriorPoleOS = "";
+		this.peripheralRetinaOS = "";
+		this.miscRetinaOS = "";
+		this.diabeticEvalOS = "";
+		this.htnEvalOS = "";
+		this.armdOS = "";
+		this.custom1OS = "";
+		this.custom2OS = "";
+		this.custom3OS = "";
+		this.sponVeinPulsOD = "";
+		this.fovealReflexOD = "";
+		this.sponVeinPulsOS = "";
+		this.fovealReflexOs = "";
+		this.methodUsed = "";
+		this.gttOD = "";
+		this.gttOS = "";
+		this.dilationAgent = "";
 		this.lens78dUsed = false;
 		this.lens90Dused = false;
 		this.lens20DbioUsed = false;
@@ -228,8 +228,8 @@ public class EyeTestResults
 		this.horizOS = -1.0;
 		this.vertOD = -1.0;
 		this.vertOS = -1.0;
-		this.opticNerve = -1;
-		this.nerveFiberLayer = -1;
+		this.opticNerve = "";
+		this.nerveFiberLayer = "";
 		this.deepLaminaOD = false;
 		this.deepLaminaOS = false;
 		this.shallowOD = false;
@@ -261,195 +261,205 @@ public class EyeTestResults
 		return this.examID;
 	}
 	
-	public Integer getFarChartDistance() {
+	public Integer getApptID()
+	{
+		return this.apptID;
+	}
+	
+	public Integer getPatientID()
+	{
+		return this.patientID;
+	}
+	
+	public String getFarChartDistance() {
 		return farChartDistance;
 	}
 
-	public void setFarChartDistance(Integer farChartDistance) {
+	public void setFarChartDistance(String farChartDistance) {
 		this.farChartDistance = farChartDistance;
 	}
 
-	public Integer getDccOS() {
+	public String getDccOS() {
 		return dccOS;
 	}
 
-	public void setDccOS(Integer dccOS) {
+	public void setDccOS(String dccOS) {
 		this.dccOS = dccOS;
 	}
 
-	public Integer getDccOSph() {
+	public String getDccOSph() {
 		return dccOSph;
 	}
 
-	public void setDccOSph(Integer dccOSph) {
+	public void setDccOSph(String dccOSph) {
 		this.dccOSph = dccOSph;
 	}
 
-	public Integer getDscOS() {
+	public String getDscOS() {
 		return dscOS;
 	}
 
-	public void setDscOS(Integer dscOS) {
+	public void setDscOS(String dscOS) {
 		this.dscOS = dscOS;
 	}
 
-	public Integer getDscOSph() {
+	public String getDscOSph() {
 		return dscOSph;
 	}
 
-	public void setDscOSph(Integer dscOSph) {
+	public void setDscOSph(String dscOSph) {
 		this.dscOSph = dscOSph;
 	}
 
-	public Integer getDccOD() {
+	public String getDccOD() {
 		return dccOD;
 	}
 
-	public void setDccOD(Integer dccOD) {
+	public void setDccOD(String dccOD) {
 		this.dccOD = dccOD;
 	}
 
-	public Integer getDccODph() {
+	public String getDccODph() {
 		return dccODph;
 	}
 
-	public void setDccODph(Integer dccODph) {
+	public void setDccODph(String dccODph) {
 		this.dccODph = dccODph;
 	}
 
-	public Integer getDscOD() {
+	public String getDscOD() {
 		return dscOD;
 	}
 
-	public void setDscOD(Integer dscOD) {
+	public void setDscOD(String dscOD) {
 		this.dscOD = dscOD;
 	}
 
-	public Integer getDccOU() {
+	public String getDccOU() {
 		return dccOU;
 	}
 
-	public void setDccOU(Integer dccOU) {
+	public void setDccOU(String dccOU) {
 		this.dccOU = dccOU;
 	}
 
-	public Integer getDccOUph() {
+	public String getDccOUph() {
 		return dccOUph;
 	}
 
-	public void setDccOUph(Integer dccOUph) {
+	public void setDccOUph(String dccOUph) {
 		this.dccOUph = dccOUph;
 	}
 
-	public Integer getDscOU() {
+	public String getDscOU() {
 		return dscOU;
 	}
 
-	public void setDscOU(Integer dscOU) {
+	public void setDscOU(String dscOU) {
 		this.dscOU = dscOU;
 	}
 
-	public Integer getDscOUph() {
+	public String getDscOUph() {
 		return dscOUph;
 	}
 
-	public void setDscOUph(Integer dscOUph) {
+	public void setDscOUph(String dscOUph) {
 		this.dscOUph = dscOUph;
 	}
 
-	public Integer getNearChartDistance() {
+	public String getNearChartDistance() {
 		return nearChartDistance;
 	}
 
-	public void setNearChartDistance(Integer nearChartDistance) {
+	public void setNearChartDistance(String nearChartDistance) {
 		this.nearChartDistance = nearChartDistance;
 	}
 
-	public Integer getNccOS() {
+	public String getNccOS() {
 		return nccOS;
 	}
 
-	public void setNccOS(Integer nccOS) {
+	public void setNccOS(String nccOS) {
 		this.nccOS = nccOS;
 	}
 
-	public Integer getNccOSph() {
+	public String getNccOSph() {
 		return nccOSph;
 	}
 
-	public void setNccOSph(Integer nccOSph) {
+	public void setNccOSph(String nccOSph) {
 		this.nccOSph = nccOSph;
 	}
 
-	public Integer getNscOS() {
+	public String getNscOS() {
 		return nscOS;
 	}
 
-	public void setNscOS(Integer nscOS) {
+	public void setNscOS(String nscOS) {
 		this.nscOS = nscOS;
 	}
 
-	public Integer getNscOSph() {
+	public String getNscOSph() {
 		return nscOSph;
 	}
 
-	public void setNscOSph(Integer nscOSph) {
+	public void setNscOSph(String nscOSph) {
 		this.nscOSph = nscOSph;
 	}
 
-	public Integer getNccOD() {
+	public String getNccOD() {
 		return nccOD;
 	}
 
-	public void setNccOD(Integer nccOD) {
+	public void setNccOD(String nccOD) {
 		this.nccOD = nccOD;
 	}
 
-	public Integer getNccODph() {
+	public String getNccODph() {
 		return nccODph;
 	}
 
-	public void setNccODph(Integer nccODph) {
+	public void setNccODph(String nccODph) {
 		this.nccODph = nccODph;
 	}
 
-	public Integer getNscOD() {
+	public String getNscOD() {
 		return nscOD;
 	}
 
-	public void setNscOD(Integer nscOD) {
+	public void setNscOD(String nscOD) {
 		this.nscOD = nscOD;
 	}
 
-	public Integer getNccOU() {
+	public String getNccOU() {
 		return nccOU;
 	}
 
-	public void setNccOU(Integer nccOU) {
+	public void setNccOU(String nccOU) {
 		this.nccOU = nccOU;
 	}
 
-	public Integer getNccOUph() {
+	public String getNccOUph() {
 		return nccOUph;
 	}
 
-	public void setNccOUph(Integer nccOUph) {
+	public void setNccOUph(String nccOUph) {
 		this.nccOUph = nccOUph;
 	}
 
-	public Integer getNscOU() {
+	public String getNscOU() {
 		return nscOU;
 	}
 
-	public void setNscOU(Integer nscOU) {
+	public void setNscOU(String nscOU) {
 		this.nscOU = nscOU;
 	}
 
-	public Integer getNscOUph() {
+	public String getNscOUph() {
 		return nscOUph;
 	}
 
-	public void setNscOUph(Integer nscOUph) {
+	public void setNscOUph(String nscOUph) {
 		this.nscOUph = nscOUph;
 	}
 
@@ -549,293 +559,293 @@ public class EyeTestResults
 		this.prismBaseOS = prismBaseOS;
 	}
 
-	public Integer getNn20OD() {
+	public String getNn20OD() {
 		return nn20OD;
 	}
 
-	public void setNn20OD(Integer nn20OD) {
+	public void setNn20OD(String nn20OD) {
 		this.nn20OD = nn20OD;
 	}
 
-	public Integer getDd20OD() {
+	public String getDd20OD() {
 		return dd20OD;
 	}
 
-	public void setDd20OD(Integer dd20OD) {
+	public void setDd20OD(String dd20OD) {
 		this.dd20OD = dd20OD;
 	}
 
-	public Integer getNn20OS() {
+	public String getNn20OS() {
 		return nn20OS;
 	}
 
-	public void setNn20OS(Integer nn20OS) {
+	public void setNn20OS(String nn20OS) {
 		this.nn20OS = nn20OS;
 	}
 
-	public Integer getDd20OS() {
+	public String getDd20OS() {
 		return dd20OS;
 	}
 
-	public void setDd20OS(Integer dd20OS) {
+	public void setDd20OS(String dd20OS) {
 		this.dd20OS = dd20OS;
 	}
 
 
 
-	public Integer getVitreousOD() {
+	public String getVitreousOD() {
 		return vitreousOD;
 	}
 
-	public void setVitreousOD(Integer vitreousOD) {
+	public void setVitreousOD(String vitreousOD) {
 		this.vitreousOD = vitreousOD;
 	}
 
-	public Integer getMaculaOD() {
+	public String getMaculaOD() {
 		return maculaOD;
 	}
 
-	public void setMaculaOD(Integer maculaOD) {
+	public void setMaculaOD(String maculaOD) {
 		this.maculaOD = maculaOD;
 	}
 
-	public Integer getVasculatureOD() {
+	public String getVasculatureOD() {
 		return vasculatureOD;
 	}
 
-	public void setVasculatureOD(Integer vasculatureOD) {
+	public void setVasculatureOD(String vasculatureOD) {
 		this.vasculatureOD = vasculatureOD;
 	}
 
-	public Integer getPosteriorPoleOD() {
+	public String getPosteriorPoleOD() {
 		return posteriorPoleOD;
 	}
 
-	public void setPosteriorPoleOD(Integer posteriorPoleOD) {
+	public void setPosteriorPoleOD(String posteriorPoleOD) {
 		this.posteriorPoleOD = posteriorPoleOD;
 	}
 
-	public Integer getPeripheralRetinaOD() {
+	public String getPeripheralRetinaOD() {
 		return peripheralRetinaOD;
 	}
 
-	public void setPeripheralRetinaOD(Integer peripheralRetinaOD) {
+	public void setPeripheralRetinaOD(String peripheralRetinaOD) {
 		this.peripheralRetinaOD = peripheralRetinaOD;
 	}
 
-	public Integer getMiscRetinaOD() {
+	public String getMiscRetinaOD() {
 		return miscRetinaOD;
 	}
 
-	public void setMiscRetinaOD(Integer miscRetinaOD) {
+	public void setMiscRetinaOD(String miscRetinaOD) {
 		this.miscRetinaOD = miscRetinaOD;
 	}
 
-	public Integer getDiabeticEvalOD() {
+	public String getDiabeticEvalOD() {
 		return diabeticEvalOD;
 	}
 
-	public void setDiabeticEvalOD(Integer diabeticEvalOD) {
+	public void setDiabeticEvalOD(String diabeticEvalOD) {
 		this.diabeticEvalOD = diabeticEvalOD;
 	}
 
-	public Integer getHtnEvalOD() {
+	public String getHtnEvalOD() {
 		return htnEvalOD;
 	}
 
-	public void setHtnEvalOD(Integer htnEvalOD) {
+	public void setHtnEvalOD(String htnEvalOD) {
 		this.htnEvalOD = htnEvalOD;
 	}
 
-	public Integer getArmdOD() {
+	public String getArmdOD() {
 		return armdOD;
 	}
 
-	public void setArmdOD(Integer armdOD) {
+	public void setArmdOD(String armdOD) {
 		this.armdOD = armdOD;
 	}
 
-	public Integer getCustom1OD() {
+	public String getCustom1OD() {
 		return custom1OD;
 	}
 
-	public void setCustom1OD(Integer custom1OD) {
+	public void setCustom1OD(String custom1OD) {
 		this.custom1OD = custom1OD;
 	}
 
-	public Integer getCustom2OD() {
+	public String getCustom2OD() {
 		return custom2OD;
 	}
 
-	public void setCustom2OD(Integer custom2OD) {
+	public void setCustom2OD(String custom2OD) {
 		this.custom2OD = custom2OD;
 	}
 
-	public Integer getCustom3OD() {
+	public String getCustom3OD() {
 		return custom3OD;
 	}
 
-	public void setCustom3OD(Integer custom3OD) {
+	public void setCustom3OD(String custom3OD) {
 		this.custom3OD = custom3OD;
 	}
 
-	public Integer getVitreousOS() {
+	public String getVitreousOS() {
 		return vitreousOS;
 	}
 
-	public void setVitreousOS(Integer vitreousOS) {
+	public void setVitreousOS(String vitreousOS) {
 		this.vitreousOS = vitreousOS;
 	}
 
-	public Integer getMaculaOS() {
+	public String getMaculaOS() {
 		return maculaOS;
 	}
 
-	public void setMaculaOS(Integer maculaOS) {
+	public void setMaculaOS(String maculaOS) {
 		this.maculaOS = maculaOS;
 	}
 
-	public Integer getVasculatureOS() {
+	public String getVasculatureOS() {
 		return vasculatureOS;
 	}
 
-	public void setVasculatureOS(Integer vasculatureOS) {
+	public void setVasculatureOS(String vasculatureOS) {
 		this.vasculatureOS = vasculatureOS;
 	}
 
-	public Integer getPosteriorPoleOS() {
+	public String getPosteriorPoleOS() {
 		return posteriorPoleOS;
 	}
 
-	public void setPosteriorPoleOS(Integer posteriorPoleOS) {
+	public void setPosteriorPoleOS(String posteriorPoleOS) {
 		this.posteriorPoleOS = posteriorPoleOS;
 	}
 
-	public Integer getPeripheralRetinaOS() {
+	public String getPeripheralRetinaOS() {
 		return peripheralRetinaOS;
 	}
 
-	public void setPeripheralRetinaOS(Integer peripheralRetinaOS) {
+	public void setPeripheralRetinaOS(String peripheralRetinaOS) {
 		this.peripheralRetinaOS = peripheralRetinaOS;
 	}
 
-	public Integer getMiscRetinaOS() {
+	public String getMiscRetinaOS() {
 		return miscRetinaOS;
 	}
 
-	public void setMiscRetinaOS(Integer miscRetinaOS) {
+	public void setMiscRetinaOS(String miscRetinaOS) {
 		this.miscRetinaOS = miscRetinaOS;
 	}
 
-	public Integer getDiabeticEvalOS() {
+	public String getDiabeticEvalOS() {
 		return diabeticEvalOS;
 	}
 
-	public void setDiabeticEvalOS(Integer diabeticEvalOS) {
+	public void setDiabeticEvalOS(String diabeticEvalOS) {
 		this.diabeticEvalOS = diabeticEvalOS;
 	}
 
-	public Integer getHtnEvalOS() {
+	public String getHtnEvalOS() {
 		return htnEvalOS;
 	}
 
-	public void setHtnEvalOS(Integer htnEvalOS) {
+	public void setHtnEvalOS(String htnEvalOS) {
 		this.htnEvalOS = htnEvalOS;
 	}
 
-	public Integer getArmdOS() {
+	public String getArmdOS() {
 		return armdOS;
 	}
 
-	public void setArmdOS(Integer armdOS) {
+	public void setArmdOS(String armdOS) {
 		this.armdOS = armdOS;
 	}
 
-	public Integer getCustom1OS() {
+	public String getCustom1OS() {
 		return custom1OS;
 	}
 
-	public void setCustom1OS(Integer custom1OS) {
+	public void setCustom1OS(String custom1OS) {
 		this.custom1OS = custom1OS;
 	}
 
-	public Integer getCustom2OS() {
+	public String getCustom2OS() {
 		return custom2OS;
 	}
 
-	public void setCustom2OS(Integer custom2OS) {
+	public void setCustom2OS(String custom2OS) {
 		this.custom2OS = custom2OS;
 	}
 
-	public Integer getCustom3OS() {
+	public String getCustom3OS() {
 		return custom3OS;
 	}
 
-	public void setCustom3OS(Integer custom3OS) {
+	public void setCustom3OS(String custom3OS) {
 		this.custom3OS = custom3OS;
 	}
 
-	public Integer getSponVeinPulsOD() {
+	public String getSponVeinPulsOD() {
 		return sponVeinPulsOD;
 	}
 
-	public void setSponVeinPulsOD(Integer sponVeinPulsOD) {
+	public void setSponVeinPulsOD(String sponVeinPulsOD) {
 		this.sponVeinPulsOD = sponVeinPulsOD;
 	}
 
-	public Integer getFovealReflexOD() {
+	public String getFovealReflexOD() {
 		return fovealReflexOD;
 	}
 
-	public void setFovealReflexOD(Integer fovealReflexOD) {
+	public void setFovealReflexOD(String fovealReflexOD) {
 		this.fovealReflexOD = fovealReflexOD;
 	}
 
-	public Integer getSponVeinPulsOS() {
+	public String getSponVeinPulsOS() {
 		return sponVeinPulsOS;
 	}
 
-	public void setSponVeinPulsOS(Integer sponVeinPulsOS) {
+	public void setSponVeinPulsOS(String sponVeinPulsOS) {
 		this.sponVeinPulsOS = sponVeinPulsOS;
 	}
 
-	public Integer getFovealReflexOs() {
+	public String getFovealReflexOs() {
 		return fovealReflexOs;
 	}
 
-	public void setFovealReflexOs(Integer fovealReflexOs) {
+	public void setFovealReflexOs(String fovealReflexOs) {
 		this.fovealReflexOs = fovealReflexOs;
 	}
 
-	public Integer getMethodUsed() {
+	public String getMethodUsed() {
 		return methodUsed;
 	}
 
-	public void setMethodUsed(Integer methodUsed) {
+	public void setMethodUsed(String methodUsed) {
 		this.methodUsed = methodUsed;
 	}
 
-	public Integer getGttOD() {
+	public String getGttOD() {
 		return gttOD;
 	}
 
-	public void setGttOD(Integer gttOD) {
+	public void setGttOD(String gttOD) {
 		this.gttOD = gttOD;
 	}
 
-	public Integer getGttOS() {
+	public String getGttOS() {
 		return gttOS;
 	}
 
-	public void setGttOS(Integer gttOS) {
+	public void setGttOS(String gttOS) {
 		this.gttOS = gttOS;
 	}
 
-	public Integer getDilationAgent() {
+	public String getDilationAgent() {
 		return dilationAgent;
 	}
 
-	public void setDilationAgent(Integer dilationAgent) {
+	public void setDilationAgent(String dilationAgent) {
 		this.dilationAgent = dilationAgent;
 	}
 
@@ -999,19 +1009,19 @@ public class EyeTestResults
 		this.vertOS = vertOS;
 	}
 
-	public Integer getOpticNerve() {
+	public String getOpticNerve() {
 		return opticNerve;
 	}
 
-	public void setOpticNerve(Integer opticNerve) {
+	public void setOpticNerve(String opticNerve) {
 		this.opticNerve = opticNerve;
 	}
 
-	public Integer getNerveFiberLayer() {
+	public String getNerveFiberLayer() {
 		return nerveFiberLayer;
 	}
 
-	public void setNerveFiberLayer(Integer nerveFiberLayer) {
+	public void setNerveFiberLayer(String nerveFiberLayer) {
 		this.nerveFiberLayer = nerveFiberLayer;
 	}
 
