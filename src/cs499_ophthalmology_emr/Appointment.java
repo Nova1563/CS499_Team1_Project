@@ -13,9 +13,9 @@ public class Appointment
 {
     private final Integer apptID;	
     private final Integer patientID;
-	private String patientName;
-	private String reasonForVisit;
-	private Integer apptDate;
+    private String patientName;
+    private String reasonForVisit;
+    private Integer apptDate;
 
     private Integer appointmentTime;
     private Integer arrivalStatus;
