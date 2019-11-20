@@ -189,11 +189,10 @@ public class MainDashboard extends javax.swing.JFrame {
         mainPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1920, 1000));
         setSize(getPreferredSize());
 
         background.setBackground(new java.awt.Color(57, 113, 177));
-        background.setPreferredSize(new java.awt.Dimension(1280, 730));
+        background.setPreferredSize(new java.awt.Dimension(1800, 900));
 
         toolBarJPanel.setBackground(new java.awt.Color(53, 60, 81));
         toolBarJPanel.setAutoscrolls(true);
@@ -300,7 +299,6 @@ public class MainDashboard extends javax.swing.JFrame {
             backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(toolBarJPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(backgroundLayout.createSequentialGroup()
-                .addGap(0, 0, 0)
                 .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 1920, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
