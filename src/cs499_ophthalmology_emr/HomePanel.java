@@ -28,40 +28,20 @@ public class HomePanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jPanel2 = new javax.swing.JPanel();
-        patientPortalBttn = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         appointmentBttn = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
-        eyeTestBttn = new javax.swing.JLabel();
-        insuranceTxt1 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
-        insuranceBttn = new javax.swing.JLabel();
-        insuranceTxt = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(57, 113, 177));
         setPreferredSize(new java.awt.Dimension(1620, 634));
 
         jPanel2.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.darcula.selection.color1"));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        patientPortalBttn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cs499_ophthalmology_emr/images/patientIcon2.png"))); // NOI18N
-        patientPortalBttn.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                patientPortalBttnMousePressed(evt);
-            }
-        });
-        jPanel2.add(patientPortalBttn, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 24, 156, 169));
-
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Patient Portal");
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 205, 215, -1));
 
         jPanel3.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.darcula.selection.color1"));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -81,55 +61,39 @@ public class HomePanel extends javax.swing.JPanel {
         jLabel1.setText("Appointments");
         jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 203, 227, -1));
 
-        jPanel5.setBackground(new java.awt.Color(57, 113, 177));
+        jPanel1.setBackground(new java.awt.Color(32, 33, 35));
+
+        jPanel5.setBackground(new java.awt.Color(51, 51, 51));
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cs499_ophthalmology_emr/images/emrLOGO_1.png"))); // NOI18N
-        jPanel5.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 65, 433, 409));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cs499_ophthalmology_emr/images/emrLOGO2.png"))); // NOI18N
+        jPanel5.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 470, 409));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("WELCOME TO EMR");
         jPanel5.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 0, 433, -1));
 
         jPanel4.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.darcula.selection.color1"));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        eyeTestBttn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cs499_ophthalmology_emr/images/eyeTest2.png"))); // NOI18N
-        eyeTestBttn.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                eyeTestBttnMouseClicked(evt);
-            }
-        });
-        jPanel4.add(eyeTestBttn, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 43, -1, -1));
-
-        insuranceTxt1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        insuranceTxt1.setForeground(new java.awt.Color(255, 255, 255));
-        insuranceTxt1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        insuranceTxt1.setText("Eye Test Results ");
-        jPanel4.add(insuranceTxt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 199, 231, -1));
-
         jPanel5.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 262, -1, 237));
 
-        jPanel1.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.darcula.selection.color1"));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        insuranceBttn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cs499_ophthalmology_emr/images/insuranceIcon2.png"))); // NOI18N
-        insuranceBttn.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                insuranceBttnMouseClicked(evt);
-            }
-        });
-        jPanel1.add(insuranceBttn, new org.netbeans.lib.awtextra.AbsoluteConstraints(43, 48, -1, -1));
-
-        insuranceTxt.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        insuranceTxt.setForeground(new java.awt.Color(255, 255, 255));
-        insuranceTxt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        insuranceTxt.setText("Insurance Claims");
-        jPanel1.add(insuranceTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 210, 216, -1));
-
-        jPanel5.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 6, 231, 244));
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(50, Short.MAX_VALUE)
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 564, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(45, 45, 45))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(33, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -140,21 +104,23 @@ public class HomePanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addGap(62, 62, 62)
-                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(106, Short.MAX_VALUE))
+                .addGap(424, 424, 424)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(424, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(91, 91, 91)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(214, 214, 214)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(44, Short.MAX_VALUE))
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(70, 70, 70)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(117, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -164,27 +130,10 @@ public class HomePanel extends javax.swing.JPanel {
         
     }//GEN-LAST:event_appointmentBttnMouseClicked
 
-    private void patientPortalBttnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_patientPortalBttnMousePressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_patientPortalBttnMousePressed
-
-    private void insuranceBttnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_insuranceBttnMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_insuranceBttnMouseClicked
-
-    private void eyeTestBttnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_eyeTestBttnMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_eyeTestBttnMouseClicked
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel appointmentBttn;
-    private javax.swing.JLabel eyeTestBttn;
-    private javax.swing.JLabel insuranceBttn;
-    private javax.swing.JLabel insuranceTxt;
-    private javax.swing.JLabel insuranceTxt1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
@@ -192,6 +141,5 @@ public class HomePanel extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JLabel patientPortalBttn;
     // End of variables declaration//GEN-END:variables
 }
