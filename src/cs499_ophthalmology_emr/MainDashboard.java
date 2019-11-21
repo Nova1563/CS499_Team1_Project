@@ -24,7 +24,6 @@ public class MainDashboard extends javax.swing.JFrame {
     public HomePanel homePanel;
     public PatientPageTemplate viewPatientPage;
     public VisualAcuity visualAcuity;
-    //private ImageIcon image;
     
     
 
@@ -148,6 +147,7 @@ public class MainDashboard extends javax.swing.JFrame {
 	{
                 hideAllPanelComponents(mainPanel);
                 homePanel.setVisible(true);
+                
 	}
         public void showViewFutureAppointments()
 	{ 
@@ -186,10 +186,11 @@ public class MainDashboard extends javax.swing.JFrame {
         emrToolsTxt1 = new javax.swing.JLabel();
         CurrentPatientLabel = new javax.swing.JLabel();
         currentPatientTextBar = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         mainPanel = new javax.swing.JPanel();
+        jDesktopPane1 = new javax.swing.JDesktopPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1920, 1000));
         setSize(getPreferredSize());
 
         background.setBackground(new java.awt.Color(57, 113, 177));
@@ -203,6 +204,7 @@ public class MainDashboard extends javax.swing.JFrame {
         toolBarJPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         homeBttn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cs499_ophthalmology_emr/images/homeIcon.png"))); // NOI18N
+        homeBttn.setDisabledIcon(null);
         homeBttn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 homeBttnMouseClicked(evt);
@@ -283,6 +285,7 @@ public class MainDashboard extends javax.swing.JFrame {
         currentPatientTextBar.setFont(helpToolsTxt.getFont());
         currentPatientTextBar.setOpaque(true);
         toolBarJPanel.add(currentPatientTextBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(765, 40, 240, 20));
+        toolBarJPanel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, -1, -1));
 
         mainPanel.setBackground(new java.awt.Color(57, 113, 177));
         mainPanel.setMaximumSize(new java.awt.Dimension(1000, 1000));
@@ -293,6 +296,7 @@ public class MainDashboard extends javax.swing.JFrame {
             }
         });
         mainPanel.setLayout(new java.awt.CardLayout());
+        mainPanel.add(jDesktopPane1, "card2");
 
         javax.swing.GroupLayout backgroundLayout = new javax.swing.GroupLayout(background);
         background.setLayout(backgroundLayout);
@@ -300,7 +304,6 @@ public class MainDashboard extends javax.swing.JFrame {
             backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(toolBarJPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(backgroundLayout.createSequentialGroup()
-                .addGap(0, 0, 0)
                 .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 1920, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
@@ -356,9 +359,6 @@ public class MainDashboard extends javax.swing.JFrame {
         hideAllPanelComponents(mainPanel);	
         showHomePanel();
         
-        Icon i = new ImageIcon("homeIconInverted.png");
-        //homeBttn.setIcon(i);
-        //homeBttn.setVisible(true);
     }//GEN-LAST:event_homeBttnMouseClicked
 
     private void eyeTestBttnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_eyeTestBttnMouseClicked
@@ -421,6 +421,8 @@ public class MainDashboard extends javax.swing.JFrame {
     private javax.swing.JLabel homeTxt;
     private javax.swing.JLabel infoBttb;
     private javax.swing.JLabel insuranceBttn;
+    private javax.swing.JDesktopPane jDesktopPane1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel mainPanel;
     private javax.swing.JLabel patientPortalBttn;
     private javax.swing.JPanel toolBarJPanel;
