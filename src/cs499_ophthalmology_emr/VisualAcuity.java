@@ -16,6 +16,7 @@ public class VisualAcuity extends javax.swing.JPanel {
     private EyeTestResults eyeTestResults;
     private Patient activePatient;
     private Appointment activeAppointment;
+    //private OccularExResults occularExResults;
          
     public VisualAcuity(MainDashboard mD ) {
      
@@ -118,9 +119,10 @@ public class VisualAcuity extends javax.swing.JPanel {
         selectionLabel1 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        saveBttn = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel38 = new javax.swing.JLabel();
+        occularBttn = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(57, 113, 177));
         setMaximumSize(new java.awt.Dimension(2147483647, 2147483647));
@@ -475,6 +477,7 @@ public class VisualAcuity extends javax.swing.JPanel {
         jLabel26.setText("DccOSPH");
 
         jLabel27.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel27.setForeground(new java.awt.Color(255, 255, 255));
         jLabel27.setText("DccODPH");
 
         jLabel28.setText("DccOUPH");
@@ -697,7 +700,7 @@ public class VisualAcuity extends javax.swing.JPanel {
         rangeLabel.setText("Set Range:");
         rangeLabel.setToolTipText("");
 
-        jSlider.setBackground(new java.awt.Color(253, 252, 233));
+        jSlider.setBackground(new java.awt.Color(32, 33, 35));
         jSlider.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jSlider.setForeground(new java.awt.Color(253, 252, 233));
         jSlider.setMinimum(1);
@@ -764,10 +767,15 @@ public class VisualAcuity extends javax.swing.JPanel {
                 .addGap(0, 63, Short.MAX_VALUE))
         );
 
-        jButton1.setBackground(new java.awt.Color(153, 255, 153));
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
-        jButton1.setText("SUBMIT");
+        saveBttn.setBackground(new java.awt.Color(153, 255, 153));
+        saveBttn.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        saveBttn.setForeground(new java.awt.Color(0, 0, 0));
+        saveBttn.setText("SAVE");
+        saveBttn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                saveBttnMouseClicked(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -776,6 +784,14 @@ public class VisualAcuity extends javax.swing.JPanel {
         jLabel38.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel38.setForeground(new java.awt.Color(255, 255, 255));
         jLabel38.setText("Input Data for N:");
+
+        occularBttn.setForeground(new java.awt.Color(0, 0, 0));
+        occularBttn.setText("Occular Exam Findings");
+        occularBttn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                occularBttnMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -792,9 +808,12 @@ public class VisualAcuity extends javax.swing.JPanel {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(51, 51, 51)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(163, 163, 163)
+                        .addComponent(saveBttn, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(210, 210, 210)
+                        .addComponent(occularBttn)))
                 .addContainerGap(53, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -805,16 +824,19 @@ public class VisualAcuity extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
-                        .addComponent(jButton1))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
                         .addComponent(jLabel38)
                         .addGap(18, 18, 18)
-                        .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(43, 43, 43))
+                        .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(43, 43, 43))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(saveBttn)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(occularBttn)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -1019,6 +1041,15 @@ public class VisualAcuity extends javax.swing.JPanel {
          eyeTestResults.setDccOD(NscOUPH);
          System.out.println(NscOUPH);
     }//GEN-LAST:event_NscOUPHTxtFFocusLost
+
+    private void occularBttnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_occularBttnMouseClicked
+        // TODO add your handling code here:
+        mainDash.showOccularExResults();
+    }//GEN-LAST:event_occularBttnMouseClicked
+
+    private void saveBttnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_saveBttnMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_saveBttnMouseClicked
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -1047,7 +1078,6 @@ public class VisualAcuity extends javax.swing.JPanel {
     private javax.swing.JTextField NscOUPHTxtF;
     private javax.swing.JTextField NscOUTxtF;
     private javax.swing.JLabel correctiveLabel;
-    private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -1095,7 +1125,9 @@ public class VisualAcuity extends javax.swing.JPanel {
     private javax.swing.JSlider jSlider;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
+    private javax.swing.JButton occularBttn;
     private javax.swing.JLabel rangeLabel;
+    private javax.swing.JButton saveBttn;
     private javax.swing.JLabel selectionLabel;
     private javax.swing.JLabel selectionLabel1;
     private javax.swing.JPanel titleBar;

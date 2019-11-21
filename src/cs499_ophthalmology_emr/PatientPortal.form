@@ -81,7 +81,7 @@
                               <EmptySpace min="-2" pref="362" max="-2" attributes="0"/>
                               <Component id="deletePatientButton" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="jScrollPane2" pref="1062" max="32767" attributes="0"/>
+                          <Component id="jScrollPane2" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="274" pref="274" max="-2" attributes="0"/>
                   </Group>
@@ -105,7 +105,7 @@
                   <Component id="addPatientButton" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="deletePatientButton" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace pref="20" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -216,7 +216,7 @@
     <Container class="javax.swing.JPanel" name="jPanel1">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="6b" green="4f" id="Button.darcula.selection.color1" palette="3" red="38" type="palette"/>
+          <Color blue="23" green="21" red="20" type="rgb"/>
         </Property>
       </Properties>
 

@@ -225,7 +225,7 @@ public class PatientPortal extends javax.swing.JPanel {
             patientPortalTable.getColumnModel().getColumn(3).setMaxWidth(100);
         }
 
-        jPanel1.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.darcula.selection.color1"));
+        jPanel1.setBackground(new java.awt.Color(32, 33, 35));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
@@ -276,7 +276,7 @@ public class PatientPortal extends javax.swing.JPanel {
                                 .addComponent(addPatientButton)
                                 .addGap(362, 362, 362)
                                 .addComponent(deletePatientButton))
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 1062, Short.MAX_VALUE))
+                            .addComponent(jScrollPane2))
                         .addGap(274, 274, 274)))
                 .addContainerGap())
         );
@@ -294,7 +294,7 @@ public class PatientPortal extends javax.swing.JPanel {
                     .addComponent(editPatientButton)
                     .addComponent(addPatientButton)
                     .addComponent(deletePatientButton))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         getAccessibleContext().setAccessibleName("patientPortalPanel");

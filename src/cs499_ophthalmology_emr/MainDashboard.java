@@ -16,24 +16,17 @@ public class MainDashboard extends javax.swing.JFrame {
     
 
     public PatientPortal patientPortal;
-
-
     public AppointmentDisplay appointmentPanel;
     public AppointmentForm appointmentForm;
     public InsurancePage insurancePanel;
     public HomePanel homePanel;
     public PatientPageTemplate viewPatientPage;
     public VisualAcuity visualAcuity;
-    
-    
-
-	
-
+    public OccularExResults occularExResults;
     public PatientForm patientForm;
-    
-	
     private Patient activePatient;
-	private Appointment activeAppointment;
+    private Appointment activeAppointment;
+    
     /**
      * Creates new form MainWindow
      */
@@ -47,9 +40,10 @@ public class MainDashboard extends javax.swing.JFrame {
     homePanel           = new HomePanel();
     viewPatientPage     = new PatientPageTemplate();
     patientForm		= new PatientForm(this);
-    insurancePanel       = new InsurancePage();
+    insurancePanel      = new InsurancePage();
     appointmentForm     = new AppointmentForm(this);
     visualAcuity        = new VisualAcuity(this);//***
+    occularExResults    = new OccularExResults();
         
     mainPanel.add(homePanel);	
     mainPanel.add(patientPortal);
@@ -59,6 +53,7 @@ public class MainDashboard extends javax.swing.JFrame {
     mainPanel.add(viewPatientPage);
     mainPanel.add(appointmentForm);
     mainPanel.add(visualAcuity);
+    mainPanel.add(occularExResults);
     
     
 
@@ -126,9 +121,8 @@ public class MainDashboard extends javax.swing.JFrame {
 	
 	public void showAppointmentDisplay()
 	{
-            hideAllPanelComponents(mainPanel);
-			//appointmentPanel.loadTableFromList(null);
-			appointmentPanel.loadTableAllEntries();
+            hideAllPanelComponents(mainPanel);	
+            appointmentPanel.loadTableAllEntries();
             appointmentPanel.setVisible(true);
 
 	}
@@ -142,6 +136,11 @@ public class MainDashboard extends javax.swing.JFrame {
 	{
                 hideAllPanelComponents(mainPanel);
                 visualAcuity.setVisible(true);
+	}
+        public void showOccularExResults()
+	{
+                hideAllPanelComponents(mainPanel);
+                occularExResults.setVisible(true);
 	}
         public void showHomePanel()
 	{

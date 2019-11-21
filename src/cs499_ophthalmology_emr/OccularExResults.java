@@ -125,6 +125,47 @@ public class OccularExResults extends javax.swing.JPanel {
         osHorizontalSlider1 = new javax.swing.JSlider();
         jPanel14 = new javax.swing.JPanel();
         jLabel30 = new javax.swing.JLabel();
+        criticalComboBox = new javax.swing.JComboBox<>();
+        normComboBox1 = new javax.swing.JComboBox<>();
+        lowComboBox1 = new javax.swing.JComboBox<>();
+        notCheckedComboBox = new javax.swing.JComboBox<>();
+        highComboBox2 = new javax.swing.JComboBox<>();
+        jLabel31 = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
+        jLabel35 = new javax.swing.JLabel();
+        jPanel15 = new javax.swing.JPanel();
+        jLabel36 = new javax.swing.JLabel();
+        jLabel37 = new javax.swing.JLabel();
+        ovalCheckBox = new javax.swing.JCheckBox();
+        shallowCheckBox = new javax.swing.JCheckBox();
+        jCheckBox3 = new javax.swing.JCheckBox();
+        jCheckBox4 = new javax.swing.JCheckBox();
+        underminingCheckBox = new javax.swing.JCheckBox();
+        jCheckBox6 = new javax.swing.JCheckBox();
+        deepLaminaCheckBox = new javax.swing.JCheckBox();
+        jCheckBox8 = new javax.swing.JCheckBox();
+        sCresentCheckBox = new javax.swing.JCheckBox();
+        jCheckBox10 = new javax.swing.JCheckBox();
+        gRemnantsCheckBox = new javax.swing.JCheckBox();
+        oPitCheckBox = new javax.swing.JCheckBox();
+        jLabel38 = new javax.swing.JLabel();
+        deepLaminaCheckBox1 = new javax.swing.JCheckBox();
+        shallowCheckBox1 = new javax.swing.JCheckBox();
+        jCheckBox5 = new javax.swing.JCheckBox();
+        ovalCheckBox1 = new javax.swing.JCheckBox();
+        jCheckBox7 = new javax.swing.JCheckBox();
+        underminingCheckBox1 = new javax.swing.JCheckBox();
+        jCheckBox9 = new javax.swing.JCheckBox();
+        sCresentCheckBox1 = new javax.swing.JCheckBox();
+        jCheckBox11 = new javax.swing.JCheckBox();
+        oPitCheckBox1 = new javax.swing.JCheckBox();
+        jCheckBox12 = new javax.swing.JCheckBox();
+        gRemnantsCheckBox1 = new javax.swing.JCheckBox();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jLabel39 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(57, 113, 177));
 
@@ -364,10 +405,10 @@ public class OccularExResults extends javax.swing.JPanel {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jComboBox6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(12, 12, 12))
+                        .addGap(30, 30, 30))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addComponent(jComboBox7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)))
+                        .addGap(30, 30, 30)))
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(jLabel11))
@@ -375,7 +416,7 @@ public class OccularExResults extends javax.swing.JPanel {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jComboBox9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(30, 30, 30)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(jLabel12))
@@ -383,7 +424,7 @@ public class OccularExResults extends javax.swing.JPanel {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jComboBox8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(30, 30, 30)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(jLabel13))
@@ -391,11 +432,11 @@ public class OccularExResults extends javax.swing.JPanel {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jComboBox12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(30, 30, 30)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
                     .addComponent(jLabel14))
-                .addGap(18, 18, 18)
+                .addGap(30, 30, 30)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jComboBox10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -407,7 +448,7 @@ public class OccularExResults extends javax.swing.JPanel {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jComboBox11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 26, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         jPanel4.setBackground(new java.awt.Color(32, 33, 35));
@@ -428,27 +469,31 @@ public class OccularExResults extends javax.swing.JPanel {
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel15)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
-        jPanel7.setBackground(new java.awt.Color(51, 52, 54));
-        jPanel7.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 3, 2, 3, new java.awt.Color(135, 206, 250)));
+        jPanel7.setBackground(new java.awt.Color(32, 33, 35));
+        jPanel7.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 3, 2, 3, new java.awt.Color(253, 252, 233)));
+        jPanel7.setToolTipText("");
 
         jLabel17.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(255, 255, 255));
         jLabel17.setText("Sponeaneous:");
 
+        jRadioButton4.setBackground(new java.awt.Color(32, 33, 35));
         jRadioButton4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jRadioButton4.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton4.setText("+");
 
+        jRadioButton5.setBackground(new java.awt.Color(32, 33, 35));
         jRadioButton5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jRadioButton5.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton5.setText("-");
 
+        jRadioButton6.setBackground(new java.awt.Color(32, 33, 35));
         jRadioButton6.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jRadioButton6.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton6.setText("X");
@@ -483,21 +528,24 @@ public class OccularExResults extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel8.setBackground(new java.awt.Color(51, 52, 54));
-        jPanel8.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 3, 2, 3, new java.awt.Color(135, 206, 250)));
+        jPanel8.setBackground(new java.awt.Color(32, 33, 35));
+        jPanel8.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 3, 2, 3, new java.awt.Color(253, 252, 233)));
 
         jLabel18.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(255, 255, 255));
         jLabel18.setText("Venous Pulsation:");
 
+        jRadioButton7.setBackground(new java.awt.Color(32, 33, 35));
         jRadioButton7.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jRadioButton7.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton7.setText("+");
 
+        jRadioButton8.setBackground(new java.awt.Color(32, 33, 35));
         jRadioButton8.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jRadioButton8.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton8.setText("-");
 
+        jRadioButton9.setBackground(new java.awt.Color(32, 33, 35));
         jRadioButton9.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jRadioButton9.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton9.setText("X");
@@ -532,21 +580,24 @@ public class OccularExResults extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel6.setBackground(new java.awt.Color(51, 52, 54));
-        jPanel6.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 3, 2, 3, new java.awt.Color(135, 206, 250)));
+        jPanel6.setBackground(new java.awt.Color(32, 33, 35));
+        jPanel6.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 3, 2, 3, new java.awt.Color(253, 252, 233)));
 
         jLabel16.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(255, 255, 255));
         jLabel16.setText("Foveal Reflex:");
 
+        jRadioButton2.setBackground(new java.awt.Color(32, 33, 35));
         jRadioButton2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jRadioButton2.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton2.setText("+");
 
+        jRadioButton1.setBackground(new java.awt.Color(32, 33, 35));
         jRadioButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jRadioButton1.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton1.setText("-");
 
+        jRadioButton3.setBackground(new java.awt.Color(32, 33, 35));
         jRadioButton3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jRadioButton3.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton3.setText("X");
@@ -592,7 +643,7 @@ public class OccularExResults extends javax.swing.JPanel {
                 .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
                 .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(19, 19, 19))
         );
@@ -640,6 +691,7 @@ public class OccularExResults extends javax.swing.JPanel {
         jLabel21.setForeground(new java.awt.Color(255, 255, 255));
         jLabel21.setText("Evaluated with:");
 
+        d78CheckBox.setBackground(new java.awt.Color(32, 33, 35));
         d78CheckBox.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         d78CheckBox.setForeground(new java.awt.Color(255, 255, 255));
         d78CheckBox.setText("78D Lens");
@@ -649,6 +701,7 @@ public class OccularExResults extends javax.swing.JPanel {
             }
         });
 
+        d90CheckBox.setBackground(new java.awt.Color(32, 33, 35));
         d90CheckBox.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         d90CheckBox.setForeground(new java.awt.Color(255, 255, 255));
         d90CheckBox.setText("90D Lens");
@@ -658,6 +711,7 @@ public class OccularExResults extends javax.swing.JPanel {
             }
         });
 
+        d20BioCheckBox.setBackground(new java.awt.Color(32, 33, 35));
         d20BioCheckBox.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         d20BioCheckBox.setForeground(new java.awt.Color(255, 255, 255));
         d20BioCheckBox.setText("20D BIO Lens");
@@ -667,6 +721,7 @@ public class OccularExResults extends javax.swing.JPanel {
             }
         });
 
+        pR2BioCheckBox4.setBackground(new java.awt.Color(32, 33, 35));
         pR2BioCheckBox4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         pR2BioCheckBox4.setForeground(new java.awt.Color(255, 255, 255));
         pR2BioCheckBox4.setText("PR 2.2 BIO Lens");
@@ -676,6 +731,7 @@ public class OccularExResults extends javax.swing.JPanel {
             }
         });
 
+        otherCheckBox7.setBackground(new java.awt.Color(32, 33, 35));
         otherCheckBox7.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         otherCheckBox7.setForeground(new java.awt.Color(255, 255, 255));
         otherCheckBox7.setText("Other");
@@ -686,6 +742,7 @@ public class OccularExResults extends javax.swing.JPanel {
             }
         });
 
+        sdepressionCheckBox.setBackground(new java.awt.Color(32, 33, 35));
         sdepressionCheckBox.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         sdepressionCheckBox.setForeground(new java.awt.Color(255, 255, 255));
         sdepressionCheckBox.setText("Scleral Depression");
@@ -695,6 +752,7 @@ public class OccularExResults extends javax.swing.JPanel {
             }
         });
 
+        dOpthalmpscopeCheckBox.setBackground(new java.awt.Color(32, 33, 35));
         dOpthalmpscopeCheckBox.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         dOpthalmpscopeCheckBox.setForeground(new java.awt.Color(255, 255, 255));
         dOpthalmpscopeCheckBox.setText("Direct Opthalmoscope");
@@ -728,18 +786,12 @@ public class OccularExResults extends javax.swing.JPanel {
                         .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(pR2BioCheckBox4)
                             .addComponent(d20BioCheckBox))
+                        .addGap(18, 18, 18)
                         .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel12Layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(sdepressionCheckBox)
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel12Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
-                                .addComponent(dOpthalmpscopeCheckBox)
-                                .addContainerGap())))
-                    .addGroup(jPanel12Layout.createSequentialGroup()
-                        .addComponent(jLabel21)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(sdepressionCheckBox)
+                            .addComponent(dOpthalmpscopeCheckBox)))
+                    .addComponent(jLabel21))
+                .addContainerGap(27, Short.MAX_VALUE))
             .addGroup(jPanel12Layout.createSequentialGroup()
                 .addGap(83, 83, 83)
                 .addComponent(otherCheckBox7)
@@ -776,9 +828,11 @@ public class OccularExResults extends javax.swing.JPanel {
         jLabel20.setForeground(new java.awt.Color(255, 255, 255));
         jLabel20.setText("Dialted with:");
 
+        jRadioButton17.setBackground(new java.awt.Color(32, 33, 35));
         jRadioButton17.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton17.setText("2gtt");
 
+        jRadioButton18.setBackground(new java.awt.Color(32, 33, 35));
         jRadioButton18.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton18.setText("1gtt");
 
@@ -812,22 +866,27 @@ public class OccularExResults extends javax.swing.JPanel {
         radioBttnPanel.setBackground(new java.awt.Color(32, 33, 35));
         radioBttnPanel.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 3, 2, 3, new java.awt.Color(253, 252, 233)));
 
+        jRadioButton13.setBackground(new java.awt.Color(32, 33, 35));
         jRadioButton13.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jRadioButton13.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton13.setText("Not Perfromed");
 
+        jRadioButton10.setBackground(new java.awt.Color(32, 33, 35));
         jRadioButton10.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jRadioButton10.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton10.setText("Small Pupil BIO");
 
+        jRadioButton16.setBackground(new java.awt.Color(32, 33, 35));
         jRadioButton16.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jRadioButton16.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton16.setText("Dialted Eval");
 
+        jRadioButton15.setBackground(new java.awt.Color(32, 33, 35));
         jRadioButton15.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jRadioButton15.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton15.setText("Undialted Eval");
 
+        jRadioButton14.setBackground(new java.awt.Color(32, 33, 35));
         jRadioButton14.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jRadioButton14.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton14.setText("Optomap Imaging");
@@ -837,10 +896,12 @@ public class OccularExResults extends javax.swing.JPanel {
             }
         });
 
+        jRadioButton12.setBackground(new java.awt.Color(32, 33, 35));
         jRadioButton12.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jRadioButton12.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton12.setText("DFE");
 
+        jRadioButton11.setBackground(new java.awt.Color(32, 33, 35));
         jRadioButton11.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jRadioButton11.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton11.setText("Pulsarion Optomap ");
@@ -892,6 +953,7 @@ public class OccularExResults extends javax.swing.JPanel {
         jLabel22.setForeground(new java.awt.Color(255, 255, 255));
         jLabel22.setText("Notes:");
 
+        DFE2CheckBox.setBackground(new java.awt.Color(32, 33, 35));
         DFE2CheckBox.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         DFE2CheckBox.setForeground(new java.awt.Color(255, 255, 255));
         DFE2CheckBox.setText("DFE to be rescheduled");
@@ -901,6 +963,7 @@ public class OccularExResults extends javax.swing.JPanel {
             }
         });
 
+        DFE1CheckBox2.setBackground(new java.awt.Color(32, 33, 35));
         DFE1CheckBox2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         DFE1CheckBox2.setForeground(new java.awt.Color(255, 255, 255));
         DFE1CheckBox2.setText("Patient advised of effect of DFE");
@@ -910,6 +973,7 @@ public class OccularExResults extends javax.swing.JPanel {
             }
         });
 
+        DFEDeclinedCheckBox.setBackground(new java.awt.Color(32, 33, 35));
         DFEDeclinedCheckBox.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         DFEDeclinedCheckBox.setForeground(new java.awt.Color(255, 255, 255));
         DFEDeclinedCheckBox.setText("DFE Declined");
@@ -919,6 +983,7 @@ public class OccularExResults extends javax.swing.JPanel {
             }
         });
 
+        DFERefusedCheckBox.setBackground(new java.awt.Color(32, 33, 35));
         DFERefusedCheckBox.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         DFERefusedCheckBox.setForeground(new java.awt.Color(255, 255, 255));
         DFERefusedCheckBox.setText("DFE refused AME");
@@ -928,6 +993,7 @@ public class OccularExResults extends javax.swing.JPanel {
             }
         });
 
+        FundusPerformedCheckBox1.setBackground(new java.awt.Color(32, 33, 35));
         FundusPerformedCheckBox1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         FundusPerformedCheckBox1.setForeground(new java.awt.Color(255, 255, 255));
         FundusPerformedCheckBox1.setText("Fundus imaging performed");
@@ -937,6 +1003,7 @@ public class OccularExResults extends javax.swing.JPanel {
             }
         });
 
+        DFENotIncludedCheckBox1.setBackground(new java.awt.Color(32, 33, 35));
         DFENotIncludedCheckBox1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         DFENotIncludedCheckBox1.setForeground(new java.awt.Color(255, 255, 255));
         DFENotIncludedCheckBox1.setText("DFE Not Included");
@@ -946,6 +1013,7 @@ public class OccularExResults extends javax.swing.JPanel {
             }
         });
 
+        DFEContraindicatedCheckBox.setBackground(new java.awt.Color(32, 33, 35));
         DFEContraindicatedCheckBox.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         DFEContraindicatedCheckBox.setForeground(new java.awt.Color(255, 255, 255));
         DFEContraindicatedCheckBox.setText("DFE contraindicated");
@@ -956,6 +1024,7 @@ public class OccularExResults extends javax.swing.JPanel {
             }
         });
 
+        recentDFECheckBox1.setBackground(new java.awt.Color(32, 33, 35));
         recentDFECheckBox1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         recentDFECheckBox1.setForeground(new java.awt.Color(255, 255, 255));
         recentDFECheckBox1.setText("Recent DFE");
@@ -1011,7 +1080,7 @@ public class OccularExResults extends javax.swing.JPanel {
                 .addGroup(notesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(FundusPerformedCheckBox1)
                     .addComponent(recentDFECheckBox1))
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
 
         jPanel11.setBackground(new java.awt.Color(32, 33, 35));
@@ -1033,9 +1102,10 @@ public class OccularExResults extends javax.swing.JPanel {
         jLabel26.setForeground(new java.awt.Color(255, 255, 255));
         jLabel26.setText("Vertical:");
 
+        odVerticalSlider.setBackground(new java.awt.Color(32, 33, 35));
         odVerticalSlider.setForeground(new java.awt.Color(255, 255, 255));
 
-        osVerticalSlider.setBackground(new java.awt.Color(255, 255, 255));
+        osVerticalSlider.setBackground(new java.awt.Color(32, 33, 35));
         osVerticalSlider.setForeground(new java.awt.Color(255, 255, 255));
 
         jLabel27.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -1050,10 +1120,10 @@ public class OccularExResults extends javax.swing.JPanel {
         jLabel29.setForeground(new java.awt.Color(255, 255, 255));
         jLabel29.setText("Vertical:");
 
-        odHorizontalSlider1.setBackground(new java.awt.Color(255, 255, 255));
+        odHorizontalSlider1.setBackground(new java.awt.Color(32, 33, 35));
         odHorizontalSlider1.setForeground(new java.awt.Color(255, 255, 255));
 
-        osHorizontalSlider1.setBackground(new java.awt.Color(255, 255, 255));
+        osHorizontalSlider1.setBackground(new java.awt.Color(32, 33, 35));
         osHorizontalSlider1.setForeground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
@@ -1087,7 +1157,7 @@ public class OccularExResults extends javax.swing.JPanel {
                                     .addComponent(jLabel26)
                                     .addGap(36, 36, 36)
                                     .addComponent(odVerticalSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addContainerGap(90, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1097,15 +1167,15 @@ public class OccularExResults extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel11Layout.createSequentialGroup()
-                        .addComponent(odHorizontalSlider1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(odVerticalSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel11Layout.createSequentialGroup()
                         .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel28)
                             .addComponent(jLabel24))
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel26)))
+                        .addComponent(jLabel26))
+                    .addGroup(jPanel11Layout.createSequentialGroup()
+                        .addComponent(odHorizontalSlider1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(odVerticalSlider, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel11Layout.createSequentialGroup()
@@ -1126,24 +1196,424 @@ public class OccularExResults extends javax.swing.JPanel {
 
         jLabel30.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel30.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel30.setText("Optic Nerve Head Assessment:");
+        jLabel30.setText("NORM:");
+
+        criticalComboBox.setBackground(new java.awt.Color(253, 252, 233));
+        criticalComboBox.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        criticalComboBox.setForeground(new java.awt.Color(0, 0, 0));
+        criticalComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Optic Nerve", "Nerve Fiber Layer" }));
+        criticalComboBox.setToolTipText("");
+        criticalComboBox.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                criticalComboBoxFocusLost(evt);
+            }
+        });
+
+        normComboBox1.setBackground(new java.awt.Color(253, 252, 233));
+        normComboBox1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        normComboBox1.setForeground(new java.awt.Color(0, 0, 0));
+        normComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Optic Nerve", "Nerve Fiber Layer" }));
+        normComboBox1.setToolTipText("");
+        normComboBox1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                normComboBox1FocusLost(evt);
+            }
+        });
+
+        lowComboBox1.setBackground(new java.awt.Color(253, 252, 233));
+        lowComboBox1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lowComboBox1.setForeground(new java.awt.Color(0, 0, 0));
+        lowComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Optic Nerve", "Nerve Fiber Layer" }));
+        lowComboBox1.setToolTipText("");
+        lowComboBox1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                lowComboBox1FocusLost(evt);
+            }
+        });
+
+        notCheckedComboBox.setBackground(new java.awt.Color(253, 252, 233));
+        notCheckedComboBox.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        notCheckedComboBox.setForeground(new java.awt.Color(0, 0, 0));
+        notCheckedComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Optic Nerve", "Nerve Fiber Layer" }));
+        notCheckedComboBox.setToolTipText("");
+        notCheckedComboBox.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                notCheckedComboBoxFocusLost(evt);
+            }
+        });
+
+        highComboBox2.setBackground(new java.awt.Color(253, 252, 233));
+        highComboBox2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        highComboBox2.setForeground(new java.awt.Color(0, 0, 0));
+        highComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Optic Nerve", "Nerve Fiber Layer" }));
+        highComboBox2.setToolTipText("");
+        highComboBox2.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                highComboBox2FocusLost(evt);
+            }
+        });
+
+        jLabel31.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel31.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel31.setText("LOW:");
+
+        jLabel32.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel32.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel32.setText("HIGH:");
+
+        jLabel33.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel33.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel33.setText("Optic Nerve Head Assessment:");
+
+        jLabel34.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel34.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel34.setText("CRITICAL:");
+
+        jLabel35.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel35.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel35.setText("NOT CHECKED:");
 
         javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
         jPanel14.setLayout(jPanel14Layout);
         jPanel14Layout.setHorizontalGroup(
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel14Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel30)
+                .addGap(12, 12, 12)
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(notCheckedComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel14Layout.createSequentialGroup()
+                        .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel30)
+                            .addComponent(normComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel33)
+                            .addComponent(highComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel35)
+                            .addComponent(jLabel32))
+                        .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel14Layout.createSequentialGroup()
+                                .addGap(44, 44, 44)
+                                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel31)
+                                    .addComponent(jLabel34))
+                                .addGap(89, 89, 89))
+                            .addComponent(lowComboBox1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(criticalComboBox, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel14Layout.setVerticalGroup(
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel14Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel30)
-                .addContainerGap(432, Short.MAX_VALUE))
+                .addGap(12, 12, 12)
+                .addComponent(jLabel33)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel31)
+                    .addComponent(jLabel30))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lowComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(normComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel32, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(criticalComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(highComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel35)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(notCheckedComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(24, Short.MAX_VALUE))
         );
+
+        jPanel15.setBackground(new java.awt.Color(32, 33, 35));
+        jPanel15.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 3, 2, 3, new java.awt.Color(253, 252, 233)));
+
+        jLabel36.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel36.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel36.setText("Optic Nerve Descriptor:");
+
+        jLabel37.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel37.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel37.setText("OD:");
+
+        ovalCheckBox.setBackground(new java.awt.Color(32, 33, 35));
+        ovalCheckBox.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        ovalCheckBox.setForeground(new java.awt.Color(255, 255, 255));
+        ovalCheckBox.setText("Oval");
+
+        shallowCheckBox.setBackground(new java.awt.Color(32, 33, 35));
+        shallowCheckBox.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        shallowCheckBox.setForeground(new java.awt.Color(255, 255, 255));
+        shallowCheckBox.setText("Shallow");
+
+        jCheckBox3.setBackground(new java.awt.Color(32, 33, 35));
+        jCheckBox3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jCheckBox3.setForeground(new java.awt.Color(255, 255, 255));
+        jCheckBox3.setText("Temp.sloping");
+
+        jCheckBox4.setBackground(new java.awt.Color(32, 33, 35));
+        jCheckBox4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jCheckBox4.setForeground(new java.awt.Color(255, 255, 255));
+        jCheckBox4.setText("Round");
+
+        underminingCheckBox.setBackground(new java.awt.Color(32, 33, 35));
+        underminingCheckBox.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        underminingCheckBox.setForeground(new java.awt.Color(255, 255, 255));
+        underminingCheckBox.setText("Undermining");
+
+        jCheckBox6.setBackground(new java.awt.Color(32, 33, 35));
+        jCheckBox6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jCheckBox6.setForeground(new java.awt.Color(255, 255, 255));
+        jCheckBox6.setText("Peripap Atrophy");
+        jCheckBox6.setToolTipText("");
+
+        deepLaminaCheckBox.setBackground(new java.awt.Color(32, 33, 35));
+        deepLaminaCheckBox.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        deepLaminaCheckBox.setForeground(new java.awt.Color(255, 255, 255));
+        deepLaminaCheckBox.setText("Deep/Lamina");
+        deepLaminaCheckBox.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                deepLaminaCheckBoxItemStateChanged(evt);
+            }
+        });
+
+        jCheckBox8.setBackground(new java.awt.Color(32, 33, 35));
+        jCheckBox8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jCheckBox8.setForeground(new java.awt.Color(255, 255, 255));
+        jCheckBox8.setText("Pigment Cresent");
+
+        sCresentCheckBox.setBackground(new java.awt.Color(32, 33, 35));
+        sCresentCheckBox.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        sCresentCheckBox.setForeground(new java.awt.Color(255, 255, 255));
+        sCresentCheckBox.setText("Scleral Cresent");
+
+        jCheckBox10.setBackground(new java.awt.Color(32, 33, 35));
+        jCheckBox10.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jCheckBox10.setForeground(new java.awt.Color(255, 255, 255));
+        jCheckBox10.setText("Muyelination");
+
+        gRemnantsCheckBox.setBackground(new java.awt.Color(32, 33, 35));
+        gRemnantsCheckBox.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        gRemnantsCheckBox.setForeground(new java.awt.Color(255, 255, 255));
+        gRemnantsCheckBox.setText("Glial Remnants");
+        gRemnantsCheckBox.setToolTipText("");
+
+        oPitCheckBox.setBackground(new java.awt.Color(32, 33, 35));
+        oPitCheckBox.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        oPitCheckBox.setForeground(new java.awt.Color(255, 255, 255));
+        oPitCheckBox.setText("Optic Pit");
+
+        jLabel38.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel38.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel38.setText("OS:");
+
+        deepLaminaCheckBox1.setBackground(new java.awt.Color(32, 33, 35));
+        deepLaminaCheckBox1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        deepLaminaCheckBox1.setForeground(new java.awt.Color(255, 255, 255));
+        deepLaminaCheckBox1.setText("Deep/Lamina");
+        deepLaminaCheckBox1.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                deepLaminaCheckBox1ItemStateChanged(evt);
+            }
+        });
+        deepLaminaCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deepLaminaCheckBox1ActionPerformed(evt);
+            }
+        });
+
+        shallowCheckBox1.setBackground(new java.awt.Color(32, 33, 35));
+        shallowCheckBox1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        shallowCheckBox1.setForeground(new java.awt.Color(255, 255, 255));
+        shallowCheckBox1.setText("Shallow");
+
+        jCheckBox5.setBackground(new java.awt.Color(32, 33, 35));
+        jCheckBox5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jCheckBox5.setForeground(new java.awt.Color(255, 255, 255));
+        jCheckBox5.setText("Round");
+
+        ovalCheckBox1.setBackground(new java.awt.Color(32, 33, 35));
+        ovalCheckBox1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        ovalCheckBox1.setForeground(new java.awt.Color(255, 255, 255));
+        ovalCheckBox1.setText("Oval");
+
+        jCheckBox7.setBackground(new java.awt.Color(32, 33, 35));
+        jCheckBox7.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jCheckBox7.setForeground(new java.awt.Color(255, 255, 255));
+        jCheckBox7.setText("Temp.sloping");
+
+        underminingCheckBox1.setBackground(new java.awt.Color(32, 33, 35));
+        underminingCheckBox1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        underminingCheckBox1.setForeground(new java.awt.Color(255, 255, 255));
+        underminingCheckBox1.setText("Undermining");
+
+        jCheckBox9.setBackground(new java.awt.Color(32, 33, 35));
+        jCheckBox9.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jCheckBox9.setForeground(new java.awt.Color(255, 255, 255));
+        jCheckBox9.setText("Peripap Atrophy");
+        jCheckBox9.setToolTipText("");
+
+        sCresentCheckBox1.setBackground(new java.awt.Color(32, 33, 35));
+        sCresentCheckBox1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        sCresentCheckBox1.setForeground(new java.awt.Color(255, 255, 255));
+        sCresentCheckBox1.setText("Scleral Cresent");
+
+        jCheckBox11.setBackground(new java.awt.Color(32, 33, 35));
+        jCheckBox11.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jCheckBox11.setForeground(new java.awt.Color(255, 255, 255));
+        jCheckBox11.setText("Pigment Cresent");
+
+        oPitCheckBox1.setBackground(new java.awt.Color(32, 33, 35));
+        oPitCheckBox1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        oPitCheckBox1.setForeground(new java.awt.Color(255, 255, 255));
+        oPitCheckBox1.setText("Optic Pit");
+
+        jCheckBox12.setBackground(new java.awt.Color(32, 33, 35));
+        jCheckBox12.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jCheckBox12.setForeground(new java.awt.Color(255, 255, 255));
+        jCheckBox12.setText("Muyelination");
+
+        gRemnantsCheckBox1.setBackground(new java.awt.Color(32, 33, 35));
+        gRemnantsCheckBox1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        gRemnantsCheckBox1.setForeground(new java.awt.Color(255, 255, 255));
+        gRemnantsCheckBox1.setText("Glial Remnants");
+        gRemnantsCheckBox1.setToolTipText("");
+
+        javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
+        jPanel15.setLayout(jPanel15Layout);
+        jPanel15Layout.setHorizontalGroup(
+            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel15Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel36)
+                    .addGroup(jPanel15Layout.createSequentialGroup()
+                        .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel37)
+                            .addComponent(jLabel38))
+                        .addGap(24, 24, 24)
+                        .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel15Layout.createSequentialGroup()
+                                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel15Layout.createSequentialGroup()
+                                        .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(shallowCheckBox)
+                                            .addComponent(jCheckBox4))
+                                        .addGap(45, 45, 45))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel15Layout.createSequentialGroup()
+                                        .addComponent(deepLaminaCheckBox1)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
+                                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel15Layout.createSequentialGroup()
+                                        .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(ovalCheckBox)
+                                            .addComponent(jCheckBox3))
+                                        .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jPanel15Layout.createSequentialGroup()
+                                                .addGap(16, 16, 16)
+                                                .addComponent(sCresentCheckBox1)
+                                                .addGap(28, 28, 28))
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel15Layout.createSequentialGroup()
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jCheckBox9)
+                                                .addGap(18, 18, 18)))
+                                        .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jCheckBox10)
+                                            .addComponent(oPitCheckBox)))
+                                    .addGroup(jPanel15Layout.createSequentialGroup()
+                                        .addComponent(underminingCheckBox)
+                                        .addGap(20, 20, 20)
+                                        .addComponent(jCheckBox11)
+                                        .addGap(16, 16, 16)
+                                        .addComponent(gRemnantsCheckBox))))
+                            .addGroup(jPanel15Layout.createSequentialGroup()
+                                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(deepLaminaCheckBox)
+                                    .addComponent(shallowCheckBox1)
+                                    .addComponent(jCheckBox5))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jCheckBox7)
+                                    .addComponent(ovalCheckBox1)
+                                    .addComponent(underminingCheckBox1))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel15Layout.createSequentialGroup()
+                                        .addComponent(jCheckBox8)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(gRemnantsCheckBox1))
+                                    .addGroup(jPanel15Layout.createSequentialGroup()
+                                        .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jCheckBox6)
+                                            .addComponent(sCresentCheckBox))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jCheckBox12)
+                                            .addComponent(oPitCheckBox1))))))))
+                .addContainerGap(12, Short.MAX_VALUE))
+        );
+        jPanel15Layout.setVerticalGroup(
+            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel15Layout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(jLabel36)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel37)
+                    .addComponent(ovalCheckBox)
+                    .addComponent(oPitCheckBox)
+                    .addComponent(deepLaminaCheckBox1)
+                    .addComponent(jCheckBox9))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(shallowCheckBox)
+                    .addComponent(jCheckBox3)
+                    .addComponent(jCheckBox10)
+                    .addComponent(sCresentCheckBox1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jCheckBox4)
+                    .addComponent(underminingCheckBox)
+                    .addComponent(gRemnantsCheckBox)
+                    .addComponent(jCheckBox11))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel38)
+                    .addComponent(deepLaminaCheckBox)
+                    .addComponent(ovalCheckBox1)
+                    .addComponent(jCheckBox6)
+                    .addComponent(oPitCheckBox1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(shallowCheckBox1)
+                    .addComponent(jCheckBox7)
+                    .addComponent(sCresentCheckBox)
+                    .addComponent(jCheckBox12))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jCheckBox5)
+                    .addComponent(underminingCheckBox1)
+                    .addComponent(jCheckBox8, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(gRemnantsCheckBox1))
+                .addGap(17, 17, 17))
+        );
+
+        jButton1.setBackground(new java.awt.Color(255, 102, 102));
+        jButton1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("DELETE");
+        jButton1.setToolTipText("");
+
+        jButton2.setBackground(new java.awt.Color(153, 255, 153));
+        jButton2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(0, 0, 0));
+        jButton2.setText("SAVE");
+        jButton2.setToolTipText("");
+
+        jLabel39.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cs499_ophthalmology_emr/images/eyeTest2.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
@@ -1151,19 +1621,33 @@ public class OccularExResults extends javax.swing.JPanel {
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel9Layout.createSequentialGroup()
-                .addGap(22, 22, 22)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel9Layout.createSequentialGroup()
+                                .addGap(22, 22, 22)
+                                .addComponent(radioBttnPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(notesPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel9Layout.createSequentialGroup()
+                                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(17, 17, 17)))))
+                        .addComponent(jPanel12, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addComponent(radioBttnPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(notesPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(172, 172, 172)
+                        .addComponent(jLabel39)))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(164, Short.MAX_VALUE))
+                    .addComponent(jPanel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1171,19 +1655,26 @@ public class OccularExResults extends javax.swing.JPanel {
                 .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(radioBttnPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(radioBttnPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel9Layout.createSequentialGroup()
                         .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(notesPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addComponent(notesPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel39, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton2)
+                            .addComponent(jButton1))))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -1192,26 +1683,26 @@ public class OccularExResults extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGap(50, 50, 50)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 465, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(28, 28, 28)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(87, Short.MAX_VALUE))
+                .addGap(33, 33, 33))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(32, 32, 32)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(0, 35, Short.MAX_VALUE))
+                    .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 73, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -1287,6 +1778,38 @@ public class OccularExResults extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_recentDFECheckBox1ItemStateChanged
 
+    private void normComboBox1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_normComboBox1FocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_normComboBox1FocusLost
+
+    private void criticalComboBoxFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_criticalComboBoxFocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_criticalComboBoxFocusLost
+
+    private void lowComboBox1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_lowComboBox1FocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lowComboBox1FocusLost
+
+    private void notCheckedComboBoxFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_notCheckedComboBoxFocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_notCheckedComboBoxFocusLost
+
+    private void highComboBox2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_highComboBox2FocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_highComboBox2FocusLost
+
+    private void deepLaminaCheckBoxItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_deepLaminaCheckBoxItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_deepLaminaCheckBoxItemStateChanged
+
+    private void deepLaminaCheckBox1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_deepLaminaCheckBox1ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_deepLaminaCheckBox1ItemStateChanged
+
+    private void deepLaminaCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deepLaminaCheckBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_deepLaminaCheckBox1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JCheckBox DFE1CheckBox2;
@@ -1296,10 +1819,28 @@ public class OccularExResults extends javax.swing.JPanel {
     private javax.swing.JCheckBox DFENotIncludedCheckBox1;
     private javax.swing.JCheckBox DFERefusedCheckBox;
     private javax.swing.JCheckBox FundusPerformedCheckBox1;
+    private javax.swing.JComboBox<String> criticalComboBox;
     private javax.swing.JCheckBox d20BioCheckBox;
     private javax.swing.JCheckBox d78CheckBox;
     private javax.swing.JCheckBox d90CheckBox;
     private javax.swing.JCheckBox dOpthalmpscopeCheckBox;
+    private javax.swing.JCheckBox deepLaminaCheckBox;
+    private javax.swing.JCheckBox deepLaminaCheckBox1;
+    private javax.swing.JCheckBox gRemnantsCheckBox;
+    private javax.swing.JCheckBox gRemnantsCheckBox1;
+    private javax.swing.JComboBox<String> highComboBox2;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JCheckBox jCheckBox10;
+    private javax.swing.JCheckBox jCheckBox11;
+    private javax.swing.JCheckBox jCheckBox12;
+    private javax.swing.JCheckBox jCheckBox3;
+    private javax.swing.JCheckBox jCheckBox4;
+    private javax.swing.JCheckBox jCheckBox5;
+    private javax.swing.JCheckBox jCheckBox6;
+    private javax.swing.JCheckBox jCheckBox7;
+    private javax.swing.JCheckBox jCheckBox8;
+    private javax.swing.JCheckBox jCheckBox9;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox10;
     private javax.swing.JComboBox<String> jComboBox11;
@@ -1336,6 +1877,15 @@ public class OccularExResults extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -1348,6 +1898,7 @@ public class OccularExResults extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
+    private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -1376,16 +1927,29 @@ public class OccularExResults extends javax.swing.JPanel {
     private javax.swing.JRadioButton jRadioButton9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextPane jTextPane1;
+    private javax.swing.JComboBox<String> lowComboBox1;
+    private javax.swing.JComboBox<String> normComboBox1;
+    private javax.swing.JComboBox<String> notCheckedComboBox;
     private javax.swing.JPanel notesPanel;
+    private javax.swing.JCheckBox oPitCheckBox;
+    private javax.swing.JCheckBox oPitCheckBox1;
     private javax.swing.JSlider odHorizontalSlider1;
     private javax.swing.JSlider odVerticalSlider;
     private javax.swing.JSlider osHorizontalSlider1;
     private javax.swing.JSlider osVerticalSlider;
     private javax.swing.JCheckBox otherCheckBox7;
     private javax.swing.JTextField otherTextField;
+    private javax.swing.JCheckBox ovalCheckBox;
+    private javax.swing.JCheckBox ovalCheckBox1;
     private javax.swing.JCheckBox pR2BioCheckBox4;
     private javax.swing.JPanel radioBttnPanel;
     private javax.swing.JCheckBox recentDFECheckBox1;
+    private javax.swing.JCheckBox sCresentCheckBox;
+    private javax.swing.JCheckBox sCresentCheckBox1;
     private javax.swing.JCheckBox sdepressionCheckBox;
+    private javax.swing.JCheckBox shallowCheckBox;
+    private javax.swing.JCheckBox shallowCheckBox1;
+    private javax.swing.JCheckBox underminingCheckBox;
+    private javax.swing.JCheckBox underminingCheckBox1;
     // End of variables declaration//GEN-END:variables
 }
