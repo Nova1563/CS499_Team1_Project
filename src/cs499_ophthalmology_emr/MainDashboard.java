@@ -194,7 +194,7 @@ public class MainDashboard extends javax.swing.JFrame {
         setSize(getPreferredSize());
 
         background.setBackground(new java.awt.Color(57, 113, 177));
-        background.setPreferredSize(new java.awt.Dimension(1280, 730));
+        background.setPreferredSize(new java.awt.Dimension(1800, 900));
 
         toolBarJPanel.setBackground(new java.awt.Color(53, 60, 81));
         toolBarJPanel.setAutoscrolls(true);
