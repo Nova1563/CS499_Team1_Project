@@ -9,13 +9,13 @@ package cs499_ophthalmology_emr;
  *
  * @author kenda
  */
-public class OccularExResults extends javax.swing.JPanel {
+public class OcularExResults extends javax.swing.JPanel {
 	
 	MainDashboard mainDash;
     /**
      * Creates new form OccularExResults
      */
-    public OccularExResults() {
+    public OcularExResults() {
 		//mainDash = _mainDash;
         initComponents();
     }

@@ -22,7 +22,7 @@ public class MainDashboard extends javax.swing.JFrame {
     public HomePanel homePanel;
     public PatientPageTemplate viewPatientPage;
     public VisualAcuity visualAcuity;
-    public OccularExResults occularExResults;
+    public OcularExResults occularExResults;
     public PatientForm patientForm;
     private Patient activePatient;
     private Appointment activeAppointment;
@@ -42,7 +42,7 @@ public class MainDashboard extends javax.swing.JFrame {
     patientForm		= new PatientForm(this);
     appointmentForm     = new AppointmentForm(this);
     visualAcuity        = new VisualAcuity(this);//***
-    occularExResults    = new OccularExResults();
+    occularExResults    = new OcularExResults();
         
     mainPanel.add(homePanel);	
     mainPanel.add(patientPortal);
