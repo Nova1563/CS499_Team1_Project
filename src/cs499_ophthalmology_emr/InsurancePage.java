@@ -13,15 +13,26 @@ import java.util.ArrayList;
  */
 public class InsurancePage extends javax.swing.JPanel {
 
+
+    private MainDashboard dashBoard = null;
     /**
      * Creates new form InsurancePage
      */
     //private ArrayList<Patient> patientList = null;
     //private DataBaseManager dataBase = DataBaseManager.getInstance();
     
-    public InsurancePage() {
+    public InsurancePage(MainDashboard _dashBoard) {
         initComponents();
+        
+        dashBoard = _dashBoard;
     }
+    
+    public void insuranceInfo(Patient thePatient)
+    {
+        patientNameTxtF.setEditable(false);
+        patientNameTxtF.setText(thePatient.getName());
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -119,8 +130,12 @@ public class InsurancePage extends javax.swing.JPanel {
         jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, 220, -1));
 
         patientNameTxtF.setBackground(new java.awt.Color(204, 255, 255));
-        patientNameTxtF.setForeground(new java.awt.Color(0, 0, 0));
         patientNameTxtF.setText("LastName, FirstName");
+        patientNameTxtF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                patientNameTxtFActionPerformed(evt);
+            }
+        });
         jPanel2.add(patientNameTxtF, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 30, 290, 36));
 
         insuranceProviderTxtF.setBackground(new java.awt.Color(204, 255, 255));
@@ -253,6 +268,10 @@ public class InsurancePage extends javax.swing.JPanel {
                 .addContainerGap(33, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void patientNameTxtFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_patientNameTxtFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_patientNameTxtFActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

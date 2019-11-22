@@ -36,11 +36,10 @@ public class MainDashboard extends javax.swing.JFrame {
 
     patientPortal       = new PatientPortal(this);
     appointmentPanel    = new AppointmentDisplay(this);
-    insurancePanel      = new InsurancePage();
+    insurancePanel      = new InsurancePage(this);
     homePanel           = new HomePanel();
     viewPatientPage     = new PatientPageTemplate();
     patientForm		= new PatientForm(this);
-    insurancePanel      = new InsurancePage();
     appointmentForm     = new AppointmentForm(this);
     visualAcuity        = new VisualAcuity(this);//***
     occularExResults    = new OccularExResults();
@@ -129,6 +128,7 @@ public class MainDashboard extends javax.swing.JFrame {
 	
 	public void showInsurancePage()
 	{
+                insurancePanel.insuranceInfo(activePatient);
                 hideAllPanelComponents(mainPanel);
                 insurancePanel.setVisible(true);
 	}
@@ -301,7 +301,7 @@ public class MainDashboard extends javax.swing.JFrame {
                 mainPanelComponentShown(evt);
             }
         });
-        mainPanel.setLayout(new java.awt.CardLayout());
+        mainPanel.setLayout(new java.awt.GridBagLayout());
 
         javax.swing.GroupLayout backgroundLayout = new javax.swing.GroupLayout(background);
         background.setLayout(backgroundLayout);

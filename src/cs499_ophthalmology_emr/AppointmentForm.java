@@ -35,7 +35,7 @@ public class AppointmentForm extends javax.swing.JPanel {
         activeAppointment = theAppointment;
         appointmentDateTextField.setText(formatDate(theAppointment.getApptDate().toString()));
         reasonForVisit.setText(theAppointment.getReasonForVisit());
-        nameTextField.setText(theAppointment.getPatientName());
+        patientNameTextBox.setText(theAppointment.getPatientName());
     }
     
     public Boolean saveAppointmentInfo()
@@ -49,7 +49,7 @@ public class AppointmentForm extends javax.swing.JPanel {
 
         try
         {
-            activeAppointment.setPatientName(nameTextField.getText());
+            activeAppointment.setPatientName(patientNameTextBox.getText());
             
             if(appointmentDateTextField.getText().equals(""))
                 activeAppointment.setApptDate(0);
@@ -103,12 +103,12 @@ public class AppointmentForm extends javax.swing.JPanel {
 					((JComboBox)itsComp).setEnabled(false);
 				}
 			}
-			nameTextField.setText("No active patient selected.");
+			patientNameTextBox.setText("No active patient selected.");
 		}
 		else
 		{
 			String patientName = dashBoard.getActivePatient().getName();
-			nameTextField.setText(patientName);
+			patientNameTextBox.setText(patientName);
 			
 			for(Component itsComp : appointmentFormMainPanel.getComponents())
 			{
@@ -123,7 +123,7 @@ public class AppointmentForm extends javax.swing.JPanel {
 				}
 			}
 		}
-		nameTextField.setEditable(false);
+		patientNameTextBox.setEditable(false);
 	}
     
     private String formatDate(String theDate)
@@ -265,14 +265,13 @@ public class AppointmentForm extends javax.swing.JPanel {
         appointmentFormMainPanel = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        nameTextField = new javax.swing.JTextField();
+        patientNameTextBox = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         appointmentDateTextField = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         reasonForVisit = new javax.swing.JTextField();
         submitButton = new javax.swing.JButton();
         cancelButton = new javax.swing.JButton();
-        clearAllButton = new javax.swing.JButton();
         apptHourComboBox = new javax.swing.JComboBox<>();
         apptMinuteComboBox = new javax.swing.JComboBox<>();
         apptTimeTextField = new javax.swing.JTextField();
@@ -292,10 +291,10 @@ public class AppointmentForm extends javax.swing.JPanel {
 
         jLabel2.setText("Name:");
 
-        nameTextField.setEditable(false);
-        nameTextField.addActionListener(new java.awt.event.ActionListener() {
+        patientNameTextBox.setEditable(false);
+        patientNameTextBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nameTextFieldActionPerformed(evt);
+                patientNameTextBoxActionPerformed(evt);
             }
         });
 
@@ -326,13 +325,6 @@ public class AppointmentForm extends javax.swing.JPanel {
         cancelButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cancelButtonActionPerformed(evt);
-            }
-        });
-
-        clearAllButton.setText("Clear All");
-        clearAllButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                clearAllButtonActionPerformed(evt);
             }
         });
 
@@ -392,7 +384,7 @@ public class AppointmentForm extends javax.swing.JPanel {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(apptMinuteComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(appointmentFormMainPanelLayout.createSequentialGroup()
-                                        .addComponent(nameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(patientNameTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(42, 42, 42)
                                         .addComponent(jLabel7)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -402,9 +394,7 @@ public class AppointmentForm extends javax.swing.JPanel {
                         .addGap(35, 35, 35)
                         .addComponent(submitButton)
                         .addGap(28, 28, 28)
-                        .addComponent(cancelButton)
-                        .addGap(29, 29, 29)
-                        .addComponent(clearAllButton)))
+                        .addComponent(cancelButton)))
                 .addContainerGap(205, Short.MAX_VALUE))
         );
         appointmentFormMainPanelLayout.setVerticalGroup(
@@ -414,7 +404,7 @@ public class AppointmentForm extends javax.swing.JPanel {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(appointmentFormMainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(nameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(patientNameTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2)
                     .addComponent(jLabel7)
                     .addComponent(arrivalStatusComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -439,8 +429,7 @@ public class AppointmentForm extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 224, Short.MAX_VALUE)
                 .addGroup(appointmentFormMainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(submitButton)
-                    .addComponent(cancelButton)
-                    .addComponent(clearAllButton))
+                    .addComponent(cancelButton))
                 .addContainerGap())
         );
 
@@ -462,9 +451,9 @@ public class AppointmentForm extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void nameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameTextFieldActionPerformed
+    private void patientNameTextBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_patientNameTextBoxActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_nameTextFieldActionPerformed
+    }//GEN-LAST:event_patientNameTextBoxActionPerformed
 
     private void appointmentDateTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_appointmentDateTextFieldActionPerformed
         // TODO add your handling code here:
@@ -483,20 +472,6 @@ public class AppointmentForm extends javax.swing.JPanel {
 			dashBoard.showAppointmentDisplay();
 		}
     }//GEN-LAST:event_submitButtonActionPerformed
-
-    private void clearAllButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearAllButtonActionPerformed
-        // TODO add your handling code here:
-        System.out.println("New Appointment Form: Clear Button");
-		for(Component itsComp : this.getComponents())
-		{
-			System.out.println(itsComp.getClass().getName());
-			if (itsComp.getClass().getName().equals("javax.swing.JTextField"))
-			{
-				((JTextComponent)itsComp).setText(" ");
-			}
-		}
-		activeAppointment = null;
-    }//GEN-LAST:event_clearAllButtonActionPerformed
 
     private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelButtonActionPerformed
         // TODO add your handling code here:
@@ -533,7 +508,6 @@ public class AppointmentForm extends javax.swing.JPanel {
     private javax.swing.JTextField apptTimeTextField;
     private javax.swing.JComboBox<String> arrivalStatusComboBox;
     private javax.swing.JButton cancelButton;
-    private javax.swing.JButton clearAllButton;
     private javax.swing.JComboBox<String> doctorComboBox;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -542,7 +516,7 @@ public class AppointmentForm extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JTextField nameTextField;
+    private javax.swing.JTextField patientNameTextBox;
     private javax.swing.JTextField reasonForVisit;
     private javax.swing.JButton submitButton;
     // End of variables declaration//GEN-END:variables
