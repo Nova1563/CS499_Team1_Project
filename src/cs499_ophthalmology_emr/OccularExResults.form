@@ -24,16 +24,22 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace pref="18" max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jPanel2" alignment="1" min="-2" pref="465" max="-2" attributes="0"/>
-                  <Component id="jPanel4" alignment="1" min="-2" max="-2" attributes="0"/>
+
+              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                  <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="jPanel4" max="32767" attributes="0"/>
+                          <Component id="jPanel2" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jPanel9" min="-2" max="-2" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="jPanel9" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+
           </Group>
       </Group>
     </DimensionLayout>
@@ -41,11 +47,13 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+
                       <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Component id="jPanel9" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -74,7 +82,9 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="21" max="32767" attributes="0"/>
+
+                  <EmptySpace pref="16" max="32767" attributes="0"/>
+
               </Group>
           </Group>
         </DimensionLayout>
@@ -112,92 +122,86 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                  <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+              </Group>
+              <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <Component id="jLabel5" min="-2" pref="236" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jLabel11" min="-2" pref="141" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
-                      </Group>
-                      <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <Component id="jLabel9" min="-2" pref="236" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jLabel4" min="-2" pref="171" max="-2" attributes="0"/>
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jComboBox1" alignment="0" min="-2" pref="175" max="-2" attributes="0"/>
-                                      <Component id="jComboBox7" min="-2" pref="175" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jComboBox6" min="-2" pref="175" max="-2" attributes="0"/>
-                                      <Component id="jComboBox9" alignment="0" min="-2" pref="176" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace max="32767" attributes="0"/>
-                              </Group>
+                              <Component id="jLabel9" min="-2" pref="236" max="-2" attributes="0"/>
+                              <Component id="vitreousComboBox" min="-2" pref="175" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" attributes="0">
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLabel3" alignment="0" min="-2" pref="236" max="-2" attributes="0"/>
-                                      <Component id="jComboBox2" alignment="0" min="-2" pref="175" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jComboBox8" min="-2" pref="175" max="-2" attributes="0"/>
-                                      <Component id="jLabel12" min="-2" pref="236" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLabel6" alignment="0" min="-2" pref="236" max="-2" attributes="0"/>
-                                      <Component id="jComboBox3" alignment="0" min="-2" pref="175" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jComboBox12" min="-2" pref="175" max="-2" attributes="0"/>
-                                      <Component id="jLabel13" min="-2" pref="236" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLabel8" alignment="0" min="-2" pref="236" max="-2" attributes="0"/>
-                                      <Component id="jComboBox4" alignment="0" min="-2" pref="175" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jComboBox10" min="-2" pref="175" max="-2" attributes="0"/>
-                                      <Component id="jLabel14" min="-2" pref="236" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLabel7" alignment="0" min="-2" pref="236" max="-2" attributes="0"/>
-                                      <Component id="jComboBox5" alignment="0" min="-2" pref="175" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jComboBox11" min="-2" pref="175" max="-2" attributes="0"/>
-                                      <Component id="jLabel10" min="-2" pref="236" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
+                              <Component id="jLabel4" alignment="0" min="-2" pref="171" max="-2" attributes="0"/>
+                              <Component id="diabeticEvalComboBox" min="-2" pref="175" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jLabel5" min="-2" pref="236" max="-2" attributes="0"/>
+                                      <Component id="maculaComboBox" alignment="0" min="-2" pref="175" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jLabel11" alignment="0" min="-2" pref="141" max="-2" attributes="0"/>
+                                      <Component id="htnEvaluationComboBox" alignment="0" min="-2" pref="176" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jLabel3" alignment="0" min="-2" pref="236" max="-2" attributes="0"/>
+                                      <Component id="vasculatureComboBox" alignment="0" min="-2" pref="175" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                      <Component id="jLabel12" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="armdComboBox" alignment="0" min="-2" pref="175" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jLabel6" alignment="0" min="-2" pref="236" max="-2" attributes="0"/>
+                                      <Component id="posteriorPoleComboBox" alignment="0" min="-2" pref="175" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                      <Component id="jLabel13" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="custom1ComboBox" alignment="0" min="-2" pref="175" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jLabel8" alignment="0" min="-2" pref="236" max="-2" attributes="0"/>
+                                      <Component id="peripheralRetinaComboBox" alignment="0" min="-2" pref="175" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="custom2ComboBox" min="-2" pref="175" max="-2" attributes="0"/>
+                                      <Component id="jLabel14" alignment="0" min="-2" pref="175" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jLabel7" alignment="0" min="-2" pref="236" max="-2" attributes="0"/>
+                                      <Component id="miscRetinaComboBox" alignment="0" min="-2" pref="175" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                      <Component id="jLabel10" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="custom3ComboBox" alignment="0" min="-2" pref="175" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                      </Group>
                   </Group>
-              </Group>
-              <Group type="102" alignment="0" attributes="0">
-                  <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -205,70 +209,71 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jComboBox6" min="-2" max="-2" attributes="0"/>
-                      <Component id="jComboBox7" alignment="1" min="-2" max="-2" attributes="0"/>
+
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="diabeticEvalComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="vitreousComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="30" pref="30" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jComboBox1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jComboBox9" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="maculaComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="htnEvaluationComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel12" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jComboBox2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jComboBox8" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="vasculatureComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="armdComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jComboBox3" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jComboBox12" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="posteriorPoleComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="custom1ComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel14" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jComboBox4" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jComboBox10" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="peripheralRetinaComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="custom2ComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jComboBox5" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jComboBox11" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="miscRetinaComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="custom3ComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="0" pref="13" max="32767" attributes="0"/>
+
+                  <EmptySpace min="0" pref="15" max="32767" attributes="0"/>
+
               </Group>
           </Group>
         </DimensionLayout>
@@ -285,7 +290,7 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="jLabel2" min="-2" pref="443" max="-2" attributes="0"/>
+                      <Component id="jLabel2" min="-2" pref="432" max="-2" attributes="0"/>
                       <EmptySpace min="0" pref="13" max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -293,9 +298,9 @@
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace pref="20" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                       <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -309,9 +314,6 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="24" style="0"/>
                 </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="text" type="java.lang.String" value="Posterior Segment"/>
                 <Property name="toolTipText" type="java.lang.String" value=""/>
@@ -319,16 +321,13 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JComboBox" name="jComboBox1">
+        <Component class="javax.swing.JComboBox" name="maculaComboBox">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="e9" green="fc" red="fd" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="14" style="0"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="5">
@@ -341,19 +340,16 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBox1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="maculaComboBoxActionPerformed"/>
           </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JComboBox" name="jComboBox2">
+        <Component class="javax.swing.JComboBox" name="vasculatureComboBox">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="e9" green="fc" red="fd" type="rgb"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="5">
@@ -369,13 +365,10 @@
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JComboBox" name="jComboBox3">
+        <Component class="javax.swing.JComboBox" name="posteriorPoleComboBox">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="e9" green="fc" red="fd" type="rgb"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="5">
@@ -391,13 +384,10 @@
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JComboBox" name="jComboBox4">
+        <Component class="javax.swing.JComboBox" name="peripheralRetinaComboBox">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="e9" green="fc" red="fd" type="rgb"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="5">
@@ -413,13 +403,10 @@
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JComboBox" name="jComboBox5">
+        <Component class="javax.swing.JComboBox" name="miscRetinaComboBox">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="e9" green="fc" red="fd" type="rgb"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="5">
@@ -435,13 +422,10 @@
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JComboBox" name="jComboBox6">
+        <Component class="javax.swing.JComboBox" name="diabeticEvalComboBox">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="e9" green="fc" red="fd" type="rgb"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="5">
@@ -457,13 +441,10 @@
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JComboBox" name="jComboBox7">
+        <Component class="javax.swing.JComboBox" name="vitreousComboBox">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="e9" green="fc" red="fd" type="rgb"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="5">
@@ -479,13 +460,10 @@
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JComboBox" name="jComboBox8">
+        <Component class="javax.swing.JComboBox" name="armdComboBox">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="e9" green="fc" red="fd" type="rgb"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="5">
@@ -501,13 +479,10 @@
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JComboBox" name="jComboBox9">
+        <Component class="javax.swing.JComboBox" name="htnEvaluationComboBox">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="e9" green="fc" red="fd" type="rgb"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="5">
@@ -523,13 +498,10 @@
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JComboBox" name="jComboBox10">
+        <Component class="javax.swing.JComboBox" name="custom2ComboBox">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="e9" green="fc" red="fd" type="rgb"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="5">
@@ -545,13 +517,10 @@
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JComboBox" name="jComboBox11">
+        <Component class="javax.swing.JComboBox" name="custom3ComboBox">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="e9" green="fc" red="fd" type="rgb"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="5">
@@ -567,13 +536,10 @@
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JComboBox" name="jComboBox12">
+        <Component class="javax.swing.JComboBox" name="custom1ComboBox">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="e9" green="fc" red="fd" type="rgb"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="5">
@@ -608,7 +574,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Diabeti Eval:"/>
+            <Property name="text" type="java.lang.String" value="Diabetic Eval:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel5">
@@ -663,7 +629,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Virterous:"/>
+            <Property name="text" type="java.lang.String" value="Vitrerous:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel10">
@@ -721,17 +687,6 @@
             <Property name="text" type="java.lang.String" value="&lt; Custom 2 &gt;:"/>
           </Properties>
         </Component>
-        <Container class="javax.swing.JScrollPane" name="jScrollPane1">
-          <AuxValues>
-            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-          </AuxValues>
-
-          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-          <SubComponents>
-            <Component class="javax.swing.JTextPane" name="jTextPane1">
-            </Component>
-          </SubComponents>
-        </Container>
       </SubComponents>
     </Container>
     <Container class="javax.swing.JPanel" name="jPanel4">
@@ -755,11 +710,9 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                   <Component id="jPanel7" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="jPanel6" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="17" max="32767" attributes="0"/>
-                  <Component id="jPanel8" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jPanel6" max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -768,12 +721,11 @@
               <Group type="102" alignment="0" attributes="0">
                   <Component id="jPanel5" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jPanel6" min="-2" max="-2" attributes="0"/>
-                      <Component id="jPanel7" min="-2" max="-2" attributes="0"/>
-                      <Component id="jPanel8" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="jPanel7" max="32767" attributes="0"/>
+                      <Component id="jPanel6" max="32767" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="16" max="32767" attributes="0"/>
+                  <EmptySpace pref="17" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -808,9 +760,6 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="24" style="0"/>
                 </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="text" type="java.lang.String" value="Opthalmic Indicators"/>
               </Properties>
@@ -837,16 +786,17 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel17" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="jRadioButton4" min="-2" max="-2" attributes="0"/>
+                              <Component id="spontaneousPulsationPlusRadioButton" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jRadioButton6" min="-2" max="-2" attributes="0"/>
+                              <Component id="spontaneousPulsationMinusRadioButton" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="spontaneousPulsationXRadioButton" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="jRadioButton5" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel17" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="7" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -857,11 +807,10 @@
                       <Component id="jLabel17" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jRadioButton4" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jRadioButton6" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="spontaneousPulsationPlusRadioButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="spontaneousPulsationXRadioButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="spontaneousPulsationMinusRadioButton" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jRadioButton5" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -876,10 +825,10 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Sponeaneous:"/>
+                <Property name="text" type="java.lang.String" value="Sponeaneous Venous Pulsation:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioButton4">
+            <Component class="javax.swing.JRadioButton" name="spontaneousPulsationPlusRadioButton">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="23" green="21" red="20" type="rgb"/>
@@ -893,7 +842,7 @@
                 <Property name="text" type="java.lang.String" value="+"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioButton5">
+            <Component class="javax.swing.JRadioButton" name="spontaneousPulsationMinusRadioButton">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="23" green="21" red="20" type="rgb"/>
@@ -907,113 +856,7 @@
                 <Property name="text" type="java.lang.String" value="-"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioButton6">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="23" green="21" red="20" type="rgb"/>
-                </Property>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="18" style="0"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="X"/>
-                <Property name="toolTipText" type="java.lang.String" value=""/>
-              </Properties>
-            </Component>
-          </SubComponents>
-        </Container>
-        <Container class="javax.swing.JPanel" name="jPanel8">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="23" green="21" red="20" type="rgb"/>
-            </Property>
-            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-              <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
-                <MatteColorBorder bottom="2" left="3" right="3" top="2">
-                  <Color PropertyName="color" blue="e9" green="fc" red="fd" type="rgb"/>
-                </MatteColorBorder>
-              </Border>
-            </Property>
-          </Properties>
-
-          <Layout>
-            <DimensionLayout dim="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel18" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="jRadioButton7" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jRadioButton9" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="jRadioButton8" alignment="0" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="32767" attributes="0"/>
-                  </Group>
-              </Group>
-            </DimensionLayout>
-            <DimensionLayout dim="1">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel18" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jRadioButton7" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jRadioButton9" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jRadioButton8" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
-                  </Group>
-              </Group>
-            </DimensionLayout>
-          </Layout>
-          <SubComponents>
-            <Component class="javax.swing.JLabel" name="jLabel18">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="14" style="0"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Venous Pulsation:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioButton7">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="23" green="21" red="20" type="rgb"/>
-                </Property>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="18" style="0"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="+"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioButton8">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="23" green="21" red="20" type="rgb"/>
-                </Property>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="18" style="0"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="-"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioButton9">
+            <Component class="javax.swing.JRadioButton" name="spontaneousPulsationXRadioButton">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="23" green="21" red="20" type="rgb"/>
@@ -1050,15 +893,14 @@
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel16" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jRadioButton2" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jRadioButton1" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="fovealReflexPlusRadioButton" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jRadioButton3" min="-2" max="-2" attributes="0"/>
+                              <Component id="fovealReflexMinusRadioButton" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="fovealReflexXRadioButton" min="-2" max="-2" attributes="0"/>
                           </Group>
+                          <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
@@ -1071,11 +913,10 @@
                       <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jRadioButton2" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jRadioButton3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="fovealReflexPlusRadioButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="fovealReflexMinusRadioButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="fovealReflexXRadioButton" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jRadioButton1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -1093,7 +934,7 @@
                 <Property name="text" type="java.lang.String" value="Foveal Reflex:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioButton2">
+            <Component class="javax.swing.JRadioButton" name="fovealReflexPlusRadioButton">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="23" green="21" red="20" type="rgb"/>
@@ -1107,7 +948,7 @@
                 <Property name="text" type="java.lang.String" value="+"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioButton1">
+            <Component class="javax.swing.JRadioButton" name="fovealReflexMinusRadioButton">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="23" green="21" red="20" type="rgb"/>
@@ -1121,7 +962,7 @@
                 <Property name="text" type="java.lang.String" value="-"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioButton3">
+            <Component class="javax.swing.JRadioButton" name="fovealReflexXRadioButton">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="23" green="21" red="20" type="rgb"/>
@@ -1158,61 +999,95 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Component id="jPanel10" alignment="0" max="32767" attributes="0"/>
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Group type="102" attributes="0">
-                          <Component id="jButton2" min="-2" pref="192" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Component id="jButton1" min="-2" pref="192" max="-2" attributes="0"/>
+
+              <Group type="102" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                          <Component id="saveButton" min="-2" pref="116" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                         
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="deleteButton" min="-2" pref="116" max="-2" attributes="0"/>
                       </Group>
-                      <Component id="notesPanel" alignment="1" max="32767" attributes="0"/>
-                      <Group type="102" attributes="0">
-                          <Component id="radioBttnPanel" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jPanel13" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="jPanel12" max="32767" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="radioBttnPanel" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="jPanel13" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="notesPanel" alignment="0" min="-2" max="-2" attributes="0"/>
+
                       </Group>
                       <Component id="jPanel12" alignment="0" max="32767" attributes="0"/>
                   </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="jPanel14" max="32767" attributes="0"/>
-                      <Component id="jPanel11" max="32767" attributes="0"/>
-                      <Component id="jPanel15" max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="jPanel14" max="32767" attributes="0"/>
+                              <Component id="jPanel11" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace pref="207" max="-2" attributes="0"/>
+                      </Group>
+                      <Component id="jPanel15" alignment="1" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="15" max="32767" attributes="0"/>
+
+                  <EmptySpace pref="34" max="32767" attributes="0"/>
+
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <Component id="jPanel10" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jPanel11" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="radioBttnPanel" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="jPanel13" alignment="0" min="-2" max="-2" attributes="0"/>
+
+                  <Component id="jPanel10" min="-2" pref="43" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="jPanel13" alignment="0" max="32767" attributes="0"/>
+                              <Component id="radioBttnPanel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jPanel12" min="-2" max="-2" attributes="0"/>
+
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="jPanel11" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jPanel14" max="32767" attributes="0"/>
+                      </Group>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <Component id="jPanel14" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jPanel15" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" attributes="0">
-                          <Component id="jPanel12" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+
                           <Component id="notesPanel" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                 
+                                  <EmptySpace min="0" pref="11" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="deleteButton" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="saveButton" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+
                           </Group>
                       </Group>
+                      <Component id="jPanel15" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="16" max="32767" attributes="0"/>
+
+                  <EmptySpace pref="17" max="32767" attributes="0"/>
+
               </Group>
           </Group>
         </DimensionLayout>
@@ -1234,7 +1109,7 @@
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace pref="21" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                       <Component id="jLabel19" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                   </Group>
@@ -1246,9 +1121,6 @@
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="24" style="0"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="text" type="java.lang.String" value="Fundus Evaluation Method"/>
@@ -1280,11 +1152,14 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="1" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="d90CheckBox" min="-2" max="-2" attributes="0"/>
-                                  <Component id="d78CheckBox" min="-2" pref="85" max="-2" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+                                      <Component id="d78CheckBox" min="-2" pref="91" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
-                              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="pR2BioCheckBox4" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="d20BioCheckBox" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -1330,7 +1205,7 @@
                           <Component id="otherCheckBox7" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="otherTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="8" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1475,9 +1350,6 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="0"/>
                 </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
               </Properties>
               <Events>
                 <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="otherTextFieldFocusLost"/>
@@ -1502,16 +1374,20 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel20" min="-2" max="-2" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jRadioButton17" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jRadioButton18" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                              <Component id="gtt1RadioButton" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="jLabel20" max="32767" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                                  <Component id="gtt2RadioButton" min="-2" max="-2" attributes="0"/>
                               </Group>
+                              <Component id="dilationAgentComboBox" alignment="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
@@ -1523,11 +1399,13 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel20" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                      <Component id="jRadioButton18" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="33" max="32767" attributes="0"/>
-                      <Component id="jRadioButton17" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="dilationAgentComboBox" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="gtt1RadioButton" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="gtt2RadioButton" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1541,10 +1419,10 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Dialted with:"/>
+                <Property name="text" type="java.lang.String" value="Dilated with:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioButton17">
+            <Component class="javax.swing.JRadioButton" name="gtt2RadioButton">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="23" green="21" red="20" type="rgb"/>
@@ -1555,7 +1433,7 @@
                 <Property name="text" type="java.lang.String" value="2gtt"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioButton18">
+            <Component class="javax.swing.JRadioButton" name="gtt1RadioButton">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="23" green="21" red="20" type="rgb"/>
@@ -1565,6 +1443,19 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="1gtt"/>
               </Properties>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="dilationAgentComboBox">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="2">
+                    <StringItem index="0" value="dilation agent 1"/>
+                    <StringItem index="1" value="another one"/>
+                  </StringArray>
+                </Property>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
             </Component>
           </SubComponents>
         </Container>
@@ -1588,20 +1479,15 @@
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jRadioButton11" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jRadioButton10" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jRadioButton16" alignment="0" min="-2" pref="121" max="-2" attributes="0"/>
-                                  <Component id="jRadioButton13" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jRadioButton15" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jRadioButton12" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jRadioButton14" min="-2" pref="156" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
+                          <Component id="smallPupilBIORadioButton" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="dilatedEvalRadioButton" alignment="0" min="-2" pref="121" max="-2" attributes="0"/>
+                          <Component id="fundusEvaluationNotPerformedRadioButton" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="undilatedEvalRadioButton" min="-2" max="-2" attributes="0"/>
+                          <Component id="dfeWithOptomapRadioButton" min="-2" max="-2" attributes="0"/>
+                          <Component id="optomapImagingRadioButton" min="-2" pref="156" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
@@ -1612,28 +1498,26 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jRadioButton13" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jRadioButton15" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="fundusEvaluationNotPerformedRadioButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="undilatedEvalRadioButton" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jRadioButton10" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jRadioButton14" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="smallPupilBIORadioButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="optomapImagingRadioButton" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jRadioButton16" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jRadioButton12" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="dilatedEvalRadioButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="dfeWithOptomapRadioButton" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jRadioButton11" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="20" max="32767" attributes="0"/>
+                      <EmptySpace pref="14" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JRadioButton" name="jRadioButton13">
+            <Component class="javax.swing.JRadioButton" name="fundusEvaluationNotPerformedRadioButton">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="23" green="21" red="20" type="rgb"/>
@@ -1647,7 +1531,7 @@
                 <Property name="text" type="java.lang.String" value="Not Perfromed"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioButton10">
+            <Component class="javax.swing.JRadioButton" name="smallPupilBIORadioButton">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="23" green="21" red="20" type="rgb"/>
@@ -1661,7 +1545,7 @@
                 <Property name="text" type="java.lang.String" value="Small Pupil BIO"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioButton16">
+            <Component class="javax.swing.JRadioButton" name="dilatedEvalRadioButton">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="23" green="21" red="20" type="rgb"/>
@@ -1672,10 +1556,10 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Dialted Eval"/>
+                <Property name="text" type="java.lang.String" value="Dilated Eval"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioButton15">
+            <Component class="javax.swing.JRadioButton" name="undilatedEvalRadioButton">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="23" green="21" red="20" type="rgb"/>
@@ -1686,10 +1570,10 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Undialted Eval"/>
+                <Property name="text" type="java.lang.String" value="Undilated Eval"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioButton14">
+            <Component class="javax.swing.JRadioButton" name="optomapImagingRadioButton">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="23" green="21" red="20" type="rgb"/>
@@ -1703,10 +1587,10 @@
                 <Property name="text" type="java.lang.String" value="Optomap Imaging"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButton14ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="optomapImagingRadioButtonActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioButton12">
+            <Component class="javax.swing.JRadioButton" name="dfeWithOptomapRadioButton">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="23" green="21" red="20" type="rgb"/>
@@ -1717,21 +1601,7 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="DFE"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioButton11">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="23" green="21" red="20" type="rgb"/>
-                </Property>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="14" style="0"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Pulsarion Optomap "/>
+                <Property name="text" type="java.lang.String" value="DFE with Optomap"/>
               </Properties>
             </Component>
           </SubComponents>
@@ -1755,26 +1625,23 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              <Component id="DFENotIncludedCheckBox1" min="-2" pref="146" max="-2" attributes="0"/>
+
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="DFE1CheckBox2" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel22" min="-2" max="-2" attributes="0"/>
+                          <Component id="DFE2CheckBox" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="DFEDeclinedCheckBox" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="FundusPerformedCheckBox1" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="52" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="DFEContraindicatedCheckBox" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="recentDFECheckBox1" alignment="0" min="-2" pref="122" max="-2" attributes="0"/>
+
                           </Group>
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="DFE1CheckBox2" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel22" min="-2" max="-2" attributes="0"/>
-                                  <Component id="DFE2CheckBox" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="DFEDeclinedCheckBox" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="FundusPerformedCheckBox1" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="DFEContraindicatedCheckBox" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="DFERefusedCheckBox" alignment="1" min="-2" pref="146" max="-2" attributes="0"/>
-                                  <Component id="recentDFECheckBox1" alignment="0" min="-2" pref="122" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
+                          <Component id="DFENotIncludedCheckBox1" min="-2" pref="146" max="-2" attributes="0"/>
+                          <Component id="DFERefusedCheckBox" min="-2" pref="146" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                   </Group>
@@ -2015,7 +1882,7 @@
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="20" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -2201,27 +2068,16 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="notCheckedComboBox" min="-2" pref="173" max="-2" attributes="0"/>
+                          <Component id="jLabel33" min="-2" max="-2" attributes="0"/>
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel30" min="-2" max="-2" attributes="0"/>
-                                  <Component id="normComboBox1" min="-2" pref="173" max="-2" attributes="0"/>
-                                  <Component id="jLabel33" min="-2" max="-2" attributes="0"/>
-                                  <Component id="highComboBox2" alignment="0" min="-2" pref="173" max="-2" attributes="0"/>
-                                  <Component id="jLabel35" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel32" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel30" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="opticNerveComboBox" alignment="0" min="-2" pref="173" max="-2" attributes="0"/>
                               </Group>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jLabel31" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel34" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="89" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="lowComboBox1" alignment="1" min="-2" pref="173" max="-2" attributes="0"/>
-                                  <Component id="criticalComboBox" alignment="1" min="-2" pref="173" max="-2" attributes="0"/>
+                                  <Component id="nerveFiberLayerComboBox" min="-2" pref="173" max="-2" attributes="0"/>
+                                  <Component id="jLabel31" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -2232,33 +2088,19 @@
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel33" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel31" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel30" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabel31" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel30" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="lowComboBox1" min="-2" max="-2" attributes="0"/>
-                          <Component id="normComboBox1" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="nerveFiberLayerComboBox" min="-2" max="-2" attributes="0"/>
+                          <Component id="opticNerveComboBox" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel34" min="-2" pref="22" max="-2" attributes="0"/>
-                          <Component id="jLabel32" alignment="1" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="criticalComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="highComboBox2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jLabel35" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="notCheckedComboBox" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="24" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -2272,10 +2114,10 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="NORM:"/>
+                <Property name="text" type="java.lang.String" value="Optic Nerve:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JComboBox" name="criticalComboBox">
+            <Component class="javax.swing.JComboBox" name="opticNerveComboBox">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="e9" green="fc" red="fd" type="rgb"/>
@@ -2283,25 +2125,25 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="0"/>
                 </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="2">
-                    <StringItem index="0" value="Optic Nerve"/>
-                    <StringItem index="1" value="Nerve Fiber Layer"/>
+                  <StringArray count="5">
+                    <StringItem index="0" value="NORMAL"/>
+                    <StringItem index="1" value="LOW"/>
+                    <StringItem index="2" value="HIGH"/>
+                    <StringItem index="3" value="CRITICAL"/>
+                    <StringItem index="4" value="NOT CHECKED"/>
                   </StringArray>
                 </Property>
                 <Property name="toolTipText" type="java.lang.String" value=""/>
               </Properties>
               <Events>
-                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="criticalComboBoxFocusLost"/>
+                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="opticNerveComboBoxFocusLost"/>
               </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JComboBox" name="normComboBox1">
+            <Component class="javax.swing.JComboBox" name="nerveFiberLayerComboBox">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="e9" green="fc" red="fd" type="rgb"/>
@@ -2309,97 +2151,19 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="0"/>
                 </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="2">
-                    <StringItem index="0" value="Optic Nerve"/>
-                    <StringItem index="1" value="Nerve Fiber Layer"/>
+                  <StringArray count="5">
+                    <StringItem index="0" value="NORMAL"/>
+                    <StringItem index="1" value="LOW"/>
+                    <StringItem index="2" value="HIGH"/>
+                    <StringItem index="3" value="CRITICAL"/>
+                    <StringItem index="4" value="NOT CHECKED"/>
                   </StringArray>
                 </Property>
                 <Property name="toolTipText" type="java.lang.String" value=""/>
               </Properties>
               <Events>
-                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="normComboBox1FocusLost"/>
-              </Events>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-              </AuxValues>
-            </Component>
-            <Component class="javax.swing.JComboBox" name="lowComboBox1">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="e9" green="fc" red="fd" type="rgb"/>
-                </Property>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="14" style="0"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
-                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="2">
-                    <StringItem index="0" value="Optic Nerve"/>
-                    <StringItem index="1" value="Nerve Fiber Layer"/>
-                  </StringArray>
-                </Property>
-                <Property name="toolTipText" type="java.lang.String" value=""/>
-              </Properties>
-              <Events>
-                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="lowComboBox1FocusLost"/>
-              </Events>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-              </AuxValues>
-            </Component>
-            <Component class="javax.swing.JComboBox" name="notCheckedComboBox">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="e9" green="fc" red="fd" type="rgb"/>
-                </Property>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="14" style="0"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
-                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="2">
-                    <StringItem index="0" value="Optic Nerve"/>
-                    <StringItem index="1" value="Nerve Fiber Layer"/>
-                  </StringArray>
-                </Property>
-                <Property name="toolTipText" type="java.lang.String" value=""/>
-              </Properties>
-              <Events>
-                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="notCheckedComboBoxFocusLost"/>
-              </Events>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-              </AuxValues>
-            </Component>
-            <Component class="javax.swing.JComboBox" name="highComboBox2">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="e9" green="fc" red="fd" type="rgb"/>
-                </Property>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="14" style="0"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
-                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="2">
-                    <StringItem index="0" value="Optic Nerve"/>
-                    <StringItem index="1" value="Nerve Fiber Layer"/>
-                  </StringArray>
-                </Property>
-                <Property name="toolTipText" type="java.lang.String" value=""/>
-              </Properties>
-              <Events>
-                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="highComboBox2FocusLost"/>
+                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="nerveFiberLayerComboBoxFocusLost"/>
               </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -2413,18 +2177,7 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="LOW:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel32">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="18" style="0"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="HIGH:"/>
+                <Property name="text" type="java.lang.String" value="Nerve Fiber Layer:"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel33">
@@ -2436,28 +2189,6 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Optic Nerve Head Assessment:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel34">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="18" style="0"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="CRITICAL:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel35">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="18" style="0"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="NOT CHECKED:"/>
               </Properties>
             </Component>
           </SubComponents>
@@ -2494,76 +2225,76 @@
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" attributes="0">
                                               <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="shallowCheckBox" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jCheckBox4" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="odShallowCheckBox" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="odRoundCheckBox" alignment="0" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                               <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="1" attributes="0">
-                                              <Component id="deepLaminaCheckBox1" min="-2" max="-2" attributes="0"/>
+                                              <Component id="odDeepLaminaCheckBox" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" attributes="0">
                                               <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="ovalCheckBox" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jCheckBox3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="odOvalCheckBox" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="odTempSlopingCheckbox" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                               <Group type="103" groupAlignment="0" attributes="0">
                                                   <Group type="102" attributes="0">
                                                       <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
-                                                      <Component id="sCresentCheckBox1" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="odScleralCrescentCheckBox" min="-2" max="-2" attributes="0"/>
                                                       <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                                                   </Group>
                                                   <Group type="102" alignment="1" attributes="0">
                                                       <EmptySpace max="-2" attributes="0"/>
-                                                      <Component id="jCheckBox9" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="odPeripapAtrophyCheckBox" min="-2" max="-2" attributes="0"/>
                                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                                   </Group>
                                               </Group>
                                               <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="jCheckBox10" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="oPitCheckBox" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="odMylenationCheckBox" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="odOpticPitCheckBox" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
-                                              <Component id="underminingCheckBox" min="-2" max="-2" attributes="0"/>
+                                              <Component id="odUnderminingCheckBox" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                                              <Component id="jCheckBox11" min="-2" max="-2" attributes="0"/>
+                                              <Component id="odPigmentCrescentCheckBox" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
-                                              <Component id="gRemnantsCheckBox" min="-2" max="-2" attributes="0"/>
+                                              <Component id="odGlialRemnantsCheckBox" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="deepLaminaCheckBox" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="shallowCheckBox1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jCheckBox5" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="osDeepLaminaCheckBox" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="osShallowCheckBox" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="osRoundCheckBox" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jCheckBox7" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="ovalCheckBox1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="underminingCheckBox1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="osTempSlopingCheckBox" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="osOvalCheckBox" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="osUnderminingCheckBox" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" attributes="0">
-                                              <Component id="jCheckBox8" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                              <Component id="gRemnantsCheckBox1" min="-2" max="-2" attributes="0"/>
+                                          <Component id="osPigmentCrescentCheckBox" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="osPeripapAtrophyCheckBox" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="osScleralCrescentCheckBox" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                                              <Component id="osGlialRemnantsCheckBox" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
+                                              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="jCheckBox6" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="sCresentCheckBox" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="jCheckBox12" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="oPitCheckBox1" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="osMylenationCheckBox" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="osOpticPitCheckBox" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
                                       </Group>
@@ -2578,53 +2309,53 @@
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel36" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel37" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="ovalCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="oPitCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="deepLaminaCheckBox1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jCheckBox9" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="odOvalCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="odOpticPitCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="odDeepLaminaCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="odPeripapAtrophyCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="shallowCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jCheckBox3" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jCheckBox10" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="sCresentCheckBox1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="odShallowCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="odTempSlopingCheckbox" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="odMylenationCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="odScleralCrescentCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jCheckBox4" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="underminingCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="gRemnantsCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jCheckBox11" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="odRoundCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="odUnderminingCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="odGlialRemnantsCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="odPigmentCrescentCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="30" max="32767" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel38" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="deepLaminaCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="ovalCheckBox1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jCheckBox6" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="oPitCheckBox1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="osDeepLaminaCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="osOvalCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="osPeripapAtrophyCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="osOpticPitCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="shallowCheckBox1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jCheckBox7" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="sCresentCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jCheckBox12" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="osShallowCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="osTempSlopingCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="osScleralCrescentCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="osMylenationCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jCheckBox5" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="underminingCheckBox1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jCheckBox8" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
-                          <Component id="gRemnantsCheckBox1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="osRoundCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="osUnderminingCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="osPigmentCrescentCheckBox" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                          <Component id="osGlialRemnantsCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -2652,7 +2383,7 @@
                 <Property name="text" type="java.lang.String" value="OD:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="ovalCheckBox">
+            <Component class="javax.swing.JCheckBox" name="odOvalCheckBox">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="23" green="21" red="20" type="rgb"/>
@@ -2666,7 +2397,7 @@
                 <Property name="text" type="java.lang.String" value="Oval"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="shallowCheckBox">
+            <Component class="javax.swing.JCheckBox" name="odShallowCheckBox">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="23" green="21" red="20" type="rgb"/>
@@ -2680,7 +2411,7 @@
                 <Property name="text" type="java.lang.String" value="Shallow"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="jCheckBox3">
+            <Component class="javax.swing.JCheckBox" name="odTempSlopingCheckbox">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="23" green="21" red="20" type="rgb"/>
@@ -2694,7 +2425,7 @@
                 <Property name="text" type="java.lang.String" value="Temp.sloping"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="jCheckBox4">
+            <Component class="javax.swing.JCheckBox" name="odRoundCheckBox">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="23" green="21" red="20" type="rgb"/>
@@ -2708,7 +2439,7 @@
                 <Property name="text" type="java.lang.String" value="Round"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="underminingCheckBox">
+            <Component class="javax.swing.JCheckBox" name="odUnderminingCheckBox">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="23" green="21" red="20" type="rgb"/>
@@ -2722,7 +2453,7 @@
                 <Property name="text" type="java.lang.String" value="Undermining"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="jCheckBox6">
+            <Component class="javax.swing.JCheckBox" name="osPeripapAtrophyCheckBox">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="23" green="21" red="20" type="rgb"/>
@@ -2737,7 +2468,7 @@
                 <Property name="toolTipText" type="java.lang.String" value=""/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="deepLaminaCheckBox">
+            <Component class="javax.swing.JCheckBox" name="osDeepLaminaCheckBox">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="23" green="21" red="20" type="rgb"/>
@@ -2751,10 +2482,10 @@
                 <Property name="text" type="java.lang.String" value="Deep/Lamina"/>
               </Properties>
               <Events>
-                <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="deepLaminaCheckBoxItemStateChanged"/>
+                <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="osDeepLaminaCheckBoxItemStateChanged"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="jCheckBox8">
+            <Component class="javax.swing.JCheckBox" name="osPigmentCrescentCheckBox">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="23" green="21" red="20" type="rgb"/>
@@ -2768,7 +2499,7 @@
                 <Property name="text" type="java.lang.String" value="Pigment Cresent"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="sCresentCheckBox">
+            <Component class="javax.swing.JCheckBox" name="osScleralCrescentCheckBox">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="23" green="21" red="20" type="rgb"/>
@@ -2782,7 +2513,7 @@
                 <Property name="text" type="java.lang.String" value="Scleral Cresent"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="jCheckBox10">
+            <Component class="javax.swing.JCheckBox" name="odMylenationCheckBox">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="23" green="21" red="20" type="rgb"/>
@@ -2793,10 +2524,10 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Muyelination"/>
+                <Property name="text" type="java.lang.String" value="Myelination"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="gRemnantsCheckBox">
+            <Component class="javax.swing.JCheckBox" name="odGlialRemnantsCheckBox">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="23" green="21" red="20" type="rgb"/>
@@ -2811,7 +2542,7 @@
                 <Property name="toolTipText" type="java.lang.String" value=""/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="oPitCheckBox">
+            <Component class="javax.swing.JCheckBox" name="odOpticPitCheckBox">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="23" green="21" red="20" type="rgb"/>
@@ -2836,7 +2567,7 @@
                 <Property name="text" type="java.lang.String" value="OS:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="deepLaminaCheckBox1">
+            <Component class="javax.swing.JCheckBox" name="odDeepLaminaCheckBox">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="23" green="21" red="20" type="rgb"/>
@@ -2850,11 +2581,11 @@
                 <Property name="text" type="java.lang.String" value="Deep/Lamina"/>
               </Properties>
               <Events>
-                <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="deepLaminaCheckBox1ItemStateChanged"/>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="deepLaminaCheckBox1ActionPerformed"/>
+                <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="odDeepLaminaCheckBoxItemStateChanged"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="odDeepLaminaCheckBoxActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="shallowCheckBox1">
+            <Component class="javax.swing.JCheckBox" name="osShallowCheckBox">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="23" green="21" red="20" type="rgb"/>
@@ -2868,7 +2599,7 @@
                 <Property name="text" type="java.lang.String" value="Shallow"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="jCheckBox5">
+            <Component class="javax.swing.JCheckBox" name="osRoundCheckBox">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="23" green="21" red="20" type="rgb"/>
@@ -2882,7 +2613,7 @@
                 <Property name="text" type="java.lang.String" value="Round"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="ovalCheckBox1">
+            <Component class="javax.swing.JCheckBox" name="osOvalCheckBox">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="23" green="21" red="20" type="rgb"/>
@@ -2896,7 +2627,7 @@
                 <Property name="text" type="java.lang.String" value="Oval"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="jCheckBox7">
+            <Component class="javax.swing.JCheckBox" name="osTempSlopingCheckBox">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="23" green="21" red="20" type="rgb"/>
@@ -2910,7 +2641,7 @@
                 <Property name="text" type="java.lang.String" value="Temp.sloping"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="underminingCheckBox1">
+            <Component class="javax.swing.JCheckBox" name="osUnderminingCheckBox">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="23" green="21" red="20" type="rgb"/>
@@ -2924,7 +2655,7 @@
                 <Property name="text" type="java.lang.String" value="Undermining"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="jCheckBox9">
+            <Component class="javax.swing.JCheckBox" name="odPeripapAtrophyCheckBox">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="23" green="21" red="20" type="rgb"/>
@@ -2939,7 +2670,7 @@
                 <Property name="toolTipText" type="java.lang.String" value=""/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="sCresentCheckBox1">
+            <Component class="javax.swing.JCheckBox" name="odScleralCrescentCheckBox">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="23" green="21" red="20" type="rgb"/>
@@ -2953,7 +2684,7 @@
                 <Property name="text" type="java.lang.String" value="Scleral Cresent"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="jCheckBox11">
+            <Component class="javax.swing.JCheckBox" name="odPigmentCrescentCheckBox">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="23" green="21" red="20" type="rgb"/>
@@ -2967,7 +2698,7 @@
                 <Property name="text" type="java.lang.String" value="Pigment Cresent"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="oPitCheckBox1">
+            <Component class="javax.swing.JCheckBox" name="osOpticPitCheckBox">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="23" green="21" red="20" type="rgb"/>
@@ -2981,7 +2712,7 @@
                 <Property name="text" type="java.lang.String" value="Optic Pit"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="jCheckBox12">
+            <Component class="javax.swing.JCheckBox" name="osMylenationCheckBox">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="23" green="21" red="20" type="rgb"/>
@@ -2992,10 +2723,10 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Muyelination"/>
+                <Property name="text" type="java.lang.String" value="Myelination"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="gRemnantsCheckBox1">
+            <Component class="javax.swing.JCheckBox" name="osGlialRemnantsCheckBox">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="23" green="21" red="20" type="rgb"/>
@@ -3012,7 +2743,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JButton" name="jButton1">
+        <Component class="javax.swing.JButton" name="deleteButton">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="66" green="66" red="ff" type="rgb"/>
@@ -3027,16 +2758,13 @@
             <Property name="toolTipText" type="java.lang.String" value=""/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton2">
+        <Component class="javax.swing.JButton" name="saveButton">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="99" green="ff" red="99" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="24" style="0"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="SAVE"/>
             <Property name="toolTipText" type="java.lang.String" value=""/>

@@ -36,11 +36,10 @@ public class MainDashboard extends javax.swing.JFrame {
 
     patientPortal       = new PatientPortal(this);
     appointmentPanel    = new AppointmentDisplay(this);
-    insurancePanel      = new InsurancePage();
+    insurancePanel      = new InsurancePage(this);
     homePanel           = new HomePanel();
     viewPatientPage     = new PatientPageTemplate();
     patientForm		= new PatientForm(this);
-    insurancePanel      = new InsurancePage();
     appointmentForm     = new AppointmentForm(this);
     visualAcuity        = new VisualAcuity(this);//***
     occularExResults    = new OccularExResults();
@@ -129,6 +128,7 @@ public class MainDashboard extends javax.swing.JFrame {
 	
 	public void showInsurancePage()
 	{
+                insurancePanel.insuranceInfo(activePatient);
                 hideAllPanelComponents(mainPanel);
                 insurancePanel.setVisible(true);
 	}
@@ -186,8 +186,8 @@ public class MainDashboard extends javax.swing.JFrame {
         CurrentPatientLabel = new javax.swing.JLabel();
         currentPatientTextBar = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        emrToolsTxt2 = new javax.swing.JLabel();
         mainPanel = new javax.swing.JPanel();
-        jDesktopPane1 = new javax.swing.JDesktopPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setSize(getPreferredSize());
@@ -221,7 +221,7 @@ public class MainDashboard extends javax.swing.JFrame {
                 appointmentBttnMouseClicked(evt);
             }
         });
-        toolBarJPanel.add(appointmentBttn, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 0, -1, 70));
+        toolBarJPanel.add(appointmentBttn, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 0, -1, 70));
 
         patientPortalBttn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cs499_ophthalmology_emr/images/patientIcon.png"))); // NOI18N
         patientPortalBttn.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -254,8 +254,8 @@ public class MainDashboard extends javax.swing.JFrame {
         emrToolsTxt.setBackground(new java.awt.Color(255, 255, 255));
         emrToolsTxt.setFont(new java.awt.Font("Corsiva Hebrew", 2, 14)); // NOI18N
         emrToolsTxt.setForeground(new java.awt.Color(255, 255, 255));
-        emrToolsTxt.setText("EMR Tools");
-        toolBarJPanel.add(emrToolsTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 70, -1, 20));
+        emrToolsTxt.setText("Patient Portal");
+        toolBarJPanel.add(emrToolsTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 70, -1, 20));
 
         helpToolsTxt.setBackground(new java.awt.Color(255, 255, 255));
         helpToolsTxt.setFont(new java.awt.Font("Corsiva Hebrew", 2, 14)); // NOI18N
@@ -272,8 +272,9 @@ public class MainDashboard extends javax.swing.JFrame {
 
         emrToolsTxt1.setBackground(new java.awt.Color(255, 255, 255));
         emrToolsTxt1.setFont(new java.awt.Font("Corsiva Hebrew", 2, 14)); // NOI18N
-        emrToolsTxt1.setText("EMR Tools");
-        toolBarJPanel.add(emrToolsTxt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 70, -1, 20));
+        emrToolsTxt1.setForeground(new java.awt.Color(255, 255, 255));
+        emrToolsTxt1.setText("Insurance ");
+        toolBarJPanel.add(emrToolsTxt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 70, -1, 20));
 
         CurrentPatientLabel.setFont(helpToolsTxt.getFont());
         CurrentPatientLabel.setForeground(new java.awt.Color(255, 255, 255));
@@ -286,6 +287,12 @@ public class MainDashboard extends javax.swing.JFrame {
         toolBarJPanel.add(currentPatientTextBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(765, 40, 240, 20));
         toolBarJPanel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, -1, -1));
 
+        emrToolsTxt2.setBackground(new java.awt.Color(255, 255, 255));
+        emrToolsTxt2.setFont(new java.awt.Font("Corsiva Hebrew", 2, 14)); // NOI18N
+        emrToolsTxt2.setForeground(new java.awt.Color(255, 255, 255));
+        emrToolsTxt2.setText("Appointments");
+        toolBarJPanel.add(emrToolsTxt2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 70, -1, 20));
+
         mainPanel.setBackground(new java.awt.Color(57, 113, 177));
         mainPanel.setMaximumSize(new java.awt.Dimension(1000, 1000));
         mainPanel.setPreferredSize(new java.awt.Dimension(1700, 900));
@@ -294,8 +301,7 @@ public class MainDashboard extends javax.swing.JFrame {
                 mainPanelComponentShown(evt);
             }
         });
-        mainPanel.setLayout(new java.awt.CardLayout());
-        mainPanel.add(jDesktopPane1, "card2");
+        mainPanel.setLayout(new java.awt.GridBagLayout());
 
         javax.swing.GroupLayout backgroundLayout = new javax.swing.GroupLayout(background);
         background.setLayout(backgroundLayout);
@@ -413,6 +419,7 @@ public class MainDashboard extends javax.swing.JFrame {
     public javax.swing.JLabel currentPatientTextBar;
     private javax.swing.JLabel emrToolsTxt;
     private javax.swing.JLabel emrToolsTxt1;
+    private javax.swing.JLabel emrToolsTxt2;
     private javax.swing.JLabel eyeTestBttn;
     private javax.swing.JLabel helpBttn;
     private javax.swing.JLabel helpToolsTxt;
@@ -420,7 +427,6 @@ public class MainDashboard extends javax.swing.JFrame {
     private javax.swing.JLabel homeTxt;
     private javax.swing.JLabel infoBttb;
     private javax.swing.JLabel insuranceBttn;
-    private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel mainPanel;
     private javax.swing.JLabel patientPortalBttn;

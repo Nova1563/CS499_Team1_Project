@@ -40,7 +40,7 @@
       <Dimension value="[1200, 700]"/>
     </Property>
     <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[700, 500]"/>
+      <Dimension value="[1900, 888]"/>
     </Property>
   </Properties>
   <AccessibilityProperties>
@@ -64,48 +64,42 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jPanel1" min="-2" pref="1336" max="-2" attributes="0"/>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Component id="patientSearchBar" min="-2" pref="240" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="patientSearchSubmitButton" min="-2" pref="77" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="editPatientButton" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="addPatientButton" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="362" max="-2" attributes="0"/>
-                              <Component id="deletePatientButton" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="jScrollPane2" max="32767" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="274" pref="274" max="-2" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Component id="patientSearchBar" min="-2" pref="240" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="patientSearchSubmitButton" min="-2" pref="77" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="editPatientButton" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="addPatientButton" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="deletePatientButton" min="-2" max="-2" attributes="0"/>
                   </Group>
+                  <Component id="jScrollPane2" min="-2" pref="1306" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="575" max="32767" attributes="0"/>
           </Group>
+          <Component id="jPanel1" alignment="1" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" max="-2" attributes="0"/>
               <Component id="jPanel1" min="-2" pref="85" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
-              <Component id="jScrollPane2" min="-2" pref="700" max="-2" attributes="0"/>
-              <EmptySpace min="-2" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="patientSearchBar" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
-                  <Component id="patientSearchSubmitButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="editPatientButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="addPatientButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="deletePatientButton" alignment="3" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+              <Component id="jScrollPane2" min="-2" pref="361" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="2" attributes="0">
+                  <Component id="patientSearchBar" alignment="2" min="-2" pref="26" max="-2" attributes="0"/>
+                  <Component id="patientSearchSubmitButton" alignment="2" min="-2" max="-2" attributes="0"/>
+                  <Component id="deletePatientButton" alignment="2" min="-2" max="-2" attributes="0"/>
+                  <Component id="editPatientButton" alignment="2" min="-2" max="-2" attributes="0"/>
+                  <Component id="addPatientButton" alignment="2" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="20" max="32767" attributes="0"/>
+              <EmptySpace pref="203" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>

@@ -76,7 +76,7 @@
                                           <Component id="apptMinuteComboBox" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Component id="nameTextField" min="-2" pref="226" max="-2" attributes="0"/>
+                                          <Component id="patientNameTextBox" min="-2" pref="226" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
                                           <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
@@ -92,8 +92,6 @@
                           <Component id="submitButton" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                           <Component id="cancelButton" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-                          <Component id="clearAllButton" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace pref="205" max="32767" attributes="0"/>
@@ -107,7 +105,7 @@
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="nameTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="patientNameTextBox" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="arrivalStatusComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -138,7 +136,6 @@
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="submitButton" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="cancelButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="clearAllButton" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -162,12 +159,12 @@
             <Property name="text" type="java.lang.String" value="Name:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="nameTextField">
+        <Component class="javax.swing.JTextField" name="patientNameTextBox">
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nameTextFieldActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="patientNameTextBoxActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel4">
@@ -204,14 +201,6 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cancelButtonActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JButton" name="clearAllButton">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Clear All"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="clearAllButtonActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JComboBox" name="apptHourComboBox">

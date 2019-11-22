@@ -131,7 +131,7 @@
               </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="380" y="0" width="-1" height="70"/>
+                  <AbsoluteConstraints x="400" y="0" width="-1" height="70"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -204,11 +204,11 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="EMR Tools"/>
+                <Property name="text" type="java.lang.String" value="Patient Portal"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="440" y="70" width="-1" height="20"/>
+                  <AbsoluteConstraints x="250" y="70" width="-1" height="20"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -259,11 +259,14 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Corsiva Hebrew" size="14" style="2"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="EMR Tools"/>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Insurance "/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="440" y="70" width="-1" height="20"/>
+                  <AbsoluteConstraints x="510" y="70" width="-1" height="20"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -309,6 +312,25 @@
                 </Constraint>
               </Constraints>
             </Component>
+            <Component class="javax.swing.JLabel" name="emrToolsTxt2">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Corsiva Hebrew" size="14" style="2"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Appointments"/>
+              </Properties>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="390" y="70" width="-1" height="20"/>
+                </Constraint>
+              </Constraints>
+            </Component>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="mainPanel">
@@ -330,16 +352,7 @@
             <EventHandler event="componentShown" listener="java.awt.event.ComponentListener" parameters="java.awt.event.ComponentEvent" handler="mainPanelComponentShown"/>
           </Events>
 
-          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignCardLayout"/>
-          <SubComponents>
-            <Container class="javax.swing.JDesktopPane" name="jDesktopPane1">
-              <Constraints>
-                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
-                  <CardConstraints cardName="card2"/>
-                </Constraint>
-              </Constraints>
-            </Container>
-          </SubComponents>
+          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout"/>
         </Container>
       </SubComponents>
     </Container>
