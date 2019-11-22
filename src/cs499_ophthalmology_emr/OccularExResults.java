@@ -56,8 +56,6 @@ public class OccularExResults extends javax.swing.JPanel {
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextPane1 = new javax.swing.JTextPane();
         jPanel4 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
@@ -197,7 +195,6 @@ public class OccularExResults extends javax.swing.JPanel {
 
         jLabel2.setBackground(new java.awt.Color(32, 33, 35));
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Posterior Segment");
         jLabel2.setToolTipText("");
@@ -220,7 +217,6 @@ public class OccularExResults extends javax.swing.JPanel {
 
         jComboBox1.setBackground(new java.awt.Color(253, 252, 233));
         jComboBox1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jComboBox1.setForeground(new java.awt.Color(0, 0, 0));
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NORM", "LOW", "HIGH", "CRITICAL", "NOT CHECKED" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -229,47 +225,36 @@ public class OccularExResults extends javax.swing.JPanel {
         });
 
         jComboBox2.setBackground(new java.awt.Color(253, 252, 233));
-        jComboBox2.setForeground(new java.awt.Color(0, 0, 0));
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NORM", "LOW", "HIGH", "CRITICAL", "NOT CHECKED" }));
 
         jComboBox3.setBackground(new java.awt.Color(253, 252, 233));
-        jComboBox3.setForeground(new java.awt.Color(0, 0, 0));
         jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NORM", "LOW", "HIGH", "CRITICAL", "NOT CHECKED" }));
 
         jComboBox4.setBackground(new java.awt.Color(253, 252, 233));
-        jComboBox4.setForeground(new java.awt.Color(0, 0, 0));
         jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NORM", "LOW", "HIGH", "CRITICAL", "NOT CHECKED" }));
 
         jComboBox5.setBackground(new java.awt.Color(253, 252, 233));
-        jComboBox5.setForeground(new java.awt.Color(0, 0, 0));
         jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NORM", "LOW", "HIGH", "CRITICAL", "NOT CHECKED" }));
 
         jComboBox6.setBackground(new java.awt.Color(253, 252, 233));
-        jComboBox6.setForeground(new java.awt.Color(0, 0, 0));
         jComboBox6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NORM", "LOW", "HIGH", "CRITICAL", "NOT CHECKED" }));
 
         jComboBox7.setBackground(new java.awt.Color(253, 252, 233));
-        jComboBox7.setForeground(new java.awt.Color(0, 0, 0));
         jComboBox7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NORM", "LOW", "HIGH", "CRITICAL", "NOT CHECKED" }));
 
         jComboBox8.setBackground(new java.awt.Color(253, 252, 233));
-        jComboBox8.setForeground(new java.awt.Color(0, 0, 0));
         jComboBox8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NORM", "LOW", "HIGH", "CRITICAL", "NOT CHECKED" }));
 
         jComboBox9.setBackground(new java.awt.Color(253, 252, 233));
-        jComboBox9.setForeground(new java.awt.Color(0, 0, 0));
         jComboBox9.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NORM", "LOW", "HIGH", "CRITICAL", "NOT CHECKED" }));
 
         jComboBox10.setBackground(new java.awt.Color(253, 252, 233));
-        jComboBox10.setForeground(new java.awt.Color(0, 0, 0));
         jComboBox10.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NORM", "LOW", "HIGH", "CRITICAL", "NOT CHECKED" }));
 
         jComboBox11.setBackground(new java.awt.Color(253, 252, 233));
-        jComboBox11.setForeground(new java.awt.Color(0, 0, 0));
         jComboBox11.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NORM", "LOW", "HIGH", "CRITICAL", "NOT CHECKED" }));
 
         jComboBox12.setBackground(new java.awt.Color(253, 252, 233));
-        jComboBox12.setForeground(new java.awt.Color(0, 0, 0));
         jComboBox12.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NORM", "LOW", "HIGH", "CRITICAL", "NOT CHECKED" }));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -320,8 +305,6 @@ public class OccularExResults extends javax.swing.JPanel {
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
         jLabel14.setText("< Custom 2 >:");
 
-        jScrollPane1.setViewportView(jTextPane1);
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -339,8 +322,7 @@ public class OccularExResults extends javax.swing.JPanel {
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
+                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -348,10 +330,8 @@ public class OccularExResults extends javax.swing.JPanel {
                                 .addGap(67, 67, 67)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jComboBox6, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jComboBox9, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(92, 92, 92))
+                                    .addComponent(jComboBox9, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
@@ -396,19 +376,14 @@ public class OccularExResults extends javax.swing.JPanel {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(33, 33, 33)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel9)
-                        .addComponent(jLabel4)))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jComboBox6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(jComboBox7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30)))
+                    .addComponent(jComboBox6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBox7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(jLabel11))
@@ -457,7 +432,6 @@ public class OccularExResults extends javax.swing.JPanel {
         jPanel5.setBackground(new java.awt.Color(135, 206, 250));
 
         jLabel15.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(0, 0, 0));
         jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel15.setText("Opthalmic Indicators");
 
@@ -665,7 +639,6 @@ public class OccularExResults extends javax.swing.JPanel {
         jPanel10.setBackground(new java.awt.Color(135, 206, 250));
 
         jLabel19.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel19.setForeground(new java.awt.Color(0, 0, 0));
         jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel19.setText("Fundus Evaluation Method");
 
@@ -764,7 +737,6 @@ public class OccularExResults extends javax.swing.JPanel {
 
         otherTextField.setBackground(new java.awt.Color(204, 255, 255));
         otherTextField.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        otherTextField.setForeground(new java.awt.Color(0, 0, 0));
         otherTextField.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 otherTextFieldFocusLost(evt);
@@ -818,7 +790,7 @@ public class OccularExResults extends javax.swing.JPanel {
                 .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(otherCheckBox7)
                     .addComponent(otherTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(8, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel13.setBackground(new java.awt.Color(32, 33, 35));
@@ -1200,7 +1172,6 @@ public class OccularExResults extends javax.swing.JPanel {
 
         criticalComboBox.setBackground(new java.awt.Color(253, 252, 233));
         criticalComboBox.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        criticalComboBox.setForeground(new java.awt.Color(0, 0, 0));
         criticalComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Optic Nerve", "Nerve Fiber Layer" }));
         criticalComboBox.setToolTipText("");
         criticalComboBox.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -1211,7 +1182,6 @@ public class OccularExResults extends javax.swing.JPanel {
 
         normComboBox1.setBackground(new java.awt.Color(253, 252, 233));
         normComboBox1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        normComboBox1.setForeground(new java.awt.Color(0, 0, 0));
         normComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Optic Nerve", "Nerve Fiber Layer" }));
         normComboBox1.setToolTipText("");
         normComboBox1.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -1222,7 +1192,6 @@ public class OccularExResults extends javax.swing.JPanel {
 
         lowComboBox1.setBackground(new java.awt.Color(253, 252, 233));
         lowComboBox1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        lowComboBox1.setForeground(new java.awt.Color(0, 0, 0));
         lowComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Optic Nerve", "Nerve Fiber Layer" }));
         lowComboBox1.setToolTipText("");
         lowComboBox1.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -1233,7 +1202,6 @@ public class OccularExResults extends javax.swing.JPanel {
 
         notCheckedComboBox.setBackground(new java.awt.Color(253, 252, 233));
         notCheckedComboBox.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        notCheckedComboBox.setForeground(new java.awt.Color(0, 0, 0));
         notCheckedComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Optic Nerve", "Nerve Fiber Layer" }));
         notCheckedComboBox.setToolTipText("");
         notCheckedComboBox.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -1244,7 +1212,6 @@ public class OccularExResults extends javax.swing.JPanel {
 
         highComboBox2.setBackground(new java.awt.Color(253, 252, 233));
         highComboBox2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        highComboBox2.setForeground(new java.awt.Color(0, 0, 0));
         highComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Optic Nerve", "Nerve Fiber Layer" }));
         highComboBox2.setToolTipText("");
         highComboBox2.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -1609,7 +1576,6 @@ public class OccularExResults extends javax.swing.JPanel {
 
         jButton2.setBackground(new java.awt.Color(153, 255, 153));
         jButton2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(0, 0, 0));
         jButton2.setText("SAVE");
         jButton2.setToolTipText("");
 
@@ -1683,7 +1649,7 @@ public class OccularExResults extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addGap(50, 50, 50)
+                .addGap(47, 47, 47)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 465, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1925,8 +1891,6 @@ public class OccularExResults extends javax.swing.JPanel {
     private javax.swing.JRadioButton jRadioButton7;
     private javax.swing.JRadioButton jRadioButton8;
     private javax.swing.JRadioButton jRadioButton9;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextPane jTextPane1;
     private javax.swing.JComboBox<String> lowComboBox1;
     private javax.swing.JComboBox<String> normComboBox1;
     private javax.swing.JComboBox<String> notCheckedComboBox;
