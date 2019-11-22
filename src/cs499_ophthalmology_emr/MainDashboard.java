@@ -26,7 +26,7 @@ public class MainDashboard extends javax.swing.JFrame {
     public PatientForm patientForm;
     private Patient activePatient;
     private Appointment activeAppointment;
-    
+    private EyeTestResults activeResults;
     /**
      * Creates new form MainWindow
      */
@@ -78,6 +78,14 @@ public class MainDashboard extends javax.swing.JFrame {
 	public Appointment getActiveAppointment()
 	{
 		return activeAppointment;
+	}
+
+	public EyeTestResults getActiveResults() {
+		return activeResults;
+	}
+
+	public void setActiveResults(EyeTestResults activeResults) {
+		this.activeResults = activeResults;
 	}
 	
 	public void showPatientPortal()

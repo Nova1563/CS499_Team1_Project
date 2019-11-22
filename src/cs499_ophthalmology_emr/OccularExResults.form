@@ -25,7 +25,6 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-
               <Group type="103" groupAlignment="1" max="-2" attributes="0">
                   <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
@@ -39,7 +38,6 @@
                   </Group>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
-
           </Group>
       </Group>
     </DimensionLayout>
@@ -47,13 +45,11 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-
                       <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Component id="jPanel9" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -82,9 +78,7 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-
                   <EmptySpace pref="16" max="32767" attributes="0"/>
-
               </Group>
           </Group>
         </DimensionLayout>
@@ -215,13 +209,11 @@
                       <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
-
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="diabeticEvalComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="vitreousComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -271,9 +263,7 @@
                       <Component id="miscRetinaComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="custom3ComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-
                   <EmptySpace min="0" pref="15" max="32767" attributes="0"/>
-
               </Group>
           </Group>
         </DimensionLayout>
@@ -999,16 +989,13 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Component id="jPanel10" alignment="0" max="32767" attributes="0"/>
-
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                           <Component id="saveButton" min="-2" pref="116" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                         
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" max="-2" attributes="0"/>
                           <Component id="deleteButton" min="-2" pref="116" max="-2" attributes="0"/>
                       </Group>
                       <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
@@ -1019,9 +1006,7 @@
                               <Component id="jPanel13" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Component id="notesPanel" alignment="0" min="-2" max="-2" attributes="0"/>
-
                       </Group>
-                      <Component id="jPanel12" alignment="0" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
@@ -1034,16 +1019,13 @@
                       </Group>
                       <Component id="jPanel15" alignment="1" min="-2" max="-2" attributes="0"/>
                   </Group>
-
                   <EmptySpace pref="34" max="32767" attributes="0"/>
-
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-
                   <Component id="jPanel10" min="-2" pref="43" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -1054,7 +1036,6 @@
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jPanel12" min="-2" max="-2" attributes="0"/>
-
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="jPanel11" min="-2" max="-2" attributes="0"/>
@@ -1065,29 +1046,16 @@
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-
                           <Component id="notesPanel" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                 
-                                  <EmptySpace min="0" pref="11" max="32767" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="deleteButton" alignment="1" min="-2" max="-2" attributes="0"/>
-                                      <Component id="saveButton" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-
+                              <Component id="deleteButton" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="saveButton" alignment="1" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Component id="jPanel15" min="-2" max="-2" attributes="0"/>
                   </Group>
-
                   <EmptySpace pref="17" max="32767" attributes="0"/>
-
               </Group>
           </Group>
         </DimensionLayout>
@@ -1625,7 +1593,6 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="DFE1CheckBox2" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel22" min="-2" max="-2" attributes="0"/>
@@ -1638,7 +1605,6 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="DFEContraindicatedCheckBox" alignment="1" min="-2" max="-2" attributes="0"/>
                               <Component id="recentDFECheckBox1" alignment="0" min="-2" pref="122" max="-2" attributes="0"/>
-
                           </Group>
                           <Component id="DFENotIncludedCheckBox1" min="-2" pref="146" max="-2" attributes="0"/>
                           <Component id="DFERefusedCheckBox" min="-2" pref="146" max="-2" attributes="0"/>
