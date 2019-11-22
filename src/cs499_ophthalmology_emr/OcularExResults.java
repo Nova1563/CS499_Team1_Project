@@ -15,8 +15,8 @@ public class OcularExResults extends javax.swing.JPanel {
     /**
      * Creates new form OccularExResults
      */
-    public OcularExResults() {
-		//mainDash = _mainDash;
+    public OcularExResults(MainDashboard _mainDash) {
+		mainDash = _mainDash;
         initComponents();
     }
 
@@ -163,7 +163,7 @@ public class OcularExResults extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Occular Exam Findings");
+        jLabel1.setText("Ocular Exam Findings");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);

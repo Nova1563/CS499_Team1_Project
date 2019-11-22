@@ -42,7 +42,7 @@ public class MainDashboard extends javax.swing.JFrame {
     patientForm		= new PatientForm(this);
     appointmentForm     = new AppointmentForm(this);
     visualAcuity        = new VisualAcuity(this);//***
-    occularExResults    = new OcularExResults();
+    occularExResults    = new OcularExResults(this);
         
     mainPanel.add(homePanel);	
     mainPanel.add(patientPortal);
