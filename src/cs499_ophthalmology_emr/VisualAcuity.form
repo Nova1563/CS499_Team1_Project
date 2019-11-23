@@ -28,10 +28,10 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Component id="titleBar" alignment="0" max="32767" attributes="0"/>
-          <Group type="102" attributes="0">
-              <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
               <Component id="jPanel1" min="-2" pref="1515" max="-2" attributes="0"/>
-              <EmptySpace pref="118" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -39,9 +39,9 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
               <Component id="titleBar" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="81" max="32767" attributes="0"/>
+              <EmptySpace pref="52" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -57,7 +57,7 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="titleLabel" alignment="1" max="32767" attributes="0"/>
+              <Component id="titleLabel" alignment="1" pref="1700" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
@@ -797,7 +797,7 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="jLabel29" min="-2" pref="90" max="-2" attributes="0"/>
                                       <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="DccOUPHTxtF1" min="-2" pref="83" max="-2" attributes="0"/>
+                                      <Component id="DscODPHTxtF" min="-2" pref="83" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="jLabel26" min="-2" pref="90" max="-2" attributes="0"/>
@@ -868,7 +868,7 @@
                           <Component id="jLabel23" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
                           <Component id="jLabel29" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
                           <Component id="jLabel37" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
-                          <Component id="DccOUPHTxtF1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="DscODPHTxtF" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -923,7 +923,6 @@
               </Properties>
               <Events>
                 <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="DccODTxtFFocusLost"/>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DccODTxtFActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel21">
@@ -1273,7 +1272,7 @@
                 <Property name="text" type="java.lang.String" value="/20"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="DccOUPHTxtF1">
+            <Component class="javax.swing.JTextField" name="DscODPHTxtF">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="fa" green="ce" red="87" type="rgb"/>
@@ -1286,7 +1285,7 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="DccOUPHTxtF1FocusLost"/>
+                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="DscODPHTxtFFocusLost"/>
               </Events>
             </Component>
           </SubComponents>
@@ -1320,7 +1319,7 @@
                                       <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
                                       <Component id="addLabel2" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="addOSTXTF3" min="-2" pref="120" max="-2" attributes="0"/>
+                                      <Component id="addODTXTF" min="-2" pref="120" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="0" pref="28" max="32767" attributes="0"/>
@@ -1333,11 +1332,11 @@
                                       </Group>
                                       <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="1" attributes="0">
-                                          <Component id="sphereOSTXTF1" min="-2" pref="120" max="-2" attributes="0"/>
-                                          <Component id="axisOSTXTF1" min="-2" pref="120" max="-2" attributes="0"/>
-                                          <Component id="cylinderOSTXTF1" min="-2" pref="120" max="-2" attributes="0"/>
-                                          <Component id="prismBaseOSTXTF1" min="-2" pref="120" max="-2" attributes="0"/>
-                                          <Component id="addOSTXTF2" min="-2" pref="120" max="-2" attributes="0"/>
+                                          <Component id="sphereODTXTF" min="-2" pref="120" max="-2" attributes="0"/>
+                                          <Component id="axisODTXTF" min="-2" pref="120" max="-2" attributes="0"/>
+                                          <Component id="cylinderODTXTF" min="-2" pref="120" max="-2" attributes="0"/>
+                                          <Component id="prismODTXTF" min="-2" pref="120" max="-2" attributes="0"/>
+                                          <Component id="prisimBaseODTXTF" min="-2" pref="120" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <Group type="102" attributes="0">
@@ -1350,12 +1349,12 @@
                           </Group>
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
                                       <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
                                       <Component id="sphereLabel2" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
                                       <Component id="saveBttn1" min="-2" pref="257" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
@@ -1384,36 +1383,36 @@
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="sphereLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="sphereOSTXTF1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="sphereODTXTF" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="axisLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="axisOSTXTF1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="axisODTXTF" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="cylinderLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="cylinderOSTXTF1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cylinderODTXTF" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="prismLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="prismBaseOSTXTF1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="prismODTXTF" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="prismBaseLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="addOSTXTF2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="prisimBaseODTXTF" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="addLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="addOSTXTF3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="addODTXTF" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="32767" attributes="0"/>
                               <Component id="saveBttn1" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -1543,9 +1542,9 @@
                                       </Group>
                                   </Group>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="prismBaseOSTXTF" alignment="1" min="-2" pref="120" max="-2" attributes="0"/>
+                                      <Component id="prismOSTXTF" alignment="1" min="-2" pref="120" max="-2" attributes="0"/>
                                       <Component id="addOSTXTF" alignment="1" min="-2" pref="120" max="-2" attributes="0"/>
-                                      <Component id="addOSTXTF1" alignment="1" min="-2" pref="120" max="-2" attributes="0"/>
+                                      <Component id="prismBaseOSTXTF" alignment="1" min="-2" pref="120" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="102" attributes="0">
@@ -1610,7 +1609,7 @@
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="prismBaseOSTXTF" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="prismOSTXTF" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="prismLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
@@ -1621,14 +1620,14 @@
                                   <Component id="addLabel1" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="addOSTXTF1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="prismBaseOSTXTF" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="addOSTXTF" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace pref="191" max="32767" attributes="0"/>
+                          <EmptySpace pref="181" max="32767" attributes="0"/>
                           <Component id="occularBttn" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -1712,7 +1711,6 @@
                   </Properties>
                   <Events>
                     <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="addOSTXTFFocusLost"/>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addOSTXTFActionPerformed"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="cylinderLabel3">
@@ -1783,7 +1781,7 @@
                     <Property name="toolTipText" type="java.lang.String" value=""/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="prismBaseOSTXTF">
+                <Component class="javax.swing.JTextField" name="prismOSTXTF">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="fa" green="ce" red="87" type="rgb"/>
@@ -1796,8 +1794,7 @@
                     </Property>
                   </Properties>
                   <Events>
-                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="prismBaseOSTXTFFocusLost"/>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="prismBaseOSTXTFActionPerformed"/>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="prismOSTXTFFocusLost"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="prismLabel2">
@@ -1812,7 +1809,7 @@
                     <Property name="toolTipText" type="java.lang.String" value=""/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="addOSTXTF1">
+                <Component class="javax.swing.JTextField" name="prismBaseOSTXTF">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="fa" green="ce" red="87" type="rgb"/>
@@ -1825,8 +1822,7 @@
                     </Property>
                   </Properties>
                   <Events>
-                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="addOSTXTF1FocusLost"/>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addOSTXTF1ActionPerformed"/>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="prismBaseOSTXTFFocusLost"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="occularBttn">
@@ -1860,7 +1856,7 @@
                 <Property name="toolTipText" type="java.lang.String" value=""/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="sphereOSTXTF1">
+            <Component class="javax.swing.JTextField" name="sphereODTXTF">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="fa" green="ce" red="87" type="rgb"/>
@@ -1873,7 +1869,7 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="sphereOSTXTF1FocusLost"/>
+                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="sphereODTXTFFocusLost"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="sphereLabel3">
@@ -1912,7 +1908,7 @@
                 <Property name="toolTipText" type="java.lang.String" value=""/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="axisOSTXTF1">
+            <Component class="javax.swing.JTextField" name="axisODTXTF">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="fa" green="ce" red="87" type="rgb"/>
@@ -1925,10 +1921,10 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="axisOSTXTF1FocusLost"/>
+                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="axisODTXTFFocusLost"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="cylinderOSTXTF1">
+            <Component class="javax.swing.JTextField" name="cylinderODTXTF">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="fa" green="ce" red="87" type="rgb"/>
@@ -1941,10 +1937,10 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="cylinderOSTXTF1FocusLost"/>
+                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="cylinderODTXTFFocusLost"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="prismBaseOSTXTF1">
+            <Component class="javax.swing.JTextField" name="prismODTXTF">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="fa" green="ce" red="87" type="rgb"/>
@@ -1957,11 +1953,10 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="prismBaseOSTXTF1FocusLost"/>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="prismBaseOSTXTF1ActionPerformed"/>
+                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="prismODTXTFFocusLost"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="addOSTXTF2">
+            <Component class="javax.swing.JTextField" name="prisimBaseODTXTF">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="fa" green="ce" red="87" type="rgb"/>
@@ -1974,11 +1969,10 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="addOSTXTF2FocusLost"/>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addOSTXTF2ActionPerformed"/>
+                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="prisimBaseODTXTFFocusLost"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="addOSTXTF3">
+            <Component class="javax.swing.JTextField" name="addODTXTF">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="fa" green="ce" red="87" type="rgb"/>
@@ -1991,8 +1985,7 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="addOSTXTF3FocusLost"/>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addOSTXTF3ActionPerformed"/>
+                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="addODTXTFFocusLost"/>
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="saveBttn1">

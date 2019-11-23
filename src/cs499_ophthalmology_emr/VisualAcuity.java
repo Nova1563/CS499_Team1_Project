@@ -108,7 +108,7 @@ public class VisualAcuity extends javax.swing.JPanel {
         jLabel35 = new javax.swing.JLabel();
         jLabel36 = new javax.swing.JLabel();
         jLabel37 = new javax.swing.JLabel();
-        DccOUPHTxtF1 = new javax.swing.JTextField();
+        DscODPHTxtF = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         correctiveLabel = new javax.swing.JLabel();
@@ -128,20 +128,20 @@ public class VisualAcuity extends javax.swing.JPanel {
         prismBaseLabel1 = new javax.swing.JLabel();
         cylinderOSTXTF = new javax.swing.JTextField();
         addLabel1 = new javax.swing.JLabel();
-        prismBaseOSTXTF = new javax.swing.JTextField();
+        prismOSTXTF = new javax.swing.JTextField();
         prismLabel2 = new javax.swing.JLabel();
-        addOSTXTF1 = new javax.swing.JTextField();
+        prismBaseOSTXTF = new javax.swing.JTextField();
         occularBttn = new javax.swing.JButton();
         sphereLabel2 = new javax.swing.JLabel();
-        sphereOSTXTF1 = new javax.swing.JTextField();
+        sphereODTXTF = new javax.swing.JTextField();
         sphereLabel3 = new javax.swing.JLabel();
         axisLabel1 = new javax.swing.JLabel();
         addLabel2 = new javax.swing.JLabel();
-        axisOSTXTF1 = new javax.swing.JTextField();
-        cylinderOSTXTF1 = new javax.swing.JTextField();
-        prismBaseOSTXTF1 = new javax.swing.JTextField();
-        addOSTXTF2 = new javax.swing.JTextField();
-        addOSTXTF3 = new javax.swing.JTextField();
+        axisODTXTF = new javax.swing.JTextField();
+        cylinderODTXTF = new javax.swing.JTextField();
+        prismODTXTF = new javax.swing.JTextField();
+        prisimBaseODTXTF = new javax.swing.JTextField();
+        addODTXTF = new javax.swing.JTextField();
         saveBttn1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel38 = new javax.swing.JLabel();
@@ -161,7 +161,7 @@ public class VisualAcuity extends javax.swing.JPanel {
         titleBar.setLayout(titleBarLayout);
         titleBarLayout.setHorizontalGroup(
             titleBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(titleLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(titleLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1700, Short.MAX_VALUE)
         );
         titleBarLayout.setVerticalGroup(
             titleBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -509,11 +509,6 @@ public class VisualAcuity extends javax.swing.JPanel {
                 DccODTxtFFocusLost(evt);
             }
         });
-        DccODTxtF.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DccODTxtFActionPerformed(evt);
-            }
-        });
 
         jLabel21.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel21.setForeground(new java.awt.Color(255, 255, 255));
@@ -673,12 +668,12 @@ public class VisualAcuity extends javax.swing.JPanel {
         jLabel37.setForeground(new java.awt.Color(255, 255, 255));
         jLabel37.setText("/20");
 
-        DccOUPHTxtF1.setBackground(new java.awt.Color(135, 206, 250));
-        DccOUPHTxtF1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        DccOUPHTxtF1.setForeground(new java.awt.Color(0, 0, 0));
-        DccOUPHTxtF1.addFocusListener(new java.awt.event.FocusAdapter() {
+        DscODPHTxtF.setBackground(new java.awt.Color(135, 206, 250));
+        DscODPHTxtF.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        DscODPHTxtF.setForeground(new java.awt.Color(0, 0, 0));
+        DscODPHTxtF.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
-                DccOUPHTxtF1FocusLost(evt);
+                DscODPHTxtFFocusLost(evt);
             }
         });
 
@@ -729,7 +724,7 @@ public class VisualAcuity extends javax.swing.JPanel {
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel8Layout.createSequentialGroup()
                                 .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(DccOUPHTxtF1, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(DscODPHTxtF, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel8Layout.createSequentialGroup()
                                 .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
@@ -784,7 +779,7 @@ public class VisualAcuity extends javax.swing.JPanel {
                     .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(DccOUPHTxtF1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(DscODPHTxtF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(16, 16, 16)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -890,11 +885,6 @@ public class VisualAcuity extends javax.swing.JPanel {
                 addOSTXTFFocusLost(evt);
             }
         });
-        addOSTXTF.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addOSTXTFActionPerformed(evt);
-            }
-        });
 
         cylinderLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         cylinderLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -929,17 +919,12 @@ public class VisualAcuity extends javax.swing.JPanel {
         addLabel1.setText("Add: ");
         addLabel1.setToolTipText("");
 
-        prismBaseOSTXTF.setBackground(new java.awt.Color(135, 206, 250));
-        prismBaseOSTXTF.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        prismBaseOSTXTF.setForeground(new java.awt.Color(0, 0, 0));
-        prismBaseOSTXTF.addFocusListener(new java.awt.event.FocusAdapter() {
+        prismOSTXTF.setBackground(new java.awt.Color(135, 206, 250));
+        prismOSTXTF.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        prismOSTXTF.setForeground(new java.awt.Color(0, 0, 0));
+        prismOSTXTF.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
-                prismBaseOSTXTFFocusLost(evt);
-            }
-        });
-        prismBaseOSTXTF.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                prismBaseOSTXTFActionPerformed(evt);
+                prismOSTXTFFocusLost(evt);
             }
         });
 
@@ -948,17 +933,12 @@ public class VisualAcuity extends javax.swing.JPanel {
         prismLabel2.setText("Prism: ");
         prismLabel2.setToolTipText("");
 
-        addOSTXTF1.setBackground(new java.awt.Color(135, 206, 250));
-        addOSTXTF1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        addOSTXTF1.setForeground(new java.awt.Color(0, 0, 0));
-        addOSTXTF1.addFocusListener(new java.awt.event.FocusAdapter() {
+        prismBaseOSTXTF.setBackground(new java.awt.Color(135, 206, 250));
+        prismBaseOSTXTF.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        prismBaseOSTXTF.setForeground(new java.awt.Color(0, 0, 0));
+        prismBaseOSTXTF.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
-                addOSTXTF1FocusLost(evt);
-            }
-        });
-        addOSTXTF1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addOSTXTF1ActionPerformed(evt);
+                prismBaseOSTXTFFocusLost(evt);
             }
         });
 
@@ -991,9 +971,9 @@ public class VisualAcuity extends javax.swing.JPanel {
                                 .addComponent(prismLabel2)
                                 .addGap(26, 26, 26)))
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(prismBaseOSTXTF, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(prismOSTXTF, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(addOSTXTF, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(addOSTXTF1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(prismBaseOSTXTF, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1041,7 +1021,7 @@ public class VisualAcuity extends javax.swing.JPanel {
                     .addComponent(cylinderOSTXTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(prismBaseOSTXTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(prismOSTXTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(prismLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1050,12 +1030,12 @@ public class VisualAcuity extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(addLabel1))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(addOSTXTF1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(prismBaseOSTXTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(addOSTXTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 191, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 181, Short.MAX_VALUE)
                 .addComponent(occularBttn)
-                .addGap(28, 28, 28))
+                .addGap(38, 38, 38))
         );
 
         sphereLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -1063,12 +1043,12 @@ public class VisualAcuity extends javax.swing.JPanel {
         sphereLabel2.setText("Measurements: ");
         sphereLabel2.setToolTipText("");
 
-        sphereOSTXTF1.setBackground(new java.awt.Color(135, 206, 250));
-        sphereOSTXTF1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        sphereOSTXTF1.setForeground(new java.awt.Color(0, 0, 0));
-        sphereOSTXTF1.addFocusListener(new java.awt.event.FocusAdapter() {
+        sphereODTXTF.setBackground(new java.awt.Color(135, 206, 250));
+        sphereODTXTF.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        sphereODTXTF.setForeground(new java.awt.Color(0, 0, 0));
+        sphereODTXTF.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
-                sphereOSTXTF1FocusLost(evt);
+                sphereODTXTFFocusLost(evt);
             }
         });
 
@@ -1087,63 +1067,48 @@ public class VisualAcuity extends javax.swing.JPanel {
         addLabel2.setText("Add: ");
         addLabel2.setToolTipText("");
 
-        axisOSTXTF1.setBackground(new java.awt.Color(135, 206, 250));
-        axisOSTXTF1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        axisOSTXTF1.setForeground(new java.awt.Color(0, 0, 0));
-        axisOSTXTF1.addFocusListener(new java.awt.event.FocusAdapter() {
+        axisODTXTF.setBackground(new java.awt.Color(135, 206, 250));
+        axisODTXTF.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        axisODTXTF.setForeground(new java.awt.Color(0, 0, 0));
+        axisODTXTF.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
-                axisOSTXTF1FocusLost(evt);
+                axisODTXTFFocusLost(evt);
             }
         });
 
-        cylinderOSTXTF1.setBackground(new java.awt.Color(135, 206, 250));
-        cylinderOSTXTF1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        cylinderOSTXTF1.setForeground(new java.awt.Color(0, 0, 0));
-        cylinderOSTXTF1.addFocusListener(new java.awt.event.FocusAdapter() {
+        cylinderODTXTF.setBackground(new java.awt.Color(135, 206, 250));
+        cylinderODTXTF.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        cylinderODTXTF.setForeground(new java.awt.Color(0, 0, 0));
+        cylinderODTXTF.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
-                cylinderOSTXTF1FocusLost(evt);
+                cylinderODTXTFFocusLost(evt);
             }
         });
 
-        prismBaseOSTXTF1.setBackground(new java.awt.Color(135, 206, 250));
-        prismBaseOSTXTF1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        prismBaseOSTXTF1.setForeground(new java.awt.Color(0, 0, 0));
-        prismBaseOSTXTF1.addFocusListener(new java.awt.event.FocusAdapter() {
+        prismODTXTF.setBackground(new java.awt.Color(135, 206, 250));
+        prismODTXTF.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        prismODTXTF.setForeground(new java.awt.Color(0, 0, 0));
+        prismODTXTF.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
-                prismBaseOSTXTF1FocusLost(evt);
-            }
-        });
-        prismBaseOSTXTF1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                prismBaseOSTXTF1ActionPerformed(evt);
+                prismODTXTFFocusLost(evt);
             }
         });
 
-        addOSTXTF2.setBackground(new java.awt.Color(135, 206, 250));
-        addOSTXTF2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        addOSTXTF2.setForeground(new java.awt.Color(0, 0, 0));
-        addOSTXTF2.addFocusListener(new java.awt.event.FocusAdapter() {
+        prisimBaseODTXTF.setBackground(new java.awt.Color(135, 206, 250));
+        prisimBaseODTXTF.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        prisimBaseODTXTF.setForeground(new java.awt.Color(0, 0, 0));
+        prisimBaseODTXTF.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
-                addOSTXTF2FocusLost(evt);
-            }
-        });
-        addOSTXTF2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addOSTXTF2ActionPerformed(evt);
+                prisimBaseODTXTFFocusLost(evt);
             }
         });
 
-        addOSTXTF3.setBackground(new java.awt.Color(135, 206, 250));
-        addOSTXTF3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        addOSTXTF3.setForeground(new java.awt.Color(0, 0, 0));
-        addOSTXTF3.addFocusListener(new java.awt.event.FocusAdapter() {
+        addODTXTF.setBackground(new java.awt.Color(135, 206, 250));
+        addODTXTF.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        addODTXTF.setForeground(new java.awt.Color(0, 0, 0));
+        addODTXTF.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
-                addOSTXTF3FocusLost(evt);
-            }
-        });
-        addOSTXTF3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addOSTXTF3ActionPerformed(evt);
+                addODTXTFFocusLost(evt);
             }
         });
 
@@ -1170,7 +1135,7 @@ public class VisualAcuity extends javax.swing.JPanel {
                                 .addGap(77, 77, 77)
                                 .addComponent(addLabel2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(addOSTXTF3, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(addODTXTF, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(0, 28, Short.MAX_VALUE)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -1181,11 +1146,11 @@ public class VisualAcuity extends javax.swing.JPanel {
                                     .addComponent(prismLabel1))
                                 .addGap(51, 51, 51)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(sphereOSTXTF1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(axisOSTXTF1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(cylinderOSTXTF1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(prismBaseOSTXTF1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(addOSTXTF2, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(sphereODTXTF, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(axisODTXTF, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(cylinderODTXTF, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(prismODTXTF, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(prisimBaseODTXTF, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addContainerGap()
                                 .addComponent(rangeLabel)
@@ -1197,7 +1162,7 @@ public class VisualAcuity extends javax.swing.JPanel {
                                 .addGap(37, 37, 37)
                                 .addComponent(sphereLabel2))
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addContainerGap()
+                                .addGap(60, 60, 60)
                                 .addComponent(saveBttn1, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1219,30 +1184,30 @@ public class VisualAcuity extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(sphereLabel3)
-                            .addComponent(sphereOSTXTF1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(sphereODTXTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(axisLabel1)
-                            .addComponent(axisOSTXTF1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(axisODTXTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(cylinderLabel2)
-                            .addComponent(cylinderOSTXTF1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(cylinderODTXTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(prismLabel1)
-                            .addComponent(prismBaseOSTXTF1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(prismODTXTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(prismBaseLabel)
-                            .addComponent(addOSTXTF2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(prisimBaseODTXTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(addLabel2)
-                            .addComponent(addOSTXTF3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(addODTXTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(saveBttn1)
-                        .addGap(38, 38, 38))))
+                        .addGap(39, 39, 39))))
         );
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -1298,291 +1263,346 @@ public class VisualAcuity extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(titleBar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addGap(67, 67, 67)
+                .addGap(61, 61, 61)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1515, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(118, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(titleBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(47, 47, 47)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(81, Short.MAX_VALUE))
+                .addContainerGap(52, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
    
     
     
     
-    
-    /**********************
-    *     NEAR DISTANCE
-    ***********************/
+    /**********************************
+    *          VISUAL ACUITY
+    ************************************/
+
+
+    /********************************
+    *     INPUT DATA FOR N 
+    *********************************/
+
+    /********************************
+    *     INPUT DATA FOR N cc
+    *********************************/
     private void NccODTxtFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_NccODTxtFFocusLost
         // TODO add your handling code here:
-        String NccOD = NccODTxtF.getText();
-        eyeTestResults.setDccOD(NccOD);
-        System.out.println(NccOD);
+        String nccOD = NccODTxtF.getText();
+        eyeTestResults.setDccOD(nccOD);
+        System.out.println(nccOD);
     }//GEN-LAST:event_NccODTxtFFocusLost
 
     private void NccOSTxtFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_NccOSTxtFFocusLost
         // TODO add your handling code here:
-        String NccOS = NccOSTxtF.getText();
-        eyeTestResults.setDccOD(NccOS);
-        System.out.println(NccOS);
+        String nccOS = NccOSTxtF.getText();
+        eyeTestResults.setDccOD(nccOS);
+        System.out.println(nccOS);
         
     }//GEN-LAST:event_NccOSTxtFFocusLost
 
     private void NccOUTxtFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_NccOUTxtFFocusLost
         // TODO add your handling code here:
-         String NccOU = NccOUTxtF.getText();
-         eyeTestResults.setDccOD(NccOU);
-         System.out.println(NccOU);
+         String nccOU = NccOUTxtF.getText();
+         eyeTestResults.setDccOD(nccOU);
+         System.out.println(nccOU);
     }//GEN-LAST:event_NccOUTxtFFocusLost
 
+    /********************************
+    *     INPUT DATA FOR N sc
+    *********************************/
     private void NscODTxtFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_NscODTxtFFocusLost
         // TODO add your handling code here:
-         String NscOD = NscODTxtF.getText();
-         eyeTestResults.setDccOD(NscOD);
-         System.out.println(NscOD);
+         String nscOD = NscODTxtF.getText();
+         eyeTestResults.setDccOD(nscOD);
+         System.out.println(nscOD);
     }//GEN-LAST:event_NscODTxtFFocusLost
 
     private void NscOSTxtFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_NscOSTxtFFocusLost
         // TODO add your handling code here:
-         String NscOS = NscOSTxtF.getText();
-         eyeTestResults.setDccOD(NscOS);
-         System.out.println(NscOS);
+         String nscOS = NscOSTxtF.getText();
+         eyeTestResults.setDccOD(nscOS);
+         System.out.println(nscOS);
     }//GEN-LAST:event_NscOSTxtFFocusLost
 
     private void NscOUTxtFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_NscOUTxtFFocusLost
         // TODO add your handling code here:
-         String NscOU = NscOUTxtF.getText();
-         eyeTestResults.setDccOD(NscOU);
-         System.out.println(NscOU);
+         String nscOU = NscOUTxtF.getText();
+         eyeTestResults.setDccOD(nscOU);
+         System.out.println(nscOU);
     }//GEN-LAST:event_NscOUTxtFFocusLost
 
+    /********************************
+    *     INPUT DATA FOR N cc PH
+    *********************************/
     private void NccODPHTxtFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_NccODPHTxtFFocusLost
         // TODO add your handling code here:
-         String NccODPH = NccODPHTxtF.getText();
-         eyeTestResults.setDccOD(NccODPH);
-         System.out.println(NccODPH);
+         String nccODPH = NccODPHTxtF.getText();
+         eyeTestResults.setDccOD(nccODPH);
+         System.out.println(nccODPH);
     }//GEN-LAST:event_NccODPHTxtFFocusLost
 
     private void NccOSPHTxtFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_NccOSPHTxtFFocusLost
         // TODO add your handling code here:
-         String NccOSPH = NccOSPHTxtF.getText();
-         eyeTestResults.setDccOD(NccOSPH);
-         System.out.println(NccOSPH);
+         String nccOSPH = NccOSPHTxtF.getText();
+         eyeTestResults.setDccOD(nccOSPH);
+         System.out.println(nccOSPH);
     }//GEN-LAST:event_NccOSPHTxtFFocusLost
 
     private void NccOUPHTxtFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_NccOUPHTxtFFocusLost
         // TODO add your handling code here:
-         String NccOUPH = NccOSPHTxtF.getText();
-         eyeTestResults.setDccOD(NccOUPH);
-         System.out.println(NccOUPH);
+         String nccOUPH = NccOSPHTxtF.getText();
+         eyeTestResults.setDccOD(nccOUPH);
+         System.out.println(nccOUPH);
     }//GEN-LAST:event_NccOUPHTxtFFocusLost
 
+    /********************************
+    *     INPUT DATA FOR N sc PH
+    *********************************/
     private void NscODPHTxtFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_NscODPHTxtFFocusLost
         // TODO add your handling code here:
-         String NscODPH = NscODPHTxtF.getText();
-         eyeTestResults.setDccOD(NscODPH);
-         System.out.println(NscODPH);
+         String nscODPH = NscODPHTxtF.getText();
+         eyeTestResults.setDccOD(nscODPH);
+         System.out.println(nscODPH);
     }//GEN-LAST:event_NscODPHTxtFFocusLost
 
     private void NscOSPHTxtFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_NscOSPHTxtFFocusLost
         // TODO add your handling code here:
-         String NscOSPH = NscOSPHTxtF.getText();
-         eyeTestResults.setDccOD(NscOSPH);
-         System.out.println(NscOSPH);
+         String nscOSPH = NscOSPHTxtF.getText();
+         eyeTestResults.setDccOD(nscOSPH);
+         System.out.println(nscOSPH);
     }//GEN-LAST:event_NscOSPHTxtFFocusLost
 
     private void NscOUPHTxtFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_NscOUPHTxtFFocusLost
         // TODO add your handling code here:
-         String NscOUPH = NscOUPHTxtF.getText();
-         eyeTestResults.setDccOD(NscOUPH);
-         System.out.println(NscOUPH);
+         String nscOUPH = NscOUPHTxtF.getText();
+         eyeTestResults.setDccOD(nscOUPH);
+         System.out.println(nscOUPH);
     }//GEN-LAST:event_NscOUPHTxtFFocusLost
 
-    private void occularBttnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_occularBttnMouseClicked
+    /***********************************
+    *     INPUT DATA FOR D
+    ************************************/
+
+    /**************************
+    *     INPUT DATA FOR D cc
+    ***************************/
+    private void DccODTxtFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DccODTxtFFocusLost
         // TODO add your handling code here:
-        mainDash.showOccularExResults();
-    }//GEN-LAST:event_occularBttnMouseClicked
+        String dccOD = DccODTxtF.getText();
+        eyeTestResults.setDccOD(dccOD);
+        System.out.println(dccOD);
+    }//GEN-LAST:event_DccODTxtFFocusLost
 
-    private void DscOSPHTxtFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DscOSPHTxtFFocusLost
+    private void DccOSTxtFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DccOSTxtFFocusLost
         // TODO add your handling code here:
-        String DscOSPH = DscOSPHTxtF.getText();
-        eyeTestResults.setDccOD(DscOSPH);
-        System.out.println(DscOSPH);
-    }//GEN-LAST:event_DscOSPHTxtFFocusLost
+        String dccOS = DccOSTxtF.getText();
+        eyeTestResults.setDccOD(dccOS);
+        System.out.println(dccOS);
 
-    private void DscOUPHTxtFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DscOUPHTxtFFocusLost
+    }//GEN-LAST:event_DccOSTxtFFocusLost
+
+    private void DccOUTxtFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DccOUTxtFFocusLost
         // TODO add your handling code here:
-        String DscOUPH = DscOUPHTxtF.getText();
-        eyeTestResults.setDccOD(DscOUPH);
-        System.out.println(DscOUPH);
-    }//GEN-LAST:event_DscOUPHTxtFFocusLost
+        String dccOU = DccOUTxtF.getText();
+        eyeTestResults.setDccOD(dccOU);
+        System.out.println(dccOU);
+    }//GEN-LAST:event_DccOUTxtFFocusLost
 
-    private void DccODPHTxtFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DccODPHTxtFFocusLost
+    /**************************
+    *     INPUT DATA FOR D sc
+    ***************************/
+    private void DScODTxtFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DScODTxtFFocusLost
         // TODO add your handling code here:
-        String DccODPH = DccODPHTxtF.getText();
-        eyeTestResults.setDccOD(DccODPH);
-        System.out.println(DccODPH);
-    }//GEN-LAST:event_DccODPHTxtFFocusLost
-
-    private void DccOUPHTxtFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DccOUPHTxtFFocusLost
-        // TODO add your handling code here:
-        String DccOUPH = DccOUPHTxtF.getText();
-        eyeTestResults.setDccOD(DccOUPH);
-        System.out.println(DccOUPH);
-
-    }//GEN-LAST:event_DccOUPHTxtFFocusLost
-
-    private void DccOSPHTxtFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DccOSPHTxtFFocusLost
-        // TODO add your handling code here:
-        String DccOSPH = DccOSPHTxtF.getText();
-        eyeTestResults.setDccOD(DccOSPH);
-        System.out.println(DccOSPH);
-
-    }//GEN-LAST:event_DccOSPHTxtFFocusLost
+        String dscOD = DScODTxtF.getText();
+        eyeTestResults.setDccOD(dscOD);
+        System.out.println(dscOD);
+    }//GEN-LAST:event_DScODTxtFFocusLost
 
     private void DscOsTxtFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DscOsTxtFFocusLost
         // TODO add your handling code here:
-        String DscOS = DscOsTxtF.getText();
-        eyeTestResults.setDccOD(DscOS);
-        System.out.println(DscOS);
+        String dscOS = DscOsTxtF.getText();
+        eyeTestResults.setDccOD(dscOS);
+        System.out.println(dscOS);
     }//GEN-LAST:event_DscOsTxtFFocusLost
 
     private void DscOUTxtFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DscOUTxtFFocusLost
         // TODO add your handling code here:
-        String DscOU = DscOUTxtF.getText();
-        eyeTestResults.setDccOD(DscOU);
-        System.out.println(DscOU);
+        String dscOU = DscOUTxtF.getText();
+        eyeTestResults.setDccOD(dscOU);
+        System.out.println(dscOU);
     }//GEN-LAST:event_DscOUTxtFFocusLost
 
-    private void DccOUTxtFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DccOUTxtFFocusLost
+
+    /****************************
+    *     INPUT DATA FRO D cc PH 
+    *****************************/
+    private void DccODPHTxtFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DccODPHTxtFFocusLost
         // TODO add your handling code here:
-        String DccOU = DccOUTxtF.getText();
-        eyeTestResults.setDccOD(DccOU);
-        //DccOU.eyeTestResults().set();
-        System.out.println(DccOU);
-    }//GEN-LAST:event_DccOUTxtFFocusLost
+        String dccODPH = DccODPHTxtF.getText();
+        eyeTestResults.setDccOD(dccODPH);
+        System.out.println(dccODPH);
+    }//GEN-LAST:event_DccODPHTxtFFocusLost
 
-    private void DccOSTxtFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DccOSTxtFFocusLost
+    private void DccOSPHTxtFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DccOSPHTxtFFocusLost
         // TODO add your handling code here:
-        String DccOS = DccOSTxtF.getText();
-        eyeTestResults.setDccOD(DccOS);
-        System.out.println(DccOS);
+        String dccOSPH = DccOSPHTxtF.getText();
+        eyeTestResults.setDccOD(dccOSPH);
+        System.out.println(dccOSPH);
 
-    }//GEN-LAST:event_DccOSTxtFFocusLost
-
-    private void DScODTxtFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DScODTxtFFocusLost
-        // TODO add your handling code here:
-        String DscOD = DScODTxtF.getText();
-        eyeTestResults.setDccOD(DscOD);
-        System.out.println(DscOD);
-    }//GEN-LAST:event_DScODTxtFFocusLost
-
-    private void DccODTxtFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DccODTxtFActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_DccODTxtFActionPerformed
-
-    /**********************
-    *     FAR DISTANCE
-    ***********************/
-    private void DccODTxtFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DccODTxtFFocusLost
-        // TODO add your handling code here:
-        String DccOD = DccODTxtF.getText();
-        eyeTestResults.setDccOD(DccOD);
-        System.out.println(DccOD);
-    }//GEN-LAST:event_DccODTxtFFocusLost
-
-    private void DccOUPHTxtF1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DccOUPHTxtF1FocusLost
-        // TODO add your handling code here:
-       // String DccOD = DccODTxtF.getText();
-        //eyeTestResults.setDccOD(DccOUph);
-       // System.out.println(DccOD);
-    }//GEN-LAST:event_DccOUPHTxtF1FocusLost
-
-    private void addOSTXTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addOSTXTFActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_addOSTXTFActionPerformed
-
-    private void prismBaseOSTXTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_prismBaseOSTXTFActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_prismBaseOSTXTFActionPerformed
-
+    }//GEN-LAST:event_DccOSPHTxtFFocusLost
     
-     /***********************
-    *     CORRECTIVE LENSES
-    *************************/
-    private void sphereOSTXTFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_sphereOSTXTFFocusLost
+    private void DccOUPHTxtFFocusLost(java.awt.event.FocusEvent evt) {                                      
         // TODO add your handling code here:
-    }//GEN-LAST:event_sphereOSTXTFFocusLost
+        String dccOUPH = DccOUPHTxtF.getText();
+        eyeTestResults.setDccOD(dccOUPH);
+        System.out.println(dccOUPH);
+    }
+
+    /****************************
+    *     INPUT DATA FRO D sc PH 
+    *****************************/
+
+    private void DscODPHTxtFFocusLost(java.awt.event.FocusEvent evt) {                                      
+        // TODO add your handling code here:
+        String dscODPH = DscODPHTxtF.getText();
+        eyeTestResults.setDccODph(dscODPH);
+        System.out.println(dscODPH);
+    }                                     
+
+    private void DscOSPHTxtFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DscOSPHTxtFFocusLost
+        // TODO add your handling code here:
+        String dscOSPH = DscOSPHTxtF.getText();
+        eyeTestResults.setDscOSph(dscOSPH);
+        System.out.println(dscOSPH);
+    }//GEN-LAST:event_DscOSPHTxtFFocusLost
+
+    private void DscOUPHTxtFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DscOUPHTxtFFocusLost
+        // TODO add your handling code here:
+        String dscOUPH = DscOUPHTxtF.getText();
+        eyeTestResults.setDscOUph(dscOUPH);
+        System.out.println(dscOUPH);
+    }//GEN-LAST:event_DscOUPHTxtFFocusLost
+
+
+     /**********************************
+    *     CORRECTIVE LENSES
+    ************************************/
+    
+    
+    /***********************
+    *     OS TXT FIELDS
+    *************************/
+    private void sphereOSTXTFFocusLost(java.awt.event.FocusEvent evt) {                                       
+        // TODO add your handling code here:
+       
+        Double sphereOS = Double.parseDouble(sphereOSTXTF.getText());
+        eyeTestResults.setSphereOS(sphereOS);
+        System.out.println("Sphere OS: " + sphereOS);
+
+    }                                      
 
     private void axisOSTXTFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_axisOSTXTFFocusLost
         // TODO add your handling code here:
+         Double axisOS = Double.parseDouble(axisOSTXTF.getText());
+         eyeTestResults.setAxisOS(axisOS);
+         System.out.println("Axis OS: " + axisOS);
     }//GEN-LAST:event_axisOSTXTFFocusLost
 
     private void cylinderOSTXTFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cylinderOSTXTFFocusLost
         // TODO add your handling code here:
+         Double cylinderOS = Double.parseDouble(cylinderOSTXTF.getText());
+         eyeTestResults.setCylinderOS(cylinderOS);
+         System.out.println("Cylinder OS: " + cylinderOS);
     }//GEN-LAST:event_cylinderOSTXTFFocusLost
 
-    private void prismBaseOSTXTFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_prismBaseOSTXTFFocusLost
+    private void prismOSTXTFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_prismOSTXTFFocusLost
         // TODO add your handling code here:
-    }//GEN-LAST:event_prismBaseOSTXTFFocusLost
+         Double prismOS = Double.parseDouble(prismOSTXTF.getText());
+         eyeTestResults.setPrismOS(prismOS);
+         System.out.println("Prism OS: " + prismOS);
+    }//GEN-LAST:event_prismOSTXTFFocusLost
+
+    private void prismBaseOSTXTFFocusLost(java.awt.event.FocusEvent evt) {                                           
+        // TODO add your handling code here:
+         Double prismBaseOS = Double.parseDouble(prismBaseOSTXTF.getText());
+         eyeTestResults.setPrismBaseOS(prismBaseOS);
+         System.out.println("Prism OS: " + prismBaseOS);
+    }                                          
 
     private void addOSTXTFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_addOSTXTFFocusLost
         // TODO add your handling code here:
+         Double addOS = Double.parseDouble(addOSTXTF.getText());
+         eyeTestResults.setAddOS(addOS);
+         System.out.println("Add OS: " + addOS);
     }//GEN-LAST:event_addOSTXTFFocusLost
 
-    private void sphereOSTXTF1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_sphereOSTXTF1FocusLost
+   
+    /***********************
+    *     OD TXT FIELDS
+    *************************/
+    private void sphereODTXTFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_sphereOSTXTFFocusLost
         // TODO add your handling code here:
-    }//GEN-LAST:event_sphereOSTXTF1FocusLost
+        Double sphereOD = Double.parseDouble(sphereODTXTF.getText());
+        eyeTestResults.setSphereOD(sphereOD);
+        System.out.println("Sphere OD: " + sphereOD);
+    }//GEN-LAST:event_sphereOSTXTFFocusLost
 
-    private void addOSTXTF1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_addOSTXTF1FocusLost
+    private void axisODTXTFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_axisODTXTFFocusLost
         // TODO add your handling code here:
-    }//GEN-LAST:event_addOSTXTF1FocusLost
+        Double axisOD = Double.parseDouble(axisODTXTF.getText());
+        eyeTestResults.setAxisOD(axisOD);
+        System.out.println("Axis OD: " + axisOD);
+    }//GEN-LAST:event_axisODTXTFFocusLost
 
-    private void addOSTXTF1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addOSTXTF1ActionPerformed
+    private void cylinderODTXTFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cylinderODTXTFFocusLost
         // TODO add your handling code here:
-    }//GEN-LAST:event_addOSTXTF1ActionPerformed
+        Double cylinderOD = Double.parseDouble(cylinderODTXTF.getText());
+        eyeTestResults.setCylinderOD(cylinderOD);
+        System.out.println("Cylinder OD: " + cylinderOD);
+    }//GEN-LAST:event_cylinderODTXTFFocusLost
 
-    private void axisOSTXTF1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_axisOSTXTF1FocusLost
+    private void prismODTXTFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_prismODTXTFFocusLost
         // TODO add your handling code here:
-    }//GEN-LAST:event_axisOSTXTF1FocusLost
+        Double prismOD = Double.parseDouble(prismODTXTF.getText());
+        eyeTestResults.setPrismOD(prismOD);
+        System.out.println("Prism OD: " + prismOD);
+    }//GEN-LAST:event_prismODTXTFFocusLost
 
-    private void cylinderOSTXTF1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cylinderOSTXTF1FocusLost
+    private void prisimBaseODTXTFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_prisimBaseODTXTFFocusLost
         // TODO add your handling code here:
-    }//GEN-LAST:event_cylinderOSTXTF1FocusLost
+        Double prismBaseOD = Double.parseDouble(prisimBaseODTXTF.getText());
+        eyeTestResults.setPrismBaseOD(prismBaseOD);
+        System.out.println("Prism OD: " + prismBaseOD);
+    }//GEN-LAST:event_prisimBaseODTXTFFocusLost
 
-    private void prismBaseOSTXTF1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_prismBaseOSTXTF1FocusLost
+    private void addODTXTFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_addODTXTFFocusLost
         // TODO add your handling code here:
-    }//GEN-LAST:event_prismBaseOSTXTF1FocusLost
+         Double addOD = Double.parseDouble(addODTXTF.getText());
+         eyeTestResults.setAddOD(addOD);
+         System.out.println("Axis OS: " + addOD);
+    }//GEN-LAST:event_addODTXTFFocusLost
 
-    private void prismBaseOSTXTF1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_prismBaseOSTXTF1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_prismBaseOSTXTF1ActionPerformed
-
-    private void addOSTXTF2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_addOSTXTF2FocusLost
-        // TODO add your handling code here:
-    }//GEN-LAST:event_addOSTXTF2FocusLost
-
-    private void addOSTXTF2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addOSTXTF2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_addOSTXTF2ActionPerformed
-
-    private void addOSTXTF3FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_addOSTXTF3FocusLost
-        // TODO add your handling code here:
-    }//GEN-LAST:event_addOSTXTF3FocusLost
-
-    private void addOSTXTF3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addOSTXTF3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_addOSTXTF3ActionPerformed
-
+    
+    /*****************************
+    *     BUTTONS SAVE AND OCCULAR
+    ********************************/
     private void saveBttn1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_saveBttn1MouseClicked
         // TODO add your handling code here:
+        dataBase.save(eyeTestResults);
     }//GEN-LAST:event_saveBttn1MouseClicked
+
+    private void occularBttnMouseClicked(java.awt.event.MouseEvent evt) {                                         
+        // TODO add your handling code here:
+        mainDash.showOccularExResults();
+    }//GEN-LAS
+
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -1592,8 +1612,8 @@ public class VisualAcuity extends javax.swing.JPanel {
     private javax.swing.JTextField DccOSPHTxtF;
     private javax.swing.JTextField DccOSTxtF;
     private javax.swing.JTextField DccOUPHTxtF;
-    private javax.swing.JTextField DccOUPHTxtF1;
     private javax.swing.JTextField DccOUTxtF;
+    private javax.swing.JTextField DscODPHTxtF;
     private javax.swing.JTextField DscOSPHTxtF;
     private javax.swing.JTextField DscOUPHTxtF;
     private javax.swing.JTextField DscOUTxtF;
@@ -1612,19 +1632,17 @@ public class VisualAcuity extends javax.swing.JPanel {
     private javax.swing.JTextField NscOUTxtF;
     private javax.swing.JLabel addLabel1;
     private javax.swing.JLabel addLabel2;
+    private javax.swing.JTextField addODTXTF;
     private javax.swing.JTextField addOSTXTF;
-    private javax.swing.JTextField addOSTXTF1;
-    private javax.swing.JTextField addOSTXTF2;
-    private javax.swing.JTextField addOSTXTF3;
     private javax.swing.JLabel axisLabel;
     private javax.swing.JLabel axisLabel1;
+    private javax.swing.JTextField axisODTXTF;
     private javax.swing.JTextField axisOSTXTF;
-    private javax.swing.JTextField axisOSTXTF1;
     private javax.swing.JLabel correctiveLabel;
     private javax.swing.JLabel cylinderLabel2;
     private javax.swing.JLabel cylinderLabel3;
+    private javax.swing.JTextField cylinderODTXTF;
     private javax.swing.JTextField cylinderOSTXTF;
-    private javax.swing.JTextField cylinderOSTXTF1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1670,12 +1688,14 @@ public class VisualAcuity extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JButton occularBttn;
+    private javax.swing.JTextField prisimBaseODTXTF;
     private javax.swing.JLabel prismBaseLabel;
     private javax.swing.JLabel prismBaseLabel1;
     private javax.swing.JTextField prismBaseOSTXTF;
-    private javax.swing.JTextField prismBaseOSTXTF1;
     private javax.swing.JLabel prismLabel1;
     private javax.swing.JLabel prismLabel2;
+    private javax.swing.JTextField prismODTXTF;
+    private javax.swing.JTextField prismOSTXTF;
     private javax.swing.JLabel rangeLabel;
     private javax.swing.JLabel rangeLabel1;
     private javax.swing.JButton saveBttn1;
@@ -1683,8 +1703,8 @@ public class VisualAcuity extends javax.swing.JPanel {
     private javax.swing.JLabel sphereLabel1;
     private javax.swing.JLabel sphereLabel2;
     private javax.swing.JLabel sphereLabel3;
+    private javax.swing.JTextField sphereODTXTF;
     private javax.swing.JTextField sphereOSTXTF;
-    private javax.swing.JTextField sphereOSTXTF1;
     private javax.swing.JPanel titleBar;
     private javax.swing.JLabel titleLabel;
     // End of variables declaration//GEN-END:variables
