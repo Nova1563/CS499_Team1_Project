@@ -22,11 +22,11 @@ public class MainDashboard extends javax.swing.JFrame {
     public HomePanel homePanel;
     public PatientPageTemplate viewPatientPage;
     public VisualAcuity visualAcuity;
-    public OccularExResults occularExResults;
+    public OcularExResults occularExResults;
     public PatientForm patientForm;
     private Patient activePatient;
     private Appointment activeAppointment;
-    
+    private EyeTestResults activeResults;
     /**
      * Creates new form MainWindow
      */
@@ -42,7 +42,7 @@ public class MainDashboard extends javax.swing.JFrame {
     patientForm		= new PatientForm(this);
     appointmentForm     = new AppointmentForm(this);
     visualAcuity        = new VisualAcuity(this);//***
-    occularExResults    = new OccularExResults();
+    occularExResults    = new OcularExResults(this);
         
     mainPanel.add(homePanel);	
     mainPanel.add(patientPortal);
@@ -78,6 +78,14 @@ public class MainDashboard extends javax.swing.JFrame {
 	public Appointment getActiveAppointment()
 	{
 		return activeAppointment;
+	}
+
+	public EyeTestResults getActiveResults() {
+		return activeResults;
+	}
+
+	public void setActiveResults(EyeTestResults activeResults) {
+		this.activeResults = activeResults;
 	}
 	
 	public void showPatientPortal()
