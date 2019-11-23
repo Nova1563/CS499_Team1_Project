@@ -225,7 +225,7 @@ public class AppointmentDisplay extends javax.swing.JPanel {
         });
         jScrollPane2.setViewportView(appointmentDisplayTable);
 
-        beginExamButton.setText("Begin Exam for Selected");
+        beginExamButton.setText("Open Exam for Selected");
         beginExamButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 beginExamButtonActionPerformed(evt);
@@ -304,14 +304,24 @@ public class AppointmentDisplay extends javax.swing.JPanel {
     }//GEN-LAST:event_editButtonActionPerformed
 
     private void beginExamButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_beginExamButtonActionPerformed
-                Integer selectedRow = appointmentDisplayTable.getSelectedRow();
+        Integer selectedRow = appointmentDisplayTable.getSelectedRow();
 		Integer apptID = (Integer)appointmentDisplayTable.getValueAt(selectedRow, APPT_ID_COLUMN);
 		Appointment theAppointment = dataBase.getAppointmentByID(apptID);
-		Patient thePatient = dataBase.getPatientByID(theAppointment.getPatientID());
-               
-		mainDash.setActivePatient(thePatient);
 		mainDash.setActiveAppointment(theAppointment);
-                mainDash.visualAcuity.loadEyeTestResults();
+		
+		Integer patientID = theAppointment.getPatientID();
+		Patient thePatient = dataBase.getPatientByID(patientID);
+		mainDash.setActivePatient(thePatient);
+		
+        EyeTestResults theResults = dataBase.getExamResultsByApptID(apptID);
+		if (theResults == null)
+		{
+			dataBase.getNewEyeTestResults(patientID, apptID);
+		}
+		mainDash.setActiveResults(theResults);
+		
+        //mainDash.visualAcuity.loadEyeTestResults();
+		//mainDash.occularExResults.loadOcularResults();
 		mainDash.showVisualAcuity();
     }//GEN-LAST:event_beginExamButtonActionPerformed
 

@@ -104,8 +104,10 @@ public class EyeTestResults
     private Double horizOS;
     private Double vertOD;
     private Double vertOS;
-    private String opticNerve;
-    private String nerveFiberLayer;
+    private String opticNerveOD;
+    private String nerveFiberLayerOD;
+	private String opticNerveOS;
+    private String nerveFiberLayerOS;
     private Boolean deepLaminaOD;
     private Boolean deepLaminaOS;
     private Boolean shallowOD;
@@ -224,12 +226,14 @@ public class EyeTestResults
 		this.dfeNotInd = false;
 		this.dfeContraind = false;
 		this.recentDfe = false;
-		this.horizOD = -1.0;
-		this.horizOS = -1.0;
-		this.vertOD = -1.0;
-		this.vertOS = -1.0;
-		this.opticNerve = "";
-		this.nerveFiberLayer = "";
+		this.horizOD = 0.0;
+		this.horizOS = 0.0;
+		this.vertOD = 0.0;
+		this.vertOS = 0.0;
+		this.opticNerveOD = "";
+		this.nerveFiberLayerOD = "";
+		this.opticNerveOS = "";
+		this.nerveFiberLayerOS = "";
 		this.deepLaminaOD = false;
 		this.deepLaminaOS = false;
 		this.shallowOD = false;
@@ -590,8 +594,6 @@ public class EyeTestResults
 	public void setDd20OS(String dd20OS) {
 		this.dd20OS = dd20OS;
 	}
-
-
 
 	public String getVitreousOD() {
 		return vitreousOD;
@@ -1009,21 +1011,39 @@ public class EyeTestResults
 		this.vertOS = vertOS;
 	}
 
-	public String getOpticNerve() {
-		return opticNerve;
+	public String getOpticNerveOD() {
+		return opticNerveOD;
 	}
 
-	public void setOpticNerve(String opticNerve) {
-		this.opticNerve = opticNerve;
+	public void setOpticNerveOD(String opticNerve) {
+		this.opticNerveOD = opticNerve;
 	}
 
-	public String getNerveFiberLayer() {
-		return nerveFiberLayer;
+	public String getNerveFiberLayerOD() {
+		return nerveFiberLayerOD;
 	}
 
-	public void setNerveFiberLayer(String nerveFiberLayer) {
-		this.nerveFiberLayer = nerveFiberLayer;
+	public void setNerveFiberLayerOD(String nerveFiberLayer) {
+		this.nerveFiberLayerOD = nerveFiberLayer;
 	}
+
+	public String getOpticNerveOS() {
+		return opticNerveOS;
+	}
+
+	public void setOpticNerveOS(String opticNerveOS) {
+		this.opticNerveOS = opticNerveOS;
+	}
+
+	public String getNerveFiberLayerOS() {
+		return nerveFiberLayerOS;
+	}
+
+	public void setNerveFiberLayerOS(String nerveFiberLayerOS) {
+		this.nerveFiberLayerOS = nerveFiberLayerOS;
+	}
+	
+	
 
 	public Boolean getDeepLaminaOD() {
 		return deepLaminaOD;

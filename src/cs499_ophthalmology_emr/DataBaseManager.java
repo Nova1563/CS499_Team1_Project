@@ -270,9 +270,9 @@ public class DataBaseManager {
 	public void doTest()
 	{
 		makeNewPatientsFillArrayTest();
-        //addAppointmentsAndExamsToAllPatientsTest();
-		//appointmentTable.printAllEntries();
-        //testResultsTable.printAllEntries();
+        addAppointmentsAndExamsToAllPatientsTest();
+		appointmentTable.printAllEntries();
+        testResultsTable.printAllEntries();
 	}
 	
 	private void makeNewPatientsFillArrayTest()
@@ -354,6 +354,11 @@ public class DataBaseManager {
 			save(anAppt);
 			
 			EyeTestResults examResults = getNewEyeTestResults(patientID, apptID);
+			examResults.setSponVeinPulsOD("+");
+			examResults.setSponVeinPulsOS("-");
+			examResults.setFovealReflexOD("-");
+			examResults.setFovealReflexOs("+");
+			
 			examResults.setFarChartDistance("1");
 			examResults.setAddOD(1.2);
 			examResults.setAddOS(2.1);

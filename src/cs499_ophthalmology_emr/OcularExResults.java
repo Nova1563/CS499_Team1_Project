@@ -21,16 +21,16 @@ public class OcularExResults extends javax.swing.JPanel {
 		dataBase = DataBaseManager.getInstance();
 		mainDash = _mainDash;
 		initComponents();
-		dataBase.doTest();
-		EyeTestResults debugEyeResults = dataBase.getExamResultsByApptID(1);
-		currentResults = debugEyeResults;
+		//dataBase.doTest();
+		//EyeTestResults debugEyeResults = dataBase.getExamResultsByApptID(1);
+		//currentResults = debugEyeResults;
 		
-        loadOcularResults();
+        //loadOcularResults();
     }
 	
 	public void loadOcularResults()
 	{
-		//currentResults = mainDash.getActiveResults();
+		currentResults = mainDash.getActiveResults();
 		
 		///////////////////// Posterior Segment Combo Boxes//////////////////////////
 		// NOTE: a 1 suffix indicates OD fields here, while a 2 suffix indicates OS.
@@ -46,24 +46,25 @@ public class OcularExResults extends javax.swing.JPanel {
 		custom1ComboBox1.setSelectedItem(currentResults.getCustom1OD());
 		custom2ComboBox1.setSelectedItem(currentResults.getCustom2OD());
 		custom3ComboBox1.setSelectedItem(currentResults.getCustom3OD());
-		vitreousComboBox2.setSelectedItem(currentResults.getVitreousOD());
-		maculaComboBox2.setSelectedItem(currentResults.getMaculaOD());
-		vasculatureComboBox2.setSelectedItem(currentResults.getVasculatureOD());
-		posteriorPoleComboBox2.setSelectedItem(currentResults.getPosteriorPoleOD());
-		peripheralRetinaComboBox2.setSelectedItem(currentResults.getPeripheralRetinaOD());
-		miscRetinaComboBox2.setSelectedItem(currentResults.getMiscRetinaOD());
-		diabeticEvalComboBox2.setSelectedItem(currentResults.getDiabeticEvalOD());
-		htnEvaluationComboBox2.setSelectedItem(currentResults.getHtnEvalOD());
-		armdComboBox2.setSelectedItem(currentResults.getArmdOD());
-		custom1ComboBox2.setSelectedItem(currentResults.getCustom1OD());
-		custom2ComboBox2.setSelectedItem(currentResults.getCustom2OD());
-		custom3ComboBox2.setSelectedItem(currentResults.getCustom3OD());
+		vitreousComboBox2.setSelectedItem(currentResults.getVitreousOS());
+		maculaComboBox2.setSelectedItem(currentResults.getMaculaOS());
+		vasculatureComboBox2.setSelectedItem(currentResults.getVasculatureOS());
+		posteriorPoleComboBox2.setSelectedItem(currentResults.getPosteriorPoleOS());
+		peripheralRetinaComboBox2.setSelectedItem(currentResults.getPeripheralRetinaOS());
+		miscRetinaComboBox2.setSelectedItem(currentResults.getMiscRetinaOS());
+		diabeticEvalComboBox2.setSelectedItem(currentResults.getDiabeticEvalOS());
+		htnEvaluationComboBox2.setSelectedItem(currentResults.getHtnEvalOS());
+		armdComboBox2.setSelectedItem(currentResults.getArmdOS());
+		custom1ComboBox2.setSelectedItem(currentResults.getCustom1OS());
+		custom2ComboBox2.setSelectedItem(currentResults.getCustom2OS());
+		custom3ComboBox2.setSelectedItem(currentResults.getCustom3OS());
 		///////////////////// OD Nerve Head Assessment Combo Boxes//////////////////////////
-		//odOpticNerveComboBox.setSelectedItem(currentResults.getOpticNerveOD());
-		//odNerveFiberLayerComboBox.setSelectedItem(currentResults.getOpticNerveFiberOD());
+		odOpticNerveComboBox.setSelectedItem(currentResults.getOpticNerveOD());
+		odNerveFiberLayerComboBox.setSelectedItem(currentResults.getNerveFiberLayerOD());
 		///////////////////// OD Nerve Head Assessment Combo Boxes//////////////////////////
-		//osOpticNerveComboBox.setSelectedItem(currentResults.getOpticNerveOS());
-		//osNerveFiberLayerComboBox.setSelectedItem(currentResults.getOpticNerveFiberOS());
+		osOpticNerveComboBox.setSelectedItem(currentResults.getOpticNerveOS());
+		osNerveFiberLayerComboBox.setSelectedItem(currentResults.getNerveFiberLayerOS());
+		
 		///////////////////// Ophthalmic Indicators Radio Buttons //////////////////////////
 		
 		// OD Foveal Reflex
@@ -169,6 +170,15 @@ public class OcularExResults extends javax.swing.JPanel {
 				System.out.println("fundusOptionSelection error: " + fundusOptionSelection);
 						
 		}
+		///////////////////// Dilation Radio Buttons and Combobox//////////////////////////
+		
+		dilationAgentComboBox.setSelectedItem(currentResults.getDilationAgent());
+		fundusDilationRadioButtonGroup.clearSelection();
+		
+		if (currentResults.getGttOD().equals("1"))
+			gtt1RadioButton.setSelected(true);
+		else if (currentResults.getGttOD().equals("2"))
+			gtt2RadioButton.setSelected(true);
 		
 		///////////////////// Fundus Evaluated With Checkboxes ////////////////////////////
 		if (currentResults.getLens78dUsed())
@@ -552,7 +562,7 @@ public class OcularExResults extends javax.swing.JPanel {
         jLabel31 = new javax.swing.JLabel();
         jLabel33 = new javax.swing.JLabel();
         osOpticNerveComboBox = new javax.swing.JComboBox<>();
-        osNerveFiberLayerComboBox1 = new javax.swing.JComboBox<>();
+        osNerveFiberLayerComboBox = new javax.swing.JComboBox<>();
         jLabel32 = new javax.swing.JLabel();
         jLabel34 = new javax.swing.JLabel();
         jPanel15 = new javax.swing.JPanel();
@@ -583,7 +593,6 @@ public class OcularExResults extends javax.swing.JPanel {
         osOpticPitCheckBox = new javax.swing.JCheckBox();
         osMylenationCheckBox = new javax.swing.JCheckBox();
         osGlialRemnantsCheckBox = new javax.swing.JCheckBox();
-        deleteButton = new javax.swing.JButton();
         saveButton = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(57, 113, 177));
@@ -651,36 +660,91 @@ public class OcularExResults extends javax.swing.JPanel {
 
         vasculatureComboBox1.setBackground(new java.awt.Color(253, 252, 233));
         vasculatureComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NORM", "LOW", "HIGH", "CRITICAL", "NOT CHECKED" }));
+        vasculatureComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                vasculatureComboBox1ActionPerformed(evt);
+            }
+        });
 
         posteriorPoleComboBox1.setBackground(new java.awt.Color(253, 252, 233));
         posteriorPoleComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NORM", "LOW", "HIGH", "CRITICAL", "NOT CHECKED" }));
+        posteriorPoleComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                posteriorPoleComboBox1ActionPerformed(evt);
+            }
+        });
 
         peripheralRetinaComboBox1.setBackground(new java.awt.Color(253, 252, 233));
         peripheralRetinaComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NORM", "LOW", "HIGH", "CRITICAL", "NOT CHECKED" }));
+        peripheralRetinaComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                peripheralRetinaComboBox1ActionPerformed(evt);
+            }
+        });
 
         miscRetinaComboBox1.setBackground(new java.awt.Color(253, 252, 233));
         miscRetinaComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NORM", "LOW", "HIGH", "CRITICAL", "NOT CHECKED" }));
+        miscRetinaComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miscRetinaComboBox1ActionPerformed(evt);
+            }
+        });
 
         diabeticEvalComboBox1.setBackground(new java.awt.Color(253, 252, 233));
         diabeticEvalComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NORM", "LOW", "HIGH", "CRITICAL", "NOT CHECKED" }));
+        diabeticEvalComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                diabeticEvalComboBox1ActionPerformed(evt);
+            }
+        });
 
         vitreousComboBox1.setBackground(new java.awt.Color(253, 252, 233));
         vitreousComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NORM", "LOW", "HIGH", "CRITICAL", "NOT CHECKED" }));
+        vitreousComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                vitreousComboBox1ActionPerformed(evt);
+            }
+        });
 
         armdComboBox1.setBackground(new java.awt.Color(253, 252, 233));
         armdComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NORM", "LOW", "HIGH", "CRITICAL", "NOT CHECKED" }));
+        armdComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                armdComboBox1ActionPerformed(evt);
+            }
+        });
 
         htnEvaluationComboBox1.setBackground(new java.awt.Color(253, 252, 233));
         htnEvaluationComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NORM", "LOW", "HIGH", "CRITICAL", "NOT CHECKED" }));
+        htnEvaluationComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                htnEvaluationComboBox1ActionPerformed(evt);
+            }
+        });
 
         custom2ComboBox1.setBackground(new java.awt.Color(253, 252, 233));
         custom2ComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NORM", "LOW", "HIGH", "CRITICAL", "NOT CHECKED" }));
+        custom2ComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                custom2ComboBox1ActionPerformed(evt);
+            }
+        });
 
         custom3ComboBox1.setBackground(new java.awt.Color(253, 252, 233));
         custom3ComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NORM", "LOW", "HIGH", "CRITICAL", "NOT CHECKED" }));
+        custom3ComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                custom3ComboBox1ActionPerformed(evt);
+            }
+        });
 
         custom1ComboBox1.setBackground(new java.awt.Color(253, 252, 233));
         custom1ComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NORM", "LOW", "HIGH", "CRITICAL", "NOT CHECKED" }));
+        custom1ComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                custom1ComboBox1ActionPerformed(evt);
+            }
+        });
 
         jLabel35.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel35.setForeground(new java.awt.Color(255, 255, 255));
@@ -857,36 +921,91 @@ public class OcularExResults extends javax.swing.JPanel {
 
         vasculatureComboBox2.setBackground(new java.awt.Color(253, 252, 233));
         vasculatureComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NORM", "LOW", "HIGH", "CRITICAL", "NOT CHECKED" }));
+        vasculatureComboBox2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                vasculatureComboBox2ActionPerformed(evt);
+            }
+        });
 
         posteriorPoleComboBox2.setBackground(new java.awt.Color(253, 252, 233));
         posteriorPoleComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NORM", "LOW", "HIGH", "CRITICAL", "NOT CHECKED" }));
+        posteriorPoleComboBox2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                posteriorPoleComboBox2ActionPerformed(evt);
+            }
+        });
 
         peripheralRetinaComboBox2.setBackground(new java.awt.Color(253, 252, 233));
         peripheralRetinaComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NORM", "LOW", "HIGH", "CRITICAL", "NOT CHECKED" }));
+        peripheralRetinaComboBox2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                peripheralRetinaComboBox2ActionPerformed(evt);
+            }
+        });
 
         miscRetinaComboBox2.setBackground(new java.awt.Color(253, 252, 233));
         miscRetinaComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NORM", "LOW", "HIGH", "CRITICAL", "NOT CHECKED" }));
+        miscRetinaComboBox2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miscRetinaComboBox2ActionPerformed(evt);
+            }
+        });
 
         diabeticEvalComboBox2.setBackground(new java.awt.Color(253, 252, 233));
         diabeticEvalComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NORM", "LOW", "HIGH", "CRITICAL", "NOT CHECKED" }));
+        diabeticEvalComboBox2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                diabeticEvalComboBox2ActionPerformed(evt);
+            }
+        });
 
         vitreousComboBox2.setBackground(new java.awt.Color(253, 252, 233));
         vitreousComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NORM", "LOW", "HIGH", "CRITICAL", "NOT CHECKED" }));
+        vitreousComboBox2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                vitreousComboBox2ActionPerformed(evt);
+            }
+        });
 
         armdComboBox2.setBackground(new java.awt.Color(253, 252, 233));
         armdComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NORM", "LOW", "HIGH", "CRITICAL", "NOT CHECKED" }));
+        armdComboBox2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                armdComboBox2ActionPerformed(evt);
+            }
+        });
 
         htnEvaluationComboBox2.setBackground(new java.awt.Color(253, 252, 233));
         htnEvaluationComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NORM", "LOW", "HIGH", "CRITICAL", "NOT CHECKED" }));
+        htnEvaluationComboBox2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                htnEvaluationComboBox2ActionPerformed(evt);
+            }
+        });
 
         custom2ComboBox2.setBackground(new java.awt.Color(253, 252, 233));
         custom2ComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NORM", "LOW", "HIGH", "CRITICAL", "NOT CHECKED" }));
+        custom2ComboBox2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                custom2ComboBox2ActionPerformed(evt);
+            }
+        });
 
         custom3ComboBox2.setBackground(new java.awt.Color(253, 252, 233));
         custom3ComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NORM", "LOW", "HIGH", "CRITICAL", "NOT CHECKED" }));
+        custom3ComboBox2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                custom3ComboBox2ActionPerformed(evt);
+            }
+        });
 
         custom1ComboBox2.setBackground(new java.awt.Color(253, 252, 233));
         custom1ComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NORM", "LOW", "HIGH", "CRITICAL", "NOT CHECKED" }));
+        custom1ComboBox2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                custom1ComboBox2ActionPerformed(evt);
+            }
+        });
 
         jLabel50.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel50.setForeground(new java.awt.Color(255, 255, 255));
@@ -1103,12 +1222,22 @@ public class OcularExResults extends javax.swing.JPanel {
         osFovealReflexPlusRadioButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         osFovealReflexPlusRadioButton.setForeground(new java.awt.Color(255, 255, 255));
         osFovealReflexPlusRadioButton.setText("+");
+        osFovealReflexPlusRadioButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                osFovealReflexPlusRadioButtonActionPerformed(evt);
+            }
+        });
 
         osFovealReflexMinusRadioButton.setBackground(new java.awt.Color(32, 33, 35));
         osFovealReflexRadioButtonGroup.add(osFovealReflexMinusRadioButton);
         osFovealReflexMinusRadioButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         osFovealReflexMinusRadioButton.setForeground(new java.awt.Color(255, 255, 255));
         osFovealReflexMinusRadioButton.setText("-");
+        osFovealReflexMinusRadioButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                osFovealReflexMinusRadioButtonActionPerformed(evt);
+            }
+        });
 
         osFovealReflexXRadioButton.setBackground(new java.awt.Color(32, 33, 35));
         osFovealReflexRadioButtonGroup.add(osFovealReflexXRadioButton);
@@ -1116,6 +1245,11 @@ public class OcularExResults extends javax.swing.JPanel {
         osFovealReflexXRadioButton.setForeground(new java.awt.Color(255, 255, 255));
         osFovealReflexXRadioButton.setText("X");
         osFovealReflexXRadioButton.setToolTipText("");
+        osFovealReflexXRadioButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                osFovealReflexXRadioButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -1159,12 +1293,22 @@ public class OcularExResults extends javax.swing.JPanel {
         osSpontaneousPulsationPlusRadioButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         osSpontaneousPulsationPlusRadioButton.setForeground(new java.awt.Color(255, 255, 255));
         osSpontaneousPulsationPlusRadioButton.setText("+");
+        osSpontaneousPulsationPlusRadioButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                osSpontaneousPulsationPlusRadioButtonActionPerformed(evt);
+            }
+        });
 
         osSpontaneousPulsationMinusRadioButton.setBackground(new java.awt.Color(32, 33, 35));
         osSpontaneousPulsationRadioButtonGroup.add(osSpontaneousPulsationMinusRadioButton);
         osSpontaneousPulsationMinusRadioButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         osSpontaneousPulsationMinusRadioButton.setForeground(new java.awt.Color(255, 255, 255));
         osSpontaneousPulsationMinusRadioButton.setText("-");
+        osSpontaneousPulsationMinusRadioButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                osSpontaneousPulsationMinusRadioButtonActionPerformed(evt);
+            }
+        });
 
         osSpontaneousPulsationXRadioButton.setBackground(new java.awt.Color(32, 33, 35));
         osSpontaneousPulsationRadioButtonGroup.add(osSpontaneousPulsationXRadioButton);
@@ -1172,6 +1316,11 @@ public class OcularExResults extends javax.swing.JPanel {
         osSpontaneousPulsationXRadioButton.setForeground(new java.awt.Color(255, 255, 255));
         osSpontaneousPulsationXRadioButton.setText("X");
         osSpontaneousPulsationXRadioButton.setToolTipText("");
+        osSpontaneousPulsationXRadioButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                osSpontaneousPulsationXRadioButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -1214,12 +1363,22 @@ public class OcularExResults extends javax.swing.JPanel {
         odFovealReflexPlusRadioButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         odFovealReflexPlusRadioButton1.setForeground(new java.awt.Color(255, 255, 255));
         odFovealReflexPlusRadioButton1.setText("+");
+        odFovealReflexPlusRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                odFovealReflexPlusRadioButton1ActionPerformed(evt);
+            }
+        });
 
         odFovealReflexMinusRadioButton1.setBackground(new java.awt.Color(32, 33, 35));
         odFovealReflexRadioButtonGroup.add(odFovealReflexMinusRadioButton1);
         odFovealReflexMinusRadioButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         odFovealReflexMinusRadioButton1.setForeground(new java.awt.Color(255, 255, 255));
         odFovealReflexMinusRadioButton1.setText("-");
+        odFovealReflexMinusRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                odFovealReflexMinusRadioButton1ActionPerformed(evt);
+            }
+        });
 
         odFovealReflexXRadioButton1.setBackground(new java.awt.Color(32, 33, 35));
         odFovealReflexRadioButtonGroup.add(odFovealReflexXRadioButton1);
@@ -1227,6 +1386,11 @@ public class OcularExResults extends javax.swing.JPanel {
         odFovealReflexXRadioButton1.setForeground(new java.awt.Color(255, 255, 255));
         odFovealReflexXRadioButton1.setText("X");
         odFovealReflexXRadioButton1.setToolTipText("");
+        odFovealReflexXRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                odFovealReflexXRadioButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
@@ -1270,12 +1434,22 @@ public class OcularExResults extends javax.swing.JPanel {
         odSpontaneousPulsationPlusRadioButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         odSpontaneousPulsationPlusRadioButton1.setForeground(new java.awt.Color(255, 255, 255));
         odSpontaneousPulsationPlusRadioButton1.setText("+");
+        odSpontaneousPulsationPlusRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                odSpontaneousPulsationPlusRadioButton1ActionPerformed(evt);
+            }
+        });
 
         odSpontaneousPulsationMinusRadioButton1.setBackground(new java.awt.Color(32, 33, 35));
         odSpontaneousPulsationRadioButtonGroup.add(odSpontaneousPulsationMinusRadioButton1);
         odSpontaneousPulsationMinusRadioButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         odSpontaneousPulsationMinusRadioButton1.setForeground(new java.awt.Color(255, 255, 255));
         odSpontaneousPulsationMinusRadioButton1.setText("-");
+        odSpontaneousPulsationMinusRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                odSpontaneousPulsationMinusRadioButton1ActionPerformed(evt);
+            }
+        });
 
         odSpontaneousPulsationXRadioButton1.setBackground(new java.awt.Color(32, 33, 35));
         odSpontaneousPulsationRadioButtonGroup.add(odSpontaneousPulsationXRadioButton1);
@@ -1283,6 +1457,11 @@ public class OcularExResults extends javax.swing.JPanel {
         odSpontaneousPulsationXRadioButton1.setForeground(new java.awt.Color(255, 255, 255));
         odSpontaneousPulsationXRadioButton1.setText("X");
         odSpontaneousPulsationXRadioButton1.setToolTipText("");
+        odSpontaneousPulsationXRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                odSpontaneousPulsationXRadioButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
         jPanel16.setLayout(jPanel16Layout);
@@ -1516,13 +1695,28 @@ public class OcularExResults extends javax.swing.JPanel {
         fundusDilationRadioButtonGroup.add(gtt2RadioButton);
         gtt2RadioButton.setForeground(new java.awt.Color(255, 255, 255));
         gtt2RadioButton.setText("2gtt");
+        gtt2RadioButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gtt2RadioButtonActionPerformed(evt);
+            }
+        });
 
         gtt1RadioButton.setBackground(new java.awt.Color(32, 33, 35));
         fundusDilationRadioButtonGroup.add(gtt1RadioButton);
         gtt1RadioButton.setForeground(new java.awt.Color(255, 255, 255));
         gtt1RadioButton.setText("1gtt");
+        gtt1RadioButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gtt1RadioButtonActionPerformed(evt);
+            }
+        });
 
         dilationAgentComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "dilation agent 1", "another one" }));
+        dilationAgentComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dilationAgentComboBoxActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
         jPanel13.setLayout(jPanel13Layout);
@@ -1564,24 +1758,44 @@ public class OcularExResults extends javax.swing.JPanel {
         fundusEvaluationNotPerformedRadioButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         fundusEvaluationNotPerformedRadioButton.setForeground(new java.awt.Color(255, 255, 255));
         fundusEvaluationNotPerformedRadioButton.setText("Not Perfromed");
+        fundusEvaluationNotPerformedRadioButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fundusEvaluationNotPerformedRadioButtonActionPerformed(evt);
+            }
+        });
 
         smallPupilBIORadioButton.setBackground(new java.awt.Color(32, 33, 35));
         fundusOptionRadioButtonGroup.add(smallPupilBIORadioButton);
         smallPupilBIORadioButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         smallPupilBIORadioButton.setForeground(new java.awt.Color(255, 255, 255));
         smallPupilBIORadioButton.setText("Small Pupil BIO");
+        smallPupilBIORadioButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                smallPupilBIORadioButtonActionPerformed(evt);
+            }
+        });
 
         dilatedEvalRadioButton.setBackground(new java.awt.Color(32, 33, 35));
         fundusOptionRadioButtonGroup.add(dilatedEvalRadioButton);
         dilatedEvalRadioButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         dilatedEvalRadioButton.setForeground(new java.awt.Color(255, 255, 255));
         dilatedEvalRadioButton.setText("Dilated Eval");
+        dilatedEvalRadioButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dilatedEvalRadioButtonActionPerformed(evt);
+            }
+        });
 
         undilatedEvalRadioButton.setBackground(new java.awt.Color(32, 33, 35));
         fundusOptionRadioButtonGroup.add(undilatedEvalRadioButton);
         undilatedEvalRadioButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         undilatedEvalRadioButton.setForeground(new java.awt.Color(255, 255, 255));
         undilatedEvalRadioButton.setText("Undilated Eval");
+        undilatedEvalRadioButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                undilatedEvalRadioButtonActionPerformed(evt);
+            }
+        });
 
         optomapImagingRadioButton.setBackground(new java.awt.Color(32, 33, 35));
         fundusOptionRadioButtonGroup.add(optomapImagingRadioButton);
@@ -1599,6 +1813,11 @@ public class OcularExResults extends javax.swing.JPanel {
         dfeWithOptomapRadioButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         dfeWithOptomapRadioButton.setForeground(new java.awt.Color(255, 255, 255));
         dfeWithOptomapRadioButton.setText("DFE with Optomap");
+        dfeWithOptomapRadioButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dfeWithOptomapRadioButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout fundusOptionsBttnPanelLayout = new javax.swing.GroupLayout(fundusOptionsBttnPanel);
         fundusOptionsBttnPanel.setLayout(fundusOptionsBttnPanelLayout);
@@ -1786,9 +2005,29 @@ public class OcularExResults extends javax.swing.JPanel {
 
         odVerticalSlider.setBackground(new java.awt.Color(32, 33, 35));
         odVerticalSlider.setForeground(new java.awt.Color(255, 255, 255));
+        odVerticalSlider.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                odVerticalSliderStateChanged(evt);
+            }
+        });
+        odVerticalSlider.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                odVerticalSliderMouseReleased(evt);
+            }
+        });
 
         osVerticalSlider.setBackground(new java.awt.Color(32, 33, 35));
         osVerticalSlider.setForeground(new java.awt.Color(255, 255, 255));
+        osVerticalSlider.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                osVerticalSliderStateChanged(evt);
+            }
+        });
+        osVerticalSlider.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                osVerticalSliderMouseReleased(evt);
+            }
+        });
 
         jLabel27.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel27.setForeground(new java.awt.Color(255, 255, 255));
@@ -1804,9 +2043,29 @@ public class OcularExResults extends javax.swing.JPanel {
 
         odHorizontalSlider.setBackground(new java.awt.Color(32, 33, 35));
         odHorizontalSlider.setForeground(new java.awt.Color(255, 255, 255));
+        odHorizontalSlider.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                odHorizontalSliderStateChanged(evt);
+            }
+        });
+        odHorizontalSlider.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                odHorizontalSliderMouseReleased(evt);
+            }
+        });
 
         osHorizontalSlider.setBackground(new java.awt.Color(32, 33, 35));
         osHorizontalSlider.setForeground(new java.awt.Color(255, 255, 255));
+        osHorizontalSlider.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                osHorizontalSliderStateChanged(evt);
+            }
+        });
+        osHorizontalSlider.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                osHorizontalSliderMouseReleased(evt);
+            }
+        });
 
         odHorizontalTextField.setText("0.50");
 
@@ -1918,9 +2177,9 @@ public class OcularExResults extends javax.swing.JPanel {
         odOpticNerveComboBox.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         odOpticNerveComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NORMAL", "LOW", "HIGH", "CRITICAL", "NOT CHECKED" }));
         odOpticNerveComboBox.setToolTipText("");
-        odOpticNerveComboBox.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                odOpticNerveComboBoxFocusLost(evt);
+        odOpticNerveComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                odOpticNerveComboBoxActionPerformed(evt);
             }
         });
 
@@ -1928,9 +2187,9 @@ public class OcularExResults extends javax.swing.JPanel {
         odNerveFiberLayerComboBox.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         odNerveFiberLayerComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NORMAL", "LOW", "HIGH", "CRITICAL", "NOT CHECKED" }));
         odNerveFiberLayerComboBox.setToolTipText("");
-        odNerveFiberLayerComboBox.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                odNerveFiberLayerComboBoxFocusLost(evt);
+        odNerveFiberLayerComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                odNerveFiberLayerComboBoxActionPerformed(evt);
             }
         });
 
@@ -1946,19 +2205,19 @@ public class OcularExResults extends javax.swing.JPanel {
         osOpticNerveComboBox.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         osOpticNerveComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NORMAL", "LOW", "HIGH", "CRITICAL", "NOT CHECKED" }));
         osOpticNerveComboBox.setToolTipText("");
-        osOpticNerveComboBox.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                osOpticNerveComboBoxFocusLost(evt);
+        osOpticNerveComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                osOpticNerveComboBoxActionPerformed(evt);
             }
         });
 
-        osNerveFiberLayerComboBox1.setBackground(new java.awt.Color(253, 252, 233));
-        osNerveFiberLayerComboBox1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        osNerveFiberLayerComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NORMAL", "LOW", "HIGH", "CRITICAL", "NOT CHECKED" }));
-        osNerveFiberLayerComboBox1.setToolTipText("");
-        osNerveFiberLayerComboBox1.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                osNerveFiberLayerComboBox1FocusLost(evt);
+        osNerveFiberLayerComboBox.setBackground(new java.awt.Color(253, 252, 233));
+        osNerveFiberLayerComboBox.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        osNerveFiberLayerComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NORMAL", "LOW", "HIGH", "CRITICAL", "NOT CHECKED" }));
+        osNerveFiberLayerComboBox.setToolTipText("");
+        osNerveFiberLayerComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                osNerveFiberLayerComboBoxActionPerformed(evt);
             }
         });
 
@@ -1980,7 +2239,7 @@ public class OcularExResults extends javax.swing.JPanel {
                     .addGroup(jPanel14Layout.createSequentialGroup()
                         .addComponent(osOpticNerveComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(osNerveFiberLayerComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(osNerveFiberLayerComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel33)
                     .addGroup(jPanel14Layout.createSequentialGroup()
                         .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2014,7 +2273,7 @@ public class OcularExResults extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(osOpticNerveComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(osNerveFiberLayerComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(osNerveFiberLayerComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -2033,32 +2292,62 @@ public class OcularExResults extends javax.swing.JPanel {
         odOvalCheckBox.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         odOvalCheckBox.setForeground(new java.awt.Color(255, 255, 255));
         odOvalCheckBox.setText("Oval");
+        odOvalCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                odOvalCheckBoxActionPerformed(evt);
+            }
+        });
 
         odShallowCheckBox.setBackground(new java.awt.Color(32, 33, 35));
         odShallowCheckBox.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         odShallowCheckBox.setForeground(new java.awt.Color(255, 255, 255));
         odShallowCheckBox.setText("Shallow");
+        odShallowCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                odShallowCheckBoxActionPerformed(evt);
+            }
+        });
 
         odTempSlopingCheckbox.setBackground(new java.awt.Color(32, 33, 35));
         odTempSlopingCheckbox.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         odTempSlopingCheckbox.setForeground(new java.awt.Color(255, 255, 255));
         odTempSlopingCheckbox.setText("Temp.sloping");
+        odTempSlopingCheckbox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                odTempSlopingCheckboxActionPerformed(evt);
+            }
+        });
 
         odRoundCheckBox.setBackground(new java.awt.Color(32, 33, 35));
         odRoundCheckBox.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         odRoundCheckBox.setForeground(new java.awt.Color(255, 255, 255));
         odRoundCheckBox.setText("Round");
+        odRoundCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                odRoundCheckBoxActionPerformed(evt);
+            }
+        });
 
         odUnderminingCheckBox.setBackground(new java.awt.Color(32, 33, 35));
         odUnderminingCheckBox.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         odUnderminingCheckBox.setForeground(new java.awt.Color(255, 255, 255));
         odUnderminingCheckBox.setText("Undermining");
+        odUnderminingCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                odUnderminingCheckBoxActionPerformed(evt);
+            }
+        });
 
         osPeripapAtrophyCheckBox.setBackground(new java.awt.Color(32, 33, 35));
         osPeripapAtrophyCheckBox.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         osPeripapAtrophyCheckBox.setForeground(new java.awt.Color(255, 255, 255));
         osPeripapAtrophyCheckBox.setText("Peripap Atrophy");
         osPeripapAtrophyCheckBox.setToolTipText("");
+        osPeripapAtrophyCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                osPeripapAtrophyCheckBoxActionPerformed(evt);
+            }
+        });
 
         osDeepLaminaCheckBox.setBackground(new java.awt.Color(32, 33, 35));
         osDeepLaminaCheckBox.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -2074,27 +2363,52 @@ public class OcularExResults extends javax.swing.JPanel {
         osPigmentCrescentCheckBox.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         osPigmentCrescentCheckBox.setForeground(new java.awt.Color(255, 255, 255));
         osPigmentCrescentCheckBox.setText("Pigment Cresent");
+        osPigmentCrescentCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                osPigmentCrescentCheckBoxActionPerformed(evt);
+            }
+        });
 
         osScleralCrescentCheckBox.setBackground(new java.awt.Color(32, 33, 35));
         osScleralCrescentCheckBox.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         osScleralCrescentCheckBox.setForeground(new java.awt.Color(255, 255, 255));
         osScleralCrescentCheckBox.setText("Scleral Cresent");
+        osScleralCrescentCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                osScleralCrescentCheckBoxActionPerformed(evt);
+            }
+        });
 
         odMylenationCheckBox.setBackground(new java.awt.Color(32, 33, 35));
         odMylenationCheckBox.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         odMylenationCheckBox.setForeground(new java.awt.Color(255, 255, 255));
         odMylenationCheckBox.setText("Myelination");
+        odMylenationCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                odMylenationCheckBoxActionPerformed(evt);
+            }
+        });
 
         odGlialRemnantsCheckBox.setBackground(new java.awt.Color(32, 33, 35));
         odGlialRemnantsCheckBox.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         odGlialRemnantsCheckBox.setForeground(new java.awt.Color(255, 255, 255));
         odGlialRemnantsCheckBox.setText("Glial Remnants");
         odGlialRemnantsCheckBox.setToolTipText("");
+        odGlialRemnantsCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                odGlialRemnantsCheckBoxActionPerformed(evt);
+            }
+        });
 
         odOpticPitCheckBox.setBackground(new java.awt.Color(32, 33, 35));
         odOpticPitCheckBox.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         odOpticPitCheckBox.setForeground(new java.awt.Color(255, 255, 255));
         odOpticPitCheckBox.setText("Optic Pit");
+        odOpticPitCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                odOpticPitCheckBoxActionPerformed(evt);
+            }
+        });
 
         jLabel38.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel38.setForeground(new java.awt.Color(255, 255, 255));
@@ -2104,11 +2418,6 @@ public class OcularExResults extends javax.swing.JPanel {
         odDeepLaminaCheckBox.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         odDeepLaminaCheckBox.setForeground(new java.awt.Color(255, 255, 255));
         odDeepLaminaCheckBox.setText("Deep/Lamina");
-        odDeepLaminaCheckBox.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                odDeepLaminaCheckBoxItemStateChanged(evt);
-            }
-        });
         odDeepLaminaCheckBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 odDeepLaminaCheckBoxActionPerformed(evt);
@@ -2119,58 +2428,113 @@ public class OcularExResults extends javax.swing.JPanel {
         osShallowCheckBox.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         osShallowCheckBox.setForeground(new java.awt.Color(255, 255, 255));
         osShallowCheckBox.setText("Shallow");
+        osShallowCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                osShallowCheckBoxActionPerformed(evt);
+            }
+        });
 
         osRoundCheckBox.setBackground(new java.awt.Color(32, 33, 35));
         osRoundCheckBox.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         osRoundCheckBox.setForeground(new java.awt.Color(255, 255, 255));
         osRoundCheckBox.setText("Round");
+        osRoundCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                osRoundCheckBoxActionPerformed(evt);
+            }
+        });
 
         osOvalCheckBox.setBackground(new java.awt.Color(32, 33, 35));
         osOvalCheckBox.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         osOvalCheckBox.setForeground(new java.awt.Color(255, 255, 255));
         osOvalCheckBox.setText("Oval");
+        osOvalCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                osOvalCheckBoxActionPerformed(evt);
+            }
+        });
 
         osTempSlopingCheckBox.setBackground(new java.awt.Color(32, 33, 35));
         osTempSlopingCheckBox.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         osTempSlopingCheckBox.setForeground(new java.awt.Color(255, 255, 255));
         osTempSlopingCheckBox.setText("Temp.sloping");
+        osTempSlopingCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                osTempSlopingCheckBoxActionPerformed(evt);
+            }
+        });
 
         osUnderminingCheckBox.setBackground(new java.awt.Color(32, 33, 35));
         osUnderminingCheckBox.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         osUnderminingCheckBox.setForeground(new java.awt.Color(255, 255, 255));
         osUnderminingCheckBox.setText("Undermining");
+        osUnderminingCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                osUnderminingCheckBoxActionPerformed(evt);
+            }
+        });
 
         odPeripapAtrophyCheckBox.setBackground(new java.awt.Color(32, 33, 35));
         odPeripapAtrophyCheckBox.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         odPeripapAtrophyCheckBox.setForeground(new java.awt.Color(255, 255, 255));
         odPeripapAtrophyCheckBox.setText("Peripap Atrophy");
         odPeripapAtrophyCheckBox.setToolTipText("");
+        odPeripapAtrophyCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                odPeripapAtrophyCheckBoxActionPerformed(evt);
+            }
+        });
 
         odScleralCrescentCheckBox.setBackground(new java.awt.Color(32, 33, 35));
         odScleralCrescentCheckBox.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         odScleralCrescentCheckBox.setForeground(new java.awt.Color(255, 255, 255));
         odScleralCrescentCheckBox.setText("Scleral Cresent");
+        odScleralCrescentCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                odScleralCrescentCheckBoxActionPerformed(evt);
+            }
+        });
 
         odPigmentCrescentCheckBox.setBackground(new java.awt.Color(32, 33, 35));
         odPigmentCrescentCheckBox.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         odPigmentCrescentCheckBox.setForeground(new java.awt.Color(255, 255, 255));
         odPigmentCrescentCheckBox.setText("Pigment Cresent");
+        odPigmentCrescentCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                odPigmentCrescentCheckBoxActionPerformed(evt);
+            }
+        });
 
         osOpticPitCheckBox.setBackground(new java.awt.Color(32, 33, 35));
         osOpticPitCheckBox.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         osOpticPitCheckBox.setForeground(new java.awt.Color(255, 255, 255));
         osOpticPitCheckBox.setText("Optic Pit");
+        osOpticPitCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                osOpticPitCheckBoxActionPerformed(evt);
+            }
+        });
 
         osMylenationCheckBox.setBackground(new java.awt.Color(32, 33, 35));
         osMylenationCheckBox.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         osMylenationCheckBox.setForeground(new java.awt.Color(255, 255, 255));
         osMylenationCheckBox.setText("Myelination");
+        osMylenationCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                osMylenationCheckBoxActionPerformed(evt);
+            }
+        });
 
         osGlialRemnantsCheckBox.setBackground(new java.awt.Color(32, 33, 35));
         osGlialRemnantsCheckBox.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         osGlialRemnantsCheckBox.setForeground(new java.awt.Color(255, 255, 255));
         osGlialRemnantsCheckBox.setText("Glial Remnants");
         osGlialRemnantsCheckBox.setToolTipText("");
+        osGlialRemnantsCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                osGlialRemnantsCheckBoxActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
         jPanel15.setLayout(jPanel15Layout);
@@ -2291,16 +2655,15 @@ public class OcularExResults extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        deleteButton.setBackground(new java.awt.Color(255, 102, 102));
-        deleteButton.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        deleteButton.setForeground(new java.awt.Color(255, 255, 255));
-        deleteButton.setText("DELETE");
-        deleteButton.setToolTipText("");
-
         saveButton.setBackground(new java.awt.Color(153, 255, 153));
         saveButton.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         saveButton.setText("SAVE");
         saveButton.setToolTipText("");
+        saveButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                saveButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
@@ -2312,9 +2675,7 @@ public class OcularExResults extends javax.swing.JPanel {
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel9Layout.createSequentialGroup()
                         .addGap(35, 35, 35)
-                        .addComponent(saveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(deleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(saveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel9Layout.createSequentialGroup()
@@ -2346,9 +2707,7 @@ public class OcularExResults extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(notesPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(deleteButton, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(saveButton, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addComponent(saveButton)
                         .addContainerGap(25, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -2392,108 +2751,407 @@ public class OcularExResults extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void optomapImagingRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_optomapImagingRadioButtonActionPerformed
-        // TODO add your handling code here:
+        currentResults.setMethodUsed("Optomap Imaging");
     }//GEN-LAST:event_optomapImagingRadioButtonActionPerformed
 
     private void d78CheckBoxItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_d78CheckBoxItemStateChanged
-        // TODO add your handling code here:
+        currentResults.setLens78dUsed(d78CheckBox.isSelected());
     }//GEN-LAST:event_d78CheckBoxItemStateChanged
 
     private void d90CheckBoxItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_d90CheckBoxItemStateChanged
-        // TODO add your handling code here:
+        currentResults.setLens90Dused(d90CheckBox.isSelected());
     }//GEN-LAST:event_d90CheckBoxItemStateChanged
 
     private void d20BioCheckBoxItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_d20BioCheckBoxItemStateChanged
-        // TODO add your handling code here:
+        currentResults.setLens20DbioUsed(d20BioCheckBox.isSelected());
     }//GEN-LAST:event_d20BioCheckBoxItemStateChanged
 
     private void pR2BioCheckBox4ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_pR2BioCheckBox4ItemStateChanged
-        // TODO add your handling code here:
+        currentResults.setLensPR22bioUsed(pR2BioCheckBox4.isSelected());
+		//System.out.println(pR2BioCheckBox4.isSelected());
     }//GEN-LAST:event_pR2BioCheckBox4ItemStateChanged
 
     private void sdepressionCheckBoxItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_sdepressionCheckBoxItemStateChanged
-        // TODO add your handling code here:
+        currentResults.setScleralDepUsed(sdepressionCheckBox.isSelected());
     }//GEN-LAST:event_sdepressionCheckBoxItemStateChanged
 
     private void dOpthalmpscopeCheckBoxItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_dOpthalmpscopeCheckBoxItemStateChanged
-        // TODO add your handling code here:
+        currentResults.setDirectOpthScopeUsed(dOpthalmpscopeCheckBox.isSelected());
     }//GEN-LAST:event_dOpthalmpscopeCheckBoxItemStateChanged
 
     private void otherCheckBox7ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_otherCheckBox7ItemStateChanged
-        // TODO add your handling code here:
+        currentResults.setOtherNoteGiven(otherCheckBox7.isSelected());
     }//GEN-LAST:event_otherCheckBox7ItemStateChanged
 
     private void otherTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_otherTextFieldFocusLost
-        // TODO add your handling code here:
+        currentResults.setOtherNoteText(otherTextField.getText());
     }//GEN-LAST:event_otherTextFieldFocusLost
 
     private void DFE2CheckBoxItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_DFE2CheckBoxItemStateChanged
-        // TODO add your handling code here:
+        currentResults.setDfeResched(DFE2CheckBox.isSelected());
     }//GEN-LAST:event_DFE2CheckBoxItemStateChanged
 
     private void DFE1CheckBox2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_DFE1CheckBox2ItemStateChanged
-        // TODO add your handling code here:
+        currentResults.setPatientAdvisedDfe(DFE1CheckBox2.isSelected());
     }//GEN-LAST:event_DFE1CheckBox2ItemStateChanged
 
     private void DFEDeclinedCheckBoxItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_DFEDeclinedCheckBoxItemStateChanged
-        // TODO add your handling code here:
+        currentResults.setDfeDeclined(DFEDeclinedCheckBox.isSelected());
     }//GEN-LAST:event_DFEDeclinedCheckBoxItemStateChanged
 
     private void DFERefusedCheckBoxItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_DFERefusedCheckBoxItemStateChanged
-        // TODO add your handling code here:
+        currentResults.setDfeRefusedAme(DFERefusedCheckBox.isSelected());
     }//GEN-LAST:event_DFERefusedCheckBoxItemStateChanged
 
     private void FundusPerformedCheckBox1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FundusPerformedCheckBox1ItemStateChanged
-        // TODO add your handling code here:
+        currentResults.setFundusImgPerformed(FundusPerformedCheckBox1.isSelected());
     }//GEN-LAST:event_FundusPerformedCheckBox1ItemStateChanged
 
     private void DFENotIndicatedCheckBox1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_DFENotIndicatedCheckBox1ItemStateChanged
-        // TODO add your handling code here:
+        currentResults.setDfeNotInd(DFENotIndicatedCheckBox1.isSelected());
     }//GEN-LAST:event_DFENotIndicatedCheckBox1ItemStateChanged
 
     private void DFEContraindicatedCheckBoxItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_DFEContraindicatedCheckBoxItemStateChanged
-        // TODO add your handling code here:
+        currentResults.setDfeContraind(DFEContraindicatedCheckBox.isSelected());
     }//GEN-LAST:event_DFEContraindicatedCheckBoxItemStateChanged
 
     private void recentDFECheckBox1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_recentDFECheckBox1ItemStateChanged
-        // TODO add your handling code here:
+        currentResults.setRecentDfe(recentDFECheckBox1.isSelected());
     }//GEN-LAST:event_recentDFECheckBox1ItemStateChanged
 
-    private void odOpticNerveComboBoxFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_odOpticNerveComboBoxFocusLost
-        // TODO add your handling code here:
-    }//GEN-LAST:event_odOpticNerveComboBoxFocusLost
-
-    private void odNerveFiberLayerComboBoxFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_odNerveFiberLayerComboBoxFocusLost
-        // TODO add your handling code here:
-    }//GEN-LAST:event_odNerveFiberLayerComboBoxFocusLost
-
     private void osDeepLaminaCheckBoxItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_osDeepLaminaCheckBoxItemStateChanged
-        // TODO add your handling code here:
+        currentResults.setDeepLaminaOS(osDeepLaminaCheckBox.isSelected());
     }//GEN-LAST:event_osDeepLaminaCheckBoxItemStateChanged
 
-    private void odDeepLaminaCheckBoxItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_odDeepLaminaCheckBoxItemStateChanged
-        // TODO add your handling code here:
-    }//GEN-LAST:event_odDeepLaminaCheckBoxItemStateChanged
-
     private void odDeepLaminaCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_odDeepLaminaCheckBoxActionPerformed
-        // TODO add your handling code here:
+        currentResults.setDeepLaminaOD(odDeepLaminaCheckBox.isSelected());
     }//GEN-LAST:event_odDeepLaminaCheckBoxActionPerformed
-
-    private void osOpticNerveComboBoxFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_osOpticNerveComboBoxFocusLost
-        // TODO add your handling code here:
-    }//GEN-LAST:event_osOpticNerveComboBoxFocusLost
-
-    private void osNerveFiberLayerComboBox1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_osNerveFiberLayerComboBox1FocusLost
-        // TODO add your handling code here:
-    }//GEN-LAST:event_osNerveFiberLayerComboBox1FocusLost
-
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     private void maculaComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_maculaComboBox1ActionPerformed
-        // TODO add your handling code here:
+        currentResults.setMaculaOD((String)maculaComboBox1.getSelectedItem());
     }//GEN-LAST:event_maculaComboBox1ActionPerformed
 
     private void maculaComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_maculaComboBox2ActionPerformed
-        // TODO add your handling code here:
+        currentResults.setMaculaOS((String)maculaComboBox2.getSelectedItem());
     }//GEN-LAST:event_maculaComboBox2ActionPerformed
+
+    private void vitreousComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vitreousComboBox2ActionPerformed
+        currentResults.setVitreousOS((String)vitreousComboBox2.getSelectedItem());
+		System.out.println("vitreousOS: " + (String)vitreousComboBox2.getSelectedItem());
+    }//GEN-LAST:event_vitreousComboBox2ActionPerformed
+
+    private void vitreousComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vitreousComboBox1ActionPerformed
+        currentResults.setVitreousOD((String) vitreousComboBox1.getSelectedItem());
+		System.out.println("vitreousOD" + (String)vitreousComboBox1.getSelectedItem());
+    }//GEN-LAST:event_vitreousComboBox1ActionPerformed
+
+    private void diabeticEvalComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_diabeticEvalComboBox1ActionPerformed
+        currentResults.setDiabeticEvalOD((String) diabeticEvalComboBox1.getSelectedItem());
+    }//GEN-LAST:event_diabeticEvalComboBox1ActionPerformed
+
+    private void htnEvaluationComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_htnEvaluationComboBox1ActionPerformed
+        currentResults.setHtnEvalOD((String) htnEvaluationComboBox1.getSelectedItem());
+    }//GEN-LAST:event_htnEvaluationComboBox1ActionPerformed
+
+    private void vasculatureComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vasculatureComboBox1ActionPerformed
+        currentResults.setVasculatureOD((String) vasculatureComboBox1.getSelectedItem());
+    }//GEN-LAST:event_vasculatureComboBox1ActionPerformed
+
+    private void armdComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_armdComboBox1ActionPerformed
+        currentResults.setArmdOD((String) armdComboBox1.getSelectedItem());
+    }//GEN-LAST:event_armdComboBox1ActionPerformed
+
+    private void posteriorPoleComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_posteriorPoleComboBox1ActionPerformed
+        currentResults.setPosteriorPoleOD((String) posteriorPoleComboBox1.getSelectedItem());
+    }//GEN-LAST:event_posteriorPoleComboBox1ActionPerformed
+
+    private void custom1ComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_custom1ComboBox1ActionPerformed
+        currentResults.setCustom1OD((String)custom1ComboBox1.getSelectedItem());
+    }//GEN-LAST:event_custom1ComboBox1ActionPerformed
+
+    private void peripheralRetinaComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_peripheralRetinaComboBox1ActionPerformed
+        currentResults.setPeripheralRetinaOD((String) peripheralRetinaComboBox1.getSelectedItem());
+    }//GEN-LAST:event_peripheralRetinaComboBox1ActionPerformed
+
+    private void custom2ComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_custom2ComboBox1ActionPerformed
+        currentResults.setCustom2OD((String) custom2ComboBox1.getSelectedItem());
+    }//GEN-LAST:event_custom2ComboBox1ActionPerformed
+
+    private void miscRetinaComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miscRetinaComboBox1ActionPerformed
+        currentResults.setMiscRetinaOD((String) miscRetinaComboBox1.getSelectedItem());
+    }//GEN-LAST:event_miscRetinaComboBox1ActionPerformed
+
+    private void custom3ComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_custom3ComboBox1ActionPerformed
+        currentResults.setCustom3OD((String)custom3ComboBox1.getSelectedItem());
+    }//GEN-LAST:event_custom3ComboBox1ActionPerformed
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    private void diabeticEvalComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_diabeticEvalComboBox2ActionPerformed
+        currentResults.setDiabeticEvalOS((String) diabeticEvalComboBox2.getSelectedItem());
+    }//GEN-LAST:event_diabeticEvalComboBox2ActionPerformed
+
+    private void htnEvaluationComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_htnEvaluationComboBox2ActionPerformed
+        currentResults.setHtnEvalOS((String) htnEvaluationComboBox2.getSelectedItem());
+    }//GEN-LAST:event_htnEvaluationComboBox2ActionPerformed
+
+    private void vasculatureComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vasculatureComboBox2ActionPerformed
+        currentResults.setVasculatureOS((String) vasculatureComboBox2.getSelectedItem());
+    }//GEN-LAST:event_vasculatureComboBox2ActionPerformed
+
+    private void armdComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_armdComboBox2ActionPerformed
+        currentResults.setArmdOS((String) armdComboBox2.getSelectedItem());
+    }//GEN-LAST:event_armdComboBox2ActionPerformed
+
+    private void posteriorPoleComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_posteriorPoleComboBox2ActionPerformed
+        currentResults.setPosteriorPoleOS((String) posteriorPoleComboBox2.getSelectedItem());
+    }//GEN-LAST:event_posteriorPoleComboBox2ActionPerformed
+
+    private void custom1ComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_custom1ComboBox2ActionPerformed
+        currentResults.setCustom1OS((String)custom1ComboBox2.getSelectedItem());
+    }//GEN-LAST:event_custom1ComboBox2ActionPerformed
+
+    private void peripheralRetinaComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_peripheralRetinaComboBox2ActionPerformed
+        currentResults.setPeripheralRetinaOS((String) peripheralRetinaComboBox2.getSelectedItem());
+    }//GEN-LAST:event_peripheralRetinaComboBox2ActionPerformed
+
+    private void custom2ComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_custom2ComboBox2ActionPerformed
+        currentResults.setCustom2OS((String) custom2ComboBox2.getSelectedItem());
+    }//GEN-LAST:event_custom2ComboBox2ActionPerformed
+
+    private void miscRetinaComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miscRetinaComboBox2ActionPerformed
+        currentResults.setMiscRetinaOS((String) miscRetinaComboBox2.getSelectedItem());
+    }//GEN-LAST:event_miscRetinaComboBox2ActionPerformed
+
+    private void custom3ComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_custom3ComboBox2ActionPerformed
+        currentResults.setCustom3OS((String)custom3ComboBox2.getSelectedItem());
+    }//GEN-LAST:event_custom3ComboBox2ActionPerformed
+
+    private void dilationAgentComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dilationAgentComboBoxActionPerformed
+        currentResults.setDilationAgent((String) dilationAgentComboBox.getSelectedItem());
+    }//GEN-LAST:event_dilationAgentComboBoxActionPerformed
+
+    private void odHorizontalSliderStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_odHorizontalSliderStateChanged
+        Integer sliderVal = odHorizontalSlider.getValue();
+		Double displayVal = Double.valueOf(sliderVal) / 100;
+		odHorizontalTextField.setText(displayVal.toString());
+    }//GEN-LAST:event_odHorizontalSliderStateChanged
+
+    private void odVerticalSliderStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_odVerticalSliderStateChanged
+        Integer sliderVal = odVerticalSlider.getValue();
+		Double displayVal = Double.valueOf(sliderVal) / 100;
+		odVerticalTextField.setText(displayVal.toString());
+    }//GEN-LAST:event_odVerticalSliderStateChanged
+
+    private void osHorizontalSliderStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_osHorizontalSliderStateChanged
+        Integer sliderVal = osHorizontalSlider.getValue();
+		Double displayVal = Double.valueOf(sliderVal) / 100;
+		osHorizontalTextField.setText(displayVal.toString());
+    }//GEN-LAST:event_osHorizontalSliderStateChanged
+
+    private void osVerticalSliderStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_osVerticalSliderStateChanged
+        Integer sliderVal = osVerticalSlider.getValue();
+		Double displayVal = Double.valueOf(sliderVal) / 100;
+		osVerticalTextField.setText(displayVal.toString());
+    }//GEN-LAST:event_osVerticalSliderStateChanged
+
+    private void odHorizontalSliderMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_odHorizontalSliderMouseReleased
+        currentResults.setHorizOD(Double.valueOf(odHorizontalTextField.getText()));
+    }//GEN-LAST:event_odHorizontalSliderMouseReleased
+
+    private void odVerticalSliderMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_odVerticalSliderMouseReleased
+        currentResults.setVertOD(Double.valueOf(odVerticalTextField.getText()));
+    }//GEN-LAST:event_odVerticalSliderMouseReleased
+
+    private void osHorizontalSliderMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_osHorizontalSliderMouseReleased
+        currentResults.setHorizOS(Double.valueOf(osHorizontalTextField.getText()));
+    }//GEN-LAST:event_osHorizontalSliderMouseReleased
+
+    private void osVerticalSliderMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_osVerticalSliderMouseReleased
+        currentResults.setVertOS(Double.valueOf(osVerticalTextField.getText()));
+    }//GEN-LAST:event_osVerticalSliderMouseReleased
+
+    private void fundusEvaluationNotPerformedRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fundusEvaluationNotPerformedRadioButtonActionPerformed
+        currentResults.setMethodUsed("Not Performed");
+    }//GEN-LAST:event_fundusEvaluationNotPerformedRadioButtonActionPerformed
+
+    private void undilatedEvalRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_undilatedEvalRadioButtonActionPerformed
+        currentResults.setMethodUsed("Undilated Eval");
+    }//GEN-LAST:event_undilatedEvalRadioButtonActionPerformed
+
+    private void smallPupilBIORadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_smallPupilBIORadioButtonActionPerformed
+        currentResults.setMethodUsed("Small Pupil BIO");
+    }//GEN-LAST:event_smallPupilBIORadioButtonActionPerformed
+
+    private void dilatedEvalRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dilatedEvalRadioButtonActionPerformed
+        currentResults.setMethodUsed("Dilated Eval");
+    }//GEN-LAST:event_dilatedEvalRadioButtonActionPerformed
+
+    private void dfeWithOptomapRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dfeWithOptomapRadioButtonActionPerformed
+        currentResults.setMethodUsed("DFE with Optomap");
+    }//GEN-LAST:event_dfeWithOptomapRadioButtonActionPerformed
+
+    private void gtt1RadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gtt1RadioButtonActionPerformed
+        currentResults.setGttOD("1");
+    }//GEN-LAST:event_gtt1RadioButtonActionPerformed
+
+    private void gtt2RadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gtt2RadioButtonActionPerformed
+        currentResults.setGttOD("2");
+    }//GEN-LAST:event_gtt2RadioButtonActionPerformed
+
+    private void odOpticNerveComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_odOpticNerveComboBoxActionPerformed
+        currentResults.setOpticNerveOD((String) odOpticNerveComboBox.getSelectedItem());
+    }//GEN-LAST:event_odOpticNerveComboBoxActionPerformed
+
+    private void odNerveFiberLayerComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_odNerveFiberLayerComboBoxActionPerformed
+        currentResults.setNerveFiberLayerOD((String) odNerveFiberLayerComboBox.getSelectedItem());
+    }//GEN-LAST:event_odNerveFiberLayerComboBoxActionPerformed
+
+    private void osOpticNerveComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_osOpticNerveComboBoxActionPerformed
+        currentResults.setOpticNerveOS((String) osOpticNerveComboBox.getSelectedItem());
+    }//GEN-LAST:event_osOpticNerveComboBoxActionPerformed
+
+    private void osNerveFiberLayerComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_osNerveFiberLayerComboBoxActionPerformed
+        currentResults.setNerveFiberLayerOS((String) osNerveFiberLayerComboBox.getSelectedItem());
+    }//GEN-LAST:event_osNerveFiberLayerComboBoxActionPerformed
+
+    private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
+        dataBase.save(currentResults);
+    }//GEN-LAST:event_saveButtonActionPerformed
+
+    private void odShallowCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_odShallowCheckBoxActionPerformed
+        currentResults.setShallowOD(odShallowCheckBox.isSelected()); //////////////////////////////////////////////////
+    }//GEN-LAST:event_odShallowCheckBoxActionPerformed
+
+    private void odRoundCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_odRoundCheckBoxActionPerformed
+        currentResults.setRoundOD(odRoundCheckBox.isSelected());
+    }//GEN-LAST:event_odRoundCheckBoxActionPerformed
+
+    private void odOvalCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_odOvalCheckBoxActionPerformed
+        currentResults.setOvalOD(odOvalCheckBox.isSelected());
+    }//GEN-LAST:event_odOvalCheckBoxActionPerformed
+
+    private void odTempSlopingCheckboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_odTempSlopingCheckboxActionPerformed
+        currentResults.setTempSlopingOD(odTempSlopingCheckbox.isSelected());
+    }//GEN-LAST:event_odTempSlopingCheckboxActionPerformed
+
+    private void odUnderminingCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_odUnderminingCheckBoxActionPerformed
+        currentResults.setUnderminingOD(odUnderminingCheckBox.isSelected());
+    }//GEN-LAST:event_odUnderminingCheckBoxActionPerformed
+
+    private void odPeripapAtrophyCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_odPeripapAtrophyCheckBoxActionPerformed
+        currentResults.setPeripapAtrophyOD(odPeripapAtrophyCheckBox.isSelected());
+    }//GEN-LAST:event_odPeripapAtrophyCheckBoxActionPerformed
+
+    private void odScleralCrescentCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_odScleralCrescentCheckBoxActionPerformed
+        currentResults.setScleralCrescentOD(odScleralCrescentCheckBox.isSelected());
+    }//GEN-LAST:event_odScleralCrescentCheckBoxActionPerformed
+
+    private void odPigmentCrescentCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_odPigmentCrescentCheckBoxActionPerformed
+        currentResults.setPigmentCrescentOD(odPigmentCrescentCheckBox.isSelected());
+    }//GEN-LAST:event_odPigmentCrescentCheckBoxActionPerformed
+
+    private void odOpticPitCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_odOpticPitCheckBoxActionPerformed
+        currentResults.setOpticPitOD(odOpticPitCheckBox.isSelected());
+    }//GEN-LAST:event_odOpticPitCheckBoxActionPerformed
+
+    private void odMylenationCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_odMylenationCheckBoxActionPerformed
+        currentResults.setMyelinationOD(odMylenationCheckBox.isSelected());
+    }//GEN-LAST:event_odMylenationCheckBoxActionPerformed
+
+    private void odGlialRemnantsCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_odGlialRemnantsCheckBoxActionPerformed
+        currentResults.setGlialRemOD(odGlialRemnantsCheckBox.isSelected());
+    }//GEN-LAST:event_odGlialRemnantsCheckBoxActionPerformed
+
+    private void osShallowCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_osShallowCheckBoxActionPerformed
+        currentResults.setShallowOS(osShallowCheckBox.isSelected());
+    }//GEN-LAST:event_osShallowCheckBoxActionPerformed
+
+    private void osRoundCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_osRoundCheckBoxActionPerformed
+        currentResults.setRoundOS(osRoundCheckBox.isSelected());
+    }//GEN-LAST:event_osRoundCheckBoxActionPerformed
+
+    private void osOvalCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_osOvalCheckBoxActionPerformed
+        currentResults.setOvalOS(osOvalCheckBox.isSelected());
+    }//GEN-LAST:event_osOvalCheckBoxActionPerformed
+
+    private void osTempSlopingCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_osTempSlopingCheckBoxActionPerformed
+        currentResults.setTempSlopingOS(osTempSlopingCheckBox.isSelected());
+    }//GEN-LAST:event_osTempSlopingCheckBoxActionPerformed
+
+    private void osUnderminingCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_osUnderminingCheckBoxActionPerformed
+        currentResults.setUnderminingOS(osUnderminingCheckBox.isSelected());
+    }//GEN-LAST:event_osUnderminingCheckBoxActionPerformed
+
+    private void osPeripapAtrophyCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_osPeripapAtrophyCheckBoxActionPerformed
+        currentResults.setPeripapAtrophyOS(osPeripapAtrophyCheckBox.isSelected());
+    }//GEN-LAST:event_osPeripapAtrophyCheckBoxActionPerformed
+
+    private void osScleralCrescentCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_osScleralCrescentCheckBoxActionPerformed
+        currentResults.setScleralCrescentOS(osScleralCrescentCheckBox.isSelected());
+    }//GEN-LAST:event_osScleralCrescentCheckBoxActionPerformed
+
+    private void osPigmentCrescentCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_osPigmentCrescentCheckBoxActionPerformed
+        currentResults.setPigmentCrescentOS(osPigmentCrescentCheckBox.isSelected());
+    }//GEN-LAST:event_osPigmentCrescentCheckBoxActionPerformed
+
+    private void osOpticPitCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_osOpticPitCheckBoxActionPerformed
+        currentResults.setOpticPitOS(osOpticPitCheckBox.isSelected());
+    }//GEN-LAST:event_osOpticPitCheckBoxActionPerformed
+
+    private void osMylenationCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_osMylenationCheckBoxActionPerformed
+        currentResults.setMyelinationOS(osMylenationCheckBox.isSelected());
+    }//GEN-LAST:event_osMylenationCheckBoxActionPerformed
+
+    private void osGlialRemnantsCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_osGlialRemnantsCheckBoxActionPerformed
+        currentResults.setGlialRemOS(osGlialRemnantsCheckBox.isSelected());
+    }//GEN-LAST:event_osGlialRemnantsCheckBoxActionPerformed
+
+    private void osFovealReflexPlusRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_osFovealReflexPlusRadioButtonActionPerformed
+        currentResults.setFovealReflexOs("+");
+    }//GEN-LAST:event_osFovealReflexPlusRadioButtonActionPerformed
+
+    private void osFovealReflexMinusRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_osFovealReflexMinusRadioButtonActionPerformed
+        currentResults.setFovealReflexOs("-");
+    }//GEN-LAST:event_osFovealReflexMinusRadioButtonActionPerformed
+
+    private void osFovealReflexXRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_osFovealReflexXRadioButtonActionPerformed
+        currentResults.setFovealReflexOs("X");
+    }//GEN-LAST:event_osFovealReflexXRadioButtonActionPerformed
+
+    private void odFovealReflexPlusRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_odFovealReflexPlusRadioButton1ActionPerformed
+        currentResults.setFovealReflexOD("+");
+    }//GEN-LAST:event_odFovealReflexPlusRadioButton1ActionPerformed
+
+    private void odFovealReflexMinusRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_odFovealReflexMinusRadioButton1ActionPerformed
+        currentResults.setFovealReflexOD("-");
+    }//GEN-LAST:event_odFovealReflexMinusRadioButton1ActionPerformed
+
+    private void odFovealReflexXRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_odFovealReflexXRadioButton1ActionPerformed
+        currentResults.setFovealReflexOD("X");
+    }//GEN-LAST:event_odFovealReflexXRadioButton1ActionPerformed
+
+    private void osSpontaneousPulsationPlusRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_osSpontaneousPulsationPlusRadioButtonActionPerformed
+        currentResults.setSponVeinPulsOS("+");
+    }//GEN-LAST:event_osSpontaneousPulsationPlusRadioButtonActionPerformed
+
+    private void osSpontaneousPulsationMinusRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_osSpontaneousPulsationMinusRadioButtonActionPerformed
+        currentResults.setSponVeinPulsOS("-");
+    }//GEN-LAST:event_osSpontaneousPulsationMinusRadioButtonActionPerformed
+
+    private void osSpontaneousPulsationXRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_osSpontaneousPulsationXRadioButtonActionPerformed
+        currentResults.setSponVeinPulsOS("X");
+    }//GEN-LAST:event_osSpontaneousPulsationXRadioButtonActionPerformed
+
+    private void odSpontaneousPulsationPlusRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_odSpontaneousPulsationPlusRadioButton1ActionPerformed
+        currentResults.setSponVeinPulsOD("+");
+    }//GEN-LAST:event_odSpontaneousPulsationPlusRadioButton1ActionPerformed
+
+    private void odSpontaneousPulsationMinusRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_odSpontaneousPulsationMinusRadioButton1ActionPerformed
+        currentResults.setSponVeinPulsOD("-");
+    }//GEN-LAST:event_odSpontaneousPulsationMinusRadioButton1ActionPerformed
+
+    private void odSpontaneousPulsationXRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_odSpontaneousPulsationXRadioButton1ActionPerformed
+        currentResults.setSponVeinPulsOD("X");
+    }//GEN-LAST:event_odSpontaneousPulsationXRadioButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -2517,7 +3175,6 @@ public class OcularExResults extends javax.swing.JPanel {
     private javax.swing.JCheckBox d78CheckBox;
     private javax.swing.JCheckBox d90CheckBox;
     private javax.swing.JCheckBox dOpthalmpscopeCheckBox;
-    private javax.swing.JButton deleteButton;
     private javax.swing.JRadioButton dfeWithOptomapRadioButton;
     private javax.swing.JComboBox<String> diabeticEvalComboBox1;
     private javax.swing.JComboBox<String> diabeticEvalComboBox2;
@@ -2639,7 +3296,7 @@ public class OcularExResults extends javax.swing.JPanel {
     private javax.swing.JSlider osHorizontalSlider;
     private javax.swing.JTextField osHorizontalTextField;
     private javax.swing.JCheckBox osMylenationCheckBox;
-    private javax.swing.JComboBox<String> osNerveFiberLayerComboBox1;
+    private javax.swing.JComboBox<String> osNerveFiberLayerComboBox;
     private javax.swing.JPanel osOpthalmicIndicatorsPanel;
     private javax.swing.JComboBox<String> osOpticNerveComboBox;
     private javax.swing.JCheckBox osOpticPitCheckBox;

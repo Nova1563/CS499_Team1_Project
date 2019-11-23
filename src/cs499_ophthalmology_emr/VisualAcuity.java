@@ -971,11 +971,6 @@ public class VisualAcuity extends javax.swing.JPanel {
                 occularBttnMouseClicked(evt);
             }
         });
-        occularBttn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                occularBttnActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -1048,14 +1043,13 @@ public class VisualAcuity extends javax.swing.JPanel {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(prismBaseOSTXTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(prismLabel2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(prismBaseLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(addLabel1))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(addOSTXTF1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(addOSTXTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -1589,10 +1583,6 @@ public class VisualAcuity extends javax.swing.JPanel {
     private void saveBttn1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_saveBttn1MouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_saveBttn1MouseClicked
-
-    private void occularBttnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_occularBttnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_occularBttnActionPerformed
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

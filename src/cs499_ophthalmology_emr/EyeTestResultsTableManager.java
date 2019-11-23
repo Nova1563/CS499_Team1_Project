@@ -115,8 +115,10 @@ public class EyeTestResultsTableManager {
 										+ "horizOS		Float,\n"
 										+ "vertOD		Float,\n"
 										+ "vertOS		Float,\n"
-										+ "opticNerve		Text,\n"
-										+ "nerveFiberLayer		Text,\n"
+										+ "opticNerveOD		Text,\n"
+										+ "nerveFiberLayerOD	Text,\n"
+										+ "opticNerveOS		Text,\n"
+										+ "nerveFiberLayerOS	Text,\n"
 										+ "deepLaminaOD		Boolean,\n"
 										+ "deepLaminaOS		Boolean,\n"
 										+ "shallowOD		Boolean,\n"
@@ -299,8 +301,10 @@ public class EyeTestResultsTableManager {
 					+ "\thorizOS: " + queryResults.getFloat("horizOS")
 					+ "\tvertOD: " + queryResults.getFloat("vertOD")
 					+ "\tvertOS: " + queryResults.getFloat("vertOS")
-					+ "\topticNerve: " + queryResults.getString("opticNerve")
-					+ "\tnerveFiberLayer: " + queryResults.getString("nerveFiberLayer")
+					+ "\topticNerveOD: " + queryResults.getString("opticNerveOD")
+					+ "\tnerveFiberLayerOD: " + queryResults.getString("nerveFiberLayerOD")
+					+ "\topticNerveOS: " + queryResults.getString("opticNerveOS")
+					+ "\tnerveFiberLayerOS: " + queryResults.getString("nerveFiberLayerOS")
 					+ "\tdeepLaminaOD: " + queryResults.getBoolean("deepLaminaOD")
 					+ "\tdeepLaminaOS: " + queryResults.getBoolean("deepLaminaOS")
 					+ "\tshallowOD: " + queryResults.getBoolean("shallowOD")
@@ -337,7 +341,7 @@ public class EyeTestResultsTableManager {
 	public void saveEyeTestResultsToSQL(EyeTestResults theResults)
 	{
 		Integer examID = theResults.getExamID();
-		
+		System.out.println("EyeTestResultsTableManager saving examID: " + examID);
 		String sqlString = "UPDATE eyeTestResults SET "
 						+ "farChartDistance = ? ,"
 						+ "dccOS = ? ,"
@@ -427,8 +431,8 @@ public class EyeTestResultsTableManager {
 						+ "horizOS = ? ,"
 						+ "vertOD = ? ,"
 						+ "vertOS = ? ,"
-						+ "opticNerve = ? ,"
-						+ "nerveFiberLayer = ? ,"
+						+ "opticNerveOD = ? ,"
+						+ "nerveFiberLayerOD = ? ,"
 						+ "deepLaminaOD = ? ,"
 						+ "deepLaminaOS = ? ,"
 						+ "shallowOD = ? ,"
@@ -456,7 +460,9 @@ public class EyeTestResultsTableManager {
 						+ "nn20OS = ? ,"	//
 						+ "dd20OS = ? ,"	//
 						+ "addOS = ? ,"		//
-						+ "addOD = ? "		//
+						+ "addOD = ? ,"		//
+						+ "opticNerveOS = ? ,"
+						+ "nerveFiberLayerOS = ? "
 						+ "WHERE resultsID = ? ";
 		
 		try
@@ -551,8 +557,8 @@ public class EyeTestResultsTableManager {
 			theSQLstatement.setDouble(86 , theResults.getHorizOS());		 // horizOS
 			theSQLstatement.setDouble(87 , theResults.getVertOD());		 // vertOD
 			theSQLstatement.setDouble(88 , theResults.getVertOS());		 // vertOS
-			theSQLstatement.setString(89 , theResults.getOpticNerve());		 // opticNerve
-			theSQLstatement.setString(90 , theResults.getNerveFiberLayer());		 // nerveFiberLayer
+			theSQLstatement.setString(89 , theResults.getOpticNerveOD());		 // opticNerveOD
+			theSQLstatement.setString(90 , theResults.getNerveFiberLayerOD());		 // nerveFiberLayerOD
 			theSQLstatement.setBoolean(91 , theResults.getDeepLaminaOD());		 // deepLaminaOD
 			theSQLstatement.setBoolean(92 , theResults.getDeepLaminaOS());		 // deepLaminaOS
 			theSQLstatement.setBoolean(93 , theResults.getShallowOD());		 // shallowOD
@@ -581,8 +587,9 @@ public class EyeTestResultsTableManager {
 			theSQLstatement.setString(116, theResults.getDd20OS());
 			theSQLstatement.setDouble(117, theResults.getAddOS());
 			theSQLstatement.setDouble(118, theResults.getAddOD());
-			
-			theSQLstatement.setInt(119, examID);
+			theSQLstatement.setString(119 , theResults.getOpticNerveOS());		 // opticNerveOS
+			theSQLstatement.setString(120 , theResults.getNerveFiberLayerOS());		 // nerveFiberLayerOS
+			theSQLstatement.setInt(121, examID);
 			
 			theSQLstatement.executeUpdate();
 		}
@@ -704,8 +711,8 @@ public class EyeTestResultsTableManager {
 			theFoundExam.setHorizOS(theResults.getDouble("horizOS"));
 			theFoundExam.setVertOD(theResults.getDouble("vertOD"));
 			theFoundExam.setVertOS(theResults.getDouble("vertOS"));
-			theFoundExam.setOpticNerve(theResults.getString("opticNerve"));
-			theFoundExam.setNerveFiberLayer(theResults.getString("nerveFiberLayer"));
+			theFoundExam.setOpticNerveOD(theResults.getString("opticNerveOD"));
+			theFoundExam.setNerveFiberLayerOD(theResults.getString("nerveFiberLayerOD"));
 			theFoundExam.setDeepLaminaOD(theResults.getBoolean("deepLaminaOD"));
 			theFoundExam.setDeepLaminaOS(theResults.getBoolean("deepLaminaOS"));
 			theFoundExam.setShallowOD(theResults.getBoolean("shallowOD"));
@@ -730,7 +737,8 @@ public class EyeTestResultsTableManager {
 			theFoundExam.setMyelinationOS(theResults.getBoolean("myelinationOS"));
 			theFoundExam.setGlialRemOD(theResults.getBoolean("glialRemOD"));
 			theFoundExam.setGlialRemOS(theResults.getBoolean("glialRemOS"));
-			
+			theFoundExam.setOpticNerveOS(theResults.getString("opticNerveOS"));
+			theFoundExam.setNerveFiberLayerOS(theResults.getString("nerveFiberLayerOS"));
 		}
 		catch(SQLException e)
 		{
@@ -856,8 +864,8 @@ public class EyeTestResultsTableManager {
 			theFoundExam.setHorizOS(theResults.getDouble("horizOS"));
 			theFoundExam.setVertOD(theResults.getDouble("vertOD"));
 			theFoundExam.setVertOS(theResults.getDouble("vertOS"));
-			theFoundExam.setOpticNerve(theResults.getString("opticNerve"));
-			theFoundExam.setNerveFiberLayer(theResults.getString("nerveFiberLayer"));
+			theFoundExam.setOpticNerveOD(theResults.getString("opticNerveOD"));
+			theFoundExam.setNerveFiberLayerOD(theResults.getString("nerveFiberLayerOD"));
 			theFoundExam.setDeepLaminaOD(theResults.getBoolean("deepLaminaOD"));
 			theFoundExam.setDeepLaminaOS(theResults.getBoolean("deepLaminaOS"));
 			theFoundExam.setShallowOD(theResults.getBoolean("shallowOD"));
@@ -882,7 +890,8 @@ public class EyeTestResultsTableManager {
 			theFoundExam.setMyelinationOS(theResults.getBoolean("myelinationOS"));
 			theFoundExam.setGlialRemOD(theResults.getBoolean("glialRemOD"));
 			theFoundExam.setGlialRemOS(theResults.getBoolean("glialRemOS"));
-			
+			theFoundExam.setOpticNerveOS(theResults.getString("opticNerveOS"));
+			theFoundExam.setNerveFiberLayerOS(theResults.getString("nerveFiberLayerOS"));
 		}
 		catch(SQLException e)
 		{
@@ -893,7 +902,7 @@ public class EyeTestResultsTableManager {
 			e.printStackTrace();
 		}
 		
-		return null;
+		return theFoundExam;
 	}
 	
 	public ArrayList<EyeTestResults> getAllEyeTestResultsByPatient(Integer patientID)

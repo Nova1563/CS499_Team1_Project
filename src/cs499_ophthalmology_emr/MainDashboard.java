@@ -141,12 +141,12 @@ public class MainDashboard extends javax.swing.JFrame {
                 insurancePanel.setVisible(true);
 	}
         public void showVisualAcuity()
-	{
+	{			visualAcuity.loadEyeTestResults();
                 hideAllPanelComponents(mainPanel);
                 visualAcuity.setVisible(true);
 	}
         public void showOccularExResults()
-	{
+	{			occularExResults.loadOcularResults();
                 hideAllPanelComponents(mainPanel);
                 occularExResults.setVisible(true);
 	}
@@ -249,11 +249,6 @@ public class MainDashboard extends javax.swing.JFrame {
         toolBarJPanel.add(insuranceBttn, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 0, -1, 70));
 
         eyeTestBttn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cs499_ophthalmology_emr/images/eyeTestIcon.png"))); // NOI18N
-        eyeTestBttn.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                eyeTestBttnMouseClicked(evt);
-            }
-        });
         toolBarJPanel.add(eyeTestBttn, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 0, -1, 70));
 
         helpBttn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cs499_ophthalmology_emr/images/infoIcon.png"))); // NOI18N
@@ -373,12 +368,6 @@ public class MainDashboard extends javax.swing.JFrame {
         showHomePanel();
         
     }//GEN-LAST:event_homeBttnMouseClicked
-
-    private void eyeTestBttnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_eyeTestBttnMouseClicked
-        // TODO add your handling code here:
-        System.out.print("EyeTest Bttn Bttn Clicked: " + evt.getClickCount());
-        showVisualAcuity();
-    }//GEN-LAST:event_eyeTestBttnMouseClicked
 
     /**
      * @param args the command line arguments

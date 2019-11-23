@@ -188,7 +188,7 @@
     </Container>
     <Component class="javax.swing.JButton" name="beginExamButton">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Begin Exam for Selected"/>
+        <Property name="text" type="java.lang.String" value="Open Exam for Selected"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="beginExamButtonActionPerformed"/>
