@@ -12,6 +12,7 @@ public class EyeTestResults
     private final Integer apptID;
     private String farChartDistance;
     private String dccOS;
+    private String dscODph; // Angela
     private String dccOSph;
     private String dscOS;
     private String dscOSph;
@@ -21,7 +22,7 @@ public class EyeTestResults
     private String dccOU;
     private String dccOUph;
     private String dscOU;
-    private String dscOUph;
+    private String dscOUph; 
     private String nearChartDistance;
     private String nccOS;
     private String nccOSph;
@@ -40,15 +41,15 @@ public class EyeTestResults
     private Double cylinderOS;
     private Double axisOD;
     private Double axisOS;
-	private Double addOD;
-	private Double addOS;
+    private Double addOD;
+    private Double addOS;
     private Double prismOD;
     private Double prismOS;
     private Double prismBaseOD;
     private Double prismBaseOS;
     private String nn20OD;
     private String dd20OD;
-	private String nn20OS;
+    private String nn20OS;
     private String dd20OS;
     
     private String vitreousOD;
@@ -140,6 +141,7 @@ public class EyeTestResults
 		this.dccOS = "";
 		this.dccOSph = "";
 		this.dscOS = "";
+                this.dscODph =""; //Angela
 		this.dscOSph = "";
 		this.dccOD = "";
 		this.dccODph = "";
@@ -302,7 +304,14 @@ public class EyeTestResults
 	public void setDscOS(String dscOS) {
 		this.dscOS = dscOS;
 	}
-
+        // Angela added this ------
+        public String getDscODph() {
+		return dscODph;
+	}
+        public void setDscODph(String dscODph) {
+		this.dscODph = dscODph;
+	}
+        // -------------------------
 	public String getDscOSph() {
 		return dscOSph;
 	}
