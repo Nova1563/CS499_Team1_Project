@@ -9,31 +9,70 @@ import java.util.ArrayList;
 
 /**
  *
- * @author kenda
+ * @author angela
  */
 public class InsurancePage extends javax.swing.JPanel {
 
 
     private MainDashboard dashBoard = null;
-    /**
-     * Creates new form InsurancePage
-     */
-    //private ArrayList<Patient> patientList = null;
-    //private DataBaseManager dataBase = DataBaseManager.getInstance();
+ 
+    private DataBaseManager dataBase;
+    private Patient activePatient;
+
     
     public InsurancePage(MainDashboard _dashBoard) {
-        initComponents();
         
         dashBoard = _dashBoard;
+        dataBase = DataBaseManager.getInstance();
+        initComponents();
+
     }
     
     public void insuranceInfo(Patient thePatient)
     {
+        activePatient = dashBoard.getActivePatient();
+         
         patientNameTxtF.setEditable(false);
         patientNameTxtF.setText(thePatient.getName());
-    }
-    
+        
+        insuranceProviderTxtF.setEditable(false);
+        insuranceProviderTxtF.setText(thePatient.getInsProvider());
+        
+        groupNumTxtF.setEditable(false);
+        groupNumTxtF.setText(thePatient.getInsGroupNo());
+        
+        insProviderAddrTXTF.setEditable(false);
+        insProviderAddrTXTF.setText(thePatient.getInsProviderAddr());
+        
+        phoneNumTxtF.setEditable(false);
+        phoneNumTxtF.setText(thePatient.getInsProviderPhone());
+        
+        contactNumTxtF1.setEditable(false);
+        contactNumTxtF1.setText(thePatient.getInsContractNo());
+        
+        String coPay = Double.toString(thePatient.getInsCoPayAmount());
+        coPaymentTxtF.setEditable(false);
+        coPaymentTxtF.setText(coPay);
+        
+        String effDate = Integer.toString(thePatient.getInsEffectiveDate());
+        effDateTxtF1. setEditable(false);
+        effDateTxtF1.setText(effDate);
 
+       
+    }
+    public void calculateTotalChageAmt(Patient thePatient)
+    {
+        Double serviceCharge = Double.parseDouble(serviceChargeTXTF1.getText());
+        Double coPayAmt =  thePatient.getInsCoPayAmount();
+        Double totalChargeAmt = serviceCharge + coPayAmt;
+        thePatient.setinsTotalAmtCharged(totalChargeAmt);
+        
+        String totalAmt = Double.toString(totalChargeAmt);
+        amtChargedTXTF.setEditable(false);
+        amtChargedTXTF.setText("$ " + totalAmt);
+                  
+    }
+  
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -48,28 +87,30 @@ public class InsurancePage extends javax.swing.JPanel {
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        coPaymentTxtF = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
         patientNameTxtF = new javax.swing.JTextField();
-        insuranceProviderTxtF = new javax.swing.JTextField();
-        contactNumTxtF = new javax.swing.JTextField();
-        groupNumTxtF = new javax.swing.JTextField();
-        jLabel9 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
-        jTextField8 = new javax.swing.JTextField();
-        jLabel13 = new javax.swing.JLabel();
-        jTextField9 = new javax.swing.JTextField();
-        jLabel14 = new javax.swing.JLabel();
-        jTextField10 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        inssaveBttn = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
+        jPanel5 = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        coPaymentTxtF = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        groupNumTxtF = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        phoneNumTxtF = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        insProviderAddrTXTF = new javax.swing.JTextField();
+        insuranceProviderTxtF = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        contactNumTxtF1 = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        effDateTxtF1 = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
+        amtChargedTXTF = new javax.swing.JTextField();
+        jLabel14 = new javax.swing.JLabel();
+        serviceChargeTXTF1 = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(57, 113, 177));
 
@@ -104,129 +145,26 @@ public class InsurancePage extends javax.swing.JPanel {
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Patient Name:");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, -1, -1));
-
-        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Contact Number:");
-        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, -1, -1));
-
-        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Group Number:");
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, -1, -1));
-
-        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("Provider Contact Information");
-        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 380, -1, -1));
-
-        coPaymentTxtF.setBackground(new java.awt.Color(204, 255, 255));
-        jPanel2.add(coPaymentTxtF, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 300, 290, 36));
-
-        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("Insurance Provider:");
-        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, 220, -1));
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, -1, 30));
 
         patientNameTxtF.setBackground(new java.awt.Color(204, 255, 255));
-        patientNameTxtF.setText("LastName, FirstName");
-        patientNameTxtF.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                patientNameTxtFActionPerformed(evt);
+        patientNameTxtF.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        patientNameTxtF.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel2.add(patientNameTxtF, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 40, 330, 30));
+
+        inssaveBttn.setBackground(new java.awt.Color(102, 255, 102));
+        inssaveBttn.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        inssaveBttn.setForeground(new java.awt.Color(0, 0, 0));
+        inssaveBttn.setText("SAVE");
+        inssaveBttn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                inssaveBttnMouseClicked(evt);
             }
         });
-        jPanel2.add(patientNameTxtF, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 30, 290, 36));
-
-        insuranceProviderTxtF.setBackground(new java.awt.Color(204, 255, 255));
-        jPanel2.add(insuranceProviderTxtF, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 90, 290, 36));
-
-        contactNumTxtF.setBackground(new java.awt.Color(204, 255, 255));
-        jPanel2.add(contactNumTxtF, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 160, 290, 36));
-
-        groupNumTxtF.setBackground(new java.awt.Color(204, 255, 255));
-        jPanel2.add(groupNumTxtF, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 230, 290, 36));
-
-        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("Copayment:");
-        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, -1, -1));
-
-        jPanel3.setBackground(new java.awt.Color(102, 204, 255));
-
-        jLabel11.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel11.setText("Street Number:");
-
-        jLabel12.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel12.setText("City:");
-
-        jTextField7.setBackground(new java.awt.Color(204, 255, 255));
-
-        jTextField8.setBackground(new java.awt.Color(204, 255, 255));
-
-        jLabel13.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel13.setText("Phone Number:");
-
-        jTextField9.setBackground(new java.awt.Color(204, 255, 255));
-
-        jLabel14.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel14.setText("Zip Code:");
-
-        jTextField10.setBackground(new java.awt.Color(204, 255, 255));
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel12)
-                    .addComponent(jLabel13)
-                    .addComponent(jLabel14)
-                    .addComponent(jLabel11))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 92, Short.MAX_VALUE)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(59, 59, 59))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel11)
-                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
-                    .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
-                    .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(29, 29, 29))
-        );
-
-        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 400, 630, 270));
-
-        jButton1.setBackground(new java.awt.Color(102, 255, 102));
-        jButton1.setForeground(new java.awt.Color(57, 113, 177));
-        jButton1.setText("SUBMIT");
-        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 590, 250, 60));
+        jPanel2.add(inssaveBttn, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 580, 250, 50));
 
         jPanel4.setBackground(new java.awt.Color(51, 52, 54));
+        jPanel4.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 3, 2, 3, new java.awt.Color(253, 252, 233)));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cs499_ophthalmology_emr/images/emrLOGO2.png"))); // NOI18N
 
@@ -234,30 +172,195 @@ public class InsurancePage extends javax.swing.JPanel {
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(33, Short.MAX_VALUE)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 460, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(37, 37, 37))
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 461, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(19, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(35, 35, 35)
+                .addGap(34, 34, 34)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 399, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(36, Short.MAX_VALUE))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
 
-        jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 30, 530, 470));
+        jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 40, 510, 470));
+
+        jPanel5.setBackground(new java.awt.Color(32, 33, 35));
+        jPanel5.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 3, 2, 3, new java.awt.Color(253, 252, 233)));
+
+        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("Insurance Provider Information :");
+
+        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setText("Copayment:");
+
+        coPaymentTxtF.setBackground(new java.awt.Color(204, 255, 255));
+        coPaymentTxtF.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        coPaymentTxtF.setForeground(new java.awt.Color(0, 0, 0));
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Group Number:");
+
+        groupNumTxtF.setBackground(new java.awt.Color(204, 255, 255));
+        groupNumTxtF.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        groupNumTxtF.setForeground(new java.awt.Color(0, 0, 0));
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Phone Number:");
+
+        phoneNumTxtF.setBackground(new java.awt.Color(204, 255, 255));
+        phoneNumTxtF.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        phoneNumTxtF.setForeground(new java.awt.Color(0, 0, 0));
+
+        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setText("Provider:");
+
+        insProviderAddrTXTF.setBackground(new java.awt.Color(204, 255, 255));
+        insProviderAddrTXTF.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+
+        insuranceProviderTxtF.setBackground(new java.awt.Color(204, 255, 255));
+        insuranceProviderTxtF.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        insuranceProviderTxtF.setForeground(new java.awt.Color(0, 0, 0));
+
+        jLabel11.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setText("Address:");
+
+        jLabel10.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setText("Contract Number:");
+
+        contactNumTxtF1.setBackground(new java.awt.Color(204, 255, 255));
+        contactNumTxtF1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        contactNumTxtF1.setForeground(new java.awt.Color(0, 0, 0));
+
+        jLabel12.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel12.setText("Effective Date:");
+
+        effDateTxtF1.setBackground(new java.awt.Color(204, 255, 255));
+        effDateTxtF1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        effDateTxtF1.setForeground(new java.awt.Color(0, 0, 0));
+
+        jLabel13.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel13.setText("Total Amount Charge:");
+
+        amtChargedTXTF.setBackground(new java.awt.Color(204, 255, 255));
+        amtChargedTXTF.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        amtChargedTXTF.setForeground(new java.awt.Color(0, 0, 0));
+
+        jLabel14.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel14.setText("Enter Service Charge:");
+
+        serviceChargeTXTF1.setBackground(new java.awt.Color(204, 255, 255));
+        serviceChargeTXTF1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        serviceChargeTXTF1.setForeground(new java.awt.Color(0, 0, 0));
+        serviceChargeTXTF1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                serviceChargeTXTF1FocusLost(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel7)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addGap(46, 46, 46)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel5Layout.createSequentialGroup()
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(159, 159, 159)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(insProviderAddrTXTF)
+                            .addComponent(insuranceProviderTxtF)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel5Layout.createSequentialGroup()
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel9)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel12)
+                            .addComponent(jLabel13)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel10)
+                            .addComponent(jLabel14))
+                        .addGap(37, 37, 37)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(contactNumTxtF1, javax.swing.GroupLayout.DEFAULT_SIZE, 229, Short.MAX_VALUE)
+                            .addComponent(effDateTxtF1)
+                            .addComponent(groupNumTxtF)
+                            .addComponent(phoneNumTxtF)
+                            .addComponent(coPaymentTxtF)
+                            .addComponent(amtChargedTXTF)
+                            .addComponent(serviceChargeTXTF1))))
+                .addGap(29, 29, 29))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel7)
+                .addGap(42, 42, 42)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(insuranceProviderTxtF, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(insProviderAddrTXTF, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel10)
+                    .addComponent(contactNumTxtF1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(phoneNumTxtF, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(groupNumTxtF, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(coPaymentTxtF, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel12)
+                    .addComponent(effDateTxtF1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel14)
+                    .addComponent(serviceChargeTXTF1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, Short.MAX_VALUE)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel13)
+                    .addComponent(amtChargedTXTF, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(27, 27, 27))
+        );
+
+        jPanel2.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 580, 570));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 1178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(27, Short.MAX_VALUE))
+            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -269,18 +372,33 @@ public class InsurancePage extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void patientNameTxtFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_patientNameTxtFActionPerformed
+    private void inssaveBttnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inssaveBttnMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_patientNameTxtFActionPerformed
+        dataBase.save(activePatient);
+    }//GEN-LAST:event_inssaveBttnMouseClicked
 
+    private void serviceChargeTXTF1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_serviceChargeTXTF1FocusLost
+        // TODO add your handling code here:
+         Double serviceCharge = Double.parseDouble(serviceChargeTXTF1.getText());
+         //serviceChargeTXTF1.setEditable(true);
+         serviceChargeTXTF1.setText("$" + serviceCharge); //????????????????? we'll see
+         
+         System.out.println("Insurance: Service Charged: " + serviceCharge);
+    }//GEN-LAST:event_serviceChargeTXTF1FocusLost
+ 
+ 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField amtChargedTXTF;
     private javax.swing.JTextField coPaymentTxtF;
-    private javax.swing.JTextField contactNumTxtF;
+    private javax.swing.JTextField contactNumTxtF1;
+    private javax.swing.JTextField effDateTxtF1;
     private javax.swing.JTextField groupNumTxtF;
+    private javax.swing.JTextField insProviderAddrTXTF;
+    private javax.swing.JButton inssaveBttn;
     private javax.swing.JTextField insuranceProviderTxtF;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
@@ -295,12 +413,10 @@ public class InsurancePage extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JTextField patientNameTxtF;
+    private javax.swing.JTextField phoneNumTxtF;
+    private javax.swing.JTextField serviceChargeTXTF1;
     // End of variables declaration//GEN-END:variables
 }

@@ -34,6 +34,7 @@ public class Patient
     private String insGroupNo;
     private Integer insEffectiveDate;
     private Double insCoPayAmount;
+    private Double insTotalAmtCharged;
     private String insProviderAddr;
     private String insProviderPhone;
     
@@ -61,6 +62,7 @@ public class Patient
 		this.insGroupNo = "";
 		this.insEffectiveDate = -1;
 		this.insCoPayAmount = -1.0;
+        this.insTotalAmtCharged = -1.0;
 		this.insProviderAddr = "";
 		this.insProviderPhone = "";
 	}
@@ -381,7 +383,19 @@ public class Patient
     public void setInsCoPayAmount(double insCoPayAmount) {
         this.insCoPayAmount = insCoPayAmount;
     }
+    /**
+     * @return the insCoPayAmount
+     */
+    public double getinsTotalAmtCharged() {
+        return insTotalAmtCharged;
+    }
 
+    /**
+     * @param insCoPayAmount the insCoPayAmount to set
+     */
+    public void setinsTotalAmtCharged(double insTotalAmtCharged) {
+        this.insTotalAmtCharged = insTotalAmtCharged;
+    }
     /**
      * @return the insProviderAddr
      */

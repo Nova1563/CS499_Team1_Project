@@ -7,7 +7,7 @@ package cs499_ophthalmology_emr;
 
 /**
  *
- * @author kenda
+ * @author angela & andrew
  */
 public class OcularExResults extends javax.swing.JPanel {
 	
@@ -626,6 +626,7 @@ public class OcularExResults extends javax.swing.JPanel {
 
         jLabel2.setBackground(new java.awt.Color(32, 33, 35));
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(32, 33, 35));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Posterior Segment");
         jLabel2.setToolTipText("");
@@ -634,9 +635,7 @@ public class OcularExResults extends javax.swing.JPanel {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 432, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 13, Short.MAX_VALUE))
+            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -646,11 +645,15 @@ public class OcularExResults extends javax.swing.JPanel {
                 .addGap(9, 9, 9))
         );
 
+        jTabbedPane1.setBackground(new java.awt.Color(32, 33, 35));
+        jTabbedPane1.setForeground(new java.awt.Color(255, 255, 255));
+
         odOpthalmicIndicatorsPanel.setBackground(new java.awt.Color(32, 33, 35));
-        odOpthalmicIndicatorsPanel.setBorder(javax.swing.BorderFactory.createMatteBorder(4, 5, 4, 5, new java.awt.Color(253, 252, 233)));
+        odOpthalmicIndicatorsPanel.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 0, 0, 0, new java.awt.Color(253, 252, 233)));
 
         maculaComboBox1.setBackground(new java.awt.Color(253, 252, 233));
         maculaComboBox1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        maculaComboBox1.setForeground(new java.awt.Color(0, 0, 0));
         maculaComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NORM", "LOW", "HIGH", "CRITICAL", "NOT CHECKED" }));
         maculaComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -659,6 +662,8 @@ public class OcularExResults extends javax.swing.JPanel {
         });
 
         vasculatureComboBox1.setBackground(new java.awt.Color(253, 252, 233));
+        vasculatureComboBox1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        vasculatureComboBox1.setForeground(new java.awt.Color(0, 0, 0));
         vasculatureComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NORM", "LOW", "HIGH", "CRITICAL", "NOT CHECKED" }));
         vasculatureComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -667,6 +672,8 @@ public class OcularExResults extends javax.swing.JPanel {
         });
 
         posteriorPoleComboBox1.setBackground(new java.awt.Color(253, 252, 233));
+        posteriorPoleComboBox1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        posteriorPoleComboBox1.setForeground(new java.awt.Color(0, 0, 0));
         posteriorPoleComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NORM", "LOW", "HIGH", "CRITICAL", "NOT CHECKED" }));
         posteriorPoleComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -675,6 +682,8 @@ public class OcularExResults extends javax.swing.JPanel {
         });
 
         peripheralRetinaComboBox1.setBackground(new java.awt.Color(253, 252, 233));
+        peripheralRetinaComboBox1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        peripheralRetinaComboBox1.setForeground(new java.awt.Color(0, 0, 0));
         peripheralRetinaComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NORM", "LOW", "HIGH", "CRITICAL", "NOT CHECKED" }));
         peripheralRetinaComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -683,6 +692,8 @@ public class OcularExResults extends javax.swing.JPanel {
         });
 
         miscRetinaComboBox1.setBackground(new java.awt.Color(253, 252, 233));
+        miscRetinaComboBox1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        miscRetinaComboBox1.setForeground(new java.awt.Color(0, 0, 0));
         miscRetinaComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NORM", "LOW", "HIGH", "CRITICAL", "NOT CHECKED" }));
         miscRetinaComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -691,6 +702,8 @@ public class OcularExResults extends javax.swing.JPanel {
         });
 
         diabeticEvalComboBox1.setBackground(new java.awt.Color(253, 252, 233));
+        diabeticEvalComboBox1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        diabeticEvalComboBox1.setForeground(new java.awt.Color(0, 0, 0));
         diabeticEvalComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NORM", "LOW", "HIGH", "CRITICAL", "NOT CHECKED" }));
         diabeticEvalComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -699,6 +712,8 @@ public class OcularExResults extends javax.swing.JPanel {
         });
 
         vitreousComboBox1.setBackground(new java.awt.Color(253, 252, 233));
+        vitreousComboBox1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        vitreousComboBox1.setForeground(new java.awt.Color(0, 0, 0));
         vitreousComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NORM", "LOW", "HIGH", "CRITICAL", "NOT CHECKED" }));
         vitreousComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -707,6 +722,8 @@ public class OcularExResults extends javax.swing.JPanel {
         });
 
         armdComboBox1.setBackground(new java.awt.Color(253, 252, 233));
+        armdComboBox1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        armdComboBox1.setForeground(new java.awt.Color(0, 0, 0));
         armdComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NORM", "LOW", "HIGH", "CRITICAL", "NOT CHECKED" }));
         armdComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -715,6 +732,8 @@ public class OcularExResults extends javax.swing.JPanel {
         });
 
         htnEvaluationComboBox1.setBackground(new java.awt.Color(253, 252, 233));
+        htnEvaluationComboBox1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        htnEvaluationComboBox1.setForeground(new java.awt.Color(0, 0, 0));
         htnEvaluationComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NORM", "LOW", "HIGH", "CRITICAL", "NOT CHECKED" }));
         htnEvaluationComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -723,6 +742,8 @@ public class OcularExResults extends javax.swing.JPanel {
         });
 
         custom2ComboBox1.setBackground(new java.awt.Color(253, 252, 233));
+        custom2ComboBox1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        custom2ComboBox1.setForeground(new java.awt.Color(0, 0, 0));
         custom2ComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NORM", "LOW", "HIGH", "CRITICAL", "NOT CHECKED" }));
         custom2ComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -731,6 +752,8 @@ public class OcularExResults extends javax.swing.JPanel {
         });
 
         custom3ComboBox1.setBackground(new java.awt.Color(253, 252, 233));
+        custom3ComboBox1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        custom3ComboBox1.setForeground(new java.awt.Color(0, 0, 0));
         custom3ComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NORM", "LOW", "HIGH", "CRITICAL", "NOT CHECKED" }));
         custom3ComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -739,6 +762,8 @@ public class OcularExResults extends javax.swing.JPanel {
         });
 
         custom1ComboBox1.setBackground(new java.awt.Color(253, 252, 233));
+        custom1ComboBox1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        custom1ComboBox1.setForeground(new java.awt.Color(0, 0, 0));
         custom1ComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NORM", "LOW", "HIGH", "CRITICAL", "NOT CHECKED" }));
         custom1ComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -902,13 +927,13 @@ public class OcularExResults extends javax.swing.JPanel {
                 .addGroup(odOpthalmicIndicatorsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(miscRetinaComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(custom3ComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 15, Short.MAX_VALUE))
+                .addGap(0, 19, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("OD", odOpthalmicIndicatorsPanel);
 
         osOpthalmicIndicatorsPanel.setBackground(new java.awt.Color(32, 33, 35));
-        osOpthalmicIndicatorsPanel.setBorder(javax.swing.BorderFactory.createMatteBorder(4, 5, 4, 5, new java.awt.Color(253, 252, 233)));
+        osOpthalmicIndicatorsPanel.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 0, 0, 0, new java.awt.Color(253, 252, 233)));
 
         maculaComboBox2.setBackground(new java.awt.Color(253, 252, 233));
         maculaComboBox2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -1163,7 +1188,7 @@ public class OcularExResults extends javax.swing.JPanel {
                 .addGroup(osOpthalmicIndicatorsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(miscRetinaComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(custom3ComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 15, Short.MAX_VALUE))
+                .addGap(0, 24, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("OS", osOpthalmicIndicatorsPanel);
@@ -1172,11 +1197,8 @@ public class OcularExResults extends javax.swing.JPanel {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 6, Short.MAX_VALUE))
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1193,6 +1215,7 @@ public class OcularExResults extends javax.swing.JPanel {
         jPanel5.setBackground(new java.awt.Color(135, 206, 250));
 
         jLabel15.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(32, 33, 35));
         jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel15.setText("Opthalmic Indicators");
 
@@ -1200,7 +1223,7 @@ public class OcularExResults extends javax.swing.JPanel {
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, 460, Short.MAX_VALUE)
+            .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1211,7 +1234,7 @@ public class OcularExResults extends javax.swing.JPanel {
         );
 
         jPanel6.setBackground(new java.awt.Color(32, 33, 35));
-        jPanel6.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 3, 2, 3, new java.awt.Color(253, 252, 233)));
+        jPanel6.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(253, 252, 233)));
 
         jLabel16.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(255, 255, 255));
@@ -1277,11 +1300,11 @@ public class OcularExResults extends javax.swing.JPanel {
                     .addComponent(osFovealReflexPlusRadioButton)
                     .addComponent(osFovealReflexMinusRadioButton)
                     .addComponent(osFovealReflexXRadioButton))
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel7.setBackground(new java.awt.Color(32, 33, 35));
-        jPanel7.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 3, 2, 3, new java.awt.Color(253, 252, 233)));
+        jPanel7.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(253, 252, 233)));
         jPanel7.setToolTipText("");
 
         jLabel17.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -1328,22 +1351,21 @@ public class OcularExResults extends javax.swing.JPanel {
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel7Layout.createSequentialGroup()
-                        .addComponent(osSpontaneousPulsationPlusRadioButton)
-                        .addGap(18, 18, 18)
-                        .addComponent(osSpontaneousPulsationMinusRadioButton)
-                        .addGap(18, 18, 18)
-                        .addComponent(osSpontaneousPulsationXRadioButton))
-                    .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(50, Short.MAX_VALUE))
+                .addComponent(osSpontaneousPulsationPlusRadioButton)
+                .addGap(18, 18, 18)
+                .addComponent(osSpontaneousPulsationMinusRadioButton)
+                .addGap(18, 18, 18)
+                .addComponent(osSpontaneousPulsationXRadioButton)
+                .addContainerGap(14, Short.MAX_VALUE))
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(jLabel17, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(osSpontaneousPulsationPlusRadioButton)
                     .addComponent(osSpontaneousPulsationXRadioButton)
@@ -1352,7 +1374,7 @@ public class OcularExResults extends javax.swing.JPanel {
         );
 
         jPanel8.setBackground(new java.awt.Color(32, 33, 35));
-        jPanel8.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 3, 2, 3, new java.awt.Color(253, 252, 233)));
+        jPanel8.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(253, 252, 233)));
 
         jLabel18.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(255, 255, 255));
@@ -1397,7 +1419,7 @@ public class OcularExResults extends javax.swing.JPanel {
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addComponent(odFovealReflexPlusRadioButton1)
@@ -1405,8 +1427,7 @@ public class OcularExResults extends javax.swing.JPanel {
                         .addComponent(odFovealReflexMinusRadioButton1)
                         .addGap(18, 18, 18)
                         .addComponent(odFovealReflexXRadioButton1))
-                    .addComponent(jLabel18))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel18)))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1418,11 +1439,11 @@ public class OcularExResults extends javax.swing.JPanel {
                     .addComponent(odFovealReflexPlusRadioButton1)
                     .addComponent(odFovealReflexMinusRadioButton1)
                     .addComponent(odFovealReflexXRadioButton1))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(10, Short.MAX_VALUE))
         );
 
         jPanel16.setBackground(new java.awt.Color(32, 33, 35));
-        jPanel16.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 3, 2, 3, new java.awt.Color(253, 252, 233)));
+        jPanel16.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(253, 252, 233)));
         jPanel16.setToolTipText("");
 
         jLabel62.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -1468,23 +1489,20 @@ public class OcularExResults extends javax.swing.JPanel {
         jPanel16Layout.setHorizontalGroup(
             jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel16Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel16Layout.createSequentialGroup()
-                        .addComponent(odSpontaneousPulsationPlusRadioButton1)
-                        .addGap(18, 18, 18)
-                        .addComponent(odSpontaneousPulsationMinusRadioButton1)
-                        .addGap(18, 18, 18)
-                        .addComponent(odSpontaneousPulsationXRadioButton1))
-                    .addComponent(jLabel62, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(odSpontaneousPulsationPlusRadioButton1)
+                .addGap(18, 18, 18)
+                .addComponent(odSpontaneousPulsationMinusRadioButton1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(odSpontaneousPulsationXRadioButton1)
+                .addContainerGap())
+            .addComponent(jLabel62)
         );
         jPanel16Layout.setVerticalGroup(
             jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel16Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel62)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel62, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(odSpontaneousPulsationPlusRadioButton1)
                     .addComponent(odSpontaneousPulsationXRadioButton1)
@@ -1498,27 +1516,28 @@ public class OcularExResults extends javax.swing.JPanel {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                .addGap(25, 25, 25)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(16, 16, 16)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -1528,6 +1547,7 @@ public class OcularExResults extends javax.swing.JPanel {
         jPanel10.setBackground(new java.awt.Color(135, 206, 250));
 
         jLabel19.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(32, 33, 35));
         jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel19.setText("Fundus Evaluation Method");
 
@@ -1637,51 +1657,52 @@ public class OcularExResults extends javax.swing.JPanel {
         jPanel12Layout.setHorizontalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel12Layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel12Layout.createSequentialGroup()
+                        .addContainerGap()
                         .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(d90CheckBox)
                             .addGroup(jPanel12Layout.createSequentialGroup()
-                                .addGap(1, 1, 1)
-                                .addComponent(d78CheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(d90CheckBox)
+                                    .addGroup(jPanel12Layout.createSequentialGroup()
+                                        .addGap(1, 1, 1)
+                                        .addComponent(d78CheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(pR2BioCheckBox4)
+                                    .addComponent(d20BioCheckBox))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(sdepressionCheckBox)
+                                    .addComponent(dOpthalmpscopeCheckBox)))
+                            .addComponent(jLabel21)))
+                    .addGroup(jPanel12Layout.createSequentialGroup()
+                        .addGap(80, 80, 80)
+                        .addComponent(otherCheckBox7)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(pR2BioCheckBox4)
-                            .addComponent(d20BioCheckBox))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(sdepressionCheckBox)
-                            .addComponent(dOpthalmpscopeCheckBox)))
-                    .addComponent(jLabel21))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel12Layout.createSequentialGroup()
-                .addGap(83, 83, 83)
-                .addComponent(otherCheckBox7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(otherTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                        .addComponent(otherTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
         jPanel12Layout.setVerticalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel12Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel21)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
                 .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(d78CheckBox)
                     .addComponent(d20BioCheckBox)
-                    .addComponent(sdepressionCheckBox))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(sdepressionCheckBox)
+                    .addComponent(d78CheckBox))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(d90CheckBox)
                     .addComponent(pR2BioCheckBox4)
                     .addComponent(dOpthalmpscopeCheckBox))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(26, 26, 26)
                 .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(otherCheckBox7)
                     .addComponent(otherTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(16, 16, 16))
         );
 
         jPanel13.setBackground(new java.awt.Color(32, 33, 35));
@@ -1711,7 +1732,10 @@ public class OcularExResults extends javax.swing.JPanel {
             }
         });
 
-        dilationAgentComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "dilation agent 1", "another one" }));
+        dilationAgentComboBox.setBackground(new java.awt.Color(32, 33, 35));
+        dilationAgentComboBox.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        dilationAgentComboBox.setForeground(new java.awt.Color(255, 255, 255));
+        dilationAgentComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Dilation Agent 1", "Another One" }));
         dilationAgentComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 dilationAgentComboBoxActionPerformed(evt);
@@ -1955,7 +1979,7 @@ public class OcularExResults extends javax.swing.JPanel {
                     .addComponent(DFE2CheckBox)
                     .addComponent(DFEDeclinedCheckBox)
                     .addComponent(FundusPerformedCheckBox1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
                 .addGroup(notesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(notesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(DFEContraindicatedCheckBox, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -1989,7 +2013,7 @@ public class OcularExResults extends javax.swing.JPanel {
         );
 
         cupDiscRatioPanel.setBackground(new java.awt.Color(32, 33, 35));
-        cupDiscRatioPanel.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 3, 2, 4, new java.awt.Color(253, 252, 233)));
+        cupDiscRatioPanel.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 3, 2, 3, new java.awt.Color(253, 252, 233)));
 
         jLabel23.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel23.setForeground(new java.awt.Color(255, 255, 255));
@@ -2067,13 +2091,30 @@ public class OcularExResults extends javax.swing.JPanel {
             }
         });
 
+        odHorizontalTextField.setBackground(new java.awt.Color(32, 33, 35));
+        odHorizontalTextField.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        odHorizontalTextField.setForeground(new java.awt.Color(255, 255, 255));
         odHorizontalTextField.setText("0.50");
 
+        osHorizontalTextField.setBackground(new java.awt.Color(32, 33, 35));
+        osHorizontalTextField.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        osHorizontalTextField.setForeground(new java.awt.Color(255, 255, 255));
         osHorizontalTextField.setText("0.50");
 
+        osVerticalTextField.setBackground(new java.awt.Color(32, 33, 35));
+        osVerticalTextField.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        osVerticalTextField.setForeground(new java.awt.Color(255, 255, 255));
         osVerticalTextField.setText("0.50");
 
+        odVerticalTextField.setBackground(new java.awt.Color(32, 33, 35));
+        odVerticalTextField.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        odVerticalTextField.setForeground(new java.awt.Color(255, 255, 255));
         odVerticalTextField.setText("0.50");
+        odVerticalTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                odVerticalTextFieldActionPerformed(evt);
+            }
+        });
 
         jLabel25.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel25.setForeground(new java.awt.Color(255, 255, 255));
@@ -2095,29 +2136,29 @@ public class OcularExResults extends javax.swing.JPanel {
                             .addGroup(cupDiscRatioPanelLayout.createSequentialGroup()
                                 .addGap(46, 46, 46)
                                 .addComponent(jLabel28)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(odHorizontalSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(cupDiscRatioPanelLayout.createSequentialGroup()
-                                .addGap(64, 64, 64)
-                                .addComponent(jLabel26)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(odVerticalSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(cupDiscRatioPanelLayout.createSequentialGroup()
                                 .addGap(46, 46, 46)
                                 .addGroup(cupDiscRatioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jLabel29)
                                     .addComponent(jLabel25))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(cupDiscRatioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(osHorizontalSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(osVerticalSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(osHorizontalSlider, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(osVerticalSlider, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(cupDiscRatioPanelLayout.createSequentialGroup()
+                                .addGap(64, 64, 64)
+                                .addComponent(jLabel26)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(odVerticalSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(34, 34, 34)
                 .addGroup(cupDiscRatioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(osHorizontalTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(osVerticalTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(odHorizontalTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(odVerticalTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(37, Short.MAX_VALUE))
+                    .addComponent(odVerticalTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(odHorizontalTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(osHorizontalTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(osVerticalTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(94, 94, 94))
         );
         cupDiscRatioPanelLayout.setVerticalGroup(
             cupDiscRatioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2136,34 +2177,33 @@ public class OcularExResults extends javax.swing.JPanel {
                                 .addGap(34, 34, 34))))
                     .addGroup(cupDiscRatioPanelLayout.createSequentialGroup()
                         .addGap(26, 26, 26)
-                        .addGroup(cupDiscRatioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(cupDiscRatioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(odHorizontalSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(odHorizontalTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(cupDiscRatioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(cupDiscRatioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(cupDiscRatioPanelLayout.createSequentialGroup()
-                                    .addComponent(jLabel26)
-                                    .addGap(7, 7, 7))
-                                .addComponent(odVerticalTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(odVerticalSlider, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                .addGroup(cupDiscRatioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel26)
+                            .addComponent(odVerticalSlider, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(odVerticalTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(cupDiscRatioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(cupDiscRatioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jLabel25)
+                        .addComponent(osHorizontalSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(cupDiscRatioPanelLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabel27)
-                        .addGap(23, 23, 23))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, cupDiscRatioPanelLayout.createSequentialGroup()
-                        .addGroup(cupDiscRatioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(osHorizontalSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(osHorizontalTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel25))
+                        .addGap(12, 12, 12)
+                        .addComponent(jLabel27))
+                    .addComponent(osHorizontalTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(cupDiscRatioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(cupDiscRatioPanelLayout.createSequentialGroup()
                         .addGap(6, 6, 6)
+                        .addComponent(jLabel29))
+                    .addGroup(cupDiscRatioPanelLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(cupDiscRatioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(osVerticalSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(osVerticalTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel29))
-                        .addContainerGap(12, Short.MAX_VALUE))))
+                            .addComponent(osVerticalTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
 
         jPanel14.setBackground(new java.awt.Color(32, 33, 35));
@@ -2175,7 +2215,8 @@ public class OcularExResults extends javax.swing.JPanel {
 
         odOpticNerveComboBox.setBackground(new java.awt.Color(253, 252, 233));
         odOpticNerveComboBox.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        odOpticNerveComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NORMAL", "LOW", "HIGH", "CRITICAL", "NOT CHECKED" }));
+        odOpticNerveComboBox.setForeground(new java.awt.Color(0, 0, 0));
+        odOpticNerveComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NORM", "LOW", "HIGH", "CRITICAL", "NOT CHECKED" }));
         odOpticNerveComboBox.setToolTipText("");
         odOpticNerveComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2185,7 +2226,8 @@ public class OcularExResults extends javax.swing.JPanel {
 
         odNerveFiberLayerComboBox.setBackground(new java.awt.Color(253, 252, 233));
         odNerveFiberLayerComboBox.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        odNerveFiberLayerComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NORMAL", "LOW", "HIGH", "CRITICAL", "NOT CHECKED" }));
+        odNerveFiberLayerComboBox.setForeground(new java.awt.Color(0, 0, 0));
+        odNerveFiberLayerComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NORM", "LOW", "HIGH", "CRITICAL", "NOT CHECKED" }));
         odNerveFiberLayerComboBox.setToolTipText("");
         odNerveFiberLayerComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2203,7 +2245,8 @@ public class OcularExResults extends javax.swing.JPanel {
 
         osOpticNerveComboBox.setBackground(new java.awt.Color(253, 252, 233));
         osOpticNerveComboBox.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        osOpticNerveComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NORMAL", "LOW", "HIGH", "CRITICAL", "NOT CHECKED" }));
+        osOpticNerveComboBox.setForeground(new java.awt.Color(0, 0, 0));
+        osOpticNerveComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NORM", "LOW", "HIGH", "CRITICAL", "NOT CHECKED" }));
         osOpticNerveComboBox.setToolTipText("");
         osOpticNerveComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2213,7 +2256,8 @@ public class OcularExResults extends javax.swing.JPanel {
 
         osNerveFiberLayerComboBox.setBackground(new java.awt.Color(253, 252, 233));
         osNerveFiberLayerComboBox.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        osNerveFiberLayerComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NORMAL", "LOW", "HIGH", "CRITICAL", "NOT CHECKED" }));
+        osNerveFiberLayerComboBox.setForeground(new java.awt.Color(0, 0, 0));
+        osNerveFiberLayerComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NORM", "LOW", "HIGH", "CRITICAL", "NOT CHECKED" }));
         osNerveFiberLayerComboBox.setToolTipText("");
         osNerveFiberLayerComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2234,47 +2278,51 @@ public class OcularExResults extends javax.swing.JPanel {
         jPanel14Layout.setHorizontalGroup(
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel14Layout.createSequentialGroup()
-                .addGap(12, 12, 12)
                 .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel14Layout.createSequentialGroup()
-                        .addComponent(osOpticNerveComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(osNerveFiberLayerComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel33)
+                        .addGap(40, 40, 40)
+                        .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel34)
+                            .addComponent(osOpticNerveComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel14Layout.createSequentialGroup()
+                        .addGap(42, 42, 42)
                         .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel30)
-                            .addComponent(odOpticNerveComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel34))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel31)
-                            .addComponent(odNerveFiberLayerComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel32))))
-                .addContainerGap(15, Short.MAX_VALUE))
+                            .addComponent(odOpticNerveComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel30))))
+                .addGap(18, 18, Short.MAX_VALUE)
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel32)
+                    .addComponent(jLabel31)
+                    .addComponent(osNerveFiberLayerComboBox, 0, 207, Short.MAX_VALUE)
+                    .addComponent(odNerveFiberLayerComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(45, 45, 45))
+            .addGroup(jPanel14Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel33)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel14Layout.setVerticalGroup(
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel14Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel33)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(30, 30, 30)
                 .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel30)
                     .addComponent(jLabel32))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(odNerveFiberLayerComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(odOpticNerveComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(odOpticNerveComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(odNerveFiberLayerComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel31)
                     .addComponent(jLabel34))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(osOpticNerveComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(osNerveFiberLayerComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                .addGap(37, 37, 37))
         );
 
         jPanel15.setBackground(new java.awt.Color(32, 33, 35));
@@ -2656,7 +2704,8 @@ public class OcularExResults extends javax.swing.JPanel {
         );
 
         saveButton.setBackground(new java.awt.Color(153, 255, 153));
-        saveButton.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        saveButton.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        saveButton.setForeground(new java.awt.Color(0, 0, 0));
         saveButton.setText("SAVE");
         saveButton.setToolTipText("");
         saveButton.addActionListener(new java.awt.event.ActionListener() {
@@ -2671,24 +2720,30 @@ public class OcularExResults extends javax.swing.JPanel {
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel9Layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addGap(35, 35, 35)
-                        .addComponent(saveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel9Layout.createSequentialGroup()
-                            .addComponent(fundusOptionsBttnPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(notesPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cupDiscRatioPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(10, Short.MAX_VALUE))
+                        .addContainerGap()
+                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel9Layout.createSequentialGroup()
+                                .addComponent(fundusOptionsBttnPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
+                                .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(12, 12, 12))
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel9Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(notesPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel9Layout.createSequentialGroup()
+                                .addGap(90, 90, 90)
+                                .addComponent(saveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(cupDiscRatioPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2696,25 +2751,24 @@ public class OcularExResults extends javax.swing.JPanel {
                 .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(cupDiscRatioPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addComponent(jPanel13, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(fundusOptionsBttnPanel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(cupDiscRatioPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(fundusOptionsBttnPanel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addComponent(jPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel9Layout.createSequentialGroup()
                         .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(49, 49, 49)
                         .addComponent(notesPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(saveButton)
-                        .addContainerGap(25, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())))
+                        .addGap(36, 36, 36)
+                        .addComponent(saveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -2727,9 +2781,9 @@ public class OcularExResults extends javax.swing.JPanel {
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
                         .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -2738,15 +2792,13 @@ public class OcularExResults extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 498, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 113, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -3152,6 +3204,10 @@ public class OcularExResults extends javax.swing.JPanel {
     private void odSpontaneousPulsationXRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_odSpontaneousPulsationXRadioButton1ActionPerformed
         currentResults.setSponVeinPulsOD("X");
     }//GEN-LAST:event_odSpontaneousPulsationXRadioButton1ActionPerformed
+
+    private void odVerticalTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_odVerticalTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_odVerticalTextFieldActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
