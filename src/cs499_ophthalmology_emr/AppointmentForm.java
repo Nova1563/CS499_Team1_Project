@@ -130,6 +130,11 @@ public class AppointmentForm extends javax.swing.JPanel {
     {
         String formattedStr = "";
         
+		if (theDate.length() < 8)
+		{
+			theDate = "0" + theDate;
+		}
+		
         for (Integer i = 0; i < theDate.length(); i++)
         {
             if ((i == 2) || (i == 4))
@@ -143,6 +148,9 @@ public class AppointmentForm extends javax.swing.JPanel {
             }
         }
         
+		if (formattedStr.length() < 8)
+			formattedStr = "0" + formattedStr;
+		
         return formattedStr;
     }
     
@@ -208,8 +216,7 @@ public class AppointmentForm extends javax.swing.JPanel {
 			isValid = false;
 		}
 		return (isValid && decimalFound);
-    }
-    
+    }    
     
     private Boolean validateDate(String theDate)
     {
@@ -235,6 +242,8 @@ public class AppointmentForm extends javax.swing.JPanel {
 		
 		return isValid;
     }
+	
+	
 	
 	private void updateApptTimeTextBox(String rawTimeText)
 	{
@@ -300,17 +309,17 @@ public class AppointmentForm extends javax.swing.JPanel {
 
         jLabel4.setText("Appointment Date:");
 
-        appointmentDateTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                appointmentDateTextFieldActionPerformed(evt);
+        appointmentDateTextField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                appointmentDateTextFieldFocusLost(evt);
             }
         });
 
         jLabel5.setText("Reason for visit:");
 
-        reasonForVisit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                reasonForVisitActionPerformed(evt);
+        reasonForVisit.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                reasonForVisitFocusLost(evt);
             }
         });
 
@@ -346,6 +355,11 @@ public class AppointmentForm extends javax.swing.JPanel {
         apptTimeTextField.setText("07:00 AM");
 
         doctorComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Dr. Coleman", "Dr. Lukins", "Dr. Woods", "Dr. Haley" }));
+        doctorComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                doctorComboBoxActionPerformed(evt);
+            }
+        });
 
         jLabel3.setText("Appointment Time:");
 
@@ -354,6 +368,11 @@ public class AppointmentForm extends javax.swing.JPanel {
         jLabel7.setText("Arrival Status:");
 
         arrivalStatusComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Not arrived", "Checked in, waiting", "In Examination", "Checked out" }));
+        arrivalStatusComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                arrivalStatusComboBoxActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout appointmentFormMainPanelLayout = new javax.swing.GroupLayout(appointmentFormMainPanel);
         appointmentFormMainPanel.setLayout(appointmentFormMainPanelLayout);
@@ -455,14 +474,6 @@ public class AppointmentForm extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_patientNameTextBoxActionPerformed
 
-    private void appointmentDateTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_appointmentDateTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_appointmentDateTextFieldActionPerformed
-
-    private void reasonForVisitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reasonForVisitActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_reasonForVisitActionPerformed
-
     private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
         // TODO add your handling code here:
         Boolean saveSuccess = saveAppointmentInfo();
@@ -498,6 +509,26 @@ public class AppointmentForm extends javax.swing.JPanel {
 		String apptMinString = (String) apptMinuteComboBox.getSelectedItem();
 		updateApptTimeTextBox(apptHourString + apptMinString);
     }//GEN-LAST:event_apptMinuteComboBoxActionPerformed
+
+    private void arrivalStatusComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_arrivalStatusComboBoxActionPerformed
+        activeAppointment.setArrivalStatus(arrivalStatusComboBox.getSelectedIndex());
+    }//GEN-LAST:event_arrivalStatusComboBoxActionPerformed
+
+    private void doctorComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_doctorComboBoxActionPerformed
+        activeAppointment.setDoctorToSee(doctorComboBox.getSelectedIndex());
+    }//GEN-LAST:event_doctorComboBoxActionPerformed
+
+    private void appointmentDateTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_appointmentDateTextFieldFocusLost
+        String theDate = appointmentDateTextField.getText();
+		
+		activeAppointment.setApptDate(Integer.parseInt(theDate));
+		
+		appointmentDateTextField.setText(formatDate(theDate));
+    }//GEN-LAST:event_appointmentDateTextFieldFocusLost
+
+    private void reasonForVisitFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_reasonForVisitFocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_reasonForVisitFocusLost
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

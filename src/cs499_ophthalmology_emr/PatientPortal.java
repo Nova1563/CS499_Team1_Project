@@ -79,6 +79,11 @@ public class PatientPortal extends javax.swing.JPanel {
 	{
 		String formattedStr = "";
 		
+		if (theDate.length() < 8)
+		{
+			theDate = "0" + theDate;
+		}
+		
 		for (Integer i = 0; i < theDate.length(); i++)
 		{
 			if ((i == 2) || (i == 4))

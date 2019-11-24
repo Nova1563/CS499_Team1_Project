@@ -117,6 +117,11 @@ public class PatientForm extends javax.swing.JPanel {
 	{
 		String formattedStr = "";
 		
+		if (theDate.length() < 8)
+		{
+			theDate = "0" + theDate;
+		}
+		
 		for (Integer i = 0; i < theDate.length(); i++)
 		{
 			if ((i == 2) || (i == 4))
@@ -124,6 +129,10 @@ public class PatientForm extends javax.swing.JPanel {
 			else
 				formattedStr = formattedStr +theDate.charAt(i);
 		}
+		
+		if (formattedStr.length() < 8)
+			formattedStr = "0" + formattedStr;
+		
 		return formattedStr;
 	}
 	
