@@ -49,7 +49,7 @@ public class AppointmentDisplay extends javax.swing.JPanel {
         String patientName = null;
         Integer doctorToSee = -1;
         Integer apptDate = -1;
-		String reasonForVisit = null;
+	String reasonForVisit = null;
         Integer apptID = -1;
 		String formattedApptDate = null;
 		Integer checkInCode = -1;
@@ -67,7 +67,7 @@ public class AppointmentDisplay extends javax.swing.JPanel {
             reasonForVisit = currentAppointment.getReasonForVisit();
             apptID = currentAppointment.getApptID();
             checkInCode = currentAppointment.getArrivalStatus();
-			checkInString = translateArrivalStatus(checkInCode);
+            checkInString = translateArrivalStatus(checkInCode);
             
             tableModel.addRow(new Object[] {formattedApptDate, patientName, doctorToSee, reasonForVisit, checkInString, apptID});
         }
