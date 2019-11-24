@@ -54,6 +54,15 @@ public class MainDashboard extends javax.swing.JFrame {
     mainPanel.add(visualAcuity);
     mainPanel.add(occularExResults);
     
+    patientPortal.setVisible(false);
+    patientForm.setVisible(false);
+    appointmentPanel.setVisible(false);
+    insurancePanel.setVisible(false);
+    viewPatientPage.setVisible(false);
+    appointmentForm.setVisible(false);
+    visualAcuity.setVisible(false);
+    occularExResults.setVisible(false);
+    homePanel.setVisible(true);
     
 
                 
@@ -90,7 +99,6 @@ public class MainDashboard extends javax.swing.JFrame {
 	
 	public void showPatientPortal()
 	{
-            
             hideAllPanelComponents(mainPanel);
             patientPortal.loadTableAllEntries();
             patientPortal.setVisible(true);
@@ -98,16 +106,14 @@ public class MainDashboard extends javax.swing.JFrame {
 	
 	public void showPatientForm()
 	{
-
-        hideAllPanelComponents(mainPanel);
-        patientForm.setVisible(true);
+            hideAllPanelComponents(mainPanel);
+            patientForm.setVisible(true);
 	}
         
 	public void showAppointmentForm()
 	{
-
-		hideAllPanelComponents(mainPanel);
-		appointmentForm.setVisible(true);
+            hideAllPanelComponents(mainPanel);
+            appointmentForm.setVisible(true);
 	}       
 
 	/*
@@ -146,7 +152,7 @@ public class MainDashboard extends javax.swing.JFrame {
                 visualAcuity.setVisible(true);
 	}
         public void showOccularExResults()
-	{			occularExResults.loadOcularResults();
+	{	occularExResults.loadOcularResults();
                 hideAllPanelComponents(mainPanel);
                 occularExResults.setVisible(true);
 	}
