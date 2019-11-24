@@ -298,6 +298,8 @@ public class AppointmentDisplay extends javax.swing.JPanel {
     private void newAppointmentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newAppointmentButtonActionPerformed
         System.out.println("Appointment: Add new button");
 		mainDash.appointmentForm.loadActivePatientInfo();
+		mainDash.setActiveAppointment(null);
+		mainDash.appointmentForm.setUpFieldsForNewAppointment();
         mainDash.showAppointmentForm();
     }//GEN-LAST:event_newAppointmentButtonActionPerformed
 
