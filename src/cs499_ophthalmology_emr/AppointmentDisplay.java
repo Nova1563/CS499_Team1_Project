@@ -51,6 +51,7 @@ public class AppointmentDisplay extends javax.swing.JPanel {
         Integer apptDate = -1;
 		String reasonForVisit = null;
         Integer apptID = -1;
+		String formattedApptDate = null;
 		Integer checkInCode = -1;
 		String checkInString = null;
         
@@ -62,12 +63,13 @@ public class AppointmentDisplay extends javax.swing.JPanel {
             patientName = currentAppointment.getPatientName();
             doctorToSee = currentAppointment.getDoctorToSee();
             apptDate = currentAppointment.getApptDate();
+			formattedApptDate = formatDate(apptDate.toString());
             reasonForVisit = currentAppointment.getReasonForVisit();
             apptID = currentAppointment.getApptID();
             checkInCode = currentAppointment.getArrivalStatus();
 			checkInString = translateArrivalStatus(checkInCode);
             
-            tableModel.addRow(new Object[] {apptDate, patientName, doctorToSee, reasonForVisit, checkInString, apptID});
+            tableModel.addRow(new Object[] {formattedApptDate, patientName, doctorToSee, reasonForVisit, checkInString, apptID});
         }
 		tableModel.fireTableDataChanged();
 		System.out.println("AppointmentDisplay.loadTableAllEntries() finished.");
@@ -130,6 +132,31 @@ public class AppointmentDisplay extends javax.swing.JPanel {
         }
 		tableModel.fireTableDataChanged();
     }
+	
+	private String formatDate(String theDate)
+    {
+        String formattedStr = "";
+        
+		if (theDate.length() < 8)
+		{
+			theDate = "0" + theDate;
+		}
+		for (Integer i = 0; i < theDate.length(); i++)
+		{
+			if ((i == 2) || (i == 4))
+			{
+				formattedStr = formattedStr + "/" + theDate.charAt(i);
+			}
+
+			else
+			{
+				formattedStr = formattedStr +theDate.charAt(i);
+			}
+		}
+
+        return formattedStr;
+    }
+	
 	/*
 	public void setupCheckInColumn(JTable theTable, TableColumn theCol)
 	{
