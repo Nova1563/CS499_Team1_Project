@@ -10,7 +10,10 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import javax.swing.JFrame;
+import javax.swing.JMenuItem;
 import javax.swing.JPanel;
+import javax.swing.JPopupMenu;
+import javax.swing.JTable;
 import javax.swing.SwingUtilities;
 import javax.swing.table.DefaultTableModel;
 
@@ -32,6 +35,7 @@ public class PatientPortal extends javax.swing.JPanel {
 		mainDash = _mainFrame;
         initComponents();		
 		tableModel = (DefaultTableModel) patientPortalTable.getModel();
+		addRightClickListener();
 		loadTableAllEntries();
     }
 	
@@ -78,6 +82,49 @@ public class PatientPortal extends javax.swing.JPanel {
 		}
 		
 	}
+	
+	private void addRightClickListener()
+	{
+	patientPortalTable.addMouseListener(new MouseAdapter() {
+    public void mouseReleased(MouseEvent e) {
+        int r = patientPortalTable.rowAtPoint(e.getPoint());
+        if (r >= 0 && r < patientPortalTable.getRowCount()) {
+            patientPortalTable.setRowSelectionInterval(r, r);
+        } else {
+            patientPortalTable.clearSelection();
+        }
+
+        int rowindex = patientPortalTable.getSelectedRow();
+        if (rowindex < 0)
+            return;
+        if (e.isPopupTrigger() && e.getComponent() instanceof JTable ) {
+            JPopupMenu popup = createRightClickMenu();
+            popup.show(e.getComponent(), e.getX(), e.getY());
+        }
+    }
+
+		
+	});
+	}
+	
+	private JPopupMenu createRightClickMenu() {
+		JPopupMenu theMenu = new JPopupMenu();
+		
+		JMenuItem makeActivePatient = new JMenuItem("Make active patient");
+		JMenuItem viewPatientInfo = new JMenuItem("View info");
+		JMenuItem addNewPatient = new JMenuItem("Add new patient");
+		JMenuItem editPatient = new JMenuItem("Edit patient");
+		JMenuItem deletePatient = new JMenuItem("Delete patient");
+		
+		theMenu.add(makeActivePatient);
+		theMenu.add(viewPatientInfo);
+		theMenu.add(addNewPatient);
+		theMenu.add(editPatient);
+		theMenu.addSeparator();
+		theMenu.add(deletePatient);
+		
+		return theMenu;
+	}	
 	
 	private String formatDate(String theDate)
 	{
