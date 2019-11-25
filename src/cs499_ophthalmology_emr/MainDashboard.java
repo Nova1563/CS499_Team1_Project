@@ -306,7 +306,6 @@ public class MainDashboard extends javax.swing.JFrame {
 
         currentPatientTextBar.setBackground(new java.awt.Color(204, 255, 255));
         currentPatientTextBar.setFont(helpToolsTxt.getFont());
-        currentPatientTextBar.setForeground(new java.awt.Color(0, 0, 0));
         currentPatientTextBar.setToolTipText("Current Patient");
         currentPatientTextBar.setOpaque(true);
 
@@ -325,7 +324,7 @@ public class MainDashboard extends javax.swing.JFrame {
                 .addGroup(toolBarJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(toolBarJPanelLayout.createSequentialGroup()
                         .addComponent(homeTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 207, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 206, Short.MAX_VALUE)
                         .addComponent(emrToolsTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(123, 123, 123)
                         .addComponent(emrToolsTxt2)
@@ -349,7 +348,7 @@ public class MainDashboard extends javax.swing.JFrame {
                     .addGroup(toolBarJPanelLayout.createSequentialGroup()
                         .addGap(178, 178, 178)
                         .addComponent(currentPatientTextBar, javax.swing.GroupLayout.PREFERRED_SIZE, 378, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 455, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 453, Short.MAX_VALUE)
                 .addGroup(toolBarJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(toolBarJPanelLayout.createSequentialGroup()
                         .addComponent(infoBttb)
@@ -367,12 +366,13 @@ public class MainDashboard extends javax.swing.JFrame {
                     .addGroup(toolBarJPanelLayout.createSequentialGroup()
                         .addGroup(toolBarJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(toolBarJPanelLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(helpBttn, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(toolBarJPanelLayout.createSequentialGroup()
-                                .addGap(14, 14, 14)
-                                .addComponent(infoBttb, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(18, 18, Short.MAX_VALUE)
+                                .addGap(23, 23, 23)
+                                .addComponent(infoBttb, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 22, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, toolBarJPanelLayout.createSequentialGroup()
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(helpBttn, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)))
                         .addComponent(helpToolsTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(toolBarJPanelLayout.createSequentialGroup()
                         .addGroup(toolBarJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -395,7 +395,7 @@ public class MainDashboard extends javax.swing.JFrame {
                                     .addComponent(emrToolsTxt1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(CurrentPatientLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(0, 0, Short.MAX_VALUE)))
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 4, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout backgroundLayout = new javax.swing.GroupLayout(background);
@@ -407,7 +407,7 @@ public class MainDashboard extends javax.swing.JFrame {
         backgroundLayout.setVerticalGroup(
             backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(backgroundLayout.createSequentialGroup()
-                .addComponent(toolBarJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(toolBarJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
