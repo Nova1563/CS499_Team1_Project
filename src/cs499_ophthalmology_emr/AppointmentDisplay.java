@@ -5,21 +5,15 @@
  */
 package cs499_ophthalmology_emr;
 
-import java.awt.Color;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
-import javax.swing.DefaultCellEditor;
-import javax.swing.JComboBox;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPopupMenu;
 import javax.swing.JTable;
-import javax.swing.table.AbstractTableModel;
-import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableColumn;
 
 /**
  *
@@ -542,7 +536,7 @@ public class AppointmentDisplay extends javax.swing.JPanel {
 		
 		if (validDate)
 		{
-			Integer sqlCompatibleDate = Integer.parseInt(displayDateTextField.getText());
+			Integer sqlCompatibleDate = unformatDate(displayDateTextField.getText());
 			ArrayList<Appointment> theDatesAppts = dataBase.getAppointmentListByDate(sqlCompatibleDate);
 			loadTableFromList(theDatesAppts);
 		}
