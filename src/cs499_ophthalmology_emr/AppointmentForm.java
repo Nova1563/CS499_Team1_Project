@@ -36,7 +36,71 @@ public class AppointmentForm extends javax.swing.JPanel {
         appointmentDateTextField.setText(formatDate(theAppointment.getApptDate().toString()));
         reasonForVisit.setText(theAppointment.getReasonForVisit());
         patientNameTextBox.setText(theAppointment.getPatientName());
+		Integer arrivalStatus = theAppointment.getArrivalStatus();
+		arrivalStatusComboBox.setSelectedItem(translateArrivalStatus(arrivalStatus));
+		String apptTimeString = formatTime(theAppointment.getAppointmentTime());
+		apptTimeTextField.setText(apptTimeString);
+		setTimeComboBoxes(apptTimeString);
+		doctorComboBox.setSelectedIndex(theAppointment.getDoctorToSee());
     }
+	
+	public void setUpFieldsForNewAppointment()
+	{
+		patientNameTextBox.setText(dashBoard.getActivePatient().getName());
+		appointmentDateTextField.setText("MM/DD/YYYY");
+		apptHourComboBox.setSelectedIndex(0);
+		apptMinuteComboBox.setSelectedIndex(0);
+		apptTimeTextField.setText("07:00 AM");
+		doctorComboBox.setSelectedIndex(0);
+		reasonForVisit.setText("");
+		arrivalStatusComboBox.setSelectedIndex(0);
+	}
+	
+	public String formatTime(Integer timeInt)
+	{
+		String returnString;
+		String timeString;
+		
+		if (timeInt < 959)
+			timeString = "0" + timeInt.toString();
+		else
+			timeString = timeInt.toString();
+		
+		returnString = timeString.substring(0,2) + ":" + timeString.substring(2);
+		
+		return returnString;
+	}
+	
+	public String translateArrivalStatus(Integer arrivalCode)
+	{
+		String theReturnString = "";
+		switch (arrivalCode)
+		{
+			case 0:
+				theReturnString = "Not arrived";
+				break;
+			case 1:
+				theReturnString = "Checked in, waiting";
+				break;
+			case 2:
+				theReturnString = "In Exam";
+				break;
+			case 3:
+				theReturnString = "Checked out";
+				break;
+			default:
+				theReturnString = "Invalid check in status.";
+				System.out.println("AppointmentDisplay.translateArrivalStatus(" + arrivalCode + ") error.");
+		}
+		
+		return theReturnString;
+	}
+	
+	public void setTimeComboBoxes(String timeStr)
+	{
+		apptHourComboBox.setSelectedItem(timeStr.substring(0,2));
+		apptMinuteComboBox.setSelectedItem(timeStr.substring(2));
+	}
     
     public Boolean saveAppointmentInfo()
     {
@@ -57,7 +121,13 @@ public class AppointmentForm extends javax.swing.JPanel {
                 activeAppointment.setApptDate(unformatDate(appointmentDateTextField.getText()));
 			
 			activeAppointment.setReasonForVisit(reasonForVisit.getText());
-            
+			activeAppointment.setDoctorToSee(doctorComboBox.getSelectedIndex());
+			activeAppointment.setArrivalStatus(arrivalStatusComboBox.getSelectedIndex());
+			String theTime = apptTimeTextField.getText();
+			String temp = theTime.substring(0,2);
+			temp = temp + theTime.substring(3,5);
+            activeAppointment.setAppointmentTime(Integer.parseInt(temp));
+			
             isSuccess = true;
         }
         
@@ -367,7 +437,7 @@ public class AppointmentForm extends javax.swing.JPanel {
 
         jLabel7.setText("Arrival Status:");
 
-        arrivalStatusComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Not arrived", "Checked in, waiting", "In Examination", "Checked out" }));
+        arrivalStatusComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Not arrived", "Checked in, waiting", "In Exam", "Checked out" }));
         arrivalStatusComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 arrivalStatusComboBoxActionPerformed(evt);
@@ -511,11 +581,13 @@ public class AppointmentForm extends javax.swing.JPanel {
     }//GEN-LAST:event_apptMinuteComboBoxActionPerformed
 
     private void arrivalStatusComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_arrivalStatusComboBoxActionPerformed
-        activeAppointment.setArrivalStatus(arrivalStatusComboBox.getSelectedIndex());
+		//if (activeAppointment != null)
+		//activeAppointment.setArrivalStatus(arrivalStatusComboBox.getSelectedIndex());
     }//GEN-LAST:event_arrivalStatusComboBoxActionPerformed
 
     private void doctorComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_doctorComboBoxActionPerformed
-        activeAppointment.setDoctorToSee(doctorComboBox.getSelectedIndex());
+       // if (activeAppointment != null)
+		//	activeAppointment.setDoctorToSee(doctorComboBox.getSelectedIndex());
     }//GEN-LAST:event_doctorComboBoxActionPerformed
 
     private void appointmentDateTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_appointmentDateTextFieldFocusLost

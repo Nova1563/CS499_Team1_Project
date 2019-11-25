@@ -292,7 +292,7 @@
               <StringArray count="4">
                 <StringItem index="0" value="Not arrived"/>
                 <StringItem index="1" value="Checked in, waiting"/>
-                <StringItem index="2" value="In Examination"/>
+                <StringItem index="2" value="In Exam"/>
                 <StringItem index="3" value="Checked out"/>
               </StringArray>
             </Property>
