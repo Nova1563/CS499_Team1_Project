@@ -391,6 +391,11 @@ public class AppointmentDisplay extends javax.swing.JPanel {
         deleteButton.setText("DELETE");
         deleteButton.setToolTipText("Delete Selected Appointment");
         deleteButton.setPreferredSize(new java.awt.Dimension(176, 33));
+        deleteButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteButtonActionPerformed(evt);
+            }
+        });
 
         editButton.setBackground(new java.awt.Color(204, 255, 255));
         editButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -590,6 +595,20 @@ public class AppointmentDisplay extends javax.swing.JPanel {
 			JOptionPane.showMessageDialog(null, "Select an active patient from Patient Portal to continue.");
 		}
     }//GEN-LAST:event_showAllButtonActionPerformed
+
+    private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
+        Integer selectedCol = appointmentDisplayTable.getSelectedColumn();
+		Integer selectedRow = appointmentDisplayTable.getSelectedRow();
+		if ((selectedRow >= 0) && (selectedCol >=0))
+		{
+            Integer apptID = (Integer)appointmentDisplayTable.getValueAt(selectedRow, APPT_ID_COLUMN);
+
+            tableModel.removeRow(selectedRow);
+
+            Appointment theVictim = dataBase.getAppointmentByID(apptID);
+            dataBase.delete(theVictim);
+		}
+    }//GEN-LAST:event_deleteButtonActionPerformed
 	
 	private void rightClickMenuBeginExam(java.awt.event.ActionEvent evt) {
 		try
