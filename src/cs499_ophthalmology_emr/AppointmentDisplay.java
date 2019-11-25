@@ -5,16 +5,15 @@
  */
 package cs499_ophthalmology_emr;
 
-import java.awt.Color;
 import java.awt.event.KeyEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.ArrayList;
-import javax.swing.DefaultCellEditor;
-import javax.swing.JComboBox;
+import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
+import javax.swing.JPopupMenu;
 import javax.swing.JTable;
-import javax.swing.table.AbstractTableModel;
-import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableColumn;
 
 /**
  *
@@ -36,6 +35,7 @@ public class AppointmentDisplay extends javax.swing.JPanel {
         initComponents();
         mainDash = _mainFrame;
         tableModel = (DefaultTableModel) appointmentDisplayTable.getModel();
+		addRightClickListener();
 		//JComboBox statusComboBox = new JComboBox();
 		//statusComboBox.addItem("Not arrived");
 		//statusComboBox.addItem("Checked in, waiting");
@@ -76,6 +76,73 @@ public class AppointmentDisplay extends javax.swing.JPanel {
 		System.out.println("AppointmentDisplay.loadTableAllEntries() finished.");
 		
     }
+	
+	private void addRightClickListener()
+	{
+	appointmentDisplayTable.addMouseListener(new MouseAdapter() {
+    public void mouseReleased(MouseEvent e) {
+        int r = appointmentDisplayTable.rowAtPoint(e.getPoint());
+        if (r >= 0 && r < appointmentDisplayTable.getRowCount()) {
+            appointmentDisplayTable.setRowSelectionInterval(r, r);
+        } else {
+            appointmentDisplayTable.clearSelection();
+        }
+
+        int rowindex = appointmentDisplayTable.getSelectedRow();
+        if (rowindex < 0)
+            return;
+        if (e.isPopupTrigger() && e.getComponent() instanceof JTable ) {
+            JPopupMenu popup = createRightClickMenu();
+            popup.show(e.getComponent(), e.getX(), e.getY());
+        }
+    }
+
+		
+	});
+	}
+	
+	private JPopupMenu createRightClickMenu() {
+		JPopupMenu theMenu = new JPopupMenu();
+		
+		JMenuItem beginExam = new JMenuItem("Begin Eye Exam");
+		JMenuItem addNewAppt = new JMenuItem("Add new appointment");
+		JMenuItem editAppt = new JMenuItem("Edit appointment");
+		JMenuItem deleteAppt = new JMenuItem("Delete appointment");
+		
+		theMenu.add(beginExam);
+		theMenu.addSeparator();
+		theMenu.add(addNewAppt);
+		theMenu.add(editAppt);
+		theMenu.addSeparator();
+		theMenu.add(deleteAppt);
+		
+
+		beginExam.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rightClickMenuBeginExam(evt);
+            }
+		});
+		
+		addNewAppt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rightClickMenuNewAppt(evt);
+            }
+		});
+		
+		editAppt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rightClickEditAppt(evt);
+            }
+		});
+		
+		deleteAppt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rightClickDeleteAppt(evt);
+            }
+		});
+		
+		return theMenu;
+	}
 	
 	public String translateArrivalStatus(Integer arrivalCode)
 	{
@@ -324,6 +391,11 @@ public class AppointmentDisplay extends javax.swing.JPanel {
         deleteButton.setText("DELETE");
         deleteButton.setToolTipText("Delete Selected Appointment");
         deleteButton.setPreferredSize(new java.awt.Dimension(176, 33));
+        deleteButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteButtonActionPerformed(evt);
+            }
+        });
 
         editButton.setBackground(new java.awt.Color(204, 255, 255));
         editButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -501,7 +573,7 @@ public class AppointmentDisplay extends javax.swing.JPanel {
 		
 		if (validDate)
 		{
-			Integer sqlCompatibleDate = Integer.parseInt(displayDateTextField.getText());
+			Integer sqlCompatibleDate = unformatDate(displayDateTextField.getText());
 			ArrayList<Appointment> theDatesAppts = dataBase.getAppointmentListByDate(sqlCompatibleDate);
 			loadTableFromList(theDatesAppts);
 		}
@@ -514,10 +586,60 @@ public class AppointmentDisplay extends javax.swing.JPanel {
     }//GEN-LAST:event_displayDateTextFieldKeyPressed
 
     private void showAllButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showAllButtonActionPerformed
-        loadTableAllEntries();
+        try
+		{
+			loadTableAllEntries();
+		}
+		catch(NullPointerException e)
+		{
+			JOptionPane.showMessageDialog(null, "Select an active patient from Patient Portal to continue.");
+		}
     }//GEN-LAST:event_showAllButtonActionPerformed
 
+    private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
+        Integer selectedCol = appointmentDisplayTable.getSelectedColumn();
+		Integer selectedRow = appointmentDisplayTable.getSelectedRow();
+		if ((selectedRow >= 0) && (selectedCol >=0))
+		{
+            Integer apptID = (Integer)appointmentDisplayTable.getValueAt(selectedRow, APPT_ID_COLUMN);
 
+            tableModel.removeRow(selectedRow);
+
+            Appointment theVictim = dataBase.getAppointmentByID(apptID);
+            dataBase.delete(theVictim);
+		}
+    }//GEN-LAST:event_deleteButtonActionPerformed
+	
+	private void rightClickMenuBeginExam(java.awt.event.ActionEvent evt) {
+		try
+		{
+			beginExamButtonActionPerformed(evt);
+		}
+		catch(NullPointerException e)
+		{
+			JOptionPane.showMessageDialog(null, "Select an active patient from Patient Portal to continue.");
+		}
+	}
+	
+	private void rightClickMenuNewAppt(java.awt.event.ActionEvent evt) {
+		try
+		{
+			newAppointmentButtonActionPerformed(evt);
+		}
+		catch(NullPointerException e)
+		{
+			JOptionPane.showMessageDialog(null, "Select an active patient from Patient Portal to continue.");
+		}
+	}
+
+	private void rightClickEditAppt(java.awt.event.ActionEvent evt) {
+		editButtonActionPerformed(evt);
+	}
+	
+	private void rightClickDeleteAppt(java.awt.event.ActionEvent evt) {
+		deleteButtonActionPerformed(evt);
+	}
+	
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable appointmentDisplayTable;
     private javax.swing.JButton beginExamButton;

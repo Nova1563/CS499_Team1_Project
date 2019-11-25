@@ -10,7 +10,10 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import javax.swing.JFrame;
+import javax.swing.JMenuItem;
 import javax.swing.JPanel;
+import javax.swing.JPopupMenu;
+import javax.swing.JTable;
 import javax.swing.SwingUtilities;
 import javax.swing.table.DefaultTableModel;
 
@@ -32,6 +35,7 @@ public class PatientPortal extends javax.swing.JPanel {
 		mainDash = _mainFrame;
         initComponents();		
 		tableModel = (DefaultTableModel) patientPortalTable.getModel();
+		addRightClickListener();
 		loadTableAllEntries();
     }
 	
@@ -78,6 +82,83 @@ public class PatientPortal extends javax.swing.JPanel {
 		}
 		
 	}
+	
+	private void addRightClickListener()
+	{
+	patientPortalTable.addMouseListener(new MouseAdapter() {
+    public void mouseReleased(MouseEvent e) {
+        int r = patientPortalTable.rowAtPoint(e.getPoint());
+        if (r >= 0 && r < patientPortalTable.getRowCount()) {
+            patientPortalTable.setRowSelectionInterval(r, r);
+        } else {
+            patientPortalTable.clearSelection();
+        }
+
+        int rowindex = patientPortalTable.getSelectedRow();
+        if (rowindex < 0)
+            return;
+        if (e.isPopupTrigger() && e.getComponent() instanceof JTable ) {
+            JPopupMenu popup = createRightClickMenu();
+            popup.show(e.getComponent(), e.getX(), e.getY());
+        }
+    }
+
+		
+	});
+	}
+	
+	private JPopupMenu createRightClickMenu() {
+		JPopupMenu theMenu = new JPopupMenu();
+		
+		JMenuItem makeActivePatient = new JMenuItem("Make active patient");
+		JMenuItem viewPatientInfo = new JMenuItem("View info");
+		JMenuItem addNewPatient = new JMenuItem("Add new patient");
+		JMenuItem editPatient = new JMenuItem("Edit patient");
+		JMenuItem deletePatient = new JMenuItem("Delete patient");
+		
+		theMenu.add(makeActivePatient);
+		theMenu.add(viewPatientInfo);
+		theMenu.add(addNewPatient);
+		theMenu.add(editPatient);
+		theMenu.addSeparator();
+		theMenu.add(deletePatient);
+		
+		
+		
+		makeActivePatient.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rightClickMenuMakeActivePatient(evt);
+            }
+		});
+		
+		viewPatientInfo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rightClickMenuViewPatient(evt);
+            }
+		});
+		
+		addNewPatient.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rightClickMenuAddNewPatient(evt);
+            }
+		});
+		
+		editPatient.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rightClickMenuEditPatient(evt);
+            }
+		});
+		
+		deletePatient.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rightClickMenuDeletePatient(evt);
+            }
+		});
+		
+		
+		
+		return theMenu;
+	}	
 	
 	private String formatDate(String theDate)
 	{
@@ -475,7 +556,34 @@ public class PatientPortal extends javax.swing.JPanel {
 				rightClickMenu.setVisible(true);
 		}*/
     }//GEN-LAST:event_patientPortalTableMouseClicked
-
+	
+	private void rightClickMenuMakeActivePatient(java.awt.event.ActionEvent evt)
+	{
+		Integer selectedRow = patientPortalTable.getSelectedRow();
+		Integer patientID = (Integer)patientPortalTable.getValueAt(selectedRow, PATIENT_ID_COLUMN);
+		Patient activePatient = dataBase.getPatientByID(patientID);
+		mainDash.setActivePatient(activePatient);
+	}
+	
+	private void rightClickMenuAddNewPatient(java.awt.event.ActionEvent evt)
+	{
+		addPatientButtonActionPerformed(evt);
+	}
+	
+	private void rightClickMenuEditPatient(java.awt.event.ActionEvent evt)
+	{
+		editPatientButtonActionPerformed(evt);
+	}
+	
+	private void rightClickMenuDeletePatient(java.awt.event.ActionEvent evt)
+	{
+		deletePatientButtonActionPerformed(evt);
+	}
+	
+	private void rightClickMenuViewPatient(java.awt.event.ActionEvent evt)
+	{
+		viewPatientInfoMenuItemActionPerformed(evt);
+	}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addPatientButton;
