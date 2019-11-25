@@ -654,7 +654,6 @@ public class OcularExResults extends javax.swing.JPanel {
 
         maculaComboBox1.setBackground(new java.awt.Color(253, 252, 233));
         maculaComboBox1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        maculaComboBox1.setForeground(new java.awt.Color(0, 0, 0));
         maculaComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NORM", "LOW", "HIGH", "CRITICAL", "NOT CHECKED" }));
         maculaComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -664,7 +663,6 @@ public class OcularExResults extends javax.swing.JPanel {
 
         vasculatureComboBox1.setBackground(new java.awt.Color(253, 252, 233));
         vasculatureComboBox1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        vasculatureComboBox1.setForeground(new java.awt.Color(0, 0, 0));
         vasculatureComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NORM", "LOW", "HIGH", "CRITICAL", "NOT CHECKED" }));
         vasculatureComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -674,7 +672,6 @@ public class OcularExResults extends javax.swing.JPanel {
 
         posteriorPoleComboBox1.setBackground(new java.awt.Color(253, 252, 233));
         posteriorPoleComboBox1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        posteriorPoleComboBox1.setForeground(new java.awt.Color(0, 0, 0));
         posteriorPoleComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NORM", "LOW", "HIGH", "CRITICAL", "NOT CHECKED" }));
         posteriorPoleComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -684,7 +681,6 @@ public class OcularExResults extends javax.swing.JPanel {
 
         peripheralRetinaComboBox1.setBackground(new java.awt.Color(253, 252, 233));
         peripheralRetinaComboBox1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        peripheralRetinaComboBox1.setForeground(new java.awt.Color(0, 0, 0));
         peripheralRetinaComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NORM", "LOW", "HIGH", "CRITICAL", "NOT CHECKED" }));
         peripheralRetinaComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -694,7 +690,6 @@ public class OcularExResults extends javax.swing.JPanel {
 
         miscRetinaComboBox1.setBackground(new java.awt.Color(253, 252, 233));
         miscRetinaComboBox1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        miscRetinaComboBox1.setForeground(new java.awt.Color(0, 0, 0));
         miscRetinaComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NORM", "LOW", "HIGH", "CRITICAL", "NOT CHECKED" }));
         miscRetinaComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -704,7 +699,6 @@ public class OcularExResults extends javax.swing.JPanel {
 
         diabeticEvalComboBox1.setBackground(new java.awt.Color(253, 252, 233));
         diabeticEvalComboBox1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        diabeticEvalComboBox1.setForeground(new java.awt.Color(0, 0, 0));
         diabeticEvalComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NORM", "LOW", "HIGH", "CRITICAL", "NOT CHECKED" }));
         diabeticEvalComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -714,7 +708,6 @@ public class OcularExResults extends javax.swing.JPanel {
 
         vitreousComboBox1.setBackground(new java.awt.Color(253, 252, 233));
         vitreousComboBox1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        vitreousComboBox1.setForeground(new java.awt.Color(0, 0, 0));
         vitreousComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NORM", "LOW", "HIGH", "CRITICAL", "NOT CHECKED" }));
         vitreousComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -724,7 +717,6 @@ public class OcularExResults extends javax.swing.JPanel {
 
         armdComboBox1.setBackground(new java.awt.Color(253, 252, 233));
         armdComboBox1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        armdComboBox1.setForeground(new java.awt.Color(0, 0, 0));
         armdComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NORM", "LOW", "HIGH", "CRITICAL", "NOT CHECKED" }));
         armdComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -734,7 +726,6 @@ public class OcularExResults extends javax.swing.JPanel {
 
         htnEvaluationComboBox1.setBackground(new java.awt.Color(253, 252, 233));
         htnEvaluationComboBox1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        htnEvaluationComboBox1.setForeground(new java.awt.Color(0, 0, 0));
         htnEvaluationComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NORM", "LOW", "HIGH", "CRITICAL", "NOT CHECKED" }));
         htnEvaluationComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -744,7 +735,6 @@ public class OcularExResults extends javax.swing.JPanel {
 
         custom2ComboBox1.setBackground(new java.awt.Color(253, 252, 233));
         custom2ComboBox1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        custom2ComboBox1.setForeground(new java.awt.Color(0, 0, 0));
         custom2ComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NORM", "LOW", "HIGH", "CRITICAL", "NOT CHECKED" }));
         custom2ComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -754,7 +744,6 @@ public class OcularExResults extends javax.swing.JPanel {
 
         custom3ComboBox1.setBackground(new java.awt.Color(253, 252, 233));
         custom3ComboBox1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        custom3ComboBox1.setForeground(new java.awt.Color(0, 0, 0));
         custom3ComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NORM", "LOW", "HIGH", "CRITICAL", "NOT CHECKED" }));
         custom3ComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -764,7 +753,6 @@ public class OcularExResults extends javax.swing.JPanel {
 
         custom1ComboBox1.setBackground(new java.awt.Color(253, 252, 233));
         custom1ComboBox1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        custom1ComboBox1.setForeground(new java.awt.Color(0, 0, 0));
         custom1ComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NORM", "LOW", "HIGH", "CRITICAL", "NOT CHECKED" }));
         custom1ComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2216,7 +2204,6 @@ public class OcularExResults extends javax.swing.JPanel {
 
         odOpticNerveComboBox.setBackground(new java.awt.Color(253, 252, 233));
         odOpticNerveComboBox.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        odOpticNerveComboBox.setForeground(new java.awt.Color(0, 0, 0));
         odOpticNerveComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NORM", "LOW", "HIGH", "CRITICAL", "NOT CHECKED" }));
         odOpticNerveComboBox.setToolTipText("");
         odOpticNerveComboBox.addActionListener(new java.awt.event.ActionListener() {
@@ -2227,7 +2214,6 @@ public class OcularExResults extends javax.swing.JPanel {
 
         odNerveFiberLayerComboBox.setBackground(new java.awt.Color(253, 252, 233));
         odNerveFiberLayerComboBox.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        odNerveFiberLayerComboBox.setForeground(new java.awt.Color(0, 0, 0));
         odNerveFiberLayerComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NORM", "LOW", "HIGH", "CRITICAL", "NOT CHECKED" }));
         odNerveFiberLayerComboBox.setToolTipText("");
         odNerveFiberLayerComboBox.addActionListener(new java.awt.event.ActionListener() {
@@ -2246,7 +2232,6 @@ public class OcularExResults extends javax.swing.JPanel {
 
         osOpticNerveComboBox.setBackground(new java.awt.Color(253, 252, 233));
         osOpticNerveComboBox.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        osOpticNerveComboBox.setForeground(new java.awt.Color(0, 0, 0));
         osOpticNerveComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NORM", "LOW", "HIGH", "CRITICAL", "NOT CHECKED" }));
         osOpticNerveComboBox.setToolTipText("");
         osOpticNerveComboBox.addActionListener(new java.awt.event.ActionListener() {
@@ -2257,7 +2242,6 @@ public class OcularExResults extends javax.swing.JPanel {
 
         osNerveFiberLayerComboBox.setBackground(new java.awt.Color(253, 252, 233));
         osNerveFiberLayerComboBox.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        osNerveFiberLayerComboBox.setForeground(new java.awt.Color(0, 0, 0));
         osNerveFiberLayerComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NORM", "LOW", "HIGH", "CRITICAL", "NOT CHECKED" }));
         osNerveFiberLayerComboBox.setToolTipText("");
         osNerveFiberLayerComboBox.addActionListener(new java.awt.event.ActionListener() {
@@ -2601,14 +2585,10 @@ public class OcularExResults extends javax.swing.JPanel {
                         .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel15Layout.createSequentialGroup()
                                 .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel15Layout.createSequentialGroup()
-                                        .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(odShallowCheckBox)
-                                            .addComponent(odRoundCheckBox))
-                                        .addGap(45, 45, 45))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel15Layout.createSequentialGroup()
-                                        .addComponent(odDeepLaminaCheckBox)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
+                                    .addComponent(odShallowCheckBox)
+                                    .addComponent(odRoundCheckBox)
+                                    .addComponent(odDeepLaminaCheckBox))
+                                .addGap(11, 11, 11)
                                 .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel15Layout.createSequentialGroup()
                                         .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2706,7 +2686,6 @@ public class OcularExResults extends javax.swing.JPanel {
 
         saveButton.setBackground(new java.awt.Color(153, 255, 153));
         saveButton.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        saveButton.setForeground(new java.awt.Color(0, 0, 0));
         saveButton.setText("SAVE");
         saveButton.setToolTipText("");
         saveButton.addActionListener(new java.awt.event.ActionListener() {

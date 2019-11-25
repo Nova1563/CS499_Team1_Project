@@ -142,12 +142,22 @@ public class MainDashboard extends javax.swing.JFrame {
 	
 	public void showInsurancePage()
 	{
+            
+            try
+            {
                 insurancePanel.insuranceInfo(activePatient);
                 hideAllPanelComponents(mainPanel);
                 insurancePanel.setVisible(true);
+            }
+        
+            catch(Exception e)
+            {
+                JOptionPane.showMessageDialog(null, "Must have an active patient!");
+            }
+               
 	}
         public void showVisualAcuity()
-	{			visualAcuity.loadEyeTestResults();
+	{	visualAcuity.loadEyeTestResults();
                 hideAllPanelComponents(mainPanel);
                 visualAcuity.setVisible(true);
 	}
@@ -192,7 +202,6 @@ public class MainDashboard extends javax.swing.JFrame {
         appointmentBttn = new javax.swing.JLabel();
         patientPortalBttn = new javax.swing.JLabel();
         insuranceBttn = new javax.swing.JLabel();
-        eyeTestBttn = new javax.swing.JLabel();
         helpBttn = new javax.swing.JLabel();
         emrToolsTxt = new javax.swing.JLabel();
         helpToolsTxt = new javax.swing.JLabel();
@@ -208,13 +217,13 @@ public class MainDashboard extends javax.swing.JFrame {
 
         mainPanel.setBackground(new java.awt.Color(153, 255, 102));
         mainPanel.setMaximumSize(new java.awt.Dimension(1000, 1000));
-        mainPanel.setPreferredSize(new java.awt.Dimension(1700, 900));
+        mainPanel.setPreferredSize(new java.awt.Dimension(1900, 900));
         mainPanel.addComponentListener(new java.awt.event.ComponentAdapter() {
             public void componentShown(java.awt.event.ComponentEvent evt) {
                 mainPanelComponentShown(evt);
             }
         });
-        mainPanel.setLayout(new java.awt.GridBagLayout());
+        mainPanel.setLayout(new java.awt.CardLayout());
 
         background.setBackground(new java.awt.Color(57, 113, 177));
 
@@ -222,106 +231,184 @@ public class MainDashboard extends javax.swing.JFrame {
         toolBarJPanel.setAutoscrolls(true);
         toolBarJPanel.setMaximumSize(new java.awt.Dimension(2147483647, 100));
         toolBarJPanel.setMinimumSize(new java.awt.Dimension(1190, 100));
-        toolBarJPanel.setPreferredSize(new java.awt.Dimension(1620, 90));
-        toolBarJPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        toolBarJPanel.setPreferredSize(new java.awt.Dimension(1900, 90));
+        toolBarJPanel.setRequestFocusEnabled(false);
 
         homeBttn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cs499_ophthalmology_emr/images/homeIcon.png"))); // NOI18N
+        homeBttn.setToolTipText("Home");
         homeBttn.setDisabledIcon(null);
         homeBttn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 homeBttnMouseClicked(evt);
             }
         });
-        toolBarJPanel.add(homeBttn, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 50, -1));
 
         infoBttb.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cs499_ophthalmology_emr/images/infoIcon2.png"))); // NOI18N
-        toolBarJPanel.add(infoBttb, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 10, -1, 50));
 
         appointmentBttn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         appointmentBttn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cs499_ophthalmology_emr/images/appointmentIcon.png"))); // NOI18N
+        appointmentBttn.setToolTipText("Appointments");
         appointmentBttn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 appointmentBttnMouseClicked(evt);
             }
         });
-        toolBarJPanel.add(appointmentBttn, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 0, -1, 70));
 
         patientPortalBttn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cs499_ophthalmology_emr/images/patientIcon.png"))); // NOI18N
+        patientPortalBttn.setToolTipText("Patient Portal");
         patientPortalBttn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 patientPortalBttnMouseClicked(evt);
             }
         });
-        toolBarJPanel.add(patientPortalBttn, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 0, -1, 70));
 
         insuranceBttn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         insuranceBttn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cs499_ophthalmology_emr/images/insuranceIcon.png"))); // NOI18N
+        insuranceBttn.setToolTipText("Insurance");
         insuranceBttn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 insuranceBttnMouseClicked(evt);
             }
         });
-        toolBarJPanel.add(insuranceBttn, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 0, -1, 70));
-
-        eyeTestBttn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cs499_ophthalmology_emr/images/eyeTestIcon.png"))); // NOI18N
-        toolBarJPanel.add(eyeTestBttn, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 0, -1, 70));
 
         helpBttn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cs499_ophthalmology_emr/images/infoIcon.png"))); // NOI18N
-        toolBarJPanel.add(helpBttn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 0, 50, 70));
 
         emrToolsTxt.setBackground(new java.awt.Color(255, 255, 255));
-        emrToolsTxt.setFont(new java.awt.Font("Corsiva Hebrew", 2, 14)); // NOI18N
+        emrToolsTxt.setFont(new java.awt.Font("Tahoma", 2, 14)); // NOI18N
         emrToolsTxt.setForeground(new java.awt.Color(255, 255, 255));
+        emrToolsTxt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         emrToolsTxt.setText("Patient Portal");
-        toolBarJPanel.add(emrToolsTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 70, -1, 20));
 
         helpToolsTxt.setBackground(new java.awt.Color(255, 255, 255));
         helpToolsTxt.setFont(new java.awt.Font("Corsiva Hebrew", 2, 14)); // NOI18N
         helpToolsTxt.setForeground(new java.awt.Color(255, 255, 255));
+        helpToolsTxt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         helpToolsTxt.setText("Help Tools");
-        toolBarJPanel.add(helpToolsTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 70, -1, 20));
 
         homeTxt.setBackground(new java.awt.Color(255, 255, 255));
-        homeTxt.setFont(new java.awt.Font("Corsiva Hebrew", 2, 14)); // NOI18N
+        homeTxt.setFont(new java.awt.Font("Tahoma", 2, 14)); // NOI18N
         homeTxt.setForeground(new java.awt.Color(255, 255, 255));
         homeTxt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         homeTxt.setText("Home");
-        toolBarJPanel.add(homeTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 50, 20));
 
         emrToolsTxt1.setBackground(new java.awt.Color(255, 255, 255));
-        emrToolsTxt1.setFont(new java.awt.Font("Corsiva Hebrew", 2, 14)); // NOI18N
+        emrToolsTxt1.setFont(new java.awt.Font("Tahoma", 2, 14)); // NOI18N
         emrToolsTxt1.setForeground(new java.awt.Color(255, 255, 255));
+        emrToolsTxt1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         emrToolsTxt1.setText("Insurance ");
-        toolBarJPanel.add(emrToolsTxt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 70, -1, 20));
 
         CurrentPatientLabel.setFont(helpToolsTxt.getFont());
         CurrentPatientLabel.setForeground(new java.awt.Color(255, 255, 255));
+        CurrentPatientLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         CurrentPatientLabel.setText("Current Patient");
-        toolBarJPanel.add(CurrentPatientLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 70, -1, -1));
+        CurrentPatientLabel.setToolTipText("");
+        CurrentPatientLabel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        currentPatientTextBar.setBackground(new java.awt.Color(255, 255, 255));
+        currentPatientTextBar.setBackground(new java.awt.Color(204, 255, 255));
         currentPatientTextBar.setFont(helpToolsTxt.getFont());
+        currentPatientTextBar.setForeground(new java.awt.Color(0, 0, 0));
+        currentPatientTextBar.setToolTipText("Current Patient");
         currentPatientTextBar.setOpaque(true);
-        toolBarJPanel.add(currentPatientTextBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(765, 40, 240, 20));
-        toolBarJPanel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, -1, -1));
 
         emrToolsTxt2.setBackground(new java.awt.Color(255, 255, 255));
-        emrToolsTxt2.setFont(new java.awt.Font("Corsiva Hebrew", 2, 14)); // NOI18N
+        emrToolsTxt2.setFont(new java.awt.Font("Tahoma", 2, 14)); // NOI18N
         emrToolsTxt2.setForeground(new java.awt.Color(255, 255, 255));
+        emrToolsTxt2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         emrToolsTxt2.setText("Appointments");
-        toolBarJPanel.add(emrToolsTxt2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 70, -1, 20));
+
+        javax.swing.GroupLayout toolBarJPanelLayout = new javax.swing.GroupLayout(toolBarJPanel);
+        toolBarJPanel.setLayout(toolBarJPanelLayout);
+        toolBarJPanelLayout.setHorizontalGroup(
+            toolBarJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(toolBarJPanelLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(toolBarJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(toolBarJPanelLayout.createSequentialGroup()
+                        .addComponent(homeTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 207, Short.MAX_VALUE)
+                        .addComponent(emrToolsTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(123, 123, 123)
+                        .addComponent(emrToolsTxt2)
+                        .addGap(141, 141, 141))
+                    .addGroup(toolBarJPanelLayout.createSequentialGroup()
+                        .addComponent(homeBttn)
+                        .addGap(60, 60, 60)
+                        .addComponent(jLabel1)
+                        .addGap(171, 171, 171)
+                        .addComponent(patientPortalBttn)
+                        .addGap(158, 158, 158)
+                        .addComponent(appointmentBttn)
+                        .addGap(158, 158, 158)))
+                .addGroup(toolBarJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(emrToolsTxt1)
+                    .addComponent(insuranceBttn))
+                .addGroup(toolBarJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(toolBarJPanelLayout.createSequentialGroup()
+                        .addGap(211, 211, 211)
+                        .addComponent(CurrentPatientLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(toolBarJPanelLayout.createSequentialGroup()
+                        .addGap(178, 178, 178)
+                        .addComponent(currentPatientTextBar, javax.swing.GroupLayout.PREFERRED_SIZE, 378, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 455, Short.MAX_VALUE)
+                .addGroup(toolBarJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(toolBarJPanelLayout.createSequentialGroup()
+                        .addComponent(infoBttb)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(helpBttn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(toolBarJPanelLayout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(helpToolsTxt)))
+                .addContainerGap())
+        );
+        toolBarJPanelLayout.setVerticalGroup(
+            toolBarJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(toolBarJPanelLayout.createSequentialGroup()
+                .addGroup(toolBarJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(toolBarJPanelLayout.createSequentialGroup()
+                        .addGroup(toolBarJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(toolBarJPanelLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(helpBttn, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(toolBarJPanelLayout.createSequentialGroup()
+                                .addGap(14, 14, 14)
+                                .addComponent(infoBttb, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(18, 18, Short.MAX_VALUE)
+                        .addComponent(helpToolsTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(toolBarJPanelLayout.createSequentialGroup()
+                        .addGroup(toolBarJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(toolBarJPanelLayout.createSequentialGroup()
+                                .addGap(40, 40, 40)
+                                .addComponent(jLabel1))
+                            .addGroup(toolBarJPanelLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(toolBarJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(patientPortalBttn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(homeBttn)
+                                    .addComponent(appointmentBttn)
+                                    .addComponent(insuranceBttn)
+                                    .addComponent(currentPatientTextBar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(toolBarJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(emrToolsTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(homeTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(emrToolsTxt2, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(emrToolsTxt1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(CurrentPatientLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout backgroundLayout = new javax.swing.GroupLayout(background);
         background.setLayout(backgroundLayout);
         backgroundLayout.setHorizontalGroup(
             backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(toolBarJPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(toolBarJPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         backgroundLayout.setVerticalGroup(
             backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(backgroundLayout.createSequentialGroup()
                 .addComponent(toolBarJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -329,7 +416,7 @@ public class MainDashboard extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(mainPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -422,7 +509,6 @@ public class MainDashboard extends javax.swing.JFrame {
     private javax.swing.JLabel emrToolsTxt;
     private javax.swing.JLabel emrToolsTxt1;
     private javax.swing.JLabel emrToolsTxt2;
-    private javax.swing.JLabel eyeTestBttn;
     private javax.swing.JLabel helpBttn;
     private javax.swing.JLabel helpToolsTxt;
     private javax.swing.JLabel homeBttn;
