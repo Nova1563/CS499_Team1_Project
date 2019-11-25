@@ -184,6 +184,7 @@ public class MainDashboard extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        mainPanel = new javax.swing.JPanel();
         background = new javax.swing.JPanel();
         toolBarJPanel = new javax.swing.JPanel();
         homeBttn = new javax.swing.JLabel();
@@ -201,13 +202,21 @@ public class MainDashboard extends javax.swing.JFrame {
         currentPatientTextBar = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         emrToolsTxt2 = new javax.swing.JLabel();
-        mainPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setSize(getPreferredSize());
 
+        mainPanel.setBackground(new java.awt.Color(153, 255, 102));
+        mainPanel.setMaximumSize(new java.awt.Dimension(1000, 1000));
+        mainPanel.setPreferredSize(new java.awt.Dimension(1700, 900));
+        mainPanel.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentShown(java.awt.event.ComponentEvent evt) {
+                mainPanelComponentShown(evt);
+            }
+        });
+        mainPanel.setLayout(new java.awt.GridBagLayout());
+
         background.setBackground(new java.awt.Color(57, 113, 177));
-        background.setPreferredSize(new java.awt.Dimension(1800, 900));
 
         toolBarJPanel.setBackground(new java.awt.Color(53, 60, 81));
         toolBarJPanel.setAutoscrolls(true);
@@ -302,54 +311,39 @@ public class MainDashboard extends javax.swing.JFrame {
         emrToolsTxt2.setText("Appointments");
         toolBarJPanel.add(emrToolsTxt2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 70, -1, 20));
 
-        mainPanel.setBackground(new java.awt.Color(57, 113, 177));
-        mainPanel.setMaximumSize(new java.awt.Dimension(1000, 1000));
-        mainPanel.setPreferredSize(new java.awt.Dimension(1700, 900));
-        mainPanel.addComponentListener(new java.awt.event.ComponentAdapter() {
-            public void componentShown(java.awt.event.ComponentEvent evt) {
-                mainPanelComponentShown(evt);
-            }
-        });
-        mainPanel.setLayout(new java.awt.GridBagLayout());
-
         javax.swing.GroupLayout backgroundLayout = new javax.swing.GroupLayout(background);
         background.setLayout(backgroundLayout);
         backgroundLayout.setHorizontalGroup(
             backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(toolBarJPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(backgroundLayout.createSequentialGroup()
-                .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 1920, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
         );
         backgroundLayout.setVerticalGroup(
             backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(backgroundLayout.createSequentialGroup()
                 .addComponent(toolBarJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 900, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-
-        mainPanel.getAccessibleContext().setAccessibleName("mainPanel");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, 1920, Short.MAX_VALUE)
+            .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1920, Short.MAX_VALUE)
+            .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(background, javax.swing.GroupLayout.PREFERRED_SIZE, 1000, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(background, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        mainPanel.getAccessibleContext().setAccessibleName("mainPanel");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void mainPanelComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_mainPanelComponentShown
-        // TODO add your handling code here:
-        showHomePanel();
-    }//GEN-LAST:event_mainPanelComponentShown
 
     private void patientPortalBttnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_patientPortalBttnMouseClicked
 
@@ -374,6 +368,11 @@ public class MainDashboard extends javax.swing.JFrame {
         showHomePanel();
         
     }//GEN-LAST:event_homeBttnMouseClicked
+
+    private void mainPanelComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_mainPanelComponentShown
+        // TODO add your handling code here:
+        showHomePanel();
+    }//GEN-LAST:event_mainPanelComponentShown
 
     /**
      * @param args the command line arguments
