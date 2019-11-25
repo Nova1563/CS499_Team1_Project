@@ -47,9 +47,9 @@ public class AppointmentDisplay extends javax.swing.JPanel {
     public void loadTableAllEntries()
     {
         String patientName = null;
-        Integer doctorToSee = -1;
+        String doctorToSee = null;
         Integer apptDate = -1;
-	String reasonForVisit = null;
+		String reasonForVisit = null;
         Integer apptID = -1;
 		String formattedApptDate = null;
 		Integer checkInCode = -1;
@@ -61,7 +61,7 @@ public class AppointmentDisplay extends javax.swing.JPanel {
         for (Appointment currentAppointment: appointmentList)
         {
             patientName = currentAppointment.getPatientName();
-            doctorToSee = currentAppointment.getDoctorToSee();
+            doctorToSee = translateDoctorToSeeCode(currentAppointment.getDoctorToSee());
             apptDate = currentAppointment.getApptDate();
 			formattedApptDate = formatDate(apptDate.toString());
             reasonForVisit = currentAppointment.getReasonForVisit();
@@ -99,6 +99,32 @@ public class AppointmentDisplay extends javax.swing.JPanel {
 		}
 		
 		return theReturnString;
+	}
+	
+	public String translateDoctorToSeeCode(Integer doctorCode)
+	{
+		String returnString = "";
+		switch (doctorCode)
+		{
+			case(0):	// Coleman
+				returnString = "Dr. Coleman";
+				break;
+				
+			case(1):	// Lukins
+				returnString = "Dr. Lukins";
+				break;
+				
+			case(2):	// Woods
+				returnString = "Dr. Woods";
+				break;
+						
+			case(3):	// Haley
+				returnString = "Dr. Haley";
+				break;
+			default:
+				returnString = "translateDoctorToSeeCode(" + doctorCode.toString() + ") error.";
+		}
+		return returnString;
 	}
     
     public void loadTableFromList(ArrayList<Appointment> theList)
@@ -234,6 +260,7 @@ public class AppointmentDisplay extends javax.swing.JPanel {
             }
         });
 
+        appointmentDisplayTable.setAutoCreateRowSorter(true);
         appointmentDisplayTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 

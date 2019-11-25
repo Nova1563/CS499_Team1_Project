@@ -38,6 +38,10 @@ public class AppointmentForm extends javax.swing.JPanel {
         patientNameTextBox.setText(theAppointment.getPatientName());
 		Integer arrivalStatus = theAppointment.getArrivalStatus();
 		arrivalStatusComboBox.setSelectedItem(translateArrivalStatus(arrivalStatus));
+		String apptTimeString = formatTime(theAppointment.getAppointmentTime());
+		apptTimeTextField.setText(apptTimeString);
+		setTimeComboBoxes(apptTimeString);
+		doctorComboBox.setSelectedIndex(theAppointment.getDoctorToSee());
     }
 	
 	public void setUpFieldsForNewAppointment()
@@ -50,6 +54,21 @@ public class AppointmentForm extends javax.swing.JPanel {
 		doctorComboBox.setSelectedIndex(0);
 		reasonForVisit.setText("");
 		arrivalStatusComboBox.setSelectedIndex(0);
+	}
+	
+	public String formatTime(Integer timeInt)
+	{
+		String returnString;
+		String timeString;
+		
+		if (timeInt < 959)
+			timeString = "0" + timeInt.toString();
+		else
+			timeString = timeInt.toString();
+		
+		returnString = timeString.substring(0,2) + ":" + timeString.substring(2);
+		
+		return returnString;
 	}
 	
 	public String translateArrivalStatus(Integer arrivalCode)
@@ -75,6 +94,12 @@ public class AppointmentForm extends javax.swing.JPanel {
 		}
 		
 		return theReturnString;
+	}
+	
+	public void setTimeComboBoxes(String timeStr)
+	{
+		apptHourComboBox.setSelectedItem(timeStr.substring(0,2));
+		apptMinuteComboBox.setSelectedItem(timeStr.substring(2));
 	}
     
     public Boolean saveAppointmentInfo()
