@@ -239,55 +239,6 @@ public class AppointmentForm extends javax.swing.JPanel {
         return Integer.parseInt(formattedStr);
     }
     
-    
-    private Boolean validateFloat(String theString)
-    {
-		Boolean isValid = true;
-		Boolean decimalFound = false;
-		Integer remainingDecimalPlaces = 2;
-		
-		String trimmedFloat = "";
-		
-		for (Integer i=0; i < theString.length(); i++)
-		{
-			if (Character.isDigit(theString.charAt(i)))
-			{
-				if (decimalFound)
-				{
-					--remainingDecimalPlaces;
-					if (remainingDecimalPlaces < 0)
-					{
-						isValid = false;
-					}
-				}
-				trimmedFloat += theString.charAt(i);
-			}
-			
-			
-			
-			if (theString.charAt(i) == '.')
-			{
-				if (decimalFound == true)
-				{
-					isValid = false;
-				}
-				else
-				{
-					decimalFound = true;
-				}
-			}
-		}
-		if (remainingDecimalPlaces != 0)
-		{
-			isValid = false;
-		}
-		if (trimmedFloat.equals(""))
-		{
-			isValid = false;
-		}
-		return (isValid && decimalFound);
-    }    
-    
     private Boolean validateDate(String theDate)
     {
 		Boolean isValid = true;
@@ -312,8 +263,6 @@ public class AppointmentForm extends javax.swing.JPanel {
 		
 		return isValid;
     }
-	
-	
 	
 	private void updateApptTimeTextBox(String rawTimeText)
 	{
@@ -591,11 +540,23 @@ public class AppointmentForm extends javax.swing.JPanel {
     }//GEN-LAST:event_doctorComboBoxActionPerformed
 
     private void appointmentDateTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_appointmentDateTextFieldFocusLost
-        String theDate = appointmentDateTextField.getText();
+        
+		Boolean validDate = validateDate(appointmentDateTextField.getText());
 		
-		activeAppointment.setApptDate(Integer.parseInt(theDate));
-		
-		appointmentDateTextField.setText(formatDate(theDate));
+		if (!validDate)
+		{
+			appointmentDateTextField.setText("MMDDYYYY");
+			JOptionPane.showMessageDialog(null, "Enter date in MMDDYYYY format.");
+			appointmentDateTextField.requestFocus(true);
+		}
+		else
+		{
+			String theDate = appointmentDateTextField.getText();
+
+			activeAppointment.setApptDate(Integer.parseInt(theDate));
+
+			appointmentDateTextField.setText(formatDate(theDate));
+		}
     }//GEN-LAST:event_appointmentDateTextFieldFocusLost
 
     private void reasonForVisitFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_reasonForVisitFocusLost

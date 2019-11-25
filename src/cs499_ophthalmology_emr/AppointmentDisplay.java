@@ -6,6 +6,7 @@
 package cs499_ophthalmology_emr;
 
 import java.awt.Color;
+import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import javax.swing.DefaultCellEditor;
 import javax.swing.JComboBox;
@@ -131,7 +132,10 @@ public class AppointmentDisplay extends javax.swing.JPanel {
     {
         String patientName = null;
         Integer doctorToSee = -1;
+		String doctorString = null;
         Integer apptDate = -1;
+		String apptDateString = null;
+		Integer apptTime = -1;
 		String reasonForVisit = null;
         Integer apptID = -1;
 		Integer checkInCode = -1;
@@ -147,14 +151,20 @@ public class AppointmentDisplay extends javax.swing.JPanel {
         for (Appointment currentAppointment: appointmentList)
         {
             patientName = currentAppointment.getPatientName();
-            doctorToSee = currentAppointment.getDoctorToSee();
-            apptDate = currentAppointment.getAppointmentTime();
+			
+			doctorToSee = currentAppointment.getDoctorToSee();
+			doctorString = translateDoctorToSeeCode(doctorToSee);
+    
+			apptDate = currentAppointment.getApptDate();
+			apptDateString = formatDate(apptDate.toString());
+			
+            //apptTime = currentAppointment.getAppointmentTime();
             reasonForVisit = currentAppointment.getReasonForVisit();
             apptID = currentAppointment.getApptID();
             checkInCode = currentAppointment.getArrivalStatus();
 			checkInString = translateArrivalStatus(checkInCode);
             
-            tableModel.addRow(new Object[] {apptDate, patientName, doctorToSee, reasonForVisit, checkInString, apptID});
+            tableModel.addRow(new Object[] {apptDateString, patientName, doctorString, reasonForVisit, checkInString, apptID});
         }
 		tableModel.fireTableDataChanged();
     }
@@ -181,6 +191,46 @@ public class AppointmentDisplay extends javax.swing.JPanel {
 		}
 
         return formattedStr;
+    }
+	
+	private Boolean validateDate(String theDate)
+    {
+		Boolean isValid = true;
+		
+		String trimmedDate = "";
+		
+		for (Integer i=0; i < theDate.length(); i++)
+		{
+			if (Character.isDigit(theDate.charAt(i)))
+			{
+				trimmedDate += theDate.charAt(i);
+			}
+		}
+		if (trimmedDate.equals(""))
+		{
+			isValid = false;
+		}
+		if (trimmedDate.length() != 8)
+		{
+			isValid = false;
+		}
+		
+		return isValid;
+    }
+	
+	private Integer unformatDate(String theDate)
+    {
+        String formattedStr = "";
+        
+        for (Integer i = 0; i < theDate.length(); i++)
+	{
+            if (Character.isDigit(theDate.charAt(i)))
+            {
+                formattedStr += theDate.charAt(i);
+            }
+	}
+        
+        return Integer.parseInt(formattedStr);
     }
 	
 	/*
@@ -218,6 +268,9 @@ public class AppointmentDisplay extends javax.swing.JPanel {
         jScrollPane2 = new javax.swing.JScrollPane();
         appointmentDisplayTable = new javax.swing.JTable();
         beginExamButton = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        displayDateTextField = new javax.swing.JTextField();
+        showAllButton = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(57, 113, 177));
 
@@ -286,6 +339,27 @@ public class AppointmentDisplay extends javax.swing.JPanel {
             }
         });
 
+        jLabel1.setText("Date to display:");
+
+        displayDateTextField.setText("01/02/1234");
+        displayDateTextField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                displayDateTextFieldFocusLost(evt);
+            }
+        });
+        displayDateTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                displayDateTextFieldKeyPressed(evt);
+            }
+        });
+
+        showAllButton.setText("Show All");
+        showAllButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                showAllButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -299,7 +373,13 @@ public class AppointmentDisplay extends javax.swing.JPanel {
                         .addComponent(newAppointmentButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(editButton, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(227, 227, 227)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(showAllButton)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(displayDateTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(123, 123, 123)
                         .addComponent(beginExamButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(deleteButton))))
@@ -316,7 +396,10 @@ public class AppointmentDisplay extends javax.swing.JPanel {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(editButton)
                         .addComponent(deleteButton)
-                        .addComponent(beginExamButton))
+                        .addComponent(beginExamButton)
+                        .addComponent(jLabel1)
+                        .addComponent(displayDateTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(showAllButton))
                     .addComponent(newAppointmentButton))
                 .addContainerGap(41, Short.MAX_VALUE))
         );
@@ -381,16 +464,40 @@ public class AppointmentDisplay extends javax.swing.JPanel {
 		mainDash.showVisualAcuity();
     }//GEN-LAST:event_beginExamButtonActionPerformed
 
+    private void displayDateTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_displayDateTextFieldFocusLost
+        Boolean validDate = validateDate(displayDateTextField.getText());
+		
+		if (validDate)
+		{
+			Integer sqlCompatibleDate = Integer.parseInt(displayDateTextField.getText());
+			ArrayList<Appointment> theDatesAppts = dataBase.getAppointmentListByDate(sqlCompatibleDate);
+			loadTableFromList(theDatesAppts);
+		}
+    }//GEN-LAST:event_displayDateTextFieldFocusLost
+
+    private void displayDateTextFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_displayDateTextFieldKeyPressed
+        int key = evt.getKeyCode();
+        if (key == KeyEvent.VK_ENTER)
+			displayDateTextFieldFocusLost(null);
+    }//GEN-LAST:event_displayDateTextFieldKeyPressed
+
+    private void showAllButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showAllButtonActionPerformed
+        loadTableAllEntries();
+    }//GEN-LAST:event_showAllButtonActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable appointmentDisplayTable;
     private javax.swing.JButton beginExamButton;
     private javax.swing.JButton deleteButton;
+    private javax.swing.JTextField displayDateTextField;
     private javax.swing.JButton editButton;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JButton newAppointmentButton;
+    private javax.swing.JButton showAllButton;
     // End of variables declaration//GEN-END:variables
 
 }
