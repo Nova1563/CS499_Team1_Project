@@ -213,7 +213,6 @@ public class MainDashboard extends javax.swing.JFrame {
         emrToolsTxt2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1600, 1002));
         setSize(getPreferredSize());
 
         mainPanel.setBackground(new java.awt.Color(153, 255, 102));
@@ -324,24 +323,27 @@ public class MainDashboard extends javax.swing.JFrame {
                 .addGap(20, 20, 20)
                 .addGroup(toolBarJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(toolBarJPanelLayout.createSequentialGroup()
-                        .addComponent(homeTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(emrToolsTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(184, 184, 184)
-                        .addComponent(emrToolsTxt2)
-                        .addGap(141, 141, 141))
-                    .addGroup(toolBarJPanelLayout.createSequentialGroup()
                         .addComponent(homeBttn)
                         .addGap(60, 60, 60)
-                        .addComponent(jLabel1)
+                        .addComponent(jLabel1))
+                    .addComponent(homeTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(toolBarJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(toolBarJPanelLayout.createSequentialGroup()
                         .addGap(171, 171, 171)
                         .addComponent(patientPortalBttn)
-                        .addGap(158, 158, 158)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(appointmentBttn)
-                        .addGap(158, 158, 158)))
+                        .addGap(132, 132, 132))
+                    .addGroup(toolBarJPanelLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(emrToolsTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(77, 77, 77)
+                        .addComponent(emrToolsTxt2, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(106, 106, 106)))
                 .addGroup(toolBarJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(emrToolsTxt1)
-                    .addComponent(insuranceBttn))
+                    .addComponent(insuranceBttn)
+                    .addComponent(emrToolsTxt1))
+                .addGap(101, 101, 101)
                 .addGroup(toolBarJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(toolBarJPanelLayout.createSequentialGroup()
                         .addGap(211, 211, 211)
@@ -423,8 +425,8 @@ public class MainDashboard extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(background, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 877, Short.MAX_VALUE))
+                .addGap(0, 0, 0)
+                .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 887, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         mainPanel.getAccessibleContext().setAccessibleName("mainPanel");
