@@ -142,12 +142,22 @@ public class MainDashboard extends javax.swing.JFrame {
 	
 	public void showInsurancePage()
 	{
+            
+            try
+            {
                 insurancePanel.insuranceInfo(activePatient);
                 hideAllPanelComponents(mainPanel);
                 insurancePanel.setVisible(true);
+            }
+        
+            catch(Exception e)
+            {
+                JOptionPane.showMessageDialog(null, "Must have an active patient!");
+            }
+               
 	}
         public void showVisualAcuity()
-	{			visualAcuity.loadEyeTestResults();
+	{	visualAcuity.loadEyeTestResults();
                 hideAllPanelComponents(mainPanel);
                 visualAcuity.setVisible(true);
 	}
