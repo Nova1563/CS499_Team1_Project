@@ -36,7 +36,7 @@ public class PatientPortal extends javax.swing.JPanel {
 		mainDash = _mainFrame;
         initComponents();		
 		tableModel = (DefaultTableModel) patientPortalTable.getModel();
-		addRightClickListener();
+		addTableRowRightClickListener();
 		loadTableAllEntries();
     }
 	
@@ -84,7 +84,7 @@ public class PatientPortal extends javax.swing.JPanel {
 		
 	}
 	
-	private void addRightClickListener()
+	private void addTableRowRightClickListener()
 	{
 	patientPortalTable.addMouseListener(new MouseAdapter() {
     public void mouseReleased(MouseEvent e) {
@@ -99,7 +99,7 @@ public class PatientPortal extends javax.swing.JPanel {
         if (rowindex < 0)
             return;
         if (e.isPopupTrigger() && e.getComponent() instanceof JTable ) {
-            JPopupMenu popup = createRightClickMenu();
+            JPopupMenu popup = createTableRowRightClickMenu();
             popup.show(e.getComponent(), e.getX(), e.getY());
         }
     }
@@ -108,10 +108,10 @@ public class PatientPortal extends javax.swing.JPanel {
 	});
 	}
 	
-	private JPopupMenu createRightClickMenu() {
+	private JPopupMenu createTableRowRightClickMenu() {
 		JPopupMenu theMenu = new JPopupMenu();
 		
-		JMenuItem makeActivePatient = new JMenuItem("Make active patient");
+		JMenuItem makeActivePatient = new JMenuItem("Set as active patient");
 		JMenuItem viewPatientInfo = new JMenuItem("View info");
 		JMenuItem addNewPatient = new JMenuItem("Add new patient");
 		JMenuItem editPatient = new JMenuItem("Edit patient");
@@ -159,7 +159,7 @@ public class PatientPortal extends javax.swing.JPanel {
 		
 		
 		return theMenu;
-	}	
+	}
 	
 	private String formatDate(String theDate)
 	{
@@ -202,9 +202,11 @@ public class PatientPortal extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        rightClickMenu = new javax.swing.JPopupMenu();
+        tableRowRightClickMenu = new javax.swing.JPopupMenu();
         makeCurrentPatientMenuItem = new javax.swing.JMenuItem();
         viewPatientInfoMenuItem = new javax.swing.JMenuItem();
+        tableRightClickMenu = new javax.swing.JPopupMenu();
+        addPatientMenuItem = new javax.swing.JMenuItem();
         patientSearchBar = new javax.swing.JTextField();
         patientSearchSubmitButton = new javax.swing.JButton();
         deletePatientButton = new javax.swing.JButton();
@@ -216,7 +218,7 @@ public class PatientPortal extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         selectPatientButton = new javax.swing.JButton();
 
-        rightClickMenu.setName("patientOptions"); // NOI18N
+        tableRowRightClickMenu.setName("patientOptions"); // NOI18N
 
         makeCurrentPatientMenuItem.setText("Make Current Patient");
         makeCurrentPatientMenuItem.addActionListener(new java.awt.event.ActionListener() {
@@ -224,8 +226,8 @@ public class PatientPortal extends javax.swing.JPanel {
                 makeCurrentPatientMenuItemActionPerformed(evt);
             }
         });
-        rightClickMenu.add(makeCurrentPatientMenuItem);
-        makeCurrentPatientMenuItem.getAccessibleContext().setAccessibleParent(rightClickMenu);
+        tableRowRightClickMenu.add(makeCurrentPatientMenuItem);
+        makeCurrentPatientMenuItem.getAccessibleContext().setAccessibleParent(tableRowRightClickMenu);
 
         viewPatientInfoMenuItem.setText("View Patient Page");
         viewPatientInfoMenuItem.addActionListener(new java.awt.event.ActionListener() {
@@ -233,7 +235,15 @@ public class PatientPortal extends javax.swing.JPanel {
                 viewPatientInfoMenuItemActionPerformed(evt);
             }
         });
-        rightClickMenu.add(viewPatientInfoMenuItem);
+        tableRowRightClickMenu.add(viewPatientInfoMenuItem);
+
+        addPatientMenuItem.setText("Add new patient");
+        addPatientMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addPatientMenuItemActionPerformed(evt);
+            }
+        });
+        tableRightClickMenu.add(addPatientMenuItem);
 
         setBackground(new java.awt.Color(57, 113, 177));
         setMaximumSize(new java.awt.Dimension(1200, 700));
@@ -263,9 +273,7 @@ public class PatientPortal extends javax.swing.JPanel {
 
         deletePatientButton.setBackground(new java.awt.Color(255, 0, 51));
         deletePatientButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-
         deletePatientButton.setForeground(new java.awt.Color(253, 252, 233));
-
         deletePatientButton.setText("DELETE");
         deletePatientButton.setToolTipText("Delete Patient");
         deletePatientButton.setPreferredSize(new java.awt.Dimension(176, 33));
@@ -303,6 +311,8 @@ public class PatientPortal extends javax.swing.JPanel {
                 addPatientButtonActionPerformed(evt);
             }
         });
+
+        jScrollPane2.setComponentPopupMenu(tableRightClickMenu);
 
         patientPortalTable.setAutoCreateRowSorter(true);
         patientPortalTable.setBackground(new java.awt.Color(253, 252, 233));
@@ -379,13 +389,13 @@ public class PatientPortal extends javax.swing.JPanel {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(13, Short.MAX_VALUE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
         selectPatientButton.setBackground(new java.awt.Color(102, 153, 255));
         selectPatientButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         selectPatientButton.setForeground(new java.awt.Color(253, 252, 233));
-        selectPatientButton.setText("MAKE ACTIVE PATIENT");
+        selectPatientButton.setText("SET AS ACTIVE PATIENT");
         selectPatientButton.setToolTipText("Make an Active Patient");
         selectPatientButton.setPreferredSize(new java.awt.Dimension(176, 33));
         selectPatientButton.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -552,7 +562,7 @@ public class PatientPortal extends javax.swing.JPanel {
     }//GEN-LAST:event_selectPatientButtonMouseClicked
 
     private void makeCurrentPatientMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_makeCurrentPatientMenuItemActionPerformed
-        System.out.println("bloop");
+        //System.out.println("bloop");
     }//GEN-LAST:event_makeCurrentPatientMenuItemActionPerformed
 
     private void patientPortalTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_patientPortalTableMouseClicked
@@ -577,6 +587,10 @@ public class PatientPortal extends javax.swing.JPanel {
     private void selectPatientButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selectPatientButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_selectPatientButtonActionPerformed
+
+    private void addPatientMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addPatientMenuItemActionPerformed
+        addPatientButtonActionPerformed(null);
+    }//GEN-LAST:event_addPatientMenuItemActionPerformed
 	
 	private void rightClickMenuMakeActivePatient(java.awt.event.ActionEvent evt)
 	{
@@ -611,6 +625,7 @@ public class PatientPortal extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addPatientButton;
+    private javax.swing.JMenuItem addPatientMenuItem;
     private javax.swing.JButton deletePatientButton;
     private javax.swing.JButton editPatientButton;
     private javax.swing.JLabel jLabel4;
@@ -620,8 +635,9 @@ public class PatientPortal extends javax.swing.JPanel {
     private javax.swing.JTable patientPortalTable;
     private javax.swing.JTextField patientSearchBar;
     private javax.swing.JButton patientSearchSubmitButton;
-    private javax.swing.JPopupMenu rightClickMenu;
     private javax.swing.JButton selectPatientButton;
+    private javax.swing.JPopupMenu tableRightClickMenu;
+    private javax.swing.JPopupMenu tableRowRightClickMenu;
     private javax.swing.JMenuItem viewPatientInfoMenuItem;
     // End of variables declaration//GEN-END:variables
 }

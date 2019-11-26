@@ -27,7 +27,8 @@ public class AppointmentForm extends javax.swing.JPanel {
     public AppointmentForm(MainDashboard _dashBoard) {
         initComponents();
         dataBase = DataBaseManager.getInstance();
-	dashBoard = _dashBoard;
+		dashBoard = _dashBoard;
+		apptTimeTextField.setEditable(false);
     }
     
     public void loadAppointment(Appointment theAppointment)
@@ -194,6 +195,7 @@ public class AppointmentForm extends javax.swing.JPanel {
 			}
 		}
 		patientNameTextBox.setEditable(false);
+		
 	}
     
     private String formatDate(String theDate)
@@ -269,7 +271,7 @@ public class AppointmentForm extends javax.swing.JPanel {
 		String hour = rawTimeText.substring(0,2);
 		//String minute = rawTimeText.substring(3,5);
 		String formattedString = "";
-		if ((Integer.parseInt(hour) <= 7) && (Integer.parseInt(hour) <= 11)) // AM hour
+		if ((Integer.parseInt(hour) >= 7) && (Integer.parseInt(hour) <= 11)) // AM hour
 		{
 			formattedString = rawTimeText + " AM";
 		}
@@ -401,11 +403,11 @@ public class AppointmentForm extends javax.swing.JPanel {
 
         apptTimeTextField.setEditable(false);
         apptTimeTextField.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        apptTimeTextField.setForeground(new java.awt.Color(255, 255, 255));
+        apptTimeTextField.setForeground(new java.awt.Color(0, 0, 0));
         apptTimeTextField.setText("07:00 AM");
 
         apptHourComboBox.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        apptHourComboBox.setForeground(new java.awt.Color(255, 255, 255));
+        apptHourComboBox.setForeground(new java.awt.Color(0, 0, 0));
         apptHourComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "07", "08", "09", "10", "11", "12", "01", "02", "03", "04", "05", "06" }));
         apptHourComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -414,7 +416,7 @@ public class AppointmentForm extends javax.swing.JPanel {
         });
 
         apptMinuteComboBox.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        apptMinuteComboBox.setForeground(new java.awt.Color(255, 255, 255));
+        apptMinuteComboBox.setForeground(new java.awt.Color(0, 0, 0));
         apptMinuteComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ":00", ":15", ":30", ":45" }));
         apptMinuteComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

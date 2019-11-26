@@ -327,6 +327,8 @@ public class AppointmentDisplay extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        tableNoRowClickedPopupMenu = new javax.swing.JPopupMenu();
+        addApptMenuItem = new javax.swing.JMenuItem();
         newAppointmentButton = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -338,6 +340,14 @@ public class AppointmentDisplay extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         showAllButton = new javax.swing.JButton();
         displayDateTextField = new javax.swing.JTextField();
+
+        addApptMenuItem.setText("Add new appointment");
+        addApptMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addApptMenuItemActionPerformed(evt);
+            }
+        });
+        tableNoRowClickedPopupMenu.add(addApptMenuItem);
 
         setBackground(new java.awt.Color(57, 113, 177));
         setPreferredSize(new java.awt.Dimension(1900, 900));
@@ -411,6 +421,8 @@ public class AppointmentDisplay extends javax.swing.JPanel {
                 editButtonActionPerformed(evt);
             }
         });
+
+        jScrollPane2.setComponentPopupMenu(tableNoRowClickedPopupMenu);
 
         appointmentDisplayTable.setAutoCreateRowSorter(true);
         appointmentDisplayTable.setBackground(new java.awt.Color(253, 252, 233));
@@ -659,6 +671,10 @@ public class AppointmentDisplay extends javax.swing.JPanel {
     private void displayDateTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_displayDateTextFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_displayDateTextFieldActionPerformed
+
+    private void addApptMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addApptMenuItemActionPerformed
+        rightClickMenuNewAppt(evt);
+    }//GEN-LAST:event_addApptMenuItemActionPerformed
 	
 	private void rightClickMenuBeginExam(java.awt.event.ActionEvent evt) {
 		try
@@ -691,6 +707,7 @@ public class AppointmentDisplay extends javax.swing.JPanel {
 	}
 	
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem addApptMenuItem;
     private javax.swing.JTable appointmentDisplayTable;
     private javax.swing.JButton beginExamButton;
     private javax.swing.JButton deleteButton;
@@ -702,6 +719,7 @@ public class AppointmentDisplay extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JButton newAppointmentButton;
     private javax.swing.JButton showAllButton;
+    private javax.swing.JPopupMenu tableNoRowClickedPopupMenu;
     // End of variables declaration//GEN-END:variables
 
 }

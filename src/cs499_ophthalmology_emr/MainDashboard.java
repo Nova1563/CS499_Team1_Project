@@ -293,7 +293,7 @@ public class MainDashboard extends javax.swing.JFrame {
         CurrentPatientLabel.setFont(helpToolsTxt.getFont());
         CurrentPatientLabel.setForeground(new java.awt.Color(255, 255, 255));
         CurrentPatientLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        CurrentPatientLabel.setText("Current Patient");
+        CurrentPatientLabel.setText("Active Patient");
         CurrentPatientLabel.setToolTipText("");
         CurrentPatientLabel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 

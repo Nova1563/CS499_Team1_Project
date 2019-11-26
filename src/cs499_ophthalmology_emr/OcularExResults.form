@@ -51,7 +51,7 @@
               <Component id="fundusEvalMethodPanel" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="113" max="-2" attributes="0"/>
           </Group>
-          <Component id="titlePanel" alignment="0" pref="1906" max="32767" attributes="0"/>
+          <Component id="titlePanel" alignment="0" pref="1947" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -856,60 +856,53 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
-                              <Group type="103" alignment="0" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel56" min="-2" pref="236" max="-2" attributes="0"/>
-                                  <Component id="vitreousComboBox2" min="-2" pref="175" max="-2" attributes="0"/>
+                              <Component id="jLabel56" alignment="0" min="-2" pref="236" max="-2" attributes="0"/>
+                              <Component id="vitreousComboBox2" alignment="0" min="-2" pref="175" max="-2" attributes="0"/>
+                              <Component id="jLabel54" alignment="0" min="-2" pref="236" max="-2" attributes="0"/>
+                              <Component id="jLabel55" alignment="0" min="-2" pref="236" max="-2" attributes="0"/>
+                              <Component id="jLabel53" alignment="0" min="-2" pref="236" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jLabel52" min="-2" pref="236" max="-2" attributes="0"/>
+                                      <Component id="maculaComboBox2" min="-2" pref="175" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="111" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jLabel58" min="-2" pref="141" max="-2" attributes="0"/>
+                                      <Component id="htnEvaluationComboBox2" min="-2" pref="176" max="-2" attributes="0"/>
+                                      <Component id="diabeticEvalComboBox2" alignment="0" min="-2" pref="175" max="-2" attributes="0"/>
+                                      <Component id="jLabel51" alignment="0" min="-2" pref="171" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="1" attributes="0">
-                                      <Component id="jLabel54" alignment="0" min="-2" pref="236" max="-2" attributes="0"/>
-                                      <Component id="jLabel55" alignment="0" min="-2" pref="236" max="-2" attributes="0"/>
-                                      <Component id="jLabel53" alignment="0" min="-2" pref="236" max="-2" attributes="0"/>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jLabel52" min="-2" pref="236" max="-2" attributes="0"/>
-                                              <Component id="maculaComboBox2" min="-2" pref="175" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace min="-2" pref="111" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jLabel58" min="-2" pref="141" max="-2" attributes="0"/>
-                                              <Component id="htnEvaluationComboBox2" min="-2" pref="176" max="-2" attributes="0"/>
-                                              <Component id="diabeticEvalComboBox2" alignment="0" min="-2" pref="175" max="-2" attributes="0"/>
-                                              <Component id="jLabel51" alignment="0" min="-2" pref="171" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jLabel50" min="-2" pref="236" max="-2" attributes="0"/>
-                                              <Component id="vasculatureComboBox2" min="-2" pref="175" max="-2" attributes="0"/>
-                                              <Component id="posteriorPoleComboBox2" alignment="0" min="-2" pref="175" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace min="-2" pref="111" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="custom1ComboBox2" min="-2" pref="175" max="-2" attributes="0"/>
-                                              <Component id="jLabel59" min="-2" pref="175" max="-2" attributes="0"/>
-                                              <Component id="armdComboBox2" min="-2" pref="175" max="-2" attributes="0"/>
-                                              <Component id="jLabel60" alignment="0" min="-2" pref="175" max="-2" attributes="0"/>
-                                              <Component id="jLabel61" alignment="0" min="-2" pref="175" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="peripheralRetinaComboBox2" alignment="0" min="-2" pref="175" max="-2" attributes="0"/>
-                                              <Component id="miscRetinaComboBox2" alignment="0" min="-2" pref="175" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace min="-2" pref="172" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="custom3ComboBox2" min="-2" pref="175" max="-2" attributes="0"/>
-                                              <Component id="jLabel57" min="-2" pref="175" max="-2" attributes="0"/>
-                                              <Component id="custom2ComboBox2" min="-2" pref="175" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jLabel50" min="-2" pref="236" max="-2" attributes="0"/>
+                                      <Component id="vasculatureComboBox2" min="-2" pref="175" max="-2" attributes="0"/>
+                                      <Component id="posteriorPoleComboBox2" alignment="0" min="-2" pref="175" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="0" pref="95" max="32767" attributes="0"/>
+                                  <EmptySpace min="-2" pref="111" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="custom1ComboBox2" min="-2" pref="175" max="-2" attributes="0"/>
+                                      <Component id="jLabel59" min="-2" pref="175" max="-2" attributes="0"/>
+                                      <Component id="armdComboBox2" min="-2" pref="175" max="-2" attributes="0"/>
+                                      <Component id="jLabel60" alignment="0" min="-2" pref="175" max="-2" attributes="0"/>
+                                      <Component id="jLabel61" alignment="0" min="-2" pref="175" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="peripheralRetinaComboBox2" alignment="0" min="-2" pref="175" max="-2" attributes="0"/>
+                                      <Component id="miscRetinaComboBox2" alignment="0" min="-2" pref="175" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="172" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="custom3ComboBox2" min="-2" pref="175" max="-2" attributes="0"/>
+                                      <Component id="jLabel57" min="-2" pref="175" max="-2" attributes="0"/>
+                                      <Component id="custom2ComboBox2" min="-2" pref="175" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
                           </Group>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace pref="95" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -942,9 +935,9 @@
                               <Component id="jLabel59" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="vasculatureComboBox2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="armdComboBox2" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="vasculatureComboBox2" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
@@ -2512,9 +2505,11 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="2">
+                  <StringArray count="4">
                     <StringItem index="0" value="None"/>
-                    <StringItem index="1" value="Tropicamide 1%"/>
+                    <StringItem index="1" value="Cyclopentolate 0.25%"/>
+                    <StringItem index="2" value="Tropicamide 1%"/>
+                    <StringItem index="3" value="Phenylepherine 2.5%"/>
                   </StringArray>
                 </Property>
               </Properties>
