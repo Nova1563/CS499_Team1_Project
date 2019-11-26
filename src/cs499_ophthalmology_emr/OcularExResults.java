@@ -2721,7 +2721,7 @@ public class OcularExResults extends javax.swing.JPanel {
 
         saveButton.setBackground(new java.awt.Color(153, 255, 153));
         saveButton.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        saveButton.setForeground(new java.awt.Color(255, 255, 255));
+        saveButton.setForeground(new java.awt.Color(0, 0, 0));
         saveButton.setText("SAVE");
         saveButton.setToolTipText("");
         saveButton.setPreferredSize(new java.awt.Dimension(125, 38));
@@ -2800,7 +2800,7 @@ public class OcularExResults extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(fundusEvalMethodPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(113, 113, 113))
-            .addComponent(titlePanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1947, Short.MAX_VALUE)
+            .addComponent(titlePanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1944, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

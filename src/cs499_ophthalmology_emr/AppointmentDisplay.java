@@ -398,7 +398,7 @@ public class AppointmentDisplay extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        deleteButton.setBackground(new java.awt.Color(102, 153, 255));
+        deleteButton.setBackground(new java.awt.Color(255, 0, 0));
         deleteButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         deleteButton.setForeground(new java.awt.Color(253, 252, 233));
         deleteButton.setText("DELETE");
@@ -428,7 +428,6 @@ public class AppointmentDisplay extends javax.swing.JPanel {
         appointmentDisplayTable.setBackground(new java.awt.Color(253, 252, 233));
         appointmentDisplayTable.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(32, 33, 35)));
         appointmentDisplayTable.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        appointmentDisplayTable.setForeground(new java.awt.Color(0, 0, 0));
         appointmentDisplayTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
