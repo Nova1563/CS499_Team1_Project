@@ -240,9 +240,7 @@ public class PatientForm extends javax.swing.JPanel {
 
         jPanel2 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
         jPanel1 = new javax.swing.JPanel();
-        addressTextField = new javax.swing.JTextField();
         homePhoneTextField = new javax.swing.JTextField();
         workPhoneTextField = new javax.swing.JTextField();
         mobilePhoneTextField = new javax.swing.JTextField();
@@ -287,6 +285,7 @@ public class PatientForm extends javax.swing.JPanel {
         saveButton = new javax.swing.JButton();
         cancelButton = new javax.swing.JButton();
         clearButton = new javax.swing.JButton();
+        addressTextField = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(57, 113, 177));
         setPreferredSize(new java.awt.Dimension(1900, 900));
@@ -310,15 +309,12 @@ public class PatientForm extends javax.swing.JPanel {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel14)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
 
         jPanel1.setBackground(new java.awt.Color(32, 33, 35));
         jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(5, 5, 5, 5, new java.awt.Color(253, 252, 233)));
         jPanel1.setPreferredSize(new java.awt.Dimension(2626, 671));
-
-        addressTextField.setBackground(new java.awt.Color(204, 255, 255));
-        addressTextField.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
         homePhoneTextField.setBackground(new java.awt.Color(204, 255, 255));
         homePhoneTextField.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -540,6 +536,15 @@ public class PatientForm extends javax.swing.JPanel {
             }
         });
 
+        clearButton.setBackground(new java.awt.Color(255, 0, 51));
+        clearButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        clearButton.setText("CLEAR ALL");
+        clearButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clearButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -573,14 +578,18 @@ public class PatientForm extends javax.swing.JPanel {
                                             .addComponent(providerAddrTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabel15)))
-                .addContainerGap(256, Short.MAX_VALUE))
+                        .addComponent(jLabel15))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(clearButton, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(337, 337, 337)))
+                .addContainerGap(114, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(cancelButton, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(63, 63, 63)
+                .addGap(43, 43, 43)
                 .addComponent(saveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(54, 54, 54))
+                .addGap(20, 20, 20))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -615,12 +624,16 @@ public class PatientForm extends javax.swing.JPanel {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel22)
                     .addComponent(providerAddrTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 120, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(saveButton)
-                    .addComponent(cancelButton))
-                .addGap(26, 26, 26))
+                    .addComponent(cancelButton)
+                    .addComponent(clearButton))
+                .addGap(17, 17, 17))
         );
+
+        addressTextField.setBackground(new java.awt.Color(204, 255, 255));
+        addressTextField.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -629,47 +642,44 @@ public class PatientForm extends javax.swing.JPanel {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(51, 51, 51)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel11)
-                            .addComponent(jLabel9)
-                            .addComponent(jLabel10)
-                            .addComponent(jLabel12)
-                            .addComponent(jLabel13))
-                        .addGap(54, 54, 54)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(emergPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ssnTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(mobilePhoneTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(workPhoneTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(homePhoneTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(addressTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(nameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(titleTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(genderTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ageTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(dobTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(emailTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(emergName, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 351, Short.MAX_VALUE)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel8)
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel11)
+                    .addComponent(jLabel9)
+                    .addComponent(jLabel10)
+                    .addComponent(jLabel12)
+                    .addComponent(jLabel13)
+                    .addComponent(jLabel2))
+                .addGap(54, 54, 54)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(addressTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(emergPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ssnTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(mobilePhoneTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(workPhoneTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(homePhoneTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(titleTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(genderTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ageTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(dobTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(emailTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(emergName, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 524, Short.MAX_VALUE)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(853, 853, 853))
+                .addGap(99, 99, 99))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(31, 31, 31)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(31, 31, 31)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(nameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel1))
@@ -717,156 +727,31 @@ public class PatientForm extends javax.swing.JPanel {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel12)
                             .addComponent(emergName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(32, 32, 32)
+                        .addGap(33, 33, 33)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel13)
-                            .addComponent(emergPhone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap())
+                            .addComponent(emergPhone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(16, 16, 16)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 53, Short.MAX_VALUE))
         );
-
-        jScrollPane1.setViewportView(jPanel1);
-
-        clearButton.setBackground(new java.awt.Color(255, 0, 51));
-        clearButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        clearButton.setText("CLEAR ALL");
-        clearButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                clearButtonActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1900, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(714, 714, 714)
-                .addComponent(clearButton, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1900, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(46, 46, 46)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 751, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(clearButton)
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addGap(54, 54, 54)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 816, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
-
-    private void titleTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_titleTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_titleTextFieldActionPerformed
-
-    private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelButtonActionPerformed
-        for(Component itsComp : this.getComponents())
-		{
-			System.out.println(itsComp.getClass().getName());
-			if (itsComp.getClass().getName().equals("javax.swing.JTextField"))
-			{
-				((JTextComponent)itsComp).setText("");
-			}
-		}
-		activePatient = null;
-		dashBoard.showPatientPortal();
-    }//GEN-LAST:event_cancelButtonActionPerformed
-
-    private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
-        Boolean saveSuccess = savePatientInfo();
-		if (saveSuccess)
-		{
-			dataBase.updateApptsWithPatientNameChange(activePatient);
-			activePatient = null;
-			dashBoard.showPatientPortal();
-		}
-    }//GEN-LAST:event_saveButtonActionPerformed
-
-    private void dobTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_dobTextFieldFocusLost
-        Boolean validDate = validateDate(dobTextField.getText());
-		
-		if (!validDate)
-		{
-			dobTextField.setText("MMDDYYYY");
-			JOptionPane.showMessageDialog(null, "Enter date in MMDDYYYY format.");
-			dobTextField.requestFocus(true);
-		}
-		else
-		{
-			Integer unformattedDate = unformatDate(dobTextField.getText());
-			dobTextField.setText(formatDate(unformattedDate.toString()));
-		}
-    }//GEN-LAST:event_dobTextFieldFocusLost
-
-    private void effectiveTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_effectiveTextFieldFocusLost
-        Boolean validDate = validateDate(effectiveTextField.getText());
-		
-		if (!validDate)
-		{
-			effectiveTextField.setText("MMDDYYYY");
-			JOptionPane.showMessageDialog(null, "Enter date in MMDDYYYY format.");
-			effectiveTextField.requestFocus(true);
-		}
-		else
-		{
-			Integer unformattedDate = unformatDate(effectiveTextField.getText());
-			effectiveTextField.setText(formatDate(unformattedDate.toString()));
-		}
-    }//GEN-LAST:event_effectiveTextFieldFocusLost
-
-    private void copayTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_copayTextFieldFocusLost
-        Boolean validFloat = validateFloat(copayTextField.getText());
-		
-		if (!validFloat)
-		{
-			copayTextField.setText("0.00");
-			JOptionPane.showMessageDialog(null, "Enter copay as decimal. Ex: 4.50");
-			copayTextField.requestFocus(true);
-		}
-    }//GEN-LAST:event_copayTextFieldFocusLost
-
-    private void ageTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_ageTextFieldFocusLost
-        Boolean isValid = true;
-		
-		String ageString = ageTextField.getText();
-		
-		for (Integer i=0; i < ageString.length(); i++)
-		{
-			if (!(Character.isDigit(ageString.charAt(i))))
-			{
-				isValid = false;
-			}
-		}
-		if (ageString.equals(""))
-		{
-			isValid = false;
-		}
-		//if (ageString.length() > 3)
-		//{
-		//	isValid = false;
-		//}
-		if (!isValid)
-		{
-			ageTextField.setText("0");
-			JOptionPane.showMessageDialog(null, "Enter valid age.");
-			ageTextField.requestFocus(true);
-		}
-    }//GEN-LAST:event_ageTextFieldFocusLost
-
-    private void nameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nameTextFieldActionPerformed
-
-    private void emergPhoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emergPhoneActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_emergPhoneActionPerformed
-
-    private void dobTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dobTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_dobTextFieldActionPerformed
 
     private void clearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearButtonActionPerformed
         System.out.println("New Patient Form: Clear Button");
@@ -891,6 +776,116 @@ public class PatientForm extends javax.swing.JPanel {
         titleTextField.setText("");
         workPhoneTextField.setText("");
     }//GEN-LAST:event_clearButtonActionPerformed
+
+    private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelButtonActionPerformed
+        for(Component itsComp : this.getComponents())
+        {
+            System.out.println(itsComp.getClass().getName());
+            if (itsComp.getClass().getName().equals("javax.swing.JTextField"))
+            {
+                ((JTextComponent)itsComp).setText("");
+            }
+        }
+        activePatient = null;
+        dashBoard.showPatientPortal();
+    }//GEN-LAST:event_cancelButtonActionPerformed
+
+    private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
+        Boolean saveSuccess = savePatientInfo();
+        if (saveSuccess)
+        {
+            dataBase.updateApptsWithPatientNameChange(activePatient);
+            activePatient = null;
+            dashBoard.showPatientPortal();
+        }
+    }//GEN-LAST:event_saveButtonActionPerformed
+
+    private void copayTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_copayTextFieldFocusLost
+        Boolean validFloat = validateFloat(copayTextField.getText());
+
+        if (!validFloat)
+        {
+            copayTextField.setText("0.00");
+            JOptionPane.showMessageDialog(null, "Enter copay as decimal. Ex: 4.50");
+            copayTextField.requestFocus(true);
+        }
+    }//GEN-LAST:event_copayTextFieldFocusLost
+
+    private void effectiveTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_effectiveTextFieldFocusLost
+        Boolean validDate = validateDate(effectiveTextField.getText());
+
+        if (!validDate)
+        {
+            effectiveTextField.setText("MMDDYYYY");
+            JOptionPane.showMessageDialog(null, "Enter date in MMDDYYYY format.");
+            effectiveTextField.requestFocus(true);
+        }
+        else
+        {
+            Integer unformattedDate = unformatDate(effectiveTextField.getText());
+            effectiveTextField.setText(formatDate(unformattedDate.toString()));
+        }
+    }//GEN-LAST:event_effectiveTextFieldFocusLost
+
+    private void emergPhoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emergPhoneActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_emergPhoneActionPerformed
+
+    private void dobTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dobTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_dobTextFieldActionPerformed
+
+    private void dobTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_dobTextFieldFocusLost
+        Boolean validDate = validateDate(dobTextField.getText());
+
+        if (!validDate)
+        {
+            dobTextField.setText("MMDDYYYY");
+            JOptionPane.showMessageDialog(null, "Enter date in MMDDYYYY format.");
+            dobTextField.requestFocus(true);
+        }
+        else
+        {
+            Integer unformattedDate = unformatDate(dobTextField.getText());
+            dobTextField.setText(formatDate(unformattedDate.toString()));
+        }
+    }//GEN-LAST:event_dobTextFieldFocusLost
+
+    private void ageTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_ageTextFieldFocusLost
+        Boolean isValid = true;
+
+        String ageString = ageTextField.getText();
+
+        for (Integer i=0; i < ageString.length(); i++)
+        {
+            if (!(Character.isDigit(ageString.charAt(i))))
+            {
+                isValid = false;
+            }
+        }
+        if (ageString.equals(""))
+        {
+            isValid = false;
+        }
+        //if (ageString.length() > 3)
+        //{
+            //	isValid = false;
+            //}
+        if (!isValid)
+        {
+            ageTextField.setText("0");
+            JOptionPane.showMessageDialog(null, "Enter valid age.");
+            ageTextField.requestFocus(true);
+        }
+    }//GEN-LAST:event_ageTextFieldFocusLost
+
+    private void titleTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_titleTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_titleTextFieldActionPerformed
+
+    private void nameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nameTextFieldActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -933,7 +928,6 @@ public class PatientForm extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField mobilePhoneTextField;
     private javax.swing.JTextField nameTextField;
     private javax.swing.JTextField providerAddrTextField;
