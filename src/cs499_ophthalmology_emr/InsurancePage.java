@@ -198,6 +198,7 @@ public class InsurancePage extends javax.swing.JPanel {
         coPaymentTxtF.setBackground(new java.awt.Color(204, 255, 255));
         coPaymentTxtF.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         coPaymentTxtF.setForeground(new java.awt.Color(0, 0, 0));
+        coPaymentTxtF.setToolTipText("Input Co-Payment Amount");
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
@@ -206,6 +207,7 @@ public class InsurancePage extends javax.swing.JPanel {
         groupNumTxtF.setBackground(new java.awt.Color(204, 255, 255));
         groupNumTxtF.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         groupNumTxtF.setForeground(new java.awt.Color(0, 0, 0));
+        groupNumTxtF.setToolTipText("List Group Number");
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
@@ -214,6 +216,7 @@ public class InsurancePage extends javax.swing.JPanel {
         phoneNumTxtF.setBackground(new java.awt.Color(204, 255, 255));
         phoneNumTxtF.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         phoneNumTxtF.setForeground(new java.awt.Color(0, 0, 0));
+        phoneNumTxtF.setToolTipText("List Phone Number ");
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
@@ -221,10 +224,12 @@ public class InsurancePage extends javax.swing.JPanel {
 
         insProviderAddrTXTF.setBackground(new java.awt.Color(204, 255, 255));
         insProviderAddrTXTF.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        insProviderAddrTXTF.setToolTipText("List Insurance Provider Address");
 
         insuranceProviderTxtF.setBackground(new java.awt.Color(204, 255, 255));
         insuranceProviderTxtF.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         insuranceProviderTxtF.setForeground(new java.awt.Color(0, 0, 0));
+        insuranceProviderTxtF.setToolTipText("List Insurance Provider");
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
@@ -237,6 +242,7 @@ public class InsurancePage extends javax.swing.JPanel {
         contactNumTxtF1.setBackground(new java.awt.Color(204, 255, 255));
         contactNumTxtF1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         contactNumTxtF1.setForeground(new java.awt.Color(0, 0, 0));
+        contactNumTxtF1.setToolTipText("List Inurance's Contact Number");
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
@@ -245,6 +251,7 @@ public class InsurancePage extends javax.swing.JPanel {
         effDateTxtF1.setBackground(new java.awt.Color(204, 255, 255));
         effDateTxtF1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         effDateTxtF1.setForeground(new java.awt.Color(0, 0, 0));
+        effDateTxtF1.setToolTipText("MMDDYYYY");
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
@@ -253,6 +260,7 @@ public class InsurancePage extends javax.swing.JPanel {
         amtChargedTXTF.setBackground(new java.awt.Color(204, 255, 255));
         amtChargedTXTF.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         amtChargedTXTF.setForeground(new java.awt.Color(0, 0, 0));
+        amtChargedTXTF.setToolTipText("Total Amount that will be charged to Patient");
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
@@ -261,6 +269,7 @@ public class InsurancePage extends javax.swing.JPanel {
         serviceChargeTXTF1.setBackground(new java.awt.Color(204, 255, 255));
         serviceChargeTXTF1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         serviceChargeTXTF1.setForeground(new java.awt.Color(0, 0, 0));
+        serviceChargeTXTF1.setToolTipText("Enter the Service Charge Amount to be Charged to Insurance");
         serviceChargeTXTF1.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 serviceChargeTXTF1FocusLost(evt);
@@ -357,15 +366,17 @@ public class InsurancePage extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(41, 41, 41)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 680, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addGap(33, 33, 33))
         );
     }// </editor-fold>//GEN-END:initComponents
 

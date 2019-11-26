@@ -458,7 +458,7 @@ public class AppointmentForm extends javax.swing.JPanel {
 
         reasonForVisit.setBackground(new java.awt.Color(204, 255, 255));
         reasonForVisit.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        reasonForVisit.setToolTipText("Input the reason for visit");
+        reasonForVisit.setToolTipText("State the reason for visit");
         reasonForVisit.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 reasonForVisitFocusLost(evt);

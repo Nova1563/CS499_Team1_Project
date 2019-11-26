@@ -241,7 +241,6 @@ public class PatientPortal extends javax.swing.JPanel {
 
         patientSearchBar.setBackground(new java.awt.Color(204, 255, 255));
         patientSearchBar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        patientSearchBar.setForeground(new java.awt.Color(0, 0, 0));
         patientSearchBar.setToolTipText("Search Patient by Name");
         patientSearchBar.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         patientSearchBar.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -252,7 +251,7 @@ public class PatientPortal extends javax.swing.JPanel {
 
         patientSearchSubmitButton.setBackground(new java.awt.Color(102, 153, 255));
         patientSearchSubmitButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        patientSearchSubmitButton.setForeground(new java.awt.Color(255, 255, 255));
+        patientSearchSubmitButton.setForeground(new java.awt.Color(253, 252, 233));
         patientSearchSubmitButton.setText("SEARCH");
         patientSearchSubmitButton.setToolTipText("Searching Patient");
         patientSearchSubmitButton.setPreferredSize(new java.awt.Dimension(176, 33));
@@ -262,9 +261,9 @@ public class PatientPortal extends javax.swing.JPanel {
             }
         });
 
-        deletePatientButton.setBackground(new java.awt.Color(255, 102, 102));
+        deletePatientButton.setBackground(new java.awt.Color(255, 0, 51));
         deletePatientButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        deletePatientButton.setForeground(new java.awt.Color(0, 0, 0));
+        deletePatientButton.setForeground(new java.awt.Color(253, 252, 233));
         deletePatientButton.setText("DELETE");
         deletePatientButton.setToolTipText("Delete Patient");
         deletePatientButton.setPreferredSize(new java.awt.Dimension(176, 33));
@@ -281,7 +280,7 @@ public class PatientPortal extends javax.swing.JPanel {
 
         editPatientButton.setBackground(new java.awt.Color(102, 153, 255));
         editPatientButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        editPatientButton.setForeground(new java.awt.Color(255, 255, 255));
+        editPatientButton.setForeground(new java.awt.Color(253, 252, 233));
         editPatientButton.setText("EDIT");
         editPatientButton.setToolTipText("Edit Patient Info");
         editPatientButton.setPreferredSize(new java.awt.Dimension(176, 33));
@@ -293,7 +292,7 @@ public class PatientPortal extends javax.swing.JPanel {
 
         addPatientButton.setBackground(new java.awt.Color(102, 153, 255));
         addPatientButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        addPatientButton.setForeground(new java.awt.Color(255, 255, 255));
+        addPatientButton.setForeground(new java.awt.Color(253, 252, 233));
         addPatientButton.setText("ADD PATIENT");
         addPatientButton.setToolTipText("Add Patient to Portal");
         addPatientButton.setPreferredSize(new java.awt.Dimension(176, 33));
@@ -307,7 +306,6 @@ public class PatientPortal extends javax.swing.JPanel {
         patientPortalTable.setBackground(new java.awt.Color(253, 252, 233));
         patientPortalTable.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(32, 33, 35)));
         patientPortalTable.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        patientPortalTable.setForeground(new java.awt.Color(0, 0, 0));
         patientPortalTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -384,7 +382,7 @@ public class PatientPortal extends javax.swing.JPanel {
 
         selectPatientButton.setBackground(new java.awt.Color(102, 153, 255));
         selectPatientButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        selectPatientButton.setForeground(new java.awt.Color(255, 255, 255));
+        selectPatientButton.setForeground(new java.awt.Color(253, 252, 233));
         selectPatientButton.setText("MAKE ACTIVE PATIENT");
         selectPatientButton.setToolTipText("Make an Active Patient");
         selectPatientButton.setPreferredSize(new java.awt.Dimension(176, 33));
@@ -422,10 +420,11 @@ public class PatientPortal extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(selectPatientButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(patientSearchSubmitButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(patientSearchBar))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(patientSearchBar, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(selectPatientButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(patientSearchSubmitButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(21, 21, 21)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 655, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)

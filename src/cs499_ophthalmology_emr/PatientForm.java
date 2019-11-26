@@ -347,26 +347,32 @@ public class PatientForm extends javax.swing.JPanel {
         homePhoneTextField.setBackground(new java.awt.Color(204, 255, 255));
         homePhoneTextField.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         homePhoneTextField.setForeground(new java.awt.Color(0, 0, 0));
+        homePhoneTextField.setToolTipText("Enter Patient's Home Number");
 
         workPhoneTextField.setBackground(new java.awt.Color(204, 255, 255));
         workPhoneTextField.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         workPhoneTextField.setForeground(new java.awt.Color(0, 0, 0));
+        workPhoneTextField.setToolTipText("Enter Patient's Work Phone Number");
 
         mobilePhoneTextField.setBackground(new java.awt.Color(204, 255, 255));
         mobilePhoneTextField.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         mobilePhoneTextField.setForeground(new java.awt.Color(0, 0, 0));
+        mobilePhoneTextField.setToolTipText("Enter Patient's Mobile Contact");
 
         emailTextField.setBackground(new java.awt.Color(204, 255, 255));
         emailTextField.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         emailTextField.setForeground(new java.awt.Color(0, 0, 0));
+        emailTextField.setToolTipText("Enter Patient Email Address");
 
         ssnTextField.setBackground(new java.awt.Color(204, 255, 255));
         ssnTextField.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         ssnTextField.setForeground(new java.awt.Color(0, 0, 0));
+        ssnTextField.setToolTipText("SSS-SS-SSSS");
 
         emergName.setBackground(new java.awt.Color(204, 255, 255));
         emergName.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         emergName.setForeground(new java.awt.Color(0, 0, 0));
+        emergName.setToolTipText("Enter Emergency Contact");
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -406,6 +412,7 @@ public class PatientForm extends javax.swing.JPanel {
 
         nameTextField.setBackground(new java.awt.Color(204, 255, 255));
         nameTextField.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        nameTextField.setToolTipText("Enter Patient's Name");
         nameTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nameTextFieldActionPerformed(evt);
@@ -419,6 +426,7 @@ public class PatientForm extends javax.swing.JPanel {
         titleTextField.setBackground(new java.awt.Color(204, 255, 255));
         titleTextField.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         titleTextField.setForeground(new java.awt.Color(0, 0, 0));
+        titleTextField.setToolTipText("(Mr./Mrs./Ms/Miss/Jr./Sr.)");
         titleTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 titleTextFieldActionPerformed(evt);
@@ -432,6 +440,7 @@ public class PatientForm extends javax.swing.JPanel {
         genderTextField.setBackground(new java.awt.Color(204, 255, 255));
         genderTextField.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         genderTextField.setForeground(new java.awt.Color(0, 0, 0));
+        genderTextField.setToolTipText("(Male/Female/They)");
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
@@ -440,6 +449,7 @@ public class PatientForm extends javax.swing.JPanel {
         ageTextField.setBackground(new java.awt.Color(204, 255, 255));
         ageTextField.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         ageTextField.setForeground(new java.awt.Color(0, 0, 0));
+        ageTextField.setToolTipText("Enter Patient's");
         ageTextField.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 ageTextFieldFocusLost(evt);
@@ -449,6 +459,7 @@ public class PatientForm extends javax.swing.JPanel {
         dobTextField.setBackground(new java.awt.Color(204, 255, 255));
         dobTextField.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         dobTextField.setForeground(new java.awt.Color(0, 0, 0));
+        dobTextField.setToolTipText("Enter Patient's Date of Birth");
         dobTextField.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 dobTextFieldFocusLost(evt);
@@ -487,6 +498,7 @@ public class PatientForm extends javax.swing.JPanel {
         providerTextField.setBackground(new java.awt.Color(204, 255, 255));
         providerTextField.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         providerTextField.setForeground(new java.awt.Color(0, 0, 0));
+        providerTextField.setToolTipText("Enter Inusrance Provider");
 
         jLabel17.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(255, 255, 255));
@@ -495,6 +507,7 @@ public class PatientForm extends javax.swing.JPanel {
         contractTextField.setBackground(new java.awt.Color(204, 255, 255));
         contractTextField.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         contractTextField.setForeground(new java.awt.Color(0, 0, 0));
+        contractTextField.setToolTipText("Enter Contact Number");
 
         jLabel18.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(255, 255, 255));
@@ -503,6 +516,7 @@ public class PatientForm extends javax.swing.JPanel {
         groupTextField.setBackground(new java.awt.Color(204, 255, 255));
         groupTextField.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         groupTextField.setForeground(new java.awt.Color(0, 0, 0));
+        groupTextField.setToolTipText("Enter patient's Group Number");
 
         jLabel19.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(255, 255, 255));
@@ -511,6 +525,7 @@ public class PatientForm extends javax.swing.JPanel {
         effectiveTextField.setBackground(new java.awt.Color(204, 255, 255));
         effectiveTextField.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         effectiveTextField.setForeground(new java.awt.Color(0, 0, 0));
+        effectiveTextField.setToolTipText("MMDDYYYYY");
         effectiveTextField.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 effectiveTextFieldFocusLost(evt);
@@ -524,6 +539,7 @@ public class PatientForm extends javax.swing.JPanel {
         copayTextField.setBackground(new java.awt.Color(204, 255, 255));
         copayTextField.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         copayTextField.setForeground(new java.awt.Color(0, 0, 0));
+        copayTextField.setToolTipText("Enter Co-Pay Amount");
         copayTextField.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 copayTextFieldFocusLost(evt);
@@ -537,6 +553,7 @@ public class PatientForm extends javax.swing.JPanel {
         providerPhoneTextField.setBackground(new java.awt.Color(204, 255, 255));
         providerPhoneTextField.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         providerPhoneTextField.setForeground(new java.awt.Color(0, 0, 0));
+        providerPhoneTextField.setToolTipText("Enter Insurance Provider's Phone Number");
 
         jLabel22.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel22.setForeground(new java.awt.Color(255, 255, 255));
@@ -545,6 +562,7 @@ public class PatientForm extends javax.swing.JPanel {
         providerAddrTextField.setBackground(new java.awt.Color(204, 255, 255));
         providerAddrTextField.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         providerAddrTextField.setForeground(new java.awt.Color(0, 0, 0));
+        providerAddrTextField.setToolTipText("Enter Insurance Address");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -741,9 +759,9 @@ public class PatientForm extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 652, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(47, 47, 47)
+                .addGap(46, 46, 46)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 644, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(clearButton)
                     .addComponent(cancelButton)

@@ -342,8 +342,9 @@ public class AppointmentDisplay extends javax.swing.JPanel {
         setBackground(new java.awt.Color(57, 113, 177));
         setPreferredSize(new java.awt.Dimension(1900, 900));
 
-        newAppointmentButton.setBackground(new java.awt.Color(204, 255, 255));
+        newAppointmentButton.setBackground(new java.awt.Color(102, 153, 255));
         newAppointmentButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        newAppointmentButton.setForeground(new java.awt.Color(253, 252, 233));
         newAppointmentButton.setText("ADD NEW APPOINTMENT");
         newAppointmentButton.setToolTipText("Add New Appointment");
         newAppointmentButton.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -387,8 +388,9 @@ public class AppointmentDisplay extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        deleteButton.setBackground(new java.awt.Color(204, 255, 255));
+        deleteButton.setBackground(new java.awt.Color(102, 153, 255));
         deleteButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        deleteButton.setForeground(new java.awt.Color(253, 252, 233));
         deleteButton.setText("DELETE");
         deleteButton.setToolTipText("Delete Selected Appointment");
         deleteButton.setPreferredSize(new java.awt.Dimension(176, 33));
@@ -398,8 +400,9 @@ public class AppointmentDisplay extends javax.swing.JPanel {
             }
         });
 
-        editButton.setBackground(new java.awt.Color(204, 255, 255));
+        editButton.setBackground(new java.awt.Color(102, 153, 255));
         editButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        editButton.setForeground(new java.awt.Color(253, 252, 233));
         editButton.setText("EDIT");
         editButton.setToolTipText("Edit Selected Appointment");
         editButton.setPreferredSize(new java.awt.Dimension(176, 33));
@@ -410,9 +413,10 @@ public class AppointmentDisplay extends javax.swing.JPanel {
         });
 
         appointmentDisplayTable.setAutoCreateRowSorter(true);
-        appointmentDisplayTable.setBackground(new java.awt.Color(204, 204, 204));
+        appointmentDisplayTable.setBackground(new java.awt.Color(253, 252, 233));
         appointmentDisplayTable.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(32, 33, 35)));
         appointmentDisplayTable.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        appointmentDisplayTable.setForeground(new java.awt.Color(0, 0, 0));
         appointmentDisplayTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -429,11 +433,15 @@ public class AppointmentDisplay extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        appointmentDisplayTable.setGridColor(new java.awt.Color(253, 252, 233));
         appointmentDisplayTable.setPreferredSize(new java.awt.Dimension(1900, 655));
+        appointmentDisplayTable.setSelectionBackground(new java.awt.Color(153, 255, 255));
+        appointmentDisplayTable.setSelectionForeground(new java.awt.Color(0, 0, 0));
         jScrollPane2.setViewportView(appointmentDisplayTable);
 
-        beginExamButton.setBackground(new java.awt.Color(204, 255, 255));
+        beginExamButton.setBackground(new java.awt.Color(102, 153, 255));
         beginExamButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        beginExamButton.setForeground(new java.awt.Color(253, 252, 233));
         beginExamButton.setText("OPEN EXAMS");
         beginExamButton.setToolTipText("Open Exams for selected Patient");
         beginExamButton.setPreferredSize(new java.awt.Dimension(176, 33));
@@ -447,8 +455,9 @@ public class AppointmentDisplay extends javax.swing.JPanel {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Date to display:");
 
-        showAllButton.setBackground(new java.awt.Color(204, 255, 255));
+        showAllButton.setBackground(new java.awt.Color(102, 153, 255));
         showAllButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        showAllButton.setForeground(new java.awt.Color(253, 252, 233));
         showAllButton.setText("SHOW ALL");
         showAllButton.setToolTipText("Show All Appointments");
         showAllButton.setPreferredSize(new java.awt.Dimension(176, 33));
@@ -460,6 +469,7 @@ public class AppointmentDisplay extends javax.swing.JPanel {
 
         displayDateTextField.setBackground(new java.awt.Color(204, 255, 255));
         displayDateTextField.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        displayDateTextField.setForeground(new java.awt.Color(0, 0, 0));
         displayDateTextField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         displayDateTextField.setText("01/02/1234");
         displayDateTextField.setToolTipText("MMDDYYYY");
@@ -483,7 +493,7 @@ public class AppointmentDisplay extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1906, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jScrollPane2)
             .addGroup(layout.createSequentialGroup()
                 .addGap(16, 16, 16)
@@ -515,16 +525,15 @@ public class AppointmentDisplay extends javax.swing.JPanel {
                 .addGap(16, 16, 16)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 665, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(16, 16, 16)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(editButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(deleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(beginExamButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(beginExamButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(2, 2, 2)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(showAllButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(newAppointmentButton)))))
+                            .addComponent(newAppointmentButton)))
+                    .addComponent(editButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(deleteButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
