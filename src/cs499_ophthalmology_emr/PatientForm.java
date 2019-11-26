@@ -760,8 +760,8 @@ public class PatientForm extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(46, 46, 46)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 644, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 751, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(clearButton)
                     .addComponent(cancelButton)
@@ -819,6 +819,11 @@ public class PatientForm extends javax.swing.JPanel {
 			JOptionPane.showMessageDialog(null, "Enter date in MMDDYYYY format.");
 			dobTextField.requestFocus(true);
 		}
+		else
+		{
+			Integer unformattedDate = unformatDate(dobTextField.getText());
+			dobTextField.setText(formatDate(unformattedDate.toString()));
+		}
     }//GEN-LAST:event_dobTextFieldFocusLost
 
     private void effectiveTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_effectiveTextFieldFocusLost
@@ -829,6 +834,11 @@ public class PatientForm extends javax.swing.JPanel {
 			effectiveTextField.setText("MMDDYYYY");
 			JOptionPane.showMessageDialog(null, "Enter date in MMDDYYYY format.");
 			effectiveTextField.requestFocus(true);
+		}
+		else
+		{
+			Integer unformattedDate = unformatDate(effectiveTextField.getText());
+			effectiveTextField.setText(formatDate(unformattedDate.toString()));
 		}
     }//GEN-LAST:event_effectiveTextFieldFocusLost
 

@@ -195,7 +195,6 @@ public class MainDashboard extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        mainPanel = new javax.swing.JPanel();
         background = new javax.swing.JPanel();
         toolBarJPanel = new javax.swing.JPanel();
         homeBttn = new javax.swing.JLabel();
@@ -212,19 +211,11 @@ public class MainDashboard extends javax.swing.JFrame {
         currentPatientTextBar = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         emrToolsTxt2 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        mainPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setSize(getPreferredSize());
-
-        mainPanel.setBackground(new java.awt.Color(153, 255, 102));
-        mainPanel.setMaximumSize(new java.awt.Dimension(1000, 1000));
-        mainPanel.setPreferredSize(new java.awt.Dimension(1900, 900));
-        mainPanel.addComponentListener(new java.awt.event.ComponentAdapter() {
-            public void componentShown(java.awt.event.ComponentEvent evt) {
-                mainPanelComponentShown(evt);
-            }
-        });
-        mainPanel.setLayout(new java.awt.CardLayout());
 
         background.setBackground(new java.awt.Color(57, 113, 177));
         background.setPreferredSize(new java.awt.Dimension(1900, 119));
@@ -407,22 +398,32 @@ public class MainDashboard extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
+        mainPanel.setBackground(new java.awt.Color(153, 255, 102));
+        mainPanel.setMaximumSize(new java.awt.Dimension(1000, 1000));
+        mainPanel.setPreferredSize(new java.awt.Dimension(1900, 900));
+        mainPanel.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentShown(java.awt.event.ComponentEvent evt) {
+                mainPanelComponentShown(evt);
+            }
+        });
+        mainPanel.setLayout(new java.awt.CardLayout());
+        jScrollPane1.setViewportView(mainPanel);
+        mainPanel.getAccessibleContext().setAccessibleName("mainPanel");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1900, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(background, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 887, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1))
         );
-
-        mainPanel.getAccessibleContext().setAccessibleName("mainPanel");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -511,6 +512,7 @@ public class MainDashboard extends javax.swing.JFrame {
     private javax.swing.JLabel infoBttb;
     private javax.swing.JLabel insuranceBttn;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPanel mainPanel;
     private javax.swing.JLabel patientPortalBttn;
     private javax.swing.JPanel toolBarJPanel;
