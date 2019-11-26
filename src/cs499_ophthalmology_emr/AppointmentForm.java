@@ -446,7 +446,7 @@ public class AppointmentForm extends javax.swing.JPanel {
         arrivalStatusComboBox.setBackground(new java.awt.Color(204, 255, 255));
         arrivalStatusComboBox.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         arrivalStatusComboBox.setForeground(new java.awt.Color(0, 0, 0));
-        arrivalStatusComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Not Arrived", "Checked-In", "Waiting", "In Exam", "Checked-Out" }));
+        arrivalStatusComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Not Arrived", "Checked-In (Waiting)", "In Exam", "Checked-Out" }));
         arrivalStatusComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 arrivalStatusComboBoxActionPerformed(evt);

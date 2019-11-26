@@ -34,7 +34,7 @@ public class HomePanel extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(57, 113, 177));
         setBorder(javax.swing.BorderFactory.createMatteBorder(8, 8, 8, 8, new java.awt.Color(253, 252, 233)));
-        setPreferredSize(new java.awt.Dimension(1900, 900));
+        setPreferredSize(new java.awt.Dimension(1900, 880));
 
         outerPanel.setBackground(new java.awt.Color(57, 113, 177));
         outerPanel.setBorder(javax.swing.BorderFactory.createMatteBorder(6, 6, 6, 6, new java.awt.Color(253, 252, 233)));

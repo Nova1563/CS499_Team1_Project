@@ -6,6 +6,7 @@
 package cs499_ophthalmology_emr;
 //import  java.awt.TextField;
 
+import java.text.DecimalFormat;
 import javax.swing.JOptionPane;
 
 /**
@@ -46,28 +47,28 @@ public class VisualAcuity extends javax.swing.JPanel {
 		dccOUComboBox.setSelectedItem(eyeTestResults.getDccOU());
 		dscODComboBox.setSelectedItem(eyeTestResults.getDscOD());
 		dscOSComboBox.setSelectedItem(eyeTestResults.getDscOS());
-		dscODComboBox.setSelectedItem(eyeTestResults.getDscOS());
+		dscOUComboBox.setSelectedItem(eyeTestResults.getDscOU());
 		
 		dccODphComboBox.setSelectedItem(eyeTestResults.getDccODph());
 		dccOSphComboBox.setSelectedItem(eyeTestResults.getDccOSph());
 		dccOUphComboBox.setSelectedItem(eyeTestResults.getDccOUph());
 		dscODphComboBox.setSelectedItem(eyeTestResults.getDscODph());
 		dscOSphComboBox.setSelectedItem(eyeTestResults.getDscOSph());
-		dscODphComboBox.setSelectedItem(eyeTestResults.getDscOSph());
+		dscOUphComboBox.setSelectedItem(eyeTestResults.getDscOUph());
 		
 		nccODComboBox.setSelectedItem(eyeTestResults.getNccOD());
 		nccOSComboBox.setSelectedItem(eyeTestResults.getNccOS());
 		nccOUComboBox.setSelectedItem(eyeTestResults.getNccOU());
 		nscODComboBox.setSelectedItem(eyeTestResults.getNscOD());
 		nscOSComboBox.setSelectedItem(eyeTestResults.getNscOS());
-		nscODComboBox.setSelectedItem(eyeTestResults.getNscOS());
+		nscOUComboBox.setSelectedItem(eyeTestResults.getNscOU());
 
 		nccODphComboBox.setSelectedItem(eyeTestResults.getNccODph());
 		nccOSphComboBox.setSelectedItem(eyeTestResults.getNccOSph());
 		nccOUphComboBox.setSelectedItem(eyeTestResults.getNccOUph());
 		nscODphComboBox.setSelectedItem(eyeTestResults.getNscODph());
 		nscOSphComboBox.setSelectedItem(eyeTestResults.getNscOSph());
-		nscODphComboBox.setSelectedItem(eyeTestResults.getNscOSph());
+		nscOUphComboBox.setSelectedItem(eyeTestResults.getNscOUph());
 		
 		sphereODTXTF.setText(eyeTestResults.getSphereOD().toString());
 		axisODTXTF.setText(eyeTestResults.getAxisOD().toString());
@@ -123,9 +124,9 @@ public class VisualAcuity extends javax.swing.JPanel {
 				}
 			}
 		}
-		if (remainingDecimalPlaces != 0)
+		if (remainingDecimalPlaces > 0)
 		{
-			isValid = false;
+			//isValid = false;
 		}
 		if (trimmedFloat.equals(""))
 		{
@@ -1232,9 +1233,11 @@ public class VisualAcuity extends javax.swing.JPanel {
 		}
 		else
 		{
-        Double sphereOS = Double.parseDouble(sphereOSTXTF.getText());
-        eyeTestResults.setSphereOS(sphereOS);
-        System.out.println("Sphere OS: " + sphereOS);
+			Double sphereOS = Double.parseDouble(sphereOSTXTF.getText());
+			//DecimalFormat dc = new DecimalFormat("0.00");
+			//String formattedText = dc.format(sphereOS);
+			//sphereODTXTF.setText(formattedText);
+			eyeTestResults.setSphereOS(sphereOS);
 		}
 
     }                                      
@@ -1284,9 +1287,15 @@ public class VisualAcuity extends javax.swing.JPanel {
 		}
 		else
 		{
-         Double prismOS = Double.parseDouble(prismOSTXTF.getText());
-         eyeTestResults.setPrismOS(prismOS);
-         System.out.println("Prism OS: " + prismOS);
+			Double prismOS = Double.parseDouble(prismOSTXTF.getText());
+		 
+			//DecimalFormat dc = new DecimalFormat("0.00");
+			//String formattedText = dc.format(prismOS);
+			//prismOSTXTF.setText(formattedText);
+			eyeTestResults.setPrismOS(prismOS);
+		 
+			System.out.println("Prism OS: " + prismOS);
+		 
 		}
     }//GEN-LAST:event_prismOSTXTFFocusLost
 
