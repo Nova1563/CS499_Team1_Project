@@ -647,8 +647,8 @@ public class AppointmentDisplay extends javax.swing.JPanel {
 
     private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
         
-        try
-        {
+        
+        
             Integer selectedCol = appointmentDisplayTable.getSelectedColumn();
 		Integer selectedRow = appointmentDisplayTable.getSelectedRow();
 		if ((selectedRow >= 0) && (selectedCol >=0))
@@ -660,12 +660,12 @@ public class AppointmentDisplay extends javax.swing.JPanel {
                     Appointment theVictim = dataBase.getAppointmentByID(apptID);
                     dataBase.delete(theVictim);
 		}
-        }
+                
+                else
+                {
+                    JOptionPane.showMessageDialog(null, "A patient must be selected!");
+                }
         
-        catch(Exception e)
-        {
-            JOptionPane.showMessageDialog(null, "A patient must be selected!");
-        }
         
         
     }//GEN-LAST:event_deleteButtonActionPerformed
