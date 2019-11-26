@@ -344,7 +344,6 @@ public class AppointmentDisplay extends javax.swing.JPanel {
 
         newAppointmentButton.setBackground(new java.awt.Color(204, 255, 255));
         newAppointmentButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        newAppointmentButton.setForeground(new java.awt.Color(0, 0, 0));
         newAppointmentButton.setText("ADD NEW APPOINTMENT");
         newAppointmentButton.setToolTipText("Add New Appointment");
         newAppointmentButton.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -390,7 +389,6 @@ public class AppointmentDisplay extends javax.swing.JPanel {
 
         deleteButton.setBackground(new java.awt.Color(204, 255, 255));
         deleteButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        deleteButton.setForeground(new java.awt.Color(0, 0, 0));
         deleteButton.setText("DELETE");
         deleteButton.setToolTipText("Delete Selected Appointment");
         deleteButton.setPreferredSize(new java.awt.Dimension(176, 33));
@@ -402,7 +400,6 @@ public class AppointmentDisplay extends javax.swing.JPanel {
 
         editButton.setBackground(new java.awt.Color(204, 255, 255));
         editButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        editButton.setForeground(new java.awt.Color(0, 0, 0));
         editButton.setText("EDIT");
         editButton.setToolTipText("Edit Selected Appointment");
         editButton.setPreferredSize(new java.awt.Dimension(176, 33));
@@ -416,7 +413,6 @@ public class AppointmentDisplay extends javax.swing.JPanel {
         appointmentDisplayTable.setBackground(new java.awt.Color(204, 204, 204));
         appointmentDisplayTable.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(32, 33, 35)));
         appointmentDisplayTable.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        appointmentDisplayTable.setForeground(new java.awt.Color(0, 0, 0));
         appointmentDisplayTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -438,7 +434,6 @@ public class AppointmentDisplay extends javax.swing.JPanel {
 
         beginExamButton.setBackground(new java.awt.Color(204, 255, 255));
         beginExamButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        beginExamButton.setForeground(new java.awt.Color(0, 0, 0));
         beginExamButton.setText("OPEN EXAMS");
         beginExamButton.setToolTipText("Open Exams for selected Patient");
         beginExamButton.setPreferredSize(new java.awt.Dimension(176, 33));
@@ -454,7 +449,6 @@ public class AppointmentDisplay extends javax.swing.JPanel {
 
         showAllButton.setBackground(new java.awt.Color(204, 255, 255));
         showAllButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        showAllButton.setForeground(new java.awt.Color(0, 0, 0));
         showAllButton.setText("SHOW ALL");
         showAllButton.setToolTipText("Show All Appointments");
         showAllButton.setPreferredSize(new java.awt.Dimension(176, 33));
@@ -466,13 +460,17 @@ public class AppointmentDisplay extends javax.swing.JPanel {
 
         displayDateTextField.setBackground(new java.awt.Color(204, 255, 255));
         displayDateTextField.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        displayDateTextField.setForeground(new java.awt.Color(0, 0, 0));
         displayDateTextField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         displayDateTextField.setText("01/02/1234");
         displayDateTextField.setToolTipText("MMDDYYYY");
         displayDateTextField.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 displayDateTextFieldFocusLost(evt);
+            }
+        });
+        displayDateTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                displayDateTextFieldActionPerformed(evt);
             }
         });
         displayDateTextField.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -531,11 +529,22 @@ public class AppointmentDisplay extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void newAppointmentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newAppointmentButtonActionPerformed
-        System.out.println("Appointment: Add new button");
+        
+        try
+        {
+                System.out.println("Appointment: Add new button");
 		mainDash.appointmentForm.loadActivePatientInfo();
 		mainDash.setActiveAppointment(null);
 		mainDash.appointmentForm.setUpFieldsForNewAppointment();
-        mainDash.showAppointmentForm();
+                mainDash.showAppointmentForm();
+        }
+        
+        catch(Exception e)
+        {
+            JOptionPane.showMessageDialog(null, "Must have an active patient!");
+        }
+        
+        
     }//GEN-LAST:event_newAppointmentButtonActionPerformed
 
     private void newAppointmentButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_newAppointmentButtonMouseClicked
@@ -545,15 +554,27 @@ public class AppointmentDisplay extends javax.swing.JPanel {
     private void editButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editButtonActionPerformed
         // TODO add your handling code here:
         System.out.println("Patient Portal: Edit button");
-		Integer selectedRow = appointmentDisplayTable.getSelectedRow();
+        
+            try
+            {
+                Integer selectedRow = appointmentDisplayTable.getSelectedRow();
 		Integer apptID = (Integer)appointmentDisplayTable.getValueAt(selectedRow, APPT_ID_COLUMN);
 		Appointment theAppointment = dataBase.getAppointmentByID(apptID);
 		mainDash.appointmentForm.loadAppointment(theAppointment);
 		mainDash.showAppointmentForm();
+            }
+            
+            catch(Exception e)
+            {
+                JOptionPane.showMessageDialog(null, "A patient must be selected!");
+            }
     }//GEN-LAST:event_editButtonActionPerformed
 
     private void beginExamButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_beginExamButtonActionPerformed
-        Integer selectedRow = appointmentDisplayTable.getSelectedRow();
+        
+        try 
+        {
+             Integer selectedRow = appointmentDisplayTable.getSelectedRow();
 		Integer apptID = (Integer)appointmentDisplayTable.getValueAt(selectedRow, APPT_ID_COLUMN);
 		Appointment theAppointment = dataBase.getAppointmentByID(apptID);
 		mainDash.setActiveAppointment(theAppointment);
@@ -572,6 +593,14 @@ public class AppointmentDisplay extends javax.swing.JPanel {
         //mainDash.visualAcuity.loadEyeTestResults();
 		//mainDash.occularExResults.loadOcularResults();
 		mainDash.showVisualAcuity();
+        }
+        
+        catch(Exception e)
+        {
+            JOptionPane.showMessageDialog(null, "A patient must be selected!");
+        }
+        
+       
     }//GEN-LAST:event_beginExamButtonActionPerformed
 
     private void displayDateTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_displayDateTextFieldFocusLost
@@ -603,18 +632,33 @@ public class AppointmentDisplay extends javax.swing.JPanel {
     }//GEN-LAST:event_showAllButtonActionPerformed
 
     private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
-        Integer selectedCol = appointmentDisplayTable.getSelectedColumn();
+        
+        try
+        {
+            Integer selectedCol = appointmentDisplayTable.getSelectedColumn();
 		Integer selectedRow = appointmentDisplayTable.getSelectedRow();
 		if ((selectedRow >= 0) && (selectedCol >=0))
 		{
-            Integer apptID = (Integer)appointmentDisplayTable.getValueAt(selectedRow, APPT_ID_COLUMN);
+                    Integer apptID = (Integer)appointmentDisplayTable.getValueAt(selectedRow, APPT_ID_COLUMN);
 
-            tableModel.removeRow(selectedRow);
+                    tableModel.removeRow(selectedRow);
 
-            Appointment theVictim = dataBase.getAppointmentByID(apptID);
-            dataBase.delete(theVictim);
+                    Appointment theVictim = dataBase.getAppointmentByID(apptID);
+                    dataBase.delete(theVictim);
 		}
+        }
+        
+        catch(Exception e)
+        {
+            JOptionPane.showMessageDialog(null, "A patient must be selected!");
+        }
+        
+        
     }//GEN-LAST:event_deleteButtonActionPerformed
+
+    private void displayDateTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_displayDateTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_displayDateTextFieldActionPerformed
 	
 	private void rightClickMenuBeginExam(java.awt.event.ActionEvent evt) {
 		try
