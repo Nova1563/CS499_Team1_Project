@@ -218,7 +218,7 @@ public class MainDashboard extends javax.swing.JFrame {
 
         mainPanel.setBackground(new java.awt.Color(153, 255, 102));
         mainPanel.setMaximumSize(new java.awt.Dimension(1000, 1000));
-        mainPanel.setPreferredSize(new java.awt.Dimension(1600, 900));
+        mainPanel.setPreferredSize(new java.awt.Dimension(1900, 900));
         mainPanel.addComponentListener(new java.awt.event.ComponentAdapter() {
             public void componentShown(java.awt.event.ComponentEvent evt) {
                 mainPanelComponentShown(evt);
@@ -227,12 +227,13 @@ public class MainDashboard extends javax.swing.JFrame {
         mainPanel.setLayout(new java.awt.CardLayout());
 
         background.setBackground(new java.awt.Color(57, 113, 177));
+        background.setPreferredSize(new java.awt.Dimension(1900, 119));
 
         toolBarJPanel.setBackground(new java.awt.Color(53, 60, 81));
         toolBarJPanel.setAutoscrolls(true);
         toolBarJPanel.setMaximumSize(new java.awt.Dimension(2147483647, 100));
         toolBarJPanel.setMinimumSize(new java.awt.Dimension(1190, 100));
-        toolBarJPanel.setPreferredSize(new java.awt.Dimension(1600, 90));
+        toolBarJPanel.setPreferredSize(new java.awt.Dimension(1900, 90));
         toolBarJPanel.setRequestFocusEnabled(false);
 
         homeBttn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cs499_ophthalmology_emr/images/homeIcon.png"))); // NOI18N
@@ -275,25 +276,25 @@ public class MainDashboard extends javax.swing.JFrame {
         helpBttn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cs499_ophthalmology_emr/images/infoIcon.png"))); // NOI18N
 
         emrToolsTxt.setBackground(new java.awt.Color(255, 255, 255));
-        emrToolsTxt.setFont(new java.awt.Font("Tahoma", 2, 14)); // NOI18N
+        emrToolsTxt.setFont(new java.awt.Font("Tahoma", 2, 18)); // NOI18N
         emrToolsTxt.setForeground(new java.awt.Color(255, 255, 255));
         emrToolsTxt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         emrToolsTxt.setText("Patient Portal");
 
         helpToolsTxt.setBackground(new java.awt.Color(255, 255, 255));
-        helpToolsTxt.setFont(new java.awt.Font("Corsiva Hebrew", 2, 14)); // NOI18N
+        helpToolsTxt.setFont(new java.awt.Font("Tahoma", 2, 18)); // NOI18N
         helpToolsTxt.setForeground(new java.awt.Color(255, 255, 255));
         helpToolsTxt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         helpToolsTxt.setText("Help Tools");
 
         homeTxt.setBackground(new java.awt.Color(255, 255, 255));
-        homeTxt.setFont(new java.awt.Font("Tahoma", 2, 14)); // NOI18N
+        homeTxt.setFont(new java.awt.Font("Tahoma", 2, 18)); // NOI18N
         homeTxt.setForeground(new java.awt.Color(255, 255, 255));
         homeTxt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         homeTxt.setText("Home");
 
         emrToolsTxt1.setBackground(new java.awt.Color(255, 255, 255));
-        emrToolsTxt1.setFont(new java.awt.Font("Tahoma", 2, 14)); // NOI18N
+        emrToolsTxt1.setFont(new java.awt.Font("Tahoma", 2, 18)); // NOI18N
         emrToolsTxt1.setForeground(new java.awt.Color(255, 255, 255));
         emrToolsTxt1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         emrToolsTxt1.setText("Insurance ");
@@ -311,7 +312,7 @@ public class MainDashboard extends javax.swing.JFrame {
         currentPatientTextBar.setOpaque(true);
 
         emrToolsTxt2.setBackground(new java.awt.Color(255, 255, 255));
-        emrToolsTxt2.setFont(new java.awt.Font("Tahoma", 2, 14)); // NOI18N
+        emrToolsTxt2.setFont(new java.awt.Font("Tahoma", 2, 18)); // NOI18N
         emrToolsTxt2.setForeground(new java.awt.Color(255, 255, 255));
         emrToolsTxt2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         emrToolsTxt2.setText("Appointments");
@@ -328,23 +329,22 @@ public class MainDashboard extends javax.swing.JFrame {
                         .addGap(60, 60, 60)
                         .addComponent(jLabel1))
                     .addComponent(homeTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(236, 236, 236)
                 .addGroup(toolBarJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(toolBarJPanelLayout.createSequentialGroup()
-                        .addGap(171, 171, 171)
                         .addComponent(patientPortalBttn)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(162, 162, 162)
                         .addComponent(appointmentBttn)
-                        .addGap(132, 132, 132))
+                        .addGap(176, 176, 176)
+                        .addComponent(insuranceBttn)
+                        .addGap(89, 89, 89))
                     .addGroup(toolBarJPanelLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(emrToolsTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(77, 77, 77)
-                        .addComponent(emrToolsTxt2, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(106, 106, 106)))
-                .addGroup(toolBarJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(insuranceBttn)
-                    .addComponent(emrToolsTxt1))
-                .addGap(101, 101, 101)
+                        .addComponent(emrToolsTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(94, 94, 94)
+                        .addComponent(emrToolsTxt2)
+                        .addGap(130, 130, 130)
+                        .addComponent(emrToolsTxt1)
+                        .addGap(68, 68, 68)))
                 .addGroup(toolBarJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(toolBarJPanelLayout.createSequentialGroup()
                         .addGap(211, 211, 211)
@@ -356,50 +356,42 @@ public class MainDashboard extends javax.swing.JFrame {
                 .addGroup(toolBarJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(toolBarJPanelLayout.createSequentialGroup()
                         .addComponent(infoBttb)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(helpBttn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(toolBarJPanelLayout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(helpToolsTxt)))
-                .addContainerGap())
+                    .addComponent(helpToolsTxt))
+                .addGap(12, 12, 12))
         );
         toolBarJPanelLayout.setVerticalGroup(
             toolBarJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(toolBarJPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(toolBarJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(helpBttn)
+                    .addComponent(infoBttb))
+                .addGap(18, 18, 18)
+                .addComponent(helpToolsTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(toolBarJPanelLayout.createSequentialGroup()
                 .addGroup(toolBarJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(toolBarJPanelLayout.createSequentialGroup()
-                        .addGroup(toolBarJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(toolBarJPanelLayout.createSequentialGroup()
-                                .addGap(23, 23, 23)
-                                .addComponent(infoBttb, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 22, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, toolBarJPanelLayout.createSequentialGroup()
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(helpBttn, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)))
-                        .addComponent(helpToolsTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(40, 40, 40)
+                        .addComponent(jLabel1))
                     .addGroup(toolBarJPanelLayout.createSequentialGroup()
-                        .addGroup(toolBarJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(toolBarJPanelLayout.createSequentialGroup()
-                                .addGap(40, 40, 40)
-                                .addComponent(jLabel1))
-                            .addGroup(toolBarJPanelLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addGroup(toolBarJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(patientPortalBttn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(homeBttn)
-                                    .addComponent(appointmentBttn)
-                                    .addComponent(insuranceBttn)
-                                    .addComponent(currentPatientTextBar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(toolBarJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(emrToolsTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(homeTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(emrToolsTxt2, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(emrToolsTxt1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(CurrentPatientLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addGap(0, 4, Short.MAX_VALUE))
+                        .addGap(16, 16, 16)
+                        .addGroup(toolBarJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(homeBttn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(currentPatientTextBar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(insuranceBttn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(appointmentBttn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(patientPortalBttn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(toolBarJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(emrToolsTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(homeTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(emrToolsTxt2, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(emrToolsTxt1)
+                            .addComponent(CurrentPatientLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(0, 17, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout backgroundLayout = new javax.swing.GroupLayout(background);
@@ -419,8 +411,8 @@ public class MainDashboard extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

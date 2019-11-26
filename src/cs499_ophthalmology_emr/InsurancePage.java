@@ -84,8 +84,6 @@ public class InsurancePage extends javax.swing.JPanel {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jPanel3 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -127,7 +125,7 @@ public class InsurancePage extends javax.swing.JPanel {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1236, Short.MAX_VALUE)
+            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1430, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -136,13 +134,6 @@ public class InsurancePage extends javax.swing.JPanel {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-
-        jScrollPane2.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(255, 0, 0)));
-        jScrollPane2.setForeground(new java.awt.Color(51, 255, 255));
-        jScrollPane2.setToolTipText("scroll");
-        jScrollPane2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-
-        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setBackground(new java.awt.Color(32, 33, 35));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -154,12 +145,12 @@ public class InsurancePage extends javax.swing.JPanel {
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Patient Name:");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, -1, 30));
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, -1, 30));
 
         patientNameTxtF.setBackground(new java.awt.Color(204, 255, 255));
         patientNameTxtF.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         patientNameTxtF.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel2.add(patientNameTxtF, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 30, 330, 30));
+        jPanel2.add(patientNameTxtF, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 20, 330, 30));
 
         inssaveBttn.setBackground(new java.awt.Color(102, 255, 102));
         inssaveBttn.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -170,31 +161,28 @@ public class InsurancePage extends javax.swing.JPanel {
                 inssaveBttnMouseClicked(evt);
             }
         });
-        jPanel2.add(inssaveBttn, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 580, 250, 50));
+        jPanel2.add(inssaveBttn, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 590, 250, 50));
 
-        jPanel4.setBackground(new java.awt.Color(51, 52, 54));
+        jPanel4.setBackground(new java.awt.Color(32, 33, 35));
         jPanel4.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 3, 2, 3, new java.awt.Color(253, 252, 233)));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cs499_ophthalmology_emr/images/emrLOGO2.png"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cs499_ophthalmology_emr/images/emrlogo3.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(26, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(17, 17, 17)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 461, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(17, 17, 17))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 399, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(36, Short.MAX_VALUE))
+            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 536, Short.MAX_VALUE)
         );
 
-        jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 40, 510, 470));
+        jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 20, 510, 540));
 
         jPanel5.setBackground(new java.awt.Color(32, 33, 35));
         jPanel5.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 3, 2, 3, new java.awt.Color(253, 252, 233)));
@@ -305,7 +293,7 @@ public class InsurancePage extends javax.swing.JPanel {
                             .addComponent(jLabel14))
                         .addGap(37, 37, 37)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(contactNumTxtF1)
+                            .addComponent(contactNumTxtF1, javax.swing.GroupLayout.DEFAULT_SIZE, 329, Short.MAX_VALUE)
                             .addComponent(effDateTxtF1)
                             .addComponent(groupNumTxtF)
                             .addComponent(phoneNumTxtF)
@@ -314,14 +302,16 @@ public class InsurancePage extends javax.swing.JPanel {
                             .addComponent(serviceChargeTXTF1))))
                 .addGap(29, 29, 29))
             .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(17, 17, 17)
                 .addComponent(jLabel7)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(jLabel7)
-                .addGap(48, 48, 48)
+                .addGap(42, 42, 42)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
                     .addComponent(insuranceProviderTxtF, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -353,48 +343,45 @@ public class InsurancePage extends javax.swing.JPanel {
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel14)
                     .addComponent(serviceChargeTXTF1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, Short.MAX_VALUE)
+                .addGap(18, 20, Short.MAX_VALUE)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel13)
                     .addComponent(amtChargedTXTF, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27))
         );
 
-        jPanel2.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 510, 580));
-
-        jPanel3.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 9, 1200, 700));
-
-        jScrollPane2.setViewportView(jPanel3);
+        jPanel2.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 680, 580));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 730, Short.MAX_VALUE))
+                .addGap(41, 41, 41)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 680, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(30, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void serviceChargeTXTF1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_serviceChargeTXTF1FocusLost
+        // TODO add your handling code here:
+        Double serviceCharge = Double.parseDouble(serviceChargeTXTF1.getText());
+        //serviceChargeTXTF1.setEditable(true);
+        serviceChargeTXTF1.setText("$" + serviceCharge); //????????????????? we'll see
+
+        System.out.println("Insurance: Service Charged: " + serviceCharge);
+    }//GEN-LAST:event_serviceChargeTXTF1FocusLost
 
     private void inssaveBttnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inssaveBttnMouseClicked
         // TODO add your handling code here:
         dataBase.save(activePatient);
     }//GEN-LAST:event_inssaveBttnMouseClicked
-
-    private void serviceChargeTXTF1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_serviceChargeTXTF1FocusLost
-        // TODO add your handling code here:
-         Double serviceCharge = Double.parseDouble(serviceChargeTXTF1.getText());
-         //serviceChargeTXTF1.setEditable(true);
-         serviceChargeTXTF1.setText("$" + serviceCharge); //????????????????? we'll see
-         
-         System.out.println("Insurance: Service Charged: " + serviceCharge);
-    }//GEN-LAST:event_serviceChargeTXTF1FocusLost
  
  
 
@@ -423,10 +410,8 @@ public class InsurancePage extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField patientNameTxtF;
     private javax.swing.JTextField phoneNumTxtF;
     private javax.swing.JTextField serviceChargeTXTF1;
