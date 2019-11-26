@@ -70,105 +70,116 @@ public class OcularExResults extends javax.swing.JPanel {
 		// OD Foveal Reflex
 		odFovealReflexRadioButtonGroup.clearSelection();
 		String odFovealReflexSelection = currentResults.getFovealReflexOD();
-		switch (odFovealReflexSelection)
+		if (odFovealReflexSelection != null)
 		{
-			case "X":
-				odFovealReflexXRadioButton1.setSelected(true);
-				break;
-			case "+":
-				odFovealReflexPlusRadioButton1.setSelected(true);
-				break;
-			case "-":
-				odFovealReflexMinusRadioButton1.setSelected(true);
-				break;
-			default:
-				System.out.println("odFovealReflexSelection error: " + odFovealReflexSelection);
+			switch (odFovealReflexSelection)
+			{
+				case "X":
+					odFovealReflexXRadioButton1.setSelected(true);
+					break;
+				case "+":
+					odFovealReflexPlusRadioButton1.setSelected(true);
+					break;
+				case "-":
+					odFovealReflexMinusRadioButton1.setSelected(true);
+					break;
+				default:
+					System.out.println("odFovealReflexSelection error: " + odFovealReflexSelection);
+			}
 		}
-	
 		// OS Foveal Reflex
 		osFovealReflexRadioButtonGroup.clearSelection();
 		
 		String osFovealReflexSelection = currentResults.getFovealReflexOs();
-		switch (osFovealReflexSelection)
+		if (osFovealReflexSelection != null)
 		{
-			case "X":
-				osFovealReflexXRadioButton.setSelected(true);
-				break;
-			case "+":
-				osFovealReflexPlusRadioButton.setSelected(true);
-				break;
-			case "-":
-				osFovealReflexMinusRadioButton.setSelected(true);
-				break;
-			default:
-				System.out.println("osFovealReflexSelection error: " + osFovealReflexSelection);
+		switch (osFovealReflexSelection)
+			{
+				case "X":
+					osFovealReflexXRadioButton.setSelected(true);
+					break;
+				case "+":
+					osFovealReflexPlusRadioButton.setSelected(true);
+					break;
+				case "-":
+					osFovealReflexMinusRadioButton.setSelected(true);
+					break;
+				default:
+					System.out.println("osFovealReflexSelection error: " + osFovealReflexSelection);
+			}
 		}
-	
 		// OD Spontaneous Veinous Pulsation
 		odSpontaneousPulsationRadioButtonGroup.clearSelection();
 		
 		String odSponVeinPulsationSelection = currentResults.getSponVeinPulsOD();
-		switch (odSponVeinPulsationSelection)
+		if (odSponVeinPulsationSelection != null)
 		{
-			case "X":
-				odSpontaneousPulsationXRadioButton1.setSelected(true);
-				break;
-			case "+":
-				odSpontaneousPulsationPlusRadioButton1.setSelected(true);
-				break;
-			case "-":
-				odSpontaneousPulsationMinusRadioButton1.setSelected(true);
-				break;
-			default:
-				System.out.println("odSponVeinPulsationSelection error: " + odSponVeinPulsationSelection);
+			switch (odSponVeinPulsationSelection)
+			{
+				case "X":
+					odSpontaneousPulsationXRadioButton1.setSelected(true);
+					break;
+				case "+":
+					odSpontaneousPulsationPlusRadioButton1.setSelected(true);
+					break;
+				case "-":
+					odSpontaneousPulsationMinusRadioButton1.setSelected(true);
+					break;
+				default:
+					System.out.println("odSponVeinPulsationSelection error: " + odSponVeinPulsationSelection);
+			}
 		}
-		
 		// OS Spontaneous Veinous Pulsation
 		osSpontaneousPulsationRadioButtonGroup.clearSelection();
 		
 		String osSponVeinPulsationSelection = currentResults.getSponVeinPulsOS();
-		switch (osSponVeinPulsationSelection)
+		if (osSponVeinPulsationSelection != null)
 		{
-			case "X":
-				osSpontaneousPulsationXRadioButton.setSelected(true);
-				break;
-			case "+":
-				osSpontaneousPulsationPlusRadioButton.setSelected(true);
-				break;
-			case "-":
-				osSpontaneousPulsationMinusRadioButton.setSelected(true);
-				break;
-			default:
-				System.out.println("osSponVeinPulsationSelection error: " + osSponVeinPulsationSelection);
+			switch (osSponVeinPulsationSelection)
+			{
+				case "X":
+					osSpontaneousPulsationXRadioButton.setSelected(true);
+					break;
+				case "+":
+					osSpontaneousPulsationPlusRadioButton.setSelected(true);
+					break;
+				case "-":
+					osSpontaneousPulsationMinusRadioButton.setSelected(true);
+					break;
+				default:
+					System.out.println("osSponVeinPulsationSelection error: " + osSponVeinPulsationSelection);
+			}
 		}
-
 		///////////////////// Fundus Options Radio Buttons //////////////////////////
 		fundusOptionRadioButtonGroup.clearSelection();
 		
 		String fundusOptionSelection = currentResults.getMethodUsed();
-		switch (fundusOptionSelection)
+		if (fundusOptionSelection != null)
 		{
-			case "Not Performed":
-				fundusEvaluationNotPerformedRadioButton.setSelected(true);
-				break;
-			case "Undilated Eval":
-				undilatedEvalRadioButton.setSelected(true);
-				break;
-			case "Small Pupil BIO":
-				smallPupilBIORadioButton.setSelected(true);
-				break;
-			case "Optomap Imaging":
-				optomapImagingRadioButton.setSelected(true);
-				break;
-			case "Dilated Eval":
-				dilatedEvalRadioButton.setSelected(true);
-				break;
-			case "DFE with Optomap":
-				dfeWithOptomapRadioButton.setSelected(true);
-				break;
-			default:
-				System.out.println("fundusOptionSelection error: " + fundusOptionSelection);
-						
+			switch (fundusOptionSelection)
+			{
+				case "Not Performed":
+					fundusEvaluationNotPerformedRadioButton.setSelected(true);
+					break;
+				case "Undilated Eval":
+					undilatedEvalRadioButton.setSelected(true);
+					break;
+				case "Small Pupil BIO":
+					smallPupilBIORadioButton.setSelected(true);
+					break;
+				case "Optomap Imaging":
+					optomapImagingRadioButton.setSelected(true);
+					break;
+				case "Dilated Eval":
+					dilatedEvalRadioButton.setSelected(true);
+					break;
+				case "DFE with Optomap":
+					dfeWithOptomapRadioButton.setSelected(true);
+					break;
+				default:
+					System.out.println("fundusOptionSelection error: " + fundusOptionSelection);
+
+			}
 		}
 		///////////////////// Dilation Radio Buttons and Combobox//////////////////////////
 		
@@ -1748,7 +1759,7 @@ public class OcularExResults extends javax.swing.JPanel {
         dilationAgentComboBox.setBackground(new java.awt.Color(32, 33, 35));
         dilationAgentComboBox.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         dilationAgentComboBox.setForeground(new java.awt.Color(255, 255, 255));
-        dilationAgentComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Dilation Agent 1", "Another One" }));
+        dilationAgentComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None", "Tropicamide 1%" }));
         dilationAgentComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 dilationAgentComboBoxActionPerformed(evt);
@@ -1794,7 +1805,7 @@ public class OcularExResults extends javax.swing.JPanel {
         fundusOptionRadioButtonGroup.add(fundusEvaluationNotPerformedRadioButton);
         fundusEvaluationNotPerformedRadioButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         fundusEvaluationNotPerformedRadioButton.setForeground(new java.awt.Color(255, 255, 255));
-        fundusEvaluationNotPerformedRadioButton.setText("Not Perfromed");
+        fundusEvaluationNotPerformedRadioButton.setText("Not Perfomed");
         fundusEvaluationNotPerformedRadioButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 fundusEvaluationNotPerformedRadioButtonActionPerformed(evt);

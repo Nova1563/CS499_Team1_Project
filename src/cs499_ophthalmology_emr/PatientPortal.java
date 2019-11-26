@@ -263,7 +263,9 @@ public class PatientPortal extends javax.swing.JPanel {
 
         deletePatientButton.setBackground(new java.awt.Color(255, 0, 51));
         deletePatientButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+
         deletePatientButton.setForeground(new java.awt.Color(253, 252, 233));
+
         deletePatientButton.setText("DELETE");
         deletePatientButton.setToolTipText("Delete Patient");
         deletePatientButton.setPreferredSize(new java.awt.Dimension(176, 33));
@@ -377,7 +379,7 @@ public class PatientPortal extends javax.swing.JPanel {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addContainerGap(13, Short.MAX_VALUE))
         );
 
         selectPatientButton.setBackground(new java.awt.Color(102, 153, 255));
@@ -389,6 +391,11 @@ public class PatientPortal extends javax.swing.JPanel {
         selectPatientButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 selectPatientButtonMouseClicked(evt);
+            }
+        });
+        selectPatientButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                selectPatientButtonActionPerformed(evt);
             }
         });
 
@@ -531,12 +538,23 @@ public class PatientPortal extends javax.swing.JPanel {
     }//GEN-LAST:event_jLabel4MouseClicked
 
     private void selectPatientButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_selectPatientButtonMouseClicked
-        System.out.println("Patient Portal: Make active patient button");
+        
+        try 
+        {
+                System.out.println("Patient Portal: Make active patient button");
 		Integer selectedRow = patientPortalTable.getSelectedRow();
 		Integer patientID = (Integer)patientPortalTable.getValueAt(selectedRow, PATIENT_ID_COLUMN);
 		Patient activePatient = dataBase.getPatientByID(patientID);
 		mainDash.setActivePatient(activePatient);
 		//mainDash.currentPatientTextBar.setText(activePatient.getName());
+        }
+        
+        catch(Exception e)
+        {
+            JOptionPane.showMessageDialog(null, "A patient must be selected!");
+        }
+        
+        
     }//GEN-LAST:event_selectPatientButtonMouseClicked
 
     private void makeCurrentPatientMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_makeCurrentPatientMenuItemActionPerformed
@@ -561,6 +579,10 @@ public class PatientPortal extends javax.swing.JPanel {
 				rightClickMenu.setVisible(true);
 		}*/
     }//GEN-LAST:event_patientPortalTableMouseClicked
+
+    private void selectPatientButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selectPatientButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_selectPatientButtonActionPerformed
 	
 	private void rightClickMenuMakeActivePatient(java.awt.event.ActionEvent evt)
 	{
@@ -577,16 +599,19 @@ public class PatientPortal extends javax.swing.JPanel {
 	
 	private void rightClickMenuEditPatient(java.awt.event.ActionEvent evt)
 	{
+		selectPatientButtonMouseClicked(null);
 		editPatientButtonActionPerformed(evt);
 	}
 	
 	private void rightClickMenuDeletePatient(java.awt.event.ActionEvent evt)
 	{
+		selectPatientButtonMouseClicked(null);
 		deletePatientButtonActionPerformed(evt);
 	}
 	
 	private void rightClickMenuViewPatient(java.awt.event.ActionEvent evt)
 	{
+		selectPatientButtonMouseClicked(null);
 		viewPatientInfoMenuItemActionPerformed(evt);
 	}
 

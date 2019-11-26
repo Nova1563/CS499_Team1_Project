@@ -591,16 +591,7 @@ public class AppointmentDisplay extends javax.swing.JPanel {
 		Integer patientID = theAppointment.getPatientID();
 		Patient thePatient = dataBase.getPatientByID(patientID);
 		mainDash.setActivePatient(thePatient);
-		
-        EyeTestResults theResults = dataBase.getExamResultsByApptID(apptID);
-		if (theResults == null)
-		{
-			dataBase.getNewEyeTestResults(patientID, apptID);
-		}
-		mainDash.setActiveResults(theResults);
-		
-        //mainDash.visualAcuity.loadEyeTestResults();
-		//mainDash.occularExResults.loadOcularResults();
+	
 		mainDash.showVisualAcuity();
         }
         

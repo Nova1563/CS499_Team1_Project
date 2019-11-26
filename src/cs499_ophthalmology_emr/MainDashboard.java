@@ -127,6 +127,7 @@ public class MainDashboard extends javax.swing.JFrame {
 
 	public void showPatientPage()
 	{
+		viewPatientPage.loadAllPatientInfo(activePatient);
 		hideAllPanelComponents(mainPanel);
 		viewPatientPage.setVisible(true);
 

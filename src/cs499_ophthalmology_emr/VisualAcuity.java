@@ -33,7 +33,7 @@ public class VisualAcuity extends javax.swing.JPanel {
         activeAppointment = mainDash.getActiveAppointment();
 		Integer apptID = activeAppointment.getApptID();
 		
-		eyeTestResults = dataBase.getExamResultsByExamID(apptID);
+		eyeTestResults = dataBase.getExamResultsByApptID(apptID);
 		if (eyeTestResults == null)
 			eyeTestResults = dataBase.getNewEyeTestResults(activePatient.getPatientID(), activeAppointment.getApptID());
 		mainDash.setActiveResults(eyeTestResults);
