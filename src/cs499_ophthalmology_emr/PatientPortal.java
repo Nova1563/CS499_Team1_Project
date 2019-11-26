@@ -521,6 +521,8 @@ public class PatientPortal extends javax.swing.JPanel {
 
     private void addPatientButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addPatientButtonActionPerformed
         System.out.println("Patient Portal: Add button");
+		mainDash.setActivePatient(null);
+		mainDash.patientForm.loadPatientInfo(null);
 		mainDash.showPatientForm();
     }//GEN-LAST:event_addPatientButtonActionPerformed
 

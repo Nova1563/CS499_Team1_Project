@@ -564,7 +564,7 @@ public class AppointmentDisplay extends javax.swing.JPanel {
         
         catch(Exception e)
         {
-            JOptionPane.showMessageDialog(null, "Must have an active patient!");
+            JOptionPane.showMessageDialog(null, "Select an active patient from Patient Portal to continue.");
         }
         
         
@@ -576,7 +576,7 @@ public class AppointmentDisplay extends javax.swing.JPanel {
 
     private void editButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editButtonActionPerformed
         // TODO add your handling code here:
-        System.out.println("Patient Portal: Edit button");
+        System.out.println("AppointmentDisplay: Edit button");
         
             try
             {
@@ -589,7 +589,7 @@ public class AppointmentDisplay extends javax.swing.JPanel {
             
             catch(Exception e)
             {
-                JOptionPane.showMessageDialog(null, "A patient must be selected!");
+                JOptionPane.showMessageDialog(null, "Select an appointment to continue.");
             }
     }//GEN-LAST:event_editButtonActionPerformed
 
@@ -598,20 +598,20 @@ public class AppointmentDisplay extends javax.swing.JPanel {
         try 
         {
              Integer selectedRow = appointmentDisplayTable.getSelectedRow();
-		Integer apptID = (Integer)appointmentDisplayTable.getValueAt(selectedRow, APPT_ID_COLUMN);
-		Appointment theAppointment = dataBase.getAppointmentByID(apptID);
-		mainDash.setActiveAppointment(theAppointment);
+			Integer apptID = (Integer)appointmentDisplayTable.getValueAt(selectedRow, APPT_ID_COLUMN);
+			Appointment theAppointment = dataBase.getAppointmentByID(apptID);
+			mainDash.setActiveAppointment(theAppointment);
 		
-		Integer patientID = theAppointment.getPatientID();
-		Patient thePatient = dataBase.getPatientByID(patientID);
-		mainDash.setActivePatient(thePatient);
+			Integer patientID = theAppointment.getPatientID();
+			Patient thePatient = dataBase.getPatientByID(patientID);
+			mainDash.setActivePatient(thePatient);
 	
-		mainDash.showVisualAcuity();
+			mainDash.showVisualAcuity();
         }
         
         catch(Exception e)
         {
-            JOptionPane.showMessageDialog(null, "A patient must be selected!");
+            JOptionPane.showMessageDialog(null, "Select an appointment to continue.");
         }
         
        
@@ -625,6 +625,13 @@ public class AppointmentDisplay extends javax.swing.JPanel {
 			Integer sqlCompatibleDate = unformatDate(displayDateTextField.getText());
 			ArrayList<Appointment> theDatesAppts = dataBase.getAppointmentListByDate(sqlCompatibleDate);
 			loadTableFromList(theDatesAppts);
+			Integer dateInt = unformatDate(displayDateTextField.getText());
+			String theDate = formatDate(dateInt.toString());
+			displayDateTextField.setText(theDate);
+		}
+		else
+		{
+			displayDateTextField.setText("MMDDYYYY");
 		}
     }//GEN-LAST:event_displayDateTextFieldFocusLost
 
@@ -638,6 +645,7 @@ public class AppointmentDisplay extends javax.swing.JPanel {
         try
 		{
 			loadTableAllEntries();
+			displayDateTextField.setText("All appointments");
 		}
 		catch(NullPointerException e)
 		{
@@ -663,7 +671,7 @@ public class AppointmentDisplay extends javax.swing.JPanel {
                 
                 else
                 {
-                    JOptionPane.showMessageDialog(null, "A patient must be selected!");
+                    JOptionPane.showMessageDialog(null, "Select an active patient from Patient Portal to continue.");
                 }
         
         

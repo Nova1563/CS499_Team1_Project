@@ -32,7 +32,7 @@ public class MainDashboard extends javax.swing.JFrame {
      */
     public MainDashboard() {
     initComponents();
-
+	currentPatientTextBar.setText("No active patient.");
 
     patientPortal       = new PatientPortal(this);
     appointmentPanel    = new AppointmentDisplay(this);
@@ -71,7 +71,10 @@ public class MainDashboard extends javax.swing.JFrame {
 	public void setActivePatient(Patient thePatient)
 	{
 		activePatient = thePatient;
-		currentPatientTextBar.setText(activePatient.getName());
+		if (activePatient != null)
+			currentPatientTextBar.setText(activePatient.getName());
+		else
+			currentPatientTextBar.setText("No active patient");
 	}
 	
 	public Patient getActivePatient()
@@ -153,7 +156,7 @@ public class MainDashboard extends javax.swing.JFrame {
         
             catch(Exception e)
             {
-                JOptionPane.showMessageDialog(null, "Must have an active patient!");
+                JOptionPane.showMessageDialog(null, "Select an active patient from Patient Portal to continue.");
             }
                
 	}

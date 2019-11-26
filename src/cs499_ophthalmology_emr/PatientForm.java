@@ -29,27 +29,35 @@ public class PatientForm extends javax.swing.JPanel {
 	
 	public void loadPatientInfo(Patient thePatient)
 	{
-		activePatient = thePatient;
-		addressTextField.setText(thePatient.getAddress());
-		ageTextField.setText(thePatient.getAge().toString());
-		contractTextField.setText(thePatient.getInsContractNo());
-		copayTextField.setText(String.valueOf(thePatient.getInsCoPayAmount()));
-		dobTextField.setText(formatDate(thePatient.getDateOfBirth().toString()));
-		effectiveTextField.setText(formatDate(thePatient.getInsEffectiveDate().toString()));
-		emailTextField.setText(thePatient.getEmailAddress());
-		emergName.setText(thePatient.getEmergContactName());
-		emergPhone.setText(thePatient.getEmergContactPhone());
-		genderTextField.setText(thePatient.getGender());
-		groupTextField.setText(thePatient.getInsGroupNo());
-		homePhoneTextField.setText(thePatient.getHomePhone());
-		mobilePhoneTextField.setText(thePatient.getMobilePhone());
-		nameTextField.setText(thePatient.getName());
-		providerAddrTextField.setText(thePatient.getInsProviderAddr());
-		providerPhoneTextField.setText(thePatient.getInsProviderPhone());
-		providerTextField.setText(thePatient.getInsProvider());
-		ssnTextField.setText(thePatient.getSsn());
-		titleTextField.setText(thePatient.getTitle());
-		workPhoneTextField.setText(thePatient.getWorkPhone());
+		if (thePatient != null)
+		{
+			activePatient = thePatient;
+			addressTextField.setText(thePatient.getAddress());
+			ageTextField.setText(thePatient.getAge().toString());
+			contractTextField.setText(thePatient.getInsContractNo());
+			copayTextField.setText(String.valueOf(thePatient.getInsCoPayAmount()));
+			dobTextField.setText(formatDate(thePatient.getDateOfBirth().toString()));
+			effectiveTextField.setText(formatDate(thePatient.getInsEffectiveDate().toString()));
+			emailTextField.setText(thePatient.getEmailAddress());
+			emergName.setText(thePatient.getEmergContactName());
+			emergPhone.setText(thePatient.getEmergContactPhone());
+			genderTextField.setText(thePatient.getGender());
+			groupTextField.setText(thePatient.getInsGroupNo());
+			homePhoneTextField.setText(thePatient.getHomePhone());
+			mobilePhoneTextField.setText(thePatient.getMobilePhone());
+			nameTextField.setText(thePatient.getName());
+			providerAddrTextField.setText(thePatient.getInsProviderAddr());
+			providerPhoneTextField.setText(thePatient.getInsProviderPhone());
+			providerTextField.setText(thePatient.getInsProvider());
+			ssnTextField.setText(thePatient.getSsn());
+			titleTextField.setText(thePatient.getTitle());
+			workPhoneTextField.setText(thePatient.getWorkPhone());
+		}
+		else
+		{
+			activePatient = null;
+			clearButtonActionPerformed(null);
+		}
 	}
 	
 	public Boolean savePatientInfo()
@@ -776,15 +784,26 @@ public class PatientForm extends javax.swing.JPanel {
 
     private void clearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearButtonActionPerformed
         System.out.println("New Patient Form: Clear Button");
-		for(Component itsComp : this.getComponents())
-		{
-			System.out.println(itsComp.getClass().getName());
-			if (itsComp.getClass().getName().equals("javax.swing.JTextField"))
-			{
-				((JTextComponent)itsComp).setText(" ");
-			}
-		}
-		activePatient = null;
+		addressTextField.setText("");
+		ageTextField.setText("");
+		contractTextField.setText("");
+		copayTextField.setText("");
+		dobTextField.setText("");
+		effectiveTextField.setText("");
+		emailTextField.setText("");
+		emergName.setText("");
+		emergPhone.setText("");
+		genderTextField.setText("");
+		groupTextField.setText("");
+		homePhoneTextField.setText("");
+		mobilePhoneTextField.setText("");
+		nameTextField.setText("");
+		providerAddrTextField.setText("");
+		providerPhoneTextField.setText("");
+		providerTextField.setText("");
+		ssnTextField.setText("");
+		titleTextField.setText("");
+		workPhoneTextField.setText("");
     }//GEN-LAST:event_clearButtonActionPerformed
 
     private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelButtonActionPerformed
