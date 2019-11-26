@@ -4,9 +4,7 @@
  * and open the template in the editor.
  */
 package cs499_ophthalmology_emr;
-//import  java.awt.TextField;
 
-import java.text.DecimalFormat;
 import javax.swing.JOptionPane;
 
 /**

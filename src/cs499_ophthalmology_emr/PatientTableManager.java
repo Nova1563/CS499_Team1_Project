@@ -3,7 +3,6 @@ package cs499_ophthalmology_emr;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.HashSet;
 
 
 /**

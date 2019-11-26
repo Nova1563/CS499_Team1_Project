@@ -5,8 +5,6 @@
  */
 package cs499_ophthalmology_emr;
 
-import java.util.ArrayList;
-
 /**
  *
  * @author angela

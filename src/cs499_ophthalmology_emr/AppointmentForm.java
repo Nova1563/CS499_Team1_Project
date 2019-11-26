@@ -7,7 +7,6 @@ package cs499_ophthalmology_emr;
 
 import java.awt.Component;
 import javax.swing.JComboBox;
-import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 import javax.swing.text.JTextComponent;
 
