@@ -474,10 +474,7 @@ public class PatientPortal extends javax.swing.JPanel {
     }//GEN-LAST:event_editPatientButtonActionPerformed
 
     private void deletePatientButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deletePatientButtonActionPerformed
-        
-        
-        try 
-        {
+
             if (evt != null)
 			System.out.println("Patient Portal: Delete button");
 		else
@@ -494,14 +491,11 @@ public class PatientPortal extends javax.swing.JPanel {
 			Patient theVictim = dataBase.getPatientByID(patientID);
 			dataBase.delete(theVictim);
 		}
-        }
-        
-        catch(Exception e)
-        {
-            JOptionPane.showMessageDialog(null, "A patient must be selected!");
-        }
-		
-		
+		else
+		{
+			JOptionPane.showMessageDialog(null, "A patient must be selected!");
+		}
+
     }//GEN-LAST:event_deletePatientButtonActionPerformed
 
     private void deletePatientButtonKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_deletePatientButtonKeyPressed

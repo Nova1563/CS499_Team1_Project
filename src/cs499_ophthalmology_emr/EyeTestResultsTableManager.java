@@ -31,6 +31,7 @@ public class EyeTestResultsTableManager {
 										+ "dccOD		Text,\n"
 										+ "dccODph		Text,\n"
 										+ "dscOD		Text,\n"
+										+ "dscODph		Text,\n"
 										+ "dccOU		Text,\n"
 										+ "dccOUph		Text,\n"
 										+ "dscOU		Text,\n"
@@ -43,6 +44,7 @@ public class EyeTestResultsTableManager {
 										+ "nccOD		Text,\n"
 										+ "nccODph		Text,\n"
 										+ "nscOD		Text,\n"
+										+ "nscODph		Text,\n"
 										+ "nccOU		Text,\n"
 										+ "nccOUph		Text,\n"
 										+ "nscOU		Text,\n"
@@ -217,6 +219,7 @@ public class EyeTestResultsTableManager {
 					+ "\tdccOD: " + queryResults.getString("dccOD")
 					+ "\tdccODph: " + queryResults.getString("dccODph")
 					+ "\tdscOD: " + queryResults.getString("dscOD")
+					+ "\tdscODph: " + queryResults.getString("dscODph")
 					+ "\tdccOU: " + queryResults.getString("dccOU")
 					+ "\tdccOUph: " + queryResults.getString("dccOUph")
 					+ "\tdscOU: " + queryResults.getString("dscOU")
@@ -229,6 +232,7 @@ public class EyeTestResultsTableManager {
 					+ "\tnccOD: " + queryResults.getString("nccOD")
 					+ "\tnccODph: " + queryResults.getString("nccODph")
 					+ "\tnscOD: " + queryResults.getString("nscOD")
+					+ "\tnscODph: " + queryResults.getString("nscODph")
 					+ "\tnccOU: " + queryResults.getString("nccOU")
 					+ "\tnccOUph: " + queryResults.getString("nccOUph")
 					+ "\tnscOU: " + queryResults.getString("nscOU")
@@ -462,7 +466,9 @@ public class EyeTestResultsTableManager {
 						+ "addOS = ? ,"		//
 						+ "addOD = ? ,"		//
 						+ "opticNerveOS = ? ,"
-						+ "nerveFiberLayerOS = ? "
+						+ "nerveFiberLayerOS = ?, "
+						+ "nscODph = ? ,"
+						+ "dscODph = ? "
 						+ "WHERE resultsID = ? ";
 		
 		try
@@ -589,7 +595,9 @@ public class EyeTestResultsTableManager {
 			theSQLstatement.setDouble(118, theResults.getAddOD());
 			theSQLstatement.setString(119 , theResults.getOpticNerveOS());		 // opticNerveOS
 			theSQLstatement.setString(120 , theResults.getNerveFiberLayerOS());		 // nerveFiberLayerOS
-			theSQLstatement.setInt(121, examID);
+			theSQLstatement.setString(121 , theResults.getNscODph());
+			theSQLstatement.setString(122 , theResults.getDscODph());
+			theSQLstatement.setInt(123, examID);
 			
 			theSQLstatement.executeUpdate();
 		}
@@ -739,6 +747,8 @@ public class EyeTestResultsTableManager {
 			theFoundExam.setGlialRemOS(theResults.getBoolean("glialRemOS"));
 			theFoundExam.setOpticNerveOS(theResults.getString("opticNerveOS"));
 			theFoundExam.setNerveFiberLayerOS(theResults.getString("nerveFiberLayerOS"));
+			theFoundExam.setNscODph(theResults.getString("nscODph"));
+			theFoundExam.setDscODph(theResults.getString("dscODph"));
 		}
 		catch(SQLException e)
 		{
@@ -892,6 +902,8 @@ public class EyeTestResultsTableManager {
 			theFoundExam.setGlialRemOS(theResults.getBoolean("glialRemOS"));
 			theFoundExam.setOpticNerveOS(theResults.getString("opticNerveOS"));
 			theFoundExam.setNerveFiberLayerOS(theResults.getString("nerveFiberLayerOS"));
+			theFoundExam.setNscODph(theResults.getString("nscODph"));
+			theFoundExam.setDscODph(theResults.getString("dscODph"));
 		}
 		catch(SQLException e)
 		{
