@@ -238,9 +238,6 @@ public class PatientForm extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        saveButton = new javax.swing.JButton();
-        clearButton = new javax.swing.JButton();
-        cancelButton = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -287,39 +284,12 @@ public class PatientForm extends javax.swing.JPanel {
         providerPhoneTextField = new javax.swing.JTextField();
         jLabel22 = new javax.swing.JLabel();
         providerAddrTextField = new javax.swing.JTextField();
+        saveButton = new javax.swing.JButton();
+        cancelButton = new javax.swing.JButton();
+        clearButton = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(57, 113, 177));
         setPreferredSize(new java.awt.Dimension(1900, 900));
-
-        saveButton.setBackground(new java.awt.Color(102, 255, 102));
-        saveButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        saveButton.setForeground(new java.awt.Color(0, 0, 0));
-        saveButton.setText("SUBMIT");
-        saveButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                saveButtonActionPerformed(evt);
-            }
-        });
-
-        clearButton.setBackground(new java.awt.Color(255, 0, 51));
-        clearButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        clearButton.setForeground(new java.awt.Color(0, 0, 0));
-        clearButton.setText("CLEAR ALL");
-        clearButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                clearButtonActionPerformed(evt);
-            }
-        });
-
-        cancelButton.setBackground(new java.awt.Color(255, 0, 51));
-        cancelButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        cancelButton.setForeground(new java.awt.Color(0, 0, 0));
-        cancelButton.setText("CANCEL");
-        cancelButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cancelButtonActionPerformed(evt);
-            }
-        });
 
         jPanel2.setBackground(new java.awt.Color(32, 33, 35));
         jPanel2.setPreferredSize(new java.awt.Dimension(1900, 66));
@@ -340,7 +310,7 @@ public class PatientForm extends javax.swing.JPanel {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel14)
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel1.setBackground(new java.awt.Color(32, 33, 35));
@@ -349,36 +319,29 @@ public class PatientForm extends javax.swing.JPanel {
 
         addressTextField.setBackground(new java.awt.Color(204, 255, 255));
         addressTextField.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        addressTextField.setForeground(new java.awt.Color(0, 0, 0));
 
         homePhoneTextField.setBackground(new java.awt.Color(204, 255, 255));
         homePhoneTextField.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        homePhoneTextField.setForeground(new java.awt.Color(0, 0, 0));
         homePhoneTextField.setToolTipText("Enter Patient's Home Number");
 
         workPhoneTextField.setBackground(new java.awt.Color(204, 255, 255));
         workPhoneTextField.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        workPhoneTextField.setForeground(new java.awt.Color(0, 0, 0));
         workPhoneTextField.setToolTipText("Enter Patient's Work Phone Number");
 
         mobilePhoneTextField.setBackground(new java.awt.Color(204, 255, 255));
         mobilePhoneTextField.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        mobilePhoneTextField.setForeground(new java.awt.Color(0, 0, 0));
         mobilePhoneTextField.setToolTipText("Enter Patient's Mobile Contact");
 
         emailTextField.setBackground(new java.awt.Color(204, 255, 255));
         emailTextField.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        emailTextField.setForeground(new java.awt.Color(0, 0, 0));
         emailTextField.setToolTipText("Enter Patient Email Address");
 
         ssnTextField.setBackground(new java.awt.Color(204, 255, 255));
         ssnTextField.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        ssnTextField.setForeground(new java.awt.Color(0, 0, 0));
         ssnTextField.setToolTipText("SSS-SS-SSSS");
 
         emergName.setBackground(new java.awt.Color(204, 255, 255));
         emergName.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        emergName.setForeground(new java.awt.Color(0, 0, 0));
         emergName.setToolTipText("Enter Emergency Contact");
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -432,7 +395,6 @@ public class PatientForm extends javax.swing.JPanel {
 
         titleTextField.setBackground(new java.awt.Color(204, 255, 255));
         titleTextField.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        titleTextField.setForeground(new java.awt.Color(0, 0, 0));
         titleTextField.setToolTipText("(Mr./Mrs./Ms/Miss/Jr./Sr.)");
         titleTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -446,7 +408,6 @@ public class PatientForm extends javax.swing.JPanel {
 
         genderTextField.setBackground(new java.awt.Color(204, 255, 255));
         genderTextField.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        genderTextField.setForeground(new java.awt.Color(0, 0, 0));
         genderTextField.setToolTipText("(Male/Female/They)");
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -455,7 +416,6 @@ public class PatientForm extends javax.swing.JPanel {
 
         ageTextField.setBackground(new java.awt.Color(204, 255, 255));
         ageTextField.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        ageTextField.setForeground(new java.awt.Color(0, 0, 0));
         ageTextField.setToolTipText("Enter Patient's");
         ageTextField.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
@@ -465,7 +425,6 @@ public class PatientForm extends javax.swing.JPanel {
 
         dobTextField.setBackground(new java.awt.Color(204, 255, 255));
         dobTextField.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        dobTextField.setForeground(new java.awt.Color(0, 0, 0));
         dobTextField.setToolTipText("Enter Patient's Date of Birth");
         dobTextField.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
@@ -480,7 +439,6 @@ public class PatientForm extends javax.swing.JPanel {
 
         emergPhone.setBackground(new java.awt.Color(204, 255, 255));
         emergPhone.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        emergPhone.setForeground(new java.awt.Color(0, 0, 0));
         emergPhone.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 emergPhoneActionPerformed(evt);
@@ -504,7 +462,6 @@ public class PatientForm extends javax.swing.JPanel {
 
         providerTextField.setBackground(new java.awt.Color(204, 255, 255));
         providerTextField.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        providerTextField.setForeground(new java.awt.Color(0, 0, 0));
         providerTextField.setToolTipText("Enter Inusrance Provider");
 
         jLabel17.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -513,7 +470,6 @@ public class PatientForm extends javax.swing.JPanel {
 
         contractTextField.setBackground(new java.awt.Color(204, 255, 255));
         contractTextField.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        contractTextField.setForeground(new java.awt.Color(0, 0, 0));
         contractTextField.setToolTipText("Enter Contact Number");
 
         jLabel18.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -522,7 +478,6 @@ public class PatientForm extends javax.swing.JPanel {
 
         groupTextField.setBackground(new java.awt.Color(204, 255, 255));
         groupTextField.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        groupTextField.setForeground(new java.awt.Color(0, 0, 0));
         groupTextField.setToolTipText("Enter patient's Group Number");
 
         jLabel19.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -531,7 +486,6 @@ public class PatientForm extends javax.swing.JPanel {
 
         effectiveTextField.setBackground(new java.awt.Color(204, 255, 255));
         effectiveTextField.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        effectiveTextField.setForeground(new java.awt.Color(0, 0, 0));
         effectiveTextField.setToolTipText("MMDDYYYYY");
         effectiveTextField.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
@@ -545,7 +499,6 @@ public class PatientForm extends javax.swing.JPanel {
 
         copayTextField.setBackground(new java.awt.Color(204, 255, 255));
         copayTextField.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        copayTextField.setForeground(new java.awt.Color(0, 0, 0));
         copayTextField.setToolTipText("Enter Co-Pay Amount");
         copayTextField.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
@@ -559,7 +512,6 @@ public class PatientForm extends javax.swing.JPanel {
 
         providerPhoneTextField.setBackground(new java.awt.Color(204, 255, 255));
         providerPhoneTextField.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        providerPhoneTextField.setForeground(new java.awt.Color(0, 0, 0));
         providerPhoneTextField.setToolTipText("Enter Insurance Provider's Phone Number");
 
         jLabel22.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -568,8 +520,25 @@ public class PatientForm extends javax.swing.JPanel {
 
         providerAddrTextField.setBackground(new java.awt.Color(204, 255, 255));
         providerAddrTextField.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        providerAddrTextField.setForeground(new java.awt.Color(0, 0, 0));
         providerAddrTextField.setToolTipText("Enter Insurance Address");
+
+        saveButton.setBackground(new java.awt.Color(102, 255, 102));
+        saveButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        saveButton.setText("SUBMIT");
+        saveButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                saveButtonActionPerformed(evt);
+            }
+        });
+
+        cancelButton.setBackground(new java.awt.Color(255, 0, 51));
+        cancelButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        cancelButton.setText("CANCEL");
+        cancelButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -606,6 +575,12 @@ public class PatientForm extends javax.swing.JPanel {
                         .addContainerGap()
                         .addComponent(jLabel15)))
                 .addContainerGap(256, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(cancelButton, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(63, 63, 63)
+                .addComponent(saveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(54, 54, 54))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -640,7 +615,11 @@ public class PatientForm extends javax.swing.JPanel {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel22)
                     .addComponent(providerAddrTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(103, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(saveButton)
+                    .addComponent(cancelButton))
+                .addGap(26, 26, 26))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -668,7 +647,6 @@ public class PatientForm extends javax.swing.JPanel {
                         .addGap(54, 54, 54)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(emergPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(emergName, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(ssnTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(mobilePhoneTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(workPhoneTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -679,8 +657,9 @@ public class PatientForm extends javax.swing.JPanel {
                             .addComponent(genderTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(ageTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(dobTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(emailTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 354, Short.MAX_VALUE)
+                            .addComponent(emailTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(emergName, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 351, Short.MAX_VALUE)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(853, 853, 853))
         );
@@ -747,20 +726,25 @@ public class PatientForm extends javax.swing.JPanel {
 
         jScrollPane1.setViewportView(jPanel1);
 
+        clearButton.setBackground(new java.awt.Color(255, 0, 51));
+        clearButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        clearButton.setText("CLEAR ALL");
+        clearButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clearButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1900, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addGap(260, 260, 260)
+                .addGap(714, 714, 714)
                 .addComponent(clearButton, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 422, Short.MAX_VALUE)
-                .addComponent(cancelButton, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(392, 392, 392)
-                .addComponent(saveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(307, 307, 307))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -768,42 +752,15 @@ public class PatientForm extends javax.swing.JPanel {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(46, 46, 46)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 751, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(clearButton)
-                    .addComponent(cancelButton)
-                    .addComponent(saveButton))
-                .addGap(38, 38, 38))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(clearButton)
+                .addContainerGap(33, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void titleTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_titleTextFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_titleTextFieldActionPerformed
-
-    private void clearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearButtonActionPerformed
-        System.out.println("New Patient Form: Clear Button");
-		addressTextField.setText("");
-		ageTextField.setText("");
-		contractTextField.setText("");
-		copayTextField.setText("");
-		dobTextField.setText("");
-		effectiveTextField.setText("");
-		emailTextField.setText("");
-		emergName.setText("");
-		emergPhone.setText("");
-		genderTextField.setText("");
-		groupTextField.setText("");
-		homePhoneTextField.setText("");
-		mobilePhoneTextField.setText("");
-		nameTextField.setText("");
-		providerAddrTextField.setText("");
-		providerPhoneTextField.setText("");
-		providerTextField.setText("");
-		ssnTextField.setText("");
-		titleTextField.setText("");
-		workPhoneTextField.setText("");
-    }//GEN-LAST:event_clearButtonActionPerformed
 
     private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelButtonActionPerformed
         for(Component itsComp : this.getComponents())
@@ -910,6 +867,30 @@ public class PatientForm extends javax.swing.JPanel {
     private void dobTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dobTextFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_dobTextFieldActionPerformed
+
+    private void clearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearButtonActionPerformed
+        System.out.println("New Patient Form: Clear Button");
+        addressTextField.setText("");
+        ageTextField.setText("");
+        contractTextField.setText("");
+        copayTextField.setText("");
+        dobTextField.setText("");
+        effectiveTextField.setText("");
+        emailTextField.setText("");
+        emergName.setText("");
+        emergPhone.setText("");
+        genderTextField.setText("");
+        groupTextField.setText("");
+        homePhoneTextField.setText("");
+        mobilePhoneTextField.setText("");
+        nameTextField.setText("");
+        providerAddrTextField.setText("");
+        providerPhoneTextField.setText("");
+        providerTextField.setText("");
+        ssnTextField.setText("");
+        titleTextField.setText("");
+        workPhoneTextField.setText("");
+    }//GEN-LAST:event_clearButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

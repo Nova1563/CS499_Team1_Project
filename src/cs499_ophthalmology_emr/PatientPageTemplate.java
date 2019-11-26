@@ -239,7 +239,6 @@ public class PatientPageTemplate extends javax.swing.JPanel {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
         patientNameLeftBarTextBox = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
         jLabel23 = new javax.swing.JLabel();
@@ -296,13 +295,6 @@ public class PatientPageTemplate extends javax.swing.JPanel {
 
         jPanel1.setBackground(new java.awt.Color(32, 33, 35));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jButton1.setBackground(new java.awt.Color(255, 51, 51));
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("DELETE ");
-        jButton1.setToolTipText("Delete Patient");
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 700, 140, 40));
 
         patientNameLeftBarTextBox.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         patientNameLeftBarTextBox.setForeground(new java.awt.Color(255, 255, 255));
@@ -802,7 +794,6 @@ public class PatientPageTemplate extends javax.swing.JPanel {
     private javax.swing.JTextField genderTextField;
     private javax.swing.JTextField groupTextField;
     private javax.swing.JTextField homePhoneTextField;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
