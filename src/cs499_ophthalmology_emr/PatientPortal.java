@@ -11,6 +11,7 @@ import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import javax.swing.JFrame;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPopupMenu;
 import javax.swing.JTable;
@@ -459,17 +460,30 @@ public class PatientPortal extends javax.swing.JPanel {
     }//GEN-LAST:event_patientSearchSubmitButtonActionPerformed
 
     private void editPatientButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editPatientButtonActionPerformed
-        System.out.println("Patient Portal: Edit button");
+        try
+        {
+             System.out.println("Patient Portal: Edit button");
 		Integer selectedRow = patientPortalTable.getSelectedRow();
 		Integer patientID = (Integer)patientPortalTable.getValueAt(selectedRow, PATIENT_ID_COLUMN);
 		Patient thePatient = dataBase.getPatientByID(patientID);
 		mainDash.patientForm.loadPatientInfo(thePatient);
 		mainDash.showPatientForm();
+        }
+        
+        catch(Exception e)
+        {
+             JOptionPane.showMessageDialog(null, "A patient must be selected!");
+        }
+
+      
     }//GEN-LAST:event_editPatientButtonActionPerformed
 
     private void deletePatientButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deletePatientButtonActionPerformed
         
-		if (evt != null)
+        
+        try 
+        {
+            if (evt != null)
 			System.out.println("Patient Portal: Delete button");
 		else
 			System.out.println("Patient Portal: Delete key");
@@ -485,6 +499,13 @@ public class PatientPortal extends javax.swing.JPanel {
 			Patient theVictim = dataBase.getPatientByID(patientID);
 			dataBase.delete(theVictim);
 		}
+        }
+        
+        catch(Exception e)
+        {
+            JOptionPane.showMessageDialog(null, "A patient must be selected!");
+        }
+		
 		
     }//GEN-LAST:event_deletePatientButtonActionPerformed
 
