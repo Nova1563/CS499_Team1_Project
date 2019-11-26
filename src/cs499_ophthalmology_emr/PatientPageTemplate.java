@@ -244,31 +244,6 @@ public class PatientPageTemplate extends javax.swing.JPanel {
         jPanel8 = new javax.swing.JPanel();
         jLabel23 = new javax.swing.JLabel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
-        jPanel4 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        appointmentDisplayTable = new javax.swing.JTable();
-        jPanel5 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
-        jPanel6 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
-        jPanel7 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
-        jLabel22 = new javax.swing.JLabel();
-        providerTextField = new javax.swing.JTextField();
-        contractTextField = new javax.swing.JTextField();
-        groupTextField = new javax.swing.JTextField();
-        effectiveTextField = new javax.swing.JTextField();
-        copayTextField = new javax.swing.JTextField();
-        providerPhoneTextField = new javax.swing.JTextField();
-        providerAddrTextField = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -296,6 +271,24 @@ public class PatientPageTemplate extends javax.swing.JPanel {
         ssnTextField = new javax.swing.JTextField();
         emergName = new javax.swing.JTextField();
         emergPhone = new javax.swing.JTextField();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        providerTextField = new javax.swing.JTextField();
+        contractTextField = new javax.swing.JTextField();
+        groupTextField = new javax.swing.JTextField();
+        effectiveTextField = new javax.swing.JTextField();
+        copayTextField = new javax.swing.JTextField();
+        providerPhoneTextField = new javax.swing.JTextField();
+        providerAddrTextField = new javax.swing.JTextField();
+        jPanel4 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        appointmentDisplayTable = new javax.swing.JTable();
 
         setBackground(new java.awt.Color(53, 60, 81));
         setMaximumSize(new java.awt.Dimension(1900, 800));
@@ -327,7 +320,7 @@ public class PatientPageTemplate extends javax.swing.JPanel {
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
-                .addContainerGap(9, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -346,252 +339,6 @@ public class PatientPageTemplate extends javax.swing.JPanel {
         jTabbedPane1.setForeground(new java.awt.Color(255, 255, 255));
         jTabbedPane1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jTabbedPane1.setName("P.I"); // NOI18N
-
-        jPanel4.setBackground(new java.awt.Color(253, 252, 233));
-
-        appointmentDisplayTable.setAutoCreateRowSorter(true);
-        appointmentDisplayTable.setBackground(new java.awt.Color(204, 255, 255));
-        appointmentDisplayTable.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        appointmentDisplayTable.setForeground(new java.awt.Color(0, 0, 0));
-        appointmentDisplayTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Date", "Reason for Visit", "Doctor", "ApptID"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, true, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        appointmentDisplayTable.setSelectionBackground(new java.awt.Color(255, 255, 204));
-        appointmentDisplayTable.setSelectionForeground(new java.awt.Color(0, 0, 0));
-        jScrollPane1.setViewportView(appointmentDisplayTable);
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1692, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 759, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
-        jTabbedPane1.addTab("Appointments", jPanel4);
-
-        jPanel5.setBackground(new java.awt.Color(253, 252, 233));
-
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(32, 33, 35));
-        jLabel3.setText("Past Visual Acuity Results:");
-
-        jButton2.setBackground(new java.awt.Color(204, 204, 204));
-        jButton2.setText("Add New Results");
-
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 1241, Short.MAX_VALUE)
-                .addComponent(jButton2)
-                .addContainerGap())
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jButton2))
-                .addContainerGap(730, Short.MAX_VALUE))
-        );
-
-        jTabbedPane1.addTab("Acuity Results", jPanel5);
-
-        jPanel6.setBackground(new java.awt.Color(253, 252, 233));
-
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(32, 33, 35));
-        jLabel1.setText("Past Occular Examination Results:");
-
-        jButton3.setText("Add New Results");
-
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 1147, Short.MAX_VALUE)
-                .addComponent(jButton3)
-                .addContainerGap())
-        );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jButton3))
-                .addContainerGap(730, Short.MAX_VALUE))
-        );
-
-        jTabbedPane1.addTab("Occular Exam Results", jPanel6);
-
-        jPanel7.setBackground(new java.awt.Color(253, 252, 233));
-
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1704, Short.MAX_VALUE)
-        );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 771, Short.MAX_VALUE)
-        );
-
-        jTabbedPane1.addTab("Notes", jPanel7);
-
-        jPanel3.setBackground(new java.awt.Color(253, 252, 233));
-
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(32, 33, 35));
-        jLabel2.setText("Provider:");
-
-        jLabel17.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel17.setForeground(new java.awt.Color(32, 33, 35));
-        jLabel17.setText("Contract #:");
-
-        jLabel18.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel18.setForeground(new java.awt.Color(32, 33, 35));
-        jLabel18.setText("Group #:");
-
-        jLabel19.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel19.setForeground(new java.awt.Color(32, 33, 35));
-        jLabel19.setText("Effective Date:");
-
-        jLabel20.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel20.setForeground(new java.awt.Color(32, 33, 35));
-        jLabel20.setText("Co-pay:");
-
-        jLabel21.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel21.setForeground(new java.awt.Color(32, 33, 35));
-        jLabel21.setText("Provider Phone #:");
-
-        jLabel22.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel22.setForeground(new java.awt.Color(32, 33, 35));
-        jLabel22.setText("Provider Address:");
-
-        providerTextField.setBackground(new java.awt.Color(204, 255, 255));
-        providerTextField.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        providerTextField.setForeground(new java.awt.Color(0, 0, 0));
-
-        contractTextField.setBackground(new java.awt.Color(204, 255, 255));
-        contractTextField.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        contractTextField.setForeground(new java.awt.Color(0, 0, 0));
-
-        groupTextField.setBackground(new java.awt.Color(204, 255, 255));
-        groupTextField.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        groupTextField.setForeground(new java.awt.Color(0, 0, 0));
-
-        effectiveTextField.setBackground(new java.awt.Color(204, 255, 255));
-        effectiveTextField.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        effectiveTextField.setForeground(new java.awt.Color(0, 0, 0));
-
-        copayTextField.setBackground(new java.awt.Color(204, 255, 255));
-        copayTextField.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        copayTextField.setForeground(new java.awt.Color(0, 0, 0));
-
-        providerPhoneTextField.setBackground(new java.awt.Color(204, 255, 255));
-        providerPhoneTextField.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        providerPhoneTextField.setForeground(new java.awt.Color(0, 0, 0));
-
-        providerAddrTextField.setBackground(new java.awt.Color(204, 255, 255));
-        providerAddrTextField.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        providerAddrTextField.setForeground(new java.awt.Color(0, 0, 0));
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(139, 139, 139)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel22)
-                    .addComponent(jLabel21)
-                    .addComponent(jLabel20)
-                    .addComponent(jLabel19)
-                    .addComponent(jLabel18)
-                    .addComponent(jLabel17)
-                    .addComponent(jLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 126, Short.MAX_VALUE)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(providerTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 347, Short.MAX_VALUE)
-                    .addComponent(contractTextField)
-                    .addComponent(groupTextField)
-                    .addComponent(effectiveTextField)
-                    .addComponent(copayTextField)
-                    .addComponent(providerPhoneTextField)
-                    .addComponent(providerAddrTextField))
-                .addContainerGap(899, Short.MAX_VALUE))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(47, 47, 47)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(providerTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
-                .addGap(50, 50, 50)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(contractTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel17))
-                .addGap(50, 50, 50)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(groupTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel18))
-                .addGap(50, 50, 50)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(effectiveTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(50, 50, 50)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel20)
-                            .addComponent(copayTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(50, 50, 50)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(providerPhoneTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel21))
-                        .addGap(50, 50, 50)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel22)
-                            .addComponent(providerAddrTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jLabel19))
-                .addGap(190, 190, 190))
-        );
-
-        jTabbedPane1.addTab("Insurance", jPanel3);
 
         jPanel2.setBackground(new java.awt.Color(253, 252, 233));
         jPanel2.setFont(new java.awt.Font("Courier New", 0, 11)); // NOI18N
@@ -689,15 +436,12 @@ public class PatientPageTemplate extends javax.swing.JPanel {
 
         emailTextField.setBackground(new java.awt.Color(204, 255, 255));
         emailTextField.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        emailTextField.setForeground(new java.awt.Color(0, 0, 0));
 
         ssnTextField.setBackground(new java.awt.Color(204, 255, 255));
         ssnTextField.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        ssnTextField.setForeground(new java.awt.Color(0, 0, 0));
 
         emergName.setBackground(new java.awt.Color(204, 255, 255));
         emergName.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        emergName.setForeground(new java.awt.Color(0, 0, 0));
 
         emergPhone.setBackground(new java.awt.Color(204, 255, 255));
         emergPhone.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -815,6 +559,166 @@ public class PatientPageTemplate extends javax.swing.JPanel {
 
         jTabbedPane1.addTab("General", jPanel2);
 
+        jPanel3.setBackground(new java.awt.Color(253, 252, 233));
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(32, 33, 35));
+        jLabel2.setText("Provider:");
+
+        jLabel17.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(32, 33, 35));
+        jLabel17.setText("Contract #:");
+
+        jLabel18.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(32, 33, 35));
+        jLabel18.setText("Group #:");
+
+        jLabel19.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(32, 33, 35));
+        jLabel19.setText("Effective Date:");
+
+        jLabel20.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(32, 33, 35));
+        jLabel20.setText("Co-pay:");
+
+        jLabel21.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(32, 33, 35));
+        jLabel21.setText("Provider Phone #:");
+
+        jLabel22.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel22.setForeground(new java.awt.Color(32, 33, 35));
+        jLabel22.setText("Provider Address:");
+
+        providerTextField.setBackground(new java.awt.Color(204, 255, 255));
+        providerTextField.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+
+        contractTextField.setBackground(new java.awt.Color(204, 255, 255));
+        contractTextField.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+
+        groupTextField.setBackground(new java.awt.Color(204, 255, 255));
+        groupTextField.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+
+        effectiveTextField.setBackground(new java.awt.Color(204, 255, 255));
+        effectiveTextField.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+
+        copayTextField.setBackground(new java.awt.Color(204, 255, 255));
+        copayTextField.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+
+        providerPhoneTextField.setBackground(new java.awt.Color(204, 255, 255));
+        providerPhoneTextField.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+
+        providerAddrTextField.setBackground(new java.awt.Color(204, 255, 255));
+        providerAddrTextField.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(139, 139, 139)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel22)
+                    .addComponent(jLabel21)
+                    .addComponent(jLabel20)
+                    .addComponent(jLabel19)
+                    .addComponent(jLabel18)
+                    .addComponent(jLabel17)
+                    .addComponent(jLabel2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 126, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(providerTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 347, Short.MAX_VALUE)
+                    .addComponent(contractTextField)
+                    .addComponent(groupTextField)
+                    .addComponent(effectiveTextField)
+                    .addComponent(copayTextField)
+                    .addComponent(providerPhoneTextField)
+                    .addComponent(providerAddrTextField))
+                .addContainerGap(899, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(47, 47, 47)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(providerTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
+                .addGap(50, 50, 50)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(contractTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel17))
+                .addGap(50, 50, 50)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(groupTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel18))
+                .addGap(50, 50, 50)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(effectiveTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(50, 50, 50)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel20)
+                            .addComponent(copayTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(50, 50, 50)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(providerPhoneTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel21))
+                        .addGap(50, 50, 50)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel22)
+                            .addComponent(providerAddrTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jLabel19))
+                .addGap(190, 190, 190))
+        );
+
+        jTabbedPane1.addTab("Insurance", jPanel3);
+
+        jPanel4.setBackground(new java.awt.Color(253, 252, 233));
+
+        appointmentDisplayTable.setAutoCreateRowSorter(true);
+        appointmentDisplayTable.setBackground(new java.awt.Color(204, 255, 255));
+        appointmentDisplayTable.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        appointmentDisplayTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Date", "Reason for Visit", "Doctor", "ApptID"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, true, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        appointmentDisplayTable.setSelectionBackground(new java.awt.Color(255, 255, 204));
+        appointmentDisplayTable.setSelectionForeground(new java.awt.Color(0, 0, 0));
+        jScrollPane1.setViewportView(appointmentDisplayTable);
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1692, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 759, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jTabbedPane1.addTab("Appointments", jPanel4);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -899,9 +803,6 @@ public class PatientPageTemplate extends javax.swing.JPanel {
     private javax.swing.JTextField groupTextField;
     private javax.swing.JTextField homePhoneTextField;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -917,7 +818,6 @@ public class PatientPageTemplate extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -928,9 +828,6 @@ public class PatientPageTemplate extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
