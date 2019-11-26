@@ -13,6 +13,7 @@ public class EyeTestResults
     private String farChartDistance;
     private String dccOS;
     private String dscODph; // Angela
+	private String nscODph;
     private String dccOSph;
     private String dscOS;
     private String dscOSph;
@@ -140,46 +141,47 @@ public class EyeTestResults
 		this.patientID = _patientID;
 		this.apptID = _apptID;
 		this.farChartDistance = "";
-		this.dccOS = "";
-		this.dccOSph = "";
-		this.dscOS = "";
-                this.dscODph =""; //Angela
-		this.dscOSph = "";
-		this.dccOD = "";
-		this.dccODph = "";
-		this.dscOD = "";
-		this.dccOU = "";
-		this.dccOUph = "";
-		this.dscOU = "";
-		this.dscOUph = "";
+		this.dccOS = "NOT CHECKED";
+		this.dccOSph = "NOT CHECKED";
+		this.dscOS = "NOT CHECKED";
+                this.dscODph ="NOT CHECKED"; //Angela
+		this.dscOSph = "NOT CHECKED";
+		this.dccOD = "NOT CHECKED";
+		this.dccODph = "NOT CHECKED";
+		this.dscOD = "NOT CHECKED";
+		this.dccOU = "NOT CHECKED";
+		this.dccOUph = "NOT CHECKED";
+		this.dscOU = "NOT CHECKED";
+		this.dscOUph = "NOT CHECKED";
 		this.nearChartDistance = "";
-		this.nccOS = "";
-		this.nccOSph = "";
-		this.nscOS = "";
-		this.nscOSph = "";
-		this.nccOD = "";
-		this.nccODph = "";
-		this.nscOD = "";
-		this.nccOU = "";
-		this.nccOUph = "";
-		this.nscOU = "";
-		this.nscOUph = "";
-		this.sphereOD = -1.0;
-		this.sphereOS = -1.0;
-		this.cylinderOD = -1.0;
-		this.cylinderOS = -1.0;
-		this.axisOD = -1.0;
-		this.axisOS = -1.0;
-		this.addOD = -1.0;
-		this.addOS = -1.0;
-		this.prismOD = -1.0;
-		this.prismOS = -1.0;
-		this.prismBaseOD = -1.0;
-		this.prismBaseOS = -1.0;
-		this.nn20OD = "";
-		this.dd20OD = "";
-		this.nn20OS = "";
-		this.dd20OS = "";
+		this.nccOS = "NOT CHECKED";
+		this.nscODph = "NOT CHECKED";
+		this.nccOSph = "NOT CHECKED";
+		this.nscOS = "NOT CHECKED";
+		this.nscOSph = "NOT CHECKED";
+		this.nccOD = "NOT CHECKED";
+		this.nccODph = "NOT CHECKED";
+		this.nscOD = "NOT CHECKED";
+		this.nccOU = "NOT CHECKED";
+		this.nccOUph = "NOT CHECKED";
+		this.nscOU = "NOT CHECKED";
+		this.nscOUph = "NOT CHECKED";
+		this.sphereOD = 0.0;
+		this.sphereOS = 0.0;
+		this.cylinderOD = 0.0;
+		this.cylinderOS = 0.0;
+		this.axisOD = 0.0;
+		this.axisOS = 0.0;
+		this.addOD = 0.0;
+		this.addOS = 0.0;
+		this.prismOD = 0.0;
+		this.prismOS = 0.0;
+		this.prismBaseOD = 0.0;
+		this.prismBaseOS = 0.0;
+		this.nn20OD = "NOT CHECKED";
+		this.dd20OD = "NOT CHECKED";
+		this.nn20OS = "NOT CHECKED";
+		this.dd20OS = "NOT CHECKED";
 		this.vitreousOD = "NOT CHECKED";
 		this.maculaOD = "NOT CHECKED";
 		this.vasculatureOD = "NOT CHECKED";
@@ -316,6 +318,17 @@ public class EyeTestResults
 		this.dscODph = dscODph;
 	}
         // -------------------------
+
+	public String getNscODph() {
+		return nscODph;
+	}
+
+	public void setNscODph(String nscODph) {
+		this.nscODph = nscODph;
+	}
+		
+		
+	
 	public String getDscOSph() {
 		return dscOSph;
 	}

@@ -5,6 +5,9 @@
  */
 package cs499_ophthalmology_emr;
 //import  java.awt.TextField;
+
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author angelaallison
@@ -37,8 +40,100 @@ public class VisualAcuity extends javax.swing.JPanel {
 		if (eyeTestResults == null)
 			eyeTestResults = dataBase.getNewEyeTestResults(activePatient.getPatientID(), activeAppointment.getApptID());
 		mainDash.setActiveResults(eyeTestResults);
-    } 
+		
+		dccODComboBox.setSelectedItem(eyeTestResults.getDccOD());
+		dccOSComboBox.setSelectedItem(eyeTestResults.getDccOS());
+		dccOUComboBox.setSelectedItem(eyeTestResults.getDccOU());
+		dscODComboBox.setSelectedItem(eyeTestResults.getDscOD());
+		dscOSComboBox.setSelectedItem(eyeTestResults.getDscOS());
+		dscODComboBox.setSelectedItem(eyeTestResults.getDscOS());
+		
+		dccODphComboBox.setSelectedItem(eyeTestResults.getDccODph());
+		dccOSphComboBox.setSelectedItem(eyeTestResults.getDccOSph());
+		dccOUphComboBox.setSelectedItem(eyeTestResults.getDccOUph());
+		dscODphComboBox.setSelectedItem(eyeTestResults.getDscODph());
+		dscOSphComboBox.setSelectedItem(eyeTestResults.getDscOSph());
+		dscODphComboBox.setSelectedItem(eyeTestResults.getDscOSph());
+		
+		nccODComboBox.setSelectedItem(eyeTestResults.getNccOD());
+		nccOSComboBox.setSelectedItem(eyeTestResults.getNccOS());
+		nccOUComboBox.setSelectedItem(eyeTestResults.getNccOU());
+		nscODComboBox.setSelectedItem(eyeTestResults.getNscOD());
+		nscOSComboBox.setSelectedItem(eyeTestResults.getNscOS());
+		nscODComboBox.setSelectedItem(eyeTestResults.getNscOS());
 
+		nccODphComboBox.setSelectedItem(eyeTestResults.getNccODph());
+		nccOSphComboBox.setSelectedItem(eyeTestResults.getNccOSph());
+		nccOUphComboBox.setSelectedItem(eyeTestResults.getNccOUph());
+		nscODphComboBox.setSelectedItem(eyeTestResults.getNscODph());
+		nscOSphComboBox.setSelectedItem(eyeTestResults.getNscOSph());
+		nscODphComboBox.setSelectedItem(eyeTestResults.getNscOSph());
+		
+		sphereODTXTF.setText(eyeTestResults.getSphereOD().toString());
+		axisODTXTF.setText(eyeTestResults.getAxisOD().toString());
+		cylinderODTXTF.setText(eyeTestResults.getCylinderOD().toString());
+		prismODTXTF.setText(eyeTestResults.getPrismOD().toString());
+		prismBaseODTXTF.setText(eyeTestResults.getPrismBaseOD().toString());
+		addODTXTF.setText(eyeTestResults.getAddOD().toString());
+		
+		sphereOSTXTF.setText(eyeTestResults.getSphereOS().toString());
+		axisOSTXTF.setText(eyeTestResults.getAxisOS().toString());
+		cylinderOSTXTF.setText(eyeTestResults.getCylinderOS().toString());
+		prismOSTXTF.setText(eyeTestResults.getPrismOS().toString());
+		prismBaseOSTXTF.setText(eyeTestResults.getPrismBaseOS().toString());
+		addOSTXTF.setText(eyeTestResults.getAddOS().toString());
+		
+		dataBase.save(eyeTestResults);
+    } 
+	
+		private Boolean validateFloat(String theString)
+	{
+		Boolean isValid = true;
+		Boolean decimalFound = false;
+		Integer remainingDecimalPlaces = 2;
+		
+		String trimmedFloat = "";
+		
+		for (Integer i=0; i < theString.length(); i++)
+		{
+			if (Character.isDigit(theString.charAt(i)))
+			{
+				if (decimalFound)
+				{
+					--remainingDecimalPlaces;
+					if (remainingDecimalPlaces < 0)
+					{
+						isValid = false;
+					}
+				}
+				trimmedFloat += theString.charAt(i);
+			}
+			
+			
+			
+			if (theString.charAt(i) == '.')
+			{
+				if (decimalFound == true)
+				{
+					isValid = false;
+				}
+				else
+				{
+					decimalFound = true;
+				}
+			}
+		}
+		if (remainingDecimalPlaces != 0)
+		{
+			isValid = false;
+		}
+		if (trimmedFloat.equals(""))
+		{
+			isValid = false;
+		}
+		return (isValid && decimalFound);
+	}
+	
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -53,16 +148,10 @@ public class VisualAcuity extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        NccODTxtF = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        NscODTxtF = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        NccOSTxtF = new javax.swing.JTextField();
-        NccOUTxtF = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        NscOUTxtF = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        NscOSTxtF = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
@@ -70,30 +159,24 @@ public class VisualAcuity extends javax.swing.JPanel {
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
-        NccOSPHTxtF = new javax.swing.JTextField();
-        NccOUPHTxtF = new javax.swing.JTextField();
-        NscODPHTxtF = new javax.swing.JTextField();
-        NccODPHTxtF = new javax.swing.JTextField();
-        NscOUPHTxtF = new javax.swing.JTextField();
-        NscOSPHTxtF = new javax.swing.JTextField();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
+        nccODComboBox = new javax.swing.JComboBox<>();
+        nccOSComboBox = new javax.swing.JComboBox<>();
+        nccOUComboBox = new javax.swing.JComboBox<>();
+        nscODComboBox = new javax.swing.JComboBox<>();
+        nscOSComboBox = new javax.swing.JComboBox<>();
+        nscOUComboBox = new javax.swing.JComboBox<>();
+        nccODphComboBox = new javax.swing.JComboBox<>();
+        nccOSphComboBox = new javax.swing.JComboBox<>();
+        nccOUphComboBox = new javax.swing.JComboBox<>();
+        nscODphComboBox = new javax.swing.JComboBox<>();
+        nscOUphComboBox = new javax.swing.JComboBox<>();
+        nscOSphComboBox = new javax.swing.JComboBox<>();
         jPanel8 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
-        DccODTxtF = new javax.swing.JTextField();
         jLabel21 = new javax.swing.JLabel();
-        DScODTxtF = new javax.swing.JTextField();
         jLabel22 = new javax.swing.JLabel();
-        DccOSTxtF = new javax.swing.JTextField();
-        DccOUTxtF = new javax.swing.JTextField();
         jLabel23 = new javax.swing.JLabel();
-        DscOUTxtF = new javax.swing.JTextField();
         jLabel24 = new javax.swing.JLabel();
-        DscOsTxtF = new javax.swing.JTextField();
         jLabel25 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
@@ -101,18 +184,18 @@ public class VisualAcuity extends javax.swing.JPanel {
         jLabel29 = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
-        DccOSPHTxtF = new javax.swing.JTextField();
-        DccOUPHTxtF = new javax.swing.JTextField();
-        DccODPHTxtF = new javax.swing.JTextField();
-        DscOUPHTxtF = new javax.swing.JTextField();
-        DscOSPHTxtF = new javax.swing.JTextField();
-        jLabel32 = new javax.swing.JLabel();
-        jLabel33 = new javax.swing.JLabel();
-        jLabel34 = new javax.swing.JLabel();
-        jLabel35 = new javax.swing.JLabel();
-        jLabel36 = new javax.swing.JLabel();
-        jLabel37 = new javax.swing.JLabel();
-        DscODPHTxtF = new javax.swing.JTextField();
+        dccODComboBox = new javax.swing.JComboBox<>();
+        dccOSComboBox = new javax.swing.JComboBox<>();
+        dccOUComboBox = new javax.swing.JComboBox<>();
+        dscODComboBox = new javax.swing.JComboBox<>();
+        dscOSComboBox = new javax.swing.JComboBox<>();
+        dscOUComboBox = new javax.swing.JComboBox<>();
+        dccODphComboBox = new javax.swing.JComboBox<>();
+        dccOSphComboBox = new javax.swing.JComboBox<>();
+        dccOUphComboBox = new javax.swing.JComboBox<>();
+        dscODphComboBox = new javax.swing.JComboBox<>();
+        dscOUphComboBox = new javax.swing.JComboBox<>();
+        dscOSphComboBox = new javax.swing.JComboBox<>();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         correctiveLabel = new javax.swing.JLabel();
@@ -144,7 +227,7 @@ public class VisualAcuity extends javax.swing.JPanel {
         axisODTXTF = new javax.swing.JTextField();
         cylinderODTXTF = new javax.swing.JTextField();
         prismODTXTF = new javax.swing.JTextField();
-        prisimBaseODTXTF = new javax.swing.JTextField();
+        prismBaseODTXTF = new javax.swing.JTextField();
         addODTXTF = new javax.swing.JTextField();
         saveBttn1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -185,75 +268,21 @@ public class VisualAcuity extends javax.swing.JPanel {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("NccOD");
 
-        NccODTxtF.setBackground(new java.awt.Color(135, 206, 250));
-        NccODTxtF.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        NccODTxtF.setForeground(new java.awt.Color(0, 0, 0));
-        NccODTxtF.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                NccODTxtFFocusLost(evt);
-            }
-        });
-
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("NccOS");
-
-        NscODTxtF.setBackground(new java.awt.Color(135, 206, 250));
-        NscODTxtF.setForeground(new java.awt.Color(0, 0, 0));
-        NscODTxtF.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                NscODTxtFFocusLost(evt);
-            }
-        });
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("NccOU");
 
-        NccOSTxtF.setBackground(new java.awt.Color(135, 206, 250));
-        NccOSTxtF.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        NccOSTxtF.setForeground(new java.awt.Color(0, 0, 0));
-        NccOSTxtF.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                NccOSTxtFFocusLost(evt);
-            }
-        });
-
-        NccOUTxtF.setBackground(new java.awt.Color(135, 206, 250));
-        NccOUTxtF.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        NccOUTxtF.setForeground(new java.awt.Color(0, 0, 0));
-        NccOUTxtF.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                NccOUTxtFFocusLost(evt);
-            }
-        });
-
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("NscOD");
 
-        NscOUTxtF.setBackground(new java.awt.Color(135, 206, 250));
-        NscOUTxtF.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        NscOUTxtF.setForeground(new java.awt.Color(0, 0, 0));
-        NscOUTxtF.setToolTipText("");
-        NscOUTxtF.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                NscOUTxtFFocusLost(evt);
-            }
-        });
-
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("NscOS");
-
-        NscOSTxtF.setBackground(new java.awt.Color(135, 206, 250));
-        NscOSTxtF.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        NscOSTxtF.setForeground(new java.awt.Color(0, 0, 0));
-        NscOSTxtF.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                NscOSTxtFFocusLost(evt);
-            }
-        });
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
@@ -283,87 +312,89 @@ public class VisualAcuity extends javax.swing.JPanel {
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
         jLabel14.setText("NscOSPH");
 
-        NccOSPHTxtF.setBackground(new java.awt.Color(135, 206, 250));
-        NccOSPHTxtF.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        NccOSPHTxtF.setForeground(new java.awt.Color(0, 0, 0));
-        NccOSPHTxtF.setToolTipText("");
-        NccOSPHTxtF.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                NccOSPHTxtFFocusLost(evt);
+        nccODComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NOT CHECKED", "20/10", "20/12.5", "20/16", "20/20", "20/ 25", "20/32", "20/40", "20/50", "20/63", "20/80", "20/100", "20/125", "20/160", "20/200" }));
+        nccODComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nccODComboBoxActionPerformed(evt);
             }
         });
 
-        NccOUPHTxtF.setBackground(new java.awt.Color(135, 206, 250));
-        NccOUPHTxtF.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        NccOUPHTxtF.setForeground(new java.awt.Color(0, 0, 0));
-        NccOUPHTxtF.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                NccOUPHTxtFFocusLost(evt);
+        nccOSComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NOT CHECKED", "20/10", "20/12.5", "20/16", "20/20", "20/ 25", "20/32", "20/40", "20/50", "20/63", "20/80", "20/100", "20/125", "20/160", "20/200" }));
+        nccOSComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nccOSComboBoxActionPerformed(evt);
             }
         });
 
-        NscODPHTxtF.setBackground(new java.awt.Color(135, 206, 250));
-        NscODPHTxtF.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        NscODPHTxtF.setForeground(new java.awt.Color(0, 0, 0));
-        NscODPHTxtF.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                NscODPHTxtFFocusLost(evt);
+        nccOUComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NOT CHECKED", "20/10", "20/12.5", "20/16", "20/20", "20/ 25", "20/32", "20/40", "20/50", "20/63", "20/80", "20/100", "20/125", "20/160", "20/200" }));
+        nccOUComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nccOUComboBoxActionPerformed(evt);
             }
         });
 
-        NccODPHTxtF.setBackground(new java.awt.Color(135, 206, 250));
-        NccODPHTxtF.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        NccODPHTxtF.setForeground(new java.awt.Color(0, 0, 0));
-        NccODPHTxtF.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                NccODPHTxtFFocusLost(evt);
+        nscODComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NOT CHECKED", "20/10", "20/12.5", "20/16", "20/20", "20/ 25", "20/32", "20/40", "20/50", "20/63", "20/80", "20/100", "20/125", "20/160", "20/200" }));
+        nscODComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nscODComboBoxActionPerformed(evt);
             }
         });
 
-        NscOUPHTxtF.setBackground(new java.awt.Color(135, 206, 250));
-        NscOUPHTxtF.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        NscOUPHTxtF.setForeground(new java.awt.Color(0, 0, 0));
-        NscOUPHTxtF.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                NscOUPHTxtFFocusLost(evt);
+        nscOSComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NOT CHECKED", "20/10", "20/12.5", "20/16", "20/20", "20/ 25", "20/32", "20/40", "20/50", "20/63", "20/80", "20/100", "20/125", "20/160", "20/200" }));
+        nscOSComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nscOSComboBoxActionPerformed(evt);
             }
         });
 
-        NscOSPHTxtF.setBackground(new java.awt.Color(135, 206, 250));
-        NscOSPHTxtF.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        NscOSPHTxtF.setForeground(new java.awt.Color(0, 0, 0));
-        NscOSPHTxtF.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                NscOSPHTxtFFocusLost(evt);
+        nscOUComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NOT CHECKED", "20/10", "20/12.5", "20/16", "20/20", "20/ 25", "20/32", "20/40", "20/50", "20/63", "20/80", "20/100", "20/125", "20/160", "20/200" }));
+        nscOUComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nscOUComboBoxActionPerformed(evt);
             }
         });
 
-        jLabel15.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel15.setText("/20");
+        nccODphComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NOT CHECKED", "20/10", "20/12.5", "20/16", "20/20", "20/ 25", "20/32", "20/40", "20/50", "20/63", "20/80", "20/100", "20/125", "20/160", "20/200" }));
+        nccODphComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nccODphComboBoxActionPerformed(evt);
+            }
+        });
 
-        jLabel16.setBackground(new java.awt.Color(32, 33, 35));
-        jLabel16.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel16.setText("/20");
+        nccOSphComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NOT CHECKED", "20/10", "20/12.5", "20/16", "20/20", "20/ 25", "20/32", "20/40", "20/50", "20/63", "20/80", "20/100", "20/125", "20/160", "20/200" }));
+        nccOSphComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nccOSphComboBoxActionPerformed(evt);
+            }
+        });
 
-        jLabel17.setBackground(new java.awt.Color(32, 33, 35));
-        jLabel17.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel17.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel17.setText("/20");
+        nccOUphComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NOT CHECKED", "20/10", "20/12.5", "20/16", "20/20", "20/ 25", "20/32", "20/40", "20/50", "20/63", "20/80", "20/100", "20/125", "20/160", "20/200" }));
+        nccOUphComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nccOUphComboBoxActionPerformed(evt);
+            }
+        });
 
-        jLabel18.setBackground(new java.awt.Color(135, 206, 250));
-        jLabel18.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel18.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel18.setText("/20");
+        nscODphComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NOT CHECKED", "20/10", "20/12.5", "20/16", "20/20", "20/ 25", "20/32", "20/40", "20/50", "20/63", "20/80", "20/100", "20/125", "20/160", "20/200" }));
+        nscODphComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nscODphComboBoxActionPerformed(evt);
+            }
+        });
 
-        jLabel19.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel19.setText("/20");
+        nscOUphComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NOT CHECKED", "20/10", "20/12.5", "20/16", "20/20", "20/ 25", "20/32", "20/40", "20/50", "20/63", "20/80", "20/100", "20/125", "20/160", "20/200" }));
+        nscOUphComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nscOUphComboBoxActionPerformed(evt);
+            }
+        });
 
-        jLabel20.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel20.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel20.setText("/20");
+        nscOSphComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NOT CHECKED", "20/10", "20/12.5", "20/16", "20/20", "20/ 25", "20/32", "20/40", "20/50", "20/63", "20/80", "20/100", "20/125", "20/160", "20/200" }));
+        nscOSphComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nscOSphComboBoxActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -371,80 +402,59 @@ public class VisualAcuity extends javax.swing.JPanel {
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addGap(37, 37, 37)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(NscOUTxtF))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(NccODTxtF, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(nscOUComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(NccOSTxtF, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(nccOSComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(NccOUTxtF, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(nccOUComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(NscODTxtF, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(nscODComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(NscOSTxtF, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(100, 100, 100)
+                        .addComponent(nscOSComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(nccODComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(94, 94, 94)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
                         .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(NscODPHTxtF, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel20)
-                        .addGap(75, 75, 75))
+                        .addComponent(nscODphComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(99, 99, 99))
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
-                                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel7Layout.createSequentialGroup()
+                                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(NccOUPHTxtF, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel18)
-                                .addGap(69, 69, 69))
+                                .addComponent(nscOUphComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel7Layout.createSequentialGroup()
+                                .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(nscOSphComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel7Layout.createSequentialGroup()
                                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(NccODPHTxtF, javax.swing.GroupLayout.DEFAULT_SIZE, 96, Short.MAX_VALUE)
-                                    .addComponent(NccOSPHTxtF))
                                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel7Layout.createSequentialGroup()
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jLabel16))
-                                    .addGroup(jPanel7Layout.createSequentialGroup()
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                            .addGroup(jPanel7Layout.createSequentialGroup()
-                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(jPanel7Layout.createSequentialGroup()
-                                        .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(NscOUPHTxtF, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel7Layout.createSequentialGroup()
-                                        .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(NscOSPHTxtF, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(0, 0, Short.MAX_VALUE)))
-                        .addContainerGap())))
+                                    .addComponent(nccODphComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(nccOSphComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(nccOUphComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -452,50 +462,39 @@ public class VisualAcuity extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(NccODTxtF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(NccODPHTxtF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(nccODComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nccODphComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(NccOSTxtF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(NccOSPHTxtF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(nccOSComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nccOSphComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(NccOUTxtF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(NccOUPHTxtF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(nccOUComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nccOUphComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(NscODTxtF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(NscODPHTxtF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(16, 16, 16)
+                    .addComponent(nscODComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nscODphComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(15, 15, 15)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(NscOSTxtF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(NscOSPHTxtF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(NscOUTxtF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(NscOUPHTxtF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())))
+                    .addComponent(nscOSComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nscOSphComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nscOUComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nscOUphComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         jPanel8.setBackground(new java.awt.Color(32, 33, 35));
@@ -505,74 +504,22 @@ public class VisualAcuity extends javax.swing.JPanel {
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("DccOD");
 
-        DccODTxtF.setBackground(new java.awt.Color(135, 206, 250));
-        DccODTxtF.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        DccODTxtF.setForeground(new java.awt.Color(0, 0, 0));
-        DccODTxtF.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                DccODTxtFFocusLost(evt);
-            }
-        });
-
         jLabel21.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel21.setForeground(new java.awt.Color(255, 255, 255));
         jLabel21.setText("DccOS");
-
-        DScODTxtF.setBackground(new java.awt.Color(135, 206, 250));
-        DScODTxtF.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        DScODTxtF.setForeground(new java.awt.Color(0, 0, 0));
-        DScODTxtF.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                DScODTxtFFocusLost(evt);
-            }
-        });
 
         jLabel22.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel22.setForeground(new java.awt.Color(255, 255, 255));
         jLabel22.setText("DccOU");
 
-        DccOSTxtF.setBackground(new java.awt.Color(135, 206, 250));
-        DccOSTxtF.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        DccOSTxtF.setForeground(new java.awt.Color(0, 0, 0));
-        DccOSTxtF.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                DccOSTxtFFocusLost(evt);
-            }
-        });
-
-        DccOUTxtF.setBackground(new java.awt.Color(135, 206, 250));
-        DccOUTxtF.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        DccOUTxtF.setForeground(new java.awt.Color(0, 0, 0));
-        DccOUTxtF.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                DccOUTxtFFocusLost(evt);
-            }
-        });
-
         jLabel23.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel23.setForeground(new java.awt.Color(255, 255, 255));
         jLabel23.setText("DscOD");
-
-        DscOUTxtF.setBackground(new java.awt.Color(135, 206, 250));
-        DscOUTxtF.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        DscOUTxtF.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                DscOUTxtFFocusLost(evt);
-            }
-        });
 
         jLabel24.setBackground(new java.awt.Color(255, 255, 255));
         jLabel24.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel24.setForeground(new java.awt.Color(255, 255, 255));
         jLabel24.setText("DscOS");
-
-        DscOsTxtF.setBackground(new java.awt.Color(135, 206, 250));
-        DscOsTxtF.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        DscOsTxtF.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                DscOsTxtFFocusLost(evt);
-            }
-        });
 
         jLabel25.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel25.setForeground(new java.awt.Color(255, 255, 255));
@@ -603,81 +550,87 @@ public class VisualAcuity extends javax.swing.JPanel {
         jLabel31.setForeground(new java.awt.Color(255, 255, 255));
         jLabel31.setText("DscOSPH");
 
-        DccOSPHTxtF.setBackground(new java.awt.Color(135, 206, 250));
-        DccOSPHTxtF.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        DccOSPHTxtF.setForeground(new java.awt.Color(0, 0, 0));
-        DccOSPHTxtF.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                DccOSPHTxtFFocusLost(evt);
+        dccODComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NOT CHECKED", "20/10", "20/12.5", "20/16", "20/20", "20/ 25", "20/32", "20/40", "20/50", "20/63", "20/80", "20/100", "20/125", "20/160", "20/200" }));
+        dccODComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dccODComboBoxActionPerformed(evt);
             }
         });
 
-        DccOUPHTxtF.setBackground(new java.awt.Color(135, 206, 250));
-        DccOUPHTxtF.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        DccOUPHTxtF.setForeground(new java.awt.Color(0, 0, 0));
-        DccOUPHTxtF.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                DccOUPHTxtFFocusLost(evt);
+        dccOSComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NOT CHECKED", "20/10", "20/12.5", "20/16", "20/20", "20/ 25", "20/32", "20/40", "20/50", "20/63", "20/80", "20/100", "20/125", "20/160", "20/200" }));
+        dccOSComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dccOSComboBoxActionPerformed(evt);
             }
         });
 
-        DccODPHTxtF.setBackground(new java.awt.Color(135, 206, 250));
-        DccODPHTxtF.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        DccODPHTxtF.setForeground(new java.awt.Color(0, 0, 0));
-        DccODPHTxtF.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                DccODPHTxtFFocusLost(evt);
+        dccOUComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NOT CHECKED", "20/10", "20/12.5", "20/16", "20/20", "20/ 25", "20/32", "20/40", "20/50", "20/63", "20/80", "20/100", "20/125", "20/160", "20/200" }));
+        dccOUComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dccOUComboBoxActionPerformed(evt);
             }
         });
 
-        DscOUPHTxtF.setBackground(new java.awt.Color(135, 206, 250));
-        DscOUPHTxtF.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        DscOUPHTxtF.setForeground(new java.awt.Color(0, 0, 0));
-        DscOUPHTxtF.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                DscOUPHTxtFFocusLost(evt);
+        dscODComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NOT CHECKED", "20/10", "20/12.5", "20/16", "20/20", "20/ 25", "20/32", "20/40", "20/50", "20/63", "20/80", "20/100", "20/125", "20/160", "20/200" }));
+        dscODComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dscODComboBoxActionPerformed(evt);
             }
         });
 
-        DscOSPHTxtF.setBackground(new java.awt.Color(135, 206, 250));
-        DscOSPHTxtF.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        DscOSPHTxtF.setForeground(new java.awt.Color(0, 0, 0));
-        DscOSPHTxtF.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                DscOSPHTxtFFocusLost(evt);
+        dscOSComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NOT CHECKED", "20/10", "20/12.5", "20/16", "20/20", "20/ 25", "20/32", "20/40", "20/50", "20/63", "20/80", "20/100", "20/125", "20/160", "20/200" }));
+        dscOSComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dscOSComboBoxActionPerformed(evt);
             }
         });
 
-        jLabel32.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel32.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel32.setText("/20");
+        dscOUComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NOT CHECKED", "20/10", "20/12.5", "20/16", "20/20", "20/ 25", "20/32", "20/40", "20/50", "20/63", "20/80", "20/100", "20/125", "20/160", "20/200" }));
+        dscOUComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dscOUComboBoxActionPerformed(evt);
+            }
+        });
 
-        jLabel33.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel33.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel33.setText("/20");
+        dccODphComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NOT CHECKED", "20/10", "20/12.5", "20/16", "20/20", "20/ 25", "20/32", "20/40", "20/50", "20/63", "20/80", "20/100", "20/125", "20/160", "20/200" }));
+        dccODphComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dccODphComboBoxActionPerformed(evt);
+            }
+        });
 
-        jLabel34.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel34.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel34.setText("/20");
+        dccOSphComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NOT CHECKED", "20/10", "20/12.5", "20/16", "20/20", "20/ 25", "20/32", "20/40", "20/50", "20/63", "20/80", "20/100", "20/125", "20/160", "20/200" }));
+        dccOSphComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dccOSphComboBoxActionPerformed(evt);
+            }
+        });
 
-        jLabel35.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel35.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel35.setText("/20");
+        dccOUphComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NOT CHECKED", "20/10", "20/12.5", "20/16", "20/20", "20/ 25", "20/32", "20/40", "20/50", "20/63", "20/80", "20/100", "20/125", "20/160", "20/200" }));
+        dccOUphComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dccOUphComboBoxActionPerformed(evt);
+            }
+        });
 
-        jLabel36.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel36.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel36.setText("/20");
+        dscODphComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NOT CHECKED", "20/10", "20/12.5", "20/16", "20/20", "20/ 25", "20/32", "20/40", "20/50", "20/63", "20/80", "20/100", "20/125", "20/160", "20/200" }));
+        dscODphComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dscODphComboBoxActionPerformed(evt);
+            }
+        });
 
-        jLabel37.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel37.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel37.setText("/20");
+        dscOUphComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NOT CHECKED", "20/10", "20/12.5", "20/16", "20/20", "20/ 25", "20/32", "20/40", "20/50", "20/63", "20/80", "20/100", "20/125", "20/160", "20/200" }));
+        dscOUphComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dscOUphComboBoxActionPerformed(evt);
+            }
+        });
 
-        DscODPHTxtF.setBackground(new java.awt.Color(135, 206, 250));
-        DscODPHTxtF.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        DscODPHTxtF.setForeground(new java.awt.Color(0, 0, 0));
-        DscODPHTxtF.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                DscODPHTxtFFocusLost(evt);
+        dscOSphComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NOT CHECKED", "20/10", "20/12.5", "20/16", "20/20", "20/ 25", "20/32", "20/40", "20/50", "20/63", "20/80", "20/100", "20/125", "20/160", "20/200" }));
+        dscOSphComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dscOSphComboBoxActionPerformed(evt);
             }
         });
 
@@ -687,71 +640,58 @@ public class VisualAcuity extends javax.swing.JPanel {
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addGap(37, 37, 37)
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(DccOSTxtF))
+                        .addComponent(dccOSComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(DccOUTxtF))
+                        .addComponent(dccOUComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(DScODTxtF))
+                        .addComponent(dscODComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(DscOsTxtF))
+                        .addComponent(dscOSComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(DscOUTxtF))
+                        .addComponent(dscOUComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(DccODTxtF, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(dccODComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(100, 100, 100)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel8Layout.createSequentialGroup()
-                                .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(DscOUPHTxtF, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel8Layout.createSequentialGroup()
-                                .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(DscOSPHTxtF, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel8Layout.createSequentialGroup()
-                                .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(DscODPHTxtF, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel8Layout.createSequentialGroup()
-                                .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(DccOSPHTxtF))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel8Layout.createSequentialGroup()
-                                .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(DccODPHTxtF, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(DccOUPHTxtF, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel8Layout.createSequentialGroup()
-                                .addGap(16, 16, 16)
-                                .addComponent(jLabel33))
-                            .addGroup(jPanel8Layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel35)
-                                    .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel37)
-                                    .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(jLabel36, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel34, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))))
-                .addContainerGap(36, Short.MAX_VALUE))
+                        .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(dccOUphComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(dscOUphComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(dscOSphComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(dscODphComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(dccOSphComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(dccODphComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(77, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -759,49 +699,39 @@ public class VisualAcuity extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(DccODTxtF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(DccODPHTxtF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(dccODComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(dccODphComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel21)
-                    .addComponent(DccOSTxtF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(DccOSPHTxtF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(dccOSComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(dccOSphComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel22)
-                    .addComponent(DccOUTxtF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(DccOUPHTxtF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(dccOUComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(dccOUphComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(DScODTxtF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(DscODPHTxtF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(16, 16, 16)
+                    .addComponent(dscODComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(dscODphComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(15, 15, 15)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(DscOsTxtF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(DscOSPHTxtF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(DscOUTxtF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(DscOUPHTxtF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(dscOSComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(dscOSphComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(dscOUComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(dscOUphComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         jPanel2.setBackground(new java.awt.Color(32, 33, 35));
@@ -1055,6 +985,11 @@ public class VisualAcuity extends javax.swing.JPanel {
                 sphereODTXTFFocusLost(evt);
             }
         });
+        sphereODTXTF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sphereODTXTFActionPerformed(evt);
+            }
+        });
 
         sphereLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         sphereLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -1098,12 +1033,12 @@ public class VisualAcuity extends javax.swing.JPanel {
             }
         });
 
-        prisimBaseODTXTF.setBackground(new java.awt.Color(135, 206, 250));
-        prisimBaseODTXTF.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        prisimBaseODTXTF.setForeground(new java.awt.Color(0, 0, 0));
-        prisimBaseODTXTF.addFocusListener(new java.awt.event.FocusAdapter() {
+        prismBaseODTXTF.setBackground(new java.awt.Color(135, 206, 250));
+        prismBaseODTXTF.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        prismBaseODTXTF.setForeground(new java.awt.Color(0, 0, 0));
+        prismBaseODTXTF.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
-                prisimBaseODTXTFFocusLost(evt);
+                prismBaseODTXTFFocusLost(evt);
             }
         });
 
@@ -1154,7 +1089,7 @@ public class VisualAcuity extends javax.swing.JPanel {
                                     .addComponent(axisODTXTF, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(cylinderODTXTF, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(prismODTXTF, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(prisimBaseODTXTF, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(prismBaseODTXTF, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addContainerGap()
                                 .addComponent(rangeLabel)
@@ -1203,7 +1138,7 @@ public class VisualAcuity extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(prismBaseLabel)
-                            .addComponent(prisimBaseODTXTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(prismBaseODTXTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(addLabel2)
@@ -1270,220 +1205,11 @@ public class VisualAcuity extends javax.swing.JPanel {
                 .addContainerGap(52, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
-   
-    
-    
-    
-    /**********************************
-    *          VISUAL ACUITY
-    ************************************/
 
-
-    /********************************
-    *     INPUT DATA FOR N 
-    *********************************/
-
-    /********************************
-    *     INPUT DATA FOR N cc
-    *********************************/
-    private void NccODTxtFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_NccODTxtFFocusLost
-        // TODO add your handling code here:
-        String nccOD = NccODTxtF.getText();
-        eyeTestResults.setDccOD(nccOD);
-        System.out.println(nccOD);
-    }//GEN-LAST:event_NccODTxtFFocusLost
-
-    private void NccOSTxtFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_NccOSTxtFFocusLost
-        // TODO add your handling code here:
-        String nccOS = NccOSTxtF.getText();
-        eyeTestResults.setDccOD(nccOS);
-        System.out.println(nccOS);
-        
-    }//GEN-LAST:event_NccOSTxtFFocusLost
-
-    private void NccOUTxtFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_NccOUTxtFFocusLost
-        // TODO add your handling code here:
-         String nccOU = NccOUTxtF.getText();
-         eyeTestResults.setDccOD(nccOU);
-         System.out.println(nccOU);
-    }//GEN-LAST:event_NccOUTxtFFocusLost
-
-    /********************************
-    *     INPUT DATA FOR N sc
-    *********************************/
-    private void NscODTxtFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_NscODTxtFFocusLost
-        // TODO add your handling code here:
-         String nscOD = NscODTxtF.getText();
-         eyeTestResults.setDccOD(nscOD);
-         System.out.println(nscOD);
-    }//GEN-LAST:event_NscODTxtFFocusLost
-
-    private void NscOSTxtFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_NscOSTxtFFocusLost
-        // TODO add your handling code here:
-         String nscOS = NscOSTxtF.getText();
-         eyeTestResults.setDccOD(nscOS);
-         System.out.println(nscOS);
-    }//GEN-LAST:event_NscOSTxtFFocusLost
-
-    private void NscOUTxtFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_NscOUTxtFFocusLost
-        // TODO add your handling code here:
-         String nscOU = NscOUTxtF.getText();
-         eyeTestResults.setDccOD(nscOU);
-         System.out.println(nscOU);
-    }//GEN-LAST:event_NscOUTxtFFocusLost
-
-    /********************************
-    *     INPUT DATA FOR N cc PH
-    *********************************/
-    private void NccODPHTxtFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_NccODPHTxtFFocusLost
-        // TODO add your handling code here:
-         String nccODPH = NccODPHTxtF.getText();
-         eyeTestResults.setDccOD(nccODPH);
-         System.out.println(nccODPH);
-    }//GEN-LAST:event_NccODPHTxtFFocusLost
-
-    private void NccOSPHTxtFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_NccOSPHTxtFFocusLost
-        // TODO add your handling code here:
-         String nccOSPH = NccOSPHTxtF.getText();
-         eyeTestResults.setDccOD(nccOSPH);
-         System.out.println(nccOSPH);
-    }//GEN-LAST:event_NccOSPHTxtFFocusLost
-
-    private void NccOUPHTxtFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_NccOUPHTxtFFocusLost
-        // TODO add your handling code here:
-         String nccOUPH = NccOSPHTxtF.getText();
-         eyeTestResults.setDccOD(nccOUPH);
-         System.out.println(nccOUPH);
-    }//GEN-LAST:event_NccOUPHTxtFFocusLost
-
-    /********************************
-    *     INPUT DATA FOR N sc PH
-    *********************************/
-    private void NscODPHTxtFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_NscODPHTxtFFocusLost
-        // TODO add your handling code here:
-         String nscODPH = NscODPHTxtF.getText();
-         eyeTestResults.setDccOD(nscODPH);
-         System.out.println(nscODPH);
-    }//GEN-LAST:event_NscODPHTxtFFocusLost
-
-    private void NscOSPHTxtFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_NscOSPHTxtFFocusLost
-        // TODO add your handling code here:
-         String nscOSPH = NscOSPHTxtF.getText();
-         eyeTestResults.setDccOD(nscOSPH);
-         System.out.println(nscOSPH);
-    }//GEN-LAST:event_NscOSPHTxtFFocusLost
-
-    private void NscOUPHTxtFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_NscOUPHTxtFFocusLost
-        // TODO add your handling code here:
-         String nscOUPH = NscOUPHTxtF.getText();
-         eyeTestResults.setDccOD(nscOUPH);
-         System.out.println(nscOUPH);
-    }//GEN-LAST:event_NscOUPHTxtFFocusLost
-
-    /***********************************
-    *     INPUT DATA FOR D
-    ************************************/
-
-    /**************************
-    *     INPUT DATA FOR D cc
-    ***************************/
-    private void DccODTxtFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DccODTxtFFocusLost
-        // TODO add your handling code here:
-        String dccOD = DccODTxtF.getText();
-        eyeTestResults.setDccOD(dccOD);
-        System.out.println(dccOD);
-    }//GEN-LAST:event_DccODTxtFFocusLost
-
-    private void DccOSTxtFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DccOSTxtFFocusLost
-        // TODO add your handling code here:
-        String dccOS = DccOSTxtF.getText();
-        eyeTestResults.setDccOD(dccOS);
-        System.out.println(dccOS);
-
-    }//GEN-LAST:event_DccOSTxtFFocusLost
-
-    private void DccOUTxtFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DccOUTxtFFocusLost
-        // TODO add your handling code here:
-        String dccOU = DccOUTxtF.getText();
-        eyeTestResults.setDccOD(dccOU);
-        System.out.println(dccOU);
-    }//GEN-LAST:event_DccOUTxtFFocusLost
-
-    /**************************
-    *     INPUT DATA FOR D sc
-    ***************************/
-    private void DScODTxtFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DScODTxtFFocusLost
-        // TODO add your handling code here:
-        String dscOD = DScODTxtF.getText();
-        eyeTestResults.setDccOD(dscOD);
-        System.out.println(dscOD);
-    }//GEN-LAST:event_DScODTxtFFocusLost
-
-    private void DscOsTxtFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DscOsTxtFFocusLost
-        // TODO add your handling code here:
-        String dscOS = DscOsTxtF.getText();
-        eyeTestResults.setDccOD(dscOS);
-        System.out.println(dscOS);
-    }//GEN-LAST:event_DscOsTxtFFocusLost
-
-    private void DscOUTxtFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DscOUTxtFFocusLost
-        // TODO add your handling code here:
-        String dscOU = DscOUTxtF.getText();
-        eyeTestResults.setDccOD(dscOU);
-        System.out.println(dscOU);
-    }//GEN-LAST:event_DscOUTxtFFocusLost
-
-
-    /****************************
-    *     INPUT DATA FRO D cc PH 
-    *****************************/
-    private void DccODPHTxtFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DccODPHTxtFFocusLost
-        // TODO add your handling code here:
-        String dccODPH = DccODPHTxtF.getText();
-        eyeTestResults.setDccOD(dccODPH);
-        System.out.println(dccODPH);
-    }//GEN-LAST:event_DccODPHTxtFFocusLost
-
-    private void DccOSPHTxtFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DccOSPHTxtFFocusLost
-        // TODO add your handling code here:
-        String dccOSPH = DccOSPHTxtF.getText();
-        eyeTestResults.setDccOD(dccOSPH);
-        System.out.println(dccOSPH);
-
-    }//GEN-LAST:event_DccOSPHTxtFFocusLost
-    
-    private void DccOUPHTxtFFocusLost(java.awt.event.FocusEvent evt) {                                      
-        // TODO add your handling code here:
-        String dccOUPH = DccOUPHTxtF.getText();
-        eyeTestResults.setDccOD(dccOUPH);
-        System.out.println(dccOUPH);
-    }
 
     /****************************
     *     INPUT DATA FRO D sc PH 
     *****************************/
-
-    private void DscODPHTxtFFocusLost(java.awt.event.FocusEvent evt) {                                      
-        // TODO add your handling code here:
-        String dscODPH = DscODPHTxtF.getText();
-        eyeTestResults.setDccODph(dscODPH);
-        System.out.println(dscODPH);
-    }                                     
-
-    private void DscOSPHTxtFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DscOSPHTxtFFocusLost
-        // TODO add your handling code here:
-        String dscOSPH = DscOSPHTxtF.getText();
-        eyeTestResults.setDscOSph(dscOSPH);
-        System.out.println(dscOSPH);
-    }//GEN-LAST:event_DscOSPHTxtFFocusLost
-
-    private void DscOUPHTxtFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DscOUPHTxtFFocusLost
-        // TODO add your handling code here:
-        String dscOUPH = DscOUPHTxtF.getText();
-        eyeTestResults.setDscOUph(dscOUPH);
-        System.out.println(dscOUPH);
-    }//GEN-LAST:event_DscOUPHTxtFFocusLost
-
 
      /**********************************
     *     CORRECTIVE LENSES
@@ -1496,45 +1222,106 @@ public class VisualAcuity extends javax.swing.JPanel {
     private void sphereOSTXTFFocusLost(java.awt.event.FocusEvent evt) {                                       
         // TODO add your handling code here:
        
+		Boolean validFloat = validateFloat(sphereODTXTF.getText());
+		
+		if (!validFloat)
+		{
+			sphereODTXTF.setText("0.00");
+			JOptionPane.showMessageDialog(null, "Enter number in range: 0.00 to 1.00");
+			sphereODTXTF.requestFocus(true);
+		}
+		else
+		{
         Double sphereOS = Double.parseDouble(sphereOSTXTF.getText());
         eyeTestResults.setSphereOS(sphereOS);
         System.out.println("Sphere OS: " + sphereOS);
+		}
 
     }                                      
 
     private void axisOSTXTFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_axisOSTXTFFocusLost
-        // TODO add your handling code here:
+        Boolean validFloat = validateFloat(axisOSTXTF.getText());
+		
+		if (!validFloat)
+		{
+			axisOSTXTF.setText("0.00");
+			JOptionPane.showMessageDialog(null, "Enter number in range: 0.00 to 1.00");
+			axisOSTXTF.requestFocus(true);
+		}
+		else
+		{
          Double axisOS = Double.parseDouble(axisOSTXTF.getText());
          eyeTestResults.setAxisOS(axisOS);
          System.out.println("Axis OS: " + axisOS);
+		}
     }//GEN-LAST:event_axisOSTXTFFocusLost
 
     private void cylinderOSTXTFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cylinderOSTXTFFocusLost
-        // TODO add your handling code here:
+        Boolean validFloat = validateFloat(cylinderOSTXTF.getText());
+		
+		if (!validFloat)
+		{
+			cylinderOSTXTF.setText("0.00");
+			JOptionPane.showMessageDialog(null, "Enter number in range: 0.00 to 1.00");
+			cylinderOSTXTF.requestFocus(true);
+		}
+		else
+		{
          Double cylinderOS = Double.parseDouble(cylinderOSTXTF.getText());
          eyeTestResults.setCylinderOS(cylinderOS);
          System.out.println("Cylinder OS: " + cylinderOS);
+		}
     }//GEN-LAST:event_cylinderOSTXTFFocusLost
 
     private void prismOSTXTFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_prismOSTXTFFocusLost
-        // TODO add your handling code here:
+        Boolean validFloat = validateFloat(prismOSTXTF.getText());
+		
+		if (!validFloat)
+		{
+			prismOSTXTF.setText("0.00");
+			JOptionPane.showMessageDialog(null, "Enter number in range: 0.00 to 1.00");
+			prismOSTXTF.requestFocus(true);
+		}
+		else
+		{
          Double prismOS = Double.parseDouble(prismOSTXTF.getText());
          eyeTestResults.setPrismOS(prismOS);
          System.out.println("Prism OS: " + prismOS);
+		}
     }//GEN-LAST:event_prismOSTXTFFocusLost
 
     private void prismBaseOSTXTFFocusLost(java.awt.event.FocusEvent evt) {                                           
-        // TODO add your handling code here:
+        Boolean validFloat = validateFloat(prismBaseOSTXTF.getText());
+		
+		if (!validFloat)
+		{
+			prismBaseOSTXTF.setText("0.00");
+			JOptionPane.showMessageDialog(null, "Enter number in range: 0.00 to 1.00");
+			prismBaseOSTXTF.requestFocus(true);
+		}
+		else
+		{
          Double prismBaseOS = Double.parseDouble(prismBaseOSTXTF.getText());
          eyeTestResults.setPrismBaseOS(prismBaseOS);
          System.out.println("Prism OS: " + prismBaseOS);
+		}
     }                                          
 
     private void addOSTXTFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_addOSTXTFFocusLost
-        // TODO add your handling code here:
+        Boolean validFloat = validateFloat(addOSTXTF.getText());
+		
+		if (!validFloat)
+		{
+			addOSTXTF.setText("0.00");
+			JOptionPane.showMessageDialog(null, "Enter number in range: 0.00 to 1.00");
+			addOSTXTF.requestFocus(true);
+		}
+		else
+		{
          Double addOS = Double.parseDouble(addOSTXTF.getText());
          eyeTestResults.setAddOS(addOS);
          System.out.println("Add OS: " + addOS);
+		}
     }//GEN-LAST:event_addOSTXTFFocusLost
 
    
@@ -1542,45 +1329,105 @@ public class VisualAcuity extends javax.swing.JPanel {
     *     OD TXT FIELDS
     *************************/
     private void sphereODTXTFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_sphereOSTXTFFocusLost
-        // TODO add your handling code here:
+ 		Boolean validFloat = validateFloat(sphereODTXTF.getText());
+		
+		if (!validFloat)
+		{
+			sphereODTXTF.setText("0.00");
+			JOptionPane.showMessageDialog(null, "Enter number in range: 0.00 to 1.00");
+			sphereODTXTF.requestFocus(true);
+		}
+		else
+		{
         Double sphereOD = Double.parseDouble(sphereODTXTF.getText());
         eyeTestResults.setSphereOD(sphereOD);
         System.out.println("Sphere OD: " + sphereOD);
+		}
     }//GEN-LAST:event_sphereOSTXTFFocusLost
 
     private void axisODTXTFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_axisODTXTFFocusLost
-        // TODO add your handling code here:
+        Boolean validFloat = validateFloat(axisODTXTF.getText());
+		
+		if (!validFloat)
+		{
+			axisODTXTF.setText("0.00");
+			JOptionPane.showMessageDialog(null, "Enter number in range: 0.00 to 1.00");
+			axisODTXTF.requestFocus(true);
+		}
+		else
+		{
         Double axisOD = Double.parseDouble(axisODTXTF.getText());
         eyeTestResults.setAxisOD(axisOD);
         System.out.println("Axis OD: " + axisOD);
+		}
     }//GEN-LAST:event_axisODTXTFFocusLost
 
     private void cylinderODTXTFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cylinderODTXTFFocusLost
-        // TODO add your handling code here:
+        Boolean validFloat = validateFloat(cylinderODTXTF.getText());
+		
+		if (!validFloat)
+		{
+			cylinderODTXTF.setText("0.00");
+			JOptionPane.showMessageDialog(null, "Enter number in range: 0.00 to 1.00");
+			cylinderODTXTF.requestFocus(true);
+		}
+		else
+		{
         Double cylinderOD = Double.parseDouble(cylinderODTXTF.getText());
         eyeTestResults.setCylinderOD(cylinderOD);
         System.out.println("Cylinder OD: " + cylinderOD);
+		}
     }//GEN-LAST:event_cylinderODTXTFFocusLost
 
     private void prismODTXTFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_prismODTXTFFocusLost
-        // TODO add your handling code here:
+        Boolean validFloat = validateFloat(prismODTXTF.getText());
+		
+		if (!validFloat)
+		{
+			prismODTXTF.setText("0.00");
+			JOptionPane.showMessageDialog(null, "Enter number in range: 0.00 to 1.00");
+			prismODTXTF.requestFocus(true);
+		}
+		else
+		{
         Double prismOD = Double.parseDouble(prismODTXTF.getText());
         eyeTestResults.setPrismOD(prismOD);
         System.out.println("Prism OD: " + prismOD);
+		}
     }//GEN-LAST:event_prismODTXTFFocusLost
 
-    private void prisimBaseODTXTFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_prisimBaseODTXTFFocusLost
-        // TODO add your handling code here:
-        Double prismBaseOD = Double.parseDouble(prisimBaseODTXTF.getText());
+    private void prismBaseODTXTFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_prismBaseODTXTFFocusLost
+        Boolean validFloat = validateFloat(prismBaseODTXTF.getText());
+		
+		if (!validFloat)
+		{
+			prismBaseODTXTF.setText("0.00");
+			JOptionPane.showMessageDialog(null, "Enter number in range: 0.00 to 1.00");
+			prismBaseODTXTF.requestFocus(true);
+		}
+		else
+		{
+        Double prismBaseOD = Double.parseDouble(prismBaseODTXTF.getText());
         eyeTestResults.setPrismBaseOD(prismBaseOD);
         System.out.println("Prism OD: " + prismBaseOD);
-    }//GEN-LAST:event_prisimBaseODTXTFFocusLost
+		}
+    }//GEN-LAST:event_prismBaseODTXTFFocusLost
 
     private void addODTXTFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_addODTXTFFocusLost
-        // TODO add your handling code here:
+        Boolean validFloat = validateFloat(addODTXTF.getText());
+		
+		if (!validFloat)
+		{
+			addODTXTF.setText("0.00");
+			JOptionPane.showMessageDialog(null, "Enter number in range: 0.00 to 1.00");
+			addODTXTF.requestFocus(true);
+		}
+		else
+		{
          Double addOD = Double.parseDouble(addODTXTF.getText());
          eyeTestResults.setAddOD(addOD);
          System.out.println("Axis OS: " + addOD);
+		}
     }//GEN-LAST:event_addODTXTFFocusLost
 
     
@@ -1588,9 +1435,109 @@ public class VisualAcuity extends javax.swing.JPanel {
     *     BUTTONS SAVE AND OCCULAR
     ********************************/
     private void saveBttn1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_saveBttn1MouseClicked
-        // TODO add your handling code here:
+
         dataBase.save(eyeTestResults);
     }//GEN-LAST:event_saveBttn1MouseClicked
+
+    private void dccODComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dccODComboBoxActionPerformed
+        eyeTestResults.setDccOD(dccODComboBox.getSelectedItem().toString());
+    }//GEN-LAST:event_dccODComboBoxActionPerformed
+
+    private void dccOSComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dccOSComboBoxActionPerformed
+        eyeTestResults.setDccOS(dccOSComboBox.getSelectedItem().toString());
+    }//GEN-LAST:event_dccOSComboBoxActionPerformed
+
+    private void dccOUComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dccOUComboBoxActionPerformed
+        eyeTestResults.setDccOU(dccOUComboBox.getSelectedItem().toString());
+    }//GEN-LAST:event_dccOUComboBoxActionPerformed
+
+    private void dscODComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dscODComboBoxActionPerformed
+        eyeTestResults.setDscOD(dscODComboBox.getSelectedItem().toString());
+    }//GEN-LAST:event_dscODComboBoxActionPerformed
+
+    private void dscOSComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dscOSComboBoxActionPerformed
+        eyeTestResults.setDscOS(dscOSComboBox.getSelectedItem().toString());
+    }//GEN-LAST:event_dscOSComboBoxActionPerformed
+
+    private void dscOUComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dscOUComboBoxActionPerformed
+        eyeTestResults.setDscOU(dscOUComboBox.getSelectedItem().toString());
+    }//GEN-LAST:event_dscOUComboBoxActionPerformed
+
+    private void dccODphComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dccODphComboBoxActionPerformed
+        eyeTestResults.setDccODph(dccODphComboBox.getSelectedItem().toString());
+    }//GEN-LAST:event_dccODphComboBoxActionPerformed
+
+    private void dccOSphComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dccOSphComboBoxActionPerformed
+        eyeTestResults.setDccOSph(dccOSphComboBox.getSelectedItem().toString());
+    }//GEN-LAST:event_dccOSphComboBoxActionPerformed
+
+    private void dccOUphComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dccOUphComboBoxActionPerformed
+        eyeTestResults.setDccOUph(dccOUphComboBox.getSelectedItem().toString());
+    }//GEN-LAST:event_dccOUphComboBoxActionPerformed
+
+    private void dscODphComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dscODphComboBoxActionPerformed
+        eyeTestResults.setDscODph(dscODphComboBox.getSelectedItem().toString());
+    }//GEN-LAST:event_dscODphComboBoxActionPerformed
+
+    private void dscOUphComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dscOUphComboBoxActionPerformed
+        eyeTestResults.setDscOUph(dscOUphComboBox.getSelectedItem().toString());
+    }//GEN-LAST:event_dscOUphComboBoxActionPerformed
+
+    private void dscOSphComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dscOSphComboBoxActionPerformed
+        eyeTestResults.setDscOSph(dscOSphComboBox.getSelectedItem().toString());
+    }//GEN-LAST:event_dscOSphComboBoxActionPerformed
+
+    private void nccODComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nccODComboBoxActionPerformed
+        eyeTestResults.setNccOD(nccODComboBox.getSelectedItem().toString());
+    }//GEN-LAST:event_nccODComboBoxActionPerformed
+
+    private void nccOSComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nccOSComboBoxActionPerformed
+        eyeTestResults.setNccOS(nccOSComboBox.getSelectedItem().toString());
+    }//GEN-LAST:event_nccOSComboBoxActionPerformed
+
+    private void nccOUComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nccOUComboBoxActionPerformed
+        eyeTestResults.setNccOU(nccOUComboBox.getSelectedItem().toString());
+    }//GEN-LAST:event_nccOUComboBoxActionPerformed
+
+    private void nscODComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nscODComboBoxActionPerformed
+        eyeTestResults.setNscOD(nscODComboBox.getSelectedItem().toString());
+    }//GEN-LAST:event_nscODComboBoxActionPerformed
+
+    private void nscOSComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nscOSComboBoxActionPerformed
+        eyeTestResults.setNscOS(nscOSComboBox.getSelectedItem().toString());
+    }//GEN-LAST:event_nscOSComboBoxActionPerformed
+
+    private void nscOUComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nscOUComboBoxActionPerformed
+        eyeTestResults.setNscOU(nscOUComboBox.getSelectedItem().toString());
+    }//GEN-LAST:event_nscOUComboBoxActionPerformed
+
+    private void nccODphComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nccODphComboBoxActionPerformed
+        eyeTestResults.setNccODph(nccODphComboBox.getSelectedItem().toString());
+    }//GEN-LAST:event_nccODphComboBoxActionPerformed
+
+    private void nccOSphComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nccOSphComboBoxActionPerformed
+        eyeTestResults.setNccOSph(nccOSphComboBox.getSelectedItem().toString());
+    }//GEN-LAST:event_nccOSphComboBoxActionPerformed
+
+    private void nccOUphComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nccOUphComboBoxActionPerformed
+        eyeTestResults.setNccOUph(nccOUphComboBox.getSelectedItem().toString());
+    }//GEN-LAST:event_nccOUphComboBoxActionPerformed
+
+    private void nscODphComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nscODphComboBoxActionPerformed
+        eyeTestResults.setNscODph(nscODphComboBox.getSelectedItem().toString());
+    }//GEN-LAST:event_nscODphComboBoxActionPerformed
+
+    private void nscOUphComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nscOUphComboBoxActionPerformed
+        eyeTestResults.setNscOUph(nscOUphComboBox.getSelectedItem().toString());
+    }//GEN-LAST:event_nscOUphComboBoxActionPerformed
+
+    private void nscOSphComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nscOSphComboBoxActionPerformed
+        eyeTestResults.setNscOSph(nscOSphComboBox.getSelectedItem().toString());
+    }//GEN-LAST:event_nscOSphComboBoxActionPerformed
+
+    private void sphereODTXTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sphereODTXTFActionPerformed
+        System.out.println("here");
+    }//GEN-LAST:event_sphereODTXTFActionPerformed
 
     private void occularBttnMouseClicked(java.awt.event.MouseEvent evt) {                                         
         // TODO add your handling code here:
@@ -1600,30 +1547,6 @@ public class VisualAcuity extends javax.swing.JPanel {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField DScODTxtF;
-    private javax.swing.JTextField DccODPHTxtF;
-    private javax.swing.JTextField DccODTxtF;
-    private javax.swing.JTextField DccOSPHTxtF;
-    private javax.swing.JTextField DccOSTxtF;
-    private javax.swing.JTextField DccOUPHTxtF;
-    private javax.swing.JTextField DccOUTxtF;
-    private javax.swing.JTextField DscODPHTxtF;
-    private javax.swing.JTextField DscOSPHTxtF;
-    private javax.swing.JTextField DscOUPHTxtF;
-    private javax.swing.JTextField DscOUTxtF;
-    private javax.swing.JTextField DscOsTxtF;
-    private javax.swing.JTextField NccODPHTxtF;
-    private javax.swing.JTextField NccODTxtF;
-    private javax.swing.JTextField NccOSPHTxtF;
-    private javax.swing.JTextField NccOSTxtF;
-    private javax.swing.JTextField NccOUPHTxtF;
-    private javax.swing.JTextField NccOUTxtF;
-    private javax.swing.JTextField NscODPHTxtF;
-    private javax.swing.JTextField NscODTxtF;
-    private javax.swing.JTextField NscOSPHTxtF;
-    private javax.swing.JTextField NscOSTxtF;
-    private javax.swing.JTextField NscOUPHTxtF;
-    private javax.swing.JTextField NscOUTxtF;
     private javax.swing.JLabel addLabel1;
     private javax.swing.JLabel addLabel2;
     private javax.swing.JTextField addODTXTF;
@@ -1637,19 +1560,25 @@ public class VisualAcuity extends javax.swing.JPanel {
     private javax.swing.JLabel cylinderLabel3;
     private javax.swing.JTextField cylinderODTXTF;
     private javax.swing.JTextField cylinderOSTXTF;
+    private javax.swing.JComboBox<String> dccODComboBox;
+    private javax.swing.JComboBox<String> dccODphComboBox;
+    private javax.swing.JComboBox<String> dccOSComboBox;
+    private javax.swing.JComboBox<String> dccOSphComboBox;
+    private javax.swing.JComboBox<String> dccOUComboBox;
+    private javax.swing.JComboBox<String> dccOUphComboBox;
+    private javax.swing.JComboBox<String> dscODComboBox;
+    private javax.swing.JComboBox<String> dscODphComboBox;
+    private javax.swing.JComboBox<String> dscOSComboBox;
+    private javax.swing.JComboBox<String> dscOSphComboBox;
+    private javax.swing.JComboBox<String> dscOUComboBox;
+    private javax.swing.JComboBox<String> dscOUphComboBox;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
@@ -1662,12 +1591,6 @@ public class VisualAcuity extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
-    private javax.swing.JLabel jLabel32;
-    private javax.swing.JLabel jLabel33;
-    private javax.swing.JLabel jLabel34;
-    private javax.swing.JLabel jLabel35;
-    private javax.swing.JLabel jLabel36;
-    private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1681,10 +1604,22 @@ public class VisualAcuity extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
+    private javax.swing.JComboBox<String> nccODComboBox;
+    private javax.swing.JComboBox<String> nccODphComboBox;
+    private javax.swing.JComboBox<String> nccOSComboBox;
+    private javax.swing.JComboBox<String> nccOSphComboBox;
+    private javax.swing.JComboBox<String> nccOUComboBox;
+    private javax.swing.JComboBox<String> nccOUphComboBox;
+    private javax.swing.JComboBox<String> nscODComboBox;
+    private javax.swing.JComboBox<String> nscODphComboBox;
+    private javax.swing.JComboBox<String> nscOSComboBox;
+    private javax.swing.JComboBox<String> nscOSphComboBox;
+    private javax.swing.JComboBox<String> nscOUComboBox;
+    private javax.swing.JComboBox<String> nscOUphComboBox;
     private javax.swing.JButton occularBttn;
-    private javax.swing.JTextField prisimBaseODTXTF;
     private javax.swing.JLabel prismBaseLabel;
     private javax.swing.JLabel prismBaseLabel1;
+    private javax.swing.JTextField prismBaseODTXTF;
     private javax.swing.JTextField prismBaseOSTXTF;
     private javax.swing.JLabel prismLabel1;
     private javax.swing.JLabel prismLabel2;

@@ -151,100 +151,73 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel8" min="-2" pref="90" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="NscOUTxtF" max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="jLabel2" min="-2" pref="90" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="NccODTxtF" min="-2" pref="105" max="-2" attributes="0"/>
+                              <Component id="nscOUComboBox" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel3" min="-2" pref="90" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="NccOSTxtF" min="-2" pref="105" max="-2" attributes="0"/>
+                              <Component id="nccOSComboBox" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel4" min="-2" pref="90" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="NccOUTxtF" min="-2" pref="105" max="-2" attributes="0"/>
+                              <Component id="nccOUComboBox" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel6" min="-2" pref="90" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="NscODTxtF" min="-2" pref="105" max="-2" attributes="0"/>
+                              <Component id="nscODComboBox" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel7" min="-2" pref="90" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="NscOSTxtF" min="-2" pref="105" max="-2" attributes="0"/>
+                              <Component id="nscOSComboBox" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jLabel2" min="-2" pref="90" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="nccODComboBox" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="94" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
                               <Component id="jLabel12" min="-2" pref="90" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="NscODPHTxtF" min="-2" pref="96" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jLabel20" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
+                              <Component id="nscODphComboBox" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="99" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Component id="jLabel11" min="-2" pref="90" max="-2" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <Component id="jLabel13" min="-2" pref="90" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="NccOUPHTxtF" min="-2" pref="96" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="jLabel18" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
+                                      <Component id="nscOUphComboBox" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <Component id="jLabel14" min="-2" pref="90" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="nscOSphComboBox" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="jLabel9" alignment="1" min="-2" pref="90" max="-2" attributes="0"/>
                                           <Component id="jLabel10" alignment="0" min="-2" pref="90" max="-2" attributes="0"/>
+                                          <Component id="jLabel11" alignment="1" min="-2" pref="90" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="NccODPHTxtF" pref="96" max="32767" attributes="0"/>
-                                          <Component id="NccOSPHTxtF" max="32767" attributes="0"/>
-                                      </Group>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                                              <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" attributes="0">
-                                              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                                              <Component id="jLabel15" max="32767" attributes="0"/>
-                                          </Group>
+                                          <Component id="nccODphComboBox" min="-2" max="-2" attributes="0"/>
+                                          <Component id="nccOSphComboBox" min="-2" max="-2" attributes="0"/>
+                                          <Component id="nccOUphComboBox" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                  </Group>
-                                  <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Group type="102" attributes="0">
-                                              <Component id="jLabel13" min="-2" pref="90" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="NscOUPHTxtF" min="-2" pref="96" max="-2" attributes="0"/>
-                                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                                              <Component id="jLabel19" min="-2" pref="90" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" attributes="0">
-                                              <Component id="jLabel14" min="-2" pref="90" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="NscOSPHTxtF" min="-2" pref="96" max="-2" attributes="0"/>
-                                              <EmptySpace max="32767" attributes="0"/>
-                                              <Component id="jLabel17" min="-2" pref="90" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -256,58 +229,44 @@
                       <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="NccODTxtF" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel10" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
-                          <Component id="NccODPHTxtF" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel16" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
+                          <Component id="nccODComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="nccODphComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="NccOSTxtF" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel9" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
-                          <Component id="NccOSPHTxtF" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel15" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
+                          <Component id="nccOSComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="nccOSphComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="NccOUTxtF" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel11" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
-                          <Component id="NccOUPHTxtF" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel18" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
+                          <Component id="nccOUComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="nccOUphComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="NscODTxtF" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel6" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
                           <Component id="jLabel12" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
-                          <Component id="NscODPHTxtF" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel20" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
+                          <Component id="nscODComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="nscODphComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel7" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
-                          <Component id="NscOSTxtF" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel14" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
-                          <Component id="NscOSPHTxtF" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel17" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
+                          <Component id="nscOSComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="nscOSphComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="NscOUTxtF" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel8" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
-                                  <Component id="jLabel13" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
-                                  <Component id="jLabel19" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="NscOUPHTxtF" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                          </Group>
+                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel8" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
+                          <Component id="jLabel13" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
+                          <Component id="nscOUComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="nscOUphComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -325,22 +284,6 @@
                 <Property name="text" type="java.lang.String" value="NccOD"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="NccODTxtF">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="fa" green="ce" red="87" type="rgb"/>
-                </Property>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="14" style="0"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
-              </Properties>
-              <Events>
-                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="NccODTxtFFocusLost"/>
-              </Events>
-            </Component>
             <Component class="javax.swing.JLabel" name="jLabel3">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -351,19 +294,6 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="NccOS"/>
               </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="NscODTxtF">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="fa" green="ce" red="87" type="rgb"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
-              </Properties>
-              <Events>
-                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="NscODTxtFFocusLost"/>
-              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel4">
               <Properties>
@@ -376,38 +306,6 @@
                 <Property name="text" type="java.lang.String" value="NccOU"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="NccOSTxtF">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="fa" green="ce" red="87" type="rgb"/>
-                </Property>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="14" style="0"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
-              </Properties>
-              <Events>
-                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="NccOSTxtFFocusLost"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JTextField" name="NccOUTxtF">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="fa" green="ce" red="87" type="rgb"/>
-                </Property>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="14" style="0"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
-              </Properties>
-              <Events>
-                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="NccOUTxtFFocusLost"/>
-              </Events>
-            </Component>
             <Component class="javax.swing.JLabel" name="jLabel6">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -419,23 +317,6 @@
                 <Property name="text" type="java.lang.String" value="NscOD"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="NscOUTxtF">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="fa" green="ce" red="87" type="rgb"/>
-                </Property>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="14" style="0"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
-                <Property name="toolTipText" type="java.lang.String" value=""/>
-              </Properties>
-              <Events>
-                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="NscOUTxtFFocusLost"/>
-              </Events>
-            </Component>
             <Component class="javax.swing.JLabel" name="jLabel7">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -446,22 +327,6 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="NscOS"/>
               </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="NscOSTxtF">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="fa" green="ce" red="87" type="rgb"/>
-                </Property>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="14" style="0"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
-              </Properties>
-              <Events>
-                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="NscOSTxtFFocusLost"/>
-              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel8">
               <Properties>
@@ -540,177 +405,353 @@
                 <Property name="text" type="java.lang.String" value="NscOSPH"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="NccOSPHTxtF">
+            <Component class="javax.swing.JComboBox" name="nccODComboBox">
               <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="fa" green="ce" red="87" type="rgb"/>
-                </Property>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="14" style="0"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
-                <Property name="toolTipText" type="java.lang.String" value=""/>
-              </Properties>
-              <Events>
-                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="NccOSPHTxtFFocusLost"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JTextField" name="NccOUPHTxtF">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="fa" green="ce" red="87" type="rgb"/>
-                </Property>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="14" style="0"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="15">
+                    <StringItem index="0" value="NOT CHECKED"/>
+                    <StringItem index="1" value="20/10"/>
+                    <StringItem index="2" value="20/12.5"/>
+                    <StringItem index="3" value="20/16"/>
+                    <StringItem index="4" value="20/20"/>
+                    <StringItem index="5" value="20/ 25"/>
+                    <StringItem index="6" value="20/32"/>
+                    <StringItem index="7" value="20/40"/>
+                    <StringItem index="8" value="20/50"/>
+                    <StringItem index="9" value="20/63"/>
+                    <StringItem index="10" value="20/80"/>
+                    <StringItem index="11" value="20/100"/>
+                    <StringItem index="12" value="20/125"/>
+                    <StringItem index="13" value="20/160"/>
+                    <StringItem index="14" value="20/200"/>
+                  </StringArray>
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="NccOUPHTxtFFocusLost"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nccODComboBoxActionPerformed"/>
               </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
             </Component>
-            <Component class="javax.swing.JTextField" name="NscODPHTxtF">
+            <Component class="javax.swing.JComboBox" name="nccOSComboBox">
               <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="fa" green="ce" red="87" type="rgb"/>
-                </Property>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="14" style="0"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="15">
+                    <StringItem index="0" value="NOT CHECKED"/>
+                    <StringItem index="1" value="20/10"/>
+                    <StringItem index="2" value="20/12.5"/>
+                    <StringItem index="3" value="20/16"/>
+                    <StringItem index="4" value="20/20"/>
+                    <StringItem index="5" value="20/ 25"/>
+                    <StringItem index="6" value="20/32"/>
+                    <StringItem index="7" value="20/40"/>
+                    <StringItem index="8" value="20/50"/>
+                    <StringItem index="9" value="20/63"/>
+                    <StringItem index="10" value="20/80"/>
+                    <StringItem index="11" value="20/100"/>
+                    <StringItem index="12" value="20/125"/>
+                    <StringItem index="13" value="20/160"/>
+                    <StringItem index="14" value="20/200"/>
+                  </StringArray>
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="NscODPHTxtFFocusLost"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nccOSComboBoxActionPerformed"/>
               </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
             </Component>
-            <Component class="javax.swing.JTextField" name="NccODPHTxtF">
+            <Component class="javax.swing.JComboBox" name="nccOUComboBox">
               <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="fa" green="ce" red="87" type="rgb"/>
-                </Property>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="14" style="0"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="15">
+                    <StringItem index="0" value="NOT CHECKED"/>
+                    <StringItem index="1" value="20/10"/>
+                    <StringItem index="2" value="20/12.5"/>
+                    <StringItem index="3" value="20/16"/>
+                    <StringItem index="4" value="20/20"/>
+                    <StringItem index="5" value="20/ 25"/>
+                    <StringItem index="6" value="20/32"/>
+                    <StringItem index="7" value="20/40"/>
+                    <StringItem index="8" value="20/50"/>
+                    <StringItem index="9" value="20/63"/>
+                    <StringItem index="10" value="20/80"/>
+                    <StringItem index="11" value="20/100"/>
+                    <StringItem index="12" value="20/125"/>
+                    <StringItem index="13" value="20/160"/>
+                    <StringItem index="14" value="20/200"/>
+                  </StringArray>
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="NccODPHTxtFFocusLost"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nccOUComboBoxActionPerformed"/>
               </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
             </Component>
-            <Component class="javax.swing.JTextField" name="NscOUPHTxtF">
+            <Component class="javax.swing.JComboBox" name="nscODComboBox">
               <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="fa" green="ce" red="87" type="rgb"/>
-                </Property>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="14" style="0"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="15">
+                    <StringItem index="0" value="NOT CHECKED"/>
+                    <StringItem index="1" value="20/10"/>
+                    <StringItem index="2" value="20/12.5"/>
+                    <StringItem index="3" value="20/16"/>
+                    <StringItem index="4" value="20/20"/>
+                    <StringItem index="5" value="20/ 25"/>
+                    <StringItem index="6" value="20/32"/>
+                    <StringItem index="7" value="20/40"/>
+                    <StringItem index="8" value="20/50"/>
+                    <StringItem index="9" value="20/63"/>
+                    <StringItem index="10" value="20/80"/>
+                    <StringItem index="11" value="20/100"/>
+                    <StringItem index="12" value="20/125"/>
+                    <StringItem index="13" value="20/160"/>
+                    <StringItem index="14" value="20/200"/>
+                  </StringArray>
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="NscOUPHTxtFFocusLost"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nscODComboBoxActionPerformed"/>
               </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
             </Component>
-            <Component class="javax.swing.JTextField" name="NscOSPHTxtF">
+            <Component class="javax.swing.JComboBox" name="nscOSComboBox">
               <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="fa" green="ce" red="87" type="rgb"/>
-                </Property>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="14" style="0"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="15">
+                    <StringItem index="0" value="NOT CHECKED"/>
+                    <StringItem index="1" value="20/10"/>
+                    <StringItem index="2" value="20/12.5"/>
+                    <StringItem index="3" value="20/16"/>
+                    <StringItem index="4" value="20/20"/>
+                    <StringItem index="5" value="20/ 25"/>
+                    <StringItem index="6" value="20/32"/>
+                    <StringItem index="7" value="20/40"/>
+                    <StringItem index="8" value="20/50"/>
+                    <StringItem index="9" value="20/63"/>
+                    <StringItem index="10" value="20/80"/>
+                    <StringItem index="11" value="20/100"/>
+                    <StringItem index="12" value="20/125"/>
+                    <StringItem index="13" value="20/160"/>
+                    <StringItem index="14" value="20/200"/>
+                  </StringArray>
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="NscOSPHTxtFFocusLost"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nscOSComboBoxActionPerformed"/>
               </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel15">
+            <Component class="javax.swing.JComboBox" name="nscOUComboBox">
               <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="14" style="0"/>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="15">
+                    <StringItem index="0" value="NOT CHECKED"/>
+                    <StringItem index="1" value="20/10"/>
+                    <StringItem index="2" value="20/12.5"/>
+                    <StringItem index="3" value="20/16"/>
+                    <StringItem index="4" value="20/20"/>
+                    <StringItem index="5" value="20/ 25"/>
+                    <StringItem index="6" value="20/32"/>
+                    <StringItem index="7" value="20/40"/>
+                    <StringItem index="8" value="20/50"/>
+                    <StringItem index="9" value="20/63"/>
+                    <StringItem index="10" value="20/80"/>
+                    <StringItem index="11" value="20/100"/>
+                    <StringItem index="12" value="20/125"/>
+                    <StringItem index="13" value="20/160"/>
+                    <StringItem index="14" value="20/200"/>
+                  </StringArray>
                 </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="/20"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nscOUComboBoxActionPerformed"/>
+              </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel16">
+            <Component class="javax.swing.JComboBox" name="nccODphComboBox">
               <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="23" green="21" red="20" type="rgb"/>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="15">
+                    <StringItem index="0" value="NOT CHECKED"/>
+                    <StringItem index="1" value="20/10"/>
+                    <StringItem index="2" value="20/12.5"/>
+                    <StringItem index="3" value="20/16"/>
+                    <StringItem index="4" value="20/20"/>
+                    <StringItem index="5" value="20/ 25"/>
+                    <StringItem index="6" value="20/32"/>
+                    <StringItem index="7" value="20/40"/>
+                    <StringItem index="8" value="20/50"/>
+                    <StringItem index="9" value="20/63"/>
+                    <StringItem index="10" value="20/80"/>
+                    <StringItem index="11" value="20/100"/>
+                    <StringItem index="12" value="20/125"/>
+                    <StringItem index="13" value="20/160"/>
+                    <StringItem index="14" value="20/200"/>
+                  </StringArray>
                 </Property>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="14" style="0"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="/20"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nccODphComboBoxActionPerformed"/>
+              </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel17">
+            <Component class="javax.swing.JComboBox" name="nccOSphComboBox">
               <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="23" green="21" red="20" type="rgb"/>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="15">
+                    <StringItem index="0" value="NOT CHECKED"/>
+                    <StringItem index="1" value="20/10"/>
+                    <StringItem index="2" value="20/12.5"/>
+                    <StringItem index="3" value="20/16"/>
+                    <StringItem index="4" value="20/20"/>
+                    <StringItem index="5" value="20/ 25"/>
+                    <StringItem index="6" value="20/32"/>
+                    <StringItem index="7" value="20/40"/>
+                    <StringItem index="8" value="20/50"/>
+                    <StringItem index="9" value="20/63"/>
+                    <StringItem index="10" value="20/80"/>
+                    <StringItem index="11" value="20/100"/>
+                    <StringItem index="12" value="20/125"/>
+                    <StringItem index="13" value="20/160"/>
+                    <StringItem index="14" value="20/200"/>
+                  </StringArray>
                 </Property>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="14" style="0"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="/20"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nccOSphComboBoxActionPerformed"/>
+              </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel18">
+            <Component class="javax.swing.JComboBox" name="nccOUphComboBox">
               <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="fa" green="ce" red="87" type="rgb"/>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="15">
+                    <StringItem index="0" value="NOT CHECKED"/>
+                    <StringItem index="1" value="20/10"/>
+                    <StringItem index="2" value="20/12.5"/>
+                    <StringItem index="3" value="20/16"/>
+                    <StringItem index="4" value="20/20"/>
+                    <StringItem index="5" value="20/ 25"/>
+                    <StringItem index="6" value="20/32"/>
+                    <StringItem index="7" value="20/40"/>
+                    <StringItem index="8" value="20/50"/>
+                    <StringItem index="9" value="20/63"/>
+                    <StringItem index="10" value="20/80"/>
+                    <StringItem index="11" value="20/100"/>
+                    <StringItem index="12" value="20/125"/>
+                    <StringItem index="13" value="20/160"/>
+                    <StringItem index="14" value="20/200"/>
+                  </StringArray>
                 </Property>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="14" style="0"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="/20"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nccOUphComboBoxActionPerformed"/>
+              </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel19">
+            <Component class="javax.swing.JComboBox" name="nscODphComboBox">
               <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="14" style="0"/>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="15">
+                    <StringItem index="0" value="NOT CHECKED"/>
+                    <StringItem index="1" value="20/10"/>
+                    <StringItem index="2" value="20/12.5"/>
+                    <StringItem index="3" value="20/16"/>
+                    <StringItem index="4" value="20/20"/>
+                    <StringItem index="5" value="20/ 25"/>
+                    <StringItem index="6" value="20/32"/>
+                    <StringItem index="7" value="20/40"/>
+                    <StringItem index="8" value="20/50"/>
+                    <StringItem index="9" value="20/63"/>
+                    <StringItem index="10" value="20/80"/>
+                    <StringItem index="11" value="20/100"/>
+                    <StringItem index="12" value="20/125"/>
+                    <StringItem index="13" value="20/160"/>
+                    <StringItem index="14" value="20/200"/>
+                  </StringArray>
                 </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="/20"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nscODphComboBoxActionPerformed"/>
+              </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel20">
+            <Component class="javax.swing.JComboBox" name="nscOUphComboBox">
               <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="14" style="0"/>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="15">
+                    <StringItem index="0" value="NOT CHECKED"/>
+                    <StringItem index="1" value="20/10"/>
+                    <StringItem index="2" value="20/12.5"/>
+                    <StringItem index="3" value="20/16"/>
+                    <StringItem index="4" value="20/20"/>
+                    <StringItem index="5" value="20/ 25"/>
+                    <StringItem index="6" value="20/32"/>
+                    <StringItem index="7" value="20/40"/>
+                    <StringItem index="8" value="20/50"/>
+                    <StringItem index="9" value="20/63"/>
+                    <StringItem index="10" value="20/80"/>
+                    <StringItem index="11" value="20/100"/>
+                    <StringItem index="12" value="20/125"/>
+                    <StringItem index="13" value="20/160"/>
+                    <StringItem index="14" value="20/200"/>
+                  </StringArray>
                 </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="/20"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nscOUphComboBoxActionPerformed"/>
+              </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="nscOSphComboBox">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="15">
+                    <StringItem index="0" value="NOT CHECKED"/>
+                    <StringItem index="1" value="20/10"/>
+                    <StringItem index="2" value="20/12.5"/>
+                    <StringItem index="3" value="20/16"/>
+                    <StringItem index="4" value="20/20"/>
+                    <StringItem index="5" value="20/ 25"/>
+                    <StringItem index="6" value="20/32"/>
+                    <StringItem index="7" value="20/40"/>
+                    <StringItem index="8" value="20/50"/>
+                    <StringItem index="9" value="20/63"/>
+                    <StringItem index="10" value="20/80"/>
+                    <StringItem index="11" value="20/100"/>
+                    <StringItem index="12" value="20/125"/>
+                    <StringItem index="13" value="20/160"/>
+                    <StringItem index="14" value="20/200"/>
+                  </StringArray>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nscOSphComboBoxActionPerformed"/>
+              </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
             </Component>
           </SubComponents>
         </Container>
@@ -733,91 +774,72 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel21" min="-2" pref="90" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="DccOSTxtF" max="32767" attributes="0"/>
+                              <Component id="dccOSComboBox" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel22" min="-2" pref="90" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="DccOUTxtF" max="32767" attributes="0"/>
+                              <Component id="dccOUComboBox" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel23" min="-2" pref="90" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="DScODTxtF" max="32767" attributes="0"/>
+                              <Component id="dscODComboBox" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel24" min="-2" pref="90" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="DscOsTxtF" max="32767" attributes="0"/>
+                              <Component id="dscOSComboBox" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel25" min="-2" pref="90" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="DscOUTxtF" max="32767" attributes="0"/>
+                              <Component id="dscOUComboBox" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel5" min="-2" pref="90" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="DccODTxtF" min="-2" pref="103" max="-2" attributes="0"/>
+                              <Component id="dccODComboBox" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel28" alignment="0" min="-2" pref="90" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jLabel30" min="-2" pref="90" max="-2" attributes="0"/>
-                                      <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="DscOUPHTxtF" min="-2" pref="83" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jLabel31" min="-2" pref="90" max="-2" attributes="0"/>
-                                      <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="DscOSPHTxtF" min="-2" pref="83" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jLabel29" min="-2" pref="90" max="-2" attributes="0"/>
-                                      <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="DscODPHTxtF" min="-2" pref="83" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jLabel26" min="-2" pref="90" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="DccOSPHTxtF" max="32767" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jLabel27" min="-2" pref="90" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="DccODPHTxtF" min="-2" pref="83" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="DccOUPHTxtF" alignment="1" min="-2" pref="83" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
-                                      <Component id="jLabel33" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jLabel35" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel32" min="-2" pref="39" max="-2" attributes="0"/>
-                                          <Component id="jLabel37" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                              <Component id="jLabel36" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="jLabel34" alignment="0" max="32767" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                  </Group>
-                              </Group>
+                              <Component id="jLabel28" min="-2" pref="90" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="dccOUphComboBox" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jLabel30" min="-2" pref="90" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="dscOUphComboBox" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jLabel31" min="-2" pref="90" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="dscOSphComboBox" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jLabel29" min="-2" pref="90" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="dscODphComboBox" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jLabel26" min="-2" pref="90" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="dccOSphComboBox" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jLabel27" min="-2" pref="90" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="dccODphComboBox" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="36" max="32767" attributes="0"/>
+                      <EmptySpace pref="77" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -827,57 +849,44 @@
                       <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="DccODTxtF" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel27" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
-                          <Component id="DccODPHTxtF" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel33" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
+                          <Component id="dccODComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="dccODphComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel21" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="DccOSTxtF" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel26" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
-                          <Component id="DccOSPHTxtF" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel32" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
+                          <Component id="dccOSComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="dccOSphComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel22" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="DccOUTxtF" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel28" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
-                          <Component id="DccOUPHTxtF" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel35" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
+                          <Component id="dccOUComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="dccOUphComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="DScODTxtF" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel23" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
                           <Component id="jLabel29" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
-                          <Component id="jLabel37" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
-                          <Component id="DscODPHTxtF" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="dscODComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="dscODphComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel24" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
-                          <Component id="DscOsTxtF" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel31" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
-                          <Component id="DscOSPHTxtF" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel34" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
+                          <Component id="dscOSComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="dscOSphComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="DscOUTxtF" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel25" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
-                                  <Component id="jLabel30" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
-                                  <Component id="DscOUPHTxtF" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="jLabel36" min="-2" pref="26" max="-2" attributes="0"/>
-                          </Group>
+                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel25" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
+                          <Component id="jLabel30" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
+                          <Component id="dscOUComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="dscOUphComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -895,22 +904,6 @@
                 <Property name="text" type="java.lang.String" value="DccOD"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="DccODTxtF">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="fa" green="ce" red="87" type="rgb"/>
-                </Property>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="14" style="0"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
-              </Properties>
-              <Events>
-                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="DccODTxtFFocusLost"/>
-              </Events>
-            </Component>
             <Component class="javax.swing.JLabel" name="jLabel21">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -921,22 +914,6 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="DccOS"/>
               </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="DScODTxtF">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="fa" green="ce" red="87" type="rgb"/>
-                </Property>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="14" style="0"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
-              </Properties>
-              <Events>
-                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="DScODTxtFFocusLost"/>
-              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel22">
               <Properties>
@@ -949,38 +926,6 @@
                 <Property name="text" type="java.lang.String" value="DccOU"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="DccOSTxtF">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="fa" green="ce" red="87" type="rgb"/>
-                </Property>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="14" style="0"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
-              </Properties>
-              <Events>
-                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="DccOSTxtFFocusLost"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JTextField" name="DccOUTxtF">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="fa" green="ce" red="87" type="rgb"/>
-                </Property>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="14" style="0"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
-              </Properties>
-              <Events>
-                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="DccOUTxtFFocusLost"/>
-              </Events>
-            </Component>
             <Component class="javax.swing.JLabel" name="jLabel23">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -991,19 +936,6 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="DscOD"/>
               </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="DscOUTxtF">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="fa" green="ce" red="87" type="rgb"/>
-                </Property>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="14" style="0"/>
-                </Property>
-              </Properties>
-              <Events>
-                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="DscOUTxtFFocusLost"/>
-              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel24">
               <Properties>
@@ -1018,19 +950,6 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="DscOS"/>
               </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="DscOsTxtF">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="fa" green="ce" red="87" type="rgb"/>
-                </Property>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="14" style="0"/>
-                </Property>
-              </Properties>
-              <Events>
-                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="DscOsTxtFFocusLost"/>
-              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel25">
               <Properties>
@@ -1112,167 +1031,353 @@
                 <Property name="text" type="java.lang.String" value="DscOSPH"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="DccOSPHTxtF">
+            <Component class="javax.swing.JComboBox" name="dccODComboBox">
               <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="fa" green="ce" red="87" type="rgb"/>
-                </Property>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="14" style="0"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="15">
+                    <StringItem index="0" value="NOT CHECKED"/>
+                    <StringItem index="1" value="20/10"/>
+                    <StringItem index="2" value="20/12.5"/>
+                    <StringItem index="3" value="20/16"/>
+                    <StringItem index="4" value="20/20"/>
+                    <StringItem index="5" value="20/ 25"/>
+                    <StringItem index="6" value="20/32"/>
+                    <StringItem index="7" value="20/40"/>
+                    <StringItem index="8" value="20/50"/>
+                    <StringItem index="9" value="20/63"/>
+                    <StringItem index="10" value="20/80"/>
+                    <StringItem index="11" value="20/100"/>
+                    <StringItem index="12" value="20/125"/>
+                    <StringItem index="13" value="20/160"/>
+                    <StringItem index="14" value="20/200"/>
+                  </StringArray>
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="DccOSPHTxtFFocusLost"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dccODComboBoxActionPerformed"/>
               </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
             </Component>
-            <Component class="javax.swing.JTextField" name="DccOUPHTxtF">
+            <Component class="javax.swing.JComboBox" name="dccOSComboBox">
               <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="fa" green="ce" red="87" type="rgb"/>
-                </Property>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="14" style="0"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="15">
+                    <StringItem index="0" value="NOT CHECKED"/>
+                    <StringItem index="1" value="20/10"/>
+                    <StringItem index="2" value="20/12.5"/>
+                    <StringItem index="3" value="20/16"/>
+                    <StringItem index="4" value="20/20"/>
+                    <StringItem index="5" value="20/ 25"/>
+                    <StringItem index="6" value="20/32"/>
+                    <StringItem index="7" value="20/40"/>
+                    <StringItem index="8" value="20/50"/>
+                    <StringItem index="9" value="20/63"/>
+                    <StringItem index="10" value="20/80"/>
+                    <StringItem index="11" value="20/100"/>
+                    <StringItem index="12" value="20/125"/>
+                    <StringItem index="13" value="20/160"/>
+                    <StringItem index="14" value="20/200"/>
+                  </StringArray>
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="DccOUPHTxtFFocusLost"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dccOSComboBoxActionPerformed"/>
               </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
             </Component>
-            <Component class="javax.swing.JTextField" name="DccODPHTxtF">
+            <Component class="javax.swing.JComboBox" name="dccOUComboBox">
               <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="fa" green="ce" red="87" type="rgb"/>
-                </Property>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="14" style="0"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="15">
+                    <StringItem index="0" value="NOT CHECKED"/>
+                    <StringItem index="1" value="20/10"/>
+                    <StringItem index="2" value="20/12.5"/>
+                    <StringItem index="3" value="20/16"/>
+                    <StringItem index="4" value="20/20"/>
+                    <StringItem index="5" value="20/ 25"/>
+                    <StringItem index="6" value="20/32"/>
+                    <StringItem index="7" value="20/40"/>
+                    <StringItem index="8" value="20/50"/>
+                    <StringItem index="9" value="20/63"/>
+                    <StringItem index="10" value="20/80"/>
+                    <StringItem index="11" value="20/100"/>
+                    <StringItem index="12" value="20/125"/>
+                    <StringItem index="13" value="20/160"/>
+                    <StringItem index="14" value="20/200"/>
+                  </StringArray>
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="DccODPHTxtFFocusLost"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dccOUComboBoxActionPerformed"/>
               </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
             </Component>
-            <Component class="javax.swing.JTextField" name="DscOUPHTxtF">
+            <Component class="javax.swing.JComboBox" name="dscODComboBox">
               <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="fa" green="ce" red="87" type="rgb"/>
-                </Property>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="14" style="0"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="15">
+                    <StringItem index="0" value="NOT CHECKED"/>
+                    <StringItem index="1" value="20/10"/>
+                    <StringItem index="2" value="20/12.5"/>
+                    <StringItem index="3" value="20/16"/>
+                    <StringItem index="4" value="20/20"/>
+                    <StringItem index="5" value="20/ 25"/>
+                    <StringItem index="6" value="20/32"/>
+                    <StringItem index="7" value="20/40"/>
+                    <StringItem index="8" value="20/50"/>
+                    <StringItem index="9" value="20/63"/>
+                    <StringItem index="10" value="20/80"/>
+                    <StringItem index="11" value="20/100"/>
+                    <StringItem index="12" value="20/125"/>
+                    <StringItem index="13" value="20/160"/>
+                    <StringItem index="14" value="20/200"/>
+                  </StringArray>
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="DscOUPHTxtFFocusLost"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dscODComboBoxActionPerformed"/>
               </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
             </Component>
-            <Component class="javax.swing.JTextField" name="DscOSPHTxtF">
+            <Component class="javax.swing.JComboBox" name="dscOSComboBox">
               <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="fa" green="ce" red="87" type="rgb"/>
-                </Property>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="14" style="0"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="15">
+                    <StringItem index="0" value="NOT CHECKED"/>
+                    <StringItem index="1" value="20/10"/>
+                    <StringItem index="2" value="20/12.5"/>
+                    <StringItem index="3" value="20/16"/>
+                    <StringItem index="4" value="20/20"/>
+                    <StringItem index="5" value="20/ 25"/>
+                    <StringItem index="6" value="20/32"/>
+                    <StringItem index="7" value="20/40"/>
+                    <StringItem index="8" value="20/50"/>
+                    <StringItem index="9" value="20/63"/>
+                    <StringItem index="10" value="20/80"/>
+                    <StringItem index="11" value="20/100"/>
+                    <StringItem index="12" value="20/125"/>
+                    <StringItem index="13" value="20/160"/>
+                    <StringItem index="14" value="20/200"/>
+                  </StringArray>
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="DscOSPHTxtFFocusLost"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dscOSComboBoxActionPerformed"/>
               </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel32">
+            <Component class="javax.swing.JComboBox" name="dscOUComboBox">
               <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="14" style="0"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="/20"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel33">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="14" style="0"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="/20"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel34">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="14" style="0"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="/20"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel35">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="14" style="0"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="/20"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel36">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="14" style="0"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="/20"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel37">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="14" style="0"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="/20"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="DscODPHTxtF">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="fa" green="ce" red="87" type="rgb"/>
-                </Property>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="14" style="0"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="15">
+                    <StringItem index="0" value="NOT CHECKED"/>
+                    <StringItem index="1" value="20/10"/>
+                    <StringItem index="2" value="20/12.5"/>
+                    <StringItem index="3" value="20/16"/>
+                    <StringItem index="4" value="20/20"/>
+                    <StringItem index="5" value="20/ 25"/>
+                    <StringItem index="6" value="20/32"/>
+                    <StringItem index="7" value="20/40"/>
+                    <StringItem index="8" value="20/50"/>
+                    <StringItem index="9" value="20/63"/>
+                    <StringItem index="10" value="20/80"/>
+                    <StringItem index="11" value="20/100"/>
+                    <StringItem index="12" value="20/125"/>
+                    <StringItem index="13" value="20/160"/>
+                    <StringItem index="14" value="20/200"/>
+                  </StringArray>
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="DscODPHTxtFFocusLost"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dscOUComboBoxActionPerformed"/>
               </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="dccODphComboBox">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="15">
+                    <StringItem index="0" value="NOT CHECKED"/>
+                    <StringItem index="1" value="20/10"/>
+                    <StringItem index="2" value="20/12.5"/>
+                    <StringItem index="3" value="20/16"/>
+                    <StringItem index="4" value="20/20"/>
+                    <StringItem index="5" value="20/ 25"/>
+                    <StringItem index="6" value="20/32"/>
+                    <StringItem index="7" value="20/40"/>
+                    <StringItem index="8" value="20/50"/>
+                    <StringItem index="9" value="20/63"/>
+                    <StringItem index="10" value="20/80"/>
+                    <StringItem index="11" value="20/100"/>
+                    <StringItem index="12" value="20/125"/>
+                    <StringItem index="13" value="20/160"/>
+                    <StringItem index="14" value="20/200"/>
+                  </StringArray>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dccODphComboBoxActionPerformed"/>
+              </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="dccOSphComboBox">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="15">
+                    <StringItem index="0" value="NOT CHECKED"/>
+                    <StringItem index="1" value="20/10"/>
+                    <StringItem index="2" value="20/12.5"/>
+                    <StringItem index="3" value="20/16"/>
+                    <StringItem index="4" value="20/20"/>
+                    <StringItem index="5" value="20/ 25"/>
+                    <StringItem index="6" value="20/32"/>
+                    <StringItem index="7" value="20/40"/>
+                    <StringItem index="8" value="20/50"/>
+                    <StringItem index="9" value="20/63"/>
+                    <StringItem index="10" value="20/80"/>
+                    <StringItem index="11" value="20/100"/>
+                    <StringItem index="12" value="20/125"/>
+                    <StringItem index="13" value="20/160"/>
+                    <StringItem index="14" value="20/200"/>
+                  </StringArray>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dccOSphComboBoxActionPerformed"/>
+              </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="dccOUphComboBox">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="15">
+                    <StringItem index="0" value="NOT CHECKED"/>
+                    <StringItem index="1" value="20/10"/>
+                    <StringItem index="2" value="20/12.5"/>
+                    <StringItem index="3" value="20/16"/>
+                    <StringItem index="4" value="20/20"/>
+                    <StringItem index="5" value="20/ 25"/>
+                    <StringItem index="6" value="20/32"/>
+                    <StringItem index="7" value="20/40"/>
+                    <StringItem index="8" value="20/50"/>
+                    <StringItem index="9" value="20/63"/>
+                    <StringItem index="10" value="20/80"/>
+                    <StringItem index="11" value="20/100"/>
+                    <StringItem index="12" value="20/125"/>
+                    <StringItem index="13" value="20/160"/>
+                    <StringItem index="14" value="20/200"/>
+                  </StringArray>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dccOUphComboBoxActionPerformed"/>
+              </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="dscODphComboBox">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="15">
+                    <StringItem index="0" value="NOT CHECKED"/>
+                    <StringItem index="1" value="20/10"/>
+                    <StringItem index="2" value="20/12.5"/>
+                    <StringItem index="3" value="20/16"/>
+                    <StringItem index="4" value="20/20"/>
+                    <StringItem index="5" value="20/ 25"/>
+                    <StringItem index="6" value="20/32"/>
+                    <StringItem index="7" value="20/40"/>
+                    <StringItem index="8" value="20/50"/>
+                    <StringItem index="9" value="20/63"/>
+                    <StringItem index="10" value="20/80"/>
+                    <StringItem index="11" value="20/100"/>
+                    <StringItem index="12" value="20/125"/>
+                    <StringItem index="13" value="20/160"/>
+                    <StringItem index="14" value="20/200"/>
+                  </StringArray>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dscODphComboBoxActionPerformed"/>
+              </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="dscOUphComboBox">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="15">
+                    <StringItem index="0" value="NOT CHECKED"/>
+                    <StringItem index="1" value="20/10"/>
+                    <StringItem index="2" value="20/12.5"/>
+                    <StringItem index="3" value="20/16"/>
+                    <StringItem index="4" value="20/20"/>
+                    <StringItem index="5" value="20/ 25"/>
+                    <StringItem index="6" value="20/32"/>
+                    <StringItem index="7" value="20/40"/>
+                    <StringItem index="8" value="20/50"/>
+                    <StringItem index="9" value="20/63"/>
+                    <StringItem index="10" value="20/80"/>
+                    <StringItem index="11" value="20/100"/>
+                    <StringItem index="12" value="20/125"/>
+                    <StringItem index="13" value="20/160"/>
+                    <StringItem index="14" value="20/200"/>
+                  </StringArray>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dscOUphComboBoxActionPerformed"/>
+              </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="dscOSphComboBox">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="15">
+                    <StringItem index="0" value="NOT CHECKED"/>
+                    <StringItem index="1" value="20/10"/>
+                    <StringItem index="2" value="20/12.5"/>
+                    <StringItem index="3" value="20/16"/>
+                    <StringItem index="4" value="20/20"/>
+                    <StringItem index="5" value="20/ 25"/>
+                    <StringItem index="6" value="20/32"/>
+                    <StringItem index="7" value="20/40"/>
+                    <StringItem index="8" value="20/50"/>
+                    <StringItem index="9" value="20/63"/>
+                    <StringItem index="10" value="20/80"/>
+                    <StringItem index="11" value="20/100"/>
+                    <StringItem index="12" value="20/125"/>
+                    <StringItem index="13" value="20/160"/>
+                    <StringItem index="14" value="20/200"/>
+                  </StringArray>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dscOSphComboBoxActionPerformed"/>
+              </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
             </Component>
           </SubComponents>
         </Container>
@@ -1322,7 +1427,7 @@
                                           <Component id="axisODTXTF" min="-2" pref="120" max="-2" attributes="0"/>
                                           <Component id="cylinderODTXTF" min="-2" pref="120" max="-2" attributes="0"/>
                                           <Component id="prismODTXTF" min="-2" pref="120" max="-2" attributes="0"/>
-                                          <Component id="prisimBaseODTXTF" min="-2" pref="120" max="-2" attributes="0"/>
+                                          <Component id="prismBaseODTXTF" min="-2" pref="120" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <Group type="102" attributes="0">
@@ -1388,7 +1493,7 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="prismBaseLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="prisimBaseODTXTF" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="prismBaseODTXTF" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
@@ -1855,6 +1960,7 @@
               </Properties>
               <Events>
                 <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="sphereODTXTFFocusLost"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="sphereODTXTFActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="sphereLabel3">
@@ -1941,7 +2047,7 @@
                 <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="prismODTXTFFocusLost"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="prisimBaseODTXTF">
+            <Component class="javax.swing.JTextField" name="prismBaseODTXTF">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="fa" green="ce" red="87" type="rgb"/>
@@ -1954,7 +2060,7 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="prisimBaseODTXTFFocusLost"/>
+                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="prismBaseODTXTFFocusLost"/>
               </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="addODTXTF">
