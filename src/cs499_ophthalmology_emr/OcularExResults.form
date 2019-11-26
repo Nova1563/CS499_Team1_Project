@@ -2429,8 +2429,8 @@
                 </Property>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="2">
-                    <StringItem index="0" value="Dilation Agent 1"/>
-                    <StringItem index="1" value="Another One"/>
+                    <StringItem index="0" value="None"/>
+                    <StringItem index="1" value="Tropicamide 1%"/>
                   </StringArray>
                 </Property>
               </Properties>
@@ -2515,7 +2515,7 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Not Perfromed"/>
+                <Property name="text" type="java.lang.String" value="Not Perfomed"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="fundusEvaluationNotPerformedRadioButtonActionPerformed"/>

@@ -394,7 +394,7 @@ public class PatientPortal extends javax.swing.JPanel {
             }
         });
 
-        jButton1.setText("DEBUG: Create DB Entries");
+        jButton1.setText("Print database contents");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -572,16 +572,19 @@ public class PatientPortal extends javax.swing.JPanel {
 	
 	private void rightClickMenuEditPatient(java.awt.event.ActionEvent evt)
 	{
+		selectPatientButtonMouseClicked(null);
 		editPatientButtonActionPerformed(evt);
 	}
 	
 	private void rightClickMenuDeletePatient(java.awt.event.ActionEvent evt)
 	{
+		selectPatientButtonMouseClicked(null);
 		deletePatientButtonActionPerformed(evt);
 	}
 	
 	private void rightClickMenuViewPatient(java.awt.event.ActionEvent evt)
 	{
+		selectPatientButtonMouseClicked(null);
 		viewPatientInfoMenuItemActionPerformed(evt);
 	}
 

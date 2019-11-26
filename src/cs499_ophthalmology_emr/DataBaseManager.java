@@ -269,10 +269,16 @@ public class DataBaseManager {
 	 */
 	public void doTest()
 	{
-		makeNewPatientsFillArrayTest();
-        addAppointmentsAndExamsToAllPatientsTest();
+		//makeNewPatientsFillArrayTest();
+        //addAppointmentsAndExamsToAllPatientsTest();
+		patientTable.printAllEntries();
 		appointmentTable.printAllEntries();
         testResultsTable.printAllEntries();
+		//ArrayList<EyeTestResults> eyeResults = testResultsTable.getAllEyeTestResultsByPatient(1);
+		//for (EyeTestResults anAppt : eyeResults)
+		//{
+		//	delete(anAppt);
+		//}
 	}
 	
 	private void makeNewPatientsFillArrayTest()

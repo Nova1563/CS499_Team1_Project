@@ -917,7 +917,7 @@ public class EyeTestResultsTableManager {
 		{
 			PreparedStatement theSQLstatement = conn.prepareStatement(theSQLstatementStr);
 			theSQLstatement.setInt(1, patientID);
-			ResultSet examInfo = theSQLstatement.executeQuery(theSQLstatementStr);
+			ResultSet examInfo = theSQLstatement.executeQuery();
 			
 			while (examInfo.next())
 			{
