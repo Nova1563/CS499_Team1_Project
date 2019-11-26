@@ -17,10 +17,10 @@ import javax.swing.text.JTextComponent;
  */
 public class AppointmentForm extends javax.swing.JPanel {
     
-        private DataBaseManager dataBase = null;
+    private DataBaseManager dataBase = null;
 	private MainDashboard dashBoard = null;
 	private Appointment activeAppointment = null;
-
+	public Integer panelToReturnTo = 0;	// 0 to return to AppointmentDisplay, 1 to return to PatientInfoSummary.
     /**
      * Creates new form NewPatientForm
      */
@@ -603,7 +603,10 @@ public class AppointmentForm extends javax.swing.JPanel {
 		if (saveSuccess)
 		{
 			activeAppointment = null;
-			dashBoard.showAppointmentDisplay();
+			if (panelToReturnTo == 0)
+				dashBoard.showAppointmentDisplay();
+			else
+				dashBoard.showPatientSummaryPage();
 		}
     }//GEN-LAST:event_submitButtonActionPerformed
 
@@ -618,7 +621,10 @@ public class AppointmentForm extends javax.swing.JPanel {
 			}
 		}
 		activeAppointment = null;
-		dashBoard.showAppointmentDisplay();
+		if (panelToReturnTo == 0)
+			dashBoard.showAppointmentDisplay();
+		else
+			dashBoard.showPatientSummaryPage();
     }//GEN-LAST:event_cancelButtonActionPerformed
 
     private void apptHourComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_apptHourComboBoxActionPerformed

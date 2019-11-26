@@ -535,7 +535,7 @@ public class PatientPortal extends javax.swing.JPanel {
 
     private void viewPatientInfoMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewPatientInfoMenuItemActionPerformed
         System.out.println("Patient Portal: pop-up menu view patient page");
-            mainDash.showPatientPage();
+            mainDash.showPatientSummaryPage();
     }//GEN-LAST:event_viewPatientInfoMenuItemActionPerformed
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked

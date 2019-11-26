@@ -577,7 +577,7 @@ public class AppointmentDisplay extends javax.swing.JPanel {
     private void editButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editButtonActionPerformed
         // TODO add your handling code here:
         System.out.println("AppointmentDisplay: Edit button");
-        
+        mainDash.appointmentForm.panelToReturnTo = 0;	// Return to AppointmentDisplay after done in PatientForm.
             try
             {
                 Integer selectedRow = appointmentDisplayTable.getSelectedRow();
@@ -597,7 +597,8 @@ public class AppointmentDisplay extends javax.swing.JPanel {
         
         try 
         {
-             Integer selectedRow = appointmentDisplayTable.getSelectedRow();
+			mainDash.occularExResults.panelToReturnTo = 0;
+            Integer selectedRow = appointmentDisplayTable.getSelectedRow();
 			Integer apptID = (Integer)appointmentDisplayTable.getValueAt(selectedRow, APPT_ID_COLUMN);
 			Appointment theAppointment = dataBase.getAppointmentByID(apptID);
 			mainDash.setActiveAppointment(theAppointment);

@@ -9,6 +9,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.JPopupMenu;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
@@ -18,7 +19,7 @@ import javax.swing.table.DefaultTableModel;
  * @author kenda
  */
 public class PatientPageTemplate extends javax.swing.JPanel {
-
+	private final Integer APPT_ID_COLUMN = 3;
 	private MainDashboard mainDash;
 	private Patient currentPatient;
 	private Appointment currentAppointment;
@@ -34,7 +35,7 @@ public class PatientPageTemplate extends javax.swing.JPanel {
 		dataBase = DataBaseManager.getInstance();
 		mainDash = _mainDash;
         initComponents();
-		
+		addRightClickListener();
 		addressTextField.setEditable(false);
 		ageTextField.setEditable(false);
 		contractTextField.setEditable(false);
@@ -207,13 +208,21 @@ public class PatientPageTemplate extends javax.swing.JPanel {
 	private JPopupMenu createRightClickMenu() {
 		JPopupMenu theMenu = new JPopupMenu();
 		
-		JMenuItem viewAppt = new JMenuItem("View Appointment");
+		JMenuItem viewAppt = new JMenuItem("View Appointment Info");
+		JMenuItem viewExam = new JMenuItem("View Exam Results");
 
 		theMenu.add(viewAppt);
+		theMenu.add(viewExam);
 
 		viewAppt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rightClickMenuViewAppt(evt);
+            }
+		});
+		
+		viewExam.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rightClickMenuViewExam(evt);
             }
 		});
 		
@@ -659,7 +668,44 @@ public class PatientPageTemplate extends javax.swing.JPanel {
 
 	public void rightClickMenuViewAppt(java.awt.event.ActionEvent evt)
 	{
+        try
+        {
+		mainDash.appointmentForm.panelToReturnTo = 1;	// Return to PatientInfoSummary after done in PatientForm.
+        Integer selectedRow = appointmentDisplayTable.getSelectedRow();
+		Integer apptID = (Integer)appointmentDisplayTable.getValueAt(selectedRow, APPT_ID_COLUMN);
+		Appointment theAppointment = dataBase.getAppointmentByID(apptID);
+		mainDash.appointmentForm.loadAppointment(theAppointment);
+		mainDash.showAppointmentForm();
+        }
+            
+        catch(Exception e)
+        {
+            JOptionPane.showMessageDialog(null, "Select an appointment to continue.");
+        }
+	}
+	
+	public void rightClickMenuViewExam(java.awt.event.ActionEvent evt)
+	{
+        try 
+        {
+			mainDash.occularExResults.panelToReturnTo = 1;
+            Integer selectedRow = appointmentDisplayTable.getSelectedRow();
+			Integer apptID = (Integer)appointmentDisplayTable.getValueAt(selectedRow, APPT_ID_COLUMN);
+			Appointment theAppointment = dataBase.getAppointmentByID(apptID);
+			mainDash.setActiveAppointment(theAppointment);
 		
+			Integer patientID = theAppointment.getPatientID();
+			Patient thePatient = dataBase.getPatientByID(patientID);
+			mainDash.setActivePatient(thePatient);
+	
+			mainDash.showVisualAcuity();
+        }
+        
+        catch(Exception e)
+        {
+            JOptionPane.showMessageDialog(null, "Select an appointment to continue.");
+        }
+ 
 	}
 	
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -10,7 +10,7 @@ package cs499_ophthalmology_emr;
  * @author angela & andrew
  */
 public class OcularExResults extends javax.swing.JPanel {
-	
+	public Integer panelToReturnTo = 0; // 0 = return view to AppointmentDisplay, 1 = return view to PatientInfoSummary when done here.
 	MainDashboard mainDash;
 	EyeTestResults currentResults;
 	DataBaseManager dataBase;
@@ -3082,6 +3082,10 @@ public class OcularExResults extends javax.swing.JPanel {
 
     private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
         dataBase.save(currentResults);
+		if (panelToReturnTo == 0)
+			mainDash.showAppointmentDisplay();
+		else
+			mainDash.showPatientSummaryPage();
     }//GEN-LAST:event_saveButtonActionPerformed
 
     private void odShallowCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_odShallowCheckBoxActionPerformed

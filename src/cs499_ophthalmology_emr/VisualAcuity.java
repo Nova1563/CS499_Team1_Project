@@ -219,7 +219,6 @@ public class VisualAcuity extends javax.swing.JPanel {
         prismOSTXTF = new javax.swing.JTextField();
         prismLabel2 = new javax.swing.JLabel();
         prismBaseOSTXTF = new javax.swing.JTextField();
-        occularBttn = new javax.swing.JButton();
         sphereLabel2 = new javax.swing.JLabel();
         sphereODTXTF = new javax.swing.JTextField();
         sphereLabel3 = new javax.swing.JLabel();
@@ -877,16 +876,6 @@ public class VisualAcuity extends javax.swing.JPanel {
             }
         });
 
-        occularBttn.setBackground(new java.awt.Color(255, 255, 153));
-        occularBttn.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        occularBttn.setForeground(new java.awt.Color(0, 0, 0));
-        occularBttn.setText("OCCULAR EXAM RESULTS");
-        occularBttn.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                occularBttnMouseClicked(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -930,10 +919,6 @@ public class VisualAcuity extends javax.swing.JPanel {
                             .addComponent(sphereOSTXTF, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(cylinderOSTXTF, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(71, 71, 71))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(occularBttn, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(43, 43, 43))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -968,9 +953,7 @@ public class VisualAcuity extends javax.swing.JPanel {
                         .addComponent(prismBaseOSTXTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(addOSTXTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 181, Short.MAX_VALUE)
-                .addComponent(occularBttn)
-                .addGap(38, 38, 38))
+                .addContainerGap(257, Short.MAX_VALUE))
         );
 
         sphereLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -1055,7 +1038,7 @@ public class VisualAcuity extends javax.swing.JPanel {
         saveBttn1.setBackground(new java.awt.Color(153, 255, 153));
         saveBttn1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         saveBttn1.setForeground(new java.awt.Color(0, 0, 0));
-        saveBttn1.setText("SAVE");
+        saveBttn1.setText("NEXT PAGE");
         saveBttn1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 saveBttn1MouseClicked(evt);
@@ -1446,6 +1429,7 @@ public class VisualAcuity extends javax.swing.JPanel {
     private void saveBttn1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_saveBttn1MouseClicked
 
         dataBase.save(eyeTestResults);
+		mainDash.showOccularExResults();
     }//GEN-LAST:event_saveBttn1MouseClicked
 
     private void dccODComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dccODComboBoxActionPerformed
@@ -1625,7 +1609,6 @@ public class VisualAcuity extends javax.swing.JPanel {
     private javax.swing.JComboBox<String> nscOSphComboBox;
     private javax.swing.JComboBox<String> nscOUComboBox;
     private javax.swing.JComboBox<String> nscOUphComboBox;
-    private javax.swing.JButton occularBttn;
     private javax.swing.JLabel prismBaseLabel;
     private javax.swing.JLabel prismBaseLabel1;
     private javax.swing.JTextField prismBaseODTXTF;
