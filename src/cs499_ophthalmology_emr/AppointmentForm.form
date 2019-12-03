@@ -81,6 +81,13 @@
               <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="SAVE"/>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
+                <MatteColorBorder bottom="3" left="3" right="3" top="3">
+                  <Color PropertyName="color" blue="66" green="ff" red="66" type="rgb"/>
+                </MatteColorBorder>
+              </Border>
+            </Property>
             <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
               <Dimension value="[125, 38]"/>
             </Property>
@@ -184,30 +191,24 @@
                           <Component id="jLabel7" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
+                      <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Component id="apptHourComboBox" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="apptMinuteComboBox" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="arrivalStatusComboBox" alignment="1" min="-2" pref="378" max="-2" attributes="0"/>
-                                  <Component id="doctorComboBox" alignment="1" min="-2" pref="378" max="-2" attributes="0"/>
-                                  <Component id="appointmentDateTextField" alignment="1" min="-2" pref="378" max="-2" attributes="0"/>
-                                  <Component id="patientNameTextBox" alignment="1" min="-2" pref="378" max="-2" attributes="0"/>
+                          <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="apptTimeTextField" min="-2" pref="205" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="apptHourComboBox" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="apptMinuteComboBox" min="-2" max="-2" attributes="0"/>
                               </Group>
+                              <Component id="arrivalStatusComboBox" alignment="1" min="-2" pref="378" max="-2" attributes="0"/>
+                              <Component id="doctorComboBox" alignment="1" min="-2" pref="378" max="-2" attributes="0"/>
+                              <Component id="appointmentDateTextField" alignment="1" min="-2" pref="378" max="-2" attributes="0"/>
+                              <Component id="patientNameTextBox" alignment="1" min="-2" pref="378" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="114" pref="114" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="reasonForVisit" alignment="0" min="-2" pref="378" max="-2" attributes="0"/>
-                                  <Component id="apptTimeTextField" alignment="0" min="-2" pref="205" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
+                          <Component id="reasonForVisit" alignment="1" min="-2" pref="378" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="401" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                       <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="209" max="-2" attributes="0"/>
                   </Group>

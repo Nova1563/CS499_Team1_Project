@@ -2719,11 +2719,12 @@ public class OcularExResults extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        saveButton.setBackground(new java.awt.Color(153, 255, 153));
+        saveButton.setBackground(new java.awt.Color(102, 255, 102));
         saveButton.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         saveButton.setForeground(new java.awt.Color(0, 0, 0));
         saveButton.setText("SAVE");
         saveButton.setToolTipText("");
+        saveButton.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(102, 255, 102)));
         saveButton.setPreferredSize(new java.awt.Dimension(125, 38));
         saveButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

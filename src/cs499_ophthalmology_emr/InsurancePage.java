@@ -154,6 +154,7 @@ public class InsurancePage extends javax.swing.JPanel {
         inssaveBttn.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         inssaveBttn.setForeground(new java.awt.Color(0, 0, 0));
         inssaveBttn.setText("SAVE");
+        inssaveBttn.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(102, 255, 102)));
         inssaveBttn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 inssaveBttnMouseClicked(evt);

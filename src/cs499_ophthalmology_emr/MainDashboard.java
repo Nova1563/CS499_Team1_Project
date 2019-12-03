@@ -27,12 +27,13 @@ public class MainDashboard extends javax.swing.JFrame {
     private Patient activePatient;
     private Appointment activeAppointment;
     private EyeTestResults activeResults;
+    public InfomationPanel informationPanel;
     /**
      * Creates new form MainWindow
      */
     public MainDashboard() {
     initComponents();
-	currentPatientTextBar.setText("No active patient.");
+    currentPatientTextBar.setText("No active patient.");
 
     patientPortal       = new PatientPortal(this);
     appointmentPanel    = new AppointmentDisplay(this);
@@ -43,6 +44,8 @@ public class MainDashboard extends javax.swing.JFrame {
     appointmentForm     = new AppointmentForm(this);
     visualAcuity        = new VisualAcuity(this);//***
     occularExResults    = new OcularExResults(this);
+    informationPanel    = new InfomationPanel();
+    
         
     mainPanel.add(homePanel);	
     mainPanel.add(patientPortal);
@@ -53,6 +56,7 @@ public class MainDashboard extends javax.swing.JFrame {
     mainPanel.add(appointmentForm);
     mainPanel.add(visualAcuity);
     mainPanel.add(occularExResults);
+    mainPanel.add(informationPanel);
     
     patientPortal.setVisible(false);
     patientForm.setVisible(false);
@@ -63,7 +67,7 @@ public class MainDashboard extends javax.swing.JFrame {
     visualAcuity.setVisible(false);
     occularExResults.setVisible(false);
     homePanel.setVisible(true);
-    
+    informationPanel.setVisible(true);
 
                 
     }
@@ -157,6 +161,7 @@ public class MainDashboard extends javax.swing.JFrame {
             catch(Exception e)
             {
                 JOptionPane.showMessageDialog(null, "Select an active patient from Patient Portal to continue.");
+               
             }
                
 	}
@@ -180,6 +185,11 @@ public class MainDashboard extends javax.swing.JFrame {
 	{ 
                 hideAllPanelComponents(mainPanel);
             
+	}
+        public void showInformationPanel()
+	{	
+                hideAllPanelComponents(mainPanel);
+                informationPanel.setVisible(true);
 	}
 	public void hideAllPanelComponents(JPanel theComp)
 	{
@@ -240,6 +250,12 @@ public class MainDashboard extends javax.swing.JFrame {
         });
 
         infoBttb.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cs499_ophthalmology_emr/images/infoIcon2.png"))); // NOI18N
+        infoBttb.setToolTipText("Information About Visions");
+        infoBttb.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                infoBttbMouseClicked(evt);
+            }
+        });
 
         appointmentBttn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         appointmentBttn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cs499_ophthalmology_emr/images/appointmentIcon.png"))); // NOI18N
@@ -401,7 +417,7 @@ public class MainDashboard extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        mainPanel.setBackground(new java.awt.Color(153, 255, 102));
+        mainPanel.setBackground(new java.awt.Color(57, 113, 177));
         mainPanel.setMaximumSize(new java.awt.Dimension(1000, 1000));
         mainPanel.setPreferredSize(new java.awt.Dimension(1900, 900));
         mainPanel.addComponentListener(new java.awt.event.ComponentAdapter() {
@@ -459,6 +475,11 @@ public class MainDashboard extends javax.swing.JFrame {
         // TODO add your handling code here:
         showHomePanel();
     }//GEN-LAST:event_mainPanelComponentShown
+
+    private void infoBttbMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_infoBttbMouseClicked
+        // TODO add your handling code here:
+        showInformationPanel();
+    }//GEN-LAST:event_infoBttbMouseClicked
 
     /**
      * @param args the command line arguments

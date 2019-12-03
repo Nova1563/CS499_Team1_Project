@@ -260,6 +260,7 @@ public class PatientPortal extends javax.swing.JPanel {
         patientSearchSubmitButton.setForeground(new java.awt.Color(253, 252, 233));
         patientSearchSubmitButton.setText("SEARCH");
         patientSearchSubmitButton.setToolTipText("Searching Patient");
+        patientSearchSubmitButton.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(102, 153, 255)));
         patientSearchSubmitButton.setPreferredSize(new java.awt.Dimension(176, 33));
         patientSearchSubmitButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -267,11 +268,12 @@ public class PatientPortal extends javax.swing.JPanel {
             }
         });
 
-        deletePatientButton.setBackground(new java.awt.Color(255, 0, 51));
+        deletePatientButton.setBackground(new java.awt.Color(255, 0, 0));
         deletePatientButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         deletePatientButton.setForeground(new java.awt.Color(253, 252, 233));
         deletePatientButton.setText("DELETE");
         deletePatientButton.setToolTipText("Delete Patient");
+        deletePatientButton.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(255, 0, 0)));
         deletePatientButton.setPreferredSize(new java.awt.Dimension(176, 33));
         deletePatientButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -289,6 +291,7 @@ public class PatientPortal extends javax.swing.JPanel {
         editPatientButton.setForeground(new java.awt.Color(253, 252, 233));
         editPatientButton.setText("EDIT");
         editPatientButton.setToolTipText("Edit Patient Info");
+        editPatientButton.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(102, 153, 255)));
         editPatientButton.setPreferredSize(new java.awt.Dimension(176, 33));
         editPatientButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -301,6 +304,7 @@ public class PatientPortal extends javax.swing.JPanel {
         addPatientButton.setForeground(new java.awt.Color(253, 252, 233));
         addPatientButton.setText("ADD PATIENT");
         addPatientButton.setToolTipText("Add Patient to Portal");
+        addPatientButton.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(102, 153, 255)));
         addPatientButton.setPreferredSize(new java.awt.Dimension(176, 33));
         addPatientButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -393,6 +397,7 @@ public class PatientPortal extends javax.swing.JPanel {
         selectPatientButton.setForeground(new java.awt.Color(253, 252, 233));
         selectPatientButton.setText("SET AS ACTIVE PATIENT");
         selectPatientButton.setToolTipText("Make an Active Patient");
+        selectPatientButton.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(102, 153, 255)));
         selectPatientButton.setPreferredSize(new java.awt.Dimension(176, 33));
         selectPatientButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {

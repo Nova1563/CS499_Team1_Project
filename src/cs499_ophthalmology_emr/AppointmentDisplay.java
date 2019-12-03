@@ -357,6 +357,7 @@ public class AppointmentDisplay extends javax.swing.JPanel {
         newAppointmentButton.setForeground(new java.awt.Color(253, 252, 233));
         newAppointmentButton.setText("ADD NEW APPOINTMENT");
         newAppointmentButton.setToolTipText("Add New Appointment");
+        newAppointmentButton.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(102, 153, 255)));
         newAppointmentButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 newAppointmentButtonMouseClicked(evt);
@@ -403,6 +404,7 @@ public class AppointmentDisplay extends javax.swing.JPanel {
         deleteButton.setForeground(new java.awt.Color(253, 252, 233));
         deleteButton.setText("DELETE");
         deleteButton.setToolTipText("Delete Selected Appointment");
+        deleteButton.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(255, 0, 0)));
         deleteButton.setPreferredSize(new java.awt.Dimension(176, 33));
         deleteButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -415,6 +417,7 @@ public class AppointmentDisplay extends javax.swing.JPanel {
         editButton.setForeground(new java.awt.Color(253, 252, 233));
         editButton.setText("EDIT");
         editButton.setToolTipText("Edit Selected Appointment");
+        editButton.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(102, 153, 255)));
         editButton.setPreferredSize(new java.awt.Dimension(176, 33));
         editButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -424,7 +427,6 @@ public class AppointmentDisplay extends javax.swing.JPanel {
 
         jScrollPane2.setComponentPopupMenu(tableNoRowClickedPopupMenu);
 
-        appointmentDisplayTable.setAutoCreateRowSorter(true);
         appointmentDisplayTable.setBackground(new java.awt.Color(253, 252, 233));
         appointmentDisplayTable.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(32, 33, 35)));
         appointmentDisplayTable.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -456,6 +458,7 @@ public class AppointmentDisplay extends javax.swing.JPanel {
         beginExamButton.setForeground(new java.awt.Color(253, 252, 233));
         beginExamButton.setText("OPEN EXAM INFO");
         beginExamButton.setToolTipText("Open Exams for selected Patient");
+        beginExamButton.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(102, 153, 255)));
         beginExamButton.setPreferredSize(new java.awt.Dimension(176, 33));
         beginExamButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -469,9 +472,10 @@ public class AppointmentDisplay extends javax.swing.JPanel {
 
         showAllButton.setBackground(new java.awt.Color(102, 153, 255));
         showAllButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        showAllButton.setForeground(new java.awt.Color(253, 252, 233));
+        showAllButton.setForeground(new java.awt.Color(255, 255, 255));
         showAllButton.setText("SHOW ALL");
         showAllButton.setToolTipText("Show All Appointments");
+        showAllButton.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(102, 153, 255)));
         showAllButton.setPreferredSize(new java.awt.Dimension(176, 33));
         showAllButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -542,11 +546,11 @@ public class AppointmentDisplay extends javax.swing.JPanel {
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 630, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(newAppointmentButton)
                     .addComponent(editButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(deleteButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(beginExamButton, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(100, Short.MAX_VALUE))
+                    .addComponent(beginExamButton, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(newAppointmentButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(100, 100, 100))
         );
     }// </editor-fold>//GEN-END:initComponents
 
